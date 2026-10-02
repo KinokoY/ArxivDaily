@@ -729,12 +729,22 @@
   },
   "runs": [
     {
+      "completed_at": "2026-10-02T19:43:26.028602+00:00",
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "coverage_complete": true,
       "day": "2026-10-03",
+      "delivery_day": "2026-10-03",
+      "delivery_kind": "digest",
+      "delivery_status": "confirmed",
+      "digest_id": "20261002T194028Z-8e001f7e-e9733bebb072",
       "discovered_candidates": 2,
       "discovered_papers": 2,
+      "errors": [],
+      "full": 1,
+      "light": 1,
+      "recovery": 0,
       "run_id": "20261002T194028Z-8e001f7e",
+      "silent": false,
       "started_at": "2026-10-02T19:40:28.854990+00:00"
     }
   ],
