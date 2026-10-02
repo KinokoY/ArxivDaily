@@ -33,7 +33,14 @@
       "content_hash": "e9733bebb072ded402a2724b9abe1e0d2e8020583891eecf0f98c0f03717b13b",
       "created_at": "2026-10-02T19:40:28.854990+00:00",
       "day": "2026-10-03",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "59582560",
+        "status": "confirmed"
+      },
       "digest_id": "20261002T194028Z-8e001f7e-e9733bebb072",
+      "finished_at": "2026-10-02T19:43:21.600171+00:00",
       "items": [
         {
           "paper": {
@@ -249,12 +256,11 @@
       },
       "run_id": "20261002T194028Z-8e001f7e",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
     "2308.00692": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -291,7 +297,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -319,18 +325,16 @@
         "updated": "2024-05-01T05:10:13+00:00",
         "version_id": "2308.00692v3"
       },
-      "pending_digest": "20261002T194028Z-8e001f7e-e9733bebb072",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "versions": [
         "2308.00692v3"
       ]
     },
     "2504.11008": {
-      "_pre_attempt_chain": null,
       "analysis_chunks": {},
       "attempts": {
         "body": 1,
@@ -526,7 +530,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_full",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "full"
         }
       ],
@@ -553,13 +557,12 @@
         "updated": "2025-04-23T15:29:29+00:00",
         "version_id": "2504.11008v2"
       },
-      "pending_digest": "20261002T194028Z-8e001f7e-e9733bebb072",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "summary_validated",
+      "stage": "delivered",
       "summary": {
         "background": "医学图像分割通常依赖任务专用模型或需要精确边界框/文本标注的交互式医学图像分割，难以处理隐含逻辑查询，因此需要能结合医学图像进行推理并输出像素级掩码与边界框的新任务。",
         "conclusion": "结论称 MedSD、MLMR-SD 与 MediSee 为医学推理图像感知提供基础，但基于所给全文，未报告独立局限性分析或额外外部验证。",
