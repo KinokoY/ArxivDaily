@@ -239,7 +239,7 @@
           "source_url": "https://arxiv.org/html/2504.11008v2",
           "version_id": "2504.11008v2",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2504.11008v2"
         },
         "source_type": "html",
@@ -294,12 +294,166 @@
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-02T19:40:28.854990+00:00",
-        "run_id": "20261002T194028Z-8e001f7e",
-        "stage": "summary"
+      "stage": "summary_validated",
+      "summary": {
+        "background": "医学图像分割通常依赖任务专用模型或需要精确边界框/文本标注的交互式医学图像分割，难以处理隐含逻辑查询，因此需要能结合医学图像进行推理并输出像素级掩码与边界框的新任务。",
+        "conclusion": "结论称 MedSD、MLMR-SD 与 MediSee 为医学推理图像感知提供基础，但基于所给全文，未报告独立局限性分析或额外外部验证。",
+        "contribution": "本文提出医学推理分割与检测任务 MedSD、构建含 200K 复杂隐含问答对和 12,652 图像-掩码对的 MLMR-SD 数据集，并提出基线模型 MediSee。",
+        "evidence": [
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1. Introduction",
+            "quote": "Medical image segmentation seeks to identify regions of interest (ROIs), such as organs, lesions, and tissue, within a variety of medical images",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1. Introduction",
+            "quote": "general users often rely on implicit queries, requiring logical reasoning just like the process of Chain of Thought (CoT)",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1. Introduction",
+            "quote": "we propose a novel medical vision task—Medical Reasoning Segmentation and Detection ( MedSD )",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1. Introduction",
+            "quote": "we introduce MediSee , an effective baseline model designed for medical reasoning segmentation and detection",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:3. MLMR-SD Dataset",
+            "quote": "The MLMR-SD dataset comprises over 200K implicit and complex question-answer pairs that require logical reasoning, along with 12,652 image-mask pairs.",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+            "quote": "which consists of four core components: MedSAM ( Ma et al., 2024a ) as vision backbone",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+            "quote": "and a 3-layer MLP as bounding box decoder",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4. Baseline Framework / 4.2. Adaptive Democratic Candidate Fusion",
+            "quote": "we propose the Adaptive Democratic Candidate Fusion method",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4. Baseline Framework / 4.2. Adaptive Democratic Candidate Fusion",
+            "quote": "we employ two lightweight routers",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4. Baseline Framework / 4.3. Overall Optimization",
+            "quote": "we introduce an additional similarity loss during the fine-tuning phase",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:5. Experiments / 5.4. Vanilla Medical Referring Perception",
+            "quote": "To prove that MediSee is also competent in vanilla referring medical segmentation and detection",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:5. Experiments / 5.4. Vanilla Medical Referring Perception",
+            "quote": "compare it with existing methods on SA-Med2D-20M ( Ye et al., 2023 ) benchmark.",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 3",
+            "locator": "table:Table 3",
+            "quote": "Methods Seg. Det. Dice gIoU cIoU IoU Acc",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 3",
+            "locator": "table:Table 3",
+            "quote": "MediSee 61.2 50.4 70.8 45.6 51.0",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 3",
+            "locator": "table:Table 3",
+            "quote": "IMIS-Net ( Cheng et al., 2024 ) 41.3 35.5 65.8 39.3 39.6",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:5. Experiments / 5.5. Ablation Study",
+            "quote": "The results are reported on the MLMR-SD validation set and SA-Med2D-20M test set.",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:5. Experiments / 5.5. Ablation Study",
+            "quote": "The former of the slashes “/” in Tables 4 , 5 , and 6 represents the results based on the traditional medical referring perception, while the latter represents the results based on MedSD setting.",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 4",
+            "locator": "table:Table 4",
+            "quote": "Fusion hidden size gIoU cIoU IoU Acc",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 4",
+            "locator": "table:Table 4",
+            "quote": "soft 1024 50.4/46.6 70.8/56.4 45.6/35.7 51.0/32.4",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:6. Conclusion",
+            "quote": "This work introduces a novel medical vision task, Medical Reasoning Segmentation and Detection (MedSD), designed to interpret implicit queries about medical images and generate the corresponding segmentation mask and bounding box.",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:6. Conclusion",
+            "quote": "We hope this work can provide some insights for bringing medical segmentation models into everyday life.",
+            "source_url": "https://arxiv.org/html/2504.11008v2"
+          }
+        ],
+        "experiments": "在 SA-Med2D-20M 的 vanilla 医学指代感知评测中，按 Dice、gIoU、cIoU、IoU、Acc 的顺序，MediSee 报告为 61.2、50.4、70.8、45.6、51.0，而对比方法 IMIS-Net 为 41.3、35.5、65.8、39.3、39.6；在 MLMR-SD 设置中，soft 1024 行的后一个斜杠值报告 gIoU 为 46.6、cIoU 为 56.4、IoU 为 35.7、Acc 为 32.4。",
+        "method": "MediSee 以 MedSAM 为视觉骨干和掩码解码器、LLaVA-Med 为多模态大语言模型，并加入路由器与 3 层 MLP 边界框解码器；其自适应民主候选融合通过路由器对多个候选 token 的最后一层嵌入做加权和，分别生成分割/检测输入，并在 MLMR-SD 额外微调时引入相似度损失。"
       },
+      "summary_model": "deepseek-flash",
+      "summary_prompt_fingerprint": "arxivdaily-summary-v4",
+      "summary_validated_at": "2026-10-02T19:40:28.854990+00:00",
       "versions": [
         "2504.11008v2"
       ]
