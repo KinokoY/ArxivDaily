@@ -8,9 +8,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "reasoning segmentation",
+          "large Language Instructed Segmentation Assistant",
+          "embedding-as-mask paradigm",
+          "complex reasoning and world knowledge",
+          "zero-shot capability"
+        ],
+        "dpo_is_method": false,
+        "reason": "Paper introduces reasoning segmentation and LISA for general multimodal LLM segmentation, matching general reasoning segmentation interest, but it does not employ RL/DPO methods and lacks theoretical or transfer grounding, so it is light relevance.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 55,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No RL/DPO method",
+          "No theoretical grounding",
+          "No transfer or medical evidence"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-02T19:40:28.854990+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Although perception systems have made remarkable advancements in recent years, they still rely on explicit human instruction or pre-defined categories to identify the target objects before executing visual recognition tasks. Such systems cannot actively reason and comprehend implicit user intention. In this work, we propose a new segmentation task -- reasoning segmentation. The task is designed to output a segmentation mask given a complex and implicit query text. Furthermore, we establish a benchmark comprising over one thousand image-instruction-mask data samples, incorporating intricate reasoning and world knowledge for evaluation purposes. Finally, we present LISA: large Language Instructed Segmentation Assistant, which inherits the language generation capabilities of multimodal Large Language Models (LLMs) while also possessing the ability to produce segmentation masks. We expand the original vocabulary with a <SEG> token and propose the embedding-as-mask paradigm to unlock the segmentation capability. Remarkably, LISA can handle cases involving complex reasoning and world knowledge. Also, it demonstrates robust zero-shot capability when trained exclusively on reasoning-free datasets. In addition, fine-tuning the model with merely 239 reasoning segmentation data samples results in further performance enhancement. Both quantitative and qualitative experiments show our method effectively unlocks new reasoning segmentation capabilities for multimodal LLMs. Code, models, and data are available at https://github.com/dvlab-research/LISA.",
         "authors": [
@@ -31,15 +57,11 @@
         "updated": "2024-05-01T05:10:13+00:00",
         "version_id": "2308.00692v3"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-02T19:40:28.854990+00:00",
-        "run_id": "20261002T194028Z-8e001f7e",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2308.00692v3"
       ]
