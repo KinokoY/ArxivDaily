@@ -70,9 +70,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Medical Reasoning Segmentation and Detection (MedSD)",
+          "comprehend implicit queries about medical images and generate the corresponding segmentation mask and bounding box for the target object",
+          "propose MediSee, an effective baseline model designed for medical reasoning segmentation and detection"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper introduces a novel medical reasoning segmentation and detection task (MedSD), a dataset, and a baseline model for implicit medical queries, directly matching the medical reasoning segmentation interest. No RL or DPO method is described.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 85,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-02T19:40:28.854990+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Despite remarkable advancements in pixel-level medical image perception, existing methods are either limited to specific tasks or heavily rely on accurate bounding boxes or text labels as input prompts. However, the medical knowledge required for input is a huge obstacle for general public, which greatly reduces the universality of these methods. Compared with these domain-specialized auxiliary information, general users tend to rely on oral queries that require logical reasoning. In this paper, we introduce a novel medical vision task: Medical Reasoning Segmentation and Detection (MedSD), which aims to comprehend implicit queries about medical images and generate the corresponding segmentation mask and bounding box for the target object. To accomplish this task, we first introduce a Multi-perspective, Logic-driven Medical Reasoning Segmentation and Detection (MLMR-SD) dataset, which encompasses a substantial collection of medical entity targets along with their corresponding reasoning. Furthermore, we propose MediSee, an effective baseline model designed for medical reasoning segmentation and detection. The experimental results indicate that the proposed method can effectively address MedSD with implicit colloquial queries and outperform traditional medical referring segmentation methods.",
         "authors": [
@@ -92,16 +112,12 @@
         "updated": "2025-04-23T15:29:29+00:00",
         "version_id": "2504.11008v2"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-02T19:40:28.854990+00:00",
-        "run_id": "20261002T194028Z-8e001f7e",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2504.11008v2"
       ]
