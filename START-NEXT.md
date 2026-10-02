@@ -2,6 +2,8 @@
 
 在当前工作区继续；目标仓库信息和外部发布授权由用户填写，不在提示中重复秘钥。
 
+当前目标已确定为 [KinokoY/ArxivDaily](https://github.com/KinokoY/ArxivDaily)，代码、Git 身份、原生 Secrets 和正式状态分支都已就绪。本机相同 CLI 两 ID 真实贯通及一次微信发送已成功，Ubuntu Actions 因账户 billing issue 未启动；继续时读取 HANDOFF-NEXT 的最新覆盖，复用已成功内容。用户解除账户锁后再验证 Actions，不必重复创建仓库或配置秘钥。下方原模板中“尚未提交/未发送”等状态已过时。
+
 ```text
 请继续 ArxivDaily，先读 HANDOFF-NEXT.md、DEVELOPMENT-STATUS.md、app/reports/ACCEPTANCE.md，再沿索引阅读 SPEC、实施计划、术语和 ADR。保留现有 app、固定上游来源、原 MIT 许可、规划文档和技能。
 

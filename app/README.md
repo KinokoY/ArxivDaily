@@ -2,7 +2,7 @@
 
 摘要规则宽初筛 → DeepSeek Flash 终筛（high）→ 合格正文与必要图表总结（max）→ 一条免费 Server酱微信日报，完整历史与持久状态放专用公开分支。
 
-本地应用层、离线与模拟验证已完成。2026-10-03 已初始化根 Git 仓库、导入并实际复用 paper-digest 固定源码的元数据外围、保留原 MIT 许可，并将 Actions 移到仓库根目录。实际复用边界见 [UPSTREAM.md](UPSTREAM.md)；本目录 LICENSE 覆盖新增代码。尚未推送目标 GitHub 仓库或运行 Ubuntu Actions。
+本地应用层、离线与模拟验证已完成。2026-10-03 已导入并实际复用固定上游元数据、保留原 MIT 许可，并发布到 [KinokoY/ArxivDaily](https://github.com/KinokoY/ArxivDaily)。同一 CLI 的本机真实两 ID 贯通、公开 Git 状态/归档和一次微信发送已通过；GitHub hosted runner 因账户 billing issue 未启动，Ubuntu 尚待验证。实际复用边界见 [UPSTREAM.md](UPSTREAM.md)；本目录 LICENSE 覆盖新增代码。
 
 ## 本机运行
 
@@ -61,7 +61,7 @@ $env:PYTHONPATH = "$PWD\app\.runtime;$PWD\app"
 
 自动恢复已超界时，显式使用 `run --retry-stage selection|body|review|summary|delivery --retry-ids ID...`。默认从 `--state-dir` 的现有状态复制到隔离空间做 dry-run；`--live` 可验证真实接口，只有再加 `--send` 和发布检查点才修改正常状态/实际发送。人工恢复仅处理指定 ID，记录授权事件与旧尝试，不修改首次发现时间。delivery 恢复保留原累计次数，仅给指定论文增加有限的人工重试额度，不重新生成已有总结。缺少运行凭据的 `--send` 会在外部调用前报错。
 
-DeepSeek 已进行两次真实终筛和有限全文/图像总结联调，成功结果与失败尝试见 `reports/live-api-smoke.json`，可读样例见 `reports/live-sample-digest.md`。这只覆盖固定小样本。Server酱本轮未发送；真实 GitHub 分支、Ubuntu runner 与微信免费详情仍待部署验证。默认价格使用官方高峰单价的保守上界，不是账单精确值；不默认设置月预算。
+此前小规模 DeepSeek 联调见 `reports/live-api-smoke.json`，可读审阅样例见 `reports/live-sample-digest.md`。最新真实 GitHub 状态+免费微信有界贯通见 `reports/live-e2e-2026-10-03.json`：一次发送、一次查询得到已识别平台成功；Ubuntu 被账户锁阻止，手机详情待用户确认。默认价格使用官方高峰单价的保守上界，不是账单精确值；不默认设置月预算。
 
 公开简报和微信正文只展示论文链接及便于快速判断是否要阅读全文的总结，不展示证据定位列表。来源版本和段落、图表定位仍保存在内部总结状态，供质量校验与追查。
 

@@ -1,6 +1,8 @@
 # 部署与恢复（准备稿）
 
-项目已定向导入 `X-PG13/paper-digest@8906f9a12309956913eab29dade75c01cb7d0771` 上游，保留原 MIT 许可与归属；上游定向 67 个基线测试通过。真实 DeepSeek 已完成 2 次终筛和 MediSee 的有限 max 总结/两张图片联调；修复了表号和数值保留问题，原模型结果、失败尝试与人工审阅版分别记录。Server酱本轮发送 0 次，GitHub Ubuntu Actions 尚未运行。以下步骤用于在用户自己的公开仓库部署；本地结果不能代替远端端到端验收。
+项目已定向导入 `X-PG13/paper-digest@8906f9a12309956913eab29dade75c01cb7d0771` 上游，保留原 MIT 许可与归属；上游定向 67 个基线测试通过。真实 DeepSeek 小样本联调与本机 live CLI 的 GitHub/微信贯通已完成，累计本轮发送一条正常合并简报；原模型输出、失败尝试和早期人工审阅样例分别记录。Ubuntu Actions 因账户锁未启动，本地结果不能代替 hosted runner 验收。
+
+最新部署在 [KinokoY/ArxivDaily](https://github.com/KinokoY/ArxivDaily)：代码、公开 config.toml、原生两个 Secrets、正式 arxivdaily-state 已就绪。本机同一 CLI 完成真实两 ID 贯通及一次微信发送/查询，公开归档验证通过；手机详情待确认。首次 hosted Actions 在步骤开始前被 GitHub 账户 billing issue 拒绝，需要用户在 [Billing](https://github.com/settings/billing) 解除账户锁；不要靠改业务门禁或反复重跑来处理该账户问题。解锁后再验证 Ubuntu，已有送达记录和总结会复用，普通重跑不会重发这两篇。
 
 ## 准备
 

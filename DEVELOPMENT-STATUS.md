@@ -2,6 +2,10 @@
 
 更新：2026-10-03（Asia/Shanghai）。应用在 `app/`，实际 Actions 在根 `.github/`，原规划文档、ADR、术语表与技能保留。
 
+本日后续部署：用户明确取消简报中的证据定位展示，Markdown 和微信正文已移除该段，内部 JSON 证据和验证保留；渲染/恢复相关 33 项测试通过。当前项目已提交并推送到 [KinokoY/ArxivDaily](https://github.com/KinokoY/ArxivDaily)，本机全局 Git 身份与仓库原生 Actions Secrets 已配置。首次 [Actions 运行](https://github.com/KinokoY/ArxivDaily/actions/runs/37054943916) 在任何步骤开始前因账户 billing issue 锁定而失败，模型调用/发送均为 0；这需要用户在 GitHub 账户侧解除，不是代码或 Secrets 失败。下文记录先前本地阶段，最新部署结果以验收报告为准。
+
+随后使用本机 conda ml 执行同一真实 CLI，完成两 ID 有界贯通：LISA 轻量、MediSee 完整；真实元数据、high 终筛、max 正文/图像总结、GitHub 同步检查点、不可变公开归档及微信发送均完成，错误 0。正式 arxivdaily-state 已建立，未导入 mock；一次 POST、一次查询得到已识别微信成功，状态 confirmed，手机详情仍待用户确认。本次 usage 高峰价估计 0.22409856 CNY。见 [实测报告](app/reports/live-e2e-2026-10-03.json)和[已发送简报](https://github.com/KinokoY/ArxivDaily/blob/arxivdaily-state/archive/2026/10/03/20261002T194028Z-8e001f7e-e9733bebb072.md)。Ubuntu 与完整每日窗口尚未实跑，GitHub 账户锁仍待处理。
+
 本轮用户已授权 Git 初始化、Actions 适配及少量真实 DeepSeek 调用。根仓库已初始化为 `main`，Git 可用；没有设置根/全局提交身份、创建根提交、配置远端或推送 GitHub。仅临时测试仓库使用局部测试身份。本地秘钥文件在 Git 忽略目录，公开文件检查不含秘钥值。
 
 98 个公共文件已暂存供审阅，暂存区无两把真实秘钥，原始上游文件与来源清单哈希保持一致，暂存格式检查通过。已修复本轮沙箱创建 Git 目录造成的普通 Windows 用户所有权检查，无需用户设置全局信任例外。

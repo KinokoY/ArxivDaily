@@ -1,5 +1,15 @@
 # ArxivDaily 分层验收
 
+## 2026-10-03 发布与首次运行
+
+用户最新决定已落实：公开 Markdown 日报和微信正文删除证据定位列表，保留内部 JSON 证据与质量验证。渲染和 pipeline 恢复相关 33 项测试通过；已有样例已清理展示，原不可变发送快照不改写。
+
+初始提交 eb713042324286ae9b07ed1c6c3a9f4498930917 已发布至 [KinokoY/ArxivDaily](https://github.com/KinokoY/ArxivDaily)，两把运行凭证配置为原生 Actions Secrets。第一次手工贯通限定 LISA、MediSee，计划合并一条通知；[运行 37054943916](https://github.com/KinokoY/ArxivDaily/actions/runs/37054943916) 在 runner 开始任何步骤前失败，GitHub 检查注释明确为账户 billing issue 锁定。没有模型请求或微信 POST，不构成 Ubuntu 或端到端验收，需用户处理 GitHub 账户锁后重试。
+
+本机替代执行使用相同 live CLI 和实际 GitHub 仓库，从空正式状态完成有界两 ID 贯通。LISA select/light、MediSee select/full；两次真实终筛和一次 max 全文/两张图总结均成功，无处理错误。所有阶段使用同步 Git 检查点，正式状态已推送 arxivdaily-state；不可变快照匿名 GET 的字节哈希与本地一致且没有证据定位展示。生成 1 full+1 light 的单份简报，1 POST、1状态查询返回已识别微信成功，最终 confirmed，应用当天发送尝试为 1，没有告警或补发。原已发送快照保持不可变。
+
+详见 [live-e2e-2026-10-03.json](live-e2e-2026-10-03.json)与[真实简报](https://github.com/KinokoY/ArxivDaily/blob/arxivdaily-state/archive/2026/10/03/20261002T194028Z-8e001f7e-e9733bebb072.md)。本次已返回 usage 的配置高峰估算 **0.22409856 CNY**，不是账单。本地贯通不涵盖 Ubuntu、完整每日日期窗口、查询额度/平台日界；手机详情是否可读仍待用户确认，confirmed 不等于已读。
+
 ## 2026-10-03 增量验收
 
 根 Git 已成功初始化为 main，提交身份/远端尚未配置，未创建根提交或发布 GitHub。本轮在 conda ml / Python 3.12.9 下推进既有应用，不覆盖既有成功路径。

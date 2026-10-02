@@ -2,6 +2,12 @@
 
 更新：2026-10-03（Asia/Shanghai）。本轮完成根 Git 初始化、固定上游元数据复用、Actions 适配和有限真实 DeepSeek 联调。下一阶段是实际 GitHub 部署与免费微信端到端验证。
 
+本日后续覆盖：简报/微信正文不再显示证据定位，内部证据和质量校验保留。根 main 已创建提交并推送至 [KinokoY/ArxivDaily](https://github.com/KinokoY/ArxivDaily)，本机全局 Git 身份和原生仓库 Secrets 已配置。第一次 [Actions 37054943916](https://github.com/KinokoY/ArxivDaily/actions/runs/37054943916) 因账户 billing issue 被拒绝启动，步骤、收费调用、发送均未执行；需用户解除 GitHub 账户锁。先前“未提交/未配置身份”的记录已被此次部署覆盖，不重新初始化或搜索凭据。
+
+最新实测：本机 ml 使用相同 CLI 的两 ID 真实贯通成功，完整 1、轻量 1、错误 0；正式 arxivdaily-state 从空状态 bootstrap，真实检查点/归档公开可访问后才发微信，1 POST+1查询返回 known confirmed。手机确认仍待用户，不能称已读；Ubuntu 仍未运行，不能将本地成功代替 Actions。见 app/reports/live-e2e-2026-10-03.json。已发送基础 ID 2308.00692、2504.11008 登记正常交付，后续正常运行会复用/跳过，不能为再次验收强制重发或重付总结费。
+
+接续操作：GitHub Billing 解锁后再手工运行 Actions，按最新正式状态验证；保留状态与不可变已发送快照，优先复用成功阶段。无需重新配置 Git 身份、远端或两个 Secrets。本地 app/.state 是正式远端分支的独立 checkout，app/config.toml 是已配置公开 URL 的无秘钥配置；本次发微信后都已同步。只需用户确认手机详情和解除账户锁。
+
 业务已确认，常规技术细节自主处理。全部临时文件留当前工作区，本地优先 conda ml / Python 3.12.9 + app/.runtime。适合的独立工作优先委派 GPT-6 Sol high/xhigh，约定文件所有权，由根代理审阅验收。
 
 ## 阅读索引

@@ -2,6 +2,8 @@
 
 更新：2026-10-03（Asia/Shanghai）。公开论文来源已有校验；本轮重新核查官方 DeepSeek schema/价目与 GitHub schedule timezone，并执行有限真实 DeepSeek 调用。本轮微信发送 0 次，真实 GitHub/Ubuntu 尚未执行。
 
+本日后续实测覆盖：正式 GitHub 状态分支、公开 raw 归档字节校验和本机相同 CLI 已贯通。Server酱一次 POST、一次 push 查询返回已识别微信执行成功，公开状态 confirmed；手机详情待用户确认。查询是否扣发送额度及真实平台日界没有测定。首次 Actions 在任何步骤前因账户 billing issue 被拒绝启动，Ubuntu 仍未执行。分层证据见 [live-e2e-2026-10-03.json](../reports/live-e2e-2026-10-03.json)。
+
 - [arxiv 4.0.1 PyPI](https://pypi.org/project/arxiv/4.0.1/)：使用 Client.results(Search)，移除的下载方法未调用。安装后的真实 Client 通过合成 feed 分页测试，四个固定版本 ID 的真实元数据请求也成功。
 - [DeepSeek Thinking](https://api-docs.deepseek.com/guides/thinking_mode/) 与 [Chat schema](https://api-docs.deepseek.com/api/create-chat-completion/)：默认 Flash 的筛选 high、总结 max，显式 thinking enabled；只接受正常 stop 完成的完整 JSON，并进行业务与证据校验。
 - [DeepSeek 官方中文价目](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)：当前 Flash 默认名映射到 V4.1 Flash，支持图像与 JSON。配置取高峰 CNY 单价（缓存输入 0.04、未缓存输入 2、输出 8 / 百万 tokens）作保守上界；实际计费还受时段/日期/价格变更影响，usage 中保留实际 model/fingerprint，不能把估计当精确账单。
