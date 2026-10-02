@@ -1,0 +1,244 @@
+name: Daily arXiv digest
+
+on:
+  schedule:
+    - cron: '17 15 * * *'
+      timezone: Asia/Shanghai
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Daily window, replay IDs, backfill dates, or retry a saved stage
+        type: choice
+        options: [daily, replay, backfill, retry]
+        default: daily
+        required: true
+      ids:
+        description: arXiv IDs separated by spaces or commas (replay or retry)
+        type: string
+        required: false
+      retry_stage:
+        description: Saved stage to retry for the IDs above (retry mode only)
+        type: choice
+        options: [selection, body, review, summary, delivery]
+        default: delivery
+        required: false
+      start:
+        description: UTC start date YYYY-MM-DD (backfill only)
+        type: string
+        required: false
+      end:
+        description: UTC end date YYYY-MM-DD (backfill only)
+        type: string
+        required: false
+      send:
+        description: Send notification and update shared state; dry-run still uses paid analysis
+        type: boolean
+        default: false
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: arxivdaily-state
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      TMPDIR: ${{ github.workspace }}/app/tmp
+      PIP_CACHE_DIR: ${{ github.workspace }}/app/tmp/pip-cache
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Check out application
+        uses: actions/checkout@v4
+        with:
+          # The bootstrap step may create the state branch once. checkout
+          # removes its temporary credential from Git config after the job.
+          persist-credentials: true
+      - name: Prepare workspace temporary directories
+        run: mkdir -p tmp/pip-cache
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare public configuration
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          mkdir -p tmp
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+          import tomllib
+
+          path = Path('config.toml')
+          source = path.read_text(encoding='utf-8') if path.is_file() else Path('config.example.toml').read_text(encoding='utf-8')
+          repository = os.environ['REPOSITORY']
+          assert re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository)
+          if not tomllib.loads(source).get('archive', {}).get('public_base_url'):
+              section = re.search(r'(?ms)^\[archive\]\s*\n.*?(?=^\[|\Z)', source)
+              if section is None:
+                  raise SystemExit('configuration has no [archive] section')
+              replacement = f'public_base_url = "https://raw.githubusercontent.com/{repository}/arxivdaily-state"'
+              updated, count = re.subn(r'^public_base_url\s*=.*$', replacement, section.group(),
+                                       count=1, flags=re.MULTILINE)
+              if count != 1:
+                  raise SystemExit('configuration has no archive.public_base_url field')
+              source = source[:section.start()] + updated + source[section.end():]
+          if not path.is_file() or path.read_text(encoding='utf-8') != source:
+              path.write_text(source, encoding='utf-8')
+          PY
+      - name: Check public files and repository visibility
+        env:
+          REPOSITORY: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_SEND: ${{ github.event.inputs.send }}
+        run: |
+          set -euo pipefail
+          python scripts/check_public_files.py --tracked-only
+          if [[ "$EVENT_NAME" == "schedule" || "$INPUT_SEND" == "true" ]]; then
+            python - <<'PY'
+          import json
+          import os
+          from urllib.request import Request, urlopen
+
+          url = f"https://api.github.com/repos/{os.environ['REPOSITORY']}"
+          with urlopen(Request(url, headers={'Accept': 'application/vnd.github+json',
+                                             'User-Agent': 'ArxivDaily-preflight'}), timeout=15) as response:
+              details = json.load(response)
+          if details.get('private') is not False:
+              raise SystemExit('The repository must be publicly readable before a real delivery')
+          PY
+          fi
+      - name: Check state branch
+        id: state_ref
+        env:
+          STATE_BRANCH: arxivdaily-state
+        run: |
+          set -euo pipefail
+          ref="$(git ls-remote --heads origin "refs/heads/$STATE_BRANCH")"
+          if [[ -n "$ref" ]]; then
+            echo 'exists=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'exists=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Bootstrap empty state branch
+        if: steps.state_ref.outputs.exists == 'false' && (github.event_name == 'schedule' || inputs.send == true)
+        env:
+          STATE_BRANCH: arxivdaily-state
+        run: |
+          set -euo pipefail
+          # Build a one-file root commit without checking out or copying code.
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          state = {'schema_version': 1, 'collection': {}, 'papers': {}, 'runs': [],
+                   'digests': {}, 'chains': {}, 'daily': {}, 'usage': []}
+          Path('tmp/bootstrap-state.json').write_text(json.dumps(state, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+          blob="$(git hash-object -w tmp/bootstrap-state.json)"
+          tree="$(printf '100644 blob %s\tstate.json\n' "$blob" | git mktree)"
+          commit="$(printf 'Initialize ArxivDaily state\n' | git -c user.name=ArxivDaily -c user.email=arxivdaily@users.noreply.github.com commit-tree "$tree")"
+          git push --quiet origin "$commit:refs/heads/$STATE_BRANCH"
+      - name: Check out persistent state branch
+        if: steps.state_ref.outputs.exists == 'true' || github.event_name == 'schedule' || inputs.send == true
+        uses: actions/checkout@v4
+        with:
+          ref: arxivdaily-state
+          path: app/.state
+          fetch-depth: 1
+      - name: Install locked dependencies
+        run: |
+          python -m pip install -r requirements.lock
+          python -m pip install -e . --no-deps --no-build-isolation
+      - name: Run digest and checkpoint before side effects
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+          INPUT_IDS: ${{ github.event.inputs.ids }}
+          INPUT_RETRY_STAGE: ${{ github.event.inputs.retry_stage }}
+          INPUT_START: ${{ github.event.inputs.start }}
+          INPUT_END: ${{ github.event.inputs.end }}
+          INPUT_SEND: ${{ github.event.inputs.send }}
+          EVENT_NAME: ${{ github.event_name }}
+          CHECKPOINT_COMMAND: >-
+            python scripts/publish_state.py
+            --state-dir .state
+            --branch arxivdaily-state
+            --repository ${{ github.repository }}
+            --message arxivdaily-checkpoint
+        run: |
+          set -euo pipefail
+          args=(--config config.toml --state-dir .state)
+          if [[ "$EVENT_NAME" == "schedule" ]]; then
+            mode=daily
+            do_send=true
+          else
+            mode="$INPUT_MODE"
+            do_send="$INPUT_SEND"
+          fi
+          if [[ "$mode" == "replay" || "$mode" == "retry" ]]; then
+            [[ -n "$INPUT_IDS" ]] || { echo 'Replay or retry requires ids'; exit 2; }
+            id_text="${INPUT_IDS//,/ }"
+            id_text="${id_text//$'\n'/ }"
+            read -r -a selected_ids <<< "$id_text"
+            [[ ${#selected_ids[@]} -gt 0 ]] || { echo 'Replay or retry requires ids'; exit 2; }
+          fi
+          case "$mode" in
+            daily)
+              command=run
+              ;;
+            replay)
+              command=replay
+              args+=(--ids "${selected_ids[@]}")
+              ;;
+            backfill)
+              [[ -n "$INPUT_START" && -n "$INPUT_END" ]] || { echo 'Backfill requires start and end'; exit 2; }
+              command=run
+              args+=(--start "$INPUT_START" --end "$INPUT_END")
+              ;;
+            retry)
+              [[ -n "$INPUT_RETRY_STAGE" ]] || { echo 'Retry requires a stage'; exit 2; }
+              command=run
+              args+=(--retry-stage "$INPUT_RETRY_STAGE" --retry-ids "${selected_ids[@]}")
+              ;;
+            *)
+              echo 'Invalid dispatch mode'
+              exit 2
+              ;;
+          esac
+          if [[ "$do_send" == "true" ]]; then
+            args+=(--send --checkpoint-command "$CHECKPOINT_COMMAND")
+          else
+            args+=(--live)
+          fi
+          python -m arxivdaily.cli "$command" "${args[@]}"
+      - name: Summarize run
+        if: always()
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_MODE: ${{ github.event.inputs.mode }}
+        run: |
+          if [[ "$EVENT_NAME" == "schedule" ]]; then mode=daily; else mode="$INPUT_MODE"; fi
+          printf '## ArxivDaily\n\nMode: %s\n\n' "$mode" >> "$GITHUB_STEP_SUMMARY"
+          if [[ -f reports/run.json ]]; then
+            printf 'A redacted run report is available in the arxivdaily-run-report artifact.\n' >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'No run report was produced. Review the job failure and persistent state.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload redacted run report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: arxivdaily-run-report
+          path: app/reports/run.json
+          if-no-files-found: ignore
+          retention-days: 3

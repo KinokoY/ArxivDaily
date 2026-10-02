@@ -1,0 +1,319 @@
+{
+  "fixture_kind": "representative_manual_offline_mock_not_model_validation",
+  "source_manifest_sha256": "01a84020da1c4c2347a2aa729bdec56086390b60e33cd4a984fec4598095e698",
+  "papers": [
+    {
+      "version_id": "2308.00692v3",
+      "title": "LISA: Reasoning Segmentation via Large Language Model",
+      "abstract": "Although perception systems have made remarkable advancements in recent years, they still rely on explicit human instruction or pre-defined categories to identify the target objects before executing visual recognition tasks. Such systems cannot actively reason and comprehend implicit user intention. In this work, we propose a new segmentation task -- reasoning segmentation. The task is designed to output a segmentation mask given a complex and implicit query text. Furthermore, we establish a benchmark comprising over one thousand image-instruction-mask data samples, incorporating intricate reasoning and world knowledge for evaluation purposes. Finally, we present LISA: large Language Instructed Segmentation Assistant, which inherits the language generation capabilities of multimodal Large Language Models (LLMs) while also possessing the ability to produce segmentation masks. We expand the original vocabulary with a <SEG> token and propose the embedding-as-mask paradigm to unlock the segmentation capability. Remarkably, LISA can handle cases involving complex reasoning and world knowledge. Also, it demonstrates robust zero-shot capability when trained exclusively on reasoning-free datasets. In addition, fine-tuning the model with merely 239 reasoning segmentation data samples results in further performance enhancement. Both quantitative and qualitative experiments show our method effectively unlocks new reasoning segmentation capabilities for multimodal LLMs. Code, models, and data are available at https://github.com/dvlab-research/LISA.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2023-08-01T17:50:17+00:00",
+      "updated": "2024-05-01T05:10:13+00:00",
+      "authors": [
+        "Xin Lai",
+        "Zhuotao Tian",
+        "Yukang Chen",
+        "Yanwei Li",
+        "Yuhui Yuan",
+        "Shu Liu",
+        "Jiaya Jia"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2308.00692v3"
+    },
+    {
+      "version_id": "2504.11008v2",
+      "title": "MediSee: Reasoning-based Pixel-level Perception in Medical Images",
+      "abstract": "Despite remarkable advancements in pixel-level medical image perception, existing methods are either limited to specific tasks or heavily rely on accurate bounding boxes or text labels as input prompts. However, the medical knowledge required for input is a huge obstacle for general public, which greatly reduces the universality of these methods. Compared with these domain-specialized auxiliary information, general users tend to rely on oral queries that require logical reasoning. In this paper, we introduce a novel medical vision task: Medical Reasoning Segmentation and Detection (MedSD), which aims to comprehend implicit queries about medical images and generate the corresponding segmentation mask and bounding box for the target object. To accomplish this task, we first introduce a Multi-perspective, Logic-driven Medical Reasoning Segmentation and Detection (MLMR-SD) dataset, which encompasses a substantial collection of medical entity targets along with their corresponding reasoning. Furthermore, we propose MediSee, an effective baseline model designed for medical reasoning segmentation and detection. The experimental results indicate that the proposed method can effectively address MedSD with implicit colloquial queries and outperform traditional medical referring segmentation methods.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2025-04-15T09:28:53+00:00",
+      "updated": "2025-04-23T15:29:29+00:00",
+      "authors": [
+        "Qinyue Tong",
+        "Ziqian Lu",
+        "Jun Liu",
+        "Yangming Zheng",
+        "Zheming Lu"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2504.11008v2"
+    },
+    {
+      "version_id": "2505.11872v4",
+      "title": "PRS-Med: Position Reasoning Segmentation in Medical Imaging",
+      "abstract": "Prompt-based medical image segmentation has rapidly emerged, yet existing methods rely on explicit prompts like bounding boxes and struggle to reason about the spatial relationships essential for clinical diagnosis. While general-domain models attempt complex coordinate regression, these approaches often lack the structured reliability required for medical applications. In this work, we introduce PRS-Med, a unified framework that adopts an elegant, clinical-first approach to position reasoning segmentation. By utilizing a medical vision-language model integrated with a segmentation decoder, PRS-Med mimics the structured \"search patterns\" used by radiologists to identify pathologies within specific anatomical zones. To support this robust reasoning, we present the Medical Position Reasoning Segmentation (PosMed) dataset, comprising 116,000 expert-validated, spatially grounded question-answer pairs across six imaging modalities. Unlike previous brittle attempts at spatial reasoning, PosMed leverages a scalable, deterministic pipeline validated by board-certified radiologists to ensure clinical accuracy. Extensive experiments demonstrate that our zone-based reasoning not only improves segmentation accuracy (mean Dice improvements up to +31.2\\%) but also provides a high-confidence interpretability layer that outperforms state-of-the-art complex reasoning models. By prioritizing functional reliability over unnecessary technical complexity, PRS-Med offers a practical and scalable baseline for the next generation of intelligent medical assistants.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2025-05-17T06:42:28+00:00",
+      "updated": "2026-03-31T06:07:46+00:00",
+      "authors": [
+        "Quoc-Huy Trinh",
+        "Minh-Van Nguyen",
+        "Jun Zeng",
+        "Debesh Jha",
+        "Ulas Bagci"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2505.11872v4"
+    },
+    {
+      "version_id": "2603.19169v1",
+      "title": "ARIADNE: A Perception-Reasoning Synergy Framework for Trustworthy Coronary Angiography Analysis",
+      "abstract": "Conventional pixel-wise loss functions fail to enforce topological constraints in coronary vessel segmentation, producing fragmented vascular trees despite high pixel-level accuracy. We present ARIADNE, a two-stage framework coupling preference-aligned perception with RL-based diagnostic reasoning for topologically coherent stenosis detection. The perception module employs DPO to fine-tune the Sa2VA vision-language foundation model using Betti number constraints as preference signals, aligning the policy toward geometrically complete vessel structures rather than pixel-wise overlap metrics. The reasoning module formulates stenosis localization as a Markov Decision Process with an explicit rejection mechanism that autonomously defers ambiguous anatomical candidates such as bifurcations and vessel crossings, shifting from coverage maximization to reliability optimization. On 1,400 clinical angiograms, ARIADNE achieves state-of-the-art centerline Dice of 0.838, reduces false positives by 41% compared to geometric baselines. External validation on multi-center benchmarks ARCADE and XCAD confirms generalization across acquisition protocols. This represents the first application of DPO for topological alignment in medical imaging, demonstrating that preference-based learning over structural constraints mitigates topological violations while maintaining diagnostic sensitivity in interventional cardiology workflows.",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-03-19T17:25:19+00:00",
+      "updated": "2026-03-19T17:25:19+00:00",
+      "authors": [
+        "Zhan Jin",
+        "Yu Luo",
+        "Yizhou Zhang",
+        "Ziyang Cui",
+        "Yuqing Wei",
+        "Xianchao Liu",
+        "Xueying Zeng",
+        "Qing Zhang"
+      ],
+      "pdf_url": "https://arxiv.org/pdf/2603.19169v1"
+    }
+  ],
+  "decisions": {
+    "2308.00692": {
+      "status": "select",
+      "route": "general_reasoning",
+      "tier": "light",
+      "reason": "人工离线校准预期：通用推理分割，非本方法的 RL/DPO；轻量档。",
+      "abstract_evidence": [
+        "output a segmentation mask given a complex and implicit query text"
+      ],
+      "uncertainty": [],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 72
+    },
+    "2504.11008": {
+      "status": "select",
+      "route": "medical_reasoning",
+      "tier": "full",
+      "reason": "人工离线校准预期：医学图像隐含查询的掩码及边框输出；正文方法为监督训练。",
+      "abstract_evidence": [
+        "Medical Reasoning Segmentation and Detection (MedSD)"
+      ],
+      "uncertainty": [],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 92
+    },
+    "2505.11872": {
+      "status": "select",
+      "route": "medical_reasoning",
+      "tier": "full",
+      "reason": "人工离线校准预期：医学影像空间位置推理与掩码输出；不标为 RL/DPO。",
+      "abstract_evidence": [
+        "position reasoning segmentation"
+      ],
+      "uncertainty": [],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 91
+    },
+    "2603.19169": {
+      "status": "select",
+      "route": "medical_objective",
+      "tier": "full",
+      "reason": "人工离线校准预期：冠脉分割 DPO 拓扑偏好对齐及独立的 RL 狭窄定位贡献。",
+      "abstract_evidence": [
+        "perception module employs DPO",
+        "reasoning module formulates stenosis localization as a Markov Decision Process"
+      ],
+      "uncertainty": [],
+      "rl_is_method": true,
+      "dpo_is_method": true,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 94
+    }
+  },
+  "summaries": {
+    "2504.11008": {
+      "background": "专科医学分割模型交互性不足，隐含口语查询使目标定位更加困难。",
+      "contribution": "论文提出 MedSD 医学推理分割与检测任务，以及同时输出掩码和边框的 MediSee 基线。",
+      "method": "MediSee 结合 LLaVA-Med、MedSAM 与候选 token 路由融合。训练同时优化文本生成、掩码和边框，并通过相似度目标进一步微调。",
+      "experiments": "MLMR-SD 结果表的首组 Dice 指标中，MediSee 进一步微调后为 59.4，未进一步微调版本为 56.7。",
+      "conclusion": "作者认为该任务和基线可推动隐含查询下的医学图像分割研究；现有验证范围是 MLMR-SD 与 SA-Med2D-20M 基准，真实临床部署表现未报告。",
+      "evidence": [
+        {
+          "field": "background",
+          "locator": "section:1. Introduction",
+          "quote": "ormance in specific tasks, such approaches remain constrained by insufficient flexibility and a lack of interactive capabilities in real-world applications. Re",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "field": "contribution",
+          "locator": "section:6. Conclusion",
+          "quote": "This work introduces a novel medical vision task, Medical Reasoning Segmentation and Detection (MedSD), designed to interpret implicit queries about medical images and generate the corresponding segmentation mask and bounding box. We also p",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "field": "method",
+          "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+          "quote": "sents the overall architecture of our MediSee, which consists of four core components: MedSAM ( Ma et al., 2024a ) as vision backbone 𝒢 i e ​ n ​ c \\mathcal{G}_{i}^{enc} and mask decoder 𝒢 i d ​ e ​ c \\mathcal{G}_{i}^{dec} , LLaVA-Med ( Li et al., 2023 ) as multi-modal large language foundation model 𝒢 i \\mathcal{G}_{i} , two routers",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "field": "method",
+          "locator": "section:4. Baseline Framework / 4.3. Overall Optimization",
+          "quote": "nable. End-to-End Training for MediSee. MediSee is trained through three supervisions. As for text generation, we compute the auto-regressive cross-entropy loss ℒ t ​ x ​ t \\mathcal{L}_{txt} between the generated text output y ^ t ​ x ​ t \\hat{y}_{txt} and the ground-truth text answer y t ​ x ​ t y_{txt} . For the generatio",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "field": "experiments",
+          "locator": "table:Table 1",
+          "quote": "MediSee 56.7 46.6 56.4 57.0 46.9 61.4 57.4 47.2 61.4 ✓/✓ MediSee (ft) 59.4 49.2 60.3 59.3 49.0 63.3 59.4 49.2 63.7",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "field": "conclusion",
+          "locator": "section:6. Conclusion",
+          "quote": "soning complex queries related to medical images. We hope this work can provide some insights for bringing medical segmentation models into everyday life.",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "field": "conclusion",
+          "locator": "section:5. Experiments / 5.1. Experimental Setting",
+          "quote": " a mixed training dataset, incorporating both the traditional medical semantic segmentation dataset SA-Med2D-20M ( Ye et al., 2023 ) and our MLMR-SD dataset. We utilize a subset of SA-Med2D-20M for training and employ a series of ca",
+          "source_url": "https://arxiv.org/html/2504.11008v2"
+        }
+      ]
+    },
+    "2505.11872": {
+      "background": "医学分割依赖显式提示，临床空间关系问题需要位置推理和掩码输出。",
+      "contribution": "论文提出 PosMed 数据集及 PRS-Med 框架，以区域式位置推理支持医学图像分割。",
+      "method": "框架把视觉骨干、经 LoRA 调整的医学多模态模型与提示掩码解码器结合，生成位置解释和分割掩码；定位采用类别化空间区域而非像素坐标回归。",
+      "experiments": "论文报告肺 CT 组相对次优方法的 mDice 与 mIoU 提升分别为 31.2% 和 41.5%。",
+      "conclusion": "作者把病灶大小与结构间距离等更丰富的空间推理列为后续工作。",
+      "evidence": [
+        {
+          "field": "background",
+          "locator": "section:1 Introduction",
+          "quote": " been developed and shown potential in the diagnostic. However, they still face a challenge in position identification when doctors often need to identify unknown tumor locations to make a decision for their diagnosis. Additionally, the position information can help d",
+          "source_url": "https://arxiv.org/html/2505.11872v4"
+        },
+        {
+          "field": "contribution",
+          "locator": "section:7 Conclusion",
+          "quote": "sion In conclusion, we introduce PosMed , a large-scale dataset designed to benchmark and advance position-reasoning segmentation in medical imaging, together with PRS-Med , a strong baseline tailored to this challenge. Our experiments reveal two key gaps in ",
+          "source_url": "https://arxiv.org/html/2505.11872v4"
+        },
+        {
+          "field": "method",
+          "locator": "section:4 PRS-Med",
+          "quote": "all architecture is illustrated in Figure 4 . Figure 4 : The architecture of PRS-Med comprises three primary components: (1) the Tiny Vision Backbone, (2) the Prompt Mask Decoder, and (3) the Multimodal-LLM. The framework accepts two input modalities: an image and a text-based prompt (e.g., a question). The image is processed through a vision encoder, while the prompt is embedded via a ",
+          "source_url": "https://arxiv.org/html/2505.11872v4"
+        },
+        {
+          "field": "method",
+          "locator": "section:7 Conclusion",
+          "quote": "gmentation. PRS-Med eschews the unnecessary complexity of pixel-coordinate regression in favor of a Categorical Spatial Grounding framework. This design choice ensures that the model’s reasoning is not only technically sound but clinically",
+          "source_url": "https://arxiv.org/html/2505.11872v4"
+        },
+        {
+          "field": "experiments",
+          "locator": "section:6 Evaluation Results / 6.1 Quantitative Results",
+          "quote": ", + 3.1 % ) (+3.4\\%,+3.1\\%) on Breast Ultrasound, ( + 13.6 % , + 13.2 % ) (+13.6\\%,+13.2\\%) on Brain MRI, ( + 31.2 % , + 41.5 % ) (+31.2\\%,+41.5\\%) on Lung CT-Scan, ( + 0.1 % , + 0.2 % ) (+0.1\\%,+0.2\\%) on Lung X-ray, ( + 1.9 % , + 1.7 % ) (+1.9\\%,+1.7\\%) on Polyp Endoscopy, and ( + 0.8 % , + 1.",
+          "source_url": "https://arxiv.org/html/2505.11872v4"
+        },
+        {
+          "field": "conclusion",
+          "locator": "section:7 Conclusion",
+          "quote": "future work on spatially grounded multimodal reasoning and accelerate progress toward practical clinical applications. Future work. We plan to extend PosMed and PRS-Med toward richer spatial reasoning beyond localization, enabling the model to identify relevant anatomy and tumors while also",
+          "source_url": "https://arxiv.org/html/2505.11872v4"
+        }
+      ]
+    },
+    "2603.19169": {
+      "background": "单纯像素级分割目标难约束冠脉树拓扑连续性，碎裂血管会干扰狭窄定位。",
+      "contribution": "ARIADNE 将拓扑一致的血管重建与上下文感知的狭窄定位联成感知和推理两个阶段。",
+      "method": "感知阶段以 DPO 偏好对齐完整血管结构；诊断阶段基于血管中心线构造决策过程，并用 PPO 优化带拒绝选项的策略。",
+      "experiments": "论文在狭窄检测中报告 TPR 0.867、FPPI 0.85，优于所列比较方法。",
+      "conclusion": "论文认为结构有效性应进入训练目标，并指出二维造影的投影歧义仍需多视角分析。",
+      "evidence": [
+        {
+          "field": "background",
+          "locator": "section:1 Introduction",
+          "quote": "ional loss functions, including Cross-Entropy and Dice Loss Milletari et al. (2016) , optimize pixel-level accuracy independently without explicitly penalizing topological errors Shit et al. (2021) . Consequently, these models frequently produce fragmented vessel trees where distal branches app",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "field": "contribution",
+          "locator": "section:2 Methods / 2.1 Framework Overview",
+          "quote": "ision-making process of human experts. As illustrated in Fig. 1 and Fig. 2 , the system consists of two biomimetic stages that mirror the visual-cognitive workflow of expert interventional cardiologists: a perception module for anatomically consistent vascular reconstruction and a reasoning module for context-",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "field": "method",
+          "locator": "section:2 Methods / 2.1 Framework Overview",
+          "quote": "designed to enforce topological continuity throughout the segmentation process. We integrate DPO Rafailov et al. (2023) into the training pipeline to align model outputs toward geometrically complete vessel structures rather than fragmented pixel-level predictions. This preference-based learning",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "field": "method",
+          "locator": "section:2 Methods / 2.3 Structure-Guided Reasoning via Reinforcement Learning",
+          "quote": "count factor γ = 0.99 \\gamma=0.99 . Policy optimization is performed using Proximal Policy Optimization (PPO) Schulman et al. (2017) , which ensures stable gradient updates by constraining the policy update through the clipped surrogate objective: where ρ t ​ ( θ ) = π",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "field": "experiments",
+          "locator": "section:4 Results / 4.2 Stenosis Detection Performance",
+          "quote": "ts presented in Table 3 . The proposed framework achieved a True Positive Rate (TPR) of 0.867, substantially outperforming existing methods including Stenunet Lin et al. (2023) (0.812), Liu et al. Liu et al. (2023) (0.729), and Du et al. Du et al. (2021) (0.773), representing relative improvements of 6",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "field": "experiments",
+          "locator": "section:4 Results / 4.2 Stenosis Detection Performance",
+          "quote": "the integration of the rejection mechanism significantly reduced the False Positives Per Image (FPPI) to 0.85 , compared to ranges of 1.89–2.45 in baseline methods. This reduction addresses the alert fatigue problem in automated diagnosis, ensuring ",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "field": "conclusion",
+          "locator": "section:6 Conclusion",
+          "quote": " deployment scenarios across institutions with varying data availability. While extension to multi-view analysis and integration with complementary imaging modalities will be necessary to address projection ambiguities inherent in 2D angiography, the current results establish a methodologica",
+          "source_url": "https://arxiv.org/html/2603.19169v1"
+        }
+      ]
+    }
+  },
+  "sources": {
+    "2308.00692": {
+      "kind": "html",
+      "path": "sources/2308.00692v3.html",
+      "sha256": "7bb7ea943a465756d034c17f63da7c25050e4bf5b91620687ba862b53d392893"
+    },
+    "2504.11008": {
+      "kind": "html",
+      "path": "sources/2504.11008v2.html",
+      "sha256": "b1b3a6eee2e5a02220804cc2366fd54ad5579be5502106761e6421818214ecdc"
+    },
+    "2505.11872": {
+      "kind": "html",
+      "path": "sources/2505.11872v4.html",
+      "sha256": "cb3ade4ca1ee56939e93bff6b0e89d41189613a93b74fe5538e48b6105167690"
+    },
+    "2603.19169": {
+      "kind": "html",
+      "path": "sources/2603.19169v1.html",
+      "sha256": "b562bb204f8a6a446ee7cc0ab7055811ad568964e4533d7e98cbe7b18d0b5d27"
+    }
+  }
+}

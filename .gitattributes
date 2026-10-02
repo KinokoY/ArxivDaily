@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# Pinned upstream bytes, including the original MIT notice, must not be
+# changed by Windows autocrlf or text normalization.
+app/arxivdaily/_vendor/paper_digest/** -text
+app/arxivdaily/_vendor/paper_digest/README.md text eol=lf
+app/arxivdaily/_vendor/paper_digest/ORIGIN.json text eol=lf
+
+# The representative fixture hashes this source manifest's exact bytes.
+app/fixtures/sources/manifest.json -text whitespace=cr-at-eol

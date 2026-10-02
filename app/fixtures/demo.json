@@ -1,0 +1,261 @@
+{
+  "fixture_kind": "synthetic",
+  "papers": [
+    {
+      "version_id": "2501.90001v1",
+      "title": "Synthetic fixture 1: medical_reasoning",
+      "abstract": "Medical image reasoning segmentation uses implicit queries and supervised mask learning.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-10-01T02:00:00+00:00",
+      "updated": "2026-10-01T02:00:00+00:00",
+      "authors": [],
+      "pdf_url": ""
+    },
+    {
+      "version_id": "2501.90002v1",
+      "title": "Synthetic fixture 2: general_reasoning",
+      "abstract": "Reasoning segmentation uses implicit instructions with a large language model and supervised learning.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-10-01T02:00:00+00:00",
+      "updated": "2026-10-01T02:00:00+00:00",
+      "authors": [],
+      "pdf_url": ""
+    },
+    {
+      "version_id": "2501.90003v1",
+      "title": "Synthetic fixture 3: irrelevant",
+      "abstract": "Medical segmentation with attention improves Dice but offers no objective contribution.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-10-01T02:00:00+00:00",
+      "updated": "2026-10-01T02:00:00+00:00",
+      "authors": [],
+      "pdf_url": ""
+    },
+    {
+      "version_id": "2501.90004v1",
+      "title": "Synthetic fixture 4: transferable_objective",
+      "abstract": "We propose a segmentation loss for medical masks; theory and transfer require further study.",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-10-01T02:00:00+00:00",
+      "updated": "2026-10-01T02:00:00+00:00",
+      "authors": [],
+      "pdf_url": ""
+    }
+  ],
+  "decisions": {
+    "2501.90001": {
+      "status": "select",
+      "route": "medical_reasoning",
+      "tier": "full",
+      "reason": "脚本化测试预期，不是模型实测判断。",
+      "abstract_evidence": [
+        "Medical image reasoning segmentation uses implicit queries and supervised mask learning."
+      ],
+      "uncertainty": [],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 89,
+      "review_evidence": []
+    },
+    "2501.90002": {
+      "status": "select",
+      "route": "general_reasoning",
+      "tier": "light",
+      "reason": "脚本化测试预期，不是模型实测判断。",
+      "abstract_evidence": [
+        "Reasoning segmentation uses implicit instructions with a large language model and supervised learning."
+      ],
+      "uncertainty": [],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 88,
+      "review_evidence": []
+    },
+    "2501.90003": {
+      "status": "reject",
+      "route": "irrelevant",
+      "tier": "light",
+      "reason": "脚本化测试预期，不是模型实测判断。",
+      "abstract_evidence": [
+        "Medical segmentation with attention improves Dice but offers no objective contribution."
+      ],
+      "uncertainty": [],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 87,
+      "review_evidence": []
+    },
+    "2501.90004": {
+      "status": "uncertain",
+      "route": "transferable_objective",
+      "tier": "full",
+      "reason": "脚本化测试预期，不是模型实测判断。",
+      "abstract_evidence": [
+        "We propose a segmentation loss for medical masks; theory and transfer require further study."
+      ],
+      "uncertainty": [
+        "需要正文确认理论与迁移"
+      ],
+      "rl_is_method": false,
+      "dpo_is_method": false,
+      "theory_evidence": false,
+      "transfer_evidence": false,
+      "score": 86,
+      "review_evidence": []
+    }
+  },
+  "bodies": {
+    "2501.90001": {
+      "version_id": "2501.90001v1",
+      "source_url": "https://arxiv.org/html/2501.90001v1",
+      "source_type": "html",
+      "sections": [
+        {
+          "locator": "section:Introduction",
+          "text": "Medical implicit queries require pixel masks rather than text answers.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Contribution",
+          "text": "We introduce a supervised segmentation interface for implicit medical queries.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Method",
+          "text": "The image encoder and language decoder are trained with supervised mask and text losses.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Experiments",
+          "text": "On the synthetic benchmark the supervised system achieves Dice 82.5 compared with baseline Dice 78.0.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Conclusion",
+          "text": "The method supports implicit medical requests but generalization to unseen modalities is not established.",
+          "kind": "section"
+        }
+      ],
+      "figures": [],
+      "quality": {
+        "passed": true,
+        "fixture_kind": "synthetic",
+        "reading_order_ok": true,
+        "read_locators": [
+          "section:Introduction",
+          "section:Contribution",
+          "section:Method",
+          "section:Experiments",
+          "section:Conclusion"
+        ],
+        "reasons": []
+      }
+    },
+    "2501.90004": {
+      "version_id": "2501.90004v1",
+      "source_url": "https://arxiv.org/html/2501.90004v1",
+      "source_type": "html",
+      "sections": [
+        {
+          "locator": "section:Introduction",
+          "text": "Medical implicit queries require pixel masks rather than text answers.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Contribution",
+          "text": "We introduce a supervised segmentation interface for implicit medical queries.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Method",
+          "text": "The image encoder and language decoder are trained with supervised mask and text losses.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Experiments",
+          "text": "On the synthetic benchmark the supervised system achieves Dice 82.5 compared with baseline Dice 78.0.",
+          "kind": "section"
+        },
+        {
+          "locator": "section:Conclusion",
+          "text": "The method supports implicit medical requests but generalization to unseen modalities is not established.",
+          "kind": "section"
+        }
+      ],
+      "figures": [],
+      "quality": {
+        "passed": true,
+        "fixture_kind": "synthetic",
+        "reading_order_ok": true,
+        "read_locators": [
+          "section:Introduction",
+          "section:Contribution",
+          "section:Method",
+          "section:Experiments",
+          "section:Conclusion"
+        ],
+        "reasons": []
+      }
+    }
+  },
+  "summaries": {
+    "2501.90001": {
+      "background": "医学隐含请求需要输出像素掩码。",
+      "contribution": "该合成样例提出监督式医学推理分割接口。",
+      "method": "图像编码器与语言解码器用掩码和文本监督损失训练。",
+      "experiments": "合成基准 Dice 为 82.5，比较基线为 78.0。",
+      "conclusion": "可处理隐含医学请求；对未见模态的泛化尚未确立。",
+      "evidence": [
+        {
+          "field": "background",
+          "locator": "section:Introduction",
+          "quote": "Medical implicit queries require pixel masks rather than text answers.",
+          "source_url": "https://arxiv.org/html/2501.90001v1",
+          "label": ""
+        },
+        {
+          "field": "contribution",
+          "locator": "section:Contribution",
+          "quote": "We introduce a supervised segmentation interface for implicit medical queries.",
+          "source_url": "https://arxiv.org/html/2501.90001v1",
+          "label": ""
+        },
+        {
+          "field": "method",
+          "locator": "section:Method",
+          "quote": "The image encoder and language decoder are trained with supervised mask and text losses.",
+          "source_url": "https://arxiv.org/html/2501.90001v1",
+          "label": ""
+        },
+        {
+          "field": "experiments",
+          "locator": "section:Experiments",
+          "quote": "On the synthetic benchmark the supervised system achieves Dice 82.5 compared with baseline Dice 78.0.",
+          "source_url": "https://arxiv.org/html/2501.90001v1",
+          "label": ""
+        },
+        {
+          "field": "conclusion",
+          "locator": "section:Conclusion",
+          "quote": "The method supports implicit medical requests but generalization to unseen modalities is not established.",
+          "source_url": "https://arxiv.org/html/2501.90001v1",
+          "label": ""
+        }
+      ]
+    }
+  }
+}

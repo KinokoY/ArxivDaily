@@ -1,0 +1,19 @@
+{
+  "isolated_no_site": true,
+  "dependencies": {
+    "arxiv": ".runtime/arxiv/__init__.py",
+    "httpx": ".runtime/httpx/__init__.py",
+    "bs4": ".runtime/bs4/__init__.py",
+    "pypdf": ".runtime/pypdf/__init__.py",
+    "pypdfium2": ".runtime/pypdfium2/__init__.py",
+    "PIL": ".runtime/PIL/__init__.py",
+    "tzdata": ".runtime/tzdata/__init__.py",
+    "pytest": ".runtime/pytest/__init__.py",
+    "yaml": ".runtime/yaml/__init__.py"
+  },
+  "full": 3,
+  "light": 1,
+  "errors": [],
+  "external_llm_calls": false,
+  "real_delivery": false
+}

@@ -1,0 +1,12 @@
+.runtime/
+.state/
+tmp/
+runs/
+reports/run.json
+__pycache__/
+.pytest_cache/
+*.egg-info/
+fixtures/sources/*.pdf
+fixtures/sources/*.html
+.env
+.env.*

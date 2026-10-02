@@ -1,0 +1,681 @@
+{
+  "kind": "real_deepseek_small_smoke",
+  "contract_fingerprint": "93da70f7a55b5c71d5c2ab75f22f2906ecc5dde73bb7009a69051605f3559a2e",
+  "notification_requests": 0,
+  "production_state_changed": false,
+  "stages": {
+    "selection:2308.00692": {
+      "status": "validated",
+      "attempts": 2,
+      "result": {
+        "status": "select",
+        "route": "general_reasoning",
+        "tier": "light",
+        "reason": "The paper introduces reasoning segmentation and LISA, a multimodal LLM with an embedding-as-mask paradigm for segmentation. It matches general reasoning segmentation but uses no RL/DPO method and lacks medical or transferable theoretical grounding, so it is light.",
+        "abstract_evidence": [
+          "we propose a new segmentation task -- reasoning segmentation",
+          "we present LISA: large Language Instructed Segmentation Assistant",
+          "We expand the original vocabulary with a <SEG> token and propose the embedding-as-mask paradigm to unlock the segmentation capability."
+        ],
+        "uncertainty": [],
+        "rl_is_method": false,
+        "dpo_is_method": false,
+        "theory_evidence": false,
+        "transfer_evidence": false,
+        "score": 55,
+        "review_evidence": []
+      }
+    },
+    "selection:2504.11008": {
+      "status": "validated",
+      "attempts": 1,
+      "result": {
+        "status": "select",
+        "route": "medical_reasoning",
+        "tier": "full",
+        "reason": "The paper introduces a novel medical reasoning segmentation and detection task, a corresponding dataset, and a baseline model, making it a genuine contribution to medical reasoning segmentation rather than a background mention. It does not employ RL or DPO methods and does not provide theoretical or transferable objective evidence.",
+        "abstract_evidence": [
+          "we introduce a novel medical vision task: Medical Reasoning Segmentation and Detection (MedSD), which aims to comprehend implicit queries about medical images and generate the corresponding segmentation mask and bounding box for the target object.",
+          "we propose MediSee, an effective baseline model designed for medical reasoning segmentation and detection."
+        ],
+        "uncertainty": [],
+        "rl_is_method": false,
+        "dpo_is_method": false,
+        "theory_evidence": false,
+        "transfer_evidence": false,
+        "score": 90,
+        "review_evidence": []
+      }
+    },
+    "summary:2504.11008": {
+      "status": "validated",
+      "attempts": 3,
+      "history": [
+        {
+          "status": "validated",
+          "attempts": 2,
+          "prompt_version": "arxivdaily-summary-v2",
+          "result": {
+            "background": "医学图像分割旨在识别器官、病灶和组织等 ROI，但既往 task-specific specialist models 灵活性不足，而交互式医学图像分割（IMIS）虽允许用户引导，却仍难以处理需要医学推理的隐式文本查询。",
+            "contribution": "作者提出新的医学推理分割与检测任务 MedSD，构建含丰富逻辑问答的 MLMR-SD 数据集，并提出基线模型 MediSee。",
+            "method": "MediSee 以 MedSAM 作为视觉骨干和掩码解码器，以 LLaVA-Med 作为多模态大语言模型，并利用路由器对多个候选 token 的隐藏表示进行自适应民主融合，分别生成检测框和分割掩码。 在优化上，作者对语言模型使用 LoRA 微调并完全微调掩码/检测解码器与路由器，且在 MLMR-SD 额外微调阶段引入基于相似图的相似性损失。",
+            "experiments": "作者报告 MediSee 在 MLMR-SD 及传统医学指代感知基准上优于多种相关方法与组合式基线，消融实验表明自适应民主候选融合、MedSAM 的输入选择以及相似性损失对性能有效；未报告独立临床验证或外部多中心评估。",
+            "conclusion": "作者总结认为本文提出 MedSD、MLMR-SD 与 MediSee，为医学推理图像感知提供数据集和基线，并希望推动医学分割模型走向日常应用；未报告局限性分析或临床部署评估。",
+            "evidence": [
+              {
+                "field": "background",
+                "locator": "section:1. Introduction",
+                "quote": "Previous works predominantly focus on task-specific segmentation",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "background",
+                "locator": "section:1. Introduction",
+                "quote": "existing IMIS methods usually fail to give expected responses for these inputs that involve implicit logic",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "contribution",
+                "locator": "section:1. Introduction",
+                "quote": "We introduce the medical reasoning segmentation and detection task (MedSD)",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "contribution",
+                "locator": "section:1. Introduction",
+                "quote": "We construct the MLMR-SD dataset",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "contribution",
+                "locator": "section:1. Introduction",
+                "quote": "We propose an effective baseline model, MediSee",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "method",
+                "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+                "quote": "which consists of four core components: MedSAM",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "method",
+                "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+                "quote": "LLaVA-Med ( Li et al., 2023 ) as multi-modal large language foundation model",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "method",
+                "locator": "section:4. Baseline Framework / 4.2. Adaptive Democratic Candidate Fusion",
+                "quote": "we propose the Adaptive Democratic Candidate Fusion method",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "method",
+                "locator": "section:4. Baseline Framework / 4.3. Overall Optimization",
+                "quote": "we leverage LoRA ( Hu et al., 2022 ) to perform efficient fine-tuning",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "method",
+                "locator": "section:4. Baseline Framework / 4.3. Overall Optimization",
+                "quote": "we introduce an additional similarity loss during the fine-tuning phase",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "experiments",
+                "locator": "section:5. Experiments / 5.2. Medical Reasoning Segmentation Results",
+                "quote": "existing works fail to address this task",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "experiments",
+                "locator": "section:5. Experiments / 5.3. Medical Reasoning Detection Results",
+                "quote": "MediSee significantly outperforms other methods",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "experiments",
+                "locator": "section:5. Experiments / 5.4. Vanilla Medical Referring Perception",
+                "quote": "our approach remains highly competitive in traditional medical image perception task",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "experiments",
+                "locator": "section:5. Experiments / 5.5. Ablation Study",
+                "quote": "MediSee performs the best",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "experiments",
+                "locator": "section:5. Experiments / 5.5. Ablation Study",
+                "quote": "thereby validating its effectiveness",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "conclusion",
+                "locator": "section:6. Conclusion",
+                "quote": "This work introduces a novel medical vision task, Medical Reasoning Segmentation and Detection (MedSD)",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              },
+              {
+                "field": "conclusion",
+                "locator": "section:6. Conclusion",
+                "quote": "We hope this work can provide some insights for bringing medical segmentation models into everyday life.",
+                "source_url": "https://arxiv.org/html/2504.11008v2",
+                "label": ""
+              }
+            ]
+          },
+          "manual_review": "structure_and_located_quotes_validated_but_experimental_metrics_omitted; prompt/parser correction required"
+        }
+      ],
+      "prompt_version": "arxivdaily-summary-v3",
+      "body_fingerprint": "e5f95fe154aecdf9a2d65c2a1d679a651e6975435990d52476fb9a941990bd32",
+      "result": {
+        "background": "医学图像分割虽已用于识别器官、病灶等 ROI，但既有专科模型和交互式医学图像分割（IMIS）多依赖精确框或标注文本，难以处理需要逻辑推理的隐含查询。",
+        "contribution": "本文提出医学推理分割与检测任务 MedSD，构建包含 200K 复杂隐式问答的 MLMR-SD 数据集，并提出基线模型 MediSee。",
+        "method": "MediSee 以 MedSAM 作为视觉骨干与掩码解码器、LLaVA-Med 作为多模态大语言模型，并通过 Adaptive Democratic Candidate Fusion 对候选 token 的隐藏表示进行自适应加权融合，为下游分割与检测解码器提供输入。训练综合文本、掩码和边界框监督，并在 MLMR-SD 额外微调阶段引入相似度损失；作者还称通过约束措施减轻 LLaVA-Med 幻觉影响。",
+        "experiments": "实验在 MLMR-SD 与 SA-Med2D-20M 数据上进行；Table 1 在 val/test 及 Dice/gIoU/cIoU 表头下将 MediSee (ft) 与 LISA-7B 对比，MediSee (ft) 报告值为 59.4 49.2 60.3 59.3 49.0 63.3 59.4 49.2 63.7，LISA-7B 报告值为 31.6 21.2 16.2 31.1 19.9 16.0 25.4 15.5 12.2。",
+        "conclusion": "作者总结称，本文提出 MedSD 任务、构建数据集并提供基线模型 MediSee，以推理实现医学图像像素级感知，并希望推动医学分割模型进入日常应用。",
+        "evidence": [
+          {
+            "field": "background",
+            "locator": "section:1. Introduction",
+            "quote": "Previous works predominantly focus on task-specific segmentation",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "background",
+            "locator": "section:1. Introduction",
+            "quote": "existing IMIS methods usually fail to give expected responses for these inputs that involve implicit logic.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "background",
+            "locator": "section:1. Introduction",
+            "quote": "many state-of-the-art IMIS tools require users to provide precise bounding boxes or labeled texts to define regions of interest",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "background",
+            "locator": "section:2. Related Works",
+            "quote": "they lack the ability to handle implicit, reasoning-based textual queries",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "contribution",
+            "locator": "section:1. Introduction",
+            "quote": "We introduce the medical reasoning segmentation and detection task (MedSD), which requires reasoning output based on user queries about medical images.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "contribution",
+            "locator": "section:1. Introduction",
+            "quote": "We construct the MLMR-SD dataset, which includes 200K complex and implicit question pairs for MedSD.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "contribution",
+            "locator": "section:1. Introduction",
+            "quote": "We propose an effective baseline model, MediSee to adaptively fuse multiple candidate guidance information.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "method",
+            "locator": "section:1. Introduction",
+            "quote": "MediSee utilizes a democratic and adaptive feature fusion mechanism, leveraging the hidden representations of multiple candidate tokens to enhance the quality and diversity of the candidate guidance information input to the downstream decoder.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "method",
+            "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+            "quote": "MedSAM ( Ma et al., 2024a ) as vision backbone",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "method",
+            "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+            "quote": "LLaVA-Med ( Li et al., 2023 ) as multi-modal large language foundation model",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "method",
+            "locator": "section:4. Baseline Framework / 4.2. Adaptive Democratic Candidate Fusion",
+            "quote": "we propose the Adaptive Democratic Candidate Fusion method, which aims to adaptively and democratically select the optimal features from the candidate tokens",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "method",
+            "locator": "section:4. Baseline Framework / 4.3. Overall Optimization",
+            "quote": "Therefore, we introduce an additional similarity loss during the fine-tuning phase to further improve the model’s comprehensive understanding ability.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "method",
+            "locator": "section:3. MLMR-SD Dataset",
+            "quote": "To effectively mitigate the impact of hallucinations generated by LLaVA-Med, we implement two measures.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "experiments",
+            "locator": "section:5. Experiments / 5.1. Experimental Setting",
+            "quote": "incorporating both the traditional medical semantic segmentation dataset SA-Med2D-20M ( Ye et al., 2023 ) and our MLMR-SD dataset.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "experiments",
+            "locator": "section:5. Experiments / 5.2. Medical Reasoning Segmentation Results",
+            "quote": "The medical reasoning segmentation results are presented in Table 1 .",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "experiments",
+            "locator": "table:Table 1",
+            "quote": "Methods val test",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": "Table 1"
+          },
+          {
+            "field": "experiments",
+            "locator": "table:Table 1",
+            "quote": "Dice gIoU cIoU Dice gIoU cIoU Dice gIoU cIoU",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": "Table 1"
+          },
+          {
+            "field": "experiments",
+            "locator": "table:Table 1",
+            "quote": "MediSee (ft) 59.4 49.2 60.3 59.3 49.0 63.3 59.4 49.2 63.7",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": "Table 1"
+          },
+          {
+            "field": "experiments",
+            "locator": "table:Table 1",
+            "quote": "LISA-7B ( Lai et al., 2024 ) 31.6 21.2 16.2 31.1 19.9 16.0 25.4 15.5 12.2 ✓/✗",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": "Table 1"
+          },
+          {
+            "field": "conclusion",
+            "locator": "section:6. Conclusion",
+            "quote": "This work introduces a novel medical vision task, Medical Reasoning Segmentation and Detection (MedSD), designed to interpret implicit queries about medical images and generate the corresponding segmentation mask and bounding box.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          },
+          {
+            "field": "conclusion",
+            "locator": "section:6. Conclusion",
+            "quote": "We hope this work can provide some insights for bringing medical segmentation models into everyday life.",
+            "source_url": "https://arxiv.org/html/2504.11008v2",
+            "label": ""
+          }
+        ]
+      },
+      "manual_review_result": {
+        "reviewer": "root agent",
+        "body_fingerprint": "e5f95fe154aecdf9a2d65c2a1d679a651e6975435990d52476fb9a941990bd32",
+        "source_pdf": "https://arxiv.org/pdf/2504.11008v2",
+        "physical_pdf_page": 6,
+        "table": "Table 1",
+        "observations": [
+          "Matched validation/overall Dice column against MediSee (ft) and LISA-7B rows on the rendered original PDF.",
+          "Preserved provider output separately; shortened raw numeric rows into a labelled comparison and restored the source over-200K qualifier."
+        ],
+        "summary": {
+          "background": "医学图像分割虽已用于识别器官、病灶等 ROI，但既有专科模型和交互式医学图像分割（IMIS）多依赖精确框或标注文本，难以处理需要逻辑推理的隐含查询。",
+          "contribution": "本文提出医学推理分割与检测任务 MedSD，构建包含超过 200K 复杂隐式问答的 MLMR-SD 数据集，并提出基线模型 MediSee。",
+          "method": "MediSee 以 MedSAM 和 LLaVA-Med 为骨干，通过 Adaptive Democratic Candidate Fusion 自适应融合候选 token 的隐藏表示，分别生成分割掩码与检测框。训练使用文本、掩码和边界框监督，并在额外微调阶段加入相似性损失。",
+          "experiments": "在 MLMR-SD 验证集整体评估中，额外微调的 MediSee 的 Dice 为 59.4，而 LISA-7B 为 31.6（表 1）；这些结果来自论文基准，不能视为独立临床验证。",
+          "conclusion": "作者总结称，本文提出 MedSD 任务、构建数据集并提供基线模型 MediSee，以推理实现医学图像像素级感知，并希望推动医学分割模型进入日常应用。",
+          "evidence": [
+            {
+              "field": "background",
+              "locator": "section:1. Introduction",
+              "quote": "Previous works predominantly focus on task-specific segmentation",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "background",
+              "locator": "section:1. Introduction",
+              "quote": "existing IMIS methods usually fail to give expected responses for these inputs that involve implicit logic.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "background",
+              "locator": "section:1. Introduction",
+              "quote": "many state-of-the-art IMIS tools require users to provide precise bounding boxes or labeled texts to define regions of interest",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "background",
+              "locator": "section:2. Related Works",
+              "quote": "they lack the ability to handle implicit, reasoning-based textual queries",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "contribution",
+              "locator": "section:1. Introduction",
+              "quote": "We introduce the medical reasoning segmentation and detection task (MedSD), which requires reasoning output based on user queries about medical images.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "contribution",
+              "locator": "section:1. Introduction",
+              "quote": "We construct the MLMR-SD dataset, which includes 200K complex and implicit question pairs for MedSD.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "contribution",
+              "locator": "section:1. Introduction",
+              "quote": "We propose an effective baseline model, MediSee to adaptively fuse multiple candidate guidance information.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "method",
+              "locator": "section:1. Introduction",
+              "quote": "MediSee utilizes a democratic and adaptive feature fusion mechanism, leveraging the hidden representations of multiple candidate tokens to enhance the quality and diversity of the candidate guidance information input to the downstream decoder.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "method",
+              "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+              "quote": "MedSAM ( Ma et al., 2024a ) as vision backbone",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "method",
+              "locator": "section:4. Baseline Framework / 4.1. Model Architecture",
+              "quote": "LLaVA-Med ( Li et al., 2023 ) as multi-modal large language foundation model",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "method",
+              "locator": "section:4. Baseline Framework / 4.2. Adaptive Democratic Candidate Fusion",
+              "quote": "we propose the Adaptive Democratic Candidate Fusion method, which aims to adaptively and democratically select the optimal features from the candidate tokens",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "method",
+              "locator": "section:4. Baseline Framework / 4.3. Overall Optimization",
+              "quote": "Therefore, we introduce an additional similarity loss during the fine-tuning phase to further improve the model’s comprehensive understanding ability.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "method",
+              "locator": "section:3. MLMR-SD Dataset",
+              "quote": "To effectively mitigate the impact of hallucinations generated by LLaVA-Med, we implement two measures.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "experiments",
+              "locator": "section:5. Experiments / 5.1. Experimental Setting",
+              "quote": "incorporating both the traditional medical semantic segmentation dataset SA-Med2D-20M ( Ye et al., 2023 ) and our MLMR-SD dataset.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "experiments",
+              "locator": "section:5. Experiments / 5.2. Medical Reasoning Segmentation Results",
+              "quote": "The medical reasoning segmentation results are presented in Table 1 .",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "experiments",
+              "locator": "table:Table 1",
+              "quote": "Methods val test",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": "Table 1"
+            },
+            {
+              "field": "experiments",
+              "locator": "table:Table 1",
+              "quote": "Dice gIoU cIoU Dice gIoU cIoU Dice gIoU cIoU",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": "Table 1"
+            },
+            {
+              "field": "experiments",
+              "locator": "table:Table 1",
+              "quote": "MediSee (ft) 59.4 49.2 60.3 59.3 49.0 63.3 59.4 49.2 63.7",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": "Table 1"
+            },
+            {
+              "field": "experiments",
+              "locator": "table:Table 1",
+              "quote": "LISA-7B ( Lai et al., 2024 ) 31.6 21.2 16.2 31.1 19.9 16.0 25.4 15.5 12.2 ✓/✗",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": "Table 1"
+            },
+            {
+              "field": "conclusion",
+              "locator": "section:6. Conclusion",
+              "quote": "This work introduces a novel medical vision task, Medical Reasoning Segmentation and Detection (MedSD), designed to interpret implicit queries about medical images and generate the corresponding segmentation mask and bounding box.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "conclusion",
+              "locator": "section:6. Conclusion",
+              "quote": "We hope this work can provide some insights for bringing medical segmentation models into everyday life.",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": ""
+            },
+            {
+              "field": "experiments",
+              "locator": "table:Table 1",
+              "quote": "overall short query long query",
+              "source_url": "https://arxiv.org/html/2504.11008v2",
+              "label": "Table 1 split headers"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "usage": [
+    {
+      "role": "filter",
+      "model": "deepseek-flash",
+      "fingerprint": "",
+      "prompt_tokens": null,
+      "cached_tokens": null,
+      "completion_tokens": null,
+      "reasoning_tokens": null,
+      "reasoning_tokens_available": false,
+      "usage_available": false,
+      "estimated_cost": null,
+      "cost_estimate_available": false,
+      "currency": "CNY",
+      "pricing_policy": "peak_upper_bound"
+    },
+    {
+      "role": "filter",
+      "model": "deepseek-flash",
+      "fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "prompt_tokens": 547,
+      "cached_tokens": 0,
+      "completion_tokens": 1907,
+      "reasoning_tokens": 1747,
+      "reasoning_tokens_available": true,
+      "usage_available": true,
+      "estimated_cost": 0.01635,
+      "cost_estimate_available": true,
+      "currency": "CNY",
+      "pricing_policy": "peak_upper_bound"
+    },
+    {
+      "role": "filter",
+      "model": "deepseek-flash",
+      "fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "prompt_tokens": 514,
+      "cached_tokens": 0,
+      "completion_tokens": 1032,
+      "reasoning_tokens": 856,
+      "reasoning_tokens_available": true,
+      "usage_available": true,
+      "estimated_cost": 0.009284,
+      "cost_estimate_available": true,
+      "currency": "CNY",
+      "pricing_policy": "peak_upper_bound"
+    },
+    {
+      "role": "summary",
+      "model": "deepseek-flash",
+      "fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "prompt_tokens": 15273,
+      "cached_tokens": 0,
+      "completion_tokens": 11728,
+      "reasoning_tokens": 9280,
+      "reasoning_tokens_available": true,
+      "usage_available": true,
+      "estimated_cost": 0.12437,
+      "cost_estimate_available": true,
+      "currency": "CNY",
+      "pricing_policy": "peak_upper_bound"
+    },
+    {
+      "role": "summary",
+      "model": "deepseek-flash",
+      "fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "prompt_tokens": 15347,
+      "cached_tokens": 0,
+      "completion_tokens": 10521,
+      "reasoning_tokens": 9331,
+      "reasoning_tokens_available": true,
+      "usage_available": true,
+      "estimated_cost": 0.114862,
+      "cost_estimate_available": true,
+      "currency": "CNY",
+      "pricing_policy": "peak_upper_bound"
+    },
+    {
+      "role": "summary",
+      "model": "deepseek-flash",
+      "fingerprint": "aeb56401ca74e127821c4f9126dcb669",
+      "prompt_tokens": 15564,
+      "cached_tokens": 0,
+      "completion_tokens": 17317,
+      "reasoning_tokens": 15636,
+      "reasoning_tokens_available": true,
+      "usage_available": true,
+      "estimated_cost": 0.169664,
+      "cost_estimate_available": true,
+      "currency": "CNY",
+      "pricing_policy": "peak_upper_bound"
+    }
+  ],
+  "observations": [
+    {
+      "http_status": null,
+      "finish_reason": null
+    },
+    {
+      "http_status": 200,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "finish_reason": "stop"
+    },
+    {
+      "http_status": 200,
+      "finish_reason": "stop"
+    }
+  ],
+  "fulltext": {
+    "version_id": "2504.11008v2",
+    "source_url": "https://arxiv.org/html/2504.11008v2",
+    "source_type": "html",
+    "qualified": true,
+    "read_chars": 42104,
+    "section_count": 20,
+    "rendered_physical_pages": [
+      3,
+      4
+    ],
+    "required_images": 2
+  },
+  "updated_at": "2026-10-02T18:53:18.493333+00:00",
+  "prior_attempt_audit": [
+    {
+      "stage": "selection:2308.00692",
+      "attempt": 1,
+      "status": "failed",
+      "error": "llm_request_or_response_failed",
+      "diagnostic": "public endpoint probe confirmed sandbox ConnectError/PermissionError before an HTTP response; no billable response observed"
+    },
+    {
+      "stage": "summary:2504.11008",
+      "attempt": 1,
+      "status": "failed",
+      "error": "llm_request_or_response_failed",
+      "http_status": 200,
+      "finish_reason": "stop",
+      "diagnostic": "application validation failed; exact validation code was not preserved by the previous adapter"
+    }
+  ],
+  "known_peak_estimate_cny": 0.43453,
+  "final_notes": [
+    "2 successful real filters, 3 real summary responses (one application failure, one structurally valid but overly generic, one with verified numeric rows).",
+    "One initial request was blocked by the sandbox before an HTTP response; its unknown-usage record is retained.",
+    "Raw provider envelopes and hidden reasoning were never saved.",
+    "Current prompt v4 adds concise labelled metrics; the last real response used v3. No further paid test was run for that wording refinement.",
+    "Readable sample uses an explicitly recorded source-checked editorial revision; real model output is preserved unchanged in the stage result."
+  ]
+}

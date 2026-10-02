@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools==75.8.2", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arxivdaily"
+version = "0.1.0"
+description = "Evidence-grounded arXiv daily digests with resumable delivery"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+dependencies = ["arxiv==4.0.1", "httpx==0.28.1", "beautifulsoup4==4.15.0", "pypdf==6.19.0", "pypdfium2==5.13.0", "Pillow==11.1.0", "tzdata==2025.2"]
+
+[project.scripts]
+arxivdaily = "arxivdaily.cli:main"
+
+[tool.setuptools]
+packages = ["arxivdaily", "arxivdaily._vendor", "arxivdaily._vendor.paper_digest"]
+
+[tool.setuptools.package-data]
+"arxivdaily._vendor.paper_digest" = ["LICENSE", "README.md", "ORIGIN.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

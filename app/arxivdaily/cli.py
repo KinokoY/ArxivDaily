@@ -1,0 +1,151 @@
+"""Explicit offline/live entrypoints. Credentials are read only from configured env names."""
+from __future__ import annotations
+
+import argparse
+from datetime import datetime
+import json
+import os
+from pathlib import Path
+import sys
+import uuid
+
+from .collection import Collector
+from .config import load_config
+from .delivery import MockDelivery, ServerChan
+from .fulltext import FulltextReader
+from .llm import AnalysisClient
+from .models import ProcessingError, normalize_id, parse_time
+from .pipeline import Pipeline
+from .simulation import FixtureAnalysis, FixtureReader, load_fixture
+from .state import SecretScrubber, StateStore, command_publisher
+
+
+def parser() -> argparse.ArgumentParser:
+    result = argparse.ArgumentParser(description="ArxivDaily: 摘要规则、两角色终筛、正文证据与每日简报")
+    subs = result.add_subparsers(dest="command", required=True)
+    for command in ("run", "simulate", "replay"):
+        p = subs.add_parser(command)
+        p.add_argument("--config", default=None)
+        p.add_argument("--state-dir", default=".state")
+        p.add_argument("--fixture", default=None)
+        p.add_argument("--live", action="store_true", help="enable actual arXiv/fulltext/paid model requests")
+        p.add_argument("--send", action="store_true", help="explicit actual delivery; implies --live")
+        p.add_argument("--checkpoint-command", default=None, help="synchronous publisher command or JSON argv")
+        p.add_argument("--report", default="reports/run.json")
+        p.add_argument("--now", default=None, help="timezone-aware fixture clock (offline only)")
+        p.add_argument("--mock-status", choices=["confirmed", "failed", "unknown", "queued"], default="confirmed")
+        p.add_argument("--promote", nargs="*", default=[], help="explicit promotion of existing selected light records; requires --send")
+        p.add_argument("--resend", nargs="*", default=[], help="explicitly resend existing confirmed content; requires --send")
+        p.add_argument("--retry-stage", choices=["selection","body","review","summary","delivery"], default=None, help="explicit bounded manual recovery; default is an isolated dry run")
+        p.add_argument("--retry-ids", nargs="*", default=[])
+        p.add_argument("--start", default=None)
+        p.add_argument("--end", default=None)
+        p.add_argument("--ids", nargs="*", default=[])
+    return result
+
+
+def main(argv=None) -> int:
+    args = parser().parse_args(argv)
+    app_dir = Path(__file__).resolve().parents[1]
+    report_path = Path(args.report).resolve()
+    scrubber = SecretScrubber()
+    report = {}
+    code = 0
+    try:
+        config = load_config(args.config)
+        names = [config["llm"][r]["api_key_env"] for r in ("filter", "summary")] + [config["delivery"]["sendkey_env"]]
+        secrets = [os.environ.get(n, "") for n in names]
+        scrubber = SecretScrubber(secrets)
+        live = args.live or args.send
+        if args.command == "simulate" and live:
+            raise ValueError("simulate cannot call live services")
+        if live and args.now:
+            raise ValueError("fixture clock cannot be used for live service quota accounting")
+        if bool(args.start) != bool(args.end):
+            raise ValueError("both --start and --end are required for backfill")
+        if (args.promote or args.resend) and not args.send:
+            raise ValueError("promotion or resend requires explicit --send")
+        if sum(bool(x) for x in (args.promote,args.resend,args.retry_stage)) > 1:
+            raise ValueError("choose only one of --promote, --resend, or --retry-stage")
+        ids = [i for group in args.ids for i in group.split(",") if i]
+        promotion_ids = [normalize_id(i)[0] for i in args.promote]
+        resend_ids = [normalize_id(i)[0] for i in args.resend]
+        retry_ids = [normalize_id(i)[0] for group in args.retry_ids for i in group.split(",") if i]
+        if bool(args.retry_stage) != bool(retry_ids) or (args.retry_stage and args.command != "run"):
+            raise ValueError("manual recovery requires run --retry-stage STAGE --retry-ids ID...")
+        if args.command == "replay" and not ids:
+            raise ValueError("replay requires --ids")
+        if args.command != "replay" and ids:
+            raise ValueError("use replay for independent paper IDs")
+        publisher = command_publisher(args.checkpoint_command) if args.send and args.checkpoint_command else None
+        if args.send and (publisher is None or not config["archive"]["public_base_url"]):
+            raise ValueError("--send requires public_base_url and --checkpoint-command")
+        if args.send:
+            required_names = names
+            if args.retry_stage == "delivery" or resend_ids:
+                required_names = [config["delivery"]["sendkey_env"]]
+            elif args.retry_stage in {"body","review","summary"} or promotion_ids:
+                required_names = [config["llm"]["summary"]["api_key_env"],config["delivery"]["sendkey_env"]]
+            missing = sorted({name for name in required_names if not os.environ.get(name)})
+            if missing:
+                raise ValueError("missing required credential environment variables: " + ", ".join(missing))
+        # Dry runs use their own space even if the normal state-dir was supplied.
+        isolated = not args.send and args.command != "simulate"
+        if args.command == "simulate":
+            state_dir = app_dir / "runs" / "simulation" if args.state_dir == ".state" else Path(args.state_dir).resolve()
+            if not state_dir.is_relative_to(app_dir / "runs"):
+                raise ValueError("simulation state must be under app/runs/, separate from deployment state")
+        else:
+            state_dir = app_dir / "runs" / ("dry-" + uuid.uuid4().hex) if isolated else Path(args.state_dir).resolve()
+        if not state_dir.is_relative_to(app_dir):
+            raise ValueError("state directory must be inside app/ to keep temporary files in the workspace")
+        store = StateStore(state_dir, secrets=secrets, publisher=publisher)
+        if args.retry_stage and isolated:
+            original_dir = Path(args.state_dir).resolve()
+            if not original_dir.is_relative_to(app_dir) or not (original_dir / "state.json").is_file():
+                raise ValueError("manual recovery requires an existing state.json inside app/")
+            store.save(StateStore(original_dir,secrets=secrets).load())
+        papers = None
+        if live:
+            collector = Collector(config)
+            analysis = AnalysisClient(config)
+            reader = FulltextReader(config, app_dir / "tmp" / "fulltext")
+            if ids:
+                papers = collector.by_ids(ids)
+            delivery = ServerChan(config) if args.send else None
+        else:
+            fixture_path = Path(args.fixture).resolve() if args.fixture else app_dir / "fixtures" / ("representative.json" if args.command == "replay" else "demo.json")
+            fixture, papers = load_fixture(fixture_path)
+            if ids:
+                wanted = {normalize_id(i)[0] for i in ids}
+                papers = [p for p in papers if p.base_id in wanted]
+                if {p.base_id for p in papers} != wanted:
+                    raise ValueError("requested IDs missing from replay fixture")
+                for identifier in ids:
+                    base_id, version_id = normalize_id(identifier)
+                    if version_id != base_id and not any(p.version_id == version_id for p in papers):
+                        raise ValueError("requested pinned version missing from replay fixture")
+            collector = None
+            analysis = FixtureAnalysis(fixture)
+            reader = FixtureReader(config, fixture, fixture_path, app_dir / "tmp" / "fixture-fulltext")
+            delivery = MockDelivery(args.mock_status)
+        now = parse_time(args.now) if args.now else None
+        if args.retry_stage or resend_ids or promotion_ids:
+            papers = []
+        report = Pipeline(config, store, collector, analysis, reader, delivery, now=now, real_send=args.send).run(papers, manual_start=args.start, manual_end=args.end, promotion_ids=promotion_ids, resend_ids=resend_ids, retry_stage=args.retry_stage, retry_ids=retry_ids)
+        report.update({"mode": "live" if live else "scripted_offline", "real_delivery": args.send, "state_dir": str(state_dir), "dry_run_isolated": isolated, "model_calls": getattr(analysis, "calls", None), "validation_scope": "scripted fixture behavior; not actual LLM or WeChat quality" if not live else "actual provider requests; consult stage status"})
+        code = 1 if report.get("errors") else 0
+    except Exception as exc:
+        code = 2
+        # Controlled local errors are informative; transport objects never logged.
+        detail = str(exc) if isinstance(exc, (ValueError, FileNotFoundError, ProcessingError)) else type(exc).__name__
+        report = {"error": scrubber.text(detail)[:240], "real_delivery": bool(args.send), "status": "failed"}
+    report = scrubber.clean(report)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps(report, ensure_ascii=False))
+    return code
+
+
+if __name__ == "__main__":
+    sys.exit(main())

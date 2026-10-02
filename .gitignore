@@ -1,0 +1,26 @@
+# Runtime secrets stay local; deployment reads GitHub Actions Secrets.
+.secrets/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local tooling and all temporary/download/build output.
+.codex/
+.agents/
+tmp/
+**/__pycache__/
+**/.pytest_cache/
+**/*.egg-info/
+app/.runtime/
+app/.state/
+app/runs/
+app/tmp/
+app/build/
+app/dist/
+app/fixtures/sources/*.html
+app/fixtures/sources/*.pdf
+app/fixtures/sources/*.png
+app/reports/*.xml
+app/reports/run.json

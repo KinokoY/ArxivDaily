@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/X-PG13/paper-digest",
+  "commit": "8906f9a12309956913eab29dade75c01cb7d0771",
+  "license": "MIT",
+  "files_sha256": {
+    "LICENSE": "ef0c8b47ebee94158388f72ca9d4cf6174b0df89afe9918c057070ed2966da37",
+    "__init__.py": "f2004a262712fcc928cc7bb961d7489e2f09e9ea2adb3fb3ea8c7431ebe9be94",
+    "__about__.py": "5d42a371417e8bdc4d8c202edaf39d458064f41642e8d89c781e037bf9c8fb2f",
+    "config.py": "fecced74c8f2fd6a5e49ce9e864437a11e1c7f6cc6505ba11a4507c21b44151a",
+    "arxiv_client.py": "678cbef22a3c097ba1bdfc3646100f1b7cc410ac76319b03d4be79110d3cb5ea",
+    "network.py": "4484ec9a0a3e9522e30494fe730bb929eeeef36cbc768c8e970ccb3474275eda"
+  },
+  "source_bytes": "Raw git show stdout for the pinned commit blobs; no checkout line-ending conversion"
+}

@@ -1,0 +1,199 @@
+{
+  "complete": true,
+  "created_at": "2026-10-02T08:02:12.012888+00:00",
+  "papers": [
+    {
+      "base_id": "2308.00692",
+      "failures": [],
+      "metadata": {
+        "abstract": "Although perception systems have made remarkable advancements in recent years, they still rely on explicit human instruction or pre-defined categories to identify the target objects before executing visual recognition tasks. Such systems cannot actively reason and comprehend implicit user intention. In this work, we propose a new segmentation task -- reasoning segmentation. The task is designed to output a segmentation mask given a complex and implicit query text. Furthermore, we establish a benchmark comprising over one thousand image-instruction-mask data samples, incorporating intricate reasoning and world knowledge for evaluation purposes. Finally, we present LISA: large Language Instructed Segmentation Assistant, which inherits the language generation capabilities of multimodal Large Language Models (LLMs) while also possessing the ability to produce segmentation masks. We expand the original vocabulary with a <SEG> token and propose the embedding-as-mask paradigm to unlock the segmentation capability. Remarkably, LISA can handle cases involving complex reasoning and world knowledge. Also, it demonstrates robust zero-shot capability when trained exclusively on reasoning-free datasets. In addition, fine-tuning the model with merely 239 reasoning segmentation data samples results in further performance enhancement. Both quantitative and qualitative experiments show our method effectively unlocks new reasoning segmentation capabilities for multimodal LLMs. Code, models, and data are available at https://github.com/dvlab-research/LISA.",
+        "authors": [
+          "Xin Lai",
+          "Zhuotao Tian",
+          "Yukang Chen",
+          "Yanwei Li",
+          "Yuhui Yuan",
+          "Shu Liu",
+          "Jiaya Jia"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2308.00692v3",
+        "published": "2023-08-01T17:50:17+00:00",
+        "title": "LISA: Reasoning Segmentation via Large Language Model",
+        "updated": "2024-05-01T05:10:13+00:00",
+        "version_id": "2308.00692v3"
+      },
+      "sources": [
+        {
+          "bytes": 232546,
+          "content_type": "text/html",
+          "kind": "html",
+          "path": "2308.00692v3.html",
+          "resolved_url": "https://arxiv.org/html/2308.00692v3",
+          "retrieved_at": "2026-10-02T07:29:48.642846+00:00",
+          "sha256": "7bb7ea943a465756d034c17f63da7c25050e4bf5b91620687ba862b53d392893",
+          "url": "https://arxiv.org/html/2308.00692v3"
+        },
+        {
+          "bytes": 5266955,
+          "content_type": "application/pdf",
+          "kind": "pdf",
+          "path": "2308.00692v3.pdf",
+          "resolved_url": "https://arxiv.org/pdf/2308.00692v3",
+          "retrieved_at": "2026-10-02T08:03:53.914438+00:00",
+          "sha256": "3cce714934e37ce65e38a7190d73362a034e2d8dbf0785d9f23c9c1fcb1cc9a0",
+          "url": "https://arxiv.org/pdf/2308.00692v3"
+        }
+      ],
+      "unavailable": [],
+      "version_id": "2308.00692v3"
+    },
+    {
+      "base_id": "2504.11008",
+      "failures": [],
+      "metadata": {
+        "abstract": "Despite remarkable advancements in pixel-level medical image perception, existing methods are either limited to specific tasks or heavily rely on accurate bounding boxes or text labels as input prompts. However, the medical knowledge required for input is a huge obstacle for general public, which greatly reduces the universality of these methods. Compared with these domain-specialized auxiliary information, general users tend to rely on oral queries that require logical reasoning. In this paper, we introduce a novel medical vision task: Medical Reasoning Segmentation and Detection (MedSD), which aims to comprehend implicit queries about medical images and generate the corresponding segmentation mask and bounding box for the target object. To accomplish this task, we first introduce a Multi-perspective, Logic-driven Medical Reasoning Segmentation and Detection (MLMR-SD) dataset, which encompasses a substantial collection of medical entity targets along with their corresponding reasoning. Furthermore, we propose MediSee, an effective baseline model designed for medical reasoning segmentation and detection. The experimental results indicate that the proposed method can effectively address MedSD with implicit colloquial queries and outperform traditional medical referring segmentation methods.",
+        "authors": [
+          "Qinyue Tong",
+          "Ziqian Lu",
+          "Jun Liu",
+          "Yangming Zheng",
+          "Zheming Lu"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2504.11008v2",
+        "published": "2025-04-15T09:28:53+00:00",
+        "title": "MediSee: Reasoning-based Pixel-level Perception in Medical Images",
+        "updated": "2025-04-23T15:29:29+00:00",
+        "version_id": "2504.11008v2"
+      },
+      "sources": [
+        {
+          "bytes": 270951,
+          "content_type": "text/html",
+          "kind": "html",
+          "path": "2504.11008v2.html",
+          "resolved_url": "https://arxiv.org/html/2504.11008v2",
+          "retrieved_at": "2026-10-02T08:03:57.447998+00:00",
+          "sha256": "b1b3a6eee2e5a02220804cc2366fd54ad5579be5502106761e6421818214ecdc",
+          "url": "https://arxiv.org/html/2504.11008v2"
+        },
+        {
+          "bytes": 2937375,
+          "content_type": "application/pdf",
+          "kind": "pdf",
+          "path": "2504.11008v2.pdf",
+          "resolved_url": "https://arxiv.org/pdf/2504.11008v2",
+          "retrieved_at": "2026-10-02T08:04:17.489900+00:00",
+          "sha256": "9f1434427387579a1aba989126e11c3bde34898f5ac5c5d823e91e91c81f426d",
+          "url": "https://arxiv.org/pdf/2504.11008v2"
+        }
+      ],
+      "unavailable": [],
+      "version_id": "2504.11008v2"
+    },
+    {
+      "base_id": "2505.11872",
+      "failures": [],
+      "metadata": {
+        "abstract": "Prompt-based medical image segmentation has rapidly emerged, yet existing methods rely on explicit prompts like bounding boxes and struggle to reason about the spatial relationships essential for clinical diagnosis. While general-domain models attempt complex coordinate regression, these approaches often lack the structured reliability required for medical applications. In this work, we introduce PRS-Med, a unified framework that adopts an elegant, clinical-first approach to position reasoning segmentation. By utilizing a medical vision-language model integrated with a segmentation decoder, PRS-Med mimics the structured \"search patterns\" used by radiologists to identify pathologies within specific anatomical zones. To support this robust reasoning, we present the Medical Position Reasoning Segmentation (PosMed) dataset, comprising 116,000 expert-validated, spatially grounded question-answer pairs across six imaging modalities. Unlike previous brittle attempts at spatial reasoning, PosMed leverages a scalable, deterministic pipeline validated by board-certified radiologists to ensure clinical accuracy. Extensive experiments demonstrate that our zone-based reasoning not only improves segmentation accuracy (mean Dice improvements up to +31.2\\%) but also provides a high-confidence interpretability layer that outperforms state-of-the-art complex reasoning models. By prioritizing functional reliability over unnecessary technical complexity, PRS-Med offers a practical and scalable baseline for the next generation of intelligent medical assistants.",
+        "authors": [
+          "Quoc-Huy Trinh",
+          "Minh-Van Nguyen",
+          "Jun Zeng",
+          "Debesh Jha",
+          "Ulas Bagci"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2505.11872v4",
+        "published": "2025-05-17T06:42:28+00:00",
+        "title": "PRS-Med: Position Reasoning Segmentation in Medical Imaging",
+        "updated": "2026-03-31T06:07:46+00:00",
+        "version_id": "2505.11872v4"
+      },
+      "sources": [
+        {
+          "bytes": 255794,
+          "content_type": "text/html",
+          "kind": "html",
+          "path": "2505.11872v4.html",
+          "resolved_url": "https://arxiv.org/html/2505.11872v4",
+          "retrieved_at": "2026-10-02T08:04:21.318609+00:00",
+          "sha256": "cb3ade4ca1ee56939e93bff6b0e89d41189613a93b74fe5538e48b6105167690",
+          "url": "https://arxiv.org/html/2505.11872v4"
+        },
+        {
+          "bytes": 3077748,
+          "content_type": "application/pdf",
+          "kind": "pdf",
+          "path": "2505.11872v4.pdf",
+          "resolved_url": "https://arxiv.org/pdf/2505.11872v4",
+          "retrieved_at": "2026-10-02T08:04:27.555111+00:00",
+          "sha256": "bd36ab4e6e7a1647aa04670ef17ca707abcc273ef5141fd8ecec19dc51901108",
+          "url": "https://arxiv.org/pdf/2505.11872v4"
+        }
+      ],
+      "unavailable": [],
+      "version_id": "2505.11872v4"
+    },
+    {
+      "base_id": "2603.19169",
+      "failures": [],
+      "metadata": {
+        "abstract": "Conventional pixel-wise loss functions fail to enforce topological constraints in coronary vessel segmentation, producing fragmented vascular trees despite high pixel-level accuracy. We present ARIADNE, a two-stage framework coupling preference-aligned perception with RL-based diagnostic reasoning for topologically coherent stenosis detection. The perception module employs DPO to fine-tune the Sa2VA vision-language foundation model using Betti number constraints as preference signals, aligning the policy toward geometrically complete vessel structures rather than pixel-wise overlap metrics. The reasoning module formulates stenosis localization as a Markov Decision Process with an explicit rejection mechanism that autonomously defers ambiguous anatomical candidates such as bifurcations and vessel crossings, shifting from coverage maximization to reliability optimization. On 1,400 clinical angiograms, ARIADNE achieves state-of-the-art centerline Dice of 0.838, reduces false positives by 41% compared to geometric baselines. External validation on multi-center benchmarks ARCADE and XCAD confirms generalization across acquisition protocols. This represents the first application of DPO for topological alignment in medical imaging, demonstrating that preference-based learning over structural constraints mitigates topological violations while maintaining diagnostic sensitivity in interventional cardiology workflows.",
+        "authors": [
+          "Zhan Jin",
+          "Yu Luo",
+          "Yizhou Zhang",
+          "Ziyang Cui",
+          "Yuqing Wei",
+          "Xianchao Liu",
+          "Xueying Zeng",
+          "Qing Zhang"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2603.19169v1",
+        "published": "2026-03-19T17:25:19+00:00",
+        "title": "ARIADNE: A Perception-Reasoning Synergy Framework for Trustworthy Coronary Angiography Analysis",
+        "updated": "2026-03-19T17:25:19+00:00",
+        "version_id": "2603.19169v1"
+      },
+      "sources": [
+        {
+          "bytes": 265521,
+          "content_type": "text/html",
+          "kind": "html",
+          "path": "2603.19169v1.html",
+          "resolved_url": "https://arxiv.org/html/2603.19169v1",
+          "retrieved_at": "2026-10-02T08:04:31.112951+00:00",
+          "sha256": "b562bb204f8a6a446ee7cc0ab7055811ad568964e4533d7e98cbe7b18d0b5d27",
+          "url": "https://arxiv.org/html/2603.19169v1"
+        },
+        {
+          "bytes": 1361741,
+          "content_type": "application/pdf",
+          "kind": "pdf",
+          "path": "2603.19169v1.pdf",
+          "resolved_url": "https://arxiv.org/pdf/2603.19169v1",
+          "retrieved_at": "2026-10-02T08:04:35.366796+00:00",
+          "sha256": "55024acbf2d9ded2f0f0e94e653227f0190d7d0dfd575a559e9a3681fd24d0e9",
+          "url": "https://arxiv.org/pdf/2603.19169v1"
+        }
+      ],
+      "unavailable": [],
+      "version_id": "2603.19169v1"
+    }
+  ],
+  "schema_version": 2,
+  "updated_at": "2026-10-02T08:04:35.370081+00:00"
+}
