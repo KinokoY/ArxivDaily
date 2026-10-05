@@ -1683,6 +1683,264 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "figure 2",
+            "locator": "caption:figure 2",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "figure 3",
+            "locator": "caption:figure 3",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "figure 4",
+            "locator": "caption:figure 4",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 3",
+            "locator": "caption:Figure 3",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 7",
+            "locator": "caption:figure 7",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 8",
+            "locator": "caption:figure 8",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 9",
+            "locator": "caption:figure 9",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 10",
+            "locator": "caption:figure 10",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 11",
+            "locator": "caption:figure 11",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 13",
+            "locator": "caption:figure 13",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 14",
+            "locator": "caption:figure 14",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 15",
+            "locator": "caption:figure 15",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 16",
+            "locator": "caption:figure 16",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 17",
+            "locator": "caption:figure 17",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 18",
+            "locator": "caption:figure 18",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 19",
+            "locator": "caption:figure 19",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 20",
+            "locator": "caption:figure 20",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 21",
+            "locator": "caption:figure 21",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 22",
+            "locator": "caption:figure 22",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure A1",
+            "locator": "caption:Figure A1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table A1",
+            "locator": "caption:Table A1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure A2",
+            "locator": "caption:Figure A2",
+            "rendered": true,
+            "required": true
+          }
+        ],
+        "locators": [
+          "section:1 Introduction",
+          "section:2 Related Works / 2.1 Segment Anything Models",
+          "section:2 Related Works / 2.2 Adversarial Attacks on SAMs",
+          "section:3 Methodology / 3.1 Problem Formulation",
+          "section:3 Methodology / 3.2 Motivation",
+          "section:3 Methodology / 3.3 AdvPCS: A Complete Illustration",
+          "section:4 Experiments / 4.1 Experimental Setup",
+          "section:4 Experiments / 4.2 Attack Performance",
+          "section:4 Experiments / 4.3 Comparison Study",
+          "section:4 Experiments / 4.4 Ablation Study",
+          "section:4 Experiments / 4.5 Defense Study",
+          "section:5 Conclusions, Limitations, and Broader Impact",
+          "section:Appendix A Contents",
+          "section:Appendix B Experimental Setting",
+          "section:Appendix B Experimental Setting / B.1 Datasets",
+          "section:Appendix B Experimental Setting / B.2 Evaluation Metrics",
+          "section:Appendix B Experimental Setting / B.3 Platform",
+          "section:Appendix C Stability Analysis",
+          "section:Appendix D Multi-point Evaluation Study",
+          "section:Appendix E Visualization Results of Comparison Study"
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 1": 1,
+            "Figure 3": 6,
+            "Figure A2": 15,
+            "figure 2": 4,
+            "figure 3": 6
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "figure 2",
+            "figure 3",
+            "figure 4",
+            "Figure 3",
+            "Table 1",
+            "figure 7",
+            "figure 8",
+            "figure 9",
+            "figure 10",
+            "figure 11",
+            "Table 2",
+            "figure 13",
+            "figure 14",
+            "figure 15",
+            "figure 16",
+            "figure 17",
+            "figure 18",
+            "figure 19",
+            "figure 20",
+            "figure 21",
+            "figure 22",
+            "Figure A1",
+            "Table A1",
+            "Figure A2"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 38712,
+          "read_locators": [
+            "section:1 Introduction",
+            "section:2 Related Works / 2.1 Segment Anything Models",
+            "section:2 Related Works / 2.2 Adversarial Attacks on SAMs",
+            "section:3 Methodology / 3.1 Problem Formulation",
+            "section:3 Methodology / 3.2 Motivation",
+            "section:3 Methodology / 3.3 AdvPCS: A Complete Illustration",
+            "section:4 Experiments / 4.1 Experimental Setup",
+            "section:4 Experiments / 4.2 Attack Performance",
+            "section:4 Experiments / 4.3 Comparison Study",
+            "section:4 Experiments / 4.4 Ablation Study",
+            "section:4 Experiments / 4.5 Defense Study",
+            "section:5 Conclusions, Limitations, and Broader Impact",
+            "section:Appendix A Contents",
+            "section:Appendix B Experimental Setting",
+            "section:Appendix B Experimental Setting / B.1 Datasets",
+            "section:Appendix B Experimental Setting / B.2 Evaluation Metrics",
+            "section:Appendix B Experimental Setting / B.3 Platform",
+            "section:Appendix C Stability Analysis",
+            "section:Appendix D Multi-point Evaluation Study",
+            "section:Appendix E Visualization Results of Comparison Study"
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            1,
+            4,
+            6,
+            15
+          ],
+          "section_count": 20,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2609.39265v1",
+          "version_id": "2609.39265v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2609.39265v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2609.39265v1",
+        "version_id": "2609.39265v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -1736,11 +1994,6 @@
         "transferable_objective"
       ],
       "stage": "uncertain",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2609.39265v1"
       ]
