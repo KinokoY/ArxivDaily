@@ -3378,7 +3378,7 @@
           "source_url": "https://arxiv.org/html/2610.01166v1",
           "version_id": "2610.01166v1",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2610.01166v1"
         },
         "source_type": "html",
@@ -3445,12 +3445,138 @@
         "general_rl",
         "transferable_objective"
       ],
-      "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "summary"
+      "stage": "summary_validated",
+      "summary": {
+        "background": "CMR定量评估需要多维图像分析，但通用医学视觉语言模型并非为可靠推导这类定量测量而设计。",
+        "conclusion": "结论认为，CineMR在构造的多队列基准上通过训练优于未微调骨干，工具访问带来额外但较温和的提升；但基准类别与研究特定规则并非完整临床诊断，系统尚未验证可用于自主临床，且分割误差会传播到最终预测类别。",
+        "contribution": "CineMR的贡献在于为VLM配备心脏图像分析工具并在交错推理中训练其调用与整合工具输出，从而区别于以分割可视化等感知操作为主的既有工具增强医学智能体。",
+        "evidence": [
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "general-purpose medical VLMs are not designed to perform the multidimensional image analysis required to derive quantitative CMR measurements reliably.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "CineMR addresses this need by equipping a VLM with cardiac image-analysis tools and training it to invoke and integrate their outputs within an interleaved reasoning process.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:3 Method / 3.3 Cardiology-specific Quantitative Tool Suite",
+            "quote": "Many prior tool-augmented medical agents ( Li et al., 2024 ; Jiang et al., 2025 ) emphasize perceptual tools, such as segmentation visualization and region enlargement, rather than tools that return explicit quantitative imaging measurements.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:3 Method / 3.1 Problem Formulation",
+            "quote": "We model the task as an agentic generation process",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:3 Method / 3.1 Problem Formulation",
+            "quote": "this proceeds in three phases: (1) a <think> block forming an initial imaging hypothesis, (2) one or more <tool_call> / <tool_result> turns obtaining quantitative measurements, and (3) a narrative synthesis that evaluates the returned measurements using the published and study-specific criteria encoded in the Rule-Based Cardiac Phenotype Classifier before producing the final predicted category",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "method",
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "quote": "CineMR invokes a cardiology-specific quantitative tool suite to obtain precise metrics (EDV, ESV, EF, mass, MVR, wall thickness, sphericity index, regional wall motion).",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4 Training Pipeline",
+            "quote": "Stage 1: Cold-start SFT.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:4 Training Pipeline",
+            "quote": "We apply Group Relative Policy Optimization (GRPO)",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "conditional tool-use reward, assigning credit for tool invocation only when the final answer is correct",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:5 Experiments / 5.1 Setup / Datasets.",
+            "quote": "We construct a multi-cohort cine CMR visual question answering benchmark from ACDC ( Bernard et al., 2018 ) , M&Ms ( Campello et al., 2021 ) , and M&Ms-2 ( Martín-Isla et al., 2023 ) .",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "quote": "Table 2 : Held-out test performance by cohort ( n = 3,320 n=3{,}320 ; ACDC: 696, M&Ms: 1,846, M&Ms-2: 778). All methods use k = 4 k=4 rollouts with temperature 0.7.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "CineMR achieves 35.9% pass@1 and 58.9% pass@4 overall, compared with 1.5% pass@1 (4.5% pass@4) for the unfine-tuned Qwen3-VL-8B backbone, 7.0% pass@1 (18.0% pass@4) for MedGemma-4B-it, and 0.0% pass@1 (0.0% pass@4) for LLaVA-Med v1.5.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "ACDC M&Ms M&Ms-2 Overall Method P@1 P@4 Mean P@1 P@4 Mean P@1 P@4 Mean P@1 P@4 Mean",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "GRPO 33.9 58.0 34.7 36.2 58.0 35.4 36.9 62.0 37.3 35.9 58.9 35.7",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:6 Conclusion",
+            "quote": "On the constructed multi-cohort benchmark, supervised fine-tuning and reinforcement learning substantially improved performance relative to the unfine-tuned backbone, while access to quantitative tools provided an additional, more modest improvement over the tool-ablated configuration.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:6 Conclusion",
+            "quote": "the benchmark categories and study-specific rules do not constitute complete clinical diagnoses, and the framework has not been validated for autonomous clinical use.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Appendix C Limitations and Broader Impact / Segmentation dependency.",
+            "quote": "segmentation errors can propagate to the final predicted category.",
+            "source_url": "https://arxiv.org/html/2610.01166v1"
+          }
+        ],
+        "experiments": "在由ACDC、M&Ms和M&Ms-2构建的多队列保留测试集上，作者报告CineMR取得35.9% pass@1与58.9% pass@4，高于未微调Qwen3-VL-8B的1.5% pass@1（4.5% pass@4）、MedGemma-4B-it的7.0% pass@1（18.0% pass@4），LLaVA-Med v1.5为0.0% pass@1（0.0% pass@4）。",
+        "method": "方法上，CineMR把cine CMR序列、问题与工具集建模为智能体生成过程：模型先形成初始影像假设，再调用分割、相位选择、容积、形态测量和局部室壁运动等工具获得定量指标，最后按规则分类器整合测量并输出答案。训练采用两阶段流程：先以冷启动SFT学习工具调用语法和交错轨迹，再用GRPO与条件工具奖励优化工具使用策略，工具奖励仅在最终答案正确时发放。"
       },
+      "summary_model": "deepseek-flash",
+      "summary_prompt_fingerprint": "arxivdaily-summary-v4",
+      "summary_validated_at": "2026-10-05T16:07:14.109560+00:00",
       "versions": [
         "2610.01166v1"
       ]
