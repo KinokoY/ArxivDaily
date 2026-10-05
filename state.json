@@ -4159,7 +4159,7 @@
           "source_url": "https://arxiv.org/html/2610.01452v1",
           "version_id": "2610.01452v1",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2610.01452v1"
         },
         "source_type": "html",
@@ -4218,12 +4218,236 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "summary"
+      "stage": "summary_validated",
+      "summary": {
+        "background": "胶质瘤分割是神经肿瘤工作流的关键前提，但历史上依赖专家手工体积勾画，带来显著的观察者间/内变异并成为临床吞吐瓶颈；nnU-Net等自动分割虽在BraTS等基准上DSC常超过0.90，却可能在分布外临床数据中出现局部灾难性边界失败，而现有不确定性图多被当作被动可视化叠加层，缺乏将空间方差自动转化为可操作修改的几何管道。",
+        "conclusion": "结论认为，该框架把临床范式从穷举式找错转为靶向验证，在362例外部分布外病例中平均肿瘤核心空间误差绝对降低>3.1 mm，并将中位交互工作量封顶在目标体积的11.3%；结构绊线可拦截碎裂与体积塌陷等主要失败模式且无需局部重训练，但仍存在对高置信度对侧幻觉的残余盲点，且Human Oracle模拟只是理论上界。",
+        "contribution": "本文提出主动、解耦、骨干无关的UG-HITL框架，用空间不确定性动态引导临床医生交互并把原始熵图转化为紧致、梯度吸附的几何提案（Handshake）；与把连通性约束注入训练损失的拓扑保持分割方法不同，其规则在冻结网络输出上后处理执行，无需重训练或改结构。作者在受控基准上报告HD95 <2.0 mm，并在独立外部队列（N=362）证明可救回关键空间错误，同时把标准病例的复核工作量上限严格设为肿瘤体积25%，并将总基线失败安全路由至全人工复核。",
+        "evidence": [
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "Historically, this process relied entirely on manual volumetric delineation by expert neuroradiologists, a paradigm that introduces extreme intra-observer and inter-observer variability while acting as a severe operational bottleneck in clinical throughput",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "consistently achieving high global volumetric overlap metrics with Dice Similarity Coefficients (DSC) exceeding 0.90",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "when translated from controlled benchmarks into real-world clinical environments, this global mathematical average frequently masks localized, catastrophic boundary failures",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "within the existing literature, uncertainty maps are predominantly treated as passive visual overlays, limiting their utility in rapid triage tasks",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "We introduce an active, decoupled, backbone-agnostic UG-HITL refinement framework that leverages spatial uncertainty to guide clinician interaction dynamically, reducing the required visual search space down to a tight, localised boundary mask, and we characterize its refinement behavior across three distinct uncertainty estimators (MC Dropout, deep ensemble, and evidential).",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "Unlike topology-preserving segmentation methods, which inject connectivity constraints into the training loss [ 11 , 6 , 26 ] , our rules operate post-hoc at inference over frozen network outputs, functioning as a triage filter rather than a learned shape prior and requiring no retraining or architectural modification.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "achieves surgical-grade precision (defined as a 95th percentile Hausdorff Distance of < 2.0 <2.0 mm) [ 27 ] on controlled benchmarks",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "quantify the clinical interaction cost across an external, independent cohort ( N = 362 N=362 ), proving that critical spatial rescues can be achieved while strictly capping the clinician’s required review workload to a maximum of 25% of the target tumor volume for standard cases, while securely routing total baseline failures to full manual review.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Baseline Architecture and Uncertainty Extraction",
+            "quote": "we utilized a standard 3D full-resolution nnU-Net baseline",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Baseline Architecture and Uncertainty Extraction",
+            "quote": "During inference, the MRI volume undergoes M = 4 M=4 distinct geometric forward passes",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Algorithmic Triage and Morphological Filtering",
+            "quote": "A prediction is classified as a collapse if the base tumor volume is implausibly low ( < < 1000 voxels) or if 3D connected component analysis detects severe structural fragmentation ( > > 4 disconnected primary masses). If triggered, the boundary algorithm is bypassed, and the scan is routed for 100% manual contouring.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Algorithmic Triage and Morphological Filtering",
+            "quote": "Voxel clusters meeting this threshold that are disjointed from the primary mass and between 20 and 5,000 voxels in size are routed for review.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Complexity-Aware Dynamic Budgeting",
+            "quote": "A low SA:V ratio (indicating a smooth boundary) dynamically throttles the permitted interactive workload budget down to as low as 5% of the total tumor volume. Conversely, a high SA:V ratio (indicating a diffuse or highly irregular mass) scales the budget allowance up to a maximum safety threshold of 25%.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Evaluation Metrics and Human Oracle Simulation",
+            "quote": "Performance was assessed using the Dice Similarity Coefficient (DSC) for volumetric overlap, and the 95th Percentile Hausdorff Distance (HD95) to measure spatial distance between predicted and ground truth boundaries",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Methods / Evaluation Metrics and Human Oracle Simulation",
+            "quote": "it represents a theoretical performance upper bound, as real-world deployment is subject to cognitive friction and inter-rater variability.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Methods / Datasets and Clinical Cohorts",
+            "quote": "trained and initially evaluated using the official Brain Tumor Segmentation (BraTS) 2023 adult glioma dataset",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Methods / Datasets and Clinical Cohorts",
+            "quote": "holdout validation cohort of N = 187 N=187 cases",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Initial In-Distribution Exploration: Backbone-Agnostic Uncertainty Evaluation",
+            "quote": "We compared the standard fully automated baseline against our interactive framework utilizing three distinct uncertainty engines",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Initial In-Distribution Exploration: Backbone-Agnostic Uncertainty Evaluation",
+            "quote": "the initial EDL-backed system achieved an optimal 0.990 Dice Similarity Coefficient (DSC) and reduced the 95th percentile Hausdorff Distance (HD95) to 0.62 mm on curated in-distribution data",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Initial In-Distribution Exploration: Backbone-Agnostic Uncertainty Evaluation",
+            "quote": "the standard 5-Model Ensemble underperformed the baseline (0.931 vs. 0.943)",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 1",
+            "locator": "table:Table 1",
+            "quote": "Methodology Dice ↑ \\uparrow HD95 (mm) ↓ \\downarrow Workload ↓ \\downarrow",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 1",
+            "locator": "table:Table 1",
+            "quote": "UG-HITL (EDL) 0.990 0.62 1.58%",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Methods / Datasets and Clinical Cohorts",
+            "quote": "out-of-distribution clinical cohort from the University of Texas Southwestern (UTSW) containing 362 cases",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Workload Efficiency and the Safety Net",
+            "quote": "Across the 362-case cohort, the median actual workload demanded of the clinician was exactly 11.3% of the target tumor volume.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "Metric Whole Tumor (WT) Tumor Core (TC) Enhancing Tumor (ET) Baseline (nnU-Net) UG-HITL (TTA) Baseline UG-HITL (TTA) Baseline UG-HITL (TTA)",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "HD95 (Mean, mm) 5.82 4.76 17.96 14.83 - -",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Volumetric and Spatial Improvements",
+            "quote": "The mean TC HD95 dropped from 17.96 mm to 14.83 mm",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Conclusions",
+            "quote": "Comprehensive evaluation across 362 out-of-distribution clinical cases demonstrates that the framework aggressively targets and rescues catastrophic boundary failures—achieving a > 3.1 >3.1 mm absolute reduction in mean Tumor Core spatial error—while securely capping the median interactive clinician workload to just 11.3% of the target volume.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Conclusions",
+            "quote": "although a characterized residual blind spot to high-confidence contralateral hallucinations remains",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Conclusions",
+            "quote": "without requiring costly localized model retraining",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Methods / Evaluation Metrics and Human Oracle Simulation",
+            "quote": "it represents a theoretical performance upper bound, as real-world deployment is subject to cognitive friction and inter-rater variability.",
+            "source_url": "https://arxiv.org/html/2610.01452v1"
+          }
+        ],
+        "experiments": "实验在BraTS 2023验证队列（N=187）上把标准全自动基线分别与MC Dropout、5-Model Ensemble和EDL三种UG-HITL不确定性引擎比较，其中EDL-backed pipeline达到0.990 DSC、0.62 mm HD95，而5-Model Ensemble的Dice低于基线（0.931 vs. 0.943）；在外部UTSW临床队列（N=362）上，UG-HITL(TTA)将Tumor Core平均HD95从baseline的17.96 mm降至14.83 mm，同时中位临床工作量仅11.3%。",
+        "method": "方法上，框架以3D全分辨率nnU-Net为基线，在推理时执行M=4次几何TTA前向传播并计算预测熵/偶然不确定性；Track A结构绊线在基础肿瘤体积<1000体素或检测到>4个断开主肿块时将病例绕过分割并路由至100%人工勾画，Track B则进行层次拓扑过滤、基于背景噪声概率阈值的热点猎取（20–5,000体素卫星簇送审）和梯度吸附非对称搜索带精修。复杂度感知动态预算按SA:V比将交互预算从低至5%调节至最高25%，并用DSC、HD95和人工复核体积百分比评估，以确定性Human Oracle模拟作为理论上界，但该上界受认知摩擦与评估者间变异影响。"
       },
+      "summary_model": "deepseek-flash",
+      "summary_prompt_fingerprint": "arxivdaily-summary-v4",
+      "summary_validated_at": "2026-10-05T16:07:14.109560+00:00",
       "versions": [
         "2610.01452v1"
       ]
