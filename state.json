@@ -1146,9 +1146,31 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "we design a loss that matches the evolving state distributions",
+          "without mode labeling, trajectory segmentation, or event-based simulations"
+        ],
+        "dpo_is_method": false,
+        "reason": "Paper is about representing stochastic hybrid systems with latent SDEs and a distribution-matching loss; it is not a segmentation paper and does not use RL or DPO. The only mention of segmentation is trajectory segmentation in simulation, not medical or reasoning segmentation.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 10,
+        "status": "reject",
+        "theory_evidence": true,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "The abstract mentions 'trajectory segmentation', but this is not visual or reasoning segmentation.",
+          "The loss could be considered a transferable objective, but there is no evidence of application to segmentation."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "A stochastic hybrid system (SHS) is governed by a stochastic differential equation (SDE) describing the continuous dynamics and a Markov reset kernel triggered on the guard surface. Its probability evolution can be described by a hybrid Fokker-Planck (HFP) equation with a partial differential term corresponding to the SDE and an integral term arising from the reset kernel. This work shows that such an SHS can be approximated by an SDE in a higher-dimensional latent space where the sample paths are continuous. The key to this result is to encode different branches of the reset kernel using auxiliary variables, transforming the resets into deterministic ones that enable topological gluing. By the embedding theorem, the glued manifold can then be embedded into a higher-dimensional Euclidean space. We show that the probability evolution on the embedded image no longer requires explicit reset terms in the HFP equation. Building on this theorem, we design a loss that matches the evolving state distributions, enabling a single latent SDE to recover the probability evolution of the SHS without mode labeling, trajectory segmentation, or event-based simulations.",
         "authors": [
@@ -1167,15 +1189,11 @@
         "updated": "2026-09-30T03:40:28+00:00",
         "version_id": "2609.38893v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2609.38893v1"
       ]
