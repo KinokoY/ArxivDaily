@@ -21,6 +21,16 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-10-06": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [
+        "2609.39265"
+      ],
+      "send_attempts": 0
     }
   },
   "digests": {
