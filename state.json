@@ -3196,6 +3196,193 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 3",
+            "locator": "caption:Figure 3",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 4",
+            "locator": "caption:Figure 4",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 3",
+            "locator": "caption:Table 3",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 8",
+            "locator": "caption:figure 8",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 9",
+            "locator": "caption:figure 9",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 10",
+            "locator": "caption:figure 10",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 11",
+            "locator": "caption:figure 11",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 4",
+            "locator": "caption:Table 4",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 5",
+            "locator": "caption:Table 5",
+            "rendered": false,
+            "required": false
+          }
+        ],
+        "locators": [
+          "section:1 Introduction",
+          "section:2 Related Work / Tool-Augmented Medical Agents.",
+          "section:2 Related Work / AI for Cardiac MRI Analysis.",
+          "section:3 Method",
+          "section:3 Method / 3.1 Problem Formulation",
+          "section:3 Method / 3.2 Rule-Based Cardiac Phenotype Classifier-Structured Dataset",
+          "section:3 Method / 3.3 Cardiology-specific Quantitative Tool Suite",
+          "table:Table 1",
+          "section:4 Training Pipeline",
+          "section:5 Experiments / 5.1 Setup / Datasets.",
+          "section:5 Experiments / 5.1 Setup / Metrics.",
+          "section:5 Experiments / 5.1 Setup / Implementation.",
+          "section:5 Experiments / 5.2 Results",
+          "table:Table 2",
+          "section:5 Experiments / 5.3 Ablations",
+          "table:Table 3",
+          "section:6 Conclusion",
+          "section:Acknowledgments and Funding",
+          "section:Appendix A Acronym Glossary",
+          "table:Table 4",
+          "section:Appendix B Evaluation Question Templates",
+          "table:Table 5",
+          "section:Appendix C Limitations and Broader Impact",
+          "section:Appendix C Limitations and Broader Impact / Segmentation dependency.",
+          "section:Appendix C Limitations and Broader Impact / Toward segmentation-free quantitative reasoning.",
+          "section:Appendix C Limitations and Broader Impact / Broader impact.",
+          "section:Appendix C Limitations and Broader Impact / Additional limitations."
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 1": 2,
+            "Figure 2": 3,
+            "Figure 3": 4,
+            "Figure 4": 6
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "Figure 2",
+            "Figure 3",
+            "Figure 4",
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "figure 8",
+            "figure 9",
+            "figure 10",
+            "figure 11",
+            "Table 4",
+            "Table 5"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 49998,
+          "read_locators": [
+            "section:1 Introduction",
+            "section:2 Related Work / Tool-Augmented Medical Agents.",
+            "section:2 Related Work / AI for Cardiac MRI Analysis.",
+            "section:3 Method",
+            "section:3 Method / 3.1 Problem Formulation",
+            "section:3 Method / 3.2 Rule-Based Cardiac Phenotype Classifier-Structured Dataset",
+            "section:3 Method / 3.3 Cardiology-specific Quantitative Tool Suite",
+            "table:Table 1",
+            "section:4 Training Pipeline",
+            "section:5 Experiments / 5.1 Setup / Datasets.",
+            "section:5 Experiments / 5.1 Setup / Metrics.",
+            "section:5 Experiments / 5.1 Setup / Implementation.",
+            "section:5 Experiments / 5.2 Results",
+            "table:Table 2",
+            "section:5 Experiments / 5.3 Ablations",
+            "table:Table 3",
+            "section:6 Conclusion",
+            "section:Acknowledgments and Funding",
+            "section:Appendix A Acronym Glossary",
+            "table:Table 4",
+            "section:Appendix B Evaluation Question Templates",
+            "table:Table 5",
+            "section:Appendix C Limitations and Broader Impact",
+            "section:Appendix C Limitations and Broader Impact / Segmentation dependency.",
+            "section:Appendix C Limitations and Broader Impact / Toward segmentation-free quantitative reasoning.",
+            "section:Appendix C Limitations and Broader Impact / Broader impact.",
+            "section:Appendix C Limitations and Broader Impact / Additional limitations."
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            2,
+            3,
+            4,
+            6
+          ],
+          "section_count": 27,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2610.01166v1",
+          "version_id": "2610.01166v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2610.01166v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2610.01166v1",
+        "version_id": "2610.01166v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -3257,11 +3444,6 @@
         "transferable_objective"
       ],
       "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2610.01166v1"
       ]
