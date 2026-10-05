@@ -1274,6 +1274,320 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 3",
+            "locator": "caption:Figure 3",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 4",
+            "locator": "caption:Figure 4",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 5",
+            "locator": "caption:Figure 5",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 6",
+            "locator": "caption:Figure 6",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 7",
+            "locator": "caption:Figure 7",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 8",
+            "locator": "caption:Figure 8",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 9",
+            "locator": "caption:Figure 9",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 10",
+            "locator": "caption:Figure 10",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 3",
+            "locator": "caption:Table 3",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 4",
+            "locator": "caption:Table 4",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 5",
+            "locator": "caption:Table 5",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 16",
+            "locator": "caption:figure 16",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 17",
+            "locator": "caption:figure 17",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "figure 18",
+            "locator": "caption:figure 18",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 6",
+            "locator": "caption:Table 6",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 7",
+            "locator": "caption:Table 7",
+            "rendered": false,
+            "required": false
+          }
+        ],
+        "locators": [
+          "section:1 Introduction",
+          "section:2 Related Work / 2.1 Three-Dimensional Medical Image Segmentation",
+          "section:2 Related Work / 2.2 Multimodal Medical Agents",
+          "section:2 Related Work / 2.3 Liver Surgery Planning",
+          "section:2 Related Work / 2.4 Human-in-the-Loop Medical Systems",
+          "section:3 System Overview",
+          "section:3 System Overview / 3.1 System Architecture",
+          "section:3 System Overview / 3.2 Overall Workflow",
+          "section:3 System Overview / 3.3 Browser Workspace",
+          "section:4 Agent Orchestration",
+          "section:4 Agent Orchestration / 4.1 Case Setup and State Management",
+          "section:4 Agent Orchestration / 4.2 Agent Context Construction",
+          "section:4 Agent Orchestration / 4.3 Language Model Decision and Skill Execution",
+          "section:4 Agent Orchestration / 4.4 Result Integration and Response Preparation",
+          "section:5 Medical Imaging Skills",
+          "section:5 Medical Imaging Skills / 5.1 Case Preparation",
+          "section:5 Medical Imaging Skills / 5.2 Quantitative Measurement Skills",
+          "section:5 Medical Imaging Skills / 5.3 Informative Slice Selection Skill and Two-Dimensional Evidence Review",
+          "section:5 Medical Imaging Skills / 5.4 Interactive Segmentation Correction Skill",
+          "section:5 Medical Imaging Skills / 5.5 Three-Dimensional Reconstruction and Interactive Visualization Skill",
+          "section:5 Medical Imaging Skills / 5.5 Three-Dimensional Reconstruction and Interactive Visualization Skill / Three-Dimensional Reconstruction",
+          "section:5 Medical Imaging Skills / 5.5 Three-Dimensional Reconstruction and Interactive Visualization Skill / Bézier Resection Surface Editing",
+          "section:6 Resection Planning",
+          "section:6 Resection Planning / 6.1 Resection Surface Representation",
+          "section:6 Resection Planning / 6.2 Safety-Margin Constraints",
+          "section:6 Resection Planning / 6.3 Candidate Surface Generation and Evaluation",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Planar Simulator and Blood-Loss Proxy",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield",
+          "table:Table 1",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Problem formulation.",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Candidate generator.",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Depth-one teacher and behaviour-cloned ranker.",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Lazy exact simulator-rollout shield and computational note.",
+          "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Why most C4 macro actions follow the serpentine and what is not learned.",
+          "section:7 System Demonstration and Functional Verification",
+          "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification",
+          "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 1: Physical-Coordinate Correctness",
+          "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 2: Three-Case Port B Functional Matrix",
+          "table:Table 2",
+          "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 3: Learned-Controller Transfer",
+          "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 4: Fail-Closed and State-Invalidation Behavior",
+          "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation",
+          "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Protocol and controller definitions",
+          "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Primary replication and learning specificity",
+          "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Shield ablation and computational cost",
+          "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Condition-specific sensitivity",
+          "table:Table 3",
+          "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Evaluation objectives",
+          "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Data and experimental tasks",
+          "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Execution settings",
+          "table:Table 4",
+          "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Scoring criteria",
+          "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Results",
+          "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Scope and limitations",
+          "section:8 Conclusion",
+          "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples",
+          "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.1 Available Skills",
+          "table:Table 5",
+          "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.2 Manifest, User-Skill Package, and Registration Contract",
+          "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.3 Tool-Calling Examples",
+          "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.4 Experimental Learned-Planning Contract",
+          "section:Appendix Appendix B Behaviour-Cloning Reproduction Configuration",
+          "section:Appendix Appendix B Behaviour-Cloning Reproduction Configuration / B.1 Frozen data separation and development gate",
+          "table:html-id:A2.SS1.p2.1",
+          "section:Appendix Appendix B Behaviour-Cloning Reproduction Configuration / B.2 Released checkpoint configuration",
+          "table:html-id:A2.SS2.p1.1"
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 10": 14,
+            "Figure 3": 6,
+            "Figure 5": 8
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "Figure 2",
+            "Figure 3",
+            "Figure 4",
+            "Figure 5",
+            "Figure 6",
+            "Figure 7",
+            "Table 1",
+            "Figure 8",
+            "Table 2",
+            "Figure 9",
+            "Figure 10",
+            "Table 3",
+            "Table 4",
+            "Table 5",
+            "figure 16",
+            "figure 17",
+            "figure 18",
+            "Table 6",
+            "Table 7"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 95083,
+          "read_locators": [
+            "section:1 Introduction",
+            "section:2 Related Work / 2.1 Three-Dimensional Medical Image Segmentation",
+            "section:2 Related Work / 2.2 Multimodal Medical Agents",
+            "section:2 Related Work / 2.3 Liver Surgery Planning",
+            "section:2 Related Work / 2.4 Human-in-the-Loop Medical Systems",
+            "section:3 System Overview",
+            "section:3 System Overview / 3.1 System Architecture",
+            "section:3 System Overview / 3.2 Overall Workflow",
+            "section:3 System Overview / 3.3 Browser Workspace",
+            "section:4 Agent Orchestration",
+            "section:4 Agent Orchestration / 4.1 Case Setup and State Management",
+            "section:4 Agent Orchestration / 4.2 Agent Context Construction",
+            "section:4 Agent Orchestration / 4.3 Language Model Decision and Skill Execution",
+            "section:4 Agent Orchestration / 4.4 Result Integration and Response Preparation",
+            "section:5 Medical Imaging Skills",
+            "section:5 Medical Imaging Skills / 5.1 Case Preparation",
+            "section:5 Medical Imaging Skills / 5.2 Quantitative Measurement Skills",
+            "section:5 Medical Imaging Skills / 5.3 Informative Slice Selection Skill and Two-Dimensional Evidence Review",
+            "section:5 Medical Imaging Skills / 5.4 Interactive Segmentation Correction Skill",
+            "section:5 Medical Imaging Skills / 5.5 Three-Dimensional Reconstruction and Interactive Visualization Skill",
+            "section:5 Medical Imaging Skills / 5.5 Three-Dimensional Reconstruction and Interactive Visualization Skill / Three-Dimensional Reconstruction",
+            "section:5 Medical Imaging Skills / 5.5 Three-Dimensional Reconstruction and Interactive Visualization Skill / Bézier Resection Surface Editing",
+            "section:6 Resection Planning",
+            "section:6 Resection Planning / 6.1 Resection Surface Representation",
+            "section:6 Resection Planning / 6.2 Safety-Margin Constraints",
+            "section:6 Resection Planning / 6.3 Candidate Surface Generation and Evaluation",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Planar Simulator and Blood-Loss Proxy",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield",
+            "table:Table 1",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Problem formulation.",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Candidate generator.",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Depth-one teacher and behaviour-cloned ranker.",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Lazy exact simulator-rollout shield and computational note.",
+            "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Why most C4 macro actions follow the serpentine and what is not learned.",
+            "section:7 System Demonstration and Functional Verification",
+            "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification",
+            "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 1: Physical-Coordinate Correctness",
+            "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 2: Three-Case Port B Functional Matrix",
+            "table:Table 2",
+            "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 3: Learned-Controller Transfer",
+            "section:7 System Demonstration and Functional Verification / 7.1 Online System Demonstration and Port B Verification / Stage 4: Fail-Closed and State-Invalidation Behavior",
+            "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation",
+            "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Protocol and controller definitions",
+            "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Primary replication and learning specificity",
+            "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Shield ablation and computational cost",
+            "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Condition-specific sensitivity",
+            "table:Table 3",
+            "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Evaluation objectives",
+            "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Data and experimental tasks",
+            "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Execution settings",
+            "table:Table 4",
+            "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Scoring criteria",
+            "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Results",
+            "section:7 System Demonstration and Functional Verification / 7.3 Port A Orchestration Evaluation / Scope and limitations",
+            "section:8 Conclusion",
+            "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples",
+            "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.1 Available Skills",
+            "table:Table 5",
+            "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.2 Manifest, User-Skill Package, and Registration Contract",
+            "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.3 Tool-Calling Examples",
+            "section:Appendix Appendix A Skill Definitions and Tool-Calling Examples / A.4 Experimental Learned-Planning Contract",
+            "section:Appendix Appendix B Behaviour-Cloning Reproduction Configuration",
+            "section:Appendix Appendix B Behaviour-Cloning Reproduction Configuration / B.1 Frozen data separation and development gate",
+            "table:html-id:A2.SS1.p2.1",
+            "section:Appendix Appendix B Behaviour-Cloning Reproduction Configuration / B.2 Released checkpoint configuration",
+            "table:html-id:A2.SS2.p1.1"
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            6,
+            8,
+            14
+          ],
+          "section_count": 67,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2609.37648v1",
+          "version_id": "2609.37648v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2609.37648v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2609.37648v1",
+        "version_id": "2609.37648v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -1329,11 +1643,6 @@
         "transferable_objective"
       ],
       "stage": "uncertain",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2609.37648v1"
       ]
