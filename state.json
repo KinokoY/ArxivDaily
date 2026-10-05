@@ -1115,9 +1115,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Sa2VA combines a multimodal large language model with SAM2 for grounded segmentation",
+          "Referring Video Object Segmentation (RVOS) aims to produce a pixel-accurate mask sequence for an object specified by natural language.",
+          "We propose Event-Driven Refresh + Recurrence Memory (EDRRM), an enhancement that selectively re-invokes Sa2VA only at stable change points."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper is a general reasoning/grounded segmentation work using a multimodal LLM (Sa2VA), but it proposes an inference-time refresh/memory enhancement rather than an RL/DPO method or a theoretically grounded transferable objective. It lacks RL/DPO and theory/transfer support, so it is light relevance.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 30,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether this is best classified as general reasoning segmentation or general video object segmentation",
+          "No RL/DPO method or theoretical objective is proposed."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Referring Video Object Segmentation (RVOS) aims to produce a pixel-accurate mask sequence for an object specified by natural language. Sa2VA combines a multimodal large language model with SAM2 for grounded segmentation; however, its inference typically grounds the query from a small fixed set of initial keyframes and then relies on propagation. In long or dynamic videos, this can cause stale grounding and persistent false positives when the object composition changes (e.g., distractors enter or the target disappears/re-appears). We propose Event-Driven Refresh + Recurrence Memory (EDRRM), an enhancement that selectively re-invokes Sa2VA only at stable change points. EDRRM triggers refresh boundaries using an EMA-smoothed event score computed from tracking-derived cues (births/deaths and coarse composition/layout changes) with temporal constraints. A recurrence memory further retrieves anchor frames via CLIP similarity to re-condition the model on re-appearance events. Experiments on Ref-DAVIS17, MeViS, and ReVOS show that EDRRM achieves a competitive accuracy-efficiency trade-off relative to fixed-window and FrameDiff-SSIM baselines, maintaining comparable or superior J&F scores at substantially lower average refresh-call budgets and reducing false-positive failures. End-to-end runtime analysis further confirms that the overhead introduced by tracking, CLIP-based recurrence matching, and the identifiability gate remains modest relative to the dominant Sa2VA inference cost, thereby validating the efficiency of the proposed pipeline.",
         "authors": [
@@ -1136,15 +1159,11 @@
         "updated": "2026-09-30T01:44:08+00:00",
         "version_id": "2609.38758v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2609.38758v1"
       ]
