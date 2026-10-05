@@ -1721,9 +1721,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "deep learning based methods often produce disconnected predictions due to complex anatomy",
+          "three-stage, topology-preserving segmentation pipeline",
+          "centreline bridging to reconnect disjoint regions",
+          "topology-based metrics",
+          "The proposed method enhances topological integrity"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper is a medical colon segmentation method with an explicit topology-preserving objective, including centreline bridging and reconstruction to maintain anatomical continuity. This directly matches the medical segmentation topology objective interest. No RL/DPO method or theoretical transferable grounding is present, but the medical objective is genuine and central.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 85,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No RL/DPO method mentioned",
+          "No explicit theoretical grounding for a transferable objective"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Accurate colon segmentation from CT images is essential for colorectal disease analysis, yet deep learning based methods often produce disconnected predictions due to complex anatomy. This study introduces a three-stage, topology-preserving segmentation pipeline to address this issue. The first stage performs initial deep learning-based segmentation, followed by centreline bridging to reconnect disjoint regions and a reconstruction stage to refine continuity. Evaluations on TotalSegmentator and RAOS datasets using overlap, distance and topology-based metrics demonstrate improved structural consistency while maintaining segmentation accuracy. The proposed method enhances topological integrity, enabling more reliable colon segmentation for clinical and research applications.",
         "authors": [
@@ -1742,16 +1767,12 @@
         "updated": "2026-10-02T15:41:03+00:00",
         "version_id": "2610.03467v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.03467v1"
       ]
