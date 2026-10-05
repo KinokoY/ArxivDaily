@@ -6,7 +6,8 @@
     }
   },
   "collection": {
-    "initial_floor": "2026-09-28T16:07:14.109560+00:00"
+    "initial_floor": "2026-09-28T16:07:14.109560+00:00",
+    "last_complete_end": "2026-10-05T16:07:14.109560+00:00"
   },
   "daily": {
     "2026-10-03": {
@@ -727,6 +728,1058 @@
       "versions": [
         "2504.11008v2"
       ]
+    },
+    "2609.36134": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Functional Kolmogorov-Arnold Networks (FunKAN) achieve state-of-the-art accuracy on MRI Gibbs artifact removal and anatomical segmentation, but their 11.6 M parameters and 8.7 GFLOPs are too large for edge medical devices. We present FunKANLite, a two-stage, hardware-aware compression of FunKAN for point-of-care use. FunKANLite-TR reduces the spatial prior and replaces the ResBlock offset predictor with a depthwise-separable block. It has 1.9x fewer parameters than FunKAN and no loss in accuracy. We then distill FunKANLite-TR into FunKANLite-ST, which lowers the Hermite basis rank, factorizes the spatial prior into a low-rank form, and halves the filter widths. FunKANLite-ST has 5.6x fewer parameters and 3.7x fewer GFLOPs than FunKAN. It stays within 1.4 percentage points IoU of FunKAN on BUSI, GlaS, and CVC-ClinicDB, and reaches 33.95 dB PSNR on IXI. On an NVIDIA Jetson Orin Nano and a Raspberry Pi 5, FunKANLite-ST reduces energy per inference by up to 68% and raises throughput by 2.9x.",
+        "authors": [
+          "Mohammad Sadegh Sirjani"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AR",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.36134v1",
+        "published": "2026-09-28T19:08:15+00:00",
+        "title": "Hardware-Aware Functional Kolmogorov-Arnold Networks for Efficient Medical Image Enhancement and Segmentation",
+        "updated": "2026-09-28T19:08:15+00:00",
+        "version_id": "2609.36134v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.36134v1"
+      ]
+    },
+    "2609.36172": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Figuring out how objects relate to each other, like whether they touch, overlap, stay completely separate or one sits inside another, matters a lot in fields like GIS, biomedical imaging, and robotics. Even though machine learning has come a long way, people haven't really focused on spotting these topological relationships in images. The main roadblocks? Not enough good datasets and no clear way to measure results. So, we rolled up our sleeves and built a new dataset. It's pretty sizable: over 11,000 labelled images showing all those essential relationships. We ran tests with some classic machine learning models, Naive Bayes, KNN, Random Forest, SVM, and Artificial Neural Networks, and threw in some deep learning stars like VGG16 and InceptionResNetV2. For the dataset itself, we used segmentation, contour detection, and grayscale normalization to tease out solid feature vectors. The results? Deep learning methods, especially VGG16, pulled ahead, with validation accuracy hitting 89.55%. That's a big jump compared to the traditional models. This shows how powerful transfer learning is for analyzing topological relationships in images, and it gives researchers a new standard to aim for in future work on spatial reasoning and topological classification.",
+        "authors": [
+          "Saptak Das",
+          "Monidipa Das"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.36172v1",
+        "published": "2026-09-28T19:42:06+00:00",
+        "title": "Exploring Learning Models for Topological Relationship Recognition from Image Data",
+        "updated": "2026-09-28T19:42:06+00:00",
+        "version_id": "2609.36172v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "medical_objective",
+        "transferable_objective",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.36172v1"
+      ]
+    },
+    "2609.36348": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Generative and representation learning remain asymmetrically connected: semantic representations are used to improve diffusion generation, whereas the models' own representations are often treated as a by-product of synthesis. We ask whether diffusion models can instead be trained to learn substantially stronger semantic representations without sacrificing generation quality. SelfFlow takes a step in this direction by introducing self-supervised patch alignment into flow matching, but its main gains remain in faster convergence and improved generation. Inspired by DINO and iBOT, we extend this framework with cross-view class-token alignment to further strengthen semantic representations. Specifically, we form two independently noised, dual-timestep observations of each image and align each student class-token representation with the stop-gradient EMA-teacher target from the other observation. This objective is optimized jointly with the inherited flow-matching and local patch objectives. Notably, although the additional objective acts only on the class token, it strengthens both class-token and patch representations. Compared with a matched two-view baseline, ImageNet linear-probing accuracy improves by 9.4\\% using the class token and 10.1\\% using mean-pooled patch tokens, while frozen-backbone VOC2012 segmentation improves by 3.6 mIoU. These representation gains are achieved while maintaining comparable ImageNet generation FID. In text-to-image training, the same objective also improves generation FID, reducing it from 2.52 to 2.37 at matched checkpoints. Our results show that representation need not remain a by-product of generation or merely a tool for improving it: it can be directly optimized as a first-class capability of diffusion pretraining alongside generation.",
+        "authors": [
+          "Xiaoyu Wu",
+          "Yifei Wang",
+          "Chen Wei"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.36348v1",
+        "published": "2026-09-28T22:31:54+00:00",
+        "title": "Representation by Design in Generation: Cross-View Class-Token Alignment in Diffusion Transformers",
+        "updated": "2026-09-28T22:31:54+00:00",
+        "version_id": "2609.36348v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.36348v1"
+      ]
+    },
+    "2609.36429": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Predicting gene expression from H&E-stained histology images offers a scalable alternative to costly spatial transcriptomics, yet most existing methods operate at the spot level, where signals from multiple cells are aggregated and critical cellular heterogeneity is obscured. Extending this paradigm to single-cell resolution is non-trivial. Naively applying pathology foundation models faces a scale mismatch: their patch-level representations mix multiple cells, whereas per-cell cropping or resizing distorts morphology and removes local context. Conversely, segmentation-based models without strong pretrained visual encoders often lack the morphological representation capacity needed for accurate molecular prediction and inherit errors from imperfect cell boundary masks. Here, we present CELLO, an efficient end-to-end framework that performs a single pathology foundation model forward pass per image and uses grid sampling to extract location-specific features for all cells simultaneously. We further introduce a distance-decay cross-attention module that refines each cell representation using spatially biased local morphological context. Using 52 public Xenium-H&E pairs from HEST-1k that span 12 organs and approximately 10 million cells, CELLO improves the average predictive accuracy over the evaluated baselines while reducing the mean whole-slide inference time compared to DeepSpot2Cell, a 14.0x speed-up on average that excludes upstream cell segmentation. Our work establishes a scalable foundation for single-cell gene expression prediction from H&E images.",
+        "authors": [
+          "Zijun Gao",
+          "Chunbin Gu",
+          "Jinxi Xiang",
+          "Xiangde Luo",
+          "Pheng-Ann Heng"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.36429v1",
+        "published": "2026-09-29T00:40:28+00:00",
+        "title": "Towards Scalable Context-Aware Single-Cell Spatial Transcriptomics Prediction from Histology Images",
+        "updated": "2026-09-29T00:40:28+00:00",
+        "version_id": "2609.36429v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.36429v1"
+      ]
+    },
+    "2609.36826": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Video generation models have demonstrated emerging zero-shot capabilities for visual reasoning, perception, and other vision tasks. However, diffusion-based video generation is inherently stochastic, while many downstream vision tasks are deterministic. Motivated by the effectiveness of self-consistency in chain-of-thought reasoning for large language models, we investigate whether self-consistency can similarly improve diffusion-based video reasoning. We first introduce a training-free test-time scaling method that samples multiple video generations and aggregates their predictions through self-consistency. Specifically, we aggregate extracted paths, locations, or masks from multiple rollouts into a consensus prediction. To reduce the inference overhead of multi-rollout generation, we read out predictions early in the denoising trajectory, which preserves consensus quality while reducing denoising steps by more than half. We further propose Rejection Fine-Tuning (RFT) to distill consensus predictions into the video generation model. The resulting model internalizes the benefit of multi-sample consensus and requires only a single generation at inference time, while substantially outperforming the original model. Experiments on three tasks, including maze solving, visual search, and referring segmentation, show that both our self-consistency inference and consensus distillation dramatically improve video-based perception and reasoning, without requiring ground-truth videos or task-specific verification. For visual search, self-consistency raises task accuracy from 48.4% for a single generation to 99.0%. The distilled model retains much of the consensus benefit with a single rollout. For 4-by-4 maze solving, consensus-based training improves the single-generation strict success rate from 72.0% to 84.0% with the same inference latency.",
+        "authors": [
+          "Zhenghao Ni",
+          "Weimin Qiu",
+          "Meng Tang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.36826v1",
+        "published": "2026-09-29T06:37:13+00:00",
+        "title": "Learning via Self-Consistency for Diffusion-based Video Reasoning",
+        "updated": "2026-09-29T06:37:13+00:00",
+        "version_id": "2609.36826v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.36826v1"
+      ]
+    },
+    "2609.36875": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Accurate instance segmentation in dynamic scenes is important for downstream applications such as robotics and autonomous driving. Existing Segment Anything models operate primarily on 2D image or video masks and preserve identity through sequential memory, while promptable 4D instance segmentation built upon feed-forward visual geometry remains underexplored. We introduce S4VY, a Segment Anything model built on feed-forward 4D visual geometry. From a set of RGB observations, S4VY transforms shared visual-geometric features into an exhaustive set of class-agnostic 4D instance masks through a space-time query decoder, with each persistent object query binding one entity across all observations. This representation supports prompt-independent segmentation as well as point- and box- conditioned selection, without requiring a seed mask or temporal ordering. We further develop an agentic harness for natural-language grounding in the large observation space of a 4D scene. Active tree search identifies relevant frames without scanning every fixed window; a dual-stream grounder combines fine-grained VLM visual priors with geometry-consistent instance features through complementary bounding-box prediction and object-query matching; and an independent critic selects the final 4D instance mask from their predictions. Extensive experiments demonstrate state-of-the-art 4D instance segmentation and strong language-guided grounding performance under a unified evaluation spanning static and dynamic scenes.",
+        "authors": [
+          "Jingdong Zhang",
+          "Xin Li",
+          "Jan Kautz",
+          "Wenping Wang",
+          "Chris Choy"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.36875v1",
+        "published": "2026-09-29T07:09:48+00:00",
+        "title": "S4VY: Segment Anything in Feed-Forward 4D Visual Geometry",
+        "updated": "2026-09-29T07:09:48+00:00",
+        "version_id": "2609.36875v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.36875v1"
+      ]
+    },
+    "2609.37177": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Persistent homology (PH) is a frequently used tool for extracting and preserving topological information from image data, particularly in image segmentation, where preservation of topological structures is important. However, despite its general applicability across dimensionality, domains, and target structures, the runtime cost of PH-based methods often makes their practical use infeasible. In this work, we argue that this runtime cost is largely driven by processing information that is unimportant for downstream application (e.g. as optimization objective). We propose sparse cubical filtrations as an alternative foundation for PH computation, reducing subsequent computational costs by factors of up to 100 on real datasets. We show close agreement with the optimization signal of the dense counterpart and empirically evaluate our solution's effectiveness as an optimization objective in realistic training regimes where other PH-based objectives can practically not operate (i.e., 3D data with large patch sizes). We show how our solution improves topological accuracy by up to 80\\% across six diverse datasets while maintaining pixel- and region-based accuracy.",
+        "authors": [
+          "Alexander H. Berger",
+          "Marco Fontana",
+          "Daniel Rueckert",
+          "Johannes C. Paetzold",
+          "Laurin Lux",
+          "Ulrich Bauer"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.CG",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.37177v1",
+        "published": "2026-09-29T10:02:52+00:00",
+        "title": "Sparse cubical complexes for efficient topology-preservation in image data",
+        "updated": "2026-09-29T10:02:52+00:00",
+        "version_id": "2609.37177v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.37177v1"
+      ]
+    },
+    "2609.37283": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Medical multimodal large language models (MLLMs) are increasingly expected not only to answer clinical questions, but also to localize the visual evidence behind their predictions. A common strategy connects a vision--language model (VLM) with SAM-style segmentation through a special <SEG> token, yet full-parameter training of this unified architecture is difficult because image-level reasoning and pixel-level segmentation impose different requirements on the shared representation space. To address this issue, we propose a parameter-decoupled training framework for unified medical reasoning and segmentation. The framework treats the <SEG> hidden state as a semantic-to-spatial prompt for the mask decoder and encourages it to become separable from generic language states, reducing ambiguous segmentation prompts and potential disruption to reasoning representations. It first performs medical shallow alignment to adapt visual features to clinical language without disturbing the LLM; then controlled instruction tuning shapes separable <SEG> prompt states, monitored by the Davies--Bouldin Index (DBI), while scaling segmentation gradients entering the language backbone; finally, the SAM branch is specialized with the VLM frozen to improve mask precision without altering reasoning parameters. Experiments on medical referring segmentation, grounding, visual QA, and textual QA benchmarks show that our framework achieves strong language-conditioned segmentation while preserving competitive reasoning ability. Ablations show that two-phase instruction tuning, gradient scaling, and segmentation specialization all contribute to the model.",
+        "authors": [
+          "Xuyang Cao",
+          "Enyou Liu",
+          "Jun Zhao",
+          "Zhuoyun Liu",
+          "Jintao Fei",
+          "Leo"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.37283v1",
+        "published": "2026-09-29T11:27:05+00:00",
+        "title": "SAM Meets VLM: Parameter-Decoupled Full-Parameter Training for Unified Medical Reasoning and Segmentation",
+        "updated": "2026-09-29T11:27:05+00:00",
+        "version_id": "2609.37283v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "transferable_objective",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.37283v1"
+      ]
+    },
+    "2609.37350": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "The development of AI systems for tumor-specific applications is limited by the scarcity of labeled data. Synthetic tumor inpainting offers a promising approach but faces challenges for prostate cancer MRI which contains high-resolution multi-sequence data. Although methods leveraging latent diffusion models (LDMs) enable large-volume synthesis, they are prone to shortcut learning, simply reproducing the condition image created by masking the lesion region. In this work, we introduce PCaPaint, a prostate cancer inpainting method based on LDMs that explicitly addresses this failure mode. To overcome shortcut learning that compromises synthetic tumor texture, we propose a simple yet efficient conditioning strategy in which the condition image is filled with Gaussian noise, and we provide theoretical justification. In addition, we propose a novel training objective for LDM that emphasizes the error within the lesion region. Furthermore, we introduce a multi-sequence latent design, in which T2w scans and DWI&ADC scans are compressed using two separate autoencoders to preserve their distinct frequency characteristics. Extensive experiments demonstrate that the generated synthetic data improves downstream performance in prostate lesion segmentation, patient-level classification and lesion-level detection. Furthermore, our method significantly outperforms a recent state-of-the-art LDM-based tumor inpainting method both in downstream performance and in synthetic image quality.",
+        "authors": [
+          "Levente Lippenszky",
+          "Hongxu Yang",
+          "Marcell Dömötör",
+          "Krisztian Koos",
+          "László Ruskó"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.37350v1",
+        "published": "2026-09-29T12:16:36+00:00",
+        "title": "PCaPaint: Prostate Cancer Inpainting by Mitigating Shortcut Learning",
+        "updated": "2026-09-29T12:16:36+00:00",
+        "version_id": "2609.37350v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.37350v1"
+      ]
+    },
+    "2609.37648": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Preoperative liver-tumor assessment requires segmentation, physical-space measurement, visual evidence, and resection planning from the same three-dimensional CT volume. Existing tools often handle these steps separately, while language models cannot reliably compute physical measurements from CT. To provide an integrated workflow, we present VoxelSage, a multi-modal system for two- and three-dimensional visualization, liver-tumor analysis, and preoperative resection planning. Its dual-port architecture separates language-model orchestration from image computation: Port A interprets requests and selects skills, while Port B applies them to CT volumes and segmentation masks and returns structured results. Keeping physical measurements in Port B prevents the LLM from computing them directly and reduces the risk of fabricated numerical results. Eight built-in skills support quantitative analysis, visual evidence generation, three-dimensional reconstruction, segmentation refinement, and sequential resection planning; user-defined skills can extend these functions. For sequence planning, a behavior-cloned neural ranker orders candidate resection targets, while a simulator-based shield checks them against predefined constraints. Across 256 unseen simulator scenes, this approach reduced mean simulated time from 34.274 to 33.388 min (0.886 min, 2.59%) and mean simulated blood loss from 300.847 to 183.852 mL (116.995 mL, 38.89%) relative to a deterministic baseline. These results demonstrate system integration and simulator-level performance, not clinical efficacy or safety. The public implementation is available at https://github.com/ZJUMAI/VoxelSage.",
+        "authors": [
+          "Binghong Qian",
+          "Xuanhe Liu",
+          "Yifan Xing",
+          "Wenjie Deng",
+          "Jian Wu",
+          "Haochao Ying"
+        ],
+        "categories": [
+          "cs.CV",
+          "eess.IV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.37648v1",
+        "published": "2026-09-29T14:15:18+00:00",
+        "title": "VoxelSage: Tool-Augmented 3D CT Analysis and Simulator-Shielded Sequential Resection Planning for Liver Tumors",
+        "updated": "2026-09-29T14:15:18+00:00",
+        "version_id": "2609.37648v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.37648v1"
+      ]
+    },
+    "2609.37875": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Inverse design of physical systems (molecules, devices, microstructures) often reduces to optimizing a high-dimensional structure against an expensive black-box simulator. Direct search is difficult because the space is non-Euclidean, feasibility is hard to encode, and each evaluation is expensive. We present Co-PiLOT, a latent optimization approach that maps candidates through a generative encoder-decoder, uses the decoder as a learned validity prior, and searches the latent space with physics-informed black-box optimization. The framework is applied on the inverse design of magnesium alloy microstructure/texture. We develop a vision transformer based-encoder; paired with latent diffusion, diffusion transformer and rectified-flow transformer-based decoders on $\\sim80{,}000$ EBSD-derived microstructure dataset to learn a minimal bottleneck, $z$. The ViT-FMDiT model ($z$=$768$) reconstructs high-fidelity microstructure images (FID $27.86$, MS-SSIM $0.178$), which our self-segmenting orientation codec converts into input grids for crystal plasticity solver. Finally, we introduce MERIDIAN, an active latent optimizer driven by deep-kernel Gaussian-process uncertainty, failure-aware feasibility prediction, manifold-aware trust regions, and target-aware acquisition. Within a budget of $160$ simulations, the ViT-FMDiT and MERIDIAN combination yields the best target-driven objective score, reducing the relative target error by $3$--$22\\%$ against seven baselines (DANTE, TuRBO, BAxUS, CMA-ES, DDOM, SEIKO, DDPO) on the same decoder.",
+        "authors": [
+          "Mahish K. Guru",
+          "Mayank Nagar",
+          "Ayush vyas",
+          "Jan Bohlen",
+          "Roland Aydin",
+          "Noomane Ben Khalifa"
+        ],
+        "categories": [
+          "cs.AI",
+          "cs.CE"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.37875v1",
+        "published": "2026-09-29T15:51:02+00:00",
+        "title": "Co-PiLOT: Constrained Physics-Informed Latent Optimization for Target-Driven Inverse Design",
+        "updated": "2026-09-29T15:51:02+00:00",
+        "version_id": "2609.37875v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.37875v1"
+      ]
+    },
+    "2609.38165": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "The landscape of satellite imagery time series datasets and boundary-pushing architectures for cropland segmentation has never been richer. However, in this gold rush, important truths are being missed on both fronts, as a drive for the most novel concepts or the largest datasets pushes finer details to the side. In this paper, we present our hybrid transformer-convolutional model, Cropland Parallel Attention and Refinement Network for Segmentation (PAtteRNS), the first model to use self-attention mechanisms separately for each of the temporal, spectral, and spatial aspects of Sentinel-2 multispectral SITS data. To achieve fully-factorised attention in our proposed model, we introduce a novel parallel transformer architecture which significantly reduces the computational complexity of triple-factorised self-attention. We validate our architecture with an in-depth ablation study, and analyse the performance of our model against state-of-the-art crop segmentation models on multiple tile-size variants of the popular PASTIS and MTLCC datasets. Our findings show our model to outperform all others in the task of crop class segmentation, verified across multiple important segmentation metrics, with especially strong performance against compared models seen in the often under-reported parcel delineation quality, for which we use the Boundary IoU metric. We also find that flawed class groupings within datasets can have a significant negative impact on model performance, and report that alternate tile-size variants of crop segmentation datasets produce results incomparable to one-another, invalidating fair comparison between model performance when trained on different tile-sizes. Based on these findings, we suggest further work is required to standardise best practices when constructing SITS crop segmentation datasets, and to enable future dynamic-tile-sizing for ideal model performance.",
+        "authors": [
+          "Joseph Metcalfe",
+          "Sara Sharifzadeh",
+          "Fabio Caraffini"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.38165v1",
+        "published": "2026-09-29T17:59:29+00:00",
+        "title": "Cropland PAtteRNS: Parallel Dimensional Attention Networks and Attention to Dataset Disparity for Crop Segmentation in Satellite Imagery Time Series Data",
+        "updated": "2026-09-29T17:59:29+00:00",
+        "version_id": "2609.38165v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.38165v1"
+      ]
+    },
+    "2609.38758": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Referring Video Object Segmentation (RVOS) aims to produce a pixel-accurate mask sequence for an object specified by natural language. Sa2VA combines a multimodal large language model with SAM2 for grounded segmentation; however, its inference typically grounds the query from a small fixed set of initial keyframes and then relies on propagation. In long or dynamic videos, this can cause stale grounding and persistent false positives when the object composition changes (e.g., distractors enter or the target disappears/re-appears). We propose Event-Driven Refresh + Recurrence Memory (EDRRM), an enhancement that selectively re-invokes Sa2VA only at stable change points. EDRRM triggers refresh boundaries using an EMA-smoothed event score computed from tracking-derived cues (births/deaths and coarse composition/layout changes) with temporal constraints. A recurrence memory further retrieves anchor frames via CLIP similarity to re-condition the model on re-appearance events. Experiments on Ref-DAVIS17, MeViS, and ReVOS show that EDRRM achieves a competitive accuracy-efficiency trade-off relative to fixed-window and FrameDiff-SSIM baselines, maintaining comparable or superior J&F scores at substantially lower average refresh-call budgets and reducing false-positive failures. End-to-end runtime analysis further confirms that the overhead introduced by tracking, CLIP-based recurrence matching, and the identifiability gate remains modest relative to the dominant Sa2VA inference cost, thereby validating the efficiency of the proposed pipeline.",
+        "authors": [
+          "Abu Hanif Muhammad Syarubany",
+          "Jaehyun Jang",
+          "Siwoo Lim",
+          "Seungyeon Ryu",
+          "Chang D. Yoo"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.38758v1",
+        "published": "2026-09-30T01:44:08+00:00",
+        "title": "Event-Driven Refresh and Recurrence Memory to Reduce Stale Grounding in Referring Video Object Segmentation",
+        "updated": "2026-09-30T01:44:08+00:00",
+        "version_id": "2609.38758v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.38758v1"
+      ]
+    },
+    "2609.38893": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "A stochastic hybrid system (SHS) is governed by a stochastic differential equation (SDE) describing the continuous dynamics and a Markov reset kernel triggered on the guard surface. Its probability evolution can be described by a hybrid Fokker-Planck (HFP) equation with a partial differential term corresponding to the SDE and an integral term arising from the reset kernel. This work shows that such an SHS can be approximated by an SDE in a higher-dimensional latent space where the sample paths are continuous. The key to this result is to encode different branches of the reset kernel using auxiliary variables, transforming the resets into deterministic ones that enable topological gluing. By the embedding theorem, the glued manifold can then be embedded into a higher-dimensional Euclidean space. We show that the probability evolution on the embedded image no longer requires explicit reset terms in the HFP equation. Building on this theorem, we design a loss that matches the evolving state distributions, enabling a single latent SDE to recover the probability evolution of the SHS without mode labeling, trajectory segmentation, or event-based simulations.",
+        "authors": [
+          "Sangli Teng",
+          "Hang Liu",
+          "Koushil Sreenath"
+        ],
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "eess.SY"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.38893v1",
+        "published": "2026-09-30T03:40:28+00:00",
+        "title": "Learning Continuous Neural Representation of Stochastic Hybrid Systems",
+        "updated": "2026-09-30T03:40:28+00:00",
+        "version_id": "2609.38893v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.38893v1"
+      ]
+    },
+    "2609.38930": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "In semantic segmentation, a recent line of RankSEG methods directly optimizes Dice/IoU scores at inference time, improving alignment with evaluation metrics without modifying model training. Despite its theoretical and empirical success, RankSEG relies on the restrictive Conditional Independence Assumption (CIA), which ignores crucial label correlations and therefore degrades performance in ambiguous or low-contrast scenarios. However, accounting for full label dependence is computationally prohibitive, requiring $\\mathcal{O}(d^3)$ time. To address this, we replace the CIA with a Spatially Localized Dependence (SLD) structure that captures local label correlations while keeping the dependence model tractable. We further overcome the remaining computational bottleneck via a Reciprocal Moment Approximation coupled with a novel fixed-point optimization strategy that eliminates exhaustive search. The proposed algorithm achieves a highly practical $\\mathcal{O}(d \\log d)$ complexity and consistently outperforms conventional argmax and CIA-based RankSEG across diverse segmentation benchmarks. Improvements are significant in low-contrast or small-object scenarios, where label dependence offers valuable signals complementary to image information for accurate segmentation. The code of experiments is available at https://github.com/ZixunWang/RankSEG-DEP.",
+        "authors": [
+          "Zixun Wang",
+          "Ben Dai"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI",
+          "cs.LG",
+          "stat.ML"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.38930v1",
+        "published": "2026-09-30T04:10:57+00:00",
+        "title": "On the Relaxation of Conditional Independence Assumption for Image Segmentation",
+        "updated": "2026-09-30T04:10:57+00:00",
+        "version_id": "2609.38930v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.38930v1"
+      ]
+    },
+    "2609.39083": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Super-resolution and quality enhancement of 1.5\\,T brain MRI are normally validated with image-fidelity metrics, although their purpose is to improve downstream analysis. We study whether enhancement improves tissue segmentation, and for which segmenters. We propose an unpaired, physics-guided training pipeline for a lightweight ($\\le$2.5\\,M parameter) recurrent convolutional enhancer: a six-module stochastic 1.5\\,T degradation operator, a residual adversarial network that adds scanner-specific texture without moving anatomy, and a cycle-consistent objective with an anti-identity penalty that rules out the copy solution. We then train U-Net, Swin-UNet and wavelet token-mixing segmenters \\citep{jeevan2023wavemix} from scratch on either raw or enhanced 1.5\\,T images of the same subjects, using identical labels and subject-level splits, for three enhancer variants and two datasets. On ABIDE (41 held-out subjects, FreeSurfer labels) enhancement significantly improves the wavelet segmenter (mean Dice $+0.014$, Wilcoxon $p=3.5\\times10^{-5}$; CSF $+0.018$, grey matter $+0.013$), significantly degrades the U-Net ($-0.008$, $p=5.1\\times10^{-4}$) and leaves Swin-UNet unchanged. On IXI, whose labels come from FSL-FAST, enhancement lowers Dice for all nine pairings, almost entirely through CSF; we trace this to spatially implausible CSF voxels in the labels that penalise smoother predictions. Enhancement of low-field MRI should therefore be validated per downstream model and against reliable labels.",
+        "authors": [
+          "Kavitha Viswanathan",
+          "Harsh Choudhary",
+          "Amit Sethi"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.39083v1",
+        "published": "2026-09-30T06:23:43+00:00",
+        "title": "MRI Super-Resolution with RCDM/WaveMix and Task-Aware Segmentation",
+        "updated": "2026-09-30T06:23:43+00:00",
+        "version_id": "2609.39083v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.39083v1"
+      ]
+    },
+    "2609.39265": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "The Segment Anything Model (SAM) achieves remarkable performance in visual segmentation. The latest SAM3 extends promptable segmentation to concept-level prediction, broadening the scope of segmentation foundation models. While recent works reveal that SAM and SAM2 are vulnerable to adversarial examples, the robustness of SAM3 under the concept segmentation paradigm remains unexplored. In addition, existing adversarial attacks on SAM-series models exhibit limited cross-prompt transferability. To this end, we propose AdvPCS, a universal cross-prompt adversarial attack for Promptable Concept Segmentation (PCS), including a min-max prompt optimization strategy, a global-local perception deception attack, and a temporal transition deviation attack. Specifically, we first identify the hardest-to-attack prompts via min-max bilevel optimization. In the inner maximization, we enhance diversity over candidate point, box, and text prompts. In the outer minimization, we select prompts with the highest responses based on the confidence scores output by the detector. Given the selected prompts, we apply the perception deception attack to minimize both global and local existence probabilities under joint prompting and employ the temporal memory misalignment attack to maximize inter-frame semantic inconsistency and corrupt memory pointers. Extensive experiments on four benchmark datasets show that a single universal adversarial perturbation (UAP) generated by our method generalizes across frames from different videos and achieves strong attack performance under point, box, and text prompts. In particular, it reduces the average mIoU of various PCS models on the SA-CO dataset to below 5% under text prompts, demonstrating strong attack ability.",
+        "authors": [
+          "Ziqi Zhou",
+          "Yifan Hu",
+          "Yufei Song",
+          "Haowen Jiang",
+          "Xianlong Wang",
+          "Shengshan Hu",
+          "Dezhong Yao",
+          "Leo Yu Zhang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.39265v1",
+        "published": "2026-09-30T08:23:06+00:00",
+        "title": "Universal Cross-Prompt Adversarial Attacks on Promptable Concept Segmentation",
+        "updated": "2026-09-30T08:23:06+00:00",
+        "version_id": "2609.39265v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.39265v1"
+      ]
+    },
+    "2609.39266": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations. However, this alignment is fundamentally hindered by two intertwined sources of ambiguity: projection-induced visual mismatch and patient-agnostic semantic overlap. First, at the local feature level, frontal and lateral radiographs exhibit distinct appearances for the same clinical finding, rendering a shared patch-text similarity geometry inherently suboptimal. Compounding this visual ambiguity is a semantic mismatch during global contrastive optimization, where instance-level objectives penalize cross-patient pairs as strict negatives even when they share identical positive clinical concepts. To address this dual ambiguity, we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning. At the local alignment stage, Projection-Conditioned Low-Rank Residual Similarity (PLRS) dynamically adapts patch-text matching to projection-specific manifolds using a bounded, parameter-efficient low-rank residual. At the global optimization stage, Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS) leverages a corpus-derived information-theoretic prior to soften the penalty of semantically overlapping negatives without altering original contrastive assignments. Extensive experiments across nine public zero-shot benchmark settings demonstrate that our framework yields consistent improvements in classification, grounding, and segmentation, validating the necessity of dual-calibration in medical vision-language pre-training.",
+        "authors": [
+          "Qixing Zhao",
+          "Jinpeng Li"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.39266v1",
+        "published": "2026-09-30T08:23:11+00:00",
+        "title": "PLRS-IC: A Dual-Calibration Framework for Chest X-Ray Vision-Language Alignment",
+        "updated": "2026-09-30T08:23:11+00:00",
+        "version_id": "2609.39266v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.39266v1"
+      ]
+    },
+    "2609.39681": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Unsupervised domain adaptation (UDA) reduces the annotation burden in panoptic segmentation by leveraging a cost-effectively labeled source domain (e.g., synthetic) and an unlabeled target domain to bridge the distribution gap. Existing panoptic UDA methods rely on teacher-student consistency learning built upon suboptimal per-pixel segmentation architectures. In contrast, state-of-the-art mask transformers are rarely adopted due to their pronounced vulnerability to confirmation bias in consistency learning, where erroneous teacher predictions are reinforced during training. Our earlier approach, MC-PanDA, mitigates this issue through fine-grained confidence estimation, which suppresses gradients from unreliable masks while sampling informative yet reliable locations for loss computation. However, this method entails a complex multi-stage training and requires careful hyperparameter tuning. This work presents MC-PanDA++, which addresses these limitations by introducing: (i) self-supervised vision encoders that provide a stronger and more robust initialization, further reducing the reliance on human annotations, (ii) per-class, self-adapting mask-wide loss scaling that stabilizes training and enables the usage of a single set of hyperparameters across domains, and (iii) a single-stage training pipeline that decreases overall conceptual complexity. Together, these improvements result in a conceptually simpler, better-performing, and more robust method for domain-adaptive panoptics. Source code: https://github.com/martinovicivan/MC-PanDA",
+        "authors": [
+          "Ivan Martinović",
+          "Josip Šarić",
+          "Yuki M. Asano",
+          "Siniša Šegvić"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.39681v1",
+        "published": "2026-09-30T13:12:45+00:00",
+        "title": "MC-PanDA++: Simpler, Stronger, and More Robust Domain-Adaptive Panoptic Segmentation",
+        "updated": "2026-09-30T13:12:45+00:00",
+        "version_id": "2609.39681v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.39681v1"
+      ]
+    },
+    "2609.39704": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "This paper demonstrate that whether masking-based token pruning helps or hurts worst-group robustness can be predicted before deployment, without labels or fine-tuning. A systematic study of semantic masking across 8 spurious-correlation benchmarks shows its effect on worst-group accuracy is highly unstable: it improves accuracy by up to 82.5\\% relative on some datasets and degrades it by up to 100\\% on others. We trace this instability to spurious inversion: background patches receive higher CLIP text-similarity than the true object when the spurious attribute is background-separable, inverting the assumption every text- and attention-guided pruning method relies on. We introduce the Spurious Inversion Metric (SIM), a label-free, pre-deployment diagnostic whose sign predicts this effect with statistical significance (binomial $p=0.035$) across all 8 datasets, and remains dependable across 6 CLIP architectures with a clean foreground/background split. Naive masking is itself a major source of risk: it causes the largest average-accuracy loss of any method we evaluate, and its own per-image segmentation step is a significant runtime bottleneck. To address this, we design a batched, synchronization-free GPU segmentation routine that cuts this overhead from 3.5$\\times$ to 1.75$\\times$ baseline. Gating deployment by SIM's sign recovers masking's benefits while avoiding its worst failures, matching or exceeding a strong pruning baseline on 7 of 8 datasets.",
+        "authors": [
+          "Muhammad Zawish",
+          "Steven Davy"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.39704v1",
+        "published": "2026-09-30T13:21:27+00:00",
+        "title": "When Masking Helps or Hurts Robustness in Compressed CLIP: A Pre-Deployment Diagnostic",
+        "updated": "2026-09-30T13:21:27+00:00",
+        "version_id": "2609.39704v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.39704v1"
+      ]
+    },
+    "2609.39785": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "The Segment Anything Model (SAM) relies heavily on massive manual annotations, creating a fundamental bottleneck for model scaling. While unsupervised methods attempt to learn object concepts from motion, they typically overfit to moving entities, lacking both multi-granularity understanding and the ability to generalize to static objects. To overcome this, we introduce Motion-Grounded Segment Anything (MoSA), a highly scalable unsupervised framework that learns a transferable objectness prior from unlabeled videos. MoSA operates in three progressive stages: (1) automatically generating multi-granularity motion pseudo-labels from large-scale video data; (2) training a Perceptual Grouping Model (PGM) via contrastive learning to internalize a generalized, appearance-driven concept of objects; and (3) transferring this learned prior into a prompt-guided architecture for segment-anything-style inference on images. Extensive zero-shot evaluations across seven challenging benchmarks (e.g., COCO and ADE20K) demonstrate that MoSA significantly outperforms existing unsupervised methods. Notably, despite using zero manual annotations, MoSA achieves segmentation performance comparable to the fully supervised SAM. Our findings reveal that harnessing large-scale unlabeled motion is a feasible and highly scalable alternative to annotation-driven segment-anything pipelines.",
+        "authors": [
+          "Weijian Jian",
+          "Xiaoyue Zhang",
+          "Bin Xiao",
+          "Chunyu Xie",
+          "Yixiao He",
+          "Yutao Liu",
+          "Dawei Leng",
+          "Yuhui Yin"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2609.39785v1",
+        "published": "2026-09-30T14:06:32+00:00",
+        "title": "Seeing as Humans Do: Learning from Motion to Segment Anything Without Supervision",
+        "updated": "2026-09-30T14:06:32+00:00",
+        "version_id": "2609.39785v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2609.39785v1"
+      ]
+    },
+    "2610.00483": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Representation alignment (REPA) accelerates diffusion transformer training, but its alignment targets are almost exclusively semantic encoders such as DINOv2 and CLIP. Recent analysis points to spatial structure, not global semantics, as the carrier of the alignment effect, yet dense-prediction foundation models trained to predict that structure remain overlooked as REPA targets. In pixel-space diffusion, SAM2, Depth Anything v2, and Metric3D v2 each outperform the DINOv2-only GenEval baseline, with the two geometric teachers leading the segmentation teacher. A flat sum of all four teachers, however, lands below the best single geometric teacher, as semantic and geometric gradients compete for one denoiser projection. We introduce PixelDense, which routes DINOv2 and SAM2 through a semantic projection stream, routes Depth Anything v2 and Metric3D v2 through a geometric projection stream, and adds a weight-space orthogonality penalty that keeps the two streams in disjoint subspaces. All four teachers are frozen during training and dropped at inference. Applied to PixelGen and DeCo with a single recipe, PixelDense improves GenEval, DPG-Bench, and HPS v2.1, raises PixelGen-XXL's GenEval Overall from 0.7927 to 0.8093, and beats every single-teacher and unfactored multi-teacher variant. In partial-noise reconstruction, independent panoptic, depth, and surface-normal probes show up to 53.1% PQ gain and 36.0% depth AbsRel reduction at $τ=0.5$ across COCO and Flickr30K. From random initialization, PixelDense also reaches the baseline's peak GenEval 1.23x faster. In SDEdit editing on PIE-Bench, PixelDense keeps more of the source background and layout at every edit strength, raising background PSNR by up to 2.2 dB.",
+        "authors": [
+          "Lehan Yang",
+          "Daiqing Qi",
+          "Wenhao Zhang",
+          "Avery Li",
+          "Yiqing Yang",
+          "Yifan Li",
+          "Yu Kong",
+          "Haitian Zheng",
+          "Zhifei Zhang",
+          "Zhe Lin",
+          "Varun Jampani",
+          "Sheng Li"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.00483v1",
+        "published": "2026-09-30T18:00:13+00:00",
+        "title": "PixelDense: Dense Prediction as Representation Alignment for Pixel Diffusion",
+        "updated": "2026-09-30T18:00:13+00:00",
+        "version_id": "2610.00483v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.00483v1"
+      ]
+    },
+    "2610.00848": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Vision-language models (VLMs) have emerged as powerful candidates for universal vision backbones, with representative architectures including autoregressive (AR) models and diffusion transformers (DiTs). Yet, adapting them efficiently for all-in-one low-level image restoration remains a challenge. Crucially, the field lacks an understanding of how VLMs organize hidden-layer representations and whether these structurally distinct paradigms share a common geometric organization for pixel-level perception. Such shared organization is a prerequisite for building highly transferable, unified restoration VLMs and adapters. In this paper, we systematically investigate representational similarity across 24 low-level tasks spanning 5 categories. We propose GeoSim, a unified four-level framework that analyzes task-conditioned representations from global similarity, local geometry, sparse feature decomposition, and topological verification perspectives. Our formulation applies to the analysis of hidden states in AR models and feature maps in DiTs across same- and cross-task/model settings. Our results reveal the organizing principles of low-level visual representations while exposing their limits in cross-task and cross-model agreement. Ultimately, GeoSim provides an interpretability lens for probing latent transferability in low-level vision and diagnosing model limitations in task- or model-specific scenarios.",
+        "authors": [
+          "Shao-Jun Xia",
+          "Huixin Zhang",
+          "Zhen Lei",
+          "Anlan Sun",
+          "Yuner Zhang",
+          "Xiaoyang Chen"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.00848v1",
+        "published": "2026-10-01T00:06:17+00:00",
+        "title": "Geometric Similarity in VLM Low-Level Vision Representations",
+        "updated": "2026-10-01T00:06:17+00:00",
+        "version_id": "2610.00848v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.00848v1"
+      ]
+    },
+    "2610.01060": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "BraTS 2025 Lighthouse Challenge Task 1 (BraTS-GLI 2025) evaluates glioma segmentation in pre-treatment and post-treatment multimodal MRI. The resection cavity (RC) is applicable only to post-treatment cases, creating different target definitions across the two cohorts. We developed RC-aware nnU-Netv2, a framework that combines lesion- and boundary-aware single-cohort training with an RC-aware joint objective and treatment-status-guided routing. During pooled training, the joint objective applies both standard and boundary-weighted binary cross-entropy to all four region channels, while using standard Dice supervision for channels with a non-empty target in the current mini-batch and a controlled false-positive penalty for channels that are empty across the mini-batch. This empty-target handling is particularly relevant to the all-zero RC target in pre-treatment cases. Beyond the standard nnU-Netv2 augmentation pipeline, the submission does not use synthetic tumor generation, on-the-fly GliGAN augmentation, model-level probability averaging, voting, multi-fold fusion, or multi-architecture ensembling. Each case is routed to exactly one specialized model. Our submission ranked second in BraTS-GLI 2025. On the official blind test set, our method achieved mean lesion-wise Dice scores of 0.7878, 0.8709, 0.7923, and 0.8715 and mean NSD@1.0 scores of 0.8309, 0.8712, 0.7980, and 0.8336 for enhancing tumor, RC, tumor core, and whole tumor, respectively. In paired post-treatment analysis, the RC-aware joint model improved mean lesion-wise Dice by 0.042 (95% CI: [0.028, 0.057]) and mean NSD@1.0 by 0.043 (95% CI: [0.028, 0.059]) compared with joint baseline training.",
+        "authors": [
+          "Lin Qu",
+          "Ziqi Chen",
+          "Anqi Wu",
+          "Jinyao Shen",
+          "Hai Shu"
+        ],
+        "categories": [
+          "eess.IV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.01060v1",
+        "published": "2026-10-01T04:57:50+00:00",
+        "title": "RC-aware nnU-Netv2 for Pre-treatment and Post-treatment Glioma Segmentation Using Multimodal MRI",
+        "updated": "2026-10-01T04:57:50+00:00",
+        "version_id": "2610.01060v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.01060v1"
+      ]
+    },
+    "2610.01166": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Cardiovascular magnetic resonance (CMR), including cine imaging, is a reference standard for the noninvasive assessment of cardiac morphology and ventricular function. Cine CMR interpretation integrates qualitative visual assessment with quantitative measurements of ventricular volumes, ejection fraction, myocardial mass, wall thickness, and regional wall motion. Current medical vision-language models (VLMs) cannot reliably derive quantitative measurements from multidimensional cine images without analysis tools. We present CineMR, a tool-augmented VLM that invokes cardiac image-analysis tools and integrates their outputs into interleaved reasoning for quantitative CMR assessment. We also construct a multi-cohort visual question answering benchmark covering quantitative metric extraction, multiclass diagnosis, and differential diagnosis, together with tools for segmentation, phase selection, volumetry, morphometry, and regional wall motion analysis. CineMR is trained with supervised fine-tuning (SFT) on tool-interaction traces followed by Group Relative Policy Optimization (GRPO) with conditional tool-use rewards. On the multi-cohort cine CMR benchmark, CineMR achieves 35.9% pass@1 and 58.9% pass@4, compared with 1.5% pass@1 for the Qwen3-VL-8B backbone and 0.0% and 7.0% pass@1 for LLaVA-Med v1.5 and MedGemma-4B, respectively. Correct tool invocation reaches 99.8% after GRPO, up from 78.9% after SFT. Live tool outputs improve ventricular measurement accuracy by 20.4--23.7% over direct model predictions, and removing all tools reduces pass@1 from 35.9% to 27.9%. These results highlight the importance of reliable tool use for quantitative cine CMR reasoning and support CineMR as a promising approach for assistive cardiac image assessment. Code, benchmark resources, and model weights are available at https://github.com/AI-MIND-Lab/CineMR.",
+        "authors": [
+          "Kunyang Li",
+          "Hai Nguyen",
+          "Joshua Lowe",
+          "Chenguang Zhao",
+          "Peace C. Madueme",
+          "Mehdi Hedjazi Moghari",
+          "Mubarak Shah",
+          "Pegah Khosravi",
+          "Yuzhang Zhang"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.01166v1",
+        "published": "2026-10-01T06:43:42+00:00",
+        "title": "CineMR: Tool-Integrated Vision-Language Reasoning for Quantitative Cardiac MRI Assessment",
+        "updated": "2026-10-01T06:43:42+00:00",
+        "version_id": "2610.01166v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "medical_objective",
+        "general_rl",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.01166v1"
+      ]
+    },
+    "2610.01175": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Standard information bottleneck (IB) regularization constrains representations via a single scalar I(Z;X), implicitlytreating all information as homogeneous. However, a single global compression control couples label-relevant structurewith residual within-condition variation, rather than regulating their allocation independently, allowing nuisanceinformation to persist in learned representations. For example, in medical imaging applications, residual variation oftenstems from acquisition conditions, background factors, or subject-specific appearance. This issue becomes particularlypronounced in data-limited settings, where models tend to overfit such variation, hindering generalization. While existingregularization methods can stabilize training, control capacity, or shape representation geometry, they do not explicitlyseparate nuisance-like variation from task-supporting structure. To address this limitation, we revisit IB from a structuredperspective based on a label-induced partition, where condition-level structure and within-condition information playdistinct roles. This leads to a dual-bottleneck formulation: a standard KL term controls global information capacity, while aconditional KL term targets within-condition information. We show that the conditional KL admits an exact decompositioninto a within-condition information term and a prior-mismatch term, explaining its alignment with the design objective.With a simplex-structured conditional prior, the method provides controllable latent geometry and integrates seamlesslyinto existing pipelines. Experiments on classification and segmentation show the clearest gains in low-data classificationand consistent improvements across dense prediction benchmarks.",
+        "authors": [
+          "Jingyao Zhang",
+          "Yuxuan Li",
+          "Lu Han",
+          "Ali Anaissi",
+          "Nguyen H. Tran"
+        ],
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.01175v1",
+        "published": "2026-10-01T06:50:36+00:00",
+        "title": "Rethinking the Information Bottleneck: Structured Decomposition under Label-Induced Partitions",
+        "updated": "2026-10-01T06:50:36+00:00",
+        "version_id": "2610.01175v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.01175v1"
+      ]
+    },
+    "2610.01452": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "While state-of-the-art automated models for medical image segmentation achieve high mean performance, they frequently suffer from localized, catastrophic failures that preclude safe clinical deployment, particularly in neuro-oncology. Interactive segmentation frameworks mitigate this by incorporating human oversight, but traditionally impose prohibitive cognitive and temporal workloads by requiring clinicians to manually search for errors. In this project, we present an efficient, Hybrid Structural-Aleatoric Human-in-the-Loop framework for glioma segmentation that bridges the gap between automated baseline performance and surgical-grade precision, achieving sub-2.0 mm HD95 on curated benchmarks while providing safety-net routing for structural failures across real-world clinical data. By extracting voxel-wise Test-Time Augmentation (TTA) uncertainty and applying hierarchical topological filtering, our method proactively isolates high-risk structural anomalies. We comprehensively evaluated our approach on a challenging out-of-distribution clinical stress-test cohort (N = 362). Operating under a simulated Human Oracle, the framework improved the Whole Tumor (WT) Dice score from 0.891 to 0.914 and reduced the 95th percentile Hausdorff Distance (HD95) from 5.82 mm to 4.76 mm. Critically for surgical safety, the system rescued severe boundary failures in the Tumor Core, reducing mean HD95 from 17.96 mm to 14.83 mm (improving absolute TC Dice to 0.356). These spatial rescues were achieved while demanding a median interactive workload of just 11.3% of the target volume. Acknowledging this as a simulated upper bound lacking real-world cognitive friction, the framework nevertheless demonstrates a highly Pareto-efficient pathway for safely deploying clinical AI.",
+        "authors": [
+          "Samuel Hart",
+          "Ahmad Yahya",
+          "Ahmed Karam Eldaly"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.01452v1",
+        "published": "2026-10-01T10:48:41+00:00",
+        "title": "Uncertainty-Guided Handshake: Efficient Human-in-the-Loop Refinement for Surgical-Grade Glioma Segmentation",
+        "updated": "2026-10-01T10:48:41+00:00",
+        "version_id": "2610.01452v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.01452v1"
+      ]
+    },
+    "2610.02494": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Automatic horizon tracking is a foundational task in 3D seismic interpretation. Most existing deep learning approaches formulate it as dense semantic segmentation, typically using U-Net-based architectures. The model produces a probability map over all pixels that must be post-processed to extract precise horizon coordinates, while horizon picks in time/depth must be converted into dense masks for training. Unpicked seismic traces are consequently treated as background, which can hinder convergence, and both pre- and post-processing can introduce errors into the final interpretation. Moreover, 2D segmentation models do not inherently capture inter-slice context, while 3D models are often computationally prohibitive. We instead formulate horizon tracking as a bounded coordinate regression problem, where the model directly predicts the time/depth coordinate of the target horizon at each lateral position. We propose a lightweight regression head compatible with any pretrained vision backbone, coupled with an LSTM module to model inter-slice context and produce a continuous horizon surface across the volume. A combination of L1 and L2 losses supervises predictions at valid horizon picks, while a geology-informed regularization enforces lateral continuity between successive traces. Under controlled experimental conditions, we evaluate four pretrained vision backbones under both segmentation and regression configurations on a seismic volume from New Zealand. The proposed approach consistently outperforms its segmentation counterparts quantitatively, using metrics including RMSE and PCC, and qualitatively, while also demonstrating greater robustness to increasing sparsity of training picks. Finally, we show that prediction variation across successive traces captures local variations in geological complexity, providing an automated quality control measure for downstream seismic interpretation.",
+        "authors": [
+          "Aniq Ahmad",
+          "Musham Ahmad Malik",
+          "Ahmad Mustafa",
+          "Heather Bedle"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.02494v1",
+        "published": "2026-10-01T21:16:43+00:00",
+        "title": "DeepStratNet: A Context-Aware Coordinate Regression Framework for Seismic Horizon Tracking under Sparse Labels",
+        "updated": "2026-10-01T21:16:43+00:00",
+        "version_id": "2610.02494v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.02494v1"
+      ]
+    },
+    "2610.02946": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Video Object Segmentation (VOS) in complex and long videos is increasingly important for real-world applications, where target objects often appear only intermittently within long temporal horizons. However, existing benchmarks largely focus on temporally salient objects that remain visible for most of the video. To address this gap, we introduce FaVOS (A Benchmark for Video Object Segmentation with Fractional Temporal Visibility), a benchmark designed to evaluate VOS methods under low temporal visibility. We show that, in this regime, the standard J&F metric can collapse VOS evaluation into absence classification, because empty predictions receive high rewards on target-absent frames. Consequently, even a trivial empty-mask predictor can outperform strong models such as SAM 3, revealing a fundamental mismatch between current metrics and practical VOS performance. To mitigate this issue, we propose Volumetric J&F, which evaluates mask sequences as spatio-temporal volumes and reduces the dominance of target-absence rewards while preserving sensitivity to segmentation quality and temporal structure. Project page: https://aidaslab.github.io/FaVOS.",
+        "authors": [
+          "Jihwan Hong",
+          "Woohyeon Park",
+          "Jaeik Kim",
+          "Jaeyoung Do"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.02946v1",
+        "published": "2026-10-02T07:38:42+00:00",
+        "title": "When Predicting Nothing Beats SAM 3: Revisiting Evaluation in Video Object Segmentation",
+        "updated": "2026-10-02T07:38:42+00:00",
+        "version_id": "2610.02946v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.02946v1"
+      ]
+    },
+    "2610.03332": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Accurate three-dimensional (3D) reconstruction of individual dendrites in serial block-face scanning electron microscopy (SBF-SEM) is essential for quantifying structural plasticity in the brain, yet manual annotation at scale is infeasible. We present a fully automatic pipeline for 3D dendrite instance segmentation that unifies YOLOv6-guided Segment Anything Model (SAM) prompting on downsampled slices, iterative two-dimensional mask refinement, random forest 3D instance linking, and instance-aware high-resolution refinement using nnU-Net at native resolution into a single system requiring no manual prompting at inference. Applied to hippocampal CA1 SBF-SEM datasets from a control rat and a pilocarpine- induced epileptic rat, our pipeline reconstructs coherent, well- separated dendrites with high semantic accuracy (Dice 0.93 and 0.91) and strong instance-level performance on control tissue, while analysis of the more challenging epileptic tissue identifies instance recognition in dense regions as the principal remaining limitation. The high-resolution refinement stage recovers thin dendritic protrusions, providing a basis for downstream spine- level analysis. Code is available at https://github.com/ ZE-WEN/dendrite-3d-instance-seg.",
+        "authors": [
+          "Zewen Zhuo",
+          "Ilya Belevich",
+          "Eija Jokitalo",
+          "Alejandra Sierra",
+          "Jussi Tohka"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.03332v1",
+        "published": "2026-10-02T14:04:26+00:00",
+        "title": "A Fully Automatic Pipeline for 3D Dendrite Instance Segmentation in SBF-SEM",
+        "updated": "2026-10-02T14:04:26+00:00",
+        "version_id": "2610.03332v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.03332v1"
+      ]
+    },
+    "2610.03403": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Forest point cloud segmentation is fundamental for fine-grained 3D forest scene understanding, yet remains challenging due to irregular tree structures, severe occlusions, density variations, and ambiguous instance boundaries. Recent query-based forest segmentation methods have shown promise for unified semantic and instance prediction, but they still insufficiently exploit forest-specific spatial structure and account for boundary uncertainty. In this paper, we propose ForestQuery, a boundary-aware and spatially anchored query learning framework for unified forest point cloud segmentation. ForestQuery enhances instance and semantic query learning through two complementary designs. Specifically, boundary uncertainty is explicitly modeled to guide reliable instance query construction and modulate query optimization through adaptive loss reweighting. Meanwhile, spatially anchored semantic query enhancement (SA-SQE) introduces learnable 3D anchors encoding forest vertical stratification priors to enrich semantic queries with explicit spatial references. We evaluate ForestQuery on multiple public forest point cloud benchmarks and a self-collected annotated real-world dataset. Extensive experiments demonstrate consistent improvements in both individual-tree segmentation and semantic segmentation across diverse forest scenes. Code and data are publicly available at https://zhan994.github.io/ForestQuery",
+        "authors": [
+          "Zhihao Zhan",
+          "Le Tao",
+          "Yifei Tian",
+          "Xin Liu",
+          "Jie Yuan"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.03403v1",
+        "published": "2026-10-02T14:54:05+00:00",
+        "title": "ForestQuery: Boundary-Aware and Spatially Anchored Query Learning for Unified Forest Point Cloud Segmentation",
+        "updated": "2026-10-02T14:54:05+00:00",
+        "version_id": "2610.03403v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.03403v1"
+      ]
+    },
+    "2610.03467": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "Accurate colon segmentation from CT images is essential for colorectal disease analysis, yet deep learning based methods often produce disconnected predictions due to complex anatomy. This study introduces a three-stage, topology-preserving segmentation pipeline to address this issue. The first stage performs initial deep learning-based segmentation, followed by centreline bridging to reconnect disjoint regions and a reconstruction stage to refine continuity. Evaluations on TotalSegmentator and RAOS datasets using overlap, distance and topology-based metrics demonstrate improved structural consistency while maintaining segmentation accuracy. The proposed method enhances topological integrity, enabling more reliable colon segmentation for clinical and research applications.",
+        "authors": [
+          "Deshan Kalupahana",
+          "Sonit Singh",
+          "Praveen Ravindran",
+          "Arcot Sowmya"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.03467v1",
+        "published": "2026-10-02T15:41:03+00:00",
+        "title": "Preserving Anatomical Continuity: Three-Stage Pipeline for Colon Segmentation in 3D Abdominal CT Scans",
+        "updated": "2026-10-02T15:41:03+00:00",
+        "version_id": "2610.03467v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.03467v1"
+      ]
+    },
+    "2610.03516": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "paper": {
+        "abstract": "World action models (WAMs) have advanced robot control by predicting how observations and actions evolve over time. Despite this progress, RGB and action based future prediction does not explicitly address the spatial understanding needed for robot manipulation. Existing efforts often add a limited set of spatial prediction tasks through specialized heads or branches, leaving both the range of spatial supervision and the model architecture fragmented. We introduce XGenAct, a world action model that represents RGB observations, robot actions, metric depth, surface normals, and functional role segmentation as RGB videos through deterministic codecs. By sampling perception and action tasks during training, XGenAct uses one video diffusion transformer and one objective to learn temporal prediction across these spaces without modality specific learned heads. On held out RLBench tasks, structured perception training improves average closed loop success over RGB only training, and XGenAct achieves 52% success in the five task external comparison, versus 26% for the strongest evaluated baselines. It also predicts future depth and segmentation more accurately than the evaluated pipelines that generate RGB first and then apply a frozen perception expert.",
+        "authors": [
+          "Tingting Du",
+          "Ziyao Wang",
+          "Guoheng Sun",
+          "Ang Li"
+        ],
+        "categories": [
+          "cs.RO",
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.03516v1",
+        "published": "2026-10-02T16:10:53+00:00",
+        "title": "XGenAct: Geometry-Enhanced World Action Models through Cross-Task Generation",
+        "updated": "2026-10-02T16:10:53+00:00",
+        "version_id": "2610.03516v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.03516v1"
+      ]
     }
   },
   "runs": [
@@ -750,10 +1803,27 @@
       "started_at": "2026-10-02T19:40:28.854990+00:00"
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-06",
+      "discovered_candidates": 33,
+      "discovered_papers": 33,
       "run_id": "20261005T160714Z-f64f44ab",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "eess.IV"
+          ],
+          "end": "2026-10-05T16:07:00+00:00",
+          "seen": 3093,
+          "start": "2026-09-28T16:07:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-05T16:07:14.109560+00:00",
       "window": {
         "end": "2026-10-05T16:07:14.109560+00:00",
