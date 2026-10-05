@@ -733,9 +733,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "MRI Gibbs artifact removal and anatomical segmentation",
+          "BUSI, GlaS, and CVC-ClinicDB"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper is a medical image segmentation and enhancement work, but it does not propose medical reasoning segmentation, nor an RL/DPO/topology objective. Its main contribution is hardware-aware compression and distillation, which only partially matches the medical objective interest and lacks the specific method signals.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No RL/DPO/topology method",
+          "Not medical reasoning segmentation",
+          "Hardware-aware compression rather than transferable objective"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Functional Kolmogorov-Arnold Networks (FunKAN) achieve state-of-the-art accuracy on MRI Gibbs artifact removal and anatomical segmentation, but their 11.6 M parameters and 8.7 GFLOPs are too large for edge medical devices. We present FunKANLite, a two-stage, hardware-aware compression of FunKAN for point-of-care use. FunKANLite-TR reduces the spatial prior and replaces the ResBlock offset predictor with a depthwise-separable block. It has 1.9x fewer parameters than FunKAN and no loss in accuracy. We then distill FunKANLite-TR into FunKANLite-ST, which lowers the Hermite basis rank, factorizes the spatial prior into a low-rank form, and halves the filter widths. FunKANLite-ST has 5.6x fewer parameters and 3.7x fewer GFLOPs than FunKAN. It stays within 1.4 percentage points IoU of FunKAN on BUSI, GlaS, and CVC-ClinicDB, and reaches 33.95 dB PSNR on IXI. On an NVIDIA Jetson Orin Nano and a Raspberry Pi 5, FunKANLite-ST reduces energy per inference by up to 68% and raises throughput by 2.9x.",
         "authors": [
@@ -752,16 +775,12 @@
         "updated": "2026-09-28T19:08:15+00:00",
         "version_id": "2609.36134v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2609.36134v1"
       ]
