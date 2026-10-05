@@ -26,7 +26,8 @@
       "alerts": [],
       "full_ids": [
         "2609.37283",
-        "2610.01166"
+        "2610.01166",
+        "2610.01060"
       ],
       "normal_digests": [],
       "query_reservations": 0,
@@ -3162,6 +3163,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "intended_tier": "full",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "BraTS 2025 Lighthouse Challenge Task 1 (BraTS-GLI 2025) evaluates glioma segmentation in pre-treatment and post-treatment multimodal MRI. The resection cavity (RC) is applicable only to post-treatment cases, creating different target definitions across the two cohorts. We developed RC-aware nnU-Netv2, a framework that combines lesion- and boundary-aware single-cohort training with an RC-aware joint objective and treatment-status-guided routing. During pooled training, the joint objective applies both standard and boundary-weighted binary cross-entropy to all four region channels, while using standard Dice supervision for channels with a non-empty target in the current mini-batch and a controlled false-positive penalty for channels that are empty across the mini-batch. This empty-target handling is particularly relevant to the all-zero RC target in pre-treatment cases. Beyond the standard nnU-Netv2 augmentation pipeline, the submission does not use synthetic tumor generation, on-the-fly GliGAN augmentation, model-level probability averaging, voting, multi-fold fusion, or multi-architecture ensembling. Each case is routed to exactly one specialized model. Our submission ranked second in BraTS-GLI 2025. On the official blind test set, our method achieved mean lesion-wise Dice scores of 0.7878, 0.8709, 0.7923, and 0.8715 and mean NSD@1.0 scores of 0.8309, 0.8712, 0.7980, and 0.8336 for enhancing tumor, RC, tumor core, and whole tumor, respectively. In paired post-treatment analysis, the RC-aware joint model improved mean lesion-wise Dice by 0.042 (95% CI: [0.028, 0.057]) and mean NSD@1.0 by 0.043 (95% CI: [0.028, 0.059]) compared with joint baseline training.",
