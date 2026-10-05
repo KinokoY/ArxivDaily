@@ -1598,9 +1598,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "We instead formulate horizon tracking as a bounded coordinate regression problem",
+          "We propose a lightweight regression head compatible with any pretrained vision backbone",
+          "a geology-informed regularization enforces lateral continuity between successive traces",
+          "we evaluate four pretrained vision backbones under both segmentation and regression configurations on a seismic volume from New Zealand"
+        ],
+        "dpo_is_method": false,
+        "reason": "Seismic horizon tracking paper proposes coordinate regression as an alternative to segmentation, but lacks theoretical grounding or cross-domain transfer evidence and is not medical/RL/DPO; transferable objective relevance is uncertain.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "no theoretical grounding",
+          "no cross-domain transfer experiments",
+          "domain-specific seismic horizon tracking",
+          "no RL/DPO method"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Automatic horizon tracking is a foundational task in 3D seismic interpretation. Most existing deep learning approaches formulate it as dense semantic segmentation, typically using U-Net-based architectures. The model produces a probability map over all pixels that must be post-processed to extract precise horizon coordinates, while horizon picks in time/depth must be converted into dense masks for training. Unpicked seismic traces are consequently treated as background, which can hinder convergence, and both pre- and post-processing can introduce errors into the final interpretation. Moreover, 2D segmentation models do not inherently capture inter-slice context, while 3D models are often computationally prohibitive. We instead formulate horizon tracking as a bounded coordinate regression problem, where the model directly predicts the time/depth coordinate of the target horizon at each lateral position. We propose a lightweight regression head compatible with any pretrained vision backbone, coupled with an LSTM module to model inter-slice context and produce a continuous horizon surface across the volume. A combination of L1 and L2 losses supervises predictions at valid horizon picks, while a geology-informed regularization enforces lateral continuity between successive traces. Under controlled experimental conditions, we evaluate four pretrained vision backbones under both segmentation and regression configurations on a seismic volume from New Zealand. The proposed approach consistently outperforms its segmentation counterparts quantitatively, using metrics including RMSE and PCC, and qualitatively, while also demonstrating greater robustness to increasing sparsity of training picks. Finally, we show that prediction variation across successive traces captures local variations in geological complexity, providing an automated quality control measure for downstream seismic interpretation.",
         "authors": [
@@ -1618,15 +1644,11 @@
         "updated": "2026-10-01T21:16:43+00:00",
         "version_id": "2610.02494v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.02494v1"
       ]
