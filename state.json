@@ -1583,7 +1583,7 @@
           "source_url": "https://arxiv.org/html/2609.37648v1",
           "version_id": "2609.37648v1",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2609.37648v1"
         },
         "source_type": "html",
@@ -1593,27 +1593,53 @@
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
-          "liver-tumor analysis, and preoperative resection planning",
           "segmentation refinement",
           "behavior-cloned neural ranker orders candidate resection targets",
           "simulator-based shield checks them against predefined constraints",
           "These results demonstrate system integration and simulator-level performance, not clinical efficacy or safety."
         ],
         "dpo_is_method": false,
-        "reason": "The paper presents a medical CT analysis and resection planning system where segmentation refinement is only one built-in skill, not a central RL/DPO or theoretically grounded segmentation objective. Its sequential resection planning uses behavior cloning and a simulator shield, which may be a transferable objective but lacks theoretical or transfer support, making relevance to the specified segmentation interests unclear.",
-        "review_evidence": [],
+        "reason": "Fulltext confirms VoxelSage is a case-centered CT analysis and resection-planning system rather than a segmentation-objective paper. It explicitly does not propose a new segmentation model; segmentation (VISTA3D with optional MedSAM2-assisted interactive correction) is a built-in case-preparation/correction skill and a traceable input to deterministic measurement and planning. The only learned component is a behavior-cloned macro-target ranker with a simulator-rollout shield for ordering resection cells in a frozen 2D simulator; this is neither RL nor DPO, has no theoretical grounding, and no demonstrated transfer to a segmentation objective. A possible transferable objective (shielded sequential target ordering) was considered but not selected because theory and segmentation transfer are absent and the evidence shows irrelevance to the specified segmentation interests.",
+        "review_evidence": [
+          {
+            "field": "theory",
+            "locator": "section:2 Related Work / 2.1 Three-Dimensional Medical Image Segmentation",
+            "quote": "Rather than proposing a new segmentation model, we focus on making segmentation a traceable case-level input to deterministic quantification, interactive visualization, and experimental planning. This distinction is important because the present system demonstrates workflow integration, not a comparative claim of segmentation superiority.",
+            "source_url": "https://arxiv.org/html/2609.37648v1"
+          },
+          {
+            "field": "transfer",
+            "locator": "section:8 Conclusion",
+            "quote": "The system has been evaluated only as an in-lab engineering demonstration on a small number of public cases, and its learned component was trained on two-dimensional proxy tasks rather than real surgical dynamics.",
+            "source_url": "https://arxiv.org/html/2609.37648v1"
+          },
+          {
+            "field": "method",
+            "locator": "section:6 Resection Planning / 6.4 Sequential Surface-Coverage Planning with Learned Ordering / Hierarchical Learned Ordering with Simulator-Rollout Shield / Depth-one teacher and behaviour-cloned ranker.",
+            "quote": "To learn a compact approximation of the teacher’s preference, the frozen ranker π R \\pi^{\\mathrm{R}} is behaviour-cloned from 171,401 states and 1,017,114 candidate slots collected from 448 policy-training scenes under the default 15 / 5 15/5 schedule and p bleed = 1.0 p_{\\mathrm{bleed}}=1.0 .",
+            "source_url": "https://arxiv.org/html/2609.37648v1"
+          },
+          {
+            "field": "evaluation",
+            "locator": "section:7 System Demonstration and Functional Verification / 7.2 Planar-Simulator Evaluation / Condition-specific sensitivity",
+            "quote": "None of these experiments validates the online three-dimensional adapter, a clinical workflow, a surgical trajectory, physiological safety, or patient-level blood loss; those distinctions motivate the separate Port B bridge and fail-closed experiments above.",
+            "source_url": "https://arxiv.org/html/2609.37648v1"
+          },
+          {
+            "field": "other",
+            "locator": "section:5 Medical Imaging Skills / 5.4 Interactive Segmentation Correction Skill",
+            "quote": "To keep segmentation changes reviewable and explicitly authorized, segmentation_modification edits a case mask in a working session before any file is replaced (Figure 5 ). The editor supports slice and structure selection, positive and negative point prompts, single-slice refinement, undo, and explicit saving. Optional MedSAM2 propagation can extend accepted edits to a bounded range of adjacent slices ( Ma et al. 2025 ) .",
+            "source_url": "https://arxiv.org/html/2609.37648v1"
+          }
+        ],
         "rl_is_method": false,
         "route": "medical_objective",
-        "score": 45,
-        "status": "uncertain",
+        "score": 15,
+        "status": "reject",
         "theory_evidence": false,
         "tier": "light",
         "transfer_evidence": false,
-        "uncertainty": [
-          "Whether segmentation refinement constitutes a core method contribution",
-          "Whether the sequential resection planning objective is intended as a transferable segmentation objective",
-          "Lack of RL/DPO or theoretical grounding for segmentation"
-        ]
+        "uncertainty": []
       },
       "events": [],
       "failures": {},
@@ -1644,12 +1670,7 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "uncertain",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "review"
-      },
+      "stage": "rejected",
       "versions": [
         "2609.37648v1"
       ]
