@@ -1177,9 +1177,37 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "recent line of RankSEG methods directly optimizes Dice/IoU scores at inference time",
+          "restrictive Conditional Independence Assumption (CIA)",
+          "replace the CIA with a Spatially Localized Dependence (SLD) structure",
+          "Reciprocal Moment Approximation coupled with a novel fixed-point optimization strategy",
+          "achieves a highly practical $\\mathcal{O}(d \\log d)$ complexity",
+          "consistently outperforms conventional argmax and CIA-based RankSEG across diverse segmentation benchmarks"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper proposes a theoretically grounded, transferable segmentation objective by relaxing the Conditional Independence Assumption in RankSEG, with a tractable Spatially Localized Dependence structure, reciprocal moment approximation, fixed-point optimization, and improved Dice/IoU optimization. It is relevant as a general segmentation objective rather than RL/DPO or medical-specific work.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 84,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "full",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "No explicit medical domain or reasoning segmentation evaluation in the abstract",
+          "No RL or DPO method is described",
+          "Formal theoretical guarantees are not fully detailed in the abstract, though complexity and approximation claims are present",
+          "Transfer evidence is across diverse segmentation benchmarks rather than explicitly medical benchmarks"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "In semantic segmentation, a recent line of RankSEG methods directly optimizes Dice/IoU scores at inference time, improving alignment with evaluation metrics without modifying model training. Despite its theoretical and empirical success, RankSEG relies on the restrictive Conditional Independence Assumption (CIA), which ignores crucial label correlations and therefore degrades performance in ambiguous or low-contrast scenarios. However, accounting for full label dependence is computationally prohibitive, requiring $\\mathcal{O}(d^3)$ time. To address this, we replace the CIA with a Spatially Localized Dependence (SLD) structure that captures local label correlations while keeping the dependence model tractable. We further overcome the remaining computational bottleneck via a Reciprocal Moment Approximation coupled with a novel fixed-point optimization strategy that eliminates exhaustive search. The proposed algorithm achieves a highly practical $\\mathcal{O}(d \\log d)$ complexity and consistently outperforms conventional argmax and CIA-based RankSEG across diverse segmentation benchmarks. Improvements are significant in low-contrast or small-object scenarios, where label dependence offers valuable signals complementary to image information for accurate segmentation. The code of experiments is available at https://github.com/ZixunWang/RankSEG-DEP.",
         "authors": [
@@ -1198,15 +1226,11 @@
         "updated": "2026-09-30T04:10:57+00:00",
         "version_id": "2609.38930v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2609.38930v1"
       ]
