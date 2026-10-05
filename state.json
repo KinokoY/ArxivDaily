@@ -1272,9 +1272,37 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations.",
+          "we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning",
+          "Projection-Conditioned Low-Rank Residual Similarity (PLRS)",
+          "Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS)",
+          "corpus-derived information-theoretic prior",
+          "medical vision-language pre-training"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper targets chest X-ray vision-language alignment and zero-shot medical segmentation, making it relevant to medical objectives. However, it does not propose RL, DPO, or a topology-aware segmentation objective, and its main contribution is contrastive alignment calibration, so it is a light rather than full fit for the segmentation-focused interests.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 68,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No RL or DPO method is proposed.",
+          "The paper is not a reasoning segmentation method and does not specifically target topology objectives.",
+          "The information-theoretic prior is not presented as a formal theoretical guarantee.",
+          "Transfer beyond chest X-ray is not evidenced in the abstract."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations. However, this alignment is fundamentally hindered by two intertwined sources of ambiguity: projection-induced visual mismatch and patient-agnostic semantic overlap. First, at the local feature level, frontal and lateral radiographs exhibit distinct appearances for the same clinical finding, rendering a shared patch-text similarity geometry inherently suboptimal. Compounding this visual ambiguity is a semantic mismatch during global contrastive optimization, where instance-level objectives penalize cross-patient pairs as strict negatives even when they share identical positive clinical concepts. To address this dual ambiguity, we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning. At the local alignment stage, Projection-Conditioned Low-Rank Residual Similarity (PLRS) dynamically adapts patch-text matching to projection-specific manifolds using a bounded, parameter-efficient low-rank residual. At the global optimization stage, Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS) leverages a corpus-derived information-theoretic prior to soften the penalty of semantically overlapping negatives without altering original contrastive assignments. Extensive experiments across nine public zero-shot benchmark settings demonstrate that our framework yields consistent improvements in classification, grounding, and segmentation, validating the necessity of dual-calibration in medical vision-language pre-training.",
         "authors": [
@@ -1290,16 +1318,12 @@
         "updated": "2026-09-30T08:23:11+00:00",
         "version_id": "2609.39266v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2609.39266v1"
       ]
