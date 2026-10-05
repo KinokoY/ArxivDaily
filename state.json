@@ -1360,9 +1360,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "learns a transferable objectness prior from unlabeled videos",
+          "transferring this learned prior into a prompt-guided architecture for segment-anything-style inference on images",
+          "Extensive zero-shot evaluations across seven challenging benchmarks",
+          "despite using zero manual annotations, MoSA achieves segmentation performance comparable to the fully supervised SAM"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper proposes an unsupervised segmentation framework that learns a transferable objectness prior from motion and transfers it to image segmentation, providing empirical transfer evidence. However, it lacks theoretical grounding and RL/DPO methods, and is not medical or reasoning segmentation, so it is a light transferable objective rather than a select.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 45,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "No theoretical grounding or formal objective analysis",
+          "No RL or DPO method",
+          "Not medical or reasoning segmentation",
+          "Transfer evidence is empirical but not theory-backed"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "The Segment Anything Model (SAM) relies heavily on massive manual annotations, creating a fundamental bottleneck for model scaling. While unsupervised methods attempt to learn object concepts from motion, they typically overfit to moving entities, lacking both multi-granularity understanding and the ability to generalize to static objects. To overcome this, we introduce Motion-Grounded Segment Anything (MoSA), a highly scalable unsupervised framework that learns a transferable objectness prior from unlabeled videos. MoSA operates in three progressive stages: (1) automatically generating multi-granularity motion pseudo-labels from large-scale video data; (2) training a Perceptual Grouping Model (PGM) via contrastive learning to internalize a generalized, appearance-driven concept of objects; and (3) transferring this learned prior into a prompt-guided architecture for segment-anything-style inference on images. Extensive zero-shot evaluations across seven challenging benchmarks (e.g., COCO and ADE20K) demonstrate that MoSA significantly outperforms existing unsupervised methods. Notably, despite using zero manual annotations, MoSA achieves segmentation performance comparable to the fully supervised SAM. Our findings reveal that harnessing large-scale unlabeled motion is a feasible and highly scalable alternative to annotation-driven segment-anything pipelines.",
         "authors": [
@@ -1384,15 +1410,11 @@
         "updated": "2026-09-30T14:06:32+00:00",
         "version_id": "2609.39785v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2609.39785v1"
       ]
