@@ -1158,6 +1158,224 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "figure 3",
+            "locator": "caption:figure 3",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 3",
+            "locator": "caption:Table 3",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 4",
+            "locator": "caption:Table 4",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 5",
+            "locator": "caption:Table 5",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 3",
+            "locator": "caption:Figure 3",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 6",
+            "locator": "caption:Table 6",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 7",
+            "locator": "caption:Table 7",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 8",
+            "locator": "caption:Table 8",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 9",
+            "locator": "caption:Table 9",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 10",
+            "locator": "caption:Table 10",
+            "rendered": false,
+            "required": false
+          }
+        ],
+        "locators": [
+          "section:1 Introduction",
+          "section:2 Related Work / 2.1 Medical Multimodal Large Language Models",
+          "section:2 Related Work / 2.2 Reasoning Segmentation and SAM Integration",
+          "section:2 Related Work / 2.3 Multi-task Optimization",
+          "section:3 Methodology",
+          "section:3 Methodology / 3.1 Unified Architecture",
+          "section:3 Methodology / 3.2 Training Interference and Hidden-State Dynamics",
+          "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework",
+          "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.1 Stage 1: Medical Shallow Alignment.",
+          "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.2 Stage 2, Phase I: Structured State Separation.",
+          "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.3 DBI-Guided Phase Transition.",
+          "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.4 Stage 2, Phase II: Regularized Co-Training.",
+          "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.5 Stage 3: Segmentation Augmentation.",
+          "section:4 Experiments and Results",
+          "table:Table 1",
+          "table:Table 2",
+          "section:4 Experiments and Results / 4.1 Implementation Details",
+          "section:4 Experiments and Results / 4.1 Implementation Details / Computational Cost.",
+          "section:4 Experiments and Results / 4.1 Implementation Details / Model Variants",
+          "section:4 Experiments and Results / 4.2 Datasets and Benchmarks / 4.2.1 Training Data.",
+          "section:4 Experiments and Results / 4.2 Datasets and Benchmarks / 4.2.2 Evaluation Benchmarks.",
+          "section:4 Experiments and Results / 4.3 Results",
+          "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks.",
+          "table:Table 3",
+          "table:Table 4",
+          "table:Table 5",
+          "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks. / Qualitative Analysis.",
+          "section:4 Experiments and Results / 4.3 Results / 4.3.2 Results on Medical VQA Benchmarks.",
+          "table:Table 6",
+          "table:Table 7",
+          "section:4 Experiments and Results / 4.3 Results / 4.3.3 Results on Medical Textual QA Benchmarks.",
+          "section:4 Experiments and Results / 4.3 Results / 4.3.4 Ablation Study.",
+          "section:5 Conclusion",
+          "section:Appendix A Public Training Datasets",
+          "section:Appendix A Public Training Datasets / A.1 Dataset Summary",
+          "section:Appendix A Public Training Datasets / A.2 Data Processing and Quality Control",
+          "table:Table 8",
+          "section:Appendix B Public Evaluation Benchmarks",
+          "table:Table 9",
+          "table:Table 10"
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 1": 4,
+            "Figure 2": 5,
+            "Figure 3": 10
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "Figure 2",
+            "figure 3",
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Table 4",
+            "Table 5",
+            "Figure 3",
+            "Table 6",
+            "Table 7",
+            "Table 8",
+            "Table 9",
+            "Table 10"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 34831,
+          "read_locators": [
+            "section:1 Introduction",
+            "section:2 Related Work / 2.1 Medical Multimodal Large Language Models",
+            "section:2 Related Work / 2.2 Reasoning Segmentation and SAM Integration",
+            "section:2 Related Work / 2.3 Multi-task Optimization",
+            "section:3 Methodology",
+            "section:3 Methodology / 3.1 Unified Architecture",
+            "section:3 Methodology / 3.2 Training Interference and Hidden-State Dynamics",
+            "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework",
+            "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.1 Stage 1: Medical Shallow Alignment.",
+            "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.2 Stage 2, Phase I: Structured State Separation.",
+            "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.3 DBI-Guided Phase Transition.",
+            "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.4 Stage 2, Phase II: Regularized Co-Training.",
+            "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.5 Stage 3: Segmentation Augmentation.",
+            "section:4 Experiments and Results",
+            "table:Table 1",
+            "table:Table 2",
+            "section:4 Experiments and Results / 4.1 Implementation Details",
+            "section:4 Experiments and Results / 4.1 Implementation Details / Computational Cost.",
+            "section:4 Experiments and Results / 4.1 Implementation Details / Model Variants",
+            "section:4 Experiments and Results / 4.2 Datasets and Benchmarks / 4.2.1 Training Data.",
+            "section:4 Experiments and Results / 4.2 Datasets and Benchmarks / 4.2.2 Evaluation Benchmarks.",
+            "section:4 Experiments and Results / 4.3 Results",
+            "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks.",
+            "table:Table 3",
+            "table:Table 4",
+            "table:Table 5",
+            "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks. / Qualitative Analysis.",
+            "section:4 Experiments and Results / 4.3 Results / 4.3.2 Results on Medical VQA Benchmarks.",
+            "table:Table 6",
+            "table:Table 7",
+            "section:4 Experiments and Results / 4.3 Results / 4.3.3 Results on Medical Textual QA Benchmarks.",
+            "section:4 Experiments and Results / 4.3 Results / 4.3.4 Ablation Study.",
+            "section:5 Conclusion",
+            "section:Appendix A Public Training Datasets",
+            "section:Appendix A Public Training Datasets / A.1 Dataset Summary",
+            "section:Appendix A Public Training Datasets / A.2 Data Processing and Quality Control",
+            "table:Table 8",
+            "section:Appendix B Public Evaluation Benchmarks",
+            "table:Table 9",
+            "table:Table 10"
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            4,
+            5,
+            10
+          ],
+          "section_count": 40,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2609.37283v1",
+          "version_id": "2609.37283v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2609.37283v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2609.37283v1",
+        "version_id": "2609.37283v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -1209,11 +1427,6 @@
         "general_reasoning"
       ],
       "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2609.37283v1"
       ]
