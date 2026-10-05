@@ -1718,7 +1718,9 @@
       ]
     },
     "2610.03467": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
@@ -1745,6 +1747,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-05T16:07:14.109560+00:00",
+        "run_id": "20261005T160714Z-f64f44ab",
+        "stage": "selection"
+      },
       "versions": [
         "2610.03467v1"
       ]
