@@ -826,9 +826,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Predicting gene expression from H&E-stained histology images offers a scalable alternative to costly spatial transcriptomics",
+          "we present CELLO, an efficient end-to-end framework that performs a single pathology foundation model forward pass per image and uses grid sampling to extract location-specific features for all cells simultaneously",
+          "distance-decay cross-attention module"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper addresses a medical objective (predicting gene expression from histology images) but does not involve reasoning segmentation, segmentation RL/DPO, or a theoretically grounded transferable segmentation objective. No RL or DPO methods are used, and the method contribution is not a transferable objective with theoretical support.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No RL/DPO methods",
+          "Not a segmentation method",
+          "No theoretical grounding",
+          "Not matching specified interest topics"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Predicting gene expression from H&E-stained histology images offers a scalable alternative to costly spatial transcriptomics, yet most existing methods operate at the spot level, where signals from multiple cells are aggregated and critical cellular heterogeneity is obscured. Extending this paradigm to single-cell resolution is non-trivial. Naively applying pathology foundation models faces a scale mismatch: their patch-level representations mix multiple cells, whereas per-cell cropping or resizing distorts morphology and removes local context. Conversely, segmentation-based models without strong pretrained visual encoders often lack the morphological representation capacity needed for accurate molecular prediction and inherit errors from imperfect cell boundary masks. Here, we present CELLO, an efficient end-to-end framework that performs a single pathology foundation model forward pass per image and uses grid sampling to extract location-specific features for all cells simultaneously. We further introduce a distance-decay cross-attention module that refines each cell representation using spatially biased local morphological context. Using 52 public Xenium-H&E pairs from HEST-1k that span 12 organs and approximately 10 million cells, CELLO improves the average predictive accuracy over the evaluated baselines while reducing the mean whole-slide inference time compared to DeepSpot2Cell, a 14.0x speed-up on average that excludes upstream cell segmentation. Our work establishes a scalable foundation for single-cell gene expression prediction from H&E images.",
         "authors": [
@@ -847,16 +872,12 @@
         "updated": "2026-09-29T00:40:28+00:00",
         "version_id": "2609.36429v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2609.36429v1"
       ]
