@@ -1208,9 +1208,31 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Super-resolution and quality enhancement of 1.5\\,T brain MRI are normally validated with image-fidelity metrics, although their purpose is to improve downstream analysis.",
+          "We study whether enhancement improves tissue segmentation, and for which segmenters.",
+          "We propose an unpaired, physics-guided training pipeline for a lightweight ($\\le$2.5\\,M parameter) recurrent convolutional enhancer",
+          "We then train U-Net, Swin-UNet and wavelet token-mixing segmenters \\citep{jeevan2023wavemix} from scratch",
+          "Enhancement of low-field MRI should therefore be validated per downstream model and against reliable labels."
+        ],
+        "dpo_is_method": false,
+        "reason": "Medical image super-resolution and downstream tissue segmentation; no RL/DPO, topology, reasoning segmentation, or theoretically grounded transferable segmentation objective.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 20,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Super-resolution and quality enhancement of 1.5\\,T brain MRI are normally validated with image-fidelity metrics, although their purpose is to improve downstream analysis. We study whether enhancement improves tissue segmentation, and for which segmenters. We propose an unpaired, physics-guided training pipeline for a lightweight ($\\le$2.5\\,M parameter) recurrent convolutional enhancer: a six-module stochastic 1.5\\,T degradation operator, a residual adversarial network that adds scanner-specific texture without moving anatomy, and a cycle-consistent objective with an anti-identity penalty that rules out the copy solution. We then train U-Net, Swin-UNet and wavelet token-mixing segmenters \\citep{jeevan2023wavemix} from scratch on either raw or enhanced 1.5\\,T images of the same subjects, using identical labels and subject-level splits, for three enhancer variants and two datasets. On ABIDE (41 held-out subjects, FreeSurfer labels) enhancement significantly improves the wavelet segmenter (mean Dice $+0.014$, Wilcoxon $p=3.5\\times10^{-5}$; CSF $+0.018$, grey matter $+0.013$), significantly degrades the U-Net ($-0.008$, $p=5.1\\times10^{-4}$) and leaves Swin-UNet unchanged. On IXI, whose labels come from FSL-FAST, enhancement lowers Dice for all nine pairings, almost entirely through CSF; we trace this to spatially implausible CSF voxels in the labels that penalise smoother predictions. Enhancement of low-field MRI should therefore be validated per downstream model and against reliable labels.",
         "authors": [
@@ -1227,16 +1249,12 @@
         "updated": "2026-09-30T06:23:43+00:00",
         "version_id": "2609.39083v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2609.39083v1"
       ]
