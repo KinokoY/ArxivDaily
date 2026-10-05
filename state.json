@@ -1331,9 +1331,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "A systematic study of semantic masking across 8 spurious-correlation benchmarks",
+          "We introduce the Spurious Inversion Metric (SIM), a label-free, pre-deployment diagnostic",
+          "remains dependable across 6 CLIP architectures with a clean foreground/background split",
+          "its own per-image segmentation step is a significant runtime bottleneck"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper proposes a transferable CLIP masking diagnostic validated across datasets and architectures, but it is not a medical or general reasoning segmentation objective, lacks formal theoretical grounding, and does not use RL or DPO. Segmentation is only a runtime component of the masking pipeline.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "No RL or DPO method is proposed.",
+          "The work is about CLIP masking robustness, not reasoning segmentation.",
+          "Theoretical grounding is limited to empirical statistical significance.",
+          "Segmentation appears only as part of the masking pipeline, not as the main objective."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "This paper demonstrate that whether masking-based token pruning helps or hurts worst-group robustness can be predicted before deployment, without labels or fine-tuning. A systematic study of semantic masking across 8 spurious-correlation benchmarks shows its effect on worst-group accuracy is highly unstable: it improves accuracy by up to 82.5\\% relative on some datasets and degrades it by up to 100\\% on others. We trace this instability to spurious inversion: background patches receive higher CLIP text-similarity than the true object when the spurious attribute is background-separable, inverting the assumption every text- and attention-guided pruning method relies on. We introduce the Spurious Inversion Metric (SIM), a label-free, pre-deployment diagnostic whose sign predicts this effect with statistical significance (binomial $p=0.035$) across all 8 datasets, and remains dependable across 6 CLIP architectures with a clean foreground/background split. Naive masking is itself a major source of risk: it causes the largest average-accuracy loss of any method we evaluate, and its own per-image segmentation step is a significant runtime bottleneck. To address this, we design a batched, synchronization-free GPU segmentation routine that cuts this overhead from 3.5$\\times$ to 1.75$\\times$ baseline. Gating deployment by SIM's sign recovers masking's benefits while avoiding its worst failures, matching or exceeding a strong pruning baseline on 7 of 8 datasets.",
         "authors": [
@@ -1350,15 +1376,11 @@
         "updated": "2026-09-30T13:21:27+00:00",
         "version_id": "2609.39704v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2609.39704v1"
       ]
