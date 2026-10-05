@@ -2803,6 +2803,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "intended_tier": "light",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Fine-grained vision-language alignment in chest radiography enables zero-shot classification, grounding, and segmentation without task-specific annotations. However, this alignment is fundamentally hindered by two intertwined sources of ambiguity: projection-induced visual mismatch and patient-agnostic semantic overlap. First, at the local feature level, frontal and lateral radiographs exhibit distinct appearances for the same clinical finding, rendering a shared patch-text similarity geometry inherently suboptimal. Compounding this visual ambiguity is a semantic mismatch during global contrastive optimization, where instance-level objectives penalize cross-patient pairs as strict negatives even when they share identical positive clinical concepts. To address this dual ambiguity, we propose PLRS-IC, a unified dual-calibration framework for chest X-ray representation learning. At the local alignment stage, Projection-Conditioned Low-Rank Residual Similarity (PLRS) dynamically adapts patch-text matching to projection-specific manifolds using a bounded, parameter-efficient low-rank residual. At the global optimization stage, Information-Content-Calibrated Soft False-Negative Suppression (IC-SFNS) leverages a corpus-derived information-theoretic prior to soften the penalty of semantically overlapping negatives without altering original contrastive assignments. Extensive experiments across nine public zero-shot benchmark settings demonstrate that our framework yields consistent improvements in classification, grounding, and segmentation, validating the necessity of dual-calibration in medical vision-language pre-training.",
@@ -2824,7 +2825,7 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2609.39266v1"
       ]
