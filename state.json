@@ -1628,9 +1628,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "we introduce FaVOS (A Benchmark for Video Object Segmentation with Fractional Temporal Visibility)",
+          "we propose Volumetric J&F",
+          "standard J&F metric can collapse VOS evaluation into absence classification",
+          "even a trivial empty-mask predictor can outperform strong models such as SAM 3"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper proposes a VOS evaluation benchmark and metric, not a segmentation training objective. It has no medical, RL, or DPO method, and its transferability/theoretical grounding as a general segmentation objective is not established.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 25,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "It is an evaluation metric, not a training objective.",
+          "No medical, RL, or DPO method is present.",
+          "Transfer to other segmentation tasks is not demonstrated.",
+          "Theoretical grounding is limited to empirical metric analysis."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Video Object Segmentation (VOS) in complex and long videos is increasingly important for real-world applications, where target objects often appear only intermittently within long temporal horizons. However, existing benchmarks largely focus on temporally salient objects that remain visible for most of the video. To address this gap, we introduce FaVOS (A Benchmark for Video Object Segmentation with Fractional Temporal Visibility), a benchmark designed to evaluate VOS methods under low temporal visibility. We show that, in this regime, the standard J&F metric can collapse VOS evaluation into absence classification, because empty predictions receive high rewards on target-absent frames. Consequently, even a trivial empty-mask predictor can outperform strong models such as SAM 3, revealing a fundamental mismatch between current metrics and practical VOS performance. To mitigate this issue, we propose Volumetric J&F, which evaluates mask sequences as spatio-temporal volumes and reduces the dominance of target-absence rewards while preserving sensitivity to segmentation quality and temporal structure. Project page: https://aidaslab.github.io/FaVOS.",
         "authors": [
@@ -1648,15 +1674,11 @@
         "updated": "2026-10-02T07:38:42+00:00",
         "version_id": "2610.02946v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.02946v1"
       ]
