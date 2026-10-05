@@ -296,7 +296,14 @@
       "content_hash": "3ec9f43697788bba24f2dbf10755cf79dfc0911da3ba77086cf60c3a9ce2e481",
       "created_at": "2026-10-05T16:07:14.109560+00:00",
       "day": "2026-10-06",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "59999275",
+        "status": "confirmed"
+      },
       "digest_id": "20261005T160714Z-f64f44ab-3ec9f4369778",
+      "finished_at": "2026-10-05T16:34:31.076422+00:00",
       "items": [
         {
           "paper": {
@@ -1481,7 +1488,7 @@
       },
       "run_id": "20261005T160714Z-f64f44ab",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -2008,7 +2015,6 @@
       ]
     },
     "2609.36172": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -2040,7 +2046,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -2064,7 +2070,6 @@
         "updated": "2026-09-28T19:42:06+00:00",
         "version_id": "2609.36172v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_reasoning",
@@ -2072,7 +2077,7 @@
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "versions": [
         "2609.36172v1"
       ]
@@ -2199,7 +2204,6 @@
       ]
     },
     "2609.36826": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -2236,7 +2240,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -2260,12 +2264,11 @@
         "updated": "2026-09-29T06:37:13+00:00",
         "version_id": "2609.36826v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "versions": [
         "2609.36826v1"
       ]
@@ -2331,7 +2334,6 @@
       ]
     },
     "2609.37177": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -2365,7 +2367,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -2394,19 +2396,17 @@
         "updated": "2026-09-29T10:02:52+00:00",
         "version_id": "2609.37177v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "tier_reason": "full_quota_overflow",
       "versions": [
         "2609.37177v1"
       ]
     },
     "2609.37283": {
-      "_pre_attempt_chain": null,
       "analysis_chunks": {},
       "attempts": {
         "body": 1,
@@ -2659,7 +2659,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_full",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "full"
         }
       ],
@@ -2686,14 +2686,13 @@
         "updated": "2026-09-29T11:27:05+00:00",
         "version_id": "2609.37283v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_reasoning",
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "summary_validated",
+      "stage": "delivered",
       "summary": {
         "background": "医学多模态大模型需统一图像级理解与像素级分割，但训练单一模型同时支持医学推理和语言条件分割仍具挑战性，因为共享表征可能被拉向不兼容的视觉细节层次。",
         "conclusion": "结论表明，该参数解耦课程能在不增加推理开销的情况下提升像素级分割并保持医学VQA和文本QA能力；但作者也指出分阶段训练增加了训练成本，且更难专家级推理仍可能受益于更大通用语言能力。",
@@ -3448,7 +3447,6 @@
       ]
     },
     "2609.38758": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -3482,7 +3480,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -3508,12 +3506,11 @@
         "updated": "2026-09-30T01:44:08+00:00",
         "version_id": "2609.38758v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "versions": [
         "2609.38758v1"
       ]
@@ -3575,7 +3572,6 @@
       ]
     },
     "2609.38930": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -3614,7 +3610,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -3640,12 +3636,11 @@
         "updated": "2026-09-30T04:10:57+00:00",
         "version_id": "2609.38930v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "tier_reason": "full_quota_overflow",
       "versions": [
         "2609.38930v1"
@@ -4060,7 +4055,6 @@
       ]
     },
     "2609.39266": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -4099,7 +4093,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -4122,13 +4116,12 @@
         "updated": "2026-09-30T08:23:11+00:00",
         "version_id": "2609.39266v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "versions": [
         "2609.39266v1"
       ]
@@ -4437,7 +4430,6 @@
       ]
     },
     "2610.01060": {
-      "_pre_attempt_chain": null,
       "analysis_chunks": {},
       "attempts": {
         "body": 1,
@@ -4650,7 +4642,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_full",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "full"
         }
       ],
@@ -4676,13 +4668,12 @@
         "updated": "2026-10-01T04:57:50+00:00",
         "version_id": "2610.01060v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "summary_validated",
+      "stage": "delivered",
       "summary": {
         "background": "Gliomas are the most common malignant primary tumors of the adult central nervous system, and the BraTS-GLI 2025 Lighthouse Challenge extends automated glioma segmentation to both pre-treatment and post-treatment MRI, where the resection cavity (RC) is annotated only in post-treatment cases.",
         "conclusion": "The paper concludes that the RC-aware nnU-Netv2 solution ranked second in BraTS-GLI 2025 and that the RC-aware joint model improved post-treatment lesion-wise Dice, NSD@1.0 and HD95 over the joint baseline and naive joint custom-loss training, while cautioning that these comparisons involve complete training configurations rather than individual loss components, that the post-challenge ablation used a single patient-level split, and that treatment-status-guided inference requires assigning each case to a treatment-status group before prediction.",
@@ -4875,7 +4866,6 @@
       ]
     },
     "2610.01166": {
-      "_pre_attempt_chain": null,
       "analysis_chunks": {},
       "attempts": {
         "body": 1,
@@ -5102,7 +5092,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_full",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "full"
         }
       ],
@@ -5133,7 +5123,6 @@
         "updated": "2026-10-01T06:43:42+00:00",
         "version_id": "2610.01166v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_reasoning",
@@ -5141,7 +5130,7 @@
         "general_rl",
         "transferable_objective"
       ],
-      "stage": "summary_validated",
+      "stage": "delivered",
       "summary": {
         "background": "CMR定量评估需要多维图像分析，但通用医学视觉语言模型并非为可靠推导这类定量测量而设计。",
         "conclusion": "结论认为，CineMR在构造的多队列基准上通过训练优于未微调骨干，工具访问带来额外但较温和的提升；但基准类别与研究特定规则并非完整临床诊断，系统尚未验证可用于自主临床，且分割误差会传播到最终预测类别。",
@@ -5278,7 +5267,6 @@
       ]
     },
     "2610.01175": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1
       },
@@ -5310,7 +5298,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "light_title_link",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "light"
         }
       ],
@@ -5336,20 +5324,18 @@
         "updated": "2026-10-01T06:50:36+00:00",
         "version_id": "2610.01175v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "tier_reason": "full_quota_overflow",
       "versions": [
         "2610.01175v1"
       ]
     },
     "2610.01452": {
-      "_pre_attempt_chain": null,
       "analysis_chunks": {},
       "attempts": {
         "body": 1,
@@ -5546,7 +5532,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_full",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "full"
         }
       ],
@@ -5570,13 +5556,12 @@
         "updated": "2026-10-01T10:48:41+00:00",
         "version_id": "2610.01452v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "summary_validated",
+      "stage": "delivered",
       "summary": {
         "background": "胶质瘤分割是神经肿瘤工作流的关键前提，但历史上依赖专家手工体积勾画，带来显著的观察者间/内变异并成为临床吞吐瓶颈；nnU-Net等自动分割虽在BraTS等基准上DSC常超过0.90，却可能在分布外临床数据中出现局部灾难性边界失败，而现有不确定性图多被当作被动可视化叠加层，缺乏将空间方差自动转化为可操作修改的几何管道。",
         "conclusion": "结论认为，该框架把临床范式从穷举式找错转为靶向验证，在362例外部分布外病例中平均肿瘤核心空间误差绝对降低>3.1 mm，并将中位交互工作量封顶在目标体积的11.3%；结构绊线可拦截碎裂与体积塌陷等主要失败模式且无需局部重训练，但仍存在对高置信度对侧幻觉的残余盲点，且Human Oracle模拟只是理论上界。",
@@ -6049,7 +6034,6 @@
       ]
     },
     "2610.03467": {
-      "_pre_attempt_chain": null,
       "analysis_chunks": {},
       "attempts": {
         "body": 1,
@@ -6189,7 +6173,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_full",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "full"
         }
       ],
@@ -6215,13 +6199,12 @@
         "updated": "2026-10-02T15:41:03+00:00",
         "version_id": "2610.03467v1"
       },
-      "pending_digest": "20261005T160714Z-f64f44ab-3ec9f4369778",
       "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "summary_validated",
+      "stage": "delivered",
       "summary": {
         "background": "结直肠癌和憩室病等结肠结构异常需要早期准确识别，CT是主要检测手段，而现有深度学习结肠分割仍面临预测不连续的问题。",
         "conclusion": "作者总结该流水线在TS和RAOS上改善拓扑相关指标、增强解剖连续性，但指出部分情况下重叠指标略降，且中心线桥接阶段可能因骨架化或端点识别错误而失败，未来将评估下游任务并研究基于学习的中心线对齐。",
