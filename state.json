@@ -4401,7 +4401,7 @@
           "source_url": "https://arxiv.org/html/2610.03467v1",
           "version_id": "2610.03467v1",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2610.03467v1"
         },
         "source_type": "html",
@@ -4460,12 +4460,201 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "summary"
+      "stage": "summary_validated",
+      "summary": {
+        "background": "结直肠癌和憩室病等结肠结构异常需要早期准确识别，CT是主要检测手段，而现有深度学习结肠分割仍面临预测不连续的问题。",
+        "conclusion": "作者总结该流水线在TS和RAOS上改善拓扑相关指标、增强解剖连续性，但指出部分情况下重叠指标略降，且中心线桥接阶段可能因骨架化或端点识别错误而失败，未来将评估下游任务并研究基于学习的中心线对齐。",
+        "contribution": "本文的贡献是提出一种保持拓扑的结肠分割流水线，旨在解决DL分割中的不连续预测并恢复跨断开区域的结构连续性，同时维持分割精度；这与主要依赖DL-only分割的既往研究不同。",
+        "evidence": [
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "Structural abnormalities of the colon are key indicators of serious gastrointestinal disorders such as colorectal cancer and diverticular disease.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "Computed tomography (CT) imaging remains the primary modality for detecting such diseases, making colon segmentation a crucial preliminary step in in-depth analysis of the region of interest for accurate identification of these conditions.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "With advancements in deep learning (DL)-based segmentation, automated colon analysis has become increasingly feasible.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "yet it also revealed ongoing challenges with discontinuous predictions",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "This study aims to resolve the problem of discontinuous predictions by introducing a three-stage, topology-preserving colon segmentation pipeline that ensures structural continuity across disconnected areas while maintaining segmentation accuracy.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "More recently, several studies have focussed on DL-only segmentation of the colon and sigmoid regions",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:2 Method / 2.1 Overview of the Segmentation Pipeline",
+            "quote": "In Stage 1, the initial colon segmentation is performed, which may contain disconnected regions. Stage 2 constructs a centreline bridge where necessary, based on the extracted centreline from the initial segmentation. Finally, Stage 3 predicts the disconnected regions using the centreline bridge and merges them with the initial segmentation to produce a complete and topologically consistent colon structure.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:2 Method / 2.2 Stage 1 : Initial Colon Segmentation",
+            "quote": "All models were trained to minimise a combination of cross-entropy (CE) loss and Dice loss",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:2 Method / 2.3 Stage 2 : Centreline Bridging",
+            "quote": "Connections between the identified endpoints are created using Bézier curves, constructed according to the directional vectors of the corresponding endpoints (Fig. 1 Stage 2 (c)).",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:2 Method / 2.3 Stage 2 : Centreline Bridging",
+            "quote": "This stage does not involve any learning-based operations, instead it follows a topology-driven approach.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:2 Method / 2.4 Stage 3 : Reconstruction of Full Colon",
+            "quote": "a UNet model trained using the ground truth centreline and corresponding CT volume, optimised with CE and Dice losses, was employed to predict the disconnected regions.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:2 Method / 2.4 Stage 3 : Reconstruction of Full Colon",
+            "quote": "To mitigate potential overpredictions, the predicted components are filtered based on their connectivity to the designated endpoints. Finally, the filtered disconnected regions are merged with the initial segmentation to produce a complete and continuous colon reconstruction.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:2 Method / 2.5 Experimental Setup",
+            "quote": "Two CT multi-organ datasets containing colon structures were used in this study. The first dataset is TotalSegmentator (TS) and originally comprised 1,024 samples, from which 467 abdominal scans containing the colon were selected",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:2 Method / 2.5 Experimental Setup",
+            "quote": "The second dataset, RAOS, included 413 abdominal CT samples.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "quote": "Table 1: Dice scores of Stage 1: Initial Colon Segmentation",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 1",
+            "locator": "table:Table 1",
+            "quote": "UNet Variant TotalSegmentator RAOS",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 1",
+            "locator": "table:Table 1",
+            "quote": "nnUNet 0.9308±0.0631 0.8847±0.0706",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 1",
+            "locator": "table:Table 1",
+            "quote": "BowelNet 0.9041±0.0848 0.8457±0.0929",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:3 Results and Analysis / 3.1 Initial Colon Segmentation",
+            "quote": "The nnUNet achieved the best performance for colon segmentation across both datasets",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:4 Conclusion",
+            "quote": "Experimental results on the TS and RAOS datasets show consistent improvements in topology-related metrics, indicating enhanced anatomical coherence of colon segmentations.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:4 Conclusion",
+            "quote": "Although a minor decrease in overlap-based metrics is observed in some instances",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:3 Results and Analysis / 3.3 Qualitative analysis",
+            "quote": "However, a few failure cases were observed in the centreline bridging stage.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:3 Results and Analysis / 3.3 Qualitative analysis",
+            "quote": "In rare instances, the algorithm fails to accurately identify the cecum and rectum endpoints.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:3 Results and Analysis / 3.3 Qualitative analysis",
+            "quote": "This occurs when the colon has sharp bends, resulting in incorrect centreline generation due to faulty skeletonisation.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:4 Conclusion",
+            "quote": "future work will evaluate whether this reduction is acceptable by assessing performance on downstream tasks, such as region-of-interest extraction for colorectal cancer and diverticular disease.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:4 Conclusion",
+            "quote": "Further work will also investigate learning-based centreline alignment to enhance segmentation accuracy.",
+            "source_url": "https://arxiv.org/html/2610.03467v1"
+          }
+        ],
+        "experiments": "实验使用TS与RAOS CT数据集，并在Stage 1初始分割中报告：nnUNet在TS上取得Dice 0.9308±0.0631，高于BowelNet的0.9041±0.0848。",
+        "method": "Stage 1用多种UNet变体进行初始结肠分割，并以交叉熵与Dice损失训练；Stage 2从初始分割提取骨架并转为图表示，去除短分支、识别盲肠与直肠端点，用Bézier曲线桥接中心线，该阶段不涉及学习操作。Stage 3用GT中心线和CT体积训练UNet预测断开区域，按端点连通性过滤后与初始分割合并，以生成完整且连续的结肠结构。"
       },
+      "summary_model": "deepseek-flash",
+      "summary_prompt_fingerprint": "arxivdaily-summary-v4",
+      "summary_validated_at": "2026-10-05T16:07:14.109560+00:00",
       "versions": [
         "2610.03467v1"
       ]
