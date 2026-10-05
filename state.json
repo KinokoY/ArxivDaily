@@ -4305,6 +4305,107 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 3",
+            "locator": "caption:Table 3",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "rendered": true,
+            "required": true
+          }
+        ],
+        "locators": [
+          "section:1 Introduction",
+          "section:2 Method",
+          "section:2 Method / 2.1 Overview of the Segmentation Pipeline",
+          "section:2 Method / 2.2 Stage 1 : Initial Colon Segmentation",
+          "section:2 Method / 2.3 Stage 2 : Centreline Bridging",
+          "section:2 Method / 2.4 Stage 3 : Reconstruction of Full Colon",
+          "section:2 Method / 2.5 Experimental Setup",
+          "section:3 Results and Analysis / 3.1 Initial Colon Segmentation",
+          "table:Table 1",
+          "section:3 Results and Analysis / 3.2 Final Colon Reconstruction",
+          "section:3 Results and Analysis / 3.3 Qualitative analysis",
+          "section:4 Conclusion",
+          "section:5 Acknowledgements",
+          "section:6 Human and/or Animal Subjects"
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 1": 2,
+            "Figure 2": 4
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Figure 2"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 17315,
+          "read_locators": [
+            "section:1 Introduction",
+            "section:2 Method",
+            "section:2 Method / 2.1 Overview of the Segmentation Pipeline",
+            "section:2 Method / 2.2 Stage 1 : Initial Colon Segmentation",
+            "section:2 Method / 2.3 Stage 2 : Centreline Bridging",
+            "section:2 Method / 2.4 Stage 3 : Reconstruction of Full Colon",
+            "section:2 Method / 2.5 Experimental Setup",
+            "section:3 Results and Analysis / 3.1 Initial Colon Segmentation",
+            "table:Table 1",
+            "section:3 Results and Analysis / 3.2 Final Colon Reconstruction",
+            "section:3 Results and Analysis / 3.3 Qualitative analysis",
+            "section:4 Conclusion",
+            "section:5 Acknowledgements",
+            "section:6 Human and/or Animal Subjects"
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            2,
+            4
+          ],
+          "section_count": 14,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2610.03467v1",
+          "version_id": "2610.03467v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2610.03467v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2610.03467v1",
+        "version_id": "2610.03467v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -4358,11 +4459,6 @@
         "transferable_objective"
       ],
       "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2610.03467v1"
       ]
