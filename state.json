@@ -1679,8 +1679,10 @@
       ]
     },
     "2609.39265": {
+      "analysis_chunks": {},
       "attempts": {
         "body": 1,
+        "review": 1,
         "selection": 1
       },
       "body": {
@@ -1994,6 +1996,11 @@
         "transferable_objective"
       ],
       "stage": "uncertain",
+      "stage_started": {
+        "at": "2026-10-05T16:07:14.109560+00:00",
+        "run_id": "20261005T160714Z-f64f44ab",
+        "stage": "review"
+      },
       "versions": [
         "2609.39265v1"
       ]
