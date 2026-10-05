@@ -1018,9 +1018,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "liver-tumor analysis, and preoperative resection planning",
+          "segmentation refinement",
+          "behavior-cloned neural ranker orders candidate resection targets",
+          "simulator-based shield checks them against predefined constraints",
+          "These results demonstrate system integration and simulator-level performance, not clinical efficacy or safety."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper presents a medical CT analysis and resection planning system where segmentation refinement is only one built-in skill, not a central RL/DPO or theoretically grounded segmentation objective. Its sequential resection planning uses behavior cloning and a simulator shield, which may be a transferable objective but lacks theoretical or transfer support, making relevance to the specified segmentation interests unclear.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 45,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether segmentation refinement constitutes a core method contribution",
+          "Whether the sequential resection planning objective is intended as a transferable segmentation objective",
+          "Lack of RL/DPO or theoretical grounding for segmentation"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Preoperative liver-tumor assessment requires segmentation, physical-space measurement, visual evidence, and resection planning from the same three-dimensional CT volume. Existing tools often handle these steps separately, while language models cannot reliably compute physical measurements from CT. To provide an integrated workflow, we present VoxelSage, a multi-modal system for two- and three-dimensional visualization, liver-tumor analysis, and preoperative resection planning. Its dual-port architecture separates language-model orchestration from image computation: Port A interprets requests and selects skills, while Port B applies them to CT volumes and segmentation masks and returns structured results. Keeping physical measurements in Port B prevents the LLM from computing them directly and reduces the risk of fabricated numerical results. Eight built-in skills support quantitative analysis, visual evidence generation, three-dimensional reconstruction, segmentation refinement, and sequential resection planning; user-defined skills can extend these functions. For sequence planning, a behavior-cloned neural ranker orders candidate resection targets, while a simulator-based shield checks them against predefined constraints. Across 256 unseen simulator scenes, this approach reduced mean simulated time from 34.274 to 33.388 min (0.886 min, 2.59%) and mean simulated blood loss from 300.847 to 183.852 mL (116.995 mL, 38.89%) relative to a deterministic baseline. These results demonstrate system integration and simulator-level performance, not clinical efficacy or safety. The public implementation is available at https://github.com/ZJUMAI/VoxelSage.",
         "authors": [
@@ -1041,16 +1067,12 @@
         "updated": "2026-09-29T14:15:18+00:00",
         "version_id": "2609.37648v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2609.37648v1"
       ]
