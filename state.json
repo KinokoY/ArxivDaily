@@ -3302,7 +3302,7 @@
           "source_url": "https://arxiv.org/html/2610.01060v1",
           "version_id": "2610.01060v1",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2610.01060v1"
         },
         "source_type": "html",
@@ -3363,12 +3363,194 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "summary"
+      "stage": "summary_validated",
+      "summary": {
+        "background": "Gliomas are the most common malignant primary tumors of the adult central nervous system, and the BraTS-GLI 2025 Lighthouse Challenge extends automated glioma segmentation to both pre-treatment and post-treatment MRI, where the resection cavity (RC) is annotated only in post-treatment cases.",
+        "conclusion": "The paper concludes that the RC-aware nnU-Netv2 solution ranked second in BraTS-GLI 2025 and that the RC-aware joint model improved post-treatment lesion-wise Dice, NSD@1.0 and HD95 over the joint baseline and naive joint custom-loss training, while cautioning that these comparisons involve complete training configurations rather than individual loss components, that the post-challenge ablation used a single patient-level split, and that treatment-status-guided inference requires assigning each case to a treatment-status group before prediction.",
+        "contribution": "This work contributes RC-aware nnU-Netv2, which combines lesion- and boundary-aware single-cohort training with an RC-aware joint objective for pooled pre-treatment and post-treatment data plus treatment-status-guided routing at inference, and reports the ECNU_NYU solution that ranked second in BraTS-GLI 2025 without additional synthetic tumor generation or multi-model ensembling.",
+        "evidence": [
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "Gliomas are the most common malignant primary tumors of the adult central nervous system",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "(BraTS-GLI 2025) extends this setting by evaluating automated glioma segmentation on both pre-treatment and post-treatment MRI",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:Method / Problem setup and region representation",
+            "quote": "The RC label is annotated only in post-treatment cases.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "We present RC-aware nnU-Netv2, combining lesion- and boundary-aware single-cohort training with an RC-aware joint objective for pooled pre-treatment and post-treatment data.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "which ranked second in BraTS-GLI 2025 while using one routed model per case, without additional synthetic tumor generation or multi-model ensembling",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Method / Problem setup and region representation",
+            "quote": "Following the region-based training scheme of nnU-Netv2 ( Isensee et al., 2021 ) , the network predicts four sigmoid-activated channels in the fixed implementation order WT, TC, ET, and RC.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Method / Single-cohort lesion- and boundary-aware loss",
+            "quote": "For pre-only and post-only training, we use a composite objective that combines the region-wise binary cross-entropy",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Method / Single-cohort lesion- and boundary-aware loss",
+            "quote": "The lesion-aware term combines a voxel-wise Dice score with a Gaussian-smoothed target-weighted Dice score.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Method / Single-cohort lesion- and boundary-aware loss",
+            "quote": "The boundary term is a boundary-weighted BCE loss.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Introduction",
+            "quote": "we design an RC-aware joint objective that applies standard Dice supervision to non-empty target channels and a controlled false-positive penalty to empty target channels",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "quote": "At inference, the known treatment status routes each case to a single model: pre-treatment cases to the pre-only custom-loss model and post-treatment cases to the RC-aware joint model.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:Method / Training variants and inference strategy",
+            "quote": "This routing strategy is not a model ensemble: each case is assigned to exactly one network, with no probability averaging across models, voting, multi-fold fusion, or multi-architecture fusion.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "quote": "Table 2 : Reported top-ranked BraTS-GLI 2025 blind test results.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "Rank Method Metric ET RC TC WT",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "2 ECNU_NYU (ours) LW Dice 0.7878 ± 0.2751 0.7878\\pm 0.2751 0.8709 ± 0.2794 0.8709\\pm 0.2794",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Conclusion",
+            "quote": "the method achieved arithmetic mean lesion-wise Dice and NSD@1.0 scores of 0.8306 and 0.8334 across the four displayed regions (ET, RC, TC, and WT)",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Official testing-phase performance",
+            "quote": "our lesion-wise Dice was 0.8709, compared with 0.8400 for MIST and 0.8262 for EGASegNet",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Ablation study",
+            "quote": "it improved the score from 0.706 ± 0.202 0.706\\pm 0.202 for the joint baseline to 0.748 ± 0.194 0.748\\pm 0.194",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 3",
+            "locator": "table:Table 3",
+            "quote": "Setting Method Eval ET RC TC WT Mean",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 3",
+            "locator": "table:Table 3",
+            "quote": "Joint RC-aware Joint Post 0.737 ± 0.325 \\mathbf{0.737\\pm 0.325} 0.725 ± 0.320 \\mathbf{0.725\\pm 0.320} 0.718 ± 0.327 \\mathbf{0.718\\pm 0.327} 0.813 ± 0.220 \\mathbf{0.813\\pm 0.220} 0.748 ± 0.194 \\mathbf{0.748\\pm 0.194}",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:Results / Official testing-phase performance",
+            "quote": "The first-place method used a three-model nnU-Net ensemble with on-the-fly GliGAN-based synthetic tumor augmentation",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Conclusion",
+            "quote": "We presented an RC-aware nnU-Netv2 solution that ranked second in BraTS-GLI 2025.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Conclusion",
+            "quote": "Post-challenge evaluation showed that the RC-aware joint model improved post-treatment lesion-wise Dice, NSD@1.0, and HD95 over the joint baseline and naive joint custom-loss training, although the experiments compare complete training configurations rather than individual loss components.",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Discussion / Limitations",
+            "quote": "the post-challenge local ablation uses a single patient-level split rather than repeated train/validation resampling or cross-validation",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:Discussion / Limitations",
+            "quote": "the treatment-status-guided inference strategy requires each test case to be assigned to either the pre-treatment or post-treatment group before prediction",
+            "source_url": "https://arxiv.org/html/2610.01060v1"
+          }
+        ],
+        "experiments": "On the official BraTS-GLI 2025 blind test set the routed ECNU_NYU submission ranked second with arithmetic mean lesion-wise Dice and NSD@1.0 of 0.8306 and 0.8334 across the four displayed regions (ET, RC, TC, and WT), its RC lesion-wise Dice of 0.8709 exceeding the third-place MIST (0.8400) and EGASegNet (0.8262), while in the post-challenge internal held-out evaluation the RC-aware joint model improved mean post-treatment lesion-wise Dice from 0.706 for the joint baseline to 0.748.",
+        "method": "For single-cohort training, RC-aware nnU-Netv2 uses a composite objective that combines region-wise binary cross-entropy with a lesion-aware Dice surrogate mixing a voxel-wise Dice score and a Gaussian-smoothed target-weighted Dice score, plus a boundary-weighted BCE term. For pooled pre-treatment and post-treatment training, the RC-aware joint objective applies standard Dice supervision to non-empty target channels and a controlled false-positive penalty to empty target channels, handling the structurally empty RC channel of pre-treatment cases, and at inference the known treatment status routes each case to exactly one model without probability averaging, voting, multi-fold fusion or multi-architecture fusion."
       },
+      "summary_model": "deepseek-flash",
+      "summary_prompt_fingerprint": "arxivdaily-summary-v4",
+      "summary_validated_at": "2026-10-05T16:07:14.109560+00:00",
       "versions": [
         "2610.01060v1"
       ]
