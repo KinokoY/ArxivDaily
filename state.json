@@ -1052,9 +1052,37 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Inverse design of physical systems (molecules, devices, microstructures)",
+          "inverse design of magnesium alloy microstructure/texture",
+          "target-driven objective score",
+          "crystal plasticity solver",
+          "MERIDIAN, an active latent optimizer",
+          "against seven baselines (DANTE, TuRBO, BAxUS, CMA-ES, DDOM, SEIKO, DDPO)"
+        ],
+        "dpo_is_method": false,
+        "reason": "Paper is about physics-informed latent optimization for inverse design of magnesium alloy microstructures; it does not involve medical or general reasoning segmentation, and DDPO appears only as a baseline rather than an RL/DPO method contribution. No theoretical or transfer evidence for a segmentation objective is provided.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 5,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No medical reasoning segmentation task.",
+          "No general reasoning segmentation task.",
+          "DDPO is only a baseline, not a method contribution.",
+          "No theoretical grounding or transfer evidence for a segmentation objective."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Inverse design of physical systems (molecules, devices, microstructures) often reduces to optimizing a high-dimensional structure against an expensive black-box simulator. Direct search is difficult because the space is non-Euclidean, feasibility is hard to encode, and each evaluation is expensive. We present Co-PiLOT, a latent optimization approach that maps candidates through a generative encoder-decoder, uses the decoder as a learned validity prior, and searches the latent space with physics-informed black-box optimization. The framework is applied on the inverse design of magnesium alloy microstructure/texture. We develop a vision transformer based-encoder; paired with latent diffusion, diffusion transformer and rectified-flow transformer-based decoders on $\\sim80{,}000$ EBSD-derived microstructure dataset to learn a minimal bottleneck, $z$. The ViT-FMDiT model ($z$=$768$) reconstructs high-fidelity microstructure images (FID $27.86$, MS-SSIM $0.178$), which our self-segmenting orientation codec converts into input grids for crystal plasticity solver. Finally, we introduce MERIDIAN, an active latent optimizer driven by deep-kernel Gaussian-process uncertainty, failure-aware feasibility prediction, manifold-aware trust regions, and target-aware acquisition. Within a budget of $160$ simulations, the ViT-FMDiT and MERIDIAN combination yields the best target-driven objective score, reducing the relative target error by $3$--$22\\%$ against seven baselines (DANTE, TuRBO, BAxUS, CMA-ES, DDOM, SEIKO, DDPO) on the same decoder.",
         "authors": [
@@ -1075,15 +1103,11 @@
         "updated": "2026-09-29T15:51:02+00:00",
         "version_id": "2609.37875v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2609.37875v1"
       ]
