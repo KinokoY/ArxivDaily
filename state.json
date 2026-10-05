@@ -1568,9 +1568,36 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "medical image segmentation",
+          "Hybrid Structural-Aleatoric Human-in-the-Loop framework for glioma segmentation",
+          "voxel-wise Test-Time Augmentation (TTA) uncertainty",
+          "hierarchical topological filtering",
+          "reducing mean HD95 from 17.96 mm to 14.83 mm"
+        ],
+        "dpo_is_method": false,
+        "reason": "Paper proposes a medical image segmentation framework for glioma with uncertainty-guided human-in-the-loop refinement and hierarchical topological filtering, directly matching the medical segmentation/topology objective interest; no RL or DPO method is used.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 78,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No RL or DPO method is present.",
+          "Topological filtering is used for refinement/routing rather than as a learned topology-aware training objective.",
+          "Transferability to general segmentation objectives is not established.",
+          "Theoretical grounding for the uncertainty/topology components is not evident from the abstract."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "While state-of-the-art automated models for medical image segmentation achieve high mean performance, they frequently suffer from localized, catastrophic failures that preclude safe clinical deployment, particularly in neuro-oncology. Interactive segmentation frameworks mitigate this by incorporating human oversight, but traditionally impose prohibitive cognitive and temporal workloads by requiring clinicians to manually search for errors. In this project, we present an efficient, Hybrid Structural-Aleatoric Human-in-the-Loop framework for glioma segmentation that bridges the gap between automated baseline performance and surgical-grade precision, achieving sub-2.0 mm HD95 on curated benchmarks while providing safety-net routing for structural failures across real-world clinical data. By extracting voxel-wise Test-Time Augmentation (TTA) uncertainty and applying hierarchical topological filtering, our method proactively isolates high-risk structural anomalies. We comprehensively evaluated our approach on a challenging out-of-distribution clinical stress-test cohort (N = 362). Operating under a simulated Human Oracle, the framework improved the Whole Tumor (WT) Dice score from 0.891 to 0.914 and reduced the 95th percentile Hausdorff Distance (HD95) from 5.82 mm to 4.76 mm. Critically for surgical safety, the system rescued severe boundary failures in the Tumor Core, reducing mean HD95 from 17.96 mm to 14.83 mm (improving absolute TC Dice to 0.356). These spatial rescues were achieved while demanding a median interactive workload of just 11.3% of the target volume. Acknowledging this as a simulated upper bound lacking real-world cognitive friction, the framework nevertheless demonstrates a highly Pareto-efficient pathway for safely deploying clinical AI.",
         "authors": [
@@ -1587,16 +1614,12 @@
         "updated": "2026-10-01T10:48:41+00:00",
         "version_id": "2610.01452v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.01452v1"
       ]
