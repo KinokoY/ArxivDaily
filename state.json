@@ -918,9 +918,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "Persistent homology (PH) is a frequently used tool for extracting and preserving topological information from image data",
+          "particularly in image segmentation, where preservation of topological structures is important",
+          "We propose sparse cubical filtrations as an alternative foundation for PH computation",
+          "We show close agreement with the optimization signal of the dense counterpart",
+          "empirically evaluate our solution's effectiveness as an optimization objective in realistic training regimes",
+          "improves topological accuracy by up to 80\\% across six diverse datasets"
+        ],
+        "dpo_is_method": false,
+        "reason": "Proposes sparse cubical filtrations for efficient topology-preserving optimization in image segmentation; theoretically grounded in persistent homology and empirically validated across six diverse datasets as a transferable objective. Not RL/DPO or medical reasoning.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 88,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "full",
+        "transfer_evidence": true,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Persistent homology (PH) is a frequently used tool for extracting and preserving topological information from image data, particularly in image segmentation, where preservation of topological structures is important. However, despite its general applicability across dimensionality, domains, and target structures, the runtime cost of PH-based methods often makes their practical use infeasible. In this work, we argue that this runtime cost is largely driven by processing information that is unimportant for downstream application (e.g. as optimization objective). We propose sparse cubical filtrations as an alternative foundation for PH computation, reducing subsequent computational costs by factors of up to 100 on real datasets. We show close agreement with the optimization signal of the dense counterpart and empirically evaluate our solution's effectiveness as an optimization objective in realistic training regimes where other PH-based objectives can practically not operate (i.e., 3D data with large patch sizes). We show how our solution improves topological accuracy by up to 80\\% across six diverse datasets while maintaining pixel- and region-based accuracy.",
         "authors": [
@@ -942,15 +965,11 @@
         "updated": "2026-09-29T10:02:52+00:00",
         "version_id": "2609.37177v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2609.37177v1"
       ]
