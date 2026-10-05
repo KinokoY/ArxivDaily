@@ -1012,6 +1012,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "intended_tier": "light",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Video generation models have demonstrated emerging zero-shot capabilities for visual reasoning, perception, and other vision tasks. However, diffusion-based video generation is inherently stochastic, while many downstream vision tasks are deterministic. Motivated by the effectiveness of self-consistency in chain-of-thought reasoning for large language models, we investigate whether self-consistency can similarly improve diffusion-based video reasoning. We first introduce a training-free test-time scaling method that samples multiple video generations and aggregates their predictions through self-consistency. Specifically, we aggregate extracted paths, locations, or masks from multiple rollouts into a consensus prediction. To reduce the inference overhead of multi-rollout generation, we read out predictions early in the denoising trajectory, which preserves consensus quality while reducing denoising steps by more than half. We further propose Rejection Fine-Tuning (RFT) to distill consensus predictions into the video generation model. The resulting model internalizes the benefit of multi-sample consensus and requires only a single generation at inference time, while substantially outperforming the original model. Experiments on three tasks, including maze solving, visual search, and referring segmentation, show that both our self-consistency inference and consensus distillation dramatically improve video-based perception and reasoning, without requiring ground-truth videos or task-specific verification. For visual search, self-consistency raises task accuracy from 48.4% for a single generation to 99.0%. The distilled model retains much of the consensus benefit with a single rollout. For 4-by-4 maze solving, consensus-based training improves the single-generation strict success rate from 72.0% to 84.0% with the same inference latency.",
@@ -1033,7 +1034,7 @@
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2609.36826v1"
       ]
