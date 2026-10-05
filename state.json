@@ -1689,9 +1689,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "boundary-aware and spatially anchored query learning framework for unified forest point cloud segmentation",
+          "boundary uncertainty is explicitly modeled to guide reliable instance query construction and modulate query optimization through adaptive loss reweighting",
+          "spatially anchored semantic query enhancement (SA-SQE) introduces learnable 3D anchors encoding forest vertical stratification priors to enrich semantic queries with explicit spatial references"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper presents a forest point cloud segmentation method with boundary-aware and spatially anchored query learning. It is a transferable segmentation objective candidate, but the abstract provides no theoretical grounding and no evidence of transfer beyond forest point cloud benchmarks, so it does not meet the select criteria.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 25,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No theoretical analysis or guarantee is provided for the segmentation objective.",
+          "No evidence of transfer to medical segmentation or other domains is shown.",
+          "No RL, DPO, or topology-based objective is present."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Forest point cloud segmentation is fundamental for fine-grained 3D forest scene understanding, yet remains challenging due to irregular tree structures, severe occlusions, density variations, and ambiguous instance boundaries. Recent query-based forest segmentation methods have shown promise for unified semantic and instance prediction, but they still insufficiently exploit forest-specific spatial structure and account for boundary uncertainty. In this paper, we propose ForestQuery, a boundary-aware and spatially anchored query learning framework for unified forest point cloud segmentation. ForestQuery enhances instance and semantic query learning through two complementary designs. Specifically, boundary uncertainty is explicitly modeled to guide reliable instance query construction and modulate query optimization through adaptive loss reweighting. Meanwhile, spatially anchored semantic query enhancement (SA-SQE) introduces learnable 3D anchors encoding forest vertical stratification priors to enrich semantic queries with explicit spatial references. We evaluate ForestQuery on multiple public forest point cloud benchmarks and a self-collected annotated real-world dataset. Extensive experiments demonstrate consistent improvements in both individual-tree segmentation and semantic segmentation across diverse forest scenes. Code and data are publicly available at https://zhan994.github.io/ForestQuery",
         "authors": [
@@ -1711,15 +1735,11 @@
         "updated": "2026-10-02T14:54:05+00:00",
         "version_id": "2610.03403v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.03403v1"
       ]
