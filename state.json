@@ -829,6 +829,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "intended_tier": "light",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Figuring out how objects relate to each other, like whether they touch, overlap, stay completely separate or one sits inside another, matters a lot in fields like GIS, biomedical imaging, and robotics. Even though machine learning has come a long way, people haven't really focused on spotting these topological relationships in images. The main roadblocks? Not enough good datasets and no clear way to measure results. So, we rolled up our sleeves and built a new dataset. It's pretty sizable: over 11,000 labelled images showing all those essential relationships. We ran tests with some classic machine learning models, Naive Bayes, KNN, Random Forest, SVM, and Artificial Neural Networks, and threw in some deep learning stars like VGG16 and InceptionResNetV2. For the dataset itself, we used segmentation, contour detection, and grayscale normalization to tease out solid feature vectors. The results? Deep learning methods, especially VGG16, pulled ahead, with validation accuracy hitting 89.55%. That's a big jump compared to the traditional models. This shows how powerful transfer learning is for analyzing topological relationships in images, and it gives researchers a new standard to aim for in future work on spatial reasoning and topological classification.",
@@ -853,7 +854,7 @@
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2609.36172v1"
       ]
