@@ -1536,9 +1536,30 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "We show that the conditional KL admits an exact decomposition",
+          "within-condition information term and a prior-mismatch term",
+          "Experiments on classification and segmentation show the clearest gains in low-data classification",
+          "consistent improvements across dense prediction benchmarks"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper presents a theoretically grounded structured information bottleneck objective with an exact decomposition and reports gains on classification and dense prediction/segmentation benchmarks, matching the transferable, theoretically grounded segmentation objective interest. It is not an RL/DPO method, and medical imaging is only a motivating example rather than a medical reasoning segmentation task.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 86,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "full",
+        "transfer_evidence": true,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Standard information bottleneck (IB) regularization constrains representations via a single scalar I(Z;X), implicitlytreating all information as homogeneous. However, a single global compression control couples label-relevant structurewith residual within-condition variation, rather than regulating their allocation independently, allowing nuisanceinformation to persist in learned representations. For example, in medical imaging applications, residual variation oftenstems from acquisition conditions, background factors, or subject-specific appearance. This issue becomes particularlypronounced in data-limited settings, where models tend to overfit such variation, hindering generalization. While existingregularization methods can stabilize training, control capacity, or shape representation geometry, they do not explicitlyseparate nuisance-like variation from task-supporting structure. To address this limitation, we revisit IB from a structuredperspective based on a label-induced partition, where condition-level structure and within-condition information playdistinct roles. This leads to a dual-bottleneck formulation: a standard KL term controls global information capacity, while aconditional KL term targets within-condition information. We show that the conditional KL admits an exact decompositioninto a within-condition information term and a prior-mismatch term, explaining its alignment with the design objective.With a simplex-structured conditional prior, the method provides controllable latent geometry and integrates seamlesslyinto existing pipelines. Experiments on classification and segmentation show the clearest gains in low-data classificationand consistent improvements across dense prediction benchmarks.",
         "authors": [
@@ -1557,16 +1578,12 @@
         "updated": "2026-10-01T06:50:36+00:00",
         "version_id": "2610.01175v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.01175v1"
       ]
