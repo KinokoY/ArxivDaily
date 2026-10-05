@@ -795,9 +795,36 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "cross-view class-token alignment",
+          "align each student class-token representation with the stop-gradient EMA-teacher target from the other observation",
+          "This objective is optimized jointly with the inherited flow-matching and local patch objectives.",
+          "frozen-backbone VOC2012 segmentation improves by 3.6 mIoU",
+          "representation need not remain a by-product of generation"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper introduces a cross-view class-token alignment objective for diffusion transformers. It is a transferable representation-learning objective with downstream segmentation evaluation, but it lacks theoretical grounding, is not a segmentation-specific objective, and contains no medical or reasoning segmentation, RL, or DPO method.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "No theoretical grounding for the alignment objective",
+          "Segmentation appears only as downstream evaluation, not as the core objective",
+          "No medical or reasoning segmentation relevance",
+          "No RL or DPO method present"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-05T16:07:14.109560+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Generative and representation learning remain asymmetrically connected: semantic representations are used to improve diffusion generation, whereas the models' own representations are often treated as a by-product of synthesis. We ask whether diffusion models can instead be trained to learn substantially stronger semantic representations without sacrificing generation quality. SelfFlow takes a step in this direction by introducing self-supervised patch alignment into flow matching, but its main gains remain in faster convergence and improved generation. Inspired by DINO and iBOT, we extend this framework with cross-view class-token alignment to further strengthen semantic representations. Specifically, we form two independently noised, dual-timestep observations of each image and align each student class-token representation with the stop-gradient EMA-teacher target from the other observation. This objective is optimized jointly with the inherited flow-matching and local patch objectives. Notably, although the additional objective acts only on the class token, it strengthens both class-token and patch representations. Compared with a matched two-view baseline, ImageNet linear-probing accuracy improves by 9.4\\% using the class token and 10.1\\% using mean-pooled patch tokens, while frozen-backbone VOC2012 segmentation improves by 3.6 mIoU. These representation gains are achieved while maintaining comparable ImageNet generation FID. In text-to-image training, the same objective also improves generation FID, reducing it from 2.52 to 2.37 at matched checkpoints. Our results show that representation need not remain a by-product of generation or merely a tool for improving it: it can be directly optimized as a first-class capability of diffusion pretraining alongside generation.",
         "authors": [
@@ -816,15 +843,11 @@
         "updated": "2026-09-28T22:31:54+00:00",
         "version_id": "2609.36348v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2609.36348v1"
       ]
