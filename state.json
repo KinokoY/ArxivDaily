@@ -4008,6 +4008,162 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 3",
+            "locator": "caption:Figure 3",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 4",
+            "locator": "caption:Figure 4",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Figure 5",
+            "locator": "caption:Figure 5",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 3",
+            "locator": "caption:Table 3",
+            "rendered": false,
+            "required": false
+          }
+        ],
+        "locators": [
+          "section:Introduction",
+          "section:Methods / Datasets and Clinical Cohorts",
+          "section:Methods / Baseline Architecture and Uncertainty Extraction",
+          "section:Methods / Complexity-Aware Dynamic Budgeting",
+          "section:Methods / Algorithmic Triage and Morphological Filtering",
+          "section:Methods / Evaluation Metrics and Human Oracle Simulation",
+          "section:Results",
+          "section:Results / Initial In-Distribution Exploration: Backbone-Agnostic Uncertainty Evaluation",
+          "table:Table 1",
+          "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort",
+          "table:Table 2",
+          "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Volumetric and Spatial Improvements",
+          "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Workload Efficiency and the Safety Net",
+          "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Structural Tripwire Activations",
+          "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Inference Latency and Computational Overhead",
+          "section:Results / Qualitative Visual Analysis",
+          "section:Results / Qualitative Visual Analysis / Multi-Class Refinement and Core Rescue",
+          "section:Results / Qualitative Visual Analysis / Catastrophic Failure Rescue",
+          "section:Results / Component Analysis",
+          "table:Table 3",
+          "section:Results / Component Analysis / Impact of the Probabilistic Hotspot Hunter",
+          "section:Results / Component Analysis / Impact of Topological and Anomaly Filtering",
+          "section:Results / Component Analysis / Synergy of the Full Framework",
+          "section:Discussion",
+          "section:Conclusions",
+          "section:Data availability",
+          "section:Author contributions statement",
+          "section:Additional information"
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 1": 4,
+            "Figure 2": 6,
+            "Figure 3": 7,
+            "Figure 4": 8,
+            "Figure 5": 9
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "Table 1",
+            "Table 2",
+            "Figure 2",
+            "Figure 3",
+            "Figure 4",
+            "Figure 5",
+            "Table 3"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 45399,
+          "read_locators": [
+            "section:Introduction",
+            "section:Methods / Datasets and Clinical Cohorts",
+            "section:Methods / Baseline Architecture and Uncertainty Extraction",
+            "section:Methods / Complexity-Aware Dynamic Budgeting",
+            "section:Methods / Algorithmic Triage and Morphological Filtering",
+            "section:Methods / Evaluation Metrics and Human Oracle Simulation",
+            "section:Results",
+            "section:Results / Initial In-Distribution Exploration: Backbone-Agnostic Uncertainty Evaluation",
+            "table:Table 1",
+            "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort",
+            "table:Table 2",
+            "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Volumetric and Spatial Improvements",
+            "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Workload Efficiency and the Safety Net",
+            "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Structural Tripwire Activations",
+            "section:Results / Out-of-Distribution Test: UTSW Clinical Cohort / Inference Latency and Computational Overhead",
+            "section:Results / Qualitative Visual Analysis",
+            "section:Results / Qualitative Visual Analysis / Multi-Class Refinement and Core Rescue",
+            "section:Results / Qualitative Visual Analysis / Catastrophic Failure Rescue",
+            "section:Results / Component Analysis",
+            "table:Table 3",
+            "section:Results / Component Analysis / Impact of the Probabilistic Hotspot Hunter",
+            "section:Results / Component Analysis / Impact of Topological and Anomaly Filtering",
+            "section:Results / Component Analysis / Synergy of the Full Framework",
+            "section:Discussion",
+            "section:Conclusions",
+            "section:Data availability",
+            "section:Author contributions statement",
+            "section:Additional information"
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            4,
+            6,
+            7,
+            8,
+            9
+          ],
+          "section_count": 28,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2610.01452v1",
+          "version_id": "2610.01452v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2610.01452v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2610.01452v1",
+        "version_id": "2610.01452v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -4061,11 +4217,6 @@
         "transferable_objective"
       ],
       "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2610.01452v1"
       ]
