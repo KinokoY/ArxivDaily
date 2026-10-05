@@ -3135,6 +3135,178 @@
         "body": 1,
         "selection": 1
       },
+      "body": {
+        "figures": [
+          {
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "rendered": true,
+            "required": true
+          },
+          {
+            "label": "Table 1",
+            "locator": "caption:Table 1",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 2",
+            "locator": "caption:Table 2",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 3",
+            "locator": "caption:Table 3",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 4",
+            "locator": "caption:Table 4",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 5",
+            "locator": "caption:Table 5",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 6",
+            "locator": "caption:Table 6",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 7",
+            "locator": "caption:Table 7",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Table 8",
+            "locator": "caption:Table 8",
+            "rendered": false,
+            "required": false
+          },
+          {
+            "label": "Figure 2",
+            "locator": "caption:Figure 2",
+            "rendered": true,
+            "required": true
+          }
+        ],
+        "locators": [
+          "section:Introduction",
+          "section:Related Work / Strong medical image segmentation baselines",
+          "section:Related Work / Pre-treatment and post-treatment glioma segmentation",
+          "section:Related Work / Boundary-aware and lesion-aware optimization",
+          "section:Related Work / Top-ranked BraTS-GLI 2025 solutions",
+          "section:Method / Problem setup and region representation",
+          "section:Method / Baseline nnU-Netv2 objective",
+          "section:Method / Single-cohort lesion- and boundary-aware loss",
+          "section:Method / RC-aware joint supervision",
+          "section:Method / Training variants and inference strategy",
+          "section:Experiments / Datasets",
+          "section:Experiments / Dataset splits and leakage prevention",
+          "table:Table 1",
+          "section:Experiments / Implementation details",
+          "section:Experiments / Evaluation metrics",
+          "section:Experiments / Experimental design",
+          "section:Results / Official testing-phase performance",
+          "table:Table 2",
+          "section:Results / Ablation study",
+          "table:Table 3",
+          "table:Table 4",
+          "table:Table 5",
+          "section:Results / Paired post-treatment statistical analysis",
+          "table:Table 6",
+          "section:Results / Comparison with additional architectures",
+          "table:Table 7",
+          "table:Table 8",
+          "section:Results / Qualitative analysis",
+          "section:Discussion",
+          "section:Discussion / Limitations",
+          "section:Discussion / Future work",
+          "section:Conclusion"
+        ],
+        "quality": {
+          "figure_page_map": {
+            "Figure 1": 10,
+            "Figure 2": 19
+          },
+          "figures_or_tables": [
+            "Figure 1",
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Table 4",
+            "Table 5",
+            "Table 6",
+            "Table 7",
+            "Table 8",
+            "Figure 2"
+          ],
+          "has_evaluation_or_theory": true,
+          "has_method": true,
+          "missing_pages": [],
+          "missing_parts": [],
+          "passed": true,
+          "read_chars": 69303,
+          "read_locators": [
+            "section:Introduction",
+            "section:Related Work / Strong medical image segmentation baselines",
+            "section:Related Work / Pre-treatment and post-treatment glioma segmentation",
+            "section:Related Work / Boundary-aware and lesion-aware optimization",
+            "section:Related Work / Top-ranked BraTS-GLI 2025 solutions",
+            "section:Method / Problem setup and region representation",
+            "section:Method / Baseline nnU-Netv2 objective",
+            "section:Method / Single-cohort lesion- and boundary-aware loss",
+            "section:Method / RC-aware joint supervision",
+            "section:Method / Training variants and inference strategy",
+            "section:Experiments / Datasets",
+            "section:Experiments / Dataset splits and leakage prevention",
+            "table:Table 1",
+            "section:Experiments / Implementation details",
+            "section:Experiments / Evaluation metrics",
+            "section:Experiments / Experimental design",
+            "section:Results / Official testing-phase performance",
+            "table:Table 2",
+            "section:Results / Ablation study",
+            "table:Table 3",
+            "table:Table 4",
+            "table:Table 5",
+            "section:Results / Paired post-treatment statistical analysis",
+            "table:Table 6",
+            "section:Results / Comparison with additional architectures",
+            "table:Table 7",
+            "table:Table 8",
+            "section:Results / Qualitative analysis",
+            "section:Discussion",
+            "section:Discussion / Limitations",
+            "section:Discussion / Future work",
+            "section:Conclusion"
+          ],
+          "reading_order_ok": true,
+          "reasons": [],
+          "rendered_physical_pages": [
+            10,
+            19
+          ],
+          "section_count": 32,
+          "source_type": "html",
+          "source_url": "https://arxiv.org/html/2610.01060v1",
+          "version_id": "2610.01060v1",
+          "visual_evidence_prepared": true,
+          "visual_evidence_used": false,
+          "visual_source_url": "https://arxiv.org/pdf/2610.01060v1"
+        },
+        "source_type": "html",
+        "source_url": "https://arxiv.org/html/2610.01060v1",
+        "version_id": "2610.01060v1"
+      },
       "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
       "decision": {
         "abstract_evidence": [
@@ -3190,11 +3362,6 @@
         "transferable_objective"
       ],
       "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "body"
-      },
       "versions": [
         "2610.01060v1"
       ]
