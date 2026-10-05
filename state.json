@@ -1371,7 +1371,7 @@
           "source_url": "https://arxiv.org/html/2609.37283v1",
           "version_id": "2609.37283v1",
           "visual_evidence_prepared": true,
-          "visual_evidence_used": false,
+          "visual_evidence_used": true,
           "visual_source_url": "https://arxiv.org/pdf/2609.37283v1"
         },
         "source_type": "html",
@@ -1428,12 +1428,173 @@
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "selected",
-      "stage_started": {
-        "at": "2026-10-05T16:07:14.109560+00:00",
-        "run_id": "20261005T160714Z-f64f44ab",
-        "stage": "summary"
+      "stage": "summary_validated",
+      "summary": {
+        "background": "医学多模态大模型需统一图像级理解与像素级分割，但训练单一模型同时支持医学推理和语言条件分割仍具挑战性，因为共享表征可能被拉向不兼容的视觉细节层次。",
+        "conclusion": "结论表明，该参数解耦课程能在不增加推理开销的情况下提升像素级分割并保持医学VQA和文本QA能力；但作者也指出分阶段训练增加了训练成本，且更难专家级推理仍可能受益于更大通用语言能力。",
+        "contribution": "本文研究全参数统一医学MLLM训练，并提出一种参数解耦的分阶段训练框架，通过DBI监控<SEG>状态分离、模块特定梯度缩放和VLM冻结的SAM专业化来缓解<SEG>接口处的表征干扰。",
+        "evidence": [
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "augmenting vision–language models (VLMs) with segmentation modules enables medical multimodal large language models (MLLMs) to perform not only image-level understanding, such as diagnosis and report generation, but also pixel-level reasoning",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "However, training a single model that supports both medical reasoning and language-conditioned segmentation remains challenging.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "background",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "When these objectives are optimized together in the same model, the shared representations can be pulled toward incompatible levels of visual detail.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "We study full-parameter unified medical MLLM training for joint medical reasoning and language-conditioned segmentation, and analyze the representation-level interference that arises around the <SEG> interface.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "contribution",
+            "label": "",
+            "locator": "section:1 Introduction",
+            "quote": "We propose a three-stage parameter-decoupled training framework with DBI-monitored <SEG> state separation, module-specific gradient scaling, and VLM-frozen SAM specialization.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "method",
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "quote": "A VLM produces language responses for reasoning tasks and emits a <SEG> token for language-conditioned referring segmentation.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "method",
+            "label": "Figure 1",
+            "locator": "caption:Figure 1",
+            "quote": "The <SEG> hidden state is projected as an implicit prompt to the SAM2-based segmentation branch, while the bottom row summarizes the three training stages.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework",
+            "quote": "1: Stage 1 (Shallow Alignment): Train vision encoder and projector only on image–caption pairs; LLM and SAM frozen.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework",
+            "quote": "2: Stage 2, Phase I (Structured State Separation): Train on segmentation instructions with the standard task loss; collect <SEG> hidden states for validation-time DBI monitoring.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework",
+            "quote": "Scale segmentation gradients flowing from the <SEG> interface into the LLM backbone by",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "method",
+            "label": "",
+            "locator": "section:3 Methodology / 3.3 Parameter-Decoupled Training Framework / 3.3.5 Stage 3: Segmentation Augmentation.",
+            "quote": "the entire MLLM is frozen, and only the SAM2-based segmentation module is fine-tuned on additional segmentation data.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 2",
+            "locator": "table:Table 2",
+            "quote": "Table 2: Segmentation results on MedSegBench [ 29 ] (Dice, %). Bold: best; underline: second best; –: not reported.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 7",
+            "locator": "caption:Table 7",
+            "quote": "Table 7: Ablation on Stage 3 segmentation augmentation (Ours-33B, Dice, %).",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 7",
+            "locator": "table:Table 7",
+            "quote": "Model ISIC16 Kvasir IDRiD CovidQUEx Promise12 MosMed+ US-Nerve TNBC Avg.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "Table 7",
+            "locator": "table:Table 7",
+            "quote": "w/ Stage 3 93.71 91.22 56.86 78.39 91.40 78.01 80.24 81.20 81.38",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks.",
+            "quote": "official U-Net baselines, trained per-dataset with one specialized model for each benchmark",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks.",
+            "quote": "Ours-33B surpasses the dataset-specialized experts on most MedSegBench datasets",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "experiments",
+            "label": "",
+            "locator": "section:4 Experiments and Results / 4.3 Results / 4.3.1 Results on Segmentation Benchmarks.",
+            "quote": "our model is trained jointly and uses a single language-conditioned interface across datasets.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:5 Conclusion",
+            "quote": "to improve pixel-level masks while preserving medical VQA and textual QA performance.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:5 Conclusion",
+            "quote": "Extensive experiments on diverse benchmarks demonstrate accurate anatomical delineation without sacrificing reasoning performance, establishing an effective paradigm for unified medical multimodal modeling.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:4 Experiments and Results / 4.1 Implementation Details / Computational Cost.",
+            "quote": "The staged procedure increases training cost compared with simpler joint fine-tuning, but it does not introduce additional inference overhead",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          },
+          {
+            "field": "conclusion",
+            "label": "",
+            "locator": "section:4 Experiments and Results / 4.3 Results / 4.3.2 Results on Medical VQA Benchmarks.",
+            "quote": "while harder expert-level reasoning still benefits from larger general-purpose language capacity.",
+            "source_url": "https://arxiv.org/html/2609.37283v1"
+          }
+        ],
+        "experiments": "在MedSegBench的Dice（%）评估中，Ours-33B报告了81.38的平均Dice，并在多数子集上超过按数据集专门训练的U-Net专家基线，且以单一语言条件接口跨数据集。",
+        "method": "模型将VLM生成的<SEG>隐藏状态经投影作为隐式提示送入SAM2分割分支；训练先只更新视觉编码器和投影器进行浅层医学对齐，再用标准任务损失进行结构化状态分离并在留出验证集上监控DBI。随后对流入LLM的<SEG>分割梯度进行缩放，最后冻结整个MLLM，仅微调SAM2分割模块。"
       },
+      "summary_model": "deepseek-flash",
+      "summary_prompt_fingerprint": "arxivdaily-summary-v4",
+      "summary_validated_at": "2026-10-05T16:07:14.109560+00:00",
       "versions": [
         "2609.37283v1"
       ]
