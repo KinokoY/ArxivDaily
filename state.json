@@ -6792,9 +6792,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "reformulates DD as a multi-objective reinforcement learning problem",
+          "latent-space geometric reward guided by a class-wise Minimum Spanning Tree (MST)",
+          "provide an idealized analysis that motivates the MST-based reward, including a Hausdorff approximation bound and a subsampling bound independent of the dataset size",
+          "extends to structured tasks such as object detection and segmentation by substituting the frozen task reward model",
+          "+8.0% mIoU gain on segmentation under low-budget settings"
+        ],
+        "dpo_is_method": false,
+        "reason": "Proposes an RL-based manifold-guided diffusion alignment method with theoretical analysis and explicit transfer to segmentation, matching a transferable, theoretically grounded segmentation objective. Not medical or reasoning segmentation, and no DPO.",
+        "review_evidence": [],
+        "rl_is_method": true,
+        "route": "transferable_objective",
+        "score": 85,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "full",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "Segmentation is an extension application rather than the core reasoning segmentation task",
+          "No medical imaging evidence",
+          "No DPO method"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-06T14:15:02.055879+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Diffusion-based dataset distillation (DD) suffers from a fundamental objective mismatch: likelihood-driven diffusion models prioritize density approximation over the discriminative decision boundaries required for downstream tasks. Beyond semantic mismatch, relying solely on density also leads to geometric coverage loss, where generated samples collapse into a few high-density modes and fail to cover the manifold's structural diversity. We propose Manifold-Guided Policy Optimization (MGPO), which reformulates DD as a multi-objective reinforcement learning problem and achieves Dual-Space Alignment via a pixel-space discriminative reward and a latent-space geometric reward guided by a class-wise Minimum Spanning Tree (MST). The discriminative reward enforces class separability, while the MST-based geometric reward encourages generated latents to cover a sparse geometric skeleton of each class, jointly addressing both failure modes. We further provide an idealized analysis that motivates the MST-based reward, including a Hausdorff approximation bound and a subsampling bound independent of the dataset size. The reward-modular design extends to structured tasks such as object detection and segmentation by substituting the frozen task reward model. Extensive experiments show MGPO consistently outperforms existing methods, including a +8.0% mIoU gain on segmentation under low-budget settings.",
         "authors": [
@@ -6814,15 +6840,11 @@
         "updated": "2026-10-04T14:27:08+00:00",
         "version_id": "2610.05252v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-06T14:15:02.055879+00:00",
-        "run_id": "20261006T141502Z-f6fbec51",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.05252v1"
       ]
