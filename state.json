@@ -5455,9 +5455,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "training-free framework that extends DA3 for 4D dynamic scene reconstruction without any fine-tuning",
+          "VLM) to automatically generate scene-specific semantic prompts for SAM 3",
+          "precise instance-level segmentation that distinguishes which objects move from what objects exist",
+          "Experiments on four datasets demonstrate"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper presents a training-free 4D reconstruction and dynamic object segmentation framework using depth foundation models and VLM prompts for SAM 3. It does not introduce a theoretically grounded transferable segmentation objective, nor does it use RL/DPO methods or evaluate medical reasoning segmentation. Thus it is only weakly relevant via a transferable segmentation objective, with insufficient theory or transfer support.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 25,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No medical domain or medical reasoning segmentation",
+          "No RL/DPO method",
+          "No theoretical grounding for a transferable segmentation objective",
+          "Transfer to medical or general reasoning segmentation not demonstrated"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-06T14:15:02.055879+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Recent depth foundation models like Depth Anything 3 (DA3) achieve remarkable multi-view depth estimation but assume static 3D scenes, limiting their applicability to real-world dynamic environments. Existing training-free 4D methods like Easi3R and VGGT4D rely on correspondence-trained backbones whose attention encodes cross-frame matching, a property absent in depth-only models like DA3. We present Dyna3, a training-free framework that extends DA3 for 4D dynamic scene reconstruction without any fine-tuning. Our key insight is that DA3's cross-view features, though trained only for depth consistency, implicitly encode motion-discriminative signals when combined with best-match feature search across frames. Its static surfaces find consistent matches globally, while dynamic objects cannot. We further adopt vision-language models (VLM) to automatically generate scene-specific semantic prompts for SAM 3, enabling precise instance-level segmentation that distinguishes which objects move from what objects exist. For reconstruction, we decouple the scene into a cross-frame aligned static background and per-frame dynamic point clouds. Experiments on four datasets demonstrate that Dyna3 surpasses correspondence-trained methods with +5.5pp J-Mean over state-of-the-art VGGT4D on dynamic object segmentation, while achieving up to 13x faster pose estimation and 3x faster 4D reconstruction with 4 to 8x lower memory. Dyna3 could therefore enable much denser temporal sampling that prior methods cannot support.",
         "authors": [
@@ -5476,15 +5502,11 @@
         "updated": "2026-10-01T08:24:21+00:00",
         "version_id": "2610.01286v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-06T14:15:02.055879+00:00",
-        "run_id": "20261006T141502Z-f6fbec51",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.01286v1"
       ]
