@@ -7123,6 +7123,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-06T14:15:02.055879+00:00",
+      "intended_tier": "light",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Extracting patient-specific vascular trees from volumetric medical images is fundamental to computational angiography and non-invasive hemodynamic assessment. Conventional voxel segmentation models often sever delicate bifurcations, while heuristic Euclidean Minimum Spanning Trees introduce non-anatomical shortcuts. Moreover, linear Poiseuille flow neglects quadratic kinetic dissipation across arterial narrowings, underestimating ischemia. We formulate an end-to-end framework decoupling continuous geometric arborescence generation from non-linear hemodynamics. First, an autonomous 3D Ostium Landmark Localization Head with dual-sinus query channels and spherical-gated refinement eliminates centerline seeding dependency, achieving cohort mean localization error of 7.63 mm (7.43 mm LCA, 7.83 mm RCA; 71.4% <= 8.0 mm) from raw contrast context. Second, a Spatially-Grounded Deformable Step Flow Architecture queries continuous 3D feature pyramids via trilinear sampling, sequentially generating trajectories with anchor boundary enforcement (X(0) = P_start). Third, a Top-Down Recursive Arborescence State Machine detects bifurcation peaks via Tree-NMS and parameterizes predecessor parent pointers (p_k < k), guaranteeing single connected acyclic tree topology (beta_0 = 1, beta_1 = 0) with differentiable step termination. Fourth, an iterative Picard non-linear Kirchhoff solver with Young-Tsai / Gould quadratic dissipation enforces machine-precision mass conservation (residual 5.82e-11 mL/s). Across 14 development patients under standardized in-silico stenosis stress testing (Q_0 = 4.0 mL/s), linear Poiseuille flow misclassifies 75% diameter lesions as non-ischemic (FFR > 0.80) in 14/14 cases, whereas our non-linear solver captures functional ischemia (FFR = 0.5864, lesion disparity 32.89 mmHg, p = 6.10e-5) with 3.66x collateral shunting. Test set firewall isolation was maintained.",
@@ -7145,7 +7146,8 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "selected",
+      "stage": "ready",
+      "tier_reason": "full_quota_overflow",
       "versions": [
         "2610.05900v1"
       ]
