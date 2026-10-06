@@ -6717,9 +6717,31 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "0ce8101923c77bfbe4389e6c6fe99fe48d9a9ec759ed286a662484fdd4c58fd4",
+      "decision": {
+        "abstract_evidence": [
+          "We propose FedBCS+, federated decoupled contextual alignment with style-purified aggregation.",
+          "Decoupled Contextual Prototype Alignment (DCPA) explicitly decouples multi-level features into semantic and structural prototypes and aligns regional semantics and fine-grained anatomical structures separately.",
+          "Style-purified Semantic Prototype Aggregation (S2PA) measures each client's purified prototype divergence from the global consensus and adaptively reweights aggregation toward under-represented clients to reduce consensus bias.",
+          "On five heterogeneous medical segmentation benchmarks spanning histopathology, MRI, ultrasound, and colonoscopy, FedBCS+ achieves the highest mean Dice among the compared methods.",
+          "A convergence analysis further characterizes how aggregation and alignment affect the optimization bound."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper proposes a theoretically grounded federated medical segmentation objective with decoupled prototype alignment and style-purified aggregation, evaluated across five heterogeneous medical segmentation benchmarks. It matches the transferable, theoretically grounded segmentation objective interest; no RL or DPO method is present.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 85,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "full",
+        "transfer_evidence": true,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-06T14:15:02.055879+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Federated learning enables medical institutions to train a global model without sharing data, yet feature heterogeneity from diverse scanners or protocols remains challenging. Existing representation-based methods face two limitations: 1) Incomplete Contextual Representation Learning: single-layer or coupled representations overlook multi-level structural cues and entangle regional semantics with boundary details. 2) Layerwise Style and Aggregation Biases: domain-specific style discrepancies across intermediate layers degrade prototypes, while aggregation that overlooks client distribution shifts can further amplify bias. We propose FedBCS+, federated decoupled contextual alignment with style-purified aggregation. We employ Frequency-domain Style Recalibration (FSR) in prototype construction to decouple content-style representations and extract style-purified prototypes. Built upon these purified features, Decoupled Contextual Prototype Alignment (DCPA) explicitly decouples multi-level features into semantic and structural prototypes and aligns regional semantics and fine-grained anatomical structures separately. Style-purified Semantic Prototype Aggregation (S2PA) measures each client's purified prototype divergence from the global consensus and adaptively reweights aggregation toward under-represented clients to reduce consensus bias. On five heterogeneous medical segmentation benchmarks spanning histopathology, MRI, ultrasound, and colonoscopy, FedBCS+ achieves the highest mean Dice among the compared methods. A convergence analysis further characterizes how aggregation and alignment affect the optimization bound.",
         "authors": [
@@ -6747,16 +6769,12 @@
         "updated": "2026-10-03T18:26:17+00:00",
         "version_id": "2610.04700v1"
       },
+      "prompt_fingerprint": "arxivdaily-selection-v1",
       "rule_hits": [
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-06T14:15:02.055879+00:00",
-        "run_id": "20261006T141502Z-f6fbec51",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.04700v1"
       ]
