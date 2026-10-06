@@ -6940,6 +6940,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-06T14:15:02.055879+00:00",
+      "intended_tier": "light",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Federated learning enables medical institutions to train a global model without sharing data, yet feature heterogeneity from diverse scanners or protocols remains challenging. Existing representation-based methods face two limitations: 1) Incomplete Contextual Representation Learning: single-layer or coupled representations overlook multi-level structural cues and entangle regional semantics with boundary details. 2) Layerwise Style and Aggregation Biases: domain-specific style discrepancies across intermediate layers degrade prototypes, while aggregation that overlooks client distribution shifts can further amplify bias. We propose FedBCS+, federated decoupled contextual alignment with style-purified aggregation. We employ Frequency-domain Style Recalibration (FSR) in prototype construction to decouple content-style representations and extract style-purified prototypes. Built upon these purified features, Decoupled Contextual Prototype Alignment (DCPA) explicitly decouples multi-level features into semantic and structural prototypes and aligns regional semantics and fine-grained anatomical structures separately. Style-purified Semantic Prototype Aggregation (S2PA) measures each client's purified prototype divergence from the global consensus and adaptively reweights aggregation toward under-represented clients to reduce consensus bias. On five heterogeneous medical segmentation benchmarks spanning histopathology, MRI, ultrasound, and colonoscopy, FedBCS+ achieves the highest mean Dice among the compared methods. A convergence analysis further characterizes how aggregation and alignment affect the optimization bound.",
@@ -6973,7 +6974,8 @@
         "medical_objective",
         "transferable_objective"
       ],
-      "stage": "selected",
+      "stage": "ready",
+      "tier_reason": "full_quota_overflow",
       "versions": [
         "2610.04700v1"
       ]
