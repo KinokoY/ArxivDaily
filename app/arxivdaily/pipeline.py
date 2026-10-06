@@ -9,19 +9,21 @@ from zoneinfo import ZoneInfo
 
 from .collection import plan_window
 from .llm import validate_summary
-from .models import Decision, DeliveryResult, DigestItem, Paper, ProcessingError, Summary, fingerprint, iso, parse_time, utcnow
+from .models import Decision, DeliveryResult, DigestItem, Paper, ProcessingError, Summary, Translation, fingerprint, iso, parse_time, utcnow
 from .render import render_archive, render_notification, server_title
 from .rules import match_rules
 from .state import PersistenceError, StateStore, body_metadata, confirmed, upsert_paper
+from .translation import TranslationClient
 
 
 class Pipeline:
-    def __init__(self, config: dict, store: StateStore, collector, analysis, reader, delivery=None, *, now: datetime | None = None, real_send=False, clock=None):
+    def __init__(self, config: dict, store: StateStore, collector, analysis, reader, delivery=None, *, now: datetime | None = None, real_send=False, clock=None, translator=None):
         self.config, self.store = config, store
         self.collector, self.analysis, self.reader, self.delivery = collector, analysis, reader, delivery
         self.now = now or utcnow()
         self.clock = clock or ((lambda: self.now) if now is not None else utcnow)
         self.real_send = real_send
+        self.translator = translator or TranslationClient(config, analysis)
         self.day = self.now.astimezone(ZoneInfo("Asia/Shanghai")).date().isoformat()
         self.quota_day = self.now.astimezone(ZoneInfo(config["delivery"]["quota_timezone"])).date().isoformat()
         self.run_id = self.now.strftime("%Y%m%dT%H%M%SZ") + "-" + uuid.uuid4().hex[:8]
@@ -70,7 +72,8 @@ class Pipeline:
         count = record["attempts"].get(stage, 0)
         failure = record["failures"].get(stage)
         if count >= self.config["limits"]["stage_attempts"]:
-            record["manual_required"] = True
+            if stage != "title_translation":
+                record["manual_required"] = True
             self.errors.append(f"{record['paper']['version_id']}:{stage}:attempts_exhausted")
             return None
         if failure and parse_time(failure["last_at"]).date() == self.now.date():
@@ -177,6 +180,22 @@ class Pipeline:
                 record["model"] = self.config["llm"]["filter"]["model"]
                 record["stage"] = "rejected" if decision.status == "reject" else "selected" if decision.status == "select" else "uncertain"
                 self.checkpoint()
+        translation_mode = self.config["workflow"]["mode"] == "translation"
+        translated_ids = set()
+        for record in records:
+            if not translation_mode and (record.get("intended_tier") != "translation" or record.get("promotion_pending")):
+                continue
+            if record.get("resend_pending") or record.get("decision", {}).get("status") not in {"select", "uncertain"}:
+                continue
+            # Abstract uncertainty remains visible; metadata translation
+            # makes no claim of fulltext review or verified relevance.
+            if record["decision"]["status"] == "uncertain":
+                self.notes.append(f"{record['paper']['version_id']}：摘要终筛待确认，仅提供原文与译文，未进行全文复审。")
+            self._translate_record(record)
+            translated_ids.add(record["paper"]["version_id"])
+        if translation_mode:
+            return
+        records = [r for r in records if r["paper"]["version_id"] not in translated_ids]
         daily = self._daily()
         uncertain = [r for r in records if r.get("decision", {}).get("status") == "uncertain"]
         uncertain.sort(key=lambda r: (-r["decision"].get("score", 0), r["paper"]["version_id"]))
@@ -205,7 +224,7 @@ class Pipeline:
             promotion = paper.base_id in self.promotion_ids or record.get("promotion_pending", False)
             tier = "full" if promotion else record.get("intended_tier", record["decision"]["tier"])
             if tier == "full" and not self._full_slot(paper.base_id):
-                if record.get("summary") or record.get("failures") or promotion:
+                if record.get("summary") or any(stage != "title_translation" for stage in record.get("failures", {})) or promotion:
                     continue  # Recoverable full work is not quota overflow.
                 tier = "light"
                 record["tier_reason"] = "full_quota_overflow"
@@ -241,6 +260,47 @@ class Pipeline:
                 daily["full_ids"].remove(paper.base_id)
                 self.checkpoint()
 
+    def _translate_record(self, record: dict) -> None:
+        record["intended_tier"] = "translation"
+        if not record.get("translation", {}).get("abstract_zh"):
+            paper = Paper.from_dict(record["paper"])
+            def translate():
+                value = self.translator.translate(paper)
+                if not isinstance(value, Translation) or not value.abstract_zh.strip():
+                    raise ProcessingError("translation_abstract_missing")
+                return value
+            result = self._stage(record, "translation", translate)
+            if result is None:
+                return
+            record["translation"] = result.to_dict()
+            record["title_zh"] = result.title_zh
+            record["translation_provider"] = self.config["translation"]["provider"]
+            record["translation_prompt_fingerprint"] = "arxivdaily-translation-v1"
+        record["stage"] = "ready"
+        self.checkpoint()
+
+    def _index_titles(self) -> None:
+        # Transport-only manual actions reuse content without new paid calls.
+        if self.resend_ids or self.promotion_ids or (self.retry_ids and self.retry_stage != "title_translation"):
+            return
+        for key, record in self.state["papers"].items():
+            if self.retry_ids and key not in self.retry_ids:
+                continue
+            if record.get("title_zh") or record.get("translation", {}).get("title_zh"):
+                continue
+            paper = Paper.from_dict(record["paper"])
+            result = self._stage(record, "title_translation", lambda: self.translator.translate(paper, title_only=True))
+            if result is not None:
+                record["title_zh"] = result.title_zh
+                self.checkpoint()
+
+    @staticmethod
+    def _item(record: dict, recovery_of="") -> DigestItem:
+        tier = record["intended_tier"]
+        return DigestItem(Paper.from_dict(record["paper"]), tier,
+                          Summary.from_dict(record["summary"]) if tier == "full" else None,
+                          recovery_of, Translation.from_dict(record["translation"]) if tier == "translation" else None)
+
     def _recover_items(self) -> list[DigestItem]:
         result = []
         for key, record in self.state["papers"].items():
@@ -268,24 +328,25 @@ class Pipeline:
             tier = record["intended_tier"]
             if tier == "full" and not self._full_slot(key):
                 continue
-            result.append(DigestItem(Paper.from_dict(record["paper"]), tier, Summary.from_dict(record["summary"]) if tier == "full" else None, previous))
+            result.append(self._item(record, previous))
         return result
 
-    def _send(self, items: list[DigestItem], *, alert=False) -> str | None:
-        if not items and not alert:
+    def _send(self, items: list[DigestItem], *, alert=False, empty=False) -> str | None:
+        if not items and not alert and not empty:
             return None
         attempt_time = self.clock()
         current_day = attempt_time.astimezone(ZoneInfo("Asia/Shanghai")).date().isoformat()
         if current_day != self.day:
             self.day = current_day
         items = [i for i in items if i.tier != "full" or self._full_slot(i.paper.base_id)]
-        if not items and not alert:
+        if not items and not alert and not empty:
             return None
         base = self.config["archive"]["public_base_url"].rstrip("/")
         if self.real_send and (not base or self.store.publisher is None):
             raise ProcessingError("real_delivery_requires_public_archive_and_checkpoint_publisher")
         base = base or "https://example.invalid/arxivdaily-state"
         notes = self.notes + ([f"本次存在 {len(set(self.errors))} 项处理或覆盖问题，状态中保留待恢复阶段。"] if self.errors else [])
+        notes.append(f"[所有候选论文的长期索引]({base}/archive/papers.md)")
         offline = hasattr(self.analysis, "fixture")
         if offline:
             notes.append("脚本化离线运行：未调用真实模型或发送服务。")
@@ -298,18 +359,18 @@ class Pipeline:
         digest_id = f"{self.run_id}-{'alert-' if alert else ''}{fingerprint(markdown)[:12]}"
         relative = f"archive/{self.day.replace('-', '/')}/{digest_id}.md"
         url = base + "/" + relative
-        notification, modes = render_notification(self.day, items, url, self.config["delivery"]["body_bytes"]) if not alert else (f"ArxivDaily 本次运行有失败，请查看[状态与告警]({url})。", {})
+        notification, modes = render_notification(self.day, items, url, self.config["delivery"]["body_bytes"], index_url=base + "/archive/papers.md") if not alert else (f"ArxivDaily 本次运行有失败，请查看[状态与告警]({url})。", {})
         notification = self.store.scrubber.text(notification)
         previous = sorted({i.recovery_of for i in items if i.recovery_of})
         recovery_roots = {self.state["papers"][i.paper.base_id].get("delivery_chain", self.state["digests"][i.recovery_of]["chain_root"]) for i in items if i.recovery_of}
         new_items = [i for i in items if not i.recovery_of]
         # This snapshot has its own root only when there are new entries (or an
         # alert). Recovery transmissions also increment every original root.
-        if new_items or alert:
+        if new_items or alert or empty:
             self.state["chains"][digest_id] = {"attempts": 0, "created_at": iso(self.now)}
             recovery_roots.add(digest_id)
-        chain_root = digest_id if new_items or alert else sorted(recovery_roots)[0]
-        manifest = {"schema_version": 1, "digest_id": digest_id, "day": self.day, "run_id": self.run_id, "items": [{"paper": i.paper.to_dict(), "tier": i.tier, "summary": i.summary.to_dict() if i.summary else None, "recovery_of": i.recovery_of} for i in items], "rendered": modes, "archive_url": url, "content_hash": fingerprint(markdown), "notification_hash": fingerprint(notification), "recovery_of": previous, "chain_roots": sorted(recovery_roots), "alert": alert}
+        chain_root = digest_id if new_items or alert or empty else sorted(recovery_roots)[0]
+        manifest = {"schema_version": 1, "digest_id": digest_id, "day": self.day, "run_id": self.run_id, "items": [{"paper": i.paper.to_dict(), "tier": i.tier, "summary": i.summary.to_dict() if i.summary else None, "translation": i.translation.to_dict() if i.translation else None, "recovery_of": i.recovery_of} for i in items], "rendered": modes, "archive_url": url, "content_hash": fingerprint(markdown), "notification_hash": fingerprint(notification), "recovery_of": previous, "chain_roots": sorted(recovery_roots), "alert": alert, "empty": empty}
         self.store.snapshot(self.day, digest_id, markdown, notification, manifest)
         self.state["digests"][digest_id] = {**manifest, "chain_root": chain_root, "created_at": iso(self.now), "status": "prepared"}
         self.checkpoint()  # Publisher must commit and verify the archive first.
@@ -414,11 +475,11 @@ class Pipeline:
         with self.store.locked():
             self.state = self.store.load()
             if retry_stage:
-                if retry_stage not in {"selection","body","review","summary","delivery"} or not self.retry_ids:
+                if retry_stage not in {"selection","body","review","summary","translation","title_translation","delivery"} or not self.retry_ids:
                     raise ProcessingError("invalid_manual_recovery_request")
                 for key in self.retry_ids:
                     record = self.state["papers"].get(key)
-                    if record is None or (confirmed(record) and not (record.get("promotion_pending") or record.get("resend_pending"))):
+                    if record is None or (retry_stage != "title_translation" and confirmed(record) and not (record.get("promotion_pending") or record.get("resend_pending"))):
                         raise ProcessingError("manual_recovery_requires_undelivered_existing_record")
                     if retry_stage == "delivery" and not record.get("pending_digest"):
                         raise ProcessingError("manual_delivery_requires_pending_snapshot")
@@ -429,7 +490,7 @@ class Pipeline:
                         chain = self.state["chains"][record["delivery_chain"]]
                         record["manual_delivery_attempt_limit"] = chain["attempts"]+self.config["delivery"]["chain_attempts"]
                     else:
-                        if record.get("pending_digest"):
+                        if record.get("pending_digest") and retry_stage != "title_translation":
                             raise ProcessingError("pending_delivery_must_recover_delivery_only")
                         if not record.get("failures",{}).get(retry_stage) and not record["attempts"].get(retry_stage):
                             raise ProcessingError("manual_retry_requires_previously_attempted_stage")
@@ -502,9 +563,11 @@ class Pipeline:
                 record["resend_pending"] = True
                 record["stage"] = "summary_validated" if record["intended_tier"] == "full" else "ready"
             # Reserve recovery slots before new summaries: all share one day.
-            recoveries = self._recover_items()
+            recoveries = [] if retry_stage == "title_translation" else self._recover_items()
             try:
-                self._process()
+                if retry_stage != "title_translation":
+                    self._process()
+                self._index_titles()
             except PersistenceError:
                 raise
             except ProcessingError as exc:
@@ -514,6 +577,8 @@ class Pipeline:
             new = []
             normal_already_sent = any(self.state["digests"][d]["status"] == "confirmed" for d in self._daily()["normal_digests"])
             for key, record in self.state["papers"].items():
+                if retry_stage == "title_translation":
+                    continue
                 if self.promotion_ids and key not in self.promotion_ids:
                     continue
                 if self.resend_ids and key not in self.resend_ids:
@@ -530,12 +595,15 @@ class Pipeline:
                 tier = record["intended_tier"]
                 if tier == "full" and not self._full_slot(key):
                     continue
-                new.append(DigestItem(Paper.from_dict(record["paper"]), tier, Summary.from_dict(record["summary"]) if tier == "full" else None))
+                new.append(self._item(record))
             digest_id = self._send(recoveries + new)
             if not digest_id and self.errors and not self._daily()["alerts"]:
                 digest_id = self._send([], alert=True)
+            waiting_ready = any(r.get("stage") in {"ready", "summary_validated"} and not confirmed(r) for r in self.state["papers"].values())
+            if not digest_id and not waiting_ready and not self.errors and run["coverage_complete"] and not (self.promotion_ids or self.resend_ids or self.retry_ids or manual_start or manual_end):
+                digest_id = self._send([], empty=True)
             actual = self.state["digests"][digest_id]["items"] if digest_id else []
             digest = self.state["digests"].get(digest_id,{})
-            run.update({"completed_at": iso(self.clock()), "delivery_day": self.day, "digest_id": digest_id, "delivery_status": digest.get("status","none"), "delivery_kind": "alert" if digest.get("alert") else "digest" if digest_id else "none", "errors": sorted(set(self.errors)), "full": sum(i["tier"] == "full" for i in actual), "light": sum(i["tier"] == "light" for i in actual), "recovery": sum(bool(i.get("recovery_of")) for i in actual), "silent": not digest_id and not self.errors})
+            run.update({"completed_at": iso(self.clock()), "delivery_day": self.day, "digest_id": digest_id, "delivery_status": digest.get("status","none"), "delivery_kind": "alert" if digest.get("alert") else "empty" if digest.get("empty") else "digest" if digest_id else "none", "errors": sorted(set(self.errors)), "full": sum(i["tier"] == "full" for i in actual), "light": sum(i["tier"] == "light" for i in actual), "translation": sum(i["tier"] == "translation" for i in actual), "recovery": sum(bool(i.get("recovery_of")) for i in actual), "silent": not digest_id and not self.errors})
             self.checkpoint()
             return self.store.scrubber.clean(run)

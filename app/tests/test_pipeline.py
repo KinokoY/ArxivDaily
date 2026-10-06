@@ -50,7 +50,8 @@ def test_revision_config_change_does_not_promote_light_or_resummarize(tmp_path):
     config["llm"]["summary"]["model"] = "changed-model"
     Pipeline(config, store, None, analysis, reader, delivery, now=NOW+timedelta(days=1)).run([p])
     assert analysis.calls["summary"] == 1 and analysis.calls["selection"] == 2
-    assert len(delivery.sent) == 1
+    assert len(delivery.sent) == 2
+    assert "今天未发现新增工作" in delivery.sent[1][1]
     assert store.load()["papers"][p.base_id]["intended_tier"] == "light"
 
 

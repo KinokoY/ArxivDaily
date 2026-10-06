@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from .fulltext import FulltextReader
-from .models import Body, Decision, Paper, ProcessingError, Summary
+from .models import Body, Decision, Paper, ProcessingError, Summary, Translation
 
 
 class FixtureAnalysis:
@@ -13,6 +13,15 @@ class FixtureAnalysis:
         self.fixture = fixture
         self.usage_records = []
         self.calls = {"selection": 0, "review": 0, "summary": 0}
+        self.translation_calls = []
+
+    def translate(self, paper, *, title_only=False):
+        self.translation_calls.append((paper.base_id, title_only))
+        supplied = self.fixture.get("translations", {}).get(paper.base_id)
+        if supplied:
+            result = Translation.from_dict(supplied)
+            return Translation(result.title_zh, "" if title_only else result.abstract_zh)
+        return Translation("离线标题译文：" + paper.title, "" if title_only else "离线摘要译文：" + paper.abstract)
 
     def select(self, paper: Paper, hits: list[str]) -> Decision:
         self.calls["selection"] += 1

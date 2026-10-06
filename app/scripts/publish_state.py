@@ -32,7 +32,7 @@ _CREDENTIAL_SHAPES = (
 
 
 def _public_archive_name(name: str) -> bool:
-    return bool(re.fullmatch(r"archive/\d{4}-\d{2}-\d{2}\.md", name) or _DIGEST_FILE.fullmatch(name))
+    return bool(name == "archive/papers.md" or re.fullmatch(r"archive/\d{4}-\d{2}-\d{2}\.md", name) or _DIGEST_FILE.fullmatch(name))
 
 
 def _raw_url(repository: str, branch: str, name: str) -> str:
@@ -132,7 +132,7 @@ def publish(directory: Path, branch: str, repository: str, message: str) -> str:
             staged = git(directory, "show", f":{name}")
             if any(pattern.search(staged) for pattern in _CREDENTIAL_SHAPES):
                 raise RuntimeError("a credential-shaped value appears in staged public state")
-            for env_name in ("DEEPSEEK_API_KEY", "SERVERCHAN_SENDKEY", "GITHUB_TOKEN"):
+            for env_name in ("DEEPSEEK_API_KEY", "TRANSLATION_API_KEY", "SERVERCHAN_SENDKEY", "GITHUB_TOKEN"):
                 secret = os.environ.get(env_name)
                 if secret and len(secret) >= 8 and secret in staged:
                     raise RuntimeError("a configured secret appears in staged public state")

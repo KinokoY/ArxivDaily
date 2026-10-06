@@ -22,7 +22,29 @@
 & ./app/scripts/run-local.ps1 simulate --state-dir runs/unknown-demo --mock-status confirmed --now 2026-10-03T07:17:00+00:00 --report reports/unknown-recovery.json
 ```
 
-报告 JSON 列出档位、失败阶段和状态位置；日报在对应状态位置的 `archive/`。返回码 0 表示本次可执行工作成功，1 表示可恢复问题或部分失败，2 表示配置、持久化等运行错误。采集完整且无结果时静默。
+报告 JSON 列出档位、失败阶段和状态位置；日报在对应状态位置的 `archive/`。返回码 0 表示本次可执行工作成功，1 表示可恢复问题或部分失败，2 表示配置、持久化等运行错误。正常检查完成且没有新增可推送论文时，也生成日报并发送“今天未发现新增工作”；抓取不完整或处理失败会报告问题，不伪装成无新增。
+
+## 标题与摘要双语模式（2026-10-07）
+
+默认 `workflow.mode = "summary"` 保留原全文工作流。设为 `"translation"` 后，沿用摘要规则和 LLM 摘要终筛，仅推送英文标题、中文标题、原始摘要、完整中文摘要与论文链接。此模式不下载正文，不做全文复审，也不受完整总结的每日篇数上限限制。终筛 `uncertain` 的候选一并提供原文和译文，并在日报备注中说明尚未进行全文确认；`reject` 不推送。
+
+单次运行可用 `--workflow translation` 覆盖；GitHub Actions 手动运行选 `content_workflow=translation`。定时任务使用 `config.toml` 中的 `workflow.mode`。同一状态中已确认推送的论文不会因为切换模式而重新发送；未确认推送沿用已保存的内容和原投递链。
+
+```powershell
+# 在项目根目录、已激活 conda ml 环境中运行。
+$env:PYTHONPATH = "$PWD\app\.runtime;$PWD\app"
+python -m arxivdaily.cli run --workflow translation --report app/tmp/translation-demo.json
+# 真实分析但不发送（仍使用隔离状态）：
+python -m arxivdaily.cli run --config app/config.toml --workflow translation --live --report app/tmp/translation-live.json
+```
+
+`translation.provider` 可选 `llm`、`deepl`、`libretranslate`。LLM 翻译复用 `llm.filter` 的模型、端点和密钥，关闭思考，只提交标题和摘要，按原 usage 机制记录费用。DeepL 使用官方 `https://api-free.deepl.com`，密钥放 `TRANSLATION_API_KEY` 环境变量或同名 Actions Secret。LibreTranslate 必须将 `translation.base_url` 改成自己的实例地址，如 `http://localhost:5000`（Actions 中的 localhost 指 runner 自己）；公开远程实例使用 HTTPS，密钥由实例配置决定。机器翻译失败不会自动改用收费 LLM。离线模拟始终使用标注为离线的译文，不调用机器翻译接口。
+
+双语摘要超过 Server酱长度限制时，按整篇移到公开日报，用链接承接，存档中保留完整原文和译文。短总结和双语内容都有持久缓存，失败补发不会重新翻译。
+
+长期单文件索引在状态目录的 **`archive/papers.md`**，发布到 `arxivdaily-state` 同一路径。表格列为“首次收集日期（北京时间）—英文标题—中文标题—链接”，覆盖所有规则命中并保存的候选（含未通过终筛者），按 base arXiv ID 去重；索引不是已经推送的论文列表。既有状态在下一次运行自动生成索引，已有正文总结和投递记录保持原样；缺少的中文标题单独翻译一次。翻译未成功时写“待翻译”，不丢弃索引行。原每日归档和不可变快照继续保留，日报备注提供索引入口。
+
+免费额度、术语质量及选型建议见 [TRANSLATION.md](docs/TRANSLATION.md)。
 
 `reports/sample-digest.md` 是固定代表回放生成的可读示例。报告中的 `real_delivery` 指运行模式，具体结果看 `delivery_status`（prepared/deferred/confirmed/failed/unknown/none）；离线 confirmed 仅来自 mock，不代表微信已送达。
 

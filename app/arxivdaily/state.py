@@ -105,6 +105,11 @@ class StateStore:
 
     def save(self, state: dict) -> None:
         self._write(self.path, json.dumps(self.scrubber.clean(state), ensure_ascii=False, sort_keys=True, indent=2) + "\n")
+        from .render import render_paper_index
+        index = self.directory / "archive/papers.md"
+        content = self.scrubber.text(render_paper_index(state["papers"]))
+        if not index.exists() or index.read_text(encoding="utf-8") != content:
+            self._write(index, content)
         if self.publisher:
             try:
                 self.publisher()
@@ -160,6 +165,10 @@ def upsert_paper(state: dict, paper: Paper, now: datetime, hits: list[str]) -> d
         record["rule_hits"] = sorted(set(record["rule_hits"]) | set(hits))
         # Keep the exact processed version and its validated summary stable.
         if record["stage"] == "candidate" and not record.get("decision"):
+            if record["paper"]["title"] != paper.title:
+                record.pop("title_zh", None)
+                record["attempts"].pop("title_translation", None)
+                record["failures"].pop("title_translation", None)
             record["paper"] = paper.to_dict()
     return records[key]
 

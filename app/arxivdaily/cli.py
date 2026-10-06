@@ -26,6 +26,8 @@ def parser() -> argparse.ArgumentParser:
     for command in ("run", "simulate", "replay"):
         p = subs.add_parser(command)
         p.add_argument("--config", default=None)
+        p.add_argument("--workflow", choices=["summary", "translation"], default=None, help="override workflow.mode for this run")
+        p.add_argument("--translation-provider", choices=["llm", "deepl", "libretranslate"], default=None)
         p.add_argument("--state-dir", default=".state")
         p.add_argument("--fixture", default=None)
         p.add_argument("--live", action="store_true", help="enable actual arXiv/fulltext/paid model requests")
@@ -36,7 +38,7 @@ def parser() -> argparse.ArgumentParser:
         p.add_argument("--mock-status", choices=["confirmed", "failed", "unknown", "queued"], default="confirmed")
         p.add_argument("--promote", nargs="*", default=[], help="explicit promotion of existing selected light records; requires --send")
         p.add_argument("--resend", nargs="*", default=[], help="explicitly resend existing confirmed content; requires --send")
-        p.add_argument("--retry-stage", choices=["selection","body","review","summary","delivery"], default=None, help="explicit bounded manual recovery; default is an isolated dry run")
+        p.add_argument("--retry-stage", choices=["selection","body","review","summary","translation","title_translation","delivery"], default=None, help="explicit bounded manual recovery; default is an isolated dry run")
         p.add_argument("--retry-ids", nargs="*", default=[])
         p.add_argument("--start", default=None)
         p.add_argument("--end", default=None)
@@ -53,7 +55,11 @@ def main(argv=None) -> int:
     code = 0
     try:
         config = load_config(args.config)
-        names = [config["llm"][r]["api_key_env"] for r in ("filter", "summary")] + [config["delivery"]["sendkey_env"]]
+        if args.workflow:
+            config["workflow"]["mode"] = args.workflow
+        if args.translation_provider:
+            config["translation"]["provider"] = args.translation_provider
+        names = [config["llm"][r]["api_key_env"] for r in ("filter", "summary")] + [config["delivery"]["sendkey_env"], config["translation"]["api_key_env"]]
         secrets = [os.environ.get(n, "") for n in names]
         scrubber = SecretScrubber(secrets)
         live = args.live or args.send
@@ -65,6 +71,8 @@ def main(argv=None) -> int:
             raise ValueError("both --start and --end are required for backfill")
         if (args.promote or args.resend) and not args.send:
             raise ValueError("promotion or resend requires explicit --send")
+        if args.promote and config["workflow"]["mode"] != "summary":
+            raise ValueError("fulltext promotion requires --workflow summary")
         if sum(bool(x) for x in (args.promote,args.resend,args.retry_stage)) > 1:
             raise ValueError("choose only one of --promote, --resend, or --retry-stage")
         ids = [i for group in args.ids for i in group.split(",") if i]
@@ -81,11 +89,16 @@ def main(argv=None) -> int:
         if args.send and (publisher is None or not config["archive"]["public_base_url"]):
             raise ValueError("--send requires public_base_url and --checkpoint-command")
         if args.send:
-            required_names = names
+            mt_names = [config["translation"]["api_key_env"]] if config["translation"]["provider"] == "deepl" else [config["llm"]["filter"]["api_key_env"]] if config["translation"]["provider"] == "llm" else []
+            required_names = [config["llm"]["filter"]["api_key_env"], config["delivery"]["sendkey_env"], *mt_names]
+            if config["workflow"]["mode"] == "summary":
+                required_names.append(config["llm"]["summary"]["api_key_env"])
             if args.retry_stage == "delivery" or resend_ids:
                 required_names = [config["delivery"]["sendkey_env"]]
             elif args.retry_stage in {"body","review","summary"} or promotion_ids:
                 required_names = [config["llm"]["summary"]["api_key_env"],config["delivery"]["sendkey_env"]]
+            elif args.retry_stage in {"translation", "title_translation"}:
+                required_names = [config["delivery"]["sendkey_env"], *mt_names]
             missing = sorted({name for name in required_names if not os.environ.get(name)})
             if missing:
                 raise ValueError("missing required credential environment variables: " + ", ".join(missing))

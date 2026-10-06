@@ -2,6 +2,17 @@
 # Credentials are read from environment variables named below; never paste
 # SendKey or API keys into this file.
 
+[workflow]
+mode = "summary"
+
+[translation]
+provider = "llm"
+base_url = "https://api-free.deepl.com"
+api_key_env = "TRANSLATION_API_KEY"
+timeout = 30
+attempts = 3
+retry_delay_seconds = 1
+
 [collection]
 page_size = 100
 delay_seconds = 3.0

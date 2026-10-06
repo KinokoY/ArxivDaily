@@ -2,6 +2,21 @@
 # Credentials are read from environment variables named below; never paste
 # SendKey or API keys into this file.
 
+[workflow]
+# summary preserves the existing fulltext workflow; translation never reads fulltext.
+mode = "summary"
+
+[translation]
+# llm reuses llm.filter endpoint/model/key with thinking disabled.
+# deepl uses the official free API; libretranslate supports self-hosted instances.
+provider = "llm"
+# Used only by MT providers. For LibreTranslate set e.g. http://localhost:5000.
+base_url = "https://api-free.deepl.com"
+api_key_env = "TRANSLATION_API_KEY"
+timeout = 30
+attempts = 3
+retry_delay_seconds = 1
+
 [collection]
 page_size = 100
 delay_seconds = 3.0

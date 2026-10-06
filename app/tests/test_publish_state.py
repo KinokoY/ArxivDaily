@@ -131,7 +131,7 @@ def test_archive_url_mismatch_fails_before_push_or_notification(tmp_path, monkey
 
 def test_only_public_state_and_archive_files_are_staged(tmp_path, monkeypatch):
     directory = prepare(tmp_path)
-    names = [SNAPSHOT, MANIFEST, "archive/2026-10-02.md",
+    names = [SNAPSHOT, MANIFEST, "archive/2026-10-02.md", "archive/papers.md",
              "archive/2026/10/02/paper.pdf", "archive/2026/10/02/provider.json",
              "archive/2026/10/02/.atomic-tmp.json", "archive/2026/10/02/figure.png"]
     for name in names:
@@ -146,7 +146,7 @@ def test_only_public_state_and_archive_files_are_staged(tmp_path, monkeypatch):
     monkeypatch.setattr(publisher, "git", fake)
     publisher.publish(directory, BRANCH, REPOSITORY, "checkpoint")
     staged = {args[-1] for args in fake.calls if args[0] == "add"}
-    assert staged == {"state.json", SNAPSHOT, MANIFEST, "archive/2026-10-02.md"}
+    assert staged == {"state.json", SNAPSHOT, MANIFEST, "archive/2026-10-02.md", "archive/papers.md"}
     assert fake.pushed
 
 

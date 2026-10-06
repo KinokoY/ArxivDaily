@@ -12,6 +12,12 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 DEFAULTS = {
+    "workflow": {"mode": "summary"},
+    "translation": {
+        "provider": "llm", "base_url": "https://api-free.deepl.com",
+        "api_key_env": "TRANSLATION_API_KEY", "timeout": 30, "attempts": 3,
+        "retry_delay_seconds": 1,
+    },
     "collection": {
         "page_size": 100, "delay_seconds": 3.0, "initial_days": 7,
         "lookback_days": 14, "shard_limit": 10000, "max_candidates": 2000,
@@ -112,6 +118,23 @@ def load_config(path: str | Path | None = None) -> dict:
         with Path(path).open("rb") as handle:
             supplied = tomllib.load(handle)
     config = _merge(DEFAULTS, supplied)
+    if config["workflow"]["mode"] not in {"summary", "translation"}:
+        raise ValueError("workflow.mode must be summary or translation")
+    translation = config["translation"]
+    if translation["provider"] not in {"llm", "deepl", "libretranslate"}:
+        raise ValueError("translation.provider must be llm, deepl, or libretranslate")
+    name = translation["api_key_env"]
+    if not isinstance(name, str) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", name):
+        raise ValueError("translation.api_key_env must be an environment variable name")
+    # Self-hosted LibreTranslate can run on loopback over HTTP.
+    local = urlsplit(translation["base_url"]) if isinstance(translation["base_url"], str) else None
+    if not (translation["provider"] == "libretranslate" and local and
+            local.scheme == "http" and local.hostname in {"localhost", "127.0.0.1", "::1"}
+            and not local.username and not local.password and not local.query and not local.fragment):
+        _https_base_url(translation["base_url"], "translation.base_url")
+    _bounded_number(translation["timeout"], "translation.timeout", 1, 300)
+    _integer(translation["attempts"], "translation.attempts", 1, 10)
+    _bounded_number(translation["retry_delay_seconds"], "translation.retry_delay_seconds", 0, 60)
     coll = config["collection"]
     for key, upper in (("page_size", 2000), ("initial_days", 7), ("lookback_days", 14), ("shard_limit", 10000), ("max_candidates", 10000)):
         _integer(coll[key], f"collection.{key}", 1, upper)

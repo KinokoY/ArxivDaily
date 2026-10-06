@@ -203,11 +203,32 @@ class Summary:
 
 
 @dataclass
+class Translation:
+    title_zh: str
+    abstract_zh: str = ""
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.title_zh, str) or not self.title_zh.strip() or not isinstance(self.abstract_zh, str):
+            raise ProcessingError("translation_schema_invalid")
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+    @classmethod
+    def from_dict(cls, data: dict) -> Translation:
+        try:
+            return cls(**data)
+        except (TypeError, ValueError):
+            raise ProcessingError("translation_schema_invalid") from None
+
+
+@dataclass
 class DigestItem:
     paper: Paper
     tier: str
     summary: Summary | None = None
     recovery_of: str = ""
+    translation: Translation | None = None
 
 
 @dataclass

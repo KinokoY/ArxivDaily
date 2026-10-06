@@ -16,10 +16,16 @@ on:
         description: arXiv IDs separated by spaces or commas (replay or retry)
         type: string
         required: false
+      content_workflow:
+        description: Content workflow (config uses workflow.mode from config.toml)
+        type: choice
+        options: [config, summary, translation]
+        default: config
+        required: true
       retry_stage:
         description: Saved stage to retry for the IDs above (retry mode only)
         type: choice
-        options: [selection, body, review, summary, delivery]
+        options: [selection, body, review, summary, translation, title_translation, delivery]
         default: delivery
         required: false
       start:
@@ -162,6 +168,8 @@ jobs:
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
+          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
+          INPUT_CONTENT_WORKFLOW: ${{ github.event.inputs.content_workflow }}
           INPUT_MODE: ${{ github.event.inputs.mode }}
           INPUT_IDS: ${{ github.event.inputs.ids }}
           INPUT_RETRY_STAGE: ${{ github.event.inputs.retry_stage }}
@@ -178,6 +186,9 @@ jobs:
         run: |
           set -euo pipefail
           args=(--config config.toml --state-dir .state)
+          if [[ "$EVENT_NAME" != "schedule" && "$INPUT_CONTENT_WORKFLOW" != "config" && -n "$INPUT_CONTENT_WORKFLOW" ]]; then
+            args+=(--workflow "$INPUT_CONTENT_WORKFLOW")
+          fi
           if [[ "$EVENT_NAME" == "schedule" ]]; then
             mode=daily
             do_send=true
