@@ -6879,6 +6879,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-06T14:15:02.055879+00:00",
+      "intended_tier": "light",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Primitive-based 3D segmentation offers a compact and explicit alternative to dense surface prediction, naturally supporting structural abstraction and boundary localization. However, geometric decomposition alone does not determine how primitives should be organized into semantic parts: a single part may span multiple primitives, while geometrically similar or touching primitives may belong to different parts. We therefore introduce RePart (Reinforcement Part Reasoning), which formulates primitive-to-part organization as a finite-horizon Markov decision process and learns semantic organization through trajectory-level reinforcement reasoning. RePart constructs a Composable Primitive Workspace from fine-grained superquadrics and applies a merge-and-stop policy whose decisions are optimized by their downstream effects on the resulting partition rather than local primitive compatibility. The inferred part identities are then mapped back to the original mesh through Boundary-Aware Surface Labeling, preserving accurate surface boundaries beyond the primitive approximation. On PartNet, RePart achieves the strongest results across all four aggregate partition metrics; on 3DCoMPaT++, it obtains the highest RI and SC without target-dataset fine-tuning. These results demonstrate that reinforcement reasoning provides an effective mechanism for organizing geometric primitives into semantic parts while retaining dense segmentation accuracy. Code is available at https://github.com/EngineeringAI-LAB/RePart.",
@@ -6905,7 +6906,8 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "selected",
+      "stage": "ready",
+      "tier_reason": "full_quota_overflow",
       "versions": [
         "2610.04602v1"
       ]
