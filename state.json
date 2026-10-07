@@ -384,6 +384,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Accurate three-dimensional (3D) reconstruction of individual dendrites in serial block-face scanning electron microscopy (SBF-SEM) is essential for quantifying structural plasticity in the brain, yet manual annotation at scale is infeasible. We present a fully automatic pipeline for 3D dendrite instance segmentation that unifies YOLOv6-guided Segment Anything Model (SAM) prompting on downsampled slices, iterative two-dimensional mask refinement, random forest 3D instance linking, and instance-aware high-resolution refinement using nnU-Net at native resolution into a single system requiring no manual prompting at inference. Applied to hippocampal CA1 SBF-SEM datasets from a control rat and a pilocarpine- induced epileptic rat, our pipeline reconstructs coherent, well- separated dendrites with high semantic accuracy (Dice 0.93 and 0.91) and strong instance-level performance on control tissue, while analysis of the more challenging epileptic tissue identifies instance recognition in dense regions as the principal remaining limitation. The high-resolution refinement stage recovers thin dendritic protrusions, providing a basis for downstream spine- level analysis. Code is available at https://github.com/ ZE-WEN/dendrite-3d-instance-seg.",
@@ -403,11 +404,22 @@
         "updated": "2026-10-02T14:04:26+00:00",
         "version_id": "2610.03332v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2610.03332v1"
       ]
@@ -456,6 +468,17 @@
         "updated": "2026-10-02T15:41:28+00:00",
         "version_id": "2610.03468v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "medical_reasoning"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
