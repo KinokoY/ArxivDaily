@@ -19,7 +19,7 @@ from test_llm import FakeClient, FakeResponse, paper
 
 def test_translation_workflow_never_reads_fulltext_and_includes_uncertain(tmp_path):
     cfg, fixture, papers, analysis, reader, store, delivery = system(tmp_path)
-    cfg["workflow"]["mode"] = "translation"
+    cfg["presentation"] = load_config()["presentation"]
     report = Pipeline(cfg, store, None, analysis, reader, delivery, now=NOW).run(papers)
     assert report["translation"] == 3 and report["full"] == report["light"] == 0
     assert reader.calls == analysis.calls["review"] == analysis.calls["summary"] == 0
@@ -38,12 +38,12 @@ def test_translation_workflow_never_reads_fulltext_and_includes_uncertain(tmp_pa
 
 def test_translation_unknown_delivery_recovers_cached_content_after_mode_switch(tmp_path):
     cfg, fixture, papers, analysis, reader, store, delivery = system(tmp_path, "unknown")
-    cfg["workflow"]["mode"] = "translation"
+    cfg["presentation"] = load_config()["presentation"]
     first = Pipeline(cfg, store, None, analysis, reader, delivery, now=NOW).run(papers[:2])
     snapshot = store.directory / f"archive/2026/10/02/{first['digest_id']}.md"
     before = snapshot.read_bytes()
     calls = deepcopy(analysis.translation_calls)
-    cfg["workflow"]["mode"] = "summary"
+    cfg["presentation"].update(llm_summary=True, abstract=False, abstract_translation=False)
     second = Pipeline(cfg, store, None, analysis, reader, MockDelivery(), now=NOW + timedelta(days=1)).run([])
     assert second["translation"] == second["recovery"] == 2
     assert analysis.translation_calls == calls and reader.calls == 0
@@ -52,7 +52,7 @@ def test_translation_unknown_delivery_recovers_cached_content_after_mode_switch(
 
 def test_translation_failure_retries_only_missing_content(tmp_path):
     cfg, fixture, papers, analysis, reader, store, delivery = system(tmp_path)
-    cfg["workflow"]["mode"] = "translation"
+    cfg["presentation"] = load_config()["presentation"]
     class Translator:
         broken = True
         def translate(self, p, *, title_only=False):
@@ -195,7 +195,7 @@ def test_local_libretranslate_config_is_allowed(tmp_path):
 
 def test_empty_notice_does_not_block_new_papers_later_same_day(tmp_path):
     cfg, fixture, papers, analysis, reader, store, delivery = system(tmp_path)
-    cfg["workflow"]["mode"] = "translation"
+    cfg["presentation"] = load_config()["presentation"]
     Pipeline(cfg, store, None, analysis, reader, delivery, now=NOW).run([])
     report = Pipeline(cfg, store, None, analysis, reader, delivery, now=NOW + timedelta(hours=1)).run(papers[:1])
     assert report["translation"] == 1 and len(delivery.sent) == 2
@@ -203,7 +203,7 @@ def test_empty_notice_does_not_block_new_papers_later_same_day(tmp_path):
 
 def test_pending_uncertain_translation_keeps_metadata_workflow_after_switch(tmp_path):
     cfg, fixture, papers, analysis, reader, store, delivery = system(tmp_path)
-    cfg["workflow"]["mode"] = "translation"
+    cfg["presentation"] = load_config()["presentation"]
     uncertain = papers[3]
     class Translator:
         failed = True
@@ -214,7 +214,7 @@ def test_pending_uncertain_translation_keeps_metadata_workflow_after_switch(tmp_
     translator = Translator()
     Pipeline(cfg, store, None, analysis, reader, delivery, now=NOW, translator=translator).run([uncertain])
     translator.failed = False
-    cfg["workflow"]["mode"] = "summary"
+    cfg["presentation"].update(llm_summary=True, abstract=False, abstract_translation=False)
     report = Pipeline(cfg, store, None, analysis, reader, delivery, now=NOW + timedelta(days=1), translator=translator).run([])
     assert report["translation"] == 1 and reader.calls == 0
     assert store.load()["papers"][uncertain.base_id]["decision"]["status"] == "uncertain"

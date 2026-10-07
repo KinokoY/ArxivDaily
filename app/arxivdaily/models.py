@@ -229,6 +229,8 @@ class DigestItem:
     summary: Summary | None = None
     recovery_of: str = ""
     translation: Translation | None = None
+    modules: list[str] | None = None
+    rule_hits: list[str] = field(default_factory=list)
 
 
 @dataclass

@@ -30,15 +30,18 @@ class FixtureAnalysis:
         except KeyError:
             raise ProcessingError("offline_selection_fixture_missing") from None
 
-    def review(self, paper, body, decision):
+    def review(self, paper, body, decision, *, evidence=True):
         self.calls["review"] += 1
         data = self.fixture.get("reviews", {}).get(paper.base_id)
         return Decision.from_dict(data) if data else decision
 
-    def summarize(self, paper, body):
+    def summarize(self, paper, body, *, evidence=True):
         self.calls["summary"] += 1
         try:
-            return Summary.from_dict(self.fixture["summaries"][paper.base_id])
+            result = Summary.from_dict(self.fixture["summaries"][paper.base_id])
+            if not evidence:
+                result.evidence = []
+            return result
         except KeyError:
             raise ProcessingError("offline_summary_fixture_missing") from None
 

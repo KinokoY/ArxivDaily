@@ -18,12 +18,12 @@ def test_root_config_is_independent_of_working_directory(tmp_path, monkeypatch):
 
 def test_default_cli_uses_configuration_not_internal_defaults(tmp_path, monkeypatch):
     path = tmp_path / "custom.toml"
-    path.write_text('[workflow]\nmode = "translation"\n', encoding="utf-8")
+    path.write_text('[presentation]\nllm_summary = true\nabstract = false\nabstract_translation = false\n', encoding="utf-8")
     monkeypatch.setattr(cli, "default_config_path", lambda: path)
     report = tmp_path / "report.json"
     assert cli.main(["run", "--report", str(report)]) == 0
     result = json.loads(report.read_text(encoding="utf-8"))
-    assert result["translation"] == 3 and result["full"] == 0
+    assert result["translation"] == 0 and result["full"] == 1
     assert result["real_delivery"] is False
 
 

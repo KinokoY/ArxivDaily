@@ -171,7 +171,7 @@ class Pipeline:
         return True
 
     def _process(self) -> None:
-        records = [r for r in self.state["papers"].values() if self._eligible(r)]
+        records = [r for r in self.state["papers"].values() if self._eligible(r) and not r.get("resend_pending")]
         for record in records:
             if record.get("decision"):
                 continue
@@ -184,22 +184,23 @@ class Pipeline:
                 record["model"] = self.config["llm"]["filter"]["model"]
                 record["stage"] = "rejected" if decision.status == "reject" else "selected" if decision.status == "select" else "uncertain"
                 self.checkpoint()
-        translation_mode = self.config["workflow"]["mode"] == "translation"
-        translated_ids = set()
+        metadata_ids = set()
         for record in records:
-            if not translation_mode and (record.get("intended_tier") != "translation" or record.get("promotion_pending")):
+            if record.get("promotion_pending"):
+                record["presentation_modules"] = self._modules()
+            modules = record.setdefault("presentation_modules", self._modules())
+            record.setdefault("presentation_rule_hits", record.get("rule_hits", []).copy())
+            if "llm_summary" in modules or "evidence" in modules:
                 continue
             if record.get("resend_pending") or record.get("decision", {}).get("status") not in {"select", "uncertain"}:
                 continue
-            # Abstract uncertainty remains visible; metadata translation
-            # makes no claim of fulltext review or verified relevance.
             if record["decision"]["status"] == "uncertain":
-                self.notes.append(f"{record['paper']['version_id']}：摘要终筛待确认，仅提供原文与译文，未进行全文复审。")
-            self._translate_record(record)
-            translated_ids.add(record["paper"]["version_id"])
-        if translation_mode:
-            return
-        records = [r for r in records if r["paper"]["version_id"] not in translated_ids]
+                self.notes.append(f"{record['paper']['version_id']}：摘要终筛待确认，未进行全文复审。")
+            record["intended_tier"] = "translation"  # Persisted metadata tier; does not require translation.
+            record["stage"] = "ready"
+            metadata_ids.add(record["paper"]["version_id"])
+            self.checkpoint()
+        records = [r for r in records if r["paper"]["version_id"] not in metadata_ids]
         daily = self._daily()
         uncertain = [r for r in records if r.get("decision", {}).get("status") == "uncertain"]
         uncertain.sort(key=lambda r: (-r["decision"].get("score", 0), r["paper"]["version_id"]))
@@ -215,7 +216,7 @@ class Pipeline:
             if body is None:
                 continue
             self._bind_analysis_cache(record)
-            decision = self._stage(record, "review", lambda: self.analysis.review(Paper.from_dict(record["paper"]), body, Decision.from_dict(record["decision"])))
+            decision = self._stage(record, "review", lambda: self.analysis.review(Paper.from_dict(record["paper"]), body, Decision.from_dict(record["decision"]), evidence="evidence" in record["presentation_modules"]))
             if decision is not None:
                 record["decision"] = decision.to_dict()
                 record["review_prompt_fingerprint"] = self._prompt_fingerprint("review")
@@ -228,6 +229,8 @@ class Pipeline:
             paper = Paper.from_dict(record["paper"])
             promotion = paper.base_id in self.promotion_ids or record.get("promotion_pending", False)
             tier = "full" if promotion else record.get("intended_tier", record["decision"]["tier"])
+            if tier == "translation":
+                tier = record["decision"]["tier"]
             if tier == "full" and not self._full_slot(paper.base_id):
                 if record.get("summary") or any(stage != "title_translation" for stage in record.get("failures", {})) or promotion:
                     continue  # Recoverable full work is not quota overflow.
@@ -249,8 +252,8 @@ class Pipeline:
                 continue
             self._bind_analysis_cache(record)
             def summarize():
-                result = self.analysis.summarize(paper, body)
-                validate_summary(result, body)
+                result = self.analysis.summarize(paper, body, evidence="evidence" in record["presentation_modules"])
+                validate_summary(result, body, require_evidence="evidence" in record["presentation_modules"])
                 return result
             summary = self._stage(record, "summary", summarize)
             if summary is not None:
@@ -265,26 +268,13 @@ class Pipeline:
                 daily["full_ids"].remove(paper.base_id)
                 self.checkpoint()
 
-    def _translate_record(self, record: dict) -> None:
-        record["intended_tier"] = "translation"
-        if not record.get("translation", {}).get("abstract_zh"):
-            paper = Paper.from_dict(record["paper"])
-            def translate():
-                value = self.translator.translate(paper)
-                if not isinstance(value, Translation) or not value.abstract_zh.strip():
-                    raise ProcessingError("translation_abstract_missing")
-                return value
-            result = self._stage(record, "translation", translate)
-            if result is None:
-                return
-            record["translation"] = result.to_dict()
-            record["title_zh"] = result.title_zh
-            record["translation_provider"] = self.config["translation"]["provider"]
-            record["translation_prompt_fingerprint"] = self._prompt_fingerprint("translation") if self.config["translation"]["provider"] == "llm" else self.config["translation"]["provider"]
-        record["stage"] = "ready"
-        self.checkpoint()
+    def _modules(self) -> list[str]:
+        return [key for key, enabled in self.config["presentation"].items() if enabled]
 
     def _index_titles(self) -> None:
+        if (not self.config["presentation"]["title_translation"]
+                and self.retry_stage != "title_translation"):
+            return
         # Transport-only manual actions reuse content without new paid calls.
         if self.resend_ids or self.promotion_ids or (self.retry_ids and self.retry_stage != "title_translation"):
             return
@@ -300,12 +290,50 @@ class Pipeline:
                 record["title_translation_prompt_fingerprint"] = self._prompt_fingerprint("title_translation") if self.config["translation"]["provider"] == "llm" else self.config["translation"]["provider"]
                 self.checkpoint()
 
+    def _prepare_presentation(self) -> None:
+        for record in self.state["papers"].values():
+            if not self._eligible(record) or record.get("resend_pending"):
+                continue
+            if record.get("stage") not in {"ready", "summary_validated"}:
+                continue
+            modules = record.setdefault("presentation_modules", self._modules())
+            abstract_needed = "abstract_translation" in modules
+            title_needed = "title_translation" in modules
+            translated = record.get("translation", {})
+            if (abstract_needed and not translated.get("abstract_zh")) or (
+                title_needed and not (translated.get("title_zh") or record.get("title_zh"))
+            ):
+                stage = "translation" if abstract_needed else "title_translation"
+                paper = Paper.from_dict(record["paper"])
+                def translate():
+                    result = self.translator.translate(paper, title_only=not abstract_needed)
+                    if not isinstance(result, Translation) or (abstract_needed and not result.abstract_zh.strip()):
+                        raise ProcessingError("translation_abstract_missing")
+                    return result
+                result = self._stage(record, stage, translate)
+                if result is None:
+                    record["stage"] = "presentation_pending"
+                    self.checkpoint()
+                    continue
+                if abstract_needed:
+                    record["translation"] = result.to_dict()
+                record["title_zh"] = result.title_zh
+                record["translation_provider"] = self.config["translation"]["provider"]
+                record[stage + "_prompt_fingerprint"] = self._prompt_fingerprint(stage) if self.config["translation"]["provider"] == "llm" else self.config["translation"]["provider"]
+            record["presentation_modules"] = modules.copy()
+            self.checkpoint()
+
     @staticmethod
     def _item(record: dict, recovery_of="") -> DigestItem:
         tier = record["intended_tier"]
         return DigestItem(Paper.from_dict(record["paper"]), tier,
                           Summary.from_dict(record["summary"]) if tier == "full" else None,
-                          recovery_of, Translation.from_dict(record["translation"]) if tier == "translation" else None)
+                          recovery_of, Translation.from_dict(record["translation"]) if record.get("translation") else
+                          Translation(record["title_zh"]) if record.get("title_zh") else None,
+                          record.get("presentation_modules",
+                              ["title", "source", "llm_summary"] if tier == "full" else
+                              ["title", "title_translation", "abstract", "abstract_translation", "source"] if tier == "translation" else
+                              ["title", "source"]), record.get("presentation_rule_hits", record.get("rule_hits", [])).copy())
 
     def _recover_items(self) -> list[DigestItem]:
         result = []
@@ -376,7 +404,7 @@ class Pipeline:
             self.state["chains"][digest_id] = {"attempts": 0, "created_at": iso(self.now)}
             recovery_roots.add(digest_id)
         chain_root = digest_id if new_items or alert or empty else sorted(recovery_roots)[0]
-        manifest = {"schema_version": 1, "digest_id": digest_id, "day": self.day, "run_id": self.run_id, "items": [{"paper": i.paper.to_dict(), "tier": i.tier, "summary": i.summary.to_dict() if i.summary else None, "translation": i.translation.to_dict() if i.translation else None, "recovery_of": i.recovery_of} for i in items], "rendered": modes, "archive_url": url, "content_hash": fingerprint(markdown), "notification_hash": fingerprint(notification), "recovery_of": previous, "chain_roots": sorted(recovery_roots), "alert": alert, "empty": empty}
+        manifest = {"schema_version": 1, "digest_id": digest_id, "day": self.day, "run_id": self.run_id, "items": [{"paper": i.paper.to_dict(), "tier": i.tier, "summary": i.summary.to_dict() if i.summary else None, "translation": i.translation.to_dict() if i.translation else None, "modules": i.modules, "rule_hits": i.rule_hits, "recovery_of": i.recovery_of} for i in items], "rendered": modes, "archive_url": url, "content_hash": fingerprint(markdown), "notification_hash": fingerprint(notification), "recovery_of": previous, "chain_roots": sorted(recovery_roots), "alert": alert, "empty": empty}
         self.store.snapshot(self.day, digest_id, markdown, notification, manifest)
         self.state["digests"][digest_id] = {**manifest, "chain_root": chain_root, "created_at": iso(self.now), "status": "prepared"}
         self.checkpoint()  # Publisher must commit and verify the archive first.
@@ -573,6 +601,7 @@ class Pipeline:
             try:
                 if retry_stage != "title_translation":
                     self._process()
+                    self._prepare_presentation()
                 self._index_titles()
             except PersistenceError:
                 raise

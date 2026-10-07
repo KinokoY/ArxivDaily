@@ -58,10 +58,16 @@ def _check_quote(body: Body, locator: str, quote: str, source_url: str | None = 
         raise ProcessingError("evidence_quote_unlocated")
 
 
-def validate_summary(summary: Summary, body: Body) -> None:
+def validate_summary(summary: Summary, body: Body, *, require_evidence: bool = True) -> None:
     """Reject unsupported evidence and numeric claims before public persistence."""
     if not body.qualified or summary is None:
         raise ProcessingError("unqualified_fulltext")
+    if any(not isinstance(getattr(summary, field, None), str) or not getattr(summary, field).strip() for field in _FIELDS):
+        raise ProcessingError("summary_field_missing")
+    if not require_evidence:
+        if summary.evidence != []:
+            raise ProcessingError("summary_evidence_disabled")
+        return
     quotes: dict[str, list[str]] = {field: [] for field in _FIELDS}
     if not isinstance(summary.evidence, list):
         raise ProcessingError("summary_evidence_missing")
@@ -345,7 +351,7 @@ class AnalysisClient:
             chunks.append(current)
         return chunks
 
-    def _body_context(self, body: Body) -> dict:
+    def _body_context(self, body: Body, *, extract_evidence: bool = True) -> dict:
         if not body.qualified:
             raise ProcessingError("unqualified_fulltext")
         cfg = self._role("summary")
@@ -354,6 +360,8 @@ class AnalysisClient:
         context = {"source_url": body.source_url, "sections": direct, "captions": captions, "coverage": body.quality.get("read_locators", [])}
         if len(json.dumps(context, ensure_ascii=False)) <= int(cfg["input_chars"]):
             return context
+        if not extract_evidence:
+            raise ProcessingError("fulltext_exceeds_direct_input_limit; increase llm.summary.input_chars or enable evidence")
         notes: list[dict] = []
         chunks = self._chunks(body)
         if len(chunks) > int(cfg.get("max_section_calls", 64)):
@@ -445,11 +453,11 @@ class AnalysisClient:
             images.append({"type": "image_url", "image_url": {"url": "data:image/png;base64," + encoded, "detail": "high"}})
         return images
 
-    def review(self, paper: Paper, body: Body, decision: Decision) -> Decision:
+    def review(self, paper: Paper, body: Body, decision: Decision, *, evidence: bool = True) -> Decision:
         if decision.status != "uncertain":
             raise ProcessingError("review_requires_uncertain")
         self._begin_stage("summary")
-        context = self._body_context(body)
+        context = self._body_context(body, extract_evidence=evidence)
         prompt = json.dumps({"paper": paper.to_dict(), "prior_decision": decision.to_dict(), "body": context}, ensure_ascii=False)
         images = self._images(body)
         content: str | list[dict] = prompt if not images else [{"type": "text", "text": prompt}, *images]
@@ -473,20 +481,21 @@ class AnalysisClient:
         body.quality["visual_evidence_used"] = bool(images)
         return self._decision(raw, paper)
 
-    def summarize(self, paper: Paper, body: Body) -> Summary:
+    def summarize(self, paper: Paper, body: Body, *, evidence: bool = True) -> Summary:
         self._begin_stage("summary")
-        context = self._body_context(body)
-        prompt = json.dumps({"paper_title": paper.title, "paper_version": paper.version_id, "body": context}, ensure_ascii=False)
+        context = self._body_context(body, extract_evidence=evidence)
+        prompt = json.dumps({"paper_title": paper.title, "paper_version": paper.version_id, "body": context,
+                             "evidence_enabled": evidence}, ensure_ascii=False)
         images = self._images(body)
         content: str | list[dict] = prompt if not images else [{"type": "text", "text": prompt}, *images]
         instruction = self.prompts["summary"]
         def validate_output(data: dict) -> None:
             summary = Summary.from_dict(data)
-            validate_summary(summary, body)
+            validate_summary(summary, body, require_evidence=evidence)
             for item in summary.evidence:
                 self._check_supplied_evidence(context, item.locator, item.quote)
         raw = self._request("summary", instruction, content, validate_output)
         result = Summary.from_dict(raw)
-        validate_summary(result, body)
+        validate_summary(result, body, require_evidence=evidence)
         body.quality["visual_evidence_used"] = bool(images)
         return result

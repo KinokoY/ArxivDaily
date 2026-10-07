@@ -2,9 +2,18 @@
 # 不要写入任何 API key 或 SendKey；运行凭证由环境变量 / GitHub Actions Secrets 提供。
 # 配置说明：docs/CONFIGURATION.md；提示说明：docs/PROMPTS.md。
 
-# 日常入口一：工作流。summary = 全文总结；translation = 标题和摘要双语，不读取正文。
-[workflow]
-mode = "summary"
+# 日常入口一：每篇论文的内容模块。true = 勾选，false = 不生成、不显示。
+# 按标题、标题翻译、摘要、摘要翻译、总结、证据、来源、初筛路径的固定顺序呈现。
+# 不选 llm_summary 和 evidence 时不读取正文；evidence=false 不生成证据链。
+[presentation]
+title = true
+title_translation = true
+abstract = true
+abstract_translation = true
+llm_summary = false
+evidence = false
+source = true
+screening_routes = true
 
 # arXiv 初筛：任一交叉分类命中即可；categories=[] 表示不限分类。
 # 默认关键词匹配标题与摘要。
@@ -257,7 +266,7 @@ timeout = 30
 attempts = 3
 retry_delay_seconds = 1
 
-# 完整总结每日默认 5 篇，最多 10 篇；超额入选论文进入轻量档。双语模式不受 full_daily_limit 限制。
+# 完整总结每日默认 5 篇，最多 10 篇；超额入选论文进入轻量档。不选总结/证据时不受 full_daily_limit 限制。
 [limits]
 full_daily_limit = 5
 review_daily_limit = 2

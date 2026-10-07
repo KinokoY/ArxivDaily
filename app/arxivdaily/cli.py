@@ -34,7 +34,6 @@ def parser() -> argparse.ArgumentParser:
     for command in ("run", "simulate", "replay"):
         p = subs.add_parser(command)
         p.add_argument("--config", default=None)
-        p.add_argument("--workflow", choices=["summary", "translation"], default=None, help="override workflow.mode for this run")
         p.add_argument("--translation-provider", choices=["llm", "deepl", "libretranslate"], default=None)
         p.add_argument("--state-dir", default=".state")
         p.add_argument("--fixture", default=None)
@@ -59,7 +58,8 @@ def check_configuration(args) -> int:
         path = Path(args.config).resolve() if args.config else default_config_path()
         config = load_config(path)
         prompts = load_prompts(config)
-        output = {"status": "ok", "config": str(path), "workflow": config["workflow"]["mode"],
+        output = {"status": "ok", "config": str(path),
+                  "presentation_modules": [key for key, enabled in config["presentation"].items() if enabled],
                   "enabled_routes": [name for name, clauses in config["rules"]["routes"].items() if clauses],
                   "prompt_fingerprints": {task: prompt_fingerprint(prompts, task) for task in prompts},
                   "external_requests": False}
@@ -90,8 +90,6 @@ def main(argv=None) -> int:
     try:
         config = load_config(args.config if args.config else default_config_path())
         load_prompts(config)  # Fail before collection or paid requests if a prompt is missing.
-        if args.workflow:
-            config["workflow"]["mode"] = args.workflow
         if args.translation_provider:
             config["translation"]["provider"] = args.translation_provider
         names = [config["llm"][r]["api_key_env"] for r in ("filter", "summary")] + [config["delivery"]["sendkey_env"], config["translation"]["api_key_env"]]
@@ -106,8 +104,9 @@ def main(argv=None) -> int:
             raise ValueError("both --start and --end are required for backfill")
         if (args.promote or args.resend) and not args.send:
             raise ValueError("promotion or resend requires explicit --send")
-        if args.promote and config["workflow"]["mode"] != "summary":
-            raise ValueError("fulltext promotion requires --workflow summary")
+        needs_fulltext = config["presentation"]["llm_summary"] or config["presentation"]["evidence"]
+        if args.promote and not needs_fulltext:
+            raise ValueError("fulltext promotion requires llm_summary or evidence")
         if sum(bool(x) for x in (args.promote,args.resend,args.retry_stage)) > 1:
             raise ValueError("choose only one of --promote, --resend, or --retry-stage")
         ids = [i for group in args.ids for i in group.split(",") if i]
@@ -125,8 +124,9 @@ def main(argv=None) -> int:
             raise ValueError("--send requires public_base_url and --checkpoint-command")
         if args.send:
             mt_names = [config["translation"]["api_key_env"]] if config["translation"]["provider"] == "deepl" else [config["llm"]["filter"]["api_key_env"]] if config["translation"]["provider"] == "llm" else []
-            required_names = [config["llm"]["filter"]["api_key_env"], config["delivery"]["sendkey_env"], *mt_names]
-            if config["workflow"]["mode"] == "summary":
+            needs_translation = config["presentation"]["title_translation"] or config["presentation"]["abstract_translation"]
+            required_names = [config["llm"]["filter"]["api_key_env"], config["delivery"]["sendkey_env"], *(mt_names if needs_translation else [])]
+            if needs_fulltext:
                 required_names.append(config["llm"]["summary"]["api_key_env"])
             if args.retry_stage == "delivery" or resend_ids:
                 required_names = [config["delivery"]["sendkey_env"]]

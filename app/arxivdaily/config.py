@@ -12,7 +12,13 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 DEFAULTS = {
-    "workflow": {"mode": "summary"},
+    "presentation": {
+        "title": True, "title_translation": True,
+        "abstract": True, "abstract_translation": True,
+        "llm_summary": False, "evidence": False,
+        "source": True,
+        "screening_routes": True,
+    },
     "prompts": {"directory": ""},
     "selection": {"route_priority": ["medical_reasoning", "medical_objective", "general_rl", "transferable_objective", "general_reasoning"]},
     "translation": {
@@ -140,8 +146,11 @@ def load_config(path: str | Path | None = None) -> dict:
     priority = config["selection"]["route_priority"]
     if not isinstance(priority, list) or any(not isinstance(r, str) for r in priority) or len(priority) != 5 or set(priority) != set(DEFAULTS["selection"]["route_priority"]):
         raise ValueError("selection.route_priority must list each of the five selection routes exactly once")
-    if config["workflow"]["mode"] not in {"summary", "translation"}:
-        raise ValueError("workflow.mode must be summary or translation")
+    for key, value in config["presentation"].items():
+        if type(value) is not bool:
+            raise ValueError(f"presentation.{key} must be boolean")
+    if not any(config["presentation"].values()):
+        raise ValueError("presentation must enable at least one module")
     translation = config["translation"]
     if translation["provider"] not in {"llm", "deepl", "libretranslate"}:
         raise ValueError("translation.provider must be llm, deepl, or libretranslate")

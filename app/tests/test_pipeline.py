@@ -18,6 +18,7 @@ NOW = datetime(2026, 10, 2, 7, 17, tzinfo=timezone.utc)
 
 def system(tmp_path, status="confirmed", fixture=None):
     config = load_config()
+    config["presentation"].update(abstract=False, abstract_translation=False, llm_summary=True, evidence=False, screening_routes=False)
     f, papers = load_fixture(APP / "fixtures" / "demo.json")
     f = fixture or f
     analysis = FixtureAnalysis(f)
@@ -36,7 +37,7 @@ def test_end_to_end_tiers_and_shared_base_dedup(tmp_path):
     assert len(delivery.sent) == 1
     md = next((store.directory / "archive/2026/10/02").glob("*.md")).read_text(encoding="utf-8")
     assert "82.5" in md
-    light = md.split("## 轻量档")[1].split("##")[0]
+    light = md.split("## 轻量档")[1].split("\n## ")[0]
     assert "Synthetic fixture 2" in light and "脚本化" not in light
     assert state["papers"][papers[3].base_id]["stage"] == "uncertain"
 

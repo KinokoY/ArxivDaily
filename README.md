@@ -1,12 +1,12 @@
 # ArxivDaily
 
-每天抓取 arXiv 论文，经关键词规则和模型筛选后，用 Server酱发送微信简报。支持中文全文总结与标题/摘要双语两种模式；没有新增时也发送通知。项目由 GitHub Actions 定时运行，本机使用 conda `ml` 环境调试。
+每天抓取 arXiv 论文，经关键词规则和模型筛选后，用 Server酱发送微信简报。支持通过配置自由组合标题、译文、摘要、LLM 总结、证据链、来源和初筛路径；没有新增时也发送通知。项目由 GitHub Actions 定时运行，本机使用 conda `ml` 环境调试。
 
 ## 日常只需调整两个入口
 
 | 想调整什么 | 修改哪里 |
 | --- | --- |
-| 工作流、分类、关键词与组合、路线优先级、篇数/费用限制、模型和翻译服务 | 根 [config.toml](config.toml)，参见 [配置说明](docs/CONFIGURATION.md) |
+| 内容模块、分类、关键词与组合、路线优先级、篇数/费用限制、模型和翻译服务 | 根 [config.toml](config.toml)，参见 [配置说明](docs/CONFIGURATION.md) |
 | 研究兴趣、模型判断标准、总结详略、翻译术语 | [app/prompts/](app/prompts/selection.md)，参见 [提示说明](docs/PROMPTS.md) |
 
 修改后提交到 `main`，下一次 Actions 使用新版本。本地立即读取当前文件。已成功生成和已推送的内容继续复用，不因修改配置或提示自动重做或重发。

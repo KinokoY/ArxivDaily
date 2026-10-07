@@ -26,28 +26,56 @@ def _url(url: str) -> str:
     return url
 
 
-def _full(item: DigestItem) -> str:
-    if item.tier != "full" or item.summary is None:
-        raise ValueError("full digest item requires a validated summary")
-    s = item.summary
-    lines = [f"### {_title(item)}", item.paper.url, "", f"**背景：** {s.background}",
-             f"**贡献：** {s.contribution}", f"**方法：** {s.method}",
-             f"**实验：** {s.experiments}", f"**结论：** {s.conclusion}"]
-    return "\n".join(lines)
+def render_item(item: DigestItem) -> str:
+    # Old saved items carry no module list; adapt them once at the rendering boundary.
+    modules = set(item.modules if item.modules is not None else
+                  ["title", "source", "llm_summary"] if item.tier == "full" else
+                  ["title", "title_translation", "abstract", "abstract_translation", "source"] if item.tier == "translation" else
+                  ["title", "source"])
+    lines = [f"### {_title(item)}" if "title" in modules else f"### arXiv {item.paper.version_id}"]
+    if "title_translation" in modules:
+        if item.translation is None:
+            raise ValueError("title translation module requires translated title")
+        lines.append(f"**中文标题：** {item.translation.title_zh}")
+    if "abstract" in modules:
+        lines.append(f"**摘要：** {item.paper.abstract}")
+    if "abstract_translation" in modules:
+        if item.translation is None or not item.translation.abstract_zh.strip():
+            raise ValueError("abstract translation module requires translated abstract")
+        lines.append(f"**摘要翻译：** {item.translation.abstract_zh}")
+    if "llm_summary" in modules:
+        if item.summary is not None:
+            s = item.summary
+            lines.extend([f"**背景：** {s.background}", f"**贡献：** {s.contribution}",
+                          f"**方法：** {s.method}", f"**实验：** {s.experiments}", f"**结论：** {s.conclusion}"])
+        elif item.tier == "light":
+            lines.append("**LLM总结：** 轻量档未生成全文总结。")
+        else:
+            raise ValueError("LLM summary module requires validated summary")
+    if "evidence" in modules:
+        if item.summary is not None:
+            lines.append("**证据链：**\n" + "\n".join(
+                f"- {e.field} · [{e.locator}]({_url(e.source_url)})：{e.quote}" for e in item.summary.evidence))
+        elif item.tier == "light":
+            lines.append("**证据链：** 轻量档未生成全文证据。")
+        else:
+            raise ValueError("evidence module requires validated summary")
+    if "source" in modules:
+        lines.append(f"**来源：** [arXiv {item.paper.version_id}]({item.paper.url})")
+    if "screening_routes" in modules:
+        routes = "、".join(dict.fromkeys(item.rule_hits)) or "无初筛命中记录"
+        lines.append(f"**初筛路径：** {routes}")
+    return "\n\n".join(lines)
 
 
-def _light(item: DigestItem) -> str:
-    if item.tier != "light":
-        raise ValueError("light digest item expected")
-    return f"- [{_title(item)}]({item.paper.url})"
-
-
-def _translated(item: DigestItem) -> str:
-    if item.translation is None or not item.translation.abstract_zh.strip():
-        raise ValueError("translation digest requires translated title and abstract")
-    t = item.translation
-    return "\n\n".join([f"### {_title(item)}", f"**中文标题：** {t.title_zh}",
-                         f"**摘要：** {item.paper.abstract}", f"**摘要翻译：** {t.abstract_zh}", item.paper.url])
+def _groups(items: list[DigestItem]):
+    if any(i.tier not in {"full", "light", "translation"} for i in items):
+        raise ValueError("unknown digest tier")
+    for recovery in (False, True):
+        for tier, label in (("translation", "论文条目"), ("full", "完整档"), ("light", "轻量档")):
+            group = [i for i in items if i.tier == tier and bool(i.recovery_of) == recovery]
+            if group:
+                yield "## " + ("补发" if recovery else "") + label, group
 
 
 def render_paper_index(records: dict) -> str:
@@ -64,36 +92,17 @@ def render_paper_index(records: dict) -> str:
 
 
 def render_archive(date: date | str, items: list[DigestItem], notes=None) -> str:
-    """Return the complete, public Markdown snapshot. Caller persists it immutably."""
-    day = _day(date)
-    full = [item for item in items if item.tier == "full" and not item.recovery_of]
-    light = [item for item in items if item.tier == "light" and not item.recovery_of]
-    recovery_full = [item for item in items if item.tier == "full" and item.recovery_of]
-    recovery_light = [item for item in items if item.tier == "light" and item.recovery_of]
-    translated = [item for item in items if item.tier == "translation"]
-    if len(full) + len(light) + len(recovery_full) + len(recovery_light) + len(translated) != len(items):
-        raise ValueError("unknown digest tier")
-    parts = [f"# arXiv 每日简报 · {day}"]
+    """Return the complete, public Markdown snapshot."""
+    parts = [f"# arXiv 每日简报 · {_day(date)}"]
     if not items:
         parts.append("今天未发现新增工作（本次检查未发现新增符合关注条件的论文）。")
-    for heading, group in (("## 标题与摘要双语", [i for i in translated if not i.recovery_of]),
-                           ("## 补发标题与摘要双语", [i for i in translated if i.recovery_of])):
-        if group:
-            parts.extend([heading, *( ["上一轮投递未确认，以下条目本次可能重复送达。"] if any(i.recovery_of for i in group) else []),
-                          "\n\n".join(_translated(i) for i in group)])
-    if full:
-        parts.extend(["## 完整档", "\n\n".join(_full(item) for item in full)])
-    if light:
-        parts.extend(["## 轻量档", "\n".join(_light(item) for item in light)])
-    if recovery_full:
-        parts.extend(["## 补发完整档", "上一轮投递未确认，以下条目本次可能重复送达。",
-                      "\n\n".join(_full(item) for item in recovery_full)])
-    if recovery_light:
-        parts.extend(["## 补发轻量档", "上一轮投递未确认，以下条目本次可能重复送达。",
-                      "\n".join(_light(item) for item in recovery_light)])
+    for heading, group in _groups(items):
+        parts.append(heading)
+        if group[0].recovery_of:
+            parts.append("上一轮投递未确认，以下条目本次可能重复送达。")
+        parts.append("\n\n".join(render_item(item) for item in group))
     if notes:
-        if isinstance(notes, str):
-            notes = [notes]
+        notes = [notes] if isinstance(notes, str) else notes
         parts.extend(["## 运行备注", "\n".join(f"- {str(note)}" for note in notes)])
     return "\n\n".join(parts).rstrip() + "\n"
 
@@ -103,81 +112,45 @@ def server_title(date: date | str) -> str:
 
 
 def render_notification(
-    date: date | str,
-    items: list[DigestItem],
-    archive_url: str,
-    max_bytes: int = 30000,
+    date: date | str, items: list[DigestItem], archive_url: str, max_bytes: int = 30000,
     *, index_url: str | None = None,
 ) -> tuple[str, dict[str, str]]:
-    """Fit one message without cutting a full paper's summary in half.
-
-    The caller must have already published and verified ``archive_url``. The
-    mapping records presentation only; it never changes the business tier.
-    """
+    """Fit whole paper blocks; move overflow to the immutable public archive."""
     day, archive_url = _day(date), _url(archive_url)
     if index_url:
         index_url = _url(index_url)
     if not 0 < max_bytes <= 32768:
         raise ValueError("message byte cap must be within ServerChan's 32 KiB limit")
-    ids = [item.paper.base_id for item in items]
+    ids = [i.paper.base_id for i in items]
     if len(ids) != len(set(ids)):
         raise ValueError("duplicate base arXiv ID in digest")
-    full = [item for item in items if item.tier == "full"]
-    light = [item for item in items if item.tier == "light"]
-    translated = [item for item in items if item.tier == "translation"]
-    if len(full) + len(light) + len(translated) != len(items):
-        raise ValueError("unknown digest tier")
-    full_inline = set(item.paper.base_id for item in full)
-    light_inline = set(item.paper.base_id for item in light)
-    short_full_labels: set[str] = set()
-    translation_inline = {item.paper.base_id for item in translated}
-    short_translation_labels: set[str] = set()
+    groups = list(_groups(items))
+    blocks = {i.paper.base_id: render_item(i) for i in items}
+    inline = set(ids)
+    short_labels = set()
 
-    def compose() -> tuple[str, dict[str, str]]:
-        modes: dict[str, str] = {}
+    def compose():
+        modes = {}
         lines = [f"# arXiv 每日简报 · {day}"]
         if not items:
             lines.append("今天未发现新增工作（本次检查未发现新增符合关注条件的论文）。")
-        if any(item.recovery_of for item in items):
+        if any(i.recovery_of for i in items):
             lines.append("**补发：上一轮投递未确认，本次可能重复。**")
-        for heading, group in (("## 标题与摘要双语", [i for i in translated if not i.recovery_of]),
-                               ("## 补发标题与摘要双语", [i for i in translated if i.recovery_of])):
-            if group:
-                lines.append(heading)
+        for heading, group in groups:
+            lines.append(heading)
+            omitted = 0
             for item in group:
                 key = item.paper.base_id
-                if key in translation_inline:
-                    lines.append(_translated(item))
-                    modes[key] = "rendered_inline_translation"
-                else:
-                    label = f"arXiv {key}" if key in short_translation_labels else _title(item)
-                    lines.append(f"- [{label}]({item.paper.url})：标题与完整双语摘要见[公开存档]({archive_url})。")
-                    modes[key] = "translation_archive_link_only"
-        for heading, group in (("## 完整档", [i for i in full if not i.recovery_of]),
-                               ("## 补发完整档", [i for i in full if i.recovery_of])):
-            if group:
-                lines.append(heading)
-            for item in group:
-                key = item.paper.base_id
-                if key in full_inline:
-                    lines.append(_full(item))
-                    modes[key] = "rendered_inline_full"
-                else:
-                    label = f"arXiv {key}" if key in short_full_labels else _title(item)
-                    lines.append(f"- [{label}]({item.paper.url})：完整总结见[公开存档]({archive_url})。")
-                    modes[key] = "archive_link_only"
-        for heading, group in (("## 轻量档", [i for i in light if not i.recovery_of]),
-                               ("## 补发轻量档", [i for i in light if i.recovery_of])):
-            if group:
-                lines.append(heading)
-            for item in group:
-                key = item.paper.base_id
-                if key in light_inline:
-                    lines.append(_light(item))
-                    modes[key] = "light_title_link"
-                else:
+                if key in inline:
+                    lines.append(blocks[key])
+                    modes[key] = {"full": "rendered_inline_full", "light": "light_title_link", "translation": "rendered_inline_translation"}[item.tier]
+                elif item.tier == "light":
+                    omitted += 1
                     modes[key] = "light_archive_only"
-            omitted = sum(item.paper.base_id not in light_inline for item in group)
+                else:
+                    label = f"arXiv {key}" if key in short_labels or (item.modules is not None and "title" not in item.modules) else _title(item)
+                    lines.append(f"- [{label}]({archive_url})：所选内容见公开存档。")
+                    modes[key] = "archive_link_only" if item.tier == "full" else "translation_archive_link_only"
             if omitted:
                 lines.append(f"另有 {omitted} 篇轻量档仅列于公开存档。")
         lines.append(f"[完整日报与长期存档]({archive_url})")
@@ -186,21 +159,19 @@ def render_notification(
         return "\n\n".join(lines).rstrip() + "\n", modes
 
     body, modes = compose()
-    while len(body.encode("utf-8")) > max_bytes and translation_inline:
-        translation_inline.remove(next(item.paper.base_id for item in reversed(translated) if item.paper.base_id in translation_inline))
-        body, modes = compose()
-    while len(body.encode("utf-8")) > max_bytes and light_inline:
-        light_inline.remove(next(item.paper.base_id for item in reversed(light) if item.paper.base_id in light_inline))
-        body, modes = compose()
-    while len(body.encode("utf-8")) > max_bytes and full_inline:
-        full_inline.remove(next(item.paper.base_id for item in reversed(full) if item.paper.base_id in full_inline))
-        body, modes = compose()
-    while len(body.encode("utf-8")) > max_bytes and len(short_full_labels) < len(full):
-        short_full_labels.add(next(item.paper.base_id for item in reversed(full) if item.paper.base_id not in short_full_labels))
-        body, modes = compose()
-    while len(body.encode("utf-8")) > max_bytes and len(short_translation_labels) < len(translated):
-        short_translation_labels.add(next(item.paper.base_id for item in reversed(translated) if item.paper.base_id not in short_translation_labels))
-        body, modes = compose()
+    for tier in ("translation", "light", "full"):
+        for item in reversed(items):
+            if len(body.encode("utf-8")) <= max_bytes:
+                break
+            if item.tier == tier:
+                inline.discard(item.paper.base_id)
+                body, modes = compose()
+    for item in reversed(items):
+        if len(body.encode("utf-8")) <= max_bytes:
+            break
+        if item.tier != "light":
+            short_labels.add(item.paper.base_id)
+            body, modes = compose()
     if len(body.encode("utf-8")) > max_bytes:
         raise ValueError("message metadata alone exceeds byte cap")
     return body, modes

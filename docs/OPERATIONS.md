@@ -24,7 +24,7 @@ main 维护代码，状态分支维护机器状态和历史。存档放 main 技
 
 工作流当前配置北京时间每天 15:17，实际启动可能延迟。Secrets 配置 DEEPSEEK_API_KEY、SERVERCHAN_SENDKEY，DeepL 另需 TRANSLATION_API_KEY；允许 Actions contents 写权限。真实发送前检查代码库和归档公开可读。
 
-手工 mode 可选 daily、replay（指定 IDs）、backfill（UTC 起止日期）、retry（已有 ID 与失败阶段）；content_workflow 沿用根配置或仅当次覆盖 summary/translation。
+手工 mode 可选 daily、replay（指定 IDs）、backfill（UTC 起止日期）、retry（已有 ID 与失败阶段）；内容统一读取根配置 `[presentation]` 的模块开关。
 
 send 默认关闭，此时仍使用真实服务和收费模型做隔离试跑。打开 send 后才修改正式状态并发送；定时运行自动发送。失败查看 job 日志和 arxivdaily-run-report artifact，报告为 app/tmp/reports/run.json，保留 3 天。
 
@@ -35,7 +35,6 @@ send 默认关闭，此时仍使用真实服务和收费模型做隔离试跑。
 & ./app/scripts/run-local.ps1 run
 # 少量真实论文试跑，不推送，可能收费。
 & ./app/scripts/run-local.ps1 replay --ids 2504.11008v2 --live
-& ./app/scripts/run-local.ps1 replay --ids 2504.11008v2 --workflow translation --live
 # 历史日期补采，不发送时仍隔离。
 & ./app/scripts/run-local.ps1 run --start 2026-10-01 --end 2026-10-03 --live
 ```
@@ -52,7 +51,7 @@ send 默认关闭，此时仍使用真实服务和收费模型做隔离试跑。
 
 1. 抓取内去重：同一基础 ID 的交叉分类、分页边界和版本合并，保留最新元数据与分类。`2610.12345v1/v2` 是同一基础 ID。
 2. 处理去重：每篇的判断、总结、翻译、长文证据缓存保存在 state.json。已成功阶段复用，不因为重跑或改配置/提示自动重做；已处理版本和内容保持对应关系，另外记录观察到的新版本。
-3. 投递去重：论文的 confirmed 投递事件使其退出普通自动处理/推送。切模式、修订、改规则都不自动重推；晋升/重投必须显式请求。
+3. 投递去重：论文的 confirmed 投递事件使其退出普通自动处理/推送。改模块、修订、改规则都不自动重推；晋升/重投必须显式请求。
 
 已拒绝但成功完成终筛的历史候选也保留判断，改提示不自动重新评估它。要检验新提示对旧论文的判断，用独立 replay --live；要检验新关键词的召回，用不读取正式状态的 notebook。
 

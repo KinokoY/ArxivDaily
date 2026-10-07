@@ -7,7 +7,7 @@
 | selection.md | 摘要终筛 | 研究兴趣、相关性、保留/拒绝标准 |
 | review.md | uncertain 正文复审 | 确认所需证据；同时读取 selection 的要求 |
 | summary.md | 完整档五段总结 | 长度、重点、表达、实验与限制 |
-| section_notes.md | 正文超出输入容量 | 长文/附录证据提取重点 |
+| section_notes.md | 启用证据链且正文超出输入容量 | 长文/附录证据提取重点 |
 | translation.md | 双语标题和摘要 | 术语和表达，完整忠实翻译 |
 | title_translation.md | 索引缺少中文标题 | 标题译法、名称和缩写 |
 
@@ -22,7 +22,7 @@
 - section_notes：notes 数组，包含 locator、quote、kind。
 - translation/title_translation：title_zh、abstract_zh；只标题时 abstract_zh 为空字符串。
 
-程序继续检查字段、完整响应、来源、引文及数字。提示不能关闭这些检查，失败保留为可恢复阶段。
+程序检查字段和完整响应；启用证据链时另检查来源、引文及数字。summary 输入中的 evidence_enabled 来自模块配置：false 时 evidence 必须为空数组，只生成总结。失败保留为可恢复阶段。
 
 ## 验证和缓存
 
