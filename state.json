@@ -34,8 +34,15 @@
       "content_hash": "0bd2141e7d913118e4f11b7a03280262f1a46149954ba34157cd0dfd512039c3",
       "created_at": "2026-10-07T09:52:55.126385+00:00",
       "day": "2026-10-07",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "60267638",
+        "status": "confirmed"
+      },
       "digest_id": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "empty": false,
+      "finished_at": "2026-10-07T09:59:11.886732+00:00",
       "items": [
         {
           "modules": [
@@ -210,7 +217,7 @@
       },
       "run_id": "20261007T095255Z-2c43e3e2",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -362,7 +369,6 @@
       ]
     },
     "2610.01166": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -399,7 +405,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -430,7 +436,6 @@
         "updated": "2026-10-05T01:42:44+00:00",
         "version_id": "2610.01166v2"
       },
-      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -448,7 +453,7 @@
         "medical_reasoning",
         "general_rl"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "CineMR：面向定量心脏MRI评估的工具集成视觉-语言推理",
       "translation": {
         "abstract_zh": "心血管磁共振（CMR），包括电影成像，是无创评估心脏形态和心室功能的参考标准。电影CMR解读将定性视觉评估与心室容积、射血分数、心肌质量、室壁厚度和局部室壁运动的定量测量相结合。当前的医学视觉-语言模型（VLM）无法在没有分析工具的情况下从多维电影图像中可靠地得出定量测量。我们提出CineMR，一种工具增强的VLM，它调用心脏图像分析工具并将其输出整合到交错推理中，以进行定量CMR评估。我们还构建了一个多队列视觉问答基准，涵盖定量指标提取、多分类诊断和鉴别诊断，以及用于分割、时相选择、容量测定、形态测量和局部室壁运动分析的工具。CineMR首先在工具交互轨迹上进行监督微调（SFT），然后使用带有条件工具使用奖励的组相对策略优化（GRPO）进行训练。在多队列电影CMR基准上，CineMR达到35.9%的pass@1和58.9%的pass@4，而Qwen3-VL-8B主干为1.5%的pass@1，LLaVA-Med v1.5和MedGemma-4B分别为0.0%和7.0%的pass@1。经过GRPO后，正确的工具调用率达到99.8%，高于SFT后的78.9%。实时工具输出将心室测量准确率比直接模型预测提高了20.4–23.7%，而移除所有工具会将pass@1从35.9%降至27.9%。这些结果凸显了可靠工具使用对定量电影CMR推理的重要性，并支持CineMR作为辅助心脏图像评估的一种有前景的方法。代码、基准资源和模型权重可在https://github.com/AI-MIND-Lab/CineMR获取。",
@@ -528,7 +533,6 @@
       ]
     },
     "2610.02494": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -563,7 +567,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -588,7 +592,6 @@
         "updated": "2026-10-01T21:16:43+00:00",
         "version_id": "2610.02494v1"
       },
-      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -604,7 +607,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "DeepStratNet：一种用于稀疏标签下地震层位追踪的上下文感知坐标回归框架",
       "translation": {
         "abstract_zh": "自动层位追踪是三维地震解释中的一项基础任务。大多数现有深度学习方法将其表述为密集语义分割，通常使用基于U-Net的架构。该模型在所有像素上产生概率图，必须经过后处理才能提取精确的层位坐标，而时间/深度上的层位拾取必须转换为密集掩码以进行训练。因此，未拾取的地震道被视为背景，这可能阻碍收敛，并且预处理和后处理都可能给最终解释引入误差。此外，二维分割模型本质上无法捕捉切片间上下文，而三维模型通常在计算上难以承受。我们转而将层位追踪表述为有界坐标回归问题，其中模型直接预测每个横向位置上目标层位的时间/深度坐标。我们提出了一种轻量级回归头，可与任何预训练视觉骨干网络兼容，并结合LSTM模块来建模切片间上下文，从而在整个数据体上生成连续的层位表面。L1和L2损失的组合在有效层位拾取处监督预测，而地质信息正则化则强制连续道之间的横向连续性。在受控实验条件下，我们在来自新西兰的一个地震数据体上，评估了四种预训练视觉骨干网络在分割和回归配置下的表现。所提出的方法在定量指标（包括RMSE和PCC）和定性方面均持续优于其分割对应方法，同时还表现出对训练拾取稀疏性增加的更强鲁棒性。最后，我们表明连续道之间的预测变化捕捉了地质复杂性的局部变化，为下游地震解释提供了一种自动质量控制措施。",
@@ -683,7 +686,6 @@
       ]
     },
     "2610.03332": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -721,7 +723,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -747,7 +749,6 @@
         "updated": "2026-10-02T14:04:26+00:00",
         "version_id": "2610.03332v1"
       },
-      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -763,7 +764,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "SBF-SEM中三维树突实例分割的全自动管线",
       "translation": {
         "abstract_zh": "在连续块面扫描电子显微镜（SBF-SEM）中，对单个树突进行精确的三维（3D）重建对于量化大脑中的结构可塑性至关重要，但大规模人工标注不可行。我们提出了一条用于3D树突实例分割的全自动管线，将降采样切片上的YOLOv6引导的Segment Anything Model（SAM）提示、迭代二维掩膜细化、随机森林3D实例连接，以及在原生分辨率下使用nnU-Net进行的实例感知高分辨率细化统一为一个系统，推理时无需人工提示。将该管线应用于来自对照大鼠和匹罗卡品诱导癫痫大鼠的海马CA1 SBF-SEM数据集，我们的管线重建出连贯且分离良好的树突，具有较高的语义准确性（Dice 0.93和0.91），并在对照组织上展现出强大的实例级性能，而对更具挑战性的癫痫组织的分析则表明，密集区域中的实例识别是主要的剩余局限。高分辨率细化阶段恢复了纤细的树突突起，为下游的树突棘水平分析提供了基础。代码可在https://github.com/ZE-WEN/dendrite-3d-instance-seg获取。",
@@ -843,7 +844,6 @@
       ]
     },
     "2610.04095": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -880,7 +880,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -909,7 +909,6 @@
         "updated": "2026-10-02T22:03:36+00:00",
         "version_id": "2610.04095v1"
       },
-      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -927,7 +926,7 @@
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "在腹部CT中扩展3D视觉定位",
       "translation": {
         "abstract_zh": "视觉定位模型可以通过将报告中的发现与图像区域关联来增强放射学工作流程。这对于3D CT尤其有价值，因为病灶通常只占据体积的一小部分。训练3D定位模型需要大量成对的短语和区域，而构建此类数据集成本高昂，需要放射科医生手动标注图像。我们认为，这种监督信号在常规报告过程中已经被隐式创建，因为放射科医生经常在关键图像上放置2D标注（例如距离测量、箭头）以进行测量并支持报告解读。我们引入了一个自动化流程，将这些常规临床标注转换为用于3D视觉定位的大规模短语-区域监督。该流程通过元数据匹配将每个标注与报告中相应的发现关联起来，然后使用可提示的3D分割模型将2D标注转换为体积掩膜。这生成了短语-掩膜-体积数据集，而无需额外的放射科医生标注。应用于单一机构的临床图像归档和通信系统（PACS），我们的方法从59K次腹部CT检查中生成了105K个短语-掩膜-体积三元组。我们还引入了两个腹部CT定位基准，LocusBench-Onc和LocusBench-ED，分别包含240个肿瘤学和260个急诊科放射科医生审核的短语-掩膜-体积三元组，后者涵盖13个不同类别，如阑尾炎、血肿和疝气。我们进一步引入了LocusCT，一个在该数据集上训练的3D视觉定位模型，在LocusBench-Onc上达到0.725的命中率，在LocusBench-ED上达到0.773，大幅优于对比模型。这些结果表明，常规PACS标注是一种可扩展的、此前未被使用的3D视觉定位监督来源。",
