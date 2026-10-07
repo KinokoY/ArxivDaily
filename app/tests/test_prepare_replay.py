@@ -9,7 +9,7 @@ import unittest
 from urllib.error import HTTPError
 
 from arxivdaily.models import Paper
-from scripts.prepare_replay import REPLAY_IDS, prepare_replay
+from tools.prepare_replay import REPLAY_IDS, prepare_replay
 
 
 STAMP = datetime(2026, 10, 1, tzinfo=timezone.utc).isoformat()

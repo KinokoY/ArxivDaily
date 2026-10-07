@@ -73,33 +73,40 @@ jobs:
         with:
           python-version: '3.12'
       - name: Prepare public configuration
+        id: config
         env:
           REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
-          mkdir -p tmp
           python - <<'PY'
           from pathlib import Path
           import os
           import re
-          import tomllib
 
-          path = Path('config.toml')
-          source = path.read_text(encoding='utf-8') if path.is_file() else Path('config.example.toml').read_text(encoding='utf-8')
+          from arxivdaily.config import load_config
+          from arxivdaily.prompts import load_prompts
+
+          path = Path('../config.toml')
+          config = load_config(path)
+          load_prompts(config)
           repository = os.environ['REPOSITORY']
           assert re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository)
-          if not tomllib.loads(source).get('archive', {}).get('public_base_url'):
+          branch = config['archive']['state_branch']
+          if not config['archive']['public_base_url']:
+              from urllib.parse import quote
+              source = path.read_text(encoding='utf-8')
               section = re.search(r'(?ms)^\[archive\]\s*\n.*?(?=^\[|\Z)', source)
               if section is None:
                   raise SystemExit('configuration has no [archive] section')
-              replacement = f'public_base_url = "https://raw.githubusercontent.com/{repository}/arxivdaily-state"'
+              replacement = f'public_base_url = "https://raw.githubusercontent.com/{repository}/{quote(branch, safe="")}"'
               updated, count = re.subn(r'^public_base_url\s*=.*$', replacement, section.group(),
                                        count=1, flags=re.MULTILINE)
               if count != 1:
                   raise SystemExit('configuration has no archive.public_base_url field')
               source = source[:section.start()] + updated + source[section.end():]
-          if not path.is_file() or path.read_text(encoding='utf-8') != source:
               path.write_text(source, encoding='utf-8')
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write(f'state_branch={branch}\n')
           PY
       - name: Check public files and repository visibility
         env:
@@ -126,7 +133,7 @@ jobs:
       - name: Check state branch
         id: state_ref
         env:
-          STATE_BRANCH: arxivdaily-state
+          STATE_BRANCH: ${{ steps.config.outputs.state_branch }}
         run: |
           set -euo pipefail
           ref="$(git ls-remote --heads origin "refs/heads/$STATE_BRANCH")"
@@ -138,7 +145,7 @@ jobs:
       - name: Bootstrap empty state branch
         if: steps.state_ref.outputs.exists == 'false' && (github.event_name == 'schedule' || inputs.send == true)
         env:
-          STATE_BRANCH: arxivdaily-state
+          STATE_BRANCH: ${{ steps.config.outputs.state_branch }}
         run: |
           set -euo pipefail
           # Build a one-file root commit without checking out or copying code.
@@ -157,7 +164,7 @@ jobs:
         if: steps.state_ref.outputs.exists == 'true' || github.event_name == 'schedule' || inputs.send == true
         uses: actions/checkout@v4
         with:
-          ref: arxivdaily-state
+          ref: ${{ steps.config.outputs.state_branch }}
           path: app/.state
           fetch-depth: 1
       - name: Install locked dependencies
@@ -180,12 +187,12 @@ jobs:
           CHECKPOINT_COMMAND: >-
             python scripts/publish_state.py
             --state-dir .state
-            --branch arxivdaily-state
+            --branch ${{ steps.config.outputs.state_branch }}
             --repository ${{ github.repository }}
             --message arxivdaily-checkpoint
         run: |
           set -euo pipefail
-          args=(--config config.toml --state-dir .state)
+          args=(--config ../config.toml --state-dir .state)
           if [[ "$EVENT_NAME" != "schedule" && "$INPUT_CONTENT_WORKFLOW" != "config" && -n "$INPUT_CONTENT_WORKFLOW" ]]; then
             args+=(--workflow "$INPUT_CONTENT_WORKFLOW")
           fi
@@ -240,7 +247,7 @@ jobs:
         run: |
           if [[ "$EVENT_NAME" == "schedule" ]]; then mode=daily; else mode="$INPUT_MODE"; fi
           printf '## ArxivDaily\n\nMode: %s\n\n' "$mode" >> "$GITHUB_STEP_SUMMARY"
-          if [[ -f reports/run.json ]]; then
+          if [[ -f tmp/reports/run.json ]]; then
             printf 'A redacted run report is available in the arxivdaily-run-report artifact.\n' >> "$GITHUB_STEP_SUMMARY"
           else
             printf 'No run report was produced. Review the job failure and persistent state.\n' >> "$GITHUB_STEP_SUMMARY"
@@ -250,6 +257,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: arxivdaily-run-report
-          path: app/reports/run.json
+          path: app/tmp/reports/run.json
           if-no-files-found: ignore
           retention-days: 3

@@ -1,0 +1,348 @@
+# ArxivDaily 唯一公开配置入口。改此文件后提交到 main，下一次 Actions 生效。
+# 不要写入任何 API key 或 SendKey；运行凭证由环境变量 / GitHub Actions Secrets 提供。
+# 配置说明：docs/CONFIGURATION.md；提示说明：docs/PROMPTS.md。
+
+# 日常入口一：工作流。summary = 全文总结；translation = 标题和摘要双语，不读取正文。
+[workflow]
+mode = "summary"
+
+# arXiv 初筛：任一交叉分类命中即可；categories=[] 表示不限分类。
+# 默认关键词匹配标题与摘要。
+[rules]
+categories = ["cs.CV", "cs.LG", "cs.AI", "cs.CL"]
+title_enabled = true
+exclude = []
+
+# 同义词组：同组词之间是 OR，大小写不敏感，按完整词和短语匹配。
+[rules.groups]
+
+# Segmentation 基础任务
+SEG = [
+    "segmentation",
+    "segmenting",
+    "segmentation mask",
+    "semantic segmentation",
+    "instance segmentation",
+    "referring segmentation",
+    "pixel-level perception",
+    "pixel-wise perception",
+    "vessel segmentation"
+]
+
+# Reasoning / instruction / grounding segmentation
+REASON = [
+    "reasoning segmentation",
+    "reasoning-based segmentation",
+    "reasoning-aware segmentation",
+    "reasoning referring segmentation",
+    "referring image segmentation",
+    "referring expression segmentation",
+    "instruction-guided segmentation",
+    "prompt-guided segmentation",
+    "language-guided segmentation",
+    "visual grounding",
+    "grounded segmentation",
+    "position reasoning",
+    "positional reasoning",
+    "spatial reasoning",
+    "medical reasoning",
+    "implicit query",
+    "implicit queries",
+    "implicit instruction",
+    "complex instruction",
+    "chain-of-thought",
+    "chain of thought",
+    "visual reasoning"
+]
+
+# Vision-Language / Multimodal LLM
+VLM = [
+    "vision-language model",
+    "vision language model",
+    "vision-language models",
+    "multimodal large language model",
+    "multi-modal large language model",
+    "multimodal LLM",
+    "multimodal language model",
+    "large multimodal model",
+    "large multimodal models",
+    "MLLM",
+    "LMM",
+    "VLM",
+    "large language model",
+    "vision-language foundation model",
+    "multimodal foundation model",
+    "language-guided segmentation",
+    "text-guided segmentation",
+    "instruction-guided segmentation",
+    "LLM-guided segmentation"
+]
+
+# Medical / biomedical imaging
+MED = [
+    "medical",
+    "biomedical",
+    "clinical",
+    "radiology",
+    "radiologist",
+    "anatomical",
+    "anatomy",
+    "pathology",
+    "lesion",
+    "tumor",
+    "tumour",
+    "MRI",
+    "magnetic resonance imaging",
+    "CT",
+    "computed tomography",
+    "PET",
+    "X-ray",
+    "ultrasound",
+    "endoscopy",
+    "angiography",
+    "coronary",
+    "retinal",
+    "fundus",
+    "OCT",
+    "histopathology",
+    "whole slide image",
+    "whole-slide image",
+    "WSI",
+    "nuclei",
+    "polyp",
+    "dermoscopy",
+    "dermoscopic",
+    "mammography",
+    "microscopy",
+    "surgical",
+    "laparoscopic",
+    "echocardiography",
+    "colonoscopy",
+    "organ",
+    "volumetric",
+    "3D medical"
+]
+
+# RL / preference optimization / alignment
+RL_PREF = [
+    "reinforcement learning",
+    "reinforcement fine-tuning",
+    "reinforcement finetuning",
+    "preference learning",
+    "direct preference optimization",
+    "preference optimization",
+    "preference alignment",
+    "preference-based learning",
+    "policy optimization",
+    "reward optimization",
+    "reward model",
+    "reward modeling",
+    "verifiable reward",
+    "RLHF",
+    "RLAIF",
+    "DPO",
+    "PPO",
+    "GRPO",
+    "KTO",
+    "ORPO",
+    "SimPO",
+    "IPO"
+]
+
+# 明确的 loss / structural objective 创新
+# 避免使用裸的 loss / objective / optimization / boundary，降低普通 segmentation 论文噪声。
+OBJECTIVE = [
+    "loss function",
+    "loss formulation",
+    "training objective",
+    "learning objective",
+    "optimization objective",
+    "regularization",
+    "regularization term",
+    "boundary loss",
+    "boundary-aware loss",
+    "topological loss",
+    "topology-aware",
+    "topological",
+    "topology",
+    "connectivity loss",
+    "connectivity constraint",
+    "structural constraint",
+    "structure-aware loss",
+    "shape prior",
+    "shape constraint",
+    "Dice loss",
+    "Tversky loss",
+    "focal loss",
+    "Lovasz loss",
+    "Hausdorff loss",
+    "clDice",
+    "Betti"
+]
+
+# SAM 系架构
+SAM = [
+    "segment anything",
+    "segment anything model",
+    "SAM",
+    "SAM2",
+    "SAM 2",
+    "MedSAM",
+    "MedSAM2",
+    "SAM-Med2D",
+    "SAM-Med3D"
+]
+
+# 理论性、泛化性、迁移性提示
+THEORY_HINT = [
+    "theoretical",
+    "theory",
+    "provable",
+    "theorem",
+    "convergence",
+    "generalization bound",
+    "guarantee",
+    "transferability",
+    "transferable"
+]
+
+# 组合规则：
+# 路线之间 OR；
+# 每个内层列表中的组之间 AND；
+# 多个内层列表 OR。
+[rules.routes]
+# 医学场景中的 reasoning / VLM segmentation
+medical_reasoning = [
+    ["MED", "SEG", "REASON"],
+    ["MED", "SEG", "VLM"]
+]
+# 不限医学领域，只要是 segmentation + reasoning/VLM + RL/DPO/preference optimization
+general_rl = [
+    ["SEG", "REASON", "RL_PREF"],
+    ["SEG", "VLM", "RL_PREF"]
+]
+# 医学 + SAM 系 segmentation + 新 loss/objective
+medical_objective = [
+    ["MED", "SEG", "SAM", "OBJECTIVE"]
+]
+# 通用 reasoning segmentation。
+general_reasoning = [
+    ["SEG", "REASON"]
+]
+# 可迁移的 SAM / objective 工作。
+transferable_objective = [
+    ["SEG", "SAM"],
+    ["SEG", "OBJECTIVE", "THEORY_HINT"]
+]
+
+# 全文名额分配顺序：
+[selection]
+route_priority = [
+    "medical_reasoning",
+    "general_rl",
+    "medical_objective",
+    "general_reasoning",
+    "transferable_objective"
+]
+
+# 翻译服务：llm 复用终筛模型和密钥；deepl 使用官方免费 API；libretranslate 使用自己的实例。LLM 翻译提示在 app/prompts/。
+[translation]
+provider = "llm"
+# llm 模式复用 llm.filter；以下端点和密钥引用仅用于机器翻译服务。
+# TRANSLATION_API_KEY 是环境变量/Secret 的名称，不是已经创建好的密钥。
+# 切换 deepl 后，需要自己在 DeepL API 账户创建 key，再配置同名 Secret。
+base_url = "https://api-free.deepl.com"
+api_key_env = "TRANSLATION_API_KEY"
+timeout = 30
+attempts = 3
+retry_delay_seconds = 1
+
+# 完整总结每日默认 5 篇，最多 10 篇；超额入选论文进入轻量档。双语模式不受 full_daily_limit 限制。
+[limits]
+full_daily_limit = 5
+review_daily_limit = 2
+stage_attempts = 3
+recovery_days = 14
+run_seconds = 2400
+
+# 日常入口二：本目录集中存放六项任务提示。相对路径以本配置文件所在目录为基准。
+[prompts]
+directory = "app/prompts"
+
+# 以下为高级配置，通常保持默认。首次抓取最近 7 天，后续最多回看 14 天；网络请求间隔至少 3 秒。
+[collection]
+page_size = 100
+delay_seconds = 3.0
+initial_days = 7
+lookback_days = 14
+shard_limit = 10000
+max_candidates = 2000
+
+# 可选单次运行费用保护（按配置币种估计，非精确账单）：取消下一行注释启用。
+[llm]
+# max_run_cost = 12.5
+
+# 摘要终筛使用 high 思考预算。标题/摘要翻译复用该模型，关闭思考。
+[llm.filter]
+provider = "deepseek"
+protocol = "chat_completions"
+base_url = "https://api.deepseek.com"
+model = "deepseek-flash"
+api_key_env = "DEEPSEEK_API_KEY"
+effort = "high"
+max_tokens = 16384
+timeout = 120
+stage_seconds = 180
+attempts = 3
+retry_delay_seconds = 1
+image_capable = false
+input_chars = 30000
+
+# 正文复审、长文证据提取、总结使用 max 思考预算。
+[llm.summary]
+provider = "deepseek"
+protocol = "chat_completions"
+base_url = "https://api.deepseek.com"
+model = "deepseek-flash"
+api_key_env = "DEEPSEEK_API_KEY"
+effort = "max"
+max_tokens = 65536
+timeout = 240
+stage_seconds = 900
+attempts = 3
+retry_delay_seconds = 1
+image_capable = true
+input_chars = 120000
+max_section_calls = 64
+
+# 费用估算参数。更换模型、提供商、端点或价格时，需同时将 policy 改为 custom，并自行核实价格。
+[llm.pricing]
+cache_hit_per_million = 0.04
+cache_miss_per_million = 2.0
+output_per_million = 8.0
+currency = "CNY"
+policy = "peak_upper_bound"
+
+# 正文下载、解析和必要图表读取限制。
+[fulltext]
+timeout = 30
+attempts = 3
+min_chars = 2500
+chunk_chars = 20000
+max_download_bytes = 25000000
+max_visual_pages = 8
+
+# 推送密钥只填写环境变量名称，不能填写密钥值。发送、告警和重试共同受每日额度限制。
+[delivery]
+sendkey_env = "SERVERCHAN_SENDKEY"
+daily_limit = 5
+chain_attempts = 3
+poll_limit = 3
+body_bytes = 30000
+quota_timezone = "Asia/Shanghai"
+query_counts_quota = false
+
+# 正式状态和公开历史分支。Actions 从这里读取分支名；更换已有正式分支需迁移状态，并同步调整 public_base_url。
+[archive]
+public_base_url = "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state"
+state_branch = "arxivdaily-state"

@@ -44,6 +44,10 @@ class Pipeline:
     def _manual_active(self, record: dict) -> bool:
         return bool(record.get("manual_retry_until") and self.now <= parse_time(record["manual_retry_until"]))
 
+    def _prompt_fingerprint(self, task: str) -> str:
+        getter = getattr(self.analysis, "prompt_fingerprint", None)
+        return getter(task) if getter else "scripted-offline-" + task
+
     def _chain_limit(self, record: dict) -> int:
         normal = self.config["delivery"]["chain_attempts"]
         return max(normal,record.get("manual_delivery_attempt_limit",normal)) if self._manual_active(record) else normal
@@ -176,7 +180,7 @@ class Pipeline:
             if decision is not None:
                 record["decision"] = decision.to_dict()
                 record["config_fingerprint"] = fingerprint(self.config)
-                record["prompt_fingerprint"] = "arxivdaily-selection-v1"
+                record["prompt_fingerprint"] = self._prompt_fingerprint("selection")
                 record["model"] = self.config["llm"]["filter"]["model"]
                 record["stage"] = "rejected" if decision.status == "reject" else "selected" if decision.status == "select" else "uncertain"
                 self.checkpoint()
@@ -214,10 +218,11 @@ class Pipeline:
             decision = self._stage(record, "review", lambda: self.analysis.review(Paper.from_dict(record["paper"]), body, Decision.from_dict(record["decision"])))
             if decision is not None:
                 record["decision"] = decision.to_dict()
+                record["review_prompt_fingerprint"] = self._prompt_fingerprint("review")
                 record["stage"] = "rejected" if decision.status == "reject" else "selected" if decision.status == "select" else "uncertain"
                 self.checkpoint()
         selected = [r for r in records if r.get("decision", {}).get("status") == "select"]
-        priorities = {"medical_reasoning": 0, "medical_objective": 1, "general_rl": 2, "transferable_objective": 3, "general_reasoning": 4}
+        priorities = {route: index for index, route in enumerate(self.config["selection"]["route_priority"])}
         selected.sort(key=lambda r: (priorities.get(r["decision"]["route"], 9), -r["decision"].get("score", 0), r["paper"]["version_id"]))
         for record in selected:
             paper = Paper.from_dict(record["paper"])
@@ -253,7 +258,7 @@ class Pipeline:
                 record["body"] = body_metadata(body)
                 record["stage"] = "summary_validated"
                 record["summary_model"] = self.config["llm"]["summary"]["model"]
-                record["summary_prompt_fingerprint"] = "arxivdaily-summary-v4"
+                record["summary_prompt_fingerprint"] = self._prompt_fingerprint("summary")
                 record["summary_validated_at"] = iso(self.now)
                 self.checkpoint()
             else:
@@ -275,7 +280,7 @@ class Pipeline:
             record["translation"] = result.to_dict()
             record["title_zh"] = result.title_zh
             record["translation_provider"] = self.config["translation"]["provider"]
-            record["translation_prompt_fingerprint"] = "arxivdaily-translation-v1"
+            record["translation_prompt_fingerprint"] = self._prompt_fingerprint("translation") if self.config["translation"]["provider"] == "llm" else self.config["translation"]["provider"]
         record["stage"] = "ready"
         self.checkpoint()
 
@@ -292,6 +297,7 @@ class Pipeline:
             result = self._stage(record, "title_translation", lambda: self.translator.translate(paper, title_only=True))
             if result is not None:
                 record["title_zh"] = result.title_zh
+                record["title_translation_prompt_fingerprint"] = self._prompt_fingerprint("title_translation") if self.config["translation"]["provider"] == "llm" else self.config["translation"]["provider"]
                 self.checkpoint()
 
     @staticmethod

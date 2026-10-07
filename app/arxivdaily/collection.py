@@ -133,7 +133,12 @@ class Collector:
             kwargs["id_list"] = id_list
         return arxiv.Search(**kwargs)
 
-    def collect(self, window: dict) -> CollectionResult:
+    def collect(self, window: dict, *, apply_rules: bool = True) -> CollectionResult:
+        """Collect rule candidates, or category metadata for isolated rule experiments.
+
+        The optional metadata-only path shares pagination/deduplication and the
+        configured record cap, but never consults application state or an LLM.
+        """
         requested_start, requested_end = _moment(window["start"]), _moment(window["end"])
         if requested_end < requested_start:
             raise ValueError("window end precedes start")
@@ -173,7 +178,8 @@ class Collector:
                         continue
                     # API date boundaries and category cross listings can
                     # overlap. Keep the newest version, never duplicate IDs.
-                    if match_rules(paper, self.config):
+                    category_match = not categories or bool(set(categories).intersection(paper.categories))
+                    if (category_match and not apply_rules) or (apply_rules and match_rules(paper, self.config)):
                         existing = papers.get(paper.base_id)
                         if existing is None:
                             if paper.base_id not in known_ids and paper.base_id not in new_ids and len(new_ids) >= candidate_limit:

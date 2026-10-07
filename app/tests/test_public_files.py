@@ -31,3 +31,12 @@ def test_credential_match_names_file_without_echoing_value(tmp_path):
     _, findings = public_check.check(tmp_path)
     assert findings == ["mistake.txt: credential-shaped value"]
     assert canary not in str(findings)
+
+
+def test_deleted_tracked_document_is_not_a_public_candidate(tmp_path):
+    git(tmp_path, "init", "-b", "main")
+    path = tmp_path / "old.md"
+    path.write_text("obsolete", encoding="utf-8")
+    git(tmp_path, "add", "old.md")
+    path.unlink()
+    assert public_check.check(tmp_path) == (0, [])

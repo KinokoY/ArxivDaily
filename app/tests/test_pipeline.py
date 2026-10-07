@@ -106,6 +106,29 @@ def test_checkpoint_failure_stops_before_model_and_post(tmp_path):
     assert analysis.calls["selection"] == 0 and delivery.sent == []
 
 
+@pytest.mark.parametrize("preferred", ["medical_reasoning", "medical_objective"])
+def test_configured_route_priority_controls_the_full_slot(tmp_path, preferred):
+    config, f, papers, analysis, reader, store, delivery = system(tmp_path)
+    config["limits"]["full_daily_limit"] = 1
+    priority = config["selection"]["route_priority"]
+    priority.remove(preferred)
+    priority.insert(0, preferred)
+    seed = papers[0]
+    clone = Paper.from_dict({**seed.to_dict(), "version_id": "2502.90001v1", "title": "Another full paper"})
+    f["decisions"][clone.base_id] = {**deepcopy(f["decisions"][seed.base_id]), "route": "medical_objective"}
+    cloned_body = deepcopy(f["bodies"][seed.base_id])
+    cloned_body.update(version_id=clone.version_id, source_url=clone.url)
+    f["bodies"][clone.base_id] = cloned_body
+    summary = deepcopy(f["summaries"][seed.base_id])
+    for evidence in summary["evidence"]:
+        evidence["source_url"] = clone.url
+    f["summaries"][clone.base_id] = summary
+    report = Pipeline(config, store, None, analysis, reader, delivery, now=NOW).run([seed, clone])
+    assert not report["errors"] and (report["full"], report["light"]) == (1, 1)
+    full = [record for record in store.load()["papers"].values() if record["intended_tier"] == "full"]
+    assert full[0]["decision"]["route"] == preferred
+
+
 def test_secret_canary_and_inflight_unknown_are_publicly_safe(tmp_path):
     config,f,papers,analysis,reader,store,delivery = system(tmp_path,"unknown")
     secret = "".join(chr(x) for x in [99,97,110,97,114,121,45,107,101,121,45,49,50,51])

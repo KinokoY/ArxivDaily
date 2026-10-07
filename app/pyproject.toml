@@ -14,10 +14,14 @@ dependencies = ["arxiv==4.0.1", "httpx==0.28.1", "beautifulsoup4==4.15.0", "pypd
 arxivdaily = "arxivdaily.cli:main"
 
 [tool.setuptools]
-packages = ["arxivdaily", "arxivdaily._vendor", "arxivdaily._vendor.paper_digest"]
+packages = ["arxivdaily", "arxivdaily._vendor", "arxivdaily._vendor.paper_digest", "arxivdaily.prompt_files"]
+
+[tool.setuptools.package-dir]
+"arxivdaily.prompt_files" = "prompts"
 
 [tool.setuptools.package-data]
 "arxivdaily._vendor.paper_digest" = ["LICENSE", "README.md", "ORIGIN.json"]
+"arxivdaily.prompt_files" = ["*.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

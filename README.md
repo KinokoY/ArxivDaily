@@ -1,27 +1,61 @@
 # ArxivDaily
 
-每日筛选 arXiv 论文，提供中文正文总结、独立轻量标题清单，或标题与摘要双语简报，并用免费 Server酱推送。正常无新增也发送通知，每日归档之外维护单文件论文索引。兴趣配置、阶段状态和 Markdown 历史可公开；运行秘钥使用 GitHub Actions Secrets。
+每天抓取 arXiv 论文，经关键词规则和模型筛选后，用 Server酱发送微信简报。支持中文全文总结与标题/摘要双语两种模式；没有新增时也发送通知。项目由 GitHub Actions 定时运行，本机使用 conda `ml` 环境调试。
 
-应用位于 [`app/`](app/README.md)，实际 GitHub Actions 入口位于 [`.github/workflows/daily-digest.yml`](.github/workflows/daily-digest.yml)。每日北京时间 15:17 调度，手工运行默认不发送；真实发送前必须完成状态检查点和公开归档验证。
+## 日常只需调整两个入口
 
-- [当前开发状态](DEVELOPMENT-STATUS.md)与[下一会话交接](HANDOFF-NEXT.md)
-- [规格](docs/SPEC.md)、[实施计划](docs/IMPLEMENTATION-PLAN.md)与[术语](GLOSSARY.md)
-- [部署](app/docs/DEPLOYMENT.md)、[恢复操作](app/docs/OPERATIONS.md)与[分层验收](app/reports/ACCEPTANCE.md)
-- [双语工作流与免费翻译选型](app/docs/TRANSLATION.md)：`--workflow translation`，长期索引位于状态分支的 `archive/papers.md`
-- [固定上游与实际复用边界](app/UPSTREAM.md)
+| 想调整什么 | 修改哪里 |
+| --- | --- |
+| 工作流、分类、关键词与组合、路线优先级、篇数/费用限制、模型和翻译服务 | 根 [config.toml](config.toml)，参见 [配置说明](docs/CONFIGURATION.md) |
+| 研究兴趣、模型判断标准、总结详略、翻译术语 | [app/prompts/](app/prompts/selection.md)，参见 [提示说明](docs/PROMPTS.md) |
 
-本机优先使用 conda `ml`，依赖和临时产物放工作区。无需凭证的代表回放：
+修改后提交到 `main`，下一次 Actions 使用新版本。本地立即读取当前文件。已成功生成和已推送的内容继续复用，不因修改配置或提示自动重做或重发。
+
+## 阅读论文与历史
+
+- [总论文索引](https://github.com/KinokoY/ArxivDaily/blob/arxivdaily-state/archive/papers.md)：英文/中文标题、链接与首次收集日期。包含规则命中的候选，也包含未通过模型终筛的论文。
+- [每日简报归档](https://github.com/KinokoY/ArxivDaily/tree/arxivdaily-state/archive)：打开 `YYYY-MM-DD.md` 阅读当天内容；`YYYY/MM/DD/` 下是每次发送的独立快照。
+- [Actions 运行记录](https://github.com/KinokoY/ArxivDaily/actions/workflows/daily-digest.yml)：查看运行结果、错误及脱敏报告。
+
+索引、简报和机器状态由程序自动更新到 `arxivdaily-state`，无需手工编辑。自动更新步骤见 [运行与恢复](docs/OPERATIONS.md)。
+
+## 本机检查和试跑
+
+在项目根目录的 PowerShell 执行，启动脚本使用 conda `ml` 的 Python 和工作区依赖。
 
 ```powershell
-& ./app/scripts/run-local.ps1 replay --ids 2308.00692v3 2504.11008v2 2505.11872v4 2603.19169v1
+# 检查配置与六个提示文件，无外部请求。
+& ./app/scripts/run-local.ps1 config
+# 查看完整生效配置。
+& ./app/scripts/run-local.ps1 config --show
+# 预览摘要的关键词命中，不调用模型。
+& ./app/scripts/run-local.ps1 config --abstract 'Medical spatial reasoning segmentation with DPO.' --categories cs.CV
+# 合成样本离线试跑，不修改正式状态。
+& ./app/scripts/run-local.ps1 run
 ```
 
-公开文件检查：
+`run` 默认离线；`--live` 使用真实论文和模型，可能产生费用但不发送；`--send` 才更新正式状态并推送，还需同步发布命令。参数见 [运行说明](docs/OPERATIONS.md)。离线样本的判断、总结和翻译是模拟结果。
 
-```powershell
-& "$env:USERPROFILE\anaconda3\envs\ml\python.exe" app/scripts/check_public_files.py
+要查看最近 14 天的规则初筛结果，打开 [初筛调试 notebook](app/notebooks/arxiv_rules_debug.ipynb)，选择 conda ml 内核。它只抓 arXiv 元数据，支持缓存、规则对比、命中依据和 CSV 导出；不调用模型或使用正式去重记录。见 [主动调试说明](docs/DEBUGGING.md)。
+
+## 项目结构
+
+```text
+config.toml              唯一日常配置入口
+.github/workflows/       定时/手工运行
+docs/                    配置、提示、运行、架构与维护
+app/
+  prompts/               六项模型任务的中文提示
+  notebooks/             主动调试入口
+  arxivdaily/            核心代码
+  scripts/               本地启动、状态发布、公开文件检查
+  tools/                 可选开发工具
+  tests/                 回归测试
+  fixtures/              离线样本与固定来源清单
+  pyproject.toml         Python 包与运行依赖
+  requirements.lock     锁定依赖
 ```
 
-检查 Git 的已跟踪和未忽略候选文件，发现秘钥形态或误加入的私有运行目录时退出失败，输出仅含文件名。`.secrets/`、`.env*`、依赖、运行状态、临时文件、构建产物和原始论文均不进入代码仓库；正式状态由专用 `arxivdaily-state` 分支保存。
+本机依赖 `.runtime/`、正式状态 `.state/`、隔离试跑 `runs/`、临时输出 `tmp/` 位于 `app/`，不进入代码仓库。凭证只通过环境变量或 Actions Secrets 提供。
 
-新增应用代码采用 [MIT](LICENSE)。复用的 Paper Digest 固定源码保留其[原 MIT 许可](app/arxivdaily/_vendor/paper_digest/LICENSE)及逐文件来源哈希；没有启用上游 Pages、翻译模型或维护工作流。
+参见 [维护说明](docs/DEVELOPMENT.md)、[架构与行为](docs/ARCHITECTURE.md)、[第三方来源](docs/THIRD-PARTY.md)。新增代码采用 [MIT](LICENSE)。

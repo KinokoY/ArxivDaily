@@ -13,19 +13,19 @@ def test_workflow_config_generation_preserves_committed_custom_config(tmp_path, 
     steps = workflow["jobs"]["digest"]["steps"]
     prepare = next(step["run"] for step in steps if step["name"] == "Prepare public configuration")
     script = prepare.split("python - <<'PY'\n", 1)[1].split("\nPY", 1)[0]
-    monkeypatch.chdir(tmp_path)
+    app = tmp_path / "app"
+    app.mkdir()
+    monkeypatch.chdir(app)
     monkeypatch.setenv("REPOSITORY", "reader/digest")
-    (tmp_path / "config.example.toml").write_text((root / "app/config.example.toml").read_text(encoding="utf-8"), encoding="utf-8")
-    exec(script, {})
+    output = tmp_path / "github-output"
+    monkeypatch.setenv("GITHUB_OUTPUT", str(output))
     config = tmp_path / "config.toml"
-    assert tomllib.loads(config.read_text(encoding="utf-8"))["archive"]["public_base_url"] == "https://raw.githubusercontent.com/reader/digest/arxivdaily-state"
+    config.write_text('[archive]\npublic_base_url = ""\nstate_branch = "reader-state"\n', encoding="utf-8")
+    exec(script, {})
+    assert tomllib.loads(config.read_text(encoding="utf-8"))["archive"]["public_base_url"] == "https://raw.githubusercontent.com/reader/digest/reader-state"
+    assert output.read_text(encoding="utf-8").strip() == "state_branch=reader-state"
     custom = '[archive]\npublic_base_url = "https://example.org/custom-state"\n'
     config.write_text(custom, encoding="utf-8")
-    exec(script, {})
-    assert config.read_text(encoding="utf-8") == custom
-    config.unlink()
-    example = tmp_path / "config.example.toml"
-    example.write_text(custom, encoding="utf-8")
     exec(script, {})
     assert config.read_text(encoding="utf-8") == custom
 

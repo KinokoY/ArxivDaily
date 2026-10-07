@@ -2,7 +2,7 @@
 .state/
 tmp/
 runs/
-reports/run.json
+reports/
 __pycache__/
 .pytest_cache/
 *.egg-info/

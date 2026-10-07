@@ -19,7 +19,9 @@ def check(root: Path, *, tracked_only: bool = False) -> tuple[int, list[str]]:
     if not tracked_only:
         command += ["--others", "--exclude-standard"]
     paths = subprocess.run(command, cwd=root, check=True, capture_output=True).stdout
-    names = sorted(set(name.decode("utf-8") for name in paths.split(b"\0") if name))
+    deleted = subprocess.run(["git", "ls-files", "-z", "--deleted"], cwd=root, check=True, capture_output=True).stdout
+    removed = {name.decode("utf-8") for name in deleted.split(b"\0") if name}
+    names = sorted(set(name.decode("utf-8") for name in paths.split(b"\0") if name) - removed)
     findings = []
     for name in names:
         relative = Path(name)

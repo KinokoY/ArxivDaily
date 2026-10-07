@@ -8,6 +8,7 @@ import pytest
 from arxivdaily.llm import AnalysisClient, validate_summary
 from arxivdaily.models import Body, Decision, Evidence, Paper, ProcessingError, Section, Summary
 from arxivdaily.state import PersistenceError
+from arxivdaily.prompts import default_prompt_directory
 
 
 class FakeResponse:
@@ -96,6 +97,64 @@ def test_summary_max_and_grounded_numbers(monkeypatch):
     result.experiments = "留出数据的 Dice 为 0.99。"
     with pytest.raises(ProcessingError, match="number_unverified"):
         validate_summary(result, body())
+
+
+@pytest.mark.parametrize("task", ["selection", "review", "summary", "translation", "title_translation", "section_notes"])
+def test_user_edited_prompt_reaches_the_task_request(tmp_path, monkeypatch, task):
+    monkeypatch.setenv("TEST_LLM_KEY", "secret-canary")
+    for path in default_prompt_directory().glob("*.md"):
+        (tmp_path / path.name).write_text(path.read_text(encoding="utf-8"), encoding="utf-8")
+    target = tmp_path / f"{task}.md"
+    target.write_text(target.read_text(encoding="utf-8") + "\nUSER EDIT MARKER", encoding="utf-8")
+    cfg = config()
+    cfg["prompts"] = {"directory": str(tmp_path)}
+    responses = {"selection": decision_json(), "summary": summary_json(),
+                 "review": decision_json(review_evidence=[{"field": "method", "locator": "section:Method", "quote": body().sections[0].text, "source_url": body().source_url}]),
+                 "translation": {"title_zh": "中文标题", "abstract_zh": "中文完整摘要"},
+                 "title_translation": {"title_zh": "中文标题", "abstract_zh": ""}}
+    if task == "section_notes":
+        cfg = {**config(input_chars=4500), "prompts": cfg["prompts"]}
+        b = body()
+        for section in b.sections:
+            section.text += " Additional text for a long paper. " * 50
+        planner = AnalysisClient(cfg, FakeClient([]))
+        chunks = planner._chunks(b)
+        fake = FakeClient([FakeResponse({"notes": [{"locator": c[0]["locator"], "quote": c[0]["text"][:100], "kind": "other"}]}) for c in chunks])
+        analysis = AnalysisClient(cfg, fake)
+        analysis._body_context(b)
+    else:
+        fake = FakeClient([FakeResponse(responses[task])])
+        analysis = AnalysisClient(cfg, fake)
+        if task == "selection":
+            analysis.select(paper(), ["medical_reasoning"])
+        elif task == "review":
+            analysis.review(paper(), body(), Decision.from_dict(decision_json(status="uncertain", uncertainty=["need method evidence"])))
+        elif task == "summary":
+            analysis.summarize(paper(), body())
+        else:
+            analysis.translate(paper(), title_only=task == "title_translation")
+    assert fake.calls
+    assert all("USER EDIT MARKER" in call[1]["json"]["messages"][0]["content"] for call in fake.calls)
+
+
+def test_section_prompt_edit_invalidates_cached_evidence(monkeypatch):
+    monkeypatch.setenv("TEST_LLM_KEY", "secret-canary")
+    b = body()
+    for section in b.sections:
+        section.text += " Additional text for a long paper. " * 50
+    cfg = config(input_chars=4500)
+    planner = AnalysisClient(cfg, FakeClient([]))
+    chunks = planner._chunks(b)
+    responses = [FakeResponse({"notes": [{"locator": c[0]["locator"], "quote": c[0]["text"][:100], "kind": "other"}]}) for c in chunks]
+    fake = FakeClient(responses * 2)
+    analysis = AnalysisClient(cfg, fake)
+    analysis._body_context(b)
+    assert len(fake.calls) == len(chunks)
+    analysis._body_context(b)
+    assert len(fake.calls) == len(chunks)
+    analysis.prompts["section_notes"] += "\nA changed extraction requirement"
+    analysis._body_context(b)
+    assert len(fake.calls) == len(chunks) * 2
 
 
 def test_summary_rejects_wrong_source_and_unqualified_body():

@@ -10,12 +10,14 @@ import sys
 import uuid
 
 from .collection import Collector
-from .config import load_config
+from .config import default_config_path, load_config
 from .delivery import MockDelivery, ServerChan
 from .fulltext import FulltextReader
 from .llm import AnalysisClient
 from .models import ProcessingError, normalize_id, parse_time
 from .pipeline import Pipeline
+from .prompts import load_prompts, prompt_fingerprint
+from .rules import match_rules
 from .simulation import FixtureAnalysis, FixtureReader, load_fixture
 from .state import SecretScrubber, StateStore, command_publisher
 
@@ -23,6 +25,12 @@ from .state import SecretScrubber, StateStore, command_publisher
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description="ArxivDaily: 摘要规则、两角色终筛、正文证据与每日简报")
     subs = result.add_subparsers(dest="command", required=True)
+    check = subs.add_parser("config", help="check effective configuration and prompts without external requests")
+    check.add_argument("--config", default=None)
+    check.add_argument("--show", action="store_true", help="print all effective settings")
+    check.add_argument("--abstract", default=None, help="preview keyword rule hits for this abstract")
+    check.add_argument("--title", default="")
+    check.add_argument("--categories", nargs="*", default=None)
     for command in ("run", "simulate", "replay"):
         p = subs.add_parser(command)
         p.add_argument("--config", default=None)
@@ -33,7 +41,7 @@ def parser() -> argparse.ArgumentParser:
         p.add_argument("--live", action="store_true", help="enable actual arXiv/fulltext/paid model requests")
         p.add_argument("--send", action="store_true", help="explicit actual delivery; implies --live")
         p.add_argument("--checkpoint-command", default=None, help="synchronous publisher command or JSON argv")
-        p.add_argument("--report", default="reports/run.json")
+        p.add_argument("--report", default="tmp/reports/run.json")
         p.add_argument("--now", default=None, help="timezone-aware fixture clock (offline only)")
         p.add_argument("--mock-status", choices=["confirmed", "failed", "unknown", "queued"], default="confirmed")
         p.add_argument("--promote", nargs="*", default=[], help="explicit promotion of existing selected light records; requires --send")
@@ -46,15 +54,42 @@ def parser() -> argparse.ArgumentParser:
     return result
 
 
+def check_configuration(args) -> int:
+    try:
+        path = Path(args.config).resolve() if args.config else default_config_path()
+        config = load_config(path)
+        prompts = load_prompts(config)
+        output = {"status": "ok", "config": str(path), "workflow": config["workflow"]["mode"],
+                  "enabled_routes": [name for name, clauses in config["rules"]["routes"].items() if clauses],
+                  "prompt_fingerprints": {task: prompt_fingerprint(prompts, task) for task in prompts},
+                  "external_requests": False}
+        if args.show:
+            output["effective_config"] = config
+        if args.abstract is not None:
+            from .models import Paper
+            paper = Paper("2501.00001v1", args.title or "Rule preview", args.abstract,
+                          args.categories if args.categories is not None else config["rules"]["categories"],
+                          "2025-01-01T00:00:00+00:00", "2025-01-01T00:00:00+00:00")
+            output["rule_hits"] = match_rules(paper, config)
+        print(json.dumps(output, ensure_ascii=False, indent=2))
+        return 0
+    except (ValueError, OSError) as exc:
+        print(json.dumps({"status": "failed", "error": str(exc)}, ensure_ascii=False))
+        return 2
+
+
 def main(argv=None) -> int:
     args = parser().parse_args(argv)
+    if args.command == "config":
+        return check_configuration(args)
     app_dir = Path(__file__).resolve().parents[1]
     report_path = Path(args.report).resolve()
     scrubber = SecretScrubber()
     report = {}
     code = 0
     try:
-        config = load_config(args.config)
+        config = load_config(args.config if args.config else default_config_path())
+        load_prompts(config)  # Fail before collection or paid requests if a prompt is missing.
         if args.workflow:
             config["workflow"]["mode"] = args.workflow
         if args.translation_provider:

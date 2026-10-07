@@ -13,6 +13,8 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 DEFAULTS = {
     "workflow": {"mode": "summary"},
+    "prompts": {"directory": ""},
+    "selection": {"route_priority": ["medical_reasoning", "medical_objective", "general_rl", "transferable_objective", "general_reasoning"]},
     "translation": {
         "provider": "llm", "base_url": "https://api-free.deepl.com",
         "api_key_env": "TRANSLATION_API_KEY", "timeout": 30, "attempts": 3,
@@ -111,6 +113,14 @@ def _https_base_url(value: object, name: str) -> None:
         raise ValueError(f"{name} must be a public HTTPS base URL")
 
 
+def default_config_path() -> Path:
+    """Use the repository configuration regardless of the caller's directory."""
+    path = Path(__file__).resolve().parents[2] / "config.toml"
+    if not path.is_file():
+        raise ValueError("configuration not found; supply --config PATH")
+    return path
+
+
 def load_config(path: str | Path | None = None) -> dict:
     """Load TOML over defaults; only names of environment secrets are accepted."""
     supplied = {}
@@ -118,6 +128,18 @@ def load_config(path: str | Path | None = None) -> dict:
         with Path(path).open("rb") as handle:
             supplied = tomllib.load(handle)
     config = _merge(DEFAULTS, supplied)
+    branch = config["archive"]["state_branch"]
+    if not isinstance(branch, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._/-]*", branch) or ".." in branch or branch.endswith("/"):
+        raise ValueError("archive.state_branch must be a valid branch name")
+    directory = config["prompts"]["directory"]
+    if not isinstance(directory, str):
+        raise ValueError("prompts.directory must be a directory path")
+    if directory:
+        base = Path(path).resolve().parent if path is not None else Path.cwd()
+        config["prompts"]["directory"] = str((base / directory).resolve())
+    priority = config["selection"]["route_priority"]
+    if not isinstance(priority, list) or any(not isinstance(r, str) for r in priority) or len(priority) != 5 or set(priority) != set(DEFAULTS["selection"]["route_priority"]):
+        raise ValueError("selection.route_priority must list each of the five selection routes exactly once")
     if config["workflow"]["mode"] not in {"summary", "translation"}:
         raise ValueError("workflow.mode must be summary or translation")
     translation = config["translation"]
