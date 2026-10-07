@@ -271,9 +271,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Visual grounding models can enhance radiology workflows by linking report findings to image regions.",
+          "We introduce an automated pipeline that converts these routine clinical annotations into large-scale phrase-region supervision for 3D visual grounding.",
+          "This produces phrase-mask-volume datasets without requiring additional radiologist annotation.",
+          "We further introduce LocusCT, a 3D visual grounding model trained on this dataset, which achieves hit rates of 0.725 on LocusBench-Onc and 0.773 on LocusBench-ED, substantially outperforming comparator models."
+        ],
+        "dpo_is_method": false,
+        "reason": "论文直接面向腹部CT中的3D视觉定位，将报告短语与体素级掩码关联，属于医学影像中由文本/报告到像素/体素掩码的定位任务。方法上提出从常规PACS 2D标注自动构建105K短语-掩码-体积三元组的管线，发布LocusBench-Onc与LocusBench-ED基准，并提出LocusCT模型，具有数据、评测与模型层面的实质贡献。虽然不涉及RL/DPO与显式推理链，但与医学推理分割/空间定位到掩码机制高度相关，故按医学推理路线full入选。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 88,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "未确认LocusCT是否包含超出常规视觉定位训练目标的推理或语言对齐机制",
+          "未确认所生成的短语-掩码-体积监督是否覆盖需要多步空间或隐含推理的查询",
+          "摘要未提供跨机构泛化与报告标注噪声影响的系统评估"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Visual grounding models can enhance radiology workflows by linking report findings to image regions. This is particularly valuable for 3D CT, where findings often occupy a tiny fraction of the volume. Training 3D grounding models requires large sets of paired phrases and regions, and building such datasets is expensive, requiring radiologists to annotate images by hand. We posit that this supervision is already created implicitly during routine reporting, as radiologists frequently place 2D annotations (e.g., distance measurement, arrows) on key images to make measurements and to support report interpretation. We introduce an automated pipeline that converts these routine clinical annotations into large-scale phrase-region supervision for 3D visual grounding. The pipeline links each annotation to the corresponding finding in the report through metadata matching, then uses a promptable 3D segmentation model to convert the 2D annotation into a volumetric mask. This produces phrase-mask-volume datasets without requiring additional radiologist annotation. Applied to a single institution's clinical picture archiving and communication system (PACS), our approach generated 105K phrase-mask-volume triplets from 59K abdominal CT exams. We also introduce two abdominal CT grounding benchmarks, LocusBench-Onc and LocusBench-ED, which comprise 240 oncology and 260 emergency-department radiologist-reviewed phrase-mask-volume triplets, respectively, with the latter spanning 13 distinct categories such as appendicitis, hematoma, and hernia. We further introduce LocusCT, a 3D visual grounding model trained on this dataset, which achieves hit rates of 0.725 on LocusBench-Onc and 0.773 on LocusBench-ED, substantially outperforming comparator models. These results show that routine PACS annotations are a scalable, previously unused source of supervision for 3D visual grounding.",
         "authors": [
@@ -295,16 +320,12 @@
         "updated": "2026-10-02T22:03:36+00:00",
         "version_id": "2610.04095v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-07T09:52:55.126385+00:00",
-        "run_id": "20261007T095255Z-2c43e3e2",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.04095v1"
       ]
