@@ -241,9 +241,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Editable 3D models of field-grown crops support high-throughput phenotyping and in silico breeding trials, but building them from scanned point clouds requires organ-level segmentation and fitting.",
+          "A multimodal vision-language model (VLM) annotates leaf midlines in rendered orthographic views.",
+          "These results show that VLM annotations become usable organ-level measurements when downstream geometric stages can correct them."
+        ],
+        "dpo_is_method": false,
+        "reason": "The abstract describes an automated pipeline for 3D modeling of field-grown maize from point clouds: a VLM annotates leaf midlines, then deterministic geometry and NURBS fitting reconstruct organs. It is plant phenotyping/3D reconstruction, not medical imaging, not language-conditioned reasoning segmentation, and it does not propose RL or DPO as a method contribution. The medical_reasoning rule hit appears to be a false positive from segmentation/annotation terms.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 10,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Editable 3D models of field-grown crops support high-throughput phenotyping and in silico breeding trials, but building them from scanned point clouds requires organ-level segmentation and fitting. Procedural generators can turn an organ-level parameter set into an analysis-suitable 3D model, but obtaining that set requires hours of manual tuning per plant or segmentation models trained on species-specific labels. We present an automated pipeline that reconstructs procedural maize models from raw 3D point clouds without manual tuning or species-specific training data. A multimodal vision-language model (VLM) annotates leaf midlines in rendered orthographic views. Deterministic geometric algorithms back-project the annotations onto the point cloud, merge them into 3D leaves by cross-view consensus, and grow the midlines to full blades on an orientation-weighted surface graph. Measured organ parameters populate a plant descriptor for a Non-Uniform Rational B-Spline (NURBS)-based procedural model generator. Each leaf surface is then refined against its scan points by differentiable NURBS fitting. The pipeline reached a median whole-plant Chamfer distance of 5.4 mm on 100 genotypically diverse field-grown maize plants from the MaizeField3D dataset. The reconstructions were closer to the scans than those of an earlier semi-automated pipeline based on manual annotations. The pipeline recovered 1,017 of 1,023 (99.4%) curated reference leaves at an intersection-over-union of at least 0.5 without using those labels as input. These results show that VLM annotations become usable organ-level measurements when downstream geometric stages can correct them. This makes automated generation of editable 3D plant assets feasible at the scale of modern phenotyping experiments.",
         "authors": [
@@ -261,15 +281,11 @@
         "updated": "2026-10-02T15:41:28+00:00",
         "version_id": "2610.03468v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-07T09:52:55.126385+00:00",
-        "run_id": "20261007T095255Z-2c43e3e2",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.03468v1"
       ]
