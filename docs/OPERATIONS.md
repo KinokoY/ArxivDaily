@@ -2,8 +2,8 @@
 
 ## 你需要的两个归档
 
-- [总索引](https://github.com/KinokoY/ArxivDaily/blob/arxivdaily-state/archive/papers.md)：archive/papers.md，列首次收集日期（北京时间）、英文/中文标题和链接，按基础 arXiv ID 去重。覆盖规则命中的候选，含模型拒绝者，不是已推送列表。标题翻译失败先显示“待翻译”。
-- [每日简报](https://github.com/KinokoY/ArxivDaily/tree/arxivdaily-state/archive)：archive/YYYY-MM-DD.md 为当日汇总；archive/YYYY/MM/DD/<digest-id>.md 为每次发送的独立快照。同目录的 notification.md 为通知正文，JSON 为关联清单。已发送快照不覆盖，恢复补发建立新快照。
+- [总索引](../../../blob/arxivdaily-state/archive/papers.md)：archive/papers.md，列首次收集日期（北京时间）、英文/中文标题和链接，按基础 arXiv ID 去重。覆盖规则命中的候选，含模型拒绝者，不是已推送列表。标题翻译失败先显示“待翻译”。
+- [每日简报](../../../tree/arxivdaily-state/archive)：archive/YYYY-MM-DD.md 为当日汇总；archive/YYYY/MM/DD/<digest-id>.md 为每次发送的独立快照。同目录的 notification.md 为通知正文，JSON 为关联清单。已发送快照不覆盖，恢复补发建立新快照。
 
 这些文件在 arxivdaily-state 分支，README 已提供直接链接。本机只有正式分支 checkout 到 app/.state 时才有对应远端状态；离线与未发送的真实试跑位于 app/runs/dry-*/。
 

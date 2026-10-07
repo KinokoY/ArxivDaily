@@ -13,11 +13,13 @@
 
 ## 阅读论文与历史
 
-- [总论文索引](https://github.com/KinokoY/ArxivDaily/blob/arxivdaily-state/archive/papers.md)：英文/中文标题、链接与首次收集日期。包含规则命中的候选，也包含未通过模型终筛的论文。
-- [每日简报归档](https://github.com/KinokoY/ArxivDaily/tree/arxivdaily-state/archive)：打开 `YYYY-MM-DD.md` 阅读当天内容；`YYYY/MM/DD/` 下是每次发送的独立快照。
-- [Actions 运行记录](https://github.com/KinokoY/ArxivDaily/actions/workflows/daily-digest.yml)：查看运行结果、错误及脱敏报告。
+- [总论文索引](../../blob/arxivdaily-state/archive/papers.md)：英文/中文标题、链接与首次收集日期。包含规则命中的候选，也包含未通过模型终筛的论文。
+- [每日简报归档](../../tree/arxivdaily-state/archive)：打开 `YYYY-MM-DD.md` 阅读当天内容；`YYYY/MM/DD/` 下是每次发送的独立快照。
+- [Actions 运行记录](../../actions/workflows/daily-digest.yml)：查看运行结果、错误及脱敏报告。
 
 索引、简报和机器状态由程序自动更新到 `arxivdaily-state`，无需手工编辑。自动更新步骤见 [运行与恢复](docs/OPERATIONS.md)。
+
+这些链接在 GitHub 上指向当前仓库，fork 后会指向自己的归档与 Actions。`archive.public_base_url` 默认留空，Actions 按当前仓库自动生成；首次运行前归档链接可能尚不存在。fork 建议只复制 main 分支，避免继承上游的去重和投递状态，并在自己的仓库配置 Secrets、启用 Actions。已有 fork 请同步 main；旧配置中的固定归档地址需改为空字符串。
 
 ## 本机检查和试跑
 

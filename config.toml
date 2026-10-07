@@ -351,7 +351,9 @@ body_bytes = 30000
 quota_timezone = "Asia/Shanghai"
 query_counts_quota = false
 
-# 正式状态和公开历史分支。Actions 从这里读取分支名；更换已有正式分支需迁移状态，并同步调整 public_base_url。
+# 正式状态和公开历史分支。Actions 从这里读取分支名；更换已有正式分支需迁移状态。
+# 留空时 Actions 按当前 owner/repo 和 state_branch 生成地址，fork 无需改用户名。
+# 本地 --send 需显式填写自己仓库的公开归档地址。
 [archive]
-public_base_url = "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state"
+public_base_url = ""
 state_branch = "arxivdaily-state"

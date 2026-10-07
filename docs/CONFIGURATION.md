@@ -89,4 +89,4 @@ medical_reasoning 对应 `MED AND SEG AND (REASON OR VLM)`。忽略大小写，�
 
 抓取、模型/重试、正文、推送等高级设置位于配置后半部分。更换模型、端点或价格时核实费用并将 `llm.pricing.policy` 改为 custom。
 
-凭证字段只填环境变量名称。`archive.state_branch` 由 Actions 读取，现有分支 arxivdaily-state；public_base_url 需匹配实际公开归档。定时调度由 `.github/workflows/daily-digest.yml` 管理。
+凭证字段只填环境变量名称。`archive.state_branch` 由 Actions 读取，现有分支 arxivdaily-state。`archive.public_base_url` 默认留空，Actions 在当次工作副本中按 `${{ github.repository }}` 和状态分支生成 `https://raw.githubusercontent.com/<owner>/<repo>/<state_branch>`，不把生成值提交回 main；fork 自动使用自己的仓库。显式填写时保留原值，需匹配实际公开归档；已有 fork 若还填着上游地址，请改为空字符串。本地 `--send` 不执行 Actions 准备步骤，需通过自己的配置文件提供完整地址。定时调度由 `.github/workflows/daily-digest.yml` 管理。

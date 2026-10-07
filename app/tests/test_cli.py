@@ -3,6 +3,7 @@ from pathlib import Path
 import tomllib
 
 import yaml
+import pytest
 
 from arxivdaily.cli import main
 
@@ -28,6 +29,32 @@ def test_workflow_config_generation_preserves_committed_custom_config(tmp_path, 
     config.write_text(custom, encoding="utf-8")
     exec(script, {})
     assert config.read_text(encoding="utf-8") == custom
+
+
+@pytest.mark.parametrize("repository", ["owner/upstream", "classmate/daily"])
+def test_committed_config_generates_archive_url_for_current_repository(tmp_path, monkeypatch, repository):
+    """Exercise the published default config, not just a synthetic empty URL."""
+    import shutil
+    from arxivdaily.config import load_config
+    root = Path(__file__).resolve().parents[2]
+    source = (root / "config.toml").read_text(encoding="utf-8")
+    assert tomllib.loads(source)["archive"]["public_base_url"] == ""
+    config = tmp_path / "config.toml"
+    config.write_text(source, encoding="utf-8")
+    app = tmp_path / "app"
+    app.mkdir()
+    shutil.copytree(root / "app/prompts", app / "prompts")
+    workflow = yaml.load((root / ".github/workflows/daily-digest.yml").read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+    prepare = next(step["run"] for step in workflow["jobs"]["digest"]["steps"] if step["name"] == "Prepare public configuration")
+    script = prepare.split("python - <<'PY'\n", 1)[1].split("\nPY", 1)[0]
+    monkeypatch.chdir(app)
+    monkeypatch.setenv("REPOSITORY", repository)
+    monkeypatch.setenv("GITHUB_OUTPUT", str(tmp_path / "github-output"))
+    exec(script, {})
+    cfg = load_config(config)
+    assert cfg["archive"]["public_base_url"] == f"https://raw.githubusercontent.com/{repository}/{cfg['archive']['state_branch']}"
+    assert cfg["presentation"] == tomllib.loads(source)["presentation"]
+    assert tomllib.loads((root / "config.toml").read_text(encoding="utf-8"))["archive"]["public_base_url"] == ""
 
 
 def test_default_dry_run_cannot_write_normal_state(tmp_path):
