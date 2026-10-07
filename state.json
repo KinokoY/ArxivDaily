@@ -82,9 +82,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We present CineMR, a tool-augmented VLM that invokes cardiac image-analysis tools and integrates their outputs into interleaved reasoning for quantitative CMR assessment.",
+          "CineMR is trained with supervised fine-tuning (SFT) on tool-interaction traces followed by Group Relative Policy Optimization (GRPO) with conditional tool-use rewards.",
+          "Correct tool invocation reaches 99.8% after GRPO, up from 78.9% after SFT.",
+          "Live tool outputs improve ventricular measurement accuracy by 20.4--23.7% over direct model predictions, and removing all tools reduces pass@1 from 35.9% to 27.9%."
+        ],
+        "dpo_is_method": false,
+        "reason": "Real method contribution: CineMR is a tool-augmented medical VLM trained with SFT followed by GRPO using conditional tool-use rewards, with reported gains on a cine CMR benchmark. It is relevant to medical reasoning with RL, but the task is quantitative CMR assessment and tool-integrated VQA, not reasoning segmentation to pixel masks; segmentation tools are auxiliary. No DPO is used, and there is no theoretical or transfer evidence for segmentation objectives.",
+        "review_evidence": [],
+        "rl_is_method": true,
+        "route": "medical_reasoning",
+        "score": 68,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether the reasoning involves spatial/location reasoning to pixel masks or only tool selection and measurement integration.",
+          "Whether segmentation tools are a core method contribution to mask-level reasoning or external analysis utilities.",
+          "Whether GRPO conditional tool-use rewards transfer to medical segmentation or reasoning segmentation objectives."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Cardiovascular magnetic resonance (CMR), including cine imaging, is a reference standard for the noninvasive assessment of cardiac morphology and ventricular function. Cine CMR interpretation integrates qualitative visual assessment with quantitative measurements of ventricular volumes, ejection fraction, myocardial mass, wall thickness, and regional wall motion. Current medical vision-language models (VLMs) cannot reliably derive quantitative measurements from multidimensional cine images without analysis tools. We present CineMR, a tool-augmented VLM that invokes cardiac image-analysis tools and integrates their outputs into interleaved reasoning for quantitative CMR assessment. We also construct a multi-cohort visual question answering benchmark covering quantitative metric extraction, multiclass diagnosis, and differential diagnosis, together with tools for segmentation, phase selection, volumetry, morphometry, and regional wall motion analysis. CineMR is trained with supervised fine-tuning (SFT) on tool-interaction traces followed by Group Relative Policy Optimization (GRPO) with conditional tool-use rewards. On the multi-cohort cine CMR benchmark, CineMR achieves 35.9% pass@1 and 58.9% pass@4, compared with 1.5% pass@1 for the Qwen3-VL-8B backbone and 0.0% and 7.0% pass@1 for LLaVA-Med v1.5 and MedGemma-4B, respectively. Correct tool invocation reaches 99.8% after GRPO, up from 78.9% after SFT. Live tool outputs improve ventricular measurement accuracy by 20.4--23.7% over direct model predictions, and removing all tools reduces pass@1 from 35.9% to 27.9%. These results highlight the importance of reliable tool use for quantitative cine CMR reasoning and support CineMR as a promising approach for assistive cardiac image assessment. Code, benchmark resources, and model weights are available at https://github.com/AI-MIND-Lab/CineMR.",
         "authors": [
@@ -108,16 +133,12 @@
         "updated": "2026-10-05T01:42:44+00:00",
         "version_id": "2610.01166v2"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning",
         "general_rl"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-07T09:52:55.126385+00:00",
-        "run_id": "20261007T095255Z-2c43e3e2",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.01166v2"
       ]
