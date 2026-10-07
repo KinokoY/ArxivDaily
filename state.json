@@ -499,11 +499,13 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-07T09:52:55.126385+00:00",
-        "run_id": "20261007T095255Z-2c43e3e2",
-        "stage": "translation"
+      "title_zh": "SBF-SEM中三维树突实例分割的全自动管线",
+      "translation": {
+        "abstract_zh": "在连续块面扫描电子显微镜（SBF-SEM）中，对单个树突进行精确的三维（3D）重建对于量化大脑中的结构可塑性至关重要，但大规模人工标注不可行。我们提出了一条用于3D树突实例分割的全自动管线，将降采样切片上的YOLOv6引导的Segment Anything Model（SAM）提示、迭代二维掩膜细化、随机森林3D实例连接，以及在原生分辨率下使用nnU-Net进行的实例感知高分辨率细化统一为一个系统，推理时无需人工提示。将该管线应用于来自对照大鼠和匹罗卡品诱导癫痫大鼠的海马CA1 SBF-SEM数据集，我们的管线重建出连贯且分离良好的树突，具有较高的语义准确性（Dice 0.93和0.91），并在对照组织上展现出强大的实例级性能，而对更具挑战性的癫痫组织的分析则表明，密集区域中的实例识别是主要的剩余局限。高分辨率细化阶段恢复了纤细的树突突起，为下游的树突棘水平分析提供了基础。代码可在https://github.com/ZE-WEN/dendrite-3d-instance-seg获取。",
+        "title_zh": "SBF-SEM中三维树突实例分割的全自动管线"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.03332v1"
       ]
