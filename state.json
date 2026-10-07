@@ -385,7 +385,8 @@
     },
     "2610.02946": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "title_translation": 1
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -442,6 +443,11 @@
         "transferable_objective"
       ],
       "stage": "rejected",
+      "stage_started": {
+        "at": "2026-10-07T09:52:55.126385+00:00",
+        "run_id": "20261007T095255Z-2c43e3e2",
+        "stage": "title_translation"
+      },
       "versions": [
         "2610.02946v1"
       ]
