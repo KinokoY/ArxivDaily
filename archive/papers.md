@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-10-07 | Scaling 3D Visual Grounding in Abdominal CT | 待翻译 | [arXiv 2610.04095v1](https://arxiv.org/abs/2610.04095v1) |
+| 2026-10-07 | Scaling 3D Visual Grounding in Abdominal CT | 在腹部CT中扩展3D视觉定位 | [arXiv 2610.04095v1](https://arxiv.org/abs/2610.04095v1) |
 | 2026-10-07 | A Vision-Language Model (VLM)-based Pipeline for End-to-End Procedural Modeling of Field-Grown Maize from Point Clouds | 待翻译 | [arXiv 2610.03468v1](https://arxiv.org/abs/2610.03468v1) |
 | 2026-10-07 | A Fully Automatic Pipeline for 3D Dendrite Instance Segmentation in SBF-SEM | 待翻译 | [arXiv 2610.03332v1](https://arxiv.org/abs/2610.03332v1) |
 | 2026-10-07 | When Predicting Nothing Beats SAM 3: Revisiting Evaluation in Video Object Segmentation | 待翻译 | [arXiv 2610.02946v1](https://arxiv.org/abs/2610.02946v1) |
