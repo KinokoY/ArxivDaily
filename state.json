@@ -1,7 +1,7 @@
 {
   "chains": {
     "20261007T095255Z-2c43e3e2-0bd2141e7d91": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-07T09:52:55.126385+00:00"
     }
   },
@@ -13,16 +13,20 @@
     "2026-10-07": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261007T095255Z-2c43e3e2-0bd2141e7d91"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
     "20261007T095255Z-2c43e3e2-0bd2141e7d91": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/07/20261007T095255Z-2c43e3e2-0bd2141e7d91.md",
+      "attempt_run": "20261007T095255Z-2c43e3e2",
+      "attempt_started": "2026-10-07T09:59:07.222646+00:00",
       "chain_root": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "chain_roots": [
         "20261007T095255Z-2c43e3e2-0bd2141e7d91"
@@ -196,6 +200,7 @@
         }
       ],
       "notification_hash": "6b2dd741043e28cd64a56b2af1a942a6b557ecd693d36407dd8210f1a47ffb84",
+      "quota_day": "2026-10-07",
       "recovery_of": [],
       "rendered": {
         "2610.01166": "rendered_inline_translation",
@@ -205,7 +210,7 @@
       },
       "run_id": "20261007T095255Z-2c43e3e2",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -357,6 +362,7 @@
       ]
     },
     "2610.01166": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -385,7 +391,18 @@
           "Whether GRPO conditional tool-use rewards transfer to medical segmentation or reasoning segmentation objectives."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+      "events": [
+        {
+          "at": "2026-10-07T09:59:07.222646+00:00",
+          "digest_id": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
       "intended_tier": "translation",
@@ -413,6 +430,7 @@
         "updated": "2026-10-05T01:42:44+00:00",
         "version_id": "2610.01166v2"
       },
+      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -510,6 +528,7 @@
       ]
     },
     "2610.02494": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -536,7 +555,18 @@
           "未确认其连续坐标回归与正则先验是否可与 DPO/RL 方法结合。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+      "events": [
+        {
+          "at": "2026-10-07T09:59:07.222646+00:00",
+          "digest_id": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
       "intended_tier": "translation",
@@ -558,6 +588,7 @@
         "updated": "2026-10-01T21:16:43+00:00",
         "version_id": "2610.02494v1"
       },
+      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -652,6 +683,7 @@
       ]
     },
     "2610.03332": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -681,7 +713,18 @@
           "Are SAM prompting and iterative refinement stages substantive method contributions or engineering pipeline components?"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+      "events": [
+        {
+          "at": "2026-10-07T09:59:07.222646+00:00",
+          "digest_id": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
       "intended_tier": "translation",
@@ -704,6 +747,7 @@
         "updated": "2026-10-02T14:04:26+00:00",
         "version_id": "2610.03332v1"
       },
+      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -799,6 +843,7 @@
       ]
     },
     "2610.04095": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -827,7 +872,18 @@
           "摘要未提供跨机构泛化与报告标注噪声影响的系统评估"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+      "events": [
+        {
+          "at": "2026-10-07T09:59:07.222646+00:00",
+          "digest_id": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
       "intended_tier": "translation",
@@ -853,6 +909,7 @@
         "updated": "2026-10-02T22:03:36+00:00",
         "version_id": "2610.04095v1"
       },
+      "pending_digest": "20261007T095255Z-2c43e3e2-0bd2141e7d91",
       "presentation_modules": [
         "title",
         "title_translation",
