@@ -1,17 +1,331 @@
 {
   "chains": {},
   "collection": {
-    "initial_floor": "2026-09-30T09:52:55.126385+00:00"
+    "initial_floor": "2026-09-30T09:52:55.126385+00:00",
+    "last_complete_end": "2026-10-07T09:52:55.126385+00:00"
   },
   "daily": {},
   "digests": {},
-  "papers": {},
+  "papers": {
+    "2610.00483": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Representation alignment (REPA) accelerates diffusion transformer training, but its alignment targets are almost exclusively semantic encoders such as DINOv2 and CLIP. Recent analysis points to spatial structure, not global semantics, as the carrier of the alignment effect, yet dense-prediction foundation models trained to predict that structure remain overlooked as REPA targets. In pixel-space diffusion, SAM2, Depth Anything v2, and Metric3D v2 each outperform the DINOv2-only GenEval baseline, with the two geometric teachers leading the segmentation teacher. A flat sum of all four teachers, however, lands below the best single geometric teacher, as semantic and geometric gradients compete for one denoiser projection. We introduce PixelDense, which routes DINOv2 and SAM2 through a semantic projection stream, routes Depth Anything v2 and Metric3D v2 through a geometric projection stream, and adds a weight-space orthogonality penalty that keeps the two streams in disjoint subspaces. All four teachers are frozen during training and dropped at inference. Applied to PixelGen and DeCo with a single recipe, PixelDense improves GenEval, DPG-Bench, and HPS v2.1, raises PixelGen-XXL's GenEval Overall from 0.7927 to 0.8093, and beats every single-teacher and unfactored multi-teacher variant. In partial-noise reconstruction, independent panoptic, depth, and surface-normal probes show up to 53.1% PQ gain and 36.0% depth AbsRel reduction at $τ=0.5$ across COCO and Flickr30K. From random initialization, PixelDense also reaches the baseline's peak GenEval 1.23x faster. In SDEdit editing on PIE-Bench, PixelDense keeps more of the source background and layout at every edit strength, raising background PSNR by up to 2.2 dB.",
+        "authors": [
+          "Lehan Yang",
+          "Daiqing Qi",
+          "Wenhao Zhang",
+          "Avery Li",
+          "Yiqing Yang",
+          "Yifan Li",
+          "Yu Kong",
+          "Haitian Zheng",
+          "Zhifei Zhang",
+          "Zhe Lin",
+          "Varun Jampani",
+          "Sheng Li"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.00483v1",
+        "published": "2026-09-30T18:00:13+00:00",
+        "title": "PixelDense: Dense Prediction as Representation Alignment for Pixel Diffusion",
+        "updated": "2026-09-30T18:00:13+00:00",
+        "version_id": "2610.00483v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.00483v1"
+      ]
+    },
+    "2610.00848": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Vision-language models (VLMs) have emerged as powerful candidates for universal vision backbones, with representative architectures including autoregressive (AR) models and diffusion transformers (DiTs). Yet, adapting them efficiently for all-in-one low-level image restoration remains a challenge. Crucially, the field lacks an understanding of how VLMs organize hidden-layer representations and whether these structurally distinct paradigms share a common geometric organization for pixel-level perception. Such shared organization is a prerequisite for building highly transferable, unified restoration VLMs and adapters. In this paper, we systematically investigate representational similarity across 24 low-level tasks spanning 5 categories. We propose GeoSim, a unified four-level framework that analyzes task-conditioned representations from global similarity, local geometry, sparse feature decomposition, and topological verification perspectives. Our formulation applies to the analysis of hidden states in AR models and feature maps in DiTs across same- and cross-task/model settings. Our results reveal the organizing principles of low-level visual representations while exposing their limits in cross-task and cross-model agreement. Ultimately, GeoSim provides an interpretability lens for probing latent transferability in low-level vision and diagnosing model limitations in task- or model-specific scenarios.",
+        "authors": [
+          "Shao-Jun Xia",
+          "Huixin Zhang",
+          "Zhen Lei",
+          "Anlan Sun",
+          "Yuner Zhang",
+          "Xiaoyang Chen"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.00848v1",
+        "published": "2026-10-01T00:06:17+00:00",
+        "title": "Geometric Similarity in VLM Low-Level Vision Representations",
+        "updated": "2026-10-01T00:06:17+00:00",
+        "version_id": "2610.00848v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.00848v1"
+      ]
+    },
+    "2610.01166": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Cardiovascular magnetic resonance (CMR), including cine imaging, is a reference standard for the noninvasive assessment of cardiac morphology and ventricular function. Cine CMR interpretation integrates qualitative visual assessment with quantitative measurements of ventricular volumes, ejection fraction, myocardial mass, wall thickness, and regional wall motion. Current medical vision-language models (VLMs) cannot reliably derive quantitative measurements from multidimensional cine images without analysis tools. We present CineMR, a tool-augmented VLM that invokes cardiac image-analysis tools and integrates their outputs into interleaved reasoning for quantitative CMR assessment. We also construct a multi-cohort visual question answering benchmark covering quantitative metric extraction, multiclass diagnosis, and differential diagnosis, together with tools for segmentation, phase selection, volumetry, morphometry, and regional wall motion analysis. CineMR is trained with supervised fine-tuning (SFT) on tool-interaction traces followed by Group Relative Policy Optimization (GRPO) with conditional tool-use rewards. On the multi-cohort cine CMR benchmark, CineMR achieves 35.9% pass@1 and 58.9% pass@4, compared with 1.5% pass@1 for the Qwen3-VL-8B backbone and 0.0% and 7.0% pass@1 for LLaVA-Med v1.5 and MedGemma-4B, respectively. Correct tool invocation reaches 99.8% after GRPO, up from 78.9% after SFT. Live tool outputs improve ventricular measurement accuracy by 20.4--23.7% over direct model predictions, and removing all tools reduces pass@1 from 35.9% to 27.9%. These results highlight the importance of reliable tool use for quantitative cine CMR reasoning and support CineMR as a promising approach for assistive cardiac image assessment. Code, benchmark resources, and model weights are available at https://github.com/AI-MIND-Lab/CineMR.",
+        "authors": [
+          "Kunyang Li",
+          "Hai Nguyen",
+          "Joshua Lowe",
+          "Chenguang Zhao",
+          "Peace C. Madueme",
+          "Mehdi Hedjazi Moghari",
+          "Mubarak Shah",
+          "Pegah Khosravi",
+          "Yuzhang Shang"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.01166v2",
+        "published": "2026-10-01T06:43:42+00:00",
+        "title": "CineMR: Tool-Integrated Vision-Language Reasoning for Quantitative Cardiac MRI Assessment",
+        "updated": "2026-10-05T01:42:44+00:00",
+        "version_id": "2610.01166v2"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "general_rl"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.01166v2"
+      ]
+    },
+    "2610.01286": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Recent depth foundation models like Depth Anything 3 (DA3) achieve remarkable multi-view depth estimation but assume static 3D scenes, limiting their applicability to real-world dynamic environments. Existing training-free 4D methods like Easi3R and VGGT4D rely on correspondence-trained backbones whose attention encodes cross-frame matching, a property absent in depth-only models like DA3. We present Dyna3, a training-free framework that extends DA3 for 4D dynamic scene reconstruction without any fine-tuning. Our key insight is that DA3's cross-view features, though trained only for depth consistency, implicitly encode motion-discriminative signals when combined with best-match feature search across frames. Its static surfaces find consistent matches globally, while dynamic objects cannot. We further adopt vision-language models (VLM) to automatically generate scene-specific semantic prompts for SAM 3, enabling precise instance-level segmentation that distinguishes which objects move from what objects exist. For reconstruction, we decouple the scene into a cross-frame aligned static background and per-frame dynamic point clouds. Experiments on four datasets demonstrate that Dyna3 surpasses correspondence-trained methods with +5.5pp J-Mean over state-of-the-art VGGT4D on dynamic object segmentation, while achieving up to 13x faster pose estimation and 3x faster 4D reconstruction with 4 to 8x lower memory. Dyna3 could therefore enable much denser temporal sampling that prior methods cannot support.",
+        "authors": [
+          "Xinhao Xiang",
+          "Weiyang Li",
+          "Zhijie Zheng",
+          "Abhijeet Rastogi",
+          "Jiawei Zhang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.01286v1",
+        "published": "2026-10-01T08:24:21+00:00",
+        "title": "Dyna3: VLM-Guided Training-Free 4D Reconstruction via Depth Foundation Models",
+        "updated": "2026-10-01T08:24:21+00:00",
+        "version_id": "2610.01286v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.01286v1"
+      ]
+    },
+    "2610.02494": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Automatic horizon tracking is a foundational task in 3D seismic interpretation. Most existing deep learning approaches formulate it as dense semantic segmentation, typically using U-Net-based architectures. The model produces a probability map over all pixels that must be post-processed to extract precise horizon coordinates, while horizon picks in time/depth must be converted into dense masks for training. Unpicked seismic traces are consequently treated as background, which can hinder convergence, and both pre- and post-processing can introduce errors into the final interpretation. Moreover, 2D segmentation models do not inherently capture inter-slice context, while 3D models are often computationally prohibitive. We instead formulate horizon tracking as a bounded coordinate regression problem, where the model directly predicts the time/depth coordinate of the target horizon at each lateral position. We propose a lightweight regression head compatible with any pretrained vision backbone, coupled with an LSTM module to model inter-slice context and produce a continuous horizon surface across the volume. A combination of L1 and L2 losses supervises predictions at valid horizon picks, while a geology-informed regularization enforces lateral continuity between successive traces. Under controlled experimental conditions, we evaluate four pretrained vision backbones under both segmentation and regression configurations on a seismic volume from New Zealand. The proposed approach consistently outperforms its segmentation counterparts quantitatively, using metrics including RMSE and PCC, and qualitatively, while also demonstrating greater robustness to increasing sparsity of training picks. Finally, we show that prediction variation across successive traces captures local variations in geological complexity, providing an automated quality control measure for downstream seismic interpretation.",
+        "authors": [
+          "Aniq Ahmad",
+          "Musham Ahmad Malik",
+          "Ahmad Mustafa",
+          "Heather Bedle"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.02494v1",
+        "published": "2026-10-01T21:16:43+00:00",
+        "title": "DeepStratNet: A Context-Aware Coordinate Regression Framework for Seismic Horizon Tracking under Sparse Labels",
+        "updated": "2026-10-01T21:16:43+00:00",
+        "version_id": "2610.02494v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.02494v1"
+      ]
+    },
+    "2610.02946": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Video Object Segmentation (VOS) in complex and long videos is increasingly important for real-world applications, where target objects often appear only intermittently within long temporal horizons. However, existing benchmarks largely focus on temporally salient objects that remain visible for most of the video. To address this gap, we introduce FaVOS (A Benchmark for Video Object Segmentation with Fractional Temporal Visibility), a benchmark designed to evaluate VOS methods under low temporal visibility. We show that, in this regime, the standard J&F metric can collapse VOS evaluation into absence classification, because empty predictions receive high rewards on target-absent frames. Consequently, even a trivial empty-mask predictor can outperform strong models such as SAM 3, revealing a fundamental mismatch between current metrics and practical VOS performance. To mitigate this issue, we propose Volumetric J&F, which evaluates mask sequences as spatio-temporal volumes and reduces the dominance of target-absence rewards while preserving sensitivity to segmentation quality and temporal structure. Project page: https://aidaslab.github.io/FaVOS.",
+        "authors": [
+          "Jihwan Hong",
+          "Woohyeon Park",
+          "Jaeik Kim",
+          "Jaeyoung Do"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.02946v1",
+        "published": "2026-10-02T07:38:42+00:00",
+        "title": "When Predicting Nothing Beats SAM 3: Revisiting Evaluation in Video Object Segmentation",
+        "updated": "2026-10-02T07:38:42+00:00",
+        "version_id": "2610.02946v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.02946v1"
+      ]
+    },
+    "2610.03332": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Accurate three-dimensional (3D) reconstruction of individual dendrites in serial block-face scanning electron microscopy (SBF-SEM) is essential for quantifying structural plasticity in the brain, yet manual annotation at scale is infeasible. We present a fully automatic pipeline for 3D dendrite instance segmentation that unifies YOLOv6-guided Segment Anything Model (SAM) prompting on downsampled slices, iterative two-dimensional mask refinement, random forest 3D instance linking, and instance-aware high-resolution refinement using nnU-Net at native resolution into a single system requiring no manual prompting at inference. Applied to hippocampal CA1 SBF-SEM datasets from a control rat and a pilocarpine- induced epileptic rat, our pipeline reconstructs coherent, well- separated dendrites with high semantic accuracy (Dice 0.93 and 0.91) and strong instance-level performance on control tissue, while analysis of the more challenging epileptic tissue identifies instance recognition in dense regions as the principal remaining limitation. The high-resolution refinement stage recovers thin dendritic protrusions, providing a basis for downstream spine- level analysis. Code is available at https://github.com/ ZE-WEN/dendrite-3d-instance-seg.",
+        "authors": [
+          "Zewen Zhuo",
+          "Ilya Belevich",
+          "Eija Jokitalo",
+          "Alejandra Sierra",
+          "Jussi Tohka"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.03332v1",
+        "published": "2026-10-02T14:04:26+00:00",
+        "title": "A Fully Automatic Pipeline for 3D Dendrite Instance Segmentation in SBF-SEM",
+        "updated": "2026-10-02T14:04:26+00:00",
+        "version_id": "2610.03332v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.03332v1"
+      ]
+    },
+    "2610.03468": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Editable 3D models of field-grown crops support high-throughput phenotyping and in silico breeding trials, but building them from scanned point clouds requires organ-level segmentation and fitting. Procedural generators can turn an organ-level parameter set into an analysis-suitable 3D model, but obtaining that set requires hours of manual tuning per plant or segmentation models trained on species-specific labels. We present an automated pipeline that reconstructs procedural maize models from raw 3D point clouds without manual tuning or species-specific training data. A multimodal vision-language model (VLM) annotates leaf midlines in rendered orthographic views. Deterministic geometric algorithms back-project the annotations onto the point cloud, merge them into 3D leaves by cross-view consensus, and grow the midlines to full blades on an orientation-weighted surface graph. Measured organ parameters populate a plant descriptor for a Non-Uniform Rational B-Spline (NURBS)-based procedural model generator. Each leaf surface is then refined against its scan points by differentiable NURBS fitting. The pipeline reached a median whole-plant Chamfer distance of 5.4 mm on 100 genotypically diverse field-grown maize plants from the MaizeField3D dataset. The reconstructions were closer to the scans than those of an earlier semi-automated pipeline based on manual annotations. The pipeline recovered 1,017 of 1,023 (99.4%) curated reference leaves at an intersection-over-union of at least 0.5 without using those labels as input. These results show that VLM annotations become usable organ-level measurements when downstream geometric stages can correct them. This makes automated generation of editable 3D plant assets feasible at the scale of modern phenotyping experiments.",
+        "authors": [
+          "Mozhgan Hadadi",
+          "Talukder Z. Jubery",
+          "Adarsh Krishnamurthy",
+          "Baskar Ganapathysubramanian"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.03468v1",
+        "published": "2026-10-02T15:41:28+00:00",
+        "title": "A Vision-Language Model (VLM)-based Pipeline for End-to-End Procedural Modeling of Field-Grown Maize from Point Clouds",
+        "updated": "2026-10-02T15:41:28+00:00",
+        "version_id": "2610.03468v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.03468v1"
+      ]
+    },
+    "2610.04095": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "paper": {
+        "abstract": "Visual grounding models can enhance radiology workflows by linking report findings to image regions. This is particularly valuable for 3D CT, where findings often occupy a tiny fraction of the volume. Training 3D grounding models requires large sets of paired phrases and regions, and building such datasets is expensive, requiring radiologists to annotate images by hand. We posit that this supervision is already created implicitly during routine reporting, as radiologists frequently place 2D annotations (e.g., distance measurement, arrows) on key images to make measurements and to support report interpretation. We introduce an automated pipeline that converts these routine clinical annotations into large-scale phrase-region supervision for 3D visual grounding. The pipeline links each annotation to the corresponding finding in the report through metadata matching, then uses a promptable 3D segmentation model to convert the 2D annotation into a volumetric mask. This produces phrase-mask-volume datasets without requiring additional radiologist annotation. Applied to a single institution's clinical picture archiving and communication system (PACS), our approach generated 105K phrase-mask-volume triplets from 59K abdominal CT exams. We also introduce two abdominal CT grounding benchmarks, LocusBench-Onc and LocusBench-ED, which comprise 240 oncology and 260 emergency-department radiologist-reviewed phrase-mask-volume triplets, respectively, with the latter spanning 13 distinct categories such as appendicitis, hematoma, and hernia. We further introduce LocusCT, a 3D visual grounding model trained on this dataset, which achieves hit rates of 0.725 on LocusBench-Onc and 0.773 on LocusBench-ED, substantially outperforming comparator models. These results show that routine PACS annotations are a scalable, previously unused source of supervision for 3D visual grounding.",
+        "authors": [
+          "Sam Church",
+          "Danyal Maqbool",
+          "Joshua D. Warner",
+          "Andrew Voter",
+          "Junjie Hu",
+          "Meghan G. Lubner",
+          "Tyler J. Bradshaw"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.04095v1",
+        "published": "2026-10-02T22:03:36+00:00",
+        "title": "Scaling 3D Visual Grounding in Abdominal CT",
+        "updated": "2026-10-02T22:03:36+00:00",
+        "version_id": "2610.04095v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.04095v1"
+      ]
+    }
+  },
   "runs": [
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-07",
+      "discovered_candidates": 9,
+      "discovered_papers": 9,
       "run_id": "20261007T095255Z-2c43e3e2",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-07T09:52:00+00:00",
+          "seen": 3601,
+          "start": "2026-09-30T09:52:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-07T09:52:55.126385+00:00",
       "window": {
         "end": "2026-10-07T09:52:55.126385+00:00",
