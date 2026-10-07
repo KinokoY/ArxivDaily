@@ -8,7 +8,9 @@
   "digests": {},
   "papers": {
     "2610.00483": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
@@ -41,6 +43,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-07T09:52:55.126385+00:00",
+        "run_id": "20261007T095255Z-2c43e3e2",
+        "stage": "selection"
+      },
       "versions": [
         "2610.00483v1"
       ]
