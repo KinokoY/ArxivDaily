@@ -12,4 +12,4 @@
 | 2026-10-07 | Dyna3: VLM-Guided Training-Free 4D Reconstruction via Depth Foundation Models | Dyna3：基于深度基础模型的VLM引导免训练4D重建 | [arXiv 2610.01286v1](https://arxiv.org/abs/2610.01286v1) |
 | 2026-10-07 | CineMR: Tool-Integrated Vision-Language Reasoning for Quantitative Cardiac MRI Assessment | CineMR：面向定量心脏MRI评估的工具集成视觉-语言推理 | [arXiv 2610.01166v2](https://arxiv.org/abs/2610.01166v2) |
 | 2026-10-07 | Geometric Similarity in VLM Low-Level Vision Representations | VLM低层视觉表征中的几何相似性 | [arXiv 2610.00848v1](https://arxiv.org/abs/2610.00848v1) |
-| 2026-10-07 | PixelDense: Dense Prediction as Representation Alignment for Pixel Diffusion | 待翻译 | [arXiv 2610.00483v1](https://arxiv.org/abs/2610.00483v1) |
+| 2026-10-07 | PixelDense: Dense Prediction as Representation Alignment for Pixel Diffusion | PixelDense：将密集预测作为像素扩散的表征对齐 | [arXiv 2610.00483v1](https://arxiv.org/abs/2610.00483v1) |
