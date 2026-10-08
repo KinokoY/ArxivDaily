@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-10-08 | One-Shot Adaptive Segmentation For Scientific Images | 待翻译 | [arXiv 2610.10306v1](https://arxiv.org/abs/2610.10306v1) |
+| 2026-10-08 | One-Shot Adaptive Segmentation For Scientific Images | 面向科学图像的一次性自适应分割 | [arXiv 2610.10306v1](https://arxiv.org/abs/2610.10306v1) |
 | 2026-10-08 | InstanceBench: Diagnosing Referential Reasoning and Target Identity in Referring Expression Segmentation | 待翻译 | [arXiv 2610.09478v1](https://arxiv.org/abs/2610.09478v1) |
 | 2026-10-08 | Quantifying Volumetric Risk: Class-Aware Asymmetric Weighted Conformal Prediction for 3D Medical Image Segmentation | 待翻译 | [arXiv 2610.09392v1](https://arxiv.org/abs/2610.09392v1) |
 | 2026-10-08 | Towards benchmarking Western Bluebird detection in the wild | 待翻译 | [arXiv 2610.07802v1](https://arxiv.org/abs/2610.07802v1) |
