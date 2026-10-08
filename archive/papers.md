@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-10-08 | One-Shot Adaptive Segmentation For Scientific Images | 面向科学图像的一次性自适应分割 | [arXiv 2610.10306v1](https://arxiv.org/abs/2610.10306v1) |
 | 2026-10-08 | InstanceBench: Diagnosing Referential Reasoning and Target Identity in Referring Expression Segmentation | InstanceBench：诊断指称表达分割中的指称推理与目标身份 | [arXiv 2610.09478v1](https://arxiv.org/abs/2610.09478v1) |
-| 2026-10-08 | Quantifying Volumetric Risk: Class-Aware Asymmetric Weighted Conformal Prediction for 3D Medical Image Segmentation | 待翻译 | [arXiv 2610.09392v1](https://arxiv.org/abs/2610.09392v1) |
+| 2026-10-08 | Quantifying Volumetric Risk: Class-Aware Asymmetric Weighted Conformal Prediction for 3D Medical Image Segmentation | 量化体积风险：面向3D医学图像分割的类别感知非对称加权保形预测 | [arXiv 2610.09392v1](https://arxiv.org/abs/2610.09392v1) |
 | 2026-10-08 | Towards benchmarking Western Bluebird detection in the wild | 待翻译 | [arXiv 2610.07802v1](https://arxiv.org/abs/2610.07802v1) |
 | 2026-10-08 | Seeing as Humans Do: Learning from Motion to Segment Anything Without Supervision | 待翻译 | [arXiv 2609.39785v1](https://arxiv.org/abs/2609.39785v1) |
 | 2026-10-07 | Scaling 3D Visual Grounding in Abdominal CT | 在腹部CT中扩展3D视觉定位 | [arXiv 2610.04095v1](https://arxiv.org/abs/2610.04095v1) |
