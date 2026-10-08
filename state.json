@@ -984,9 +984,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "To address this gap, we introduce a new benchmark dataset for the detection and segmentation of Western bluebirds (Sialia Mexicana), comprising over 6,000 labeled images from 41 recording sessions.",
+          "We evaluated supervised detectors, open-vocabulary models under zero-shot and fine-tuned settings, and segmentation approaches.",
+          "For segmentation, supervised methods significantly outperform Grounded-SAM and SAM 3: Mask R-CNN achieves the highest mask mAP, while YOLOv8-Seg provides the best precision and fastest inference."
+        ],
+        "dpo_is_method": false,
+        "reason": "论文是 Western bluebird 野外检测与分割基准，重点在数据集、监督检测器、开放词汇模型和 SAM 类分割基线的评测。没有医学影像推理分割、隐含请求或空间/位置推理到掩码的机制；没有 DPO/RL 方法贡献；也未提出具有理论依据或可迁移价值的传统分割/优化目标。SAM 仅作为分割基线被比较，不构成本研究的方法贡献。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 3,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Bird monitoring in natural environments is challenging due to the small size of some species of birds relative to the scene, background clutter, variability in illumination, and the observers' viewpoint. Progress is further limited by the scarcity of large-scale, realistic datasets, which are essential for understanding behavioral patterns. To address this gap, we introduce a new benchmark dataset for the detection and segmentation of Western bluebirds (Sialia Mexicana), comprising over 6,000 labeled images from 41 recording sessions. The dataset features high-resolution (4K) in-the-wild images in which birds occupy only a small fraction of the image. We evaluated supervised detectors, open-vocabulary models under zero-shot and fine-tuned settings, and segmentation approaches. Supervised detectors remain the most reliable overall, with Faster R-CNN achieving the highest detection mAP and RT-DETR offering the best precision-recall trade-off. Open-vocabulary models perform poorly in zero-shot settings; however, fine-tuning substantially improves their performance, with YOLO-World becoming competitive with supervised methods and achieving the highest precision, F1-score, and mAP@0.5. For segmentation, supervised methods significantly outperform Grounded-SAM and SAM 3: Mask R-CNN achieves the highest mask mAP, while YOLOv8-Seg provides the best precision and fastest inference. A diagnostic analysis further shows that failures are not explained by object size alone, but by a combination of apparent scale, brightness, contrast, clutter, blur, crowding, and recording-session variation. Overall, our findings highlight the difficulty of zero-shot bird detection in cluttered ecological scenes and underscore the importance of domain adaptation in small-object settings.",
         "authors": [
@@ -1006,15 +1026,11 @@
         "updated": "2026-10-06T05:56:05+00:00",
         "version_id": "2610.07802v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-08T13:00:09.450768+00:00",
-        "run_id": "20261008T130009Z-1d4caa35",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.07802v1"
       ]
