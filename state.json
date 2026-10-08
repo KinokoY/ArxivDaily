@@ -1016,9 +1016,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We propose Class-Aware Asymmetric Weighted Conformal Prediction (CA-WCP), which combines latent-space density-ratio weighting for covariate shift with directional quantiles for the lower and upper volume bounds, and scales each bound by a class-specific asymmetry factor derived from validation-set false-positive and false-negative rates.",
+          "We prove that CA-WCP retains the weighted-exchangeability marginal coverage guarantee for every class",
+          "We evaluate it on 3D brain tumor segmentation (BraTS 2020) and on a synthetic multi-organ CT benchmark constructed under covariate shift.",
+          "We further encode the calibrated intervals into structured prompts for a multimodal large language model to produce uncertainty-conditioned radiology reports, linking distribution-shift-aware uncertainty quantification to interpretable clinical communication."
+        ],
+        "dpo_is_method": false,
+        "reason": "摘要提出面向3D医学分割的类感知非对称加权保形预测，具有每类覆盖保证，并在BraTS与合成多器官CT上验证；但未涉及推理分割、隐含请求/空间推理到像素掩码，也未将DPO或强化学习作为方法贡献。作为分割训练/优化目标及向上述推理分割任务迁移的实质价值仅凭摘要无法确认。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 42,
+        "status": "uncertain",
+        "theory_evidence": true,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "该保形预测/体积区间校准方法能否迁移到医学或通用推理分割的像素掩码生成，而非仅用于体积不确定性量化？",
+          "类感知非对称加权是否可作为分割训练或优化目标，并与推理分割任务有实质联系？",
+          "结构化提示生成放射报告与以隐含请求/空间推理产生分割掩码的机制之间关系不明确。",
+          "摘要未说明是否包含DPO或强化学习方法贡献。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Reliable volumetric segmentation is critical for clinical diagnostics, yet foundation models such as MedSAM remain deterministic and lack calibrated uncertainty under distribution shift. Existing conformal prediction methods offer statistical guarantees but are frequently applied in 2D and assume symmetric error distributions, so they do not capture the class-specific biases that arise in 3D multi-class segmentation. We propose Class-Aware Asymmetric Weighted Conformal Prediction (CA-WCP), which combines latent-space density-ratio weighting for covariate shift with directional quantiles for the lower and upper volume bounds, and scales each bound by a class-specific asymmetry factor derived from validation-set false-positive and false-negative rates. We prove that CA-WCP retains the weighted-exchangeability marginal coverage guarantee for every class, and we evaluate it on 3D brain tumor segmentation (BraTS 2020) and on a synthetic multi-organ CT benchmark constructed under covariate shift. On both benchmarks the 95\\% Clopper--Pearson interval for the observed coverage of CA-WCP contains the nominal 90\\% level for every semantic class, while interval width is reduced by 8--14\\% relative to symmetric weighted conformal prediction. We further encode the calibrated intervals into structured prompts for a multimodal large language model to produce uncertainty-conditioned radiology reports, linking distribution-shift-aware uncertainty quantification to interpretable clinical communication.",
         "authors": [
@@ -1035,16 +1061,12 @@
         "updated": "2026-10-07T03:51:16+00:00",
         "version_id": "2610.09392v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning",
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-08T13:00:09.450768+00:00",
-        "run_id": "20261008T130009Z-1d4caa35",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.09392v1"
       ]
