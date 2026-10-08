@@ -1146,6 +1146,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Referring Expression Segmentation (RES) links natural-language descriptions to pixel-level object masks. Yet standard evaluation provides limited insight into instance-level referential reasoning: it does not systematically distinguish referential logics, test target preservation across valid grounding paths, or separate target-selection from mask-generation errors. We introduce InstanceBench, an instance-centered diagnostic benchmark comprising 6,194 images, 9,264 target instances, and 25,077 human-verified expressions. Each target-centric expression set (TCES) fixes the image and target mask while pairing a minimal expression with a same-target variant that uses another valid cue or grounding path. A compact referential-logic taxonomy spans direct target evidence, same-class selection, relational and compositional grounding, and exclusion, while logic-critical construction suppresses simpler shortcuts. Identity-aware metrics measure target retention and set-level success while separating selection from mask-generation errors. Across 22 native-mask RES checkpoints from 18 model families, the strongest checkpoint reaches 67.1% mIoU but only 59.6% All@0.7. Controlled interventions confirm language sensitivity, while failure decomposition identifies target selection rather than mask decoding as the main bottleneck. On a controlled training subset, matched supervision improves identity-aware performance, showing that the diagnosed capability responds to targeted supervision. Collectively, InstanceBench supports a measure-diagnose-improve cycle: measuring target consistency across grounding paths, localizing failure sources, and evaluating targeted interventions.",
@@ -1168,11 +1169,22 @@
         "updated": "2026-10-07T05:34:00+00:00",
         "version_id": "2610.09478v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_reasoning"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2610.09478v1"
       ]
