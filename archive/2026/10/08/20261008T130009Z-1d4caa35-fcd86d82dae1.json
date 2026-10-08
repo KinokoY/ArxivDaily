@@ -1,0 +1,136 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/08/20261008T130009Z-1d4caa35-fcd86d82dae1.md",
+  "chain_roots": [
+    "20261008T130009Z-1d4caa35-fcd86d82dae1"
+  ],
+  "content_hash": "fcd86d82dae191af3d8c0c8845226069fc00c33cb2540b5751423edd2bf6eb3a",
+  "day": "2026-10-08",
+  "digest_id": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+  "empty": false,
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Scientific image segmentation methods rely on extensive annotation and task-specific training, limiting adaptation across imaging modalities and experimental conditions. We present a training-free, one-shot framework that specializes vision foundation models using a single annotated reference image. The framework combines DINOv3 representations with background-adaptive feature orthogonalization to suppress artifact-related feature directions, after which cosine similarity localizes candidate regions for SAM segmentation. We evaluate the framework on red-blood-cell microscopy, structured-illumination pool boiling, and chest radiography. Relative to the strongest baseline, the proposed method improves mean IoU by 5.91% and 78.62% on the microscopy and pool-boiling datasets, respectively, while achieving comparable performance on chest radiographs. These results demonstrate that one-shot reference conditioning can adapt general-purpose vision models to specialized scientific segmentation tasks.",
+        "authors": [
+          "Tejaswi V. Panchagnula",
+          "Allison M. Davis",
+          "Fengqing Zhu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.10306v1",
+        "published": "2026-10-07T16:02:28+00:00",
+        "title": "One-Shot Adaptive Segmentation For Scientific Images",
+        "updated": "2026-10-07T16:02:28+00:00",
+        "version_id": "2610.10306v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "科学图像分割方法依赖大量标注和针对特定任务的训练，限制了其在不同成像模态和实验条件下的适应性。我们提出了一种免训练的一次性框架，利用单张带标注的参考图像使视觉基础模型专门化。该框架将DINOv3表示与背景自适应特征正交化相结合，以抑制与伪影相关的特征方向，随后通过余弦相似度定位候选区域，用于SAM分割。我们在红细胞显微镜、结构光照池沸腾和胸部X射线摄影上评估了该框架。相对于最强的基线，所提方法在显微镜和池沸腾数据集上分别将平均IoU提高了5.91%和78.62%，同时在胸部X射线摄影上取得了相当的性能。这些结果表明，一次性参考条件化能够使通用视觉模型适应专门化的科学分割任务。",
+        "title_zh": "面向科学图像的一次性自适应分割"
+      }
+    },
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Referring Expression Segmentation (RES) links natural-language descriptions to pixel-level object masks. Yet standard evaluation provides limited insight into instance-level referential reasoning: it does not systematically distinguish referential logics, test target preservation across valid grounding paths, or separate target-selection from mask-generation errors. We introduce InstanceBench, an instance-centered diagnostic benchmark comprising 6,194 images, 9,264 target instances, and 25,077 human-verified expressions. Each target-centric expression set (TCES) fixes the image and target mask while pairing a minimal expression with a same-target variant that uses another valid cue or grounding path. A compact referential-logic taxonomy spans direct target evidence, same-class selection, relational and compositional grounding, and exclusion, while logic-critical construction suppresses simpler shortcuts. Identity-aware metrics measure target retention and set-level success while separating selection from mask-generation errors. Across 22 native-mask RES checkpoints from 18 model families, the strongest checkpoint reaches 67.1% mIoU but only 59.6% All@0.7. Controlled interventions confirm language sensitivity, while failure decomposition identifies target selection rather than mask decoding as the main bottleneck. On a controlled training subset, matched supervision improves identity-aware performance, showing that the diagnosed capability responds to targeted supervision. Collectively, InstanceBench supports a measure-diagnose-improve cycle: measuring target consistency across grounding paths, localizing failure sources, and evaluating targeted interventions.",
+        "authors": [
+          "Yuchen Li",
+          "Shaoyang Zhou",
+          "Yiran Wang",
+          "Ruiyi Deng",
+          "Haoyu Wang",
+          "Ziru Wei",
+          "Zhen Zhao",
+          "Luping Zhou"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.09478v1",
+        "published": "2026-10-07T05:34:00+00:00",
+        "title": "InstanceBench: Diagnosing Referential Reasoning and Target Identity in Referring Expression Segmentation",
+        "updated": "2026-10-07T05:34:00+00:00",
+        "version_id": "2610.09478v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "指称表达分割（RES）将自然语言描述与像素级物体掩码关联起来。然而，标准评估对实例级指称推理的洞察有限：它没有系统地区分指称逻辑、测试目标在有效定位路径间的保持性，也没有将目标选择错误与掩码生成错误分离。我们提出了 InstanceBench，一个以实例为中心的诊断基准，包含 6,194 张图像、9,264 个目标实例和 25,077 条经人工验证的表达。每个以目标为中心的表达集（TCES）固定图像和目标掩码，同时将一个最小表达与一个使用另一有效线索或定位路径的同目标变体配对。一个紧凑的指称逻辑分类体系涵盖直接目标证据、同类选择、关系与组合定位以及排除，而逻辑关键的构造抑制了更简单的捷径。身份感知指标衡量目标保持率和集合级成功率，同时将选择错误与掩码生成错误分离。在来自 18 个模型家族的 22 个原生掩码 RES 检查点上，最强的检查点达到 67.1% mIoU，但 All@0.7 仅为 59.6%。受控干预确认了语言敏感性，而失败分解将目标选择而非掩码解码确定为主要瓶颈。在受控训练子集上，匹配的监督提升了身份感知性能，表明所诊断的能力对有针对性的监督有响应。总体而言，InstanceBench 支持一个测量-诊断-改进的循环：测量跨定位路径的目标一致性、定位失败来源并评估有针对性的干预。",
+        "title_zh": "InstanceBench：诊断指称表达分割中的指称推理与目标身份"
+      }
+    },
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Reliable volumetric segmentation is critical for clinical diagnostics, yet foundation models such as MedSAM remain deterministic and lack calibrated uncertainty under distribution shift. Existing conformal prediction methods offer statistical guarantees but are frequently applied in 2D and assume symmetric error distributions, so they do not capture the class-specific biases that arise in 3D multi-class segmentation. We propose Class-Aware Asymmetric Weighted Conformal Prediction (CA-WCP), which combines latent-space density-ratio weighting for covariate shift with directional quantiles for the lower and upper volume bounds, and scales each bound by a class-specific asymmetry factor derived from validation-set false-positive and false-negative rates. We prove that CA-WCP retains the weighted-exchangeability marginal coverage guarantee for every class, and we evaluate it on 3D brain tumor segmentation (BraTS 2020) and on a synthetic multi-organ CT benchmark constructed under covariate shift. On both benchmarks the 95\\% Clopper--Pearson interval for the observed coverage of CA-WCP contains the nominal 90\\% level for every semantic class, while interval width is reduced by 8--14\\% relative to symmetric weighted conformal prediction. We further encode the calibrated intervals into structured prompts for a multimodal large language model to produce uncertainty-conditioned radiology reports, linking distribution-shift-aware uncertainty quantification to interpretable clinical communication.",
+        "authors": [
+          "Shadi Alijani",
+          "Fereshteh Aghaee Meibodi",
+          "Homayoun Najjaran"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.09392v1",
+        "published": "2026-10-07T03:51:16+00:00",
+        "title": "Quantifying Volumetric Risk: Class-Aware Asymmetric Weighted Conformal Prediction for 3D Medical Image Segmentation",
+        "updated": "2026-10-07T03:51:16+00:00",
+        "version_id": "2610.09392v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "medical_reasoning",
+        "transferable_objective"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "可靠的体积分割对于临床诊断至关重要，然而诸如MedSAM之类的基础模型仍然是确定性的，并且在分布偏移下缺乏校准的不确定性。现有的保形预测方法提供了统计保证，但通常应用于2D且假设误差分布对称，因此无法捕捉3D多类分割中出现的类别特定偏差。我们提出类别感知非对称加权保形预测（CA-WCP），它将用于协变量偏移的潜在空间密度比加权与用于体积下界和上界的定向分位数相结合，并通过从验证集假阳性和假阴性率导出的类别特定非对称因子对每个边界进行缩放。我们证明CA-WCP对每个类别保持加权可交换边缘覆盖保证，并在3D脑肿瘤分割（BraTS 2020）以及在协变量偏移下构建的合成多器官CT基准上对其进行评估。在两个基准上，CA-WCP观测覆盖率的95\\% Clopper--Pearson区间对每个语义类别都包含名义90\\%水平，而区间宽度相对于对称加权保形预测减少了8--14\\%。我们进一步将校准后的区间编码为结构化提示，输入多模态大语言模型以生成以不确定性为条件的放射学报告，从而将分布偏移感知的不确定性量化与可解释的临床沟通联系起来。",
+        "title_zh": "量化体积风险：面向3D医学图像分割的类别感知非对称加权保形预测"
+      }
+    }
+  ],
+  "notification_hash": "b10164b62c0df32217e6aa521f09441a24931ae8b1a96344b3548813a588a1b3",
+  "recovery_of": [],
+  "rendered": {
+    "2610.09392": "rendered_inline_translation",
+    "2610.09478": "rendered_inline_translation",
+    "2610.10306": "rendered_inline_translation"
+  },
+  "run_id": "20261008T130009Z-1d4caa35",
+  "schema_version": 1
+}
