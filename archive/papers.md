@@ -8,7 +8,7 @@
 | 2026-10-08 | InstanceBench: Diagnosing Referential Reasoning and Target Identity in Referring Expression Segmentation | InstanceBench：诊断指称表达分割中的指称推理与目标身份 | [arXiv 2610.09478v1](https://arxiv.org/abs/2610.09478v1) |
 | 2026-10-08 | Quantifying Volumetric Risk: Class-Aware Asymmetric Weighted Conformal Prediction for 3D Medical Image Segmentation | 量化体积风险：面向3D医学图像分割的类别感知非对称加权保形预测 | [arXiv 2610.09392v1](https://arxiv.org/abs/2610.09392v1) |
 | 2026-10-08 | Towards benchmarking Western Bluebird detection in the wild | 迈向野外西部蓝鸲检测的基准测试 | [arXiv 2610.07802v1](https://arxiv.org/abs/2610.07802v1) |
-| 2026-10-08 | Seeing as Humans Do: Learning from Motion to Segment Anything Without Supervision | 待翻译 | [arXiv 2609.39785v1](https://arxiv.org/abs/2609.39785v1) |
+| 2026-10-08 | Seeing as Humans Do: Learning from Motion to Segment Anything Without Supervision | 像人类一样观察：从运动学习无监督分割一切 | [arXiv 2609.39785v1](https://arxiv.org/abs/2609.39785v1) |
 | 2026-10-07 | Scaling 3D Visual Grounding in Abdominal CT | 在腹部CT中扩展3D视觉定位 | [arXiv 2610.04095v1](https://arxiv.org/abs/2610.04095v1) |
 | 2026-10-07 | A Vision-Language Model (VLM)-based Pipeline for End-to-End Procedural Modeling of Field-Grown Maize from Point Clouds | 基于视觉语言模型（VLM）的端到端田间种植玉米点云程序化建模流程 | [arXiv 2610.03468v1](https://arxiv.org/abs/2610.03468v1) |
 | 2026-10-07 | A Fully Automatic Pipeline for 3D Dendrite Instance Segmentation in SBF-SEM | SBF-SEM中三维树突实例分割的全自动管线 | [arXiv 2610.03332v1](https://arxiv.org/abs/2610.03332v1) |
