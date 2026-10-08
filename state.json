@@ -222,7 +222,9 @@
   },
   "papers": {
     "2609.39785": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
@@ -251,6 +253,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-08T13:00:09.450768+00:00",
+        "run_id": "20261008T130009Z-1d4caa35",
+        "stage": "selection"
+      },
       "versions": [
         "2609.39785v1"
       ]
