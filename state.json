@@ -5,7 +5,7 @@
       "created_at": "2026-10-07T09:52:55.126385+00:00"
     },
     "20261008T130009Z-1d4caa35-fcd86d82dae1": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-08T13:00:09.450768+00:00"
     }
   },
@@ -27,10 +27,12 @@
     "2026-10-08": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261008T130009Z-1d4caa35-fcd86d82dae1"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -234,6 +236,8 @@
     "20261008T130009Z-1d4caa35-fcd86d82dae1": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/08/20261008T130009Z-1d4caa35-fcd86d82dae1.md",
+      "attempt_run": "20261008T130009Z-1d4caa35",
+      "attempt_started": "2026-10-08T13:05:12.373890+00:00",
       "chain_root": "20261008T130009Z-1d4caa35-fcd86d82dae1",
       "chain_roots": [
         "20261008T130009Z-1d4caa35-fcd86d82dae1"
@@ -360,6 +364,7 @@
         }
       ],
       "notification_hash": "b10164b62c0df32217e6aa521f09441a24931ae8b1a96344b3548813a588a1b3",
+      "quota_day": "2026-10-08",
       "recovery_of": [],
       "rendered": {
         "2610.09392": "rendered_inline_translation",
@@ -368,7 +373,7 @@
       },
       "run_id": "20261008T130009Z-1d4caa35",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -1238,6 +1243,7 @@
       ]
     },
     "2610.09392": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -1267,7 +1273,18 @@
           "摘要未说明是否包含DPO或强化学习方法贡献。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+      "events": [
+        {
+          "at": "2026-10-08T13:05:12.373890+00:00",
+          "digest_id": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
       "intended_tier": "translation",
@@ -1288,6 +1305,7 @@
         "updated": "2026-10-07T03:51:16+00:00",
         "version_id": "2610.09392v1"
       },
+      "pending_digest": "20261008T130009Z-1d4caa35-fcd86d82dae1",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -1318,6 +1336,7 @@
       ]
     },
     "2610.09478": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -1344,7 +1363,18 @@
           "未读取正文，无法确认其训练干预是否构成独立方法贡献。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+      "events": [
+        {
+          "at": "2026-10-08T13:05:12.373890+00:00",
+          "digest_id": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
       "intended_tier": "translation",
@@ -1370,6 +1400,7 @@
         "updated": "2026-10-07T05:34:00+00:00",
         "version_id": "2610.09478v1"
       },
+      "pending_digest": "20261008T130009Z-1d4caa35-fcd86d82dae1",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -1398,6 +1429,7 @@
       ]
     },
     "2610.10306": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -1429,7 +1461,18 @@
           "Whether the chest-radiography evaluation involves reasoning segmentation or structural/topological objectives rather than standard IoU segmentation."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+      "events": [
+        {
+          "at": "2026-10-08T13:05:12.373890+00:00",
+          "digest_id": "20261008T130009Z-1d4caa35-fcd86d82dae1",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
       "intended_tier": "translation",
@@ -1450,6 +1493,7 @@
         "updated": "2026-10-07T16:02:28+00:00",
         "version_id": "2610.10306v1"
       },
+      "pending_digest": "20261008T130009Z-1d4caa35-fcd86d82dae1",
       "presentation_modules": [
         "title",
         "title_translation",
