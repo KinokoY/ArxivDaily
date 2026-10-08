@@ -1162,7 +1162,8 @@
     },
     "2610.09478": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "translation": 1
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -1228,6 +1229,11 @@
         "general_reasoning"
       ],
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-10-08T13:00:09.450768+00:00",
+        "run_id": "20261008T130009Z-1d4caa35",
+        "stage": "translation"
+      },
       "versions": [
         "2610.09478v1"
       ]
