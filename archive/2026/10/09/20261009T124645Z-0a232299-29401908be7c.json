@@ -1,0 +1,63 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/09/20261009T124645Z-0a232299-29401908be7c.md",
+  "chain_roots": [
+    "20261009T124645Z-0a232299-29401908be7c"
+  ],
+  "content_hash": "29401908be7cbe58e22aae8032d2ce3b526127ad6eb64e40d3c33156536a78a3",
+  "day": "2026-10-09",
+  "digest_id": "20261009T124645Z-0a232299-29401908be7c",
+  "empty": false,
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Generalized referring expression segmentation (GRES) requires dynamically balancing high-level semantics for identifying a variable number of language-specified referents with fine-grained visual evidence for precise boundary delineation. This requirement challenges existing cascaded vision-language architectures, which typically rely on static feature interfaces and single-pass mask prediction, limiting adaptive perception and geometric correction. We introduce ContourVLA, a vision-language-action policy that recasts GRES as a closed-loop visuomotor process, in which editable contours serve as explicit policy states that condition multimodal perception and are updated by geometric action chunks. Evolution-Aware Semantic Scheduling (EASS) couples contour-guided bidirectional boundary sampling with state-conditioned routing of multilevel multimodal features, adapting perception to each contour state. Following supervised initialization, Dustbin-Augmented Entropic Credit Transport GRPO (DECT-GRPO) jointly optimizes discrete grounding and continuous contour actions with instance-level credits. Its rollout rewards and credits are derived from soft prediction-target correspondences that account for false positives and missed targets. ContourVLA improves gIoU over the strongest evaluated baselines by 8.7, 2.8, and 2.7 points on gRefCOCO val, testA, and testB, respectively, and achieves the highest mIoU across all eight RefCOCO, RefCOCO+, and RefCOCOg splits.",
+        "authors": [
+          "Ruicheng Zhang",
+          "Kaiwen Shen",
+          "Jiaqi Hou",
+          "Shuhan Yang",
+          "Junchao Huang",
+          "Kewei Zhang",
+          "Jun Zhou",
+          "Li Jiang",
+          "Shen Zhao"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.12107v1",
+        "published": "2026-10-08T15:06:00+00:00",
+        "title": "ContourVLA: A Closed-Loop Perception-Action Contour Policy for Generalized Referring Expression Segmentation",
+        "updated": "2026-10-08T15:06:00+00:00",
+        "version_id": "2610.12107v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "广义指代表达分割（GRES）要求动态平衡用于识别可变数量语言指定指代对象的高层语义与用于精确边界描绘的细粒度视觉证据。这一需求对现有级联视觉-语言架构构成挑战，此类架构通常依赖静态特征接口和单次掩码预测，限制了自适应感知与几何校正。我们提出 ContourVLA，一种视觉-语言-动作策略，将 GRES 重构为闭环视觉运动过程，其中可编辑轮廓作为显式策略状态，条件化多模态感知并由几何动作块更新。演化感知语义调度（EASS）将轮廓引导的双向边界采样与状态条件化的多层级多模态特征路由相耦合，使感知适应每个轮廓状态。在监督初始化之后，Dustbin 增强熵信用传输 GRPO（DECT-GRPO）以实例级信用联合优化离散定位与连续轮廓动作。其 rollout 奖励与信用源自考虑误检和漏检目标的软预测-目标对应关系。ContourVLA 在 gRefCOCO val、testA 和 testB 上分别将 gIoU 较评估的最强基线提升 8.7、2.8 和 2.7 个点，并在全部八个 RefCOCO、RefCOCO+ 和 RefCOCOg 划分上取得最高 mIoU。",
+        "title_zh": "ContourVLA：面向广义指代表达分割的闭环感知-动作轮廓策略"
+      }
+    }
+  ],
+  "notification_hash": "9ee258ffdb1f6c1469f639f754c78a9aa709c5425a28fc5c5a9f27bf22840ded",
+  "recovery_of": [],
+  "rendered": {
+    "2610.12107": "rendered_inline_translation"
+  },
+  "run_id": "20261009T124645Z-0a232299",
+  "schema_version": 1
+}
