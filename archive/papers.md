@@ -4,6 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-10-09 | ContourVLA: A Closed-Loop Perception-Action Contour Policy for Generalized Referring Expression Segmentation | 待翻译 | [arXiv 2610.12107v1](https://arxiv.org/abs/2610.12107v1) |
 | 2026-10-08 | One-Shot Adaptive Segmentation For Scientific Images | 面向科学图像的一次性自适应分割 | [arXiv 2610.10306v1](https://arxiv.org/abs/2610.10306v1) |
 | 2026-10-08 | InstanceBench: Diagnosing Referential Reasoning and Target Identity in Referring Expression Segmentation | InstanceBench：诊断指称表达分割中的指称推理与目标身份 | [arXiv 2610.09478v1](https://arxiv.org/abs/2610.09478v1) |
 | 2026-10-08 | Quantifying Volumetric Risk: Class-Aware Asymmetric Weighted Conformal Prediction for 3D Medical Image Segmentation | 量化体积风险：面向3D医学图像分割的类别感知非对称加权保形预测 | [arXiv 2610.09392v1](https://arxiv.org/abs/2610.09392v1) |
