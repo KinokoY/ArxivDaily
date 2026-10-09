@@ -408,8 +408,15 @@
       "content_hash": "29401908be7cbe58e22aae8032d2ce3b526127ad6eb64e40d3c33156536a78a3",
       "created_at": "2026-10-09T12:46:45.122404+00:00",
       "day": "2026-10-09",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "60688358",
+        "status": "confirmed"
+      },
       "digest_id": "20261009T124645Z-0a232299-29401908be7c",
       "empty": false,
+      "finished_at": "2026-10-09T12:50:22.579855+00:00",
       "items": [
         {
           "modules": [
@@ -463,7 +470,7 @@
       },
       "run_id": "20261009T124645Z-0a232299",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -1609,7 +1616,6 @@
       ]
     },
     "2610.12107": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -1644,7 +1650,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -1674,7 +1680,6 @@
         "updated": "2026-10-08T15:06:00+00:00",
         "version_id": "2610.12107v1"
       },
-      "pending_digest": "20261009T124645Z-0a232299-29401908be7c",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -1692,7 +1697,7 @@
         "general_rl",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "ContourVLA：面向广义指代表达分割的闭环感知-动作轮廓策略",
       "translation": {
         "abstract_zh": "广义指代表达分割（GRES）要求动态平衡用于识别可变数量语言指定指代对象的高层语义与用于精确边界描绘的细粒度视觉证据。这一需求对现有级联视觉-语言架构构成挑战，此类架构通常依赖静态特征接口和单次掩码预测，限制了自适应感知与几何校正。我们提出 ContourVLA，一种视觉-语言-动作策略，将 GRES 重构为闭环视觉运动过程，其中可编辑轮廓作为显式策略状态，条件化多模态感知并由几何动作块更新。演化感知语义调度（EASS）将轮廓引导的双向边界采样与状态条件化的多层级多模态特征路由相耦合，使感知适应每个轮廓状态。在监督初始化之后，Dustbin 增强熵信用传输 GRPO（DECT-GRPO）以实例级信用联合优化离散定位与连续轮廓动作。其 rollout 奖励与信用源自考虑误检和漏检目标的软预测-目标对应关系。ContourVLA 在 gRefCOCO val、testA 和 testB 上分别将 gIoU 较评估的最强基线提升 8.7、2.8 和 2.7 个点，并在全部八个 RefCOCO、RefCOCO+ 和 RefCOCOg 划分上取得最高 mIoU。",
