@@ -9,7 +9,7 @@
       "created_at": "2026-10-08T13:00:09.450768+00:00"
     },
     "20261009T124645Z-0a232299-29401908be7c": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-09T12:46:45.122404+00:00"
     }
   },
@@ -41,10 +41,12 @@
     "2026-10-09": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261009T124645Z-0a232299-29401908be7c"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -397,6 +399,8 @@
     "20261009T124645Z-0a232299-29401908be7c": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/09/20261009T124645Z-0a232299-29401908be7c.md",
+      "attempt_run": "20261009T124645Z-0a232299",
+      "attempt_started": "2026-10-09T12:50:16.324996+00:00",
       "chain_root": "20261009T124645Z-0a232299-29401908be7c",
       "chain_roots": [
         "20261009T124645Z-0a232299-29401908be7c"
@@ -452,13 +456,14 @@
         }
       ],
       "notification_hash": "9ee258ffdb1f6c1469f639f754c78a9aa709c5425a28fc5c5a9f27bf22840ded",
+      "quota_day": "2026-10-09",
       "recovery_of": [],
       "rendered": {
         "2610.12107": "rendered_inline_translation"
       },
       "run_id": "20261009T124645Z-0a232299",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -1604,6 +1609,7 @@
       ]
     },
     "2610.12107": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -1630,7 +1636,18 @@
           "与基线比较的公平性和统计显著性未从摘要确认。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261009T124645Z-0a232299-29401908be7c",
+      "events": [
+        {
+          "at": "2026-10-09T12:50:16.324996+00:00",
+          "digest_id": "20261009T124645Z-0a232299-29401908be7c",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-09T12:46:45.122404+00:00",
       "intended_tier": "translation",
@@ -1657,6 +1674,7 @@
         "updated": "2026-10-08T15:06:00+00:00",
         "version_id": "2610.12107v1"
       },
+      "pending_digest": "20261009T124645Z-0a232299-29401908be7c",
       "presentation_modules": [
         "title",
         "title_translation",
