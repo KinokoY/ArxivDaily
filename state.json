@@ -1836,6 +1836,13 @@
         "start": "2026-09-30T09:52:55.126385+00:00",
         "uncovered": []
       }
+    },
+    {
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "coverage_complete": false,
+      "day": "2026-10-10",
+      "run_id": "20261010T120453Z-d7efe871",
+      "started_at": "2026-10-10T12:04:53.763988+00:00"
     }
   ],
   "schema_version": 1,
