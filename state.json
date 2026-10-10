@@ -13,7 +13,7 @@
       "created_at": "2026-10-09T12:46:45.122404+00:00"
     },
     "20261010T120453Z-d7efe871-0d5927bf49c4": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-10T12:04:53.763988+00:00"
     }
   },
@@ -58,7 +58,7 @@
       "normal_digests": [],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -487,6 +487,8 @@
     "20261010T120453Z-d7efe871-0d5927bf49c4": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/10/20261010T120453Z-d7efe871-0d5927bf49c4.md",
+      "attempt_run": "20261010T120453Z-d7efe871",
+      "attempt_started": "2026-10-10T12:08:12.110369+00:00",
       "chain_root": "20261010T120453Z-d7efe871-0d5927bf49c4",
       "chain_roots": [
         "20261010T120453Z-d7efe871-0d5927bf49c4"
@@ -498,11 +500,12 @@
       "empty": true,
       "items": [],
       "notification_hash": "bc34db0116d4445c20951634fbb87fef16943de1296a7f255d927b7c5c913574",
+      "quota_day": "2026-10-10",
       "recovery_of": [],
       "rendered": {},
       "run_id": "20261010T120453Z-d7efe871",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
