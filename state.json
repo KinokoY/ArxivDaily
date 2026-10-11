@@ -19,7 +19,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-10T12:04:53.763988+00:00"
+    "last_complete_end": "2026-10-11T12:18:19.048163+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -1017,6 +1017,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-07T09:52:55.126385+00:00",
+      "latest_version": "2610.02946v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Video Object Segmentation (VOS) in complex and long videos is increasingly important for real-world applications, where target objects often appear only intermittently within long temporal horizons. However, existing benchmarks largely focus on temporally salient objects that remain visible for most of the video. To address this gap, we introduce FaVOS (A Benchmark for Video Object Segmentation with Fractional Temporal Visibility), a benchmark designed to evaluate VOS methods under low temporal visibility. We show that, in this regime, the standard J&F metric can collapse VOS evaluation into absence classification, because empty predictions receive high rewards on target-absent frames. Consequently, even a trivial empty-mask predictor can outperform strong models such as SAM 3, revealing a fundamental mismatch between current metrics and practical VOS performance. To mitigate this issue, we propose Volumetric J&F, which evaluates mask sequences as spatio-temporal volumes and reduces the dominance of target-absence rewards while preserving sensitivity to segmentation quality and temporal structure. Project page: https://aidaslab.github.io/FaVOS.",
@@ -1614,6 +1615,7 @@
       "failures": {},
       "first_discovered": "2026-10-08T13:00:09.450768+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.10306v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Scientific image segmentation methods rely on extensive annotation and task-specific training, limiting adaptation across imaging modalities and experimental conditions. We present a training-free, one-shot framework that specializes vision foundation models using a single annotated reference image. The framework combines DINOv3 representations with background-adaptive feature orthogonalization to suppress artifact-related feature directions, after which cosine similarity localizes candidate regions for SAM segmentation. We evaluate the framework on red-blood-cell microscopy, structured-illumination pool boiling, and chest radiography. Relative to the strongest baseline, the proposed method improves mean IoU by 5.91% and 78.62% on the microscopy and pool-boiling datasets, respectively, while achieving comparable performance on chest radiographs. These results demonstrate that one-shot reference conditioning can adapt general-purpose vision models to specialized scientific segmentation tasks.",
@@ -1924,10 +1926,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-11",
+      "discovered_candidates": 15,
+      "discovered_papers": 15,
       "run_id": "20261011T121819Z-950f4a65",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-11T12:18:00+00:00",
+          "seen": 5010,
+          "start": "2026-09-30T09:52:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-11T12:18:19.048163+00:00",
       "window": {
         "end": "2026-10-11T12:18:19.048163+00:00",
