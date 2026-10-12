@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-10-12 | Can machines reason non-verbally? | 机器能进行非语言推理吗？ | [arXiv 2610.13925v1](https://arxiv.org/abs/2610.13925v1) |
-| 2026-10-12 | A4-MR: Abnormality-aware Anatomical Alignment for MR | 待翻译 | [arXiv 2610.13056v1](https://arxiv.org/abs/2610.13056v1) |
+| 2026-10-12 | A4-MR: Abnormality-aware Anatomical Alignment for MR | A4-MR：面向MR的异常感知解剖对齐 | [arXiv 2610.13056v1](https://arxiv.org/abs/2610.13056v1) |
 | 2026-10-12 | Domain Adaptation of SAM 2.1 for Building-Component Segmentation in Image-Based 3D Reconstruction | 待翻译 | [arXiv 2610.12786v1](https://arxiv.org/abs/2610.12786v1) |
 | 2026-10-12 | Reference-Free Food Volume Estimation from Egocentric Stereo Video | 待翻译 | [arXiv 2610.12735v1](https://arxiv.org/abs/2610.12735v1) |
 | 2026-10-09 | ContourVLA: A Closed-Loop Perception-Action Contour Policy for Generalized Referring Expression Segmentation | ContourVLA：面向广义指代表达分割的闭环感知-动作轮廓策略 | [arXiv 2610.12107v1](https://arxiv.org/abs/2610.12107v1) |
