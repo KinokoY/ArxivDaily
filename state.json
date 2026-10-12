@@ -1801,9 +1801,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We introduce a method that uses stereo video from a wearable egocentric device to reconstruct food items in true physical scale to accurately estimate volume.",
+          "By utilizing FoundationStereo for zero-shot stereo matching, SAM 2 for food segmentation, and TSDF fusion over a set of keyframes, our method yields a visually and metrically accurate 3D mesh of any plated food item from a single stereo recording.",
+          "We show strong initial volume estimation results across five recorded food items, achieving a mean absolute percentage error of 9.1%."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文是自指立体视频中的食物体积估计应用系统，组合 FoundationStereo、SAM 2 与 TSDF 融合完成三维重建；不属于医学影像推理分割、隐含请求/空间位置推理到像素掩码、医学分割 DPO/RL 或拓扑/结构目标。SAM 2 仅作为分割组件，未提出 DPO/RL 方法，也没有可迁移的优化目标理论或证据，rule_hits 中的 transferable_objective 未被摘要支持。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 5,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-12T14:43:35.655632+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Current stereo vision-based approaches for food portion estimation are hindered by the user burden of using a mobile phone to capture multiple images or placing a reference object in the scene for scale calibration. As a step towards passive dietary intake monitoring, we introduce a method that uses stereo video from a wearable egocentric device to reconstruct food items in true physical scale to accurately estimate volume. By utilizing FoundationStereo for zero-shot stereo matching, SAM 2 for food segmentation, and TSDF fusion over a set of keyframes, our method yields a visually and metrically accurate 3D mesh of any plated food item from a single stereo recording. We leverage the unique offerings of wearables, such as a factory-calibrated stereo baseline and camera poses estimated on-device via visual-inertial odometry (VIO), to perform fully automatic reconstruction without a scale reference object in the scene. We show strong initial volume estimation results across five recorded food items, achieving a mean absolute percentage error of 9.1%.",
         "authors": [
@@ -1820,15 +1840,11 @@
         "updated": "2026-10-08T21:30:38+00:00",
         "version_id": "2610.12735v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-12T14:43:35.655632+00:00",
-        "run_id": "20261012T144335Z-0b77ebfe",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.12735v1"
       ]
