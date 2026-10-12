@@ -23,7 +23,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-11T12:18:19.048163+00:00"
+    "last_complete_end": "2026-10-12T14:43:35.655632+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -1796,6 +1796,140 @@
       "versions": [
         "2610.12107v1"
       ]
+    },
+    "2610.12735": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-12T14:43:35.655632+00:00",
+      "paper": {
+        "abstract": "Current stereo vision-based approaches for food portion estimation are hindered by the user burden of using a mobile phone to capture multiple images or placing a reference object in the scene for scale calibration. As a step towards passive dietary intake monitoring, we introduce a method that uses stereo video from a wearable egocentric device to reconstruct food items in true physical scale to accurately estimate volume. By utilizing FoundationStereo for zero-shot stereo matching, SAM 2 for food segmentation, and TSDF fusion over a set of keyframes, our method yields a visually and metrically accurate 3D mesh of any plated food item from a single stereo recording. We leverage the unique offerings of wearables, such as a factory-calibrated stereo baseline and camera poses estimated on-device via visual-inertial odometry (VIO), to perform fully automatic reconstruction without a scale reference object in the scene. We show strong initial volume estimation results across five recorded food items, achieving a mean absolute percentage error of 9.1%.",
+        "authors": [
+          "Vivan Kumar",
+          "Gautham Vinod",
+          "Fengqing Zhu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.12735v1",
+        "published": "2026-10-08T21:30:38+00:00",
+        "title": "Reference-Free Food Volume Estimation from Egocentric Stereo Video",
+        "updated": "2026-10-08T21:30:38+00:00",
+        "version_id": "2610.12735v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.12735v1"
+      ]
+    },
+    "2610.12786": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-12T14:43:35.655632+00:00",
+      "paper": {
+        "abstract": "3D reconstruction of building components using image-based scanning requires appropriate segmentation of the objects in the 2D building images. In order to benefit from consistent grouping of the 2D masks in 3D environments, vision foundation models such as the Segment Anything Model have been utilized by Group Anything with Radiance Fields (GARField) to perform 3D segmentation. This study fine-tuned SAM 2.1 on the HBD dataset, consisting of 2,679 annotated images from 42 buildings, to enhance multi-class segmentation of 2D building images, covering 11 classes (Wall, Window, Ceiling, Door, Column, Beam, Floor, Opening, Curtain Wall, Roof, and Lift). The model was evaluated using per-class IoU, Dice, and mIoU metrics, and the results show an improvement in mIoU from 49.9% to 69.6%, indicating a meaningful improvement in class segmentation and providing a more accurate model for distilling the masks in 3D. SegFormer was then used as a baseline, generating per-class masks for comparison with SAM 2.1, which indicates improvement in some object classes with larger surface area. The masks in the building images were grouped in the neural radiance field, and the pretrained SAM 2.1 was compared with the fine-tuned SAM 2.1 in the newly rendered images. This comparison shows that fine-tuning improves the grouping of building components at a user-selected grouping scale. This advances the application of Group Anything with Radiance Fields (GARField) in 3D, enabling better segmentation of building structures for 3D auto-reconstruction.",
+        "authors": [
+          "Ehsan Agha Ebrahimi",
+          "Yong-Cheol Lee",
+          "Keith G. Mills"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.12786v1",
+        "published": "2026-10-08T22:43:47+00:00",
+        "title": "Domain Adaptation of SAM 2.1 for Building-Component Segmentation in Image-Based 3D Reconstruction",
+        "updated": "2026-10-08T22:43:47+00:00",
+        "version_id": "2610.12786v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.12786v1"
+      ]
+    },
+    "2610.13056": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-12T14:43:35.655632+00:00",
+      "paper": {
+        "abstract": "Recent advances in large-scale foundation models have enabled strong generalization across a wide range of clinical and research tasks in magnetic resonance imaging (MRI). However, existing vision-language MRI models remain limited in anatomy-specific localization and pathology-aware representation, particularly in real-world settings. We introduce A4-MR, a 3D vision-language foundation model trained on approximately 50,000 MRI studies comprising 491,000 series, roughly half of which are paired with radiology reports. A4-MR is designed to: (1) learn anatomy localization through large-scale pretraining with noisy labels; (2) align image and text representations at the anatomical level; and (3) learn distinct representations of healthy and abnormal anatomy. Across a diverse set of downstream tasks, A4-MR outperforms existing foundation models, including a +1.7 AUROC improvement over MedSigLIP for abnormality detection. Using a frozen encoder, A4-MR also surpasses an end-to-end task-specific MedNeXt model for knee segmentation by +1.4 Dice and performs comparably to the best task-specific model for abdominal organ segmentation on AMOS, within 0.4 Dice. Finally, without anatomical prompts, A4-MR localizes 3D anatomy comparably to MedSAM2 provided with ground-truth bounding boxes. Together, these results demonstrate that anatomy-level multimodal alignment and abnormality-aware representation learning can enable a single MRI foundation model to support localization, segmentation, and pathology-related tasks.",
+        "authors": [
+          "Noel D'souza",
+          "Zhijian Yang",
+          "Nishank Singla",
+          "Pranay Doshi",
+          "Krisztian Koos",
+          "Fei Tan",
+          "Bruno Nunes",
+          "Laszlo Rusko",
+          "Bernadett Kolozsvari",
+          "Eszter Sabo",
+          "Emanuele Valeriano",
+          "Vikash Gupta",
+          "Seyed Iman Zare Estakhraji",
+          "Marc Lebel",
+          "Farzin Haddadpour",
+          "Taha Kass-Hout",
+          "Erhan Bas"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.13056v1",
+        "published": "2026-10-09T06:10:10+00:00",
+        "title": "A4-MR: Abnormality-aware Anatomical Alignment for MR",
+        "updated": "2026-10-09T06:10:10+00:00",
+        "version_id": "2610.13056v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.13056v1"
+      ]
+    },
+    "2610.13925": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-12T14:43:35.655632+00:00",
+      "paper": {
+        "abstract": "Modern machines can solve equations, follow logic and reason through language, yet they still struggle with problems that require visual non-verbal reasoning. This is evident even in advanced systems such as DeepSeek, ChatGPT and Gemini, which remain limited on visual tasks such as completing abstract patterns or delineating ambiguous regions-of-interest. Unlike explicit intermediate steps in verbal reasoning which can be verified through logic or automated tests, visual reasoning involves implicit intermediate steps with no clear methods for verification. Non-verbal reasoning is therefore challenging to model and, as a result, remains a fundamental limitation of current machine intelligence. Here we introduce GenVerOpt, a general framework that unifies generation, verification and optimisation into a reasoning pipeline for machines. By generating candidate solutions, verifying their correctness, and iteratively refining them, GenVerOpt enables per-sample optimisation rather than relying solely on dataset-level trends captured during model training. This process mirrors human problem-solving where multiple possibilities are imagined, evaluated, and refined until a correct solution emerges. Across diverse domains, GenVerOpt demonstrates capabilities beyond existing systems: it surpasses humans on abstract IQ puzzles, matches clinicians in prostate cancer segmentation, exceeds experts in liver vessel reconstruction and outperforms state-of-the-art approaches in tumour boundary alignment. These results show that machine reasoning can extend beyond language, establishing visual non-verbal reasoning as a foundation for more flexible and generalisable intelligence.",
+        "authors": [
+          "Shaheer U. Saeed",
+          "Zion Tse",
+          "Gregory Slabaugh",
+          "Daniel C. Alexander",
+          "Yipeng Hu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.13925v1",
+        "published": "2026-10-09T17:54:36+00:00",
+        "title": "Can machines reason non-verbally?",
+        "updated": "2026-10-09T17:54:36+00:00",
+        "version_id": "2610.13925v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.13925v1"
+      ]
     }
   },
   "runs": [
@@ -2010,10 +2144,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-12",
+      "discovered_candidates": 19,
+      "discovered_papers": 19,
       "run_id": "20261012T144335Z-0b77ebfe",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-12T14:43:00+00:00",
+          "seen": 5553,
+          "start": "2026-09-30T09:52:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-12T14:43:35.655632+00:00",
       "window": {
         "end": "2026-10-12T14:43:35.655632+00:00",
