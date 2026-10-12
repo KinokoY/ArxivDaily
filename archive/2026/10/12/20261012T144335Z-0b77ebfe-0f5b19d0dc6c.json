@@ -1,0 +1,59 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/12/20261012T144335Z-0b77ebfe-0f5b19d0dc6c.md",
+  "chain_roots": [
+    "20261012T144335Z-0b77ebfe-0f5b19d0dc6c"
+  ],
+  "content_hash": "0f5b19d0dc6cd7a1436262059c2c69726a3a25f40584d122c609a3ae80199ed0",
+  "day": "2026-10-12",
+  "digest_id": "20261012T144335Z-0b77ebfe-0f5b19d0dc6c",
+  "empty": false,
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Modern machines can solve equations, follow logic and reason through language, yet they still struggle with problems that require visual non-verbal reasoning. This is evident even in advanced systems such as DeepSeek, ChatGPT and Gemini, which remain limited on visual tasks such as completing abstract patterns or delineating ambiguous regions-of-interest. Unlike explicit intermediate steps in verbal reasoning which can be verified through logic or automated tests, visual reasoning involves implicit intermediate steps with no clear methods for verification. Non-verbal reasoning is therefore challenging to model and, as a result, remains a fundamental limitation of current machine intelligence. Here we introduce GenVerOpt, a general framework that unifies generation, verification and optimisation into a reasoning pipeline for machines. By generating candidate solutions, verifying their correctness, and iteratively refining them, GenVerOpt enables per-sample optimisation rather than relying solely on dataset-level trends captured during model training. This process mirrors human problem-solving where multiple possibilities are imagined, evaluated, and refined until a correct solution emerges. Across diverse domains, GenVerOpt demonstrates capabilities beyond existing systems: it surpasses humans on abstract IQ puzzles, matches clinicians in prostate cancer segmentation, exceeds experts in liver vessel reconstruction and outperforms state-of-the-art approaches in tumour boundary alignment. These results show that machine reasoning can extend beyond language, establishing visual non-verbal reasoning as a foundation for more flexible and generalisable intelligence.",
+        "authors": [
+          "Shaheer U. Saeed",
+          "Zion Tse",
+          "Gregory Slabaugh",
+          "Daniel C. Alexander",
+          "Yipeng Hu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.13925v1",
+        "published": "2026-10-09T17:54:36+00:00",
+        "title": "Can machines reason non-verbally?",
+        "updated": "2026-10-09T17:54:36+00:00",
+        "version_id": "2610.13925v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "medical_reasoning",
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "现代机器能够解方程、遵循逻辑并通过语言进行推理，但它们在需要视觉非语言推理的问题上仍然举步维艰。这一点即使在DeepSeek、ChatGPT和Gemini等先进系统中也很明显，它们在完成抽象图案或勾画模糊感兴趣区域等视觉任务上仍然受限。与可以通过逻辑或自动化测试验证的语言推理中显式的中间步骤不同，视觉推理涉及隐式的中间步骤，且没有明确的验证方法。因此，非语言推理难以建模，并且因此仍然是当前机器智能的一个根本局限。在此，我们提出GenVerOpt，一个将生成、验证和优化统一为机器推理流程的通用框架。通过生成候选解、验证其正确性并迭代地改进它们，GenVerOpt实现了逐样本优化，而不是仅依赖模型训练期间捕获的数据集层面趋势。这一过程类似于人类解决问题的方式：想象多种可能性，对其进行评估并不断改进，直到出现正确解。在不同领域中，GenVerOpt展现出超越现有系统的能力：在抽象智商谜题上超越人类，在前列腺癌分割上匹配临床医生，在肝血管重建上超越专家，并在肿瘤边界对齐上优于最先进方法。这些结果表明，机器推理可以超越语言，确立视觉非语言推理作为更灵活、更具泛化能力的智能的基础。",
+        "title_zh": "机器能进行非语言推理吗？"
+      }
+    }
+  ],
+  "notification_hash": "e1417b09592cd027420ae450d9c6028275b894324ca9c510f2347be002053921",
+  "recovery_of": [],
+  "rendered": {
+    "2610.13925": "rendered_inline_translation"
+  },
+  "run_id": "20261012T144335Z-0b77ebfe",
+  "schema_version": 1
+}
