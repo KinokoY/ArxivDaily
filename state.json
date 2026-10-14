@@ -31,7 +31,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-13T13:46:36.593473+00:00"
+    "last_complete_end": "2026-10-14T11:24:31.534525+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -2238,6 +2238,219 @@
       "versions": [
         "2610.13925v1"
       ]
+    },
+    "2610.14651": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "The recent Segment Anything Model 3 (SAM3) extends powerful promptable segmentation from spatial cues to concepts, raising the prospect of a single foundation model for universal image segmentation. However, this promise often fails to translate into reliable performance on downstream segmentation tasks. In this work, we empirically identify concept recognition, rather than mask quality, as the primary bottleneck: SAM3 accurately delineates the objects it recognizes yet struggles to robustly determine which concepts are present. Driven by this, we present \\textit{\\underline{T}ext \\underline{A}nchor re-\\underline{G}rounding (\\TAG{})}, a simple yet effective framework that rectifies the concept recognition of SAM3 on the target domain without dense annotations. Specifically, \\TAG{} introduces an \\textit{Anchor Residual Pathway} comprising image-conditioned, low-rank adapters to re-ground text anchors in the target distribution and modulate subsequent text-conditioned interactions. Guided solely by image-level category labels, \\TAG{} jointly optimizes binary cross-entropy with \\textit{Soft Boundary Ranking} objectives to calibrate presence confidence and distinguish present concepts from confusable negatives. Building upon this, we devise \\textit{Confidence-Weighted Distillation} to couple rich semantic context of a multimodal large language model with fine-grained spatial priors of SAM3, thereby achieving effective calibration in the absence of manual annotations. Extensive experiments demonstrate that \\TAG{} unlocks SAM3's segmentation potential with only 3.1M trainable parameters, achieving impressive performance across diverse scenarios, and notably, even surpassing leading mask-supervised methods on several metrics. \\href{https://github.com/MiSsU-HH/TAG_SAM3}{Our code will be publicly available at GitHub \\faGithub}.",
+        "authors": [
+          "Hao Zhu",
+          "Heyu Sun",
+          "Shuo Jin",
+          "Jiayu Xiao",
+          "Feng Dai"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.14651v1",
+        "published": "2026-10-10T07:03:19+00:00",
+        "title": "TAG: Calibrating SAM3 for Universal Image Segmentation without Dense Supervision",
+        "updated": "2026-10-10T07:03:19+00:00",
+        "version_id": "2610.14651v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.14651v1"
+      ]
+    },
+    "2610.14944": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "Specifying segmentation targets with natural language provides flexible semantic conditioning for medical image segmentation. However, existing methods still struggle to reliably ground high-level textual semantics into accurate pixel-level spatial prompts, especially under low-contrast lesions, ambiguous boundaries, and visually similar anatomical contexts. In this paper, we propose RADAR (Residual Aggregation and Dense Alignment Representations), a parameter-efficient framework for text-guided medical image segmentation. RADAR explicitly decouples and synergizes the medical semantic anchoring capability of BiomedCLIP with the prompt-driven mask decoding ability of MedSAM2, while enabling low-cost task adaptation via LoRA. Specifically, Guided Residual Depth Aggregation adaptively aggregates cross-layer features under semantic guidance to alleviate delayed textual injection and deep semantic dilution. Structured Dense Representation Alignment leverages a frozen BiomedCLIP to construct crop-level target, boundary, and context anchors, improving the local discriminability of dense features and the reliability of automatic prompts. Multi-modal Prompt Generation further converts cross-modal semantic responses into composite text, point, and mask prompts for MedSAM2 decoding. Experiments on three public medical image segmentation datasets show that RADAR achieves competitive performance with only 0.74M trainable parameters, demonstrating its effectiveness in parameter-efficient adaptation, semantic grounding, and dense representation enhancement. The source code is available at https://github.com/JGuiidev/RADAR.",
+        "authors": [
+          "Jie Gui",
+          "Hang Tu",
+          "Yunfeng Dou",
+          "Wen Sha",
+          "Xiuquan Du",
+          "Shuo Li"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.14944v1",
+        "published": "2026-10-10T14:20:37+00:00",
+        "title": "Text-Guided Medical Image Segmentation via Residual Aggregation and Dense Alignment Representations",
+        "updated": "2026-10-10T14:20:37+00:00",
+        "version_id": "2610.14944v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.14944v1"
+      ]
+    },
+    "2610.15280": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "Depth estimation and Gaussian reconstruction share a need for multi-scale feature processing, yet use different prediction interfaces and training objectives. Whether a decoder's internal computation can be optimized once and reused across these systems remains a structural design question. Search over primitive configurations alone leaves the organization of transformations fixed. To address this gap, we propose GeoBridge, an evolutionary framework for transferable decoder topologies. First, GeoBridge makes stage-internal topology searchable through residual, sequential, and parallel composition of configurable primitives. Shape-preserving composition retains the stage interfaces of a fixed multi-scale scaffold. Second, a functional-tree encoding supports stage-aware crossover and hierarchical mutation, while a gradient sensitivity-alignment proxy evaluates candidates without training. Multi-objective evolution balances this proxy with computation and parameter cost. Third, selected topologies are instantiated and trained in target systems with task-specific prediction interfaces. A single source search takes approximately 12 GPU hours. GeoBridgeNet-A3 achieves the best depth accuracy among four adapted decoder baselines under a common encoder and training protocol on NYU Depth V2 and KITTI. The same topology reaches 27.11 dB PSNR in Gaussian novel-view synthesis on RealEstate10K, and its refined representations support open-vocabulary segmentation on LERF. These results support decoder topology as a reusable design object across the evaluated geometric vision systems. Code and pretrained weights are available at https://github.com/EMI-Group/GeoBridge-NAS.",
+        "authors": [
+          "Rui Wang",
+          "Haoyu Zhang",
+          "Ran Cheng"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.15280v1",
+        "published": "2026-10-11T02:23:20+00:00",
+        "title": "GeoBridge: Evolving Transferable Decoder Topologies for Geometric Vision",
+        "updated": "2026-10-11T02:23:20+00:00",
+        "version_id": "2610.15280v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.15280v1"
+      ]
+    },
+    "2610.15330": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "Accurate brain tumor segmentation from magnetic resonance imaging (MRI) is essential for diagnosis and treatment planning; however, manual delineation is labor-intensive and time-consuming. Existing approaches are either task-specific with limited generalization or rely on user-provided prompts during inference. We present BaT-SAM, a parameter-efficient adaptation framework that enables fully automatic brain tumor segmentation with the Segment Anything Model (SAM). BaT-SAM injects local inductive bias into SAM's frozen Vision Transformer (ViT) encoder via Conv-LoRA, where image features are processed by a sparsely gated mixture of multi-scale convolutional experts. This design compensates for the limited translation-equivariant inductive bias of vanilla ViTs while fine-tuning fewer than 5M parameters (less than 1% of the full model). To remove the need for user prompts, we further introduce a lightweight self-prompting box regressor that is jointly optimized with the adapter using scheduled sampling and predicts tumor locations directly from image embeddings. On the BRISC2025 benchmark, BaT-SAM achieves a weighted mean IoU of 0.832 while outperforming state-of-the-art benchmarks. It further demonstrates strong cross-dataset generalization, achieving Dice scores of 0.702 on Figshare and 0.784 on the LGG MRI Segmentation dataset.",
+        "authors": [
+          "Sumiaya Jannat",
+          "Md Mahedi Hasan",
+          "Md Shamimul Islam",
+          "Md Nur Hossain"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.15330v1",
+        "published": "2026-10-11T04:09:35+00:00",
+        "title": "BaT-SAM: Introducing Inductive Bias into SAM via a Mixture of Convolutional Experts for Brain Tumor Segmentation",
+        "updated": "2026-10-11T04:09:35+00:00",
+        "version_id": "2610.15330v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.15330v1"
+      ]
+    },
+    "2610.15929": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "Recent trackers built on foundation models such as the Segment Anything Model (SAM) achieve strong performance by propagating object masks through memory. However, this strength is also a key source of failure: under occlusion, reappearance, or distractors, an incorrect prediction can enter the tracking loop and be propagated over time, resulting in persistent identity drift. Existing approaches seek to prevent such failures through improved memory and temporal modeling, but once a failure occurs, the tracker has no explicit mechanism to recognize or correct it. We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery. We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery. A vision-language verification agent first reasons over spatio-temporal context to determine whether the tracker is still following the target. When a failure is detected, a correction agent uses temporal context to recover the target before tracking continues. The correction agent is trained on real SAM3 failures, augmented with targeted identity-switch and distractor perturbations that expose it to challenging ambiguities during recovery. On LVOS-v2 and SecVOS, Dual-Agent improves SAM3 by 1.2 and 2.7 $J\\&F$, respectively. Importantly, the proposed framework transfers without retraining to SAM2.1, SeC, and Cutie, as well as to long-term video object tracking benchmarks including LaSOT-ext, TNL2K, and VOT-LT2022. Our results show that explicitly reasoning about when tracking fails and how to recover provides a complementary path to robust tracking beyond improving propagation alone. Project page: valaybundele.github.io/Dual-Agent.",
+        "authors": [
+          "Valay Bundele",
+          "Susmit Agrawal",
+          "Mehran Hosseinzadeh",
+          "The Nam Nguyen",
+          "Hendrik P. A. Lensch"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.15929v1",
+        "published": "2026-10-11T21:24:17+00:00",
+        "title": "When Trackers Fail: VLM-Guided Verification and Recovery for Robust Video Object Segmentation",
+        "updated": "2026-10-11T21:24:17+00:00",
+        "version_id": "2610.15929v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.15929v1"
+      ]
+    },
+    "2610.16292": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "3D Gaussian Splatting (3DGS) has been becoming a promising 3D reconstruction technique because of its advantage of high-fidelity rendering effect with high efficiency. However, it still suffers from coarse density control and semantically blind loss functions when reconstructing the fine-grained structures in complex urban scenes. Thus, this study proposes SG-GS, a semantic-guided 3DGS method for fine-grained structure reconstruction. It takes the semantic segmentation deduced by the Segment Anything Model (SAM) as a constraint and systematically integrates it into both Gaussian density control and loss function design. On the one hand, a semantic-constrained adaptive density control mechanism is constructed, which dynamically allocates gradient thresholds to different semantic regions of the scene and introduces an additional boundary-enhanced densification strategy, so that new Gaussians are directed to structurally critical regions. On the other hand, a multi-feature guided loss function is designed, and fine-grained supervision signals are gradually introduced through a phased progressive training strategy, alleviating the artifacts caused by the lack of semantic constraints in the basic loss. Experiments on three datasets show that the proposed method consistently improves reconstruction accuracy. Compared with the original 3DGS, the PSNR increases by approximately 2.7% to 5.2%, while artifacts on linear structures and boundary blurring are effectively mitigated. The method can serve the fine-grained 3D reconstruction of urban scenes.",
+        "authors": [
+          "Yueling Liao",
+          "San Jiang",
+          "Xing Zhang",
+          "Zhongwen Hu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.16292v1",
+        "published": "2026-10-12T07:17:45+00:00",
+        "title": "3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design",
+        "updated": "2026-10-12T07:17:45+00:00",
+        "version_id": "2610.16292v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.16292v1"
+      ]
+    },
+    "2610.18543": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "paper": {
+        "abstract": "Foundation models are increasingly used as feature extractors for downstream tasks with limited data, typically through representations obtained from their encoders. However, foundation models trained for structured tasks such as segmentation also form object-specific representations during task execution, whose transferability remains largely unexplored. We investigate Segment Anything Model 2 (SAM2) object pointers, compact object-level representations produced through the segmentation pathway, as transferable representations for downstream tumour prediction. Through experiments on two PET/CT tumour prediction tasks, we find that object pointers learned using segmentation supervision alone already encode tumour-discriminative information, despite never being optimised for the downstream labels. We further introduce task-guided object pointers, where an auxiliary objective jointly shapes the object pointer space for the downstream prediction together with segmentation. Task-guided pointers improve cancer-type classification, outperforming conventional encoder-based transfer and radiomics, while segmentation-only pointers perform best on the more challenging recurrence prediction task. Representation analyses reveal associations between object pointers and interpretable radiomics features, class-dependent organisation of the learned representation space, and explicit spatial grounding around the segmented tumour. Together, these findings suggest that useful transferable representations can emerge through the execution of a foundation model's primary task, providing an alternative to conventional encoder-based transfer.",
+        "authors": [
+          "Michalis Pistos",
+          "Bartłomiej W. Papież"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.18543v1",
+        "published": "2026-10-13T15:22:00+00:00",
+        "title": "Beyond the Encoder: Object-Centric Representations Emerging from Segmentation Foundation Models",
+        "updated": "2026-10-13T15:22:00+00:00",
+        "version_id": "2610.18543v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.18543v1"
+      ]
     }
   },
   "runs": [
@@ -2536,10 +2749,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-14",
+      "discovered_candidates": 24,
+      "discovered_papers": 24,
       "run_id": "20261014T112431Z-439f2ed3",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-14T11:24:00+00:00",
+          "seen": 7360,
+          "start": "2026-09-30T11:24:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-14T11:24:31.534525+00:00",
       "window": {
         "end": "2026-10-14T11:24:31.534525+00:00",

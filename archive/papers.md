@@ -4,6 +4,13 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-10-14 | Beyond the Encoder: Object-Centric Representations Emerging from Segmentation Foundation Models | 待翻译 | [arXiv 2610.18543v1](https://arxiv.org/abs/2610.18543v1) |
+| 2026-10-14 | 3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design | 待翻译 | [arXiv 2610.16292v1](https://arxiv.org/abs/2610.16292v1) |
+| 2026-10-14 | When Trackers Fail: VLM-Guided Verification and Recovery for Robust Video Object Segmentation | 待翻译 | [arXiv 2610.15929v1](https://arxiv.org/abs/2610.15929v1) |
+| 2026-10-14 | BaT-SAM: Introducing Inductive Bias into SAM via a Mixture of Convolutional Experts for Brain Tumor Segmentation | 待翻译 | [arXiv 2610.15330v1](https://arxiv.org/abs/2610.15330v1) |
+| 2026-10-14 | GeoBridge: Evolving Transferable Decoder Topologies for Geometric Vision | 待翻译 | [arXiv 2610.15280v1](https://arxiv.org/abs/2610.15280v1) |
+| 2026-10-14 | Text-Guided Medical Image Segmentation via Residual Aggregation and Dense Alignment Representations | 待翻译 | [arXiv 2610.14944v1](https://arxiv.org/abs/2610.14944v1) |
+| 2026-10-14 | TAG: Calibrating SAM3 for Universal Image Segmentation without Dense Supervision | 待翻译 | [arXiv 2610.14651v1](https://arxiv.org/abs/2610.14651v1) |
 | 2026-10-12 | Can machines reason non-verbally? | 机器能进行非语言推理吗？ | [arXiv 2610.13925v1](https://arxiv.org/abs/2610.13925v1) |
 | 2026-10-12 | A4-MR: Abnormality-aware Anatomical Alignment for MR | A4-MR：面向MR的异常感知解剖对齐 | [arXiv 2610.13056v1](https://arxiv.org/abs/2610.13056v1) |
 | 2026-10-12 | Domain Adaptation of SAM 2.1 for Building-Component Segmentation in Image-Based 3D Reconstruction | SAM 2.1 面向图像三维重建中建筑构件分割的领域自适应 | [arXiv 2610.12786v1](https://arxiv.org/abs/2610.12786v1) |
