@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-10-14 | Beyond the Encoder: Object-Centric Representations Emerging from Segmentation Foundation Models | 超越编码器：从分割基础模型中涌现的对象中心表示 | [arXiv 2610.18543v1](https://arxiv.org/abs/2610.18543v1) |
-| 2026-10-14 | 3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design | 待翻译 | [arXiv 2610.16292v1](https://arxiv.org/abs/2610.16292v1) |
+| 2026-10-14 | 3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design | 基于语义引导密度控制与损失设计的3D高斯泼溅细粒度城市场景重建 | [arXiv 2610.16292v1](https://arxiv.org/abs/2610.16292v1) |
 | 2026-10-14 | When Trackers Fail: VLM-Guided Verification and Recovery for Robust Video Object Segmentation | 待翻译 | [arXiv 2610.15929v1](https://arxiv.org/abs/2610.15929v1) |
 | 2026-10-14 | BaT-SAM: Introducing Inductive Bias into SAM via a Mixture of Convolutional Experts for Brain Tumor Segmentation | 待翻译 | [arXiv 2610.15330v1](https://arxiv.org/abs/2610.15330v1) |
 | 2026-10-14 | GeoBridge: Evolving Transferable Decoder Topologies for Geometric Vision | 待翻译 | [arXiv 2610.15280v1](https://arxiv.org/abs/2610.15280v1) |
