@@ -2336,9 +2336,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We present BaT-SAM, a parameter-efficient adaptation framework that enables fully automatic brain tumor segmentation with the Segment Anything Model (SAM).",
+          "BaT-SAM injects local inductive bias into SAM's frozen Vision Transformer (ViT) encoder via Conv-LoRA, where image features are processed by a sparsely gated mixture of multi-scale convolutional experts.",
+          "To remove the need for user prompts, we further introduce a lightweight self-prompting box regressor that is jointly optimized with the adapter using scheduled sampling and predicts tumor locations directly from image embeddings."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文是脑肿瘤MRI分割的SAM参数高效适配框架，核心为Conv-LoRA、稀疏门控多尺度卷积专家和自提示框回归器；未涉及医学影像推理分割、隐含请求/空间位置推理到掩码，也无DPO、RL或拓扑/结构目标，且不是有理论依据和迁移证据的传统分割/SAM损失或优化目标。规则命中transferable_objective可能仅因SAM/优化关键词，摘要未显示可迁移到目标任务的实质贡献。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 10,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Accurate brain tumor segmentation from magnetic resonance imaging (MRI) is essential for diagnosis and treatment planning; however, manual delineation is labor-intensive and time-consuming. Existing approaches are either task-specific with limited generalization or rely on user-provided prompts during inference. We present BaT-SAM, a parameter-efficient adaptation framework that enables fully automatic brain tumor segmentation with the Segment Anything Model (SAM). BaT-SAM injects local inductive bias into SAM's frozen Vision Transformer (ViT) encoder via Conv-LoRA, where image features are processed by a sparsely gated mixture of multi-scale convolutional experts. This design compensates for the limited translation-equivariant inductive bias of vanilla ViTs while fine-tuning fewer than 5M parameters (less than 1% of the full model). To remove the need for user prompts, we further introduce a lightweight self-prompting box regressor that is jointly optimized with the adapter using scheduled sampling and predicts tumor locations directly from image embeddings. On the BRISC2025 benchmark, BaT-SAM achieves a weighted mean IoU of 0.832 while outperforming state-of-the-art benchmarks. It further demonstrates strong cross-dataset generalization, achieving Dice scores of 0.702 on Figshare and 0.784 on the LGG MRI Segmentation dataset.",
         "authors": [
@@ -2356,15 +2376,11 @@
         "updated": "2026-10-11T04:09:35+00:00",
         "version_id": "2610.15330v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-14T11:24:31.534525+00:00",
-        "run_id": "20261014T112431Z-439f2ed3",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.15330v1"
       ]
