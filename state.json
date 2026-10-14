@@ -2427,9 +2427,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We investigate Segment Anything Model 2 (SAM2) object pointers, compact object-level representations produced through the segmentation pathway, as transferable representations for downstream tumour prediction.",
+          "Through experiments on two PET/CT tumour prediction tasks, we find that object pointers learned using segmentation supervision alone already encode tumour-discriminative information, despite never being optimised for the downstream labels.",
+          "We further introduce task-guided object pointers, where an auxiliary objective jointly shapes the object pointer space for the downstream prediction together with segmentation.",
+          "Task-guided pointers improve cancer-type classification, outperforming conventional encoder-based transfer and radiomics, while segmentation-only pointers perform best on the more challenging recurrence prediction task."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper proposes task-guided object pointers, an auxiliary objective that jointly shapes SAM2 object pointer representations with segmentation, and evaluates transfer to two PET/CT tumour prediction tasks. This is relevant to SAM/segmentation representation transfer and has empirical transfer evidence, but the abstract provides no theoretical justification for the auxiliary objective and does not address reasoning segmentation, spatial/prompt-to-mask reasoning, RL, or DPO. Thus it cannot be selected as a full transferable objective under the stated criteria.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 58,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "Whether the auxiliary objective has a theoretical basis or analysis beyond empirical representation analyses; the abstract does not provide one.",
+          "Whether the learned object pointers transfer to reasoning segmentation or spatial/positional prompt-to-mask tasks rather than tumor prediction.",
+          "Whether the reported improvements are statistically significant and robust across datasets, and how they compare with strong task-specific baselines.",
+          "Whether the method is primarily a segmentation optimization objective or a downstream representation-transfer method; full-text details are not available."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Foundation models are increasingly used as feature extractors for downstream tasks with limited data, typically through representations obtained from their encoders. However, foundation models trained for structured tasks such as segmentation also form object-specific representations during task execution, whose transferability remains largely unexplored. We investigate Segment Anything Model 2 (SAM2) object pointers, compact object-level representations produced through the segmentation pathway, as transferable representations for downstream tumour prediction. Through experiments on two PET/CT tumour prediction tasks, we find that object pointers learned using segmentation supervision alone already encode tumour-discriminative information, despite never being optimised for the downstream labels. We further introduce task-guided object pointers, where an auxiliary objective jointly shapes the object pointer space for the downstream prediction together with segmentation. Task-guided pointers improve cancer-type classification, outperforming conventional encoder-based transfer and radiomics, while segmentation-only pointers perform best on the more challenging recurrence prediction task. Representation analyses reveal associations between object pointers and interpretable radiomics features, class-dependent organisation of the learned representation space, and explicit spatial grounding around the segmented tumour. Together, these findings suggest that useful transferable representations can emerge through the execution of a foundation model's primary task, providing an alternative to conventional encoder-based transfer.",
         "authors": [
@@ -2446,15 +2472,11 @@
         "updated": "2026-10-13T15:22:00+00:00",
         "version_id": "2610.18543v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-14T11:24:31.534525+00:00",
-        "run_id": "20261014T112431Z-439f2ed3",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.18543v1"
       ]
