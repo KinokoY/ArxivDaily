@@ -2534,11 +2534,8 @@
         "transferable_objective"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-10-14T11:24:31.534525+00:00",
-        "run_id": "20261014T112431Z-439f2ed3",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "BaT-SAM：通过卷积专家混合将归纳偏置引入SAM用于脑肿瘤分割",
       "versions": [
         "2610.15330v1"
       ]
