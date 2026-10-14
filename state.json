@@ -2554,6 +2554,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "3D Gaussian Splatting (3DGS) has been becoming a promising 3D reconstruction technique because of its advantage of high-fidelity rendering effect with high efficiency. However, it still suffers from coarse density control and semantically blind loss functions when reconstructing the fine-grained structures in complex urban scenes. Thus, this study proposes SG-GS, a semantic-guided 3DGS method for fine-grained structure reconstruction. It takes the semantic segmentation deduced by the Segment Anything Model (SAM) as a constraint and systematically integrates it into both Gaussian density control and loss function design. On the one hand, a semantic-constrained adaptive density control mechanism is constructed, which dynamically allocates gradient thresholds to different semantic regions of the scene and introduces an additional boundary-enhanced densification strategy, so that new Gaussians are directed to structurally critical regions. On the other hand, a multi-feature guided loss function is designed, and fine-grained supervision signals are gradually introduced through a phased progressive training strategy, alleviating the artifacts caused by the lack of semantic constraints in the basic loss. Experiments on three datasets show that the proposed method consistently improves reconstruction accuracy. Compared with the original 3DGS, the PSNR increases by approximately 2.7% to 5.2%, while artifacts on linear structures and boundary blurring are effectively mitigated. The method can serve the fine-grained 3D reconstruction of urban scenes.",
@@ -2572,11 +2573,22 @@
         "updated": "2026-10-12T07:17:45+00:00",
         "version_id": "2610.16292v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2610.16292v1"
       ]
