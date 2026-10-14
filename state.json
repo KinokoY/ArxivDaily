@@ -2314,11 +2314,13 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-14T11:24:31.534525+00:00",
-        "run_id": "20261014T112431Z-439f2ed3",
-        "stage": "translation"
+      "title_zh": "TAG：无需稠密监督校准SAM3以实现通用图像分割",
+      "translation": {
+        "abstract_zh": "最近的Segment Anything Model 3 (SAM3) 将强大的可提示分割从空间线索扩展到概念，提升了单一基础模型用于通用图像分割的前景。然而，这一前景往往无法转化为在下游分割任务上的可靠性能。在本工作中，我们通过实证确定，概念识别而非掩码质量是主要瓶颈：SAM3能准确勾勒出其识别到的对象，却难以稳健地判断哪些概念存在。受此驱动，我们提出\\textit{\\underline{T}ext \\underline{A}nchor re-\\underline{G}rounding (\\TAG{})}，一个简单而有效的框架，可在没有稠密标注的情况下校正SAM3在目标域上的概念识别。具体而言，\\TAG{}引入\\textit{Anchor Residual Pathway}，包含以图像为条件的低秩适配器，以在目标分布中重新定位文本锚点，并调制后续的文本条件交互。仅由图像级类别标签引导，\\TAG{}联合优化二元交叉熵与\\textit{Soft Boundary Ranking}目标，以校准存在置信度并区分存在概念与易混淆负样本。在此基础上，我们设计\\textit{Confidence-Weighted Distillation}，将多模态大语言模型丰富的语义上下文与SAM3细粒度的空间先验耦合，从而在缺乏人工标注的情况下实现有效校准。大量实验表明，\\TAG{}仅用3.1M可训练参数就释放了SAM3的分割潜力，在多样场景中取得令人印象深刻的性能，并且值得注意的是，在若干指标上甚至超越了领先的掩码监督方法。\\href{https://github.com/MiSsU-HH/TAG_SAM3}{我们的代码将在GitHub上公开：\\faGithub}。",
+        "title_zh": "TAG：无需稠密监督校准SAM3以实现通用图像分割"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.14651v1"
       ]
