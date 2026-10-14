@@ -29,7 +29,7 @@
       "created_at": "2026-10-13T13:46:36.593473+00:00"
     },
     "20261014T112431Z-439f2ed3-9161bdb9d836": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-14T11:24:31.534525+00:00"
     }
   },
@@ -105,10 +105,12 @@
     "2026-10-14": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261014T112431Z-439f2ed3-9161bdb9d836"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -699,6 +701,8 @@
     "20261014T112431Z-439f2ed3-9161bdb9d836": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/14/20261014T112431Z-439f2ed3-9161bdb9d836.md",
+      "attempt_run": "20261014T112431Z-439f2ed3",
+      "attempt_started": "2026-10-14T11:33:20.800934+00:00",
       "chain_root": "20261014T112431Z-439f2ed3-9161bdb9d836",
       "chain_roots": [
         "20261014T112431Z-439f2ed3-9161bdb9d836"
@@ -861,6 +865,7 @@
         }
       ],
       "notification_hash": "b4e09317af04e9376f74c3ff3c9479cfe9ae5dc9af923588660e5109d305b3d2",
+      "quota_day": "2026-10-14",
       "recovery_of": [],
       "rendered": {
         "2610.14651": "rendered_inline_translation",
@@ -870,7 +875,7 @@
       },
       "run_id": "20261014T112431Z-439f2ed3",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -2428,6 +2433,7 @@
       ]
     },
     "2610.14651": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -2455,7 +2461,18 @@
           "The abstract does not clarify whether there is any language-based reasoning segmentation component beyond concept recognition calibration."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261014T112431Z-439f2ed3-9161bdb9d836",
+      "events": [
+        {
+          "at": "2026-10-14T11:33:20.800934+00:00",
+          "digest_id": "20261014T112431Z-439f2ed3-9161bdb9d836",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
@@ -2478,6 +2495,7 @@
         "updated": "2026-10-10T07:03:19+00:00",
         "version_id": "2610.14651v1"
       },
+      "pending_digest": "20261014T112431Z-439f2ed3-9161bdb9d836",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -2506,6 +2524,7 @@
       ]
     },
     "2610.14944": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -2535,7 +2554,18 @@
           "rule_hits 标记 transferable_objective，但摘要未给出传统分割或 SAM 损失/优化目标的理论依据或迁移证据。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261014T112431Z-439f2ed3-9161bdb9d836",
+      "events": [
+        {
+          "at": "2026-10-14T11:33:20.800934+00:00",
+          "digest_id": "20261014T112431Z-439f2ed3-9161bdb9d836",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
@@ -2559,6 +2589,7 @@
         "updated": "2026-10-10T14:20:37+00:00",
         "version_id": "2610.14944v1"
       },
+      "pending_digest": "20261014T112431Z-439f2ed3-9161bdb9d836",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -2795,6 +2826,7 @@
       ]
     },
     "2610.16292": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -2822,7 +2854,18 @@
           "摘要未说明是否与RL或DPO结合，需确认全文。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261014T112431Z-439f2ed3-9161bdb9d836",
+      "events": [
+        {
+          "at": "2026-10-14T11:33:20.800934+00:00",
+          "digest_id": "20261014T112431Z-439f2ed3-9161bdb9d836",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
@@ -2844,6 +2887,7 @@
         "updated": "2026-10-12T07:17:45+00:00",
         "version_id": "2610.16292v1"
       },
+      "pending_digest": "20261014T112431Z-439f2ed3-9161bdb9d836",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -2872,6 +2916,7 @@
       ]
     },
     "2610.18543": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -2901,7 +2946,18 @@
           "Whether the method is primarily a segmentation optimization objective or a downstream representation-transfer method; full-text details are not available."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261014T112431Z-439f2ed3-9161bdb9d836",
+      "events": [
+        {
+          "at": "2026-10-14T11:33:20.800934+00:00",
+          "digest_id": "20261014T112431Z-439f2ed3-9161bdb9d836",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
@@ -2922,6 +2978,7 @@
         "updated": "2026-10-13T15:22:00+00:00",
         "version_id": "2610.18543v1"
       },
+      "pending_digest": "20261014T112431Z-439f2ed3-9161bdb9d836",
       "presentation_modules": [
         "title",
         "title_translation",
