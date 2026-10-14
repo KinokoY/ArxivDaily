@@ -27,6 +27,10 @@
     "20261013T134636Z-f945e4d5-f6eccd8867d6": {
       "attempts": 1,
       "created_at": "2026-10-13T13:46:36.593473+00:00"
+    },
+    "20261014T112431Z-439f2ed3-9161bdb9d836": {
+      "attempts": 0,
+      "created_at": "2026-10-14T11:24:31.534525+00:00"
     }
   },
   "collection": {
@@ -691,6 +695,182 @@
       "run_id": "20261013T134636Z-f945e4d5",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261014T112431Z-439f2ed3-9161bdb9d836": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/14/20261014T112431Z-439f2ed3-9161bdb9d836.md",
+      "chain_root": "20261014T112431Z-439f2ed3-9161bdb9d836",
+      "chain_roots": [
+        "20261014T112431Z-439f2ed3-9161bdb9d836"
+      ],
+      "content_hash": "9161bdb9d836e44feb5e2f843a4d6f35a64c886212ce8800355e71a541c52178",
+      "created_at": "2026-10-14T11:24:31.534525+00:00",
+      "day": "2026-10-14",
+      "digest_id": "20261014T112431Z-439f2ed3-9161bdb9d836",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Foundation models are increasingly used as feature extractors for downstream tasks with limited data, typically through representations obtained from their encoders. However, foundation models trained for structured tasks such as segmentation also form object-specific representations during task execution, whose transferability remains largely unexplored. We investigate Segment Anything Model 2 (SAM2) object pointers, compact object-level representations produced through the segmentation pathway, as transferable representations for downstream tumour prediction. Through experiments on two PET/CT tumour prediction tasks, we find that object pointers learned using segmentation supervision alone already encode tumour-discriminative information, despite never being optimised for the downstream labels. We further introduce task-guided object pointers, where an auxiliary objective jointly shapes the object pointer space for the downstream prediction together with segmentation. Task-guided pointers improve cancer-type classification, outperforming conventional encoder-based transfer and radiomics, while segmentation-only pointers perform best on the more challenging recurrence prediction task. Representation analyses reveal associations between object pointers and interpretable radiomics features, class-dependent organisation of the learned representation space, and explicit spatial grounding around the segmented tumour. Together, these findings suggest that useful transferable representations can emerge through the execution of a foundation model's primary task, providing an alternative to conventional encoder-based transfer.",
+            "authors": [
+              "Michalis Pistos",
+              "Bartłomiej W. Papież"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.LG"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.18543v1",
+            "published": "2026-10-13T15:22:00+00:00",
+            "title": "Beyond the Encoder: Object-Centric Representations Emerging from Segmentation Foundation Models",
+            "updated": "2026-10-13T15:22:00+00:00",
+            "version_id": "2610.18543v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "基础模型越来越多地被用作数据有限的下游任务的特征提取器，通常通过从其编码器获得的表示来实现。然而，为分割等结构化任务训练的基础模型在执行任务期间也会形成对象特定的表示，其可迁移性在很大程度上仍未被探索。我们研究了Segment Anything Model 2（SAM2）对象指针——通过分割路径产生的紧凑对象级表示——作为下游肿瘤预测的可迁移表示。通过在两个PET/CT肿瘤预测任务上的实验，我们发现仅使用分割监督学习到的对象指针已经编码了肿瘤判别信息，尽管从未针对下游标签进行优化。我们进一步引入了任务引导的对象指针，其中辅助目标与分割一起共同塑造用于下游预测的对象指针空间。任务引导指针改善了癌症类型分类，优于传统的基于编码器的迁移和放射组学，而仅分割指针在更具挑战性的复发预测任务上表现最佳。表示分析揭示了对象指针与可解释放射组学特征之间的关联、所学表示空间的类别依赖性组织，以及围绕分割肿瘤的显式空间定位。总之，这些发现表明，有用的可迁移表示可以通过执行基础模型的主要任务而涌现，为传统的基于编码器的迁移提供了一种替代方案。",
+            "title_zh": "超越编码器：从分割基础模型中涌现的对象中心表示"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "3D Gaussian Splatting (3DGS) has been becoming a promising 3D reconstruction technique because of its advantage of high-fidelity rendering effect with high efficiency. However, it still suffers from coarse density control and semantically blind loss functions when reconstructing the fine-grained structures in complex urban scenes. Thus, this study proposes SG-GS, a semantic-guided 3DGS method for fine-grained structure reconstruction. It takes the semantic segmentation deduced by the Segment Anything Model (SAM) as a constraint and systematically integrates it into both Gaussian density control and loss function design. On the one hand, a semantic-constrained adaptive density control mechanism is constructed, which dynamically allocates gradient thresholds to different semantic regions of the scene and introduces an additional boundary-enhanced densification strategy, so that new Gaussians are directed to structurally critical regions. On the other hand, a multi-feature guided loss function is designed, and fine-grained supervision signals are gradually introduced through a phased progressive training strategy, alleviating the artifacts caused by the lack of semantic constraints in the basic loss. Experiments on three datasets show that the proposed method consistently improves reconstruction accuracy. Compared with the original 3DGS, the PSNR increases by approximately 2.7% to 5.2%, while artifacts on linear structures and boundary blurring are effectively mitigated. The method can serve the fine-grained 3D reconstruction of urban scenes.",
+            "authors": [
+              "Yueling Liao",
+              "San Jiang",
+              "Xing Zhang",
+              "Zhongwen Hu"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.16292v1",
+            "published": "2026-10-12T07:17:45+00:00",
+            "title": "3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design",
+            "updated": "2026-10-12T07:17:45+00:00",
+            "version_id": "2610.16292v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "3D高斯泼溅（3DGS）凭借其在高效率下实现高保真渲染效果的优势，正成为一种有前景的3D重建技术。然而，在重建复杂城市场景中的细粒度结构时，它仍然受制于粗糙的密度控制和语义盲的损失函数。因此，本研究提出SG-GS，一种用于细粒度结构重建的语义引导3DGS方法。它将由Segment Anything Model（SAM）推导出的语义分割作为约束，并系统性地将其融入高斯密度控制和损失函数设计中。一方面，构建了语义约束的自适应密度控制机制，该机制为场景的不同语义区域动态分配梯度阈值，并引入额外的边界增强致密化策略，从而将新高斯导向结构关键区域。另一方面，设计了多特征引导损失函数，并通过分阶段渐进训练策略逐步引入细粒度监督信号，缓解了基础损失中因缺乏语义约束而产生的伪影。在三个数据集上的实验表明，所提方法持续提升了重建精度。与原始3DGS相比，PSNR提高了约2.7%至5.2%，同时线性结构上的伪影和边界模糊得到了有效缓解。该方法可服务于城市场景的细粒度3D重建。",
+            "title_zh": "基于语义引导密度控制与损失设计的3D高斯泼溅细粒度城市场景重建"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Specifying segmentation targets with natural language provides flexible semantic conditioning for medical image segmentation. However, existing methods still struggle to reliably ground high-level textual semantics into accurate pixel-level spatial prompts, especially under low-contrast lesions, ambiguous boundaries, and visually similar anatomical contexts. In this paper, we propose RADAR (Residual Aggregation and Dense Alignment Representations), a parameter-efficient framework for text-guided medical image segmentation. RADAR explicitly decouples and synergizes the medical semantic anchoring capability of BiomedCLIP with the prompt-driven mask decoding ability of MedSAM2, while enabling low-cost task adaptation via LoRA. Specifically, Guided Residual Depth Aggregation adaptively aggregates cross-layer features under semantic guidance to alleviate delayed textual injection and deep semantic dilution. Structured Dense Representation Alignment leverages a frozen BiomedCLIP to construct crop-level target, boundary, and context anchors, improving the local discriminability of dense features and the reliability of automatic prompts. Multi-modal Prompt Generation further converts cross-modal semantic responses into composite text, point, and mask prompts for MedSAM2 decoding. Experiments on three public medical image segmentation datasets show that RADAR achieves competitive performance with only 0.74M trainable parameters, demonstrating its effectiveness in parameter-efficient adaptation, semantic grounding, and dense representation enhancement. The source code is available at https://github.com/JGuiidev/RADAR.",
+            "authors": [
+              "Jie Gui",
+              "Hang Tu",
+              "Yunfeng Dou",
+              "Wen Sha",
+              "Xiuquan Du",
+              "Shuo Li"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.14944v1",
+            "published": "2026-10-10T14:20:37+00:00",
+            "title": "Text-Guided Medical Image Segmentation via Residual Aggregation and Dense Alignment Representations",
+            "updated": "2026-10-10T14:20:37+00:00",
+            "version_id": "2610.14944v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "使用自然语言指定分割目标为医学图像分割提供了灵活的语义条件。然而，现有方法仍难以将高层文本语义可靠地落地为准确的像素级空间提示，尤其是在低对比度病灶、模糊边界和视觉相似的解剖上下文下。本文提出了 RADAR（残差聚合与稠密对齐表示），一种参数高效的文本引导医学图像分割框架。RADAR 显式解耦并协同 BiomedCLIP 的医学语义锚定能力与 MedSAM2 的提示驱动掩码解码能力，同时通过 LoRA 实现低成本的任务适应。具体而言，引导残差深度聚合在语义引导下自适应聚合跨层特征，以缓解文本注入延迟和深层语义稀释。结构化稠密表示对齐利用冻结的 BiomedCLIP 构建裁剪级目标、边界和上下文锚点，提高稠密特征的局部判别能力和自动提示的可靠性。多模态提示生成进一步将跨模态语义响应转换为复合文本、点和掩码提示，供 MedSAM2 解码。在三个公开医学图像分割数据集上的实验表明，RADAR 仅用 0.74M 可训练参数就取得了有竞争力的性能，证明了其在参数高效适应、语义落地和稠密表示增强方面的有效性。源代码可在 https://github.com/JGuiidev/RADAR 获取。",
+            "title_zh": "基于残差聚合与稠密对齐表示的文本引导医学图像分割"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "The recent Segment Anything Model 3 (SAM3) extends powerful promptable segmentation from spatial cues to concepts, raising the prospect of a single foundation model for universal image segmentation. However, this promise often fails to translate into reliable performance on downstream segmentation tasks. In this work, we empirically identify concept recognition, rather than mask quality, as the primary bottleneck: SAM3 accurately delineates the objects it recognizes yet struggles to robustly determine which concepts are present. Driven by this, we present \\textit{\\underline{T}ext \\underline{A}nchor re-\\underline{G}rounding (\\TAG{})}, a simple yet effective framework that rectifies the concept recognition of SAM3 on the target domain without dense annotations. Specifically, \\TAG{} introduces an \\textit{Anchor Residual Pathway} comprising image-conditioned, low-rank adapters to re-ground text anchors in the target distribution and modulate subsequent text-conditioned interactions. Guided solely by image-level category labels, \\TAG{} jointly optimizes binary cross-entropy with \\textit{Soft Boundary Ranking} objectives to calibrate presence confidence and distinguish present concepts from confusable negatives. Building upon this, we devise \\textit{Confidence-Weighted Distillation} to couple rich semantic context of a multimodal large language model with fine-grained spatial priors of SAM3, thereby achieving effective calibration in the absence of manual annotations. Extensive experiments demonstrate that \\TAG{} unlocks SAM3's segmentation potential with only 3.1M trainable parameters, achieving impressive performance across diverse scenarios, and notably, even surpassing leading mask-supervised methods on several metrics. \\href{https://github.com/MiSsU-HH/TAG_SAM3}{Our code will be publicly available at GitHub \\faGithub}.",
+            "authors": [
+              "Hao Zhu",
+              "Heyu Sun",
+              "Shuo Jin",
+              "Jiayu Xiao",
+              "Feng Dai"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.14651v1",
+            "published": "2026-10-10T07:03:19+00:00",
+            "title": "TAG: Calibrating SAM3 for Universal Image Segmentation without Dense Supervision",
+            "updated": "2026-10-10T07:03:19+00:00",
+            "version_id": "2610.14651v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "最近的Segment Anything Model 3 (SAM3) 将强大的可提示分割从空间线索扩展到概念，提升了单一基础模型用于通用图像分割的前景。然而，这一前景往往无法转化为在下游分割任务上的可靠性能。在本工作中，我们通过实证确定，概念识别而非掩码质量是主要瓶颈：SAM3能准确勾勒出其识别到的对象，却难以稳健地判断哪些概念存在。受此驱动，我们提出\\textit{\\underline{T}ext \\underline{A}nchor re-\\underline{G}rounding (\\TAG{})}，一个简单而有效的框架，可在没有稠密标注的情况下校正SAM3在目标域上的概念识别。具体而言，\\TAG{}引入\\textit{Anchor Residual Pathway}，包含以图像为条件的低秩适配器，以在目标分布中重新定位文本锚点，并调制后续的文本条件交互。仅由图像级类别标签引导，\\TAG{}联合优化二元交叉熵与\\textit{Soft Boundary Ranking}目标，以校准存在置信度并区分存在概念与易混淆负样本。在此基础上，我们设计\\textit{Confidence-Weighted Distillation}，将多模态大语言模型丰富的语义上下文与SAM3细粒度的空间先验耦合，从而在缺乏人工标注的情况下实现有效校准。大量实验表明，\\TAG{}仅用3.1M可训练参数就释放了SAM3的分割潜力，在多样场景中取得令人印象深刻的性能，并且值得注意的是，在若干指标上甚至超越了领先的掩码监督方法。\\href{https://github.com/MiSsU-HH/TAG_SAM3}{我们的代码将在GitHub上公开：\\faGithub}。",
+            "title_zh": "TAG：无需稠密监督校准SAM3以实现通用图像分割"
+          }
+        }
+      ],
+      "notification_hash": "b4e09317af04e9376f74c3ff3c9479cfe9ae5dc9af923588660e5109d305b3d2",
+      "recovery_of": [],
+      "rendered": {
+        "2610.14651": "rendered_inline_translation",
+        "2610.14944": "rendered_inline_translation",
+        "2610.16292": "rendered_inline_translation",
+        "2610.18543": "rendered_inline_translation"
+      },
+      "run_id": "20261014T112431Z-439f2ed3",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
