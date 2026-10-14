@@ -2274,9 +2274,35 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Specifying segmentation targets with natural language provides flexible semantic conditioning for medical image segmentation.",
+          "we propose RADAR (Residual Aggregation and Dense Alignment Representations), a parameter-efficient framework for text-guided medical image segmentation.",
+          "RADAR explicitly decouples and synergizes the medical semantic anchoring capability of BiomedCLIP with the prompt-driven mask decoding ability of MedSAM2",
+          "Multi-modal Prompt Generation further converts cross-modal semantic responses into composite text, point, and mask prompts for MedSAM2 decoding.",
+          "Experiments on three public medical image segmentation datasets show that RADAR achieves competitive performance with only 0.74M trainable parameters"
+        ],
+        "dpo_is_method": false,
+        "reason": "摘要提出 RADAR，一个参数高效的文本引导医学图像分割框架，明确将自然语言语义锚定到像素级空间提示，并通过 BiomedCLIP、MedSAM2、残差聚合、稠密对齐和多模态提示生成实现语言到掩码的分割。该任务属于医学语言到像素掩码的分割/推理相关方向，具有方法贡献；但未涉及 RL 或 DPO，也未给出传统优化目标的理论或迁移证据，rule_hits 中的 transferable_objective 在摘要层面缺乏支持。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 76,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未明确说明该任务是否属于需要隐含请求、空间/位置推理或复杂推理的医学推理分割，可能仅为文本引导/指代式医学分割。",
+          "未读取正文，无法验证 Guided Residual Depth Aggregation、Structured Dense Representation Alignment 等模块的具体机制与实验充分性。",
+          "rule_hits 标记 transferable_objective，但摘要未给出传统分割或 SAM 损失/优化目标的理论依据或迁移证据。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Specifying segmentation targets with natural language provides flexible semantic conditioning for medical image segmentation. However, existing methods still struggle to reliably ground high-level textual semantics into accurate pixel-level spatial prompts, especially under low-contrast lesions, ambiguous boundaries, and visually similar anatomical contexts. In this paper, we propose RADAR (Residual Aggregation and Dense Alignment Representations), a parameter-efficient framework for text-guided medical image segmentation. RADAR explicitly decouples and synergizes the medical semantic anchoring capability of BiomedCLIP with the prompt-driven mask decoding ability of MedSAM2, while enabling low-cost task adaptation via LoRA. Specifically, Guided Residual Depth Aggregation adaptively aggregates cross-layer features under semantic guidance to alleviate delayed textual injection and deep semantic dilution. Structured Dense Representation Alignment leverages a frozen BiomedCLIP to construct crop-level target, boundary, and context anchors, improving the local discriminability of dense features and the reliability of automatic prompts. Multi-modal Prompt Generation further converts cross-modal semantic responses into composite text, point, and mask prompts for MedSAM2 decoding. Experiments on three public medical image segmentation datasets show that RADAR achieves competitive performance with only 0.74M trainable parameters, demonstrating its effectiveness in parameter-efficient adaptation, semantic grounding, and dense representation enhancement. The source code is available at https://github.com/JGuiidev/RADAR.",
         "authors": [
@@ -2296,15 +2322,11 @@
         "updated": "2026-10-10T14:20:37+00:00",
         "version_id": "2610.14944v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-14T11:24:31.534525+00:00",
-        "run_id": "20261014T112431Z-439f2ed3",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.14944v1"
       ]
