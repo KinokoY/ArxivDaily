@@ -2363,7 +2363,9 @@
       ]
     },
     "2610.15929": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
@@ -2389,6 +2391,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-14T11:24:31.534525+00:00",
+        "run_id": "20261014T112431Z-439f2ed3",
+        "stage": "selection"
+      },
       "versions": [
         "2610.15929v1"
       ]
