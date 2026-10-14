@@ -2269,6 +2269,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "The recent Segment Anything Model 3 (SAM3) extends powerful promptable segmentation from spatial cues to concepts, raising the prospect of a single foundation model for universal image segmentation. However, this promise often fails to translate into reliable performance on downstream segmentation tasks. In this work, we empirically identify concept recognition, rather than mask quality, as the primary bottleneck: SAM3 accurately delineates the objects it recognizes yet struggles to robustly determine which concepts are present. Driven by this, we present \\textit{\\underline{T}ext \\underline{A}nchor re-\\underline{G}rounding (\\TAG{})}, a simple yet effective framework that rectifies the concept recognition of SAM3 on the target domain without dense annotations. Specifically, \\TAG{} introduces an \\textit{Anchor Residual Pathway} comprising image-conditioned, low-rank adapters to re-ground text anchors in the target distribution and modulate subsequent text-conditioned interactions. Guided solely by image-level category labels, \\TAG{} jointly optimizes binary cross-entropy with \\textit{Soft Boundary Ranking} objectives to calibrate presence confidence and distinguish present concepts from confusable negatives. Building upon this, we devise \\textit{Confidence-Weighted Distillation} to couple rich semantic context of a multimodal large language model with fine-grained spatial priors of SAM3, thereby achieving effective calibration in the absence of manual annotations. Extensive experiments demonstrate that \\TAG{} unlocks SAM3's segmentation potential with only 3.1M trainable parameters, achieving impressive performance across diverse scenarios, and notably, even surpassing leading mask-supervised methods on several metrics. \\href{https://github.com/MiSsU-HH/TAG_SAM3}{Our code will be publicly available at GitHub \\faGithub}.",
@@ -2288,11 +2289,22 @@
         "updated": "2026-10-10T07:03:19+00:00",
         "version_id": "2610.14651v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2610.14651v1"
       ]
