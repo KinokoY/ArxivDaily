@@ -2366,9 +2366,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Recent trackers built on foundation models such as the Segment Anything Model (SAM) achieve strong performance by propagating object masks through memory.",
+          "A vision-language verification agent first reasons over spatio-temporal context to determine whether the tracker is still following the target.",
+          "We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery.",
+          "the proposed framework transfers without retraining to SAM2.1, SeC, and Cutie, as well as to long-term video object tracking benchmarks including LaSOT-ext, TNL2K, and VOT-LT2022."
+        ],
+        "dpo_is_method": false,
+        "reason": "摘要显示该文是视频目标分割/跟踪中的失败检测与恢复框架，核心为VLM验证智能体和纠正智能体，跨模型迁移但不重训练；未涉及医学影像推理分割、隐含请求或空间/位置推理到像素掩码；未以RL或DPO为方法贡献；也未提出有理论依据的传统分割优化目标。规则命中transferable_objective仅反映跨架构迁移，并非可迁移优化目标。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 10,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "未读全文；摘要未显示是否存在未提及的RL/DPO方法、医学应用或传统分割优化目标理论分析。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Recent trackers built on foundation models such as the Segment Anything Model (SAM) achieve strong performance by propagating object masks through memory. However, this strength is also a key source of failure: under occlusion, reappearance, or distractors, an incorrect prediction can enter the tracking loop and be propagated over time, resulting in persistent identity drift. Existing approaches seek to prevent such failures through improved memory and temporal modeling, but once a failure occurs, the tracker has no explicit mechanism to recognize or correct it. We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery. We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery. A vision-language verification agent first reasons over spatio-temporal context to determine whether the tracker is still following the target. When a failure is detected, a correction agent uses temporal context to recover the target before tracking continues. The correction agent is trained on real SAM3 failures, augmented with targeted identity-switch and distractor perturbations that expose it to challenging ambiguities during recovery. On LVOS-v2 and SecVOS, Dual-Agent improves SAM3 by 1.2 and 2.7 $J\\&F$, respectively. Importantly, the proposed framework transfers without retraining to SAM2.1, SeC, and Cutie, as well as to long-term video object tracking benchmarks including LaSOT-ext, TNL2K, and VOT-LT2022. Our results show that explicitly reasoning about when tracking fails and how to recover provides a complementary path to robust tracking beyond improving propagation alone. Project page: valaybundele.github.io/Dual-Agent.",
         "authors": [
@@ -2387,15 +2410,11 @@
         "updated": "2026-10-11T21:24:17+00:00",
         "version_id": "2610.15929v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-14T11:24:31.534525+00:00",
-        "run_id": "20261014T112431Z-439f2ed3",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.15929v1"
       ]
