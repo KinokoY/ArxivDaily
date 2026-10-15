@@ -3041,7 +3041,9 @@
       ]
     },
     "2610.19330": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-15T11:01:09.864882+00:00",
@@ -3075,6 +3077,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-15T11:01:09.864882+00:00",
+        "run_id": "20261015T110109Z-1f69111f",
+        "stage": "selection"
+      },
       "versions": [
         "2610.19330v1"
       ]
