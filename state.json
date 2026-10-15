@@ -31,6 +31,10 @@
     "20261014T112431Z-439f2ed3-9161bdb9d836": {
       "attempts": 1,
       "created_at": "2026-10-14T11:24:31.534525+00:00"
+    },
+    "20261015T110109Z-1f69111f-928171bab8b8": {
+      "attempts": 0,
+      "created_at": "2026-10-15T11:01:09.864882+00:00"
     }
   },
   "collection": {
@@ -891,6 +895,71 @@
       "run_id": "20261014T112431Z-439f2ed3",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261015T110109Z-1f69111f-928171bab8b8": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/15/20261015T110109Z-1f69111f-928171bab8b8.md",
+      "chain_root": "20261015T110109Z-1f69111f-928171bab8b8",
+      "chain_roots": [
+        "20261015T110109Z-1f69111f-928171bab8b8"
+      ],
+      "content_hash": "928171bab8b85e99addf803757d5065239a1110b8c8cbec755a9afb7d11d90b7",
+      "created_at": "2026-10-15T11:01:09.864882+00:00",
+      "day": "2026-10-15",
+      "digest_id": "20261015T110109Z-1f69111f-928171bab8b8",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Segment Anything Model 3 (SAM 3) is a foundation model for image and video segmentation that sets the state of the art in visual object tracking. Its tracker, inherited from SAM 2, stores information from past frames in a memory bank, managed by a simple First-In-First-Out rule, allowing temporal consistency in complex videos. Several recent methods improve SAM 2 with hand-crafted memory update rules, each targeting a specific failure mode, such as distractors, occlusions, or object motion. However, their gains transfer only partially to the stronger SAM 3 backbone. We instead present a more general, data-driven approach that frames memory control as a sequential decision-making task. SAM3RL is an extension of the SAM 3 tracker with a lightweight memory controller, trained by reinforcement learning, that decides which frames enter the memory bank in order to maximize tracking performance. SAM3RL sets a new state of the art on 10 of 12 tracking and video object segmentation benchmarks, outperforming all hand-crafted rules without any runtime overhead. The same approach applied to SAM 2 gives SAM2RL, which outperforms hand-crafted rules on 9 of the 12 benchmarks, showing the generality of our method across model generations.",
+            "authors": [
+              "Tomáš Čížek",
+              "Matej Straka",
+              "Illia Volkov",
+              "Matěj Kripner",
+              "Ervin Macić",
+              "Jiri Matas",
+              "Klara Janouskova",
+              "Martin Schmid"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.LG"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.19931v1",
+            "published": "2026-10-14T10:17:47+00:00",
+            "title": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking",
+            "updated": "2026-10-14T10:17:47+00:00",
+            "version_id": "2610.19931v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "Segment Anything Model 3（SAM 3）是一种用于图像和视频分割的基础模型，在视觉目标跟踪中达到了当前最优性能。其跟踪器继承自 SAM 2，将过去帧的信息存储在记忆库中，并由简单的先进先出规则管理，从而在复杂视频中实现时间一致性。近期若干方法通过手工设计的记忆更新规则改进 SAM 2，每种规则针对特定的失败模式，如干扰物、遮挡或目标运动。然而，它们的增益只能部分迁移到更强的 SAM 3 骨干上。我们转而提出一种更通用、数据驱动的方法，将记忆控制建模为序贯决策任务。SAM3RL 是 SAM 3 跟踪器的扩展，带有一个轻量级记忆控制器，通过强化学习训练，决定哪些帧进入记忆库以最大化跟踪性能。SAM3RL 在 12 个跟踪和视频目标分割基准中的 10 个上创造了新的当前最优性能，在没有任何运行时开销的情况下优于所有手工设计的规则。将同一方法应用于 SAM 2 得到 SAM2RL，其在 12 个基准中的 9 个上优于手工设计的规则，表明我们的方法在不同模型代际间具有通用性。",
+            "title_zh": "SAM3RL：基于强化学习的视觉目标跟踪记忆控制"
+          }
+        }
+      ],
+      "notification_hash": "c1b376492c2a89818020f893e0b6eabfe09e42aabf19b0b5472753cac2884213",
+      "recovery_of": [],
+      "rendered": {
+        "2610.19931": "rendered_inline_translation"
+      },
+      "run_id": "20261015T110109Z-1f69111f",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
