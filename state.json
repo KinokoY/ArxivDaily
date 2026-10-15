@@ -3158,11 +3158,8 @@
         "transferable_objective"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-10-15T11:01:09.864882+00:00",
-        "run_id": "20261015T110109Z-1f69111f",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "NavAble：用于盲人导航的大规模数据集与合成数据生成流程",
       "versions": [
         "2610.19330v1"
       ]

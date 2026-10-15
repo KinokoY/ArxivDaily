@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-10-15 | GDBA-Net: A Gated Dual-Branch Adaptation of SAM2 for Robust Cross-Domain Nuclei Segmentation | GDBA-Net：一种用于鲁棒跨域细胞核分割的SAM2门控双分支适配方法 | [arXiv 2610.20073v1](https://arxiv.org/abs/2610.20073v1) |
 | 2026-10-15 | SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking | SAM3RL：基于强化学习的视觉目标跟踪记忆控制 | [arXiv 2610.19931v1](https://arxiv.org/abs/2610.19931v1) |
-| 2026-10-15 | NavAble: A Large-Scale Dataset and Synthetic Data Generation Pipeline for Blind Navigation | 待翻译 | [arXiv 2610.19330v1](https://arxiv.org/abs/2610.19330v1) |
+| 2026-10-15 | NavAble: A Large-Scale Dataset and Synthetic Data Generation Pipeline for Blind Navigation | NavAble：用于盲人导航的大规模数据集与合成数据生成流程 | [arXiv 2610.19330v1](https://arxiv.org/abs/2610.19330v1) |
 | 2026-10-15 | Estimating Uncertainty of Omnimodal Large Language Models via External Omnimodal Embeddings | 待翻译 | [arXiv 2610.16933v1](https://arxiv.org/abs/2610.16933v1) |
 | 2026-10-14 | Beyond the Encoder: Object-Centric Representations Emerging from Segmentation Foundation Models | 超越编码器：从分割基础模型中涌现的对象中心表示 | [arXiv 2610.18543v1](https://arxiv.org/abs/2610.18543v1) |
 | 2026-10-14 | 3D Gaussian Splatting for Fine-grained Urban Scene Reconstruction via Semantic-guided Density Control and Loss Design | 基于语义引导密度控制与损失设计的3D高斯泼溅细粒度城市场景重建 | [arXiv 2610.16292v1](https://arxiv.org/abs/2610.16292v1) |
