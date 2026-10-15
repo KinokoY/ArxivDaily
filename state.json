@@ -33,7 +33,7 @@
       "created_at": "2026-10-14T11:24:31.534525+00:00"
     },
     "20261015T110109Z-1f69111f-928171bab8b8": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-15T11:01:09.864882+00:00"
     }
   },
@@ -119,10 +119,12 @@
     "2026-10-15": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261015T110109Z-1f69111f-928171bab8b8"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -899,6 +901,8 @@
     "20261015T110109Z-1f69111f-928171bab8b8": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/15/20261015T110109Z-1f69111f-928171bab8b8.md",
+      "attempt_run": "20261015T110109Z-1f69111f",
+      "attempt_started": "2026-10-15T11:08:17.794803+00:00",
       "chain_root": "20261015T110109Z-1f69111f-928171bab8b8",
       "chain_roots": [
         "20261015T110109Z-1f69111f-928171bab8b8"
@@ -953,13 +957,14 @@
         }
       ],
       "notification_hash": "c1b376492c2a89818020f893e0b6eabfe09e42aabf19b0b5472753cac2884213",
+      "quota_day": "2026-10-15",
       "recovery_of": [],
       "rendered": {
         "2610.19931": "rendered_inline_translation"
       },
       "run_id": "20261015T110109Z-1f69111f",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -3237,6 +3242,7 @@
       ]
     },
     "2610.19931": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -3263,7 +3269,18 @@
           "No theoretical analysis of the RL memory-control objective is provided in the abstract."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261015T110109Z-1f69111f-928171bab8b8",
+      "events": [
+        {
+          "at": "2026-10-15T11:08:17.794803+00:00",
+          "digest_id": "20261015T110109Z-1f69111f-928171bab8b8",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-15T11:01:09.864882+00:00",
       "intended_tier": "translation",
@@ -3290,6 +3307,7 @@
         "updated": "2026-10-14T10:17:47+00:00",
         "version_id": "2610.19931v1"
       },
+      "pending_digest": "20261015T110109Z-1f69111f-928171bab8b8",
       "presentation_modules": [
         "title",
         "title_translation",
