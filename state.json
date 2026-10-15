@@ -910,8 +910,15 @@
       "content_hash": "928171bab8b85e99addf803757d5065239a1110b8c8cbec755a9afb7d11d90b7",
       "created_at": "2026-10-15T11:01:09.864882+00:00",
       "day": "2026-10-15",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "61816262",
+        "status": "confirmed"
+      },
       "digest_id": "20261015T110109Z-1f69111f-928171bab8b8",
       "empty": false,
+      "finished_at": "2026-10-15T11:08:22.058345+00:00",
       "items": [
         {
           "modules": [
@@ -964,7 +971,7 @@
       },
       "run_id": "20261015T110109Z-1f69111f",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -3242,7 +3249,6 @@
       ]
     },
     "2610.19931": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -3277,7 +3283,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -3307,7 +3313,6 @@
         "updated": "2026-10-14T10:17:47+00:00",
         "version_id": "2610.19931v1"
       },
-      "pending_digest": "20261015T110109Z-1f69111f-928171bab8b8",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -3323,7 +3328,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "SAM3RL：基于强化学习的视觉目标跟踪记忆控制",
       "translation": {
         "abstract_zh": "Segment Anything Model 3（SAM 3）是一种用于图像和视频分割的基础模型，在视觉目标跟踪中达到了当前最优性能。其跟踪器继承自 SAM 2，将过去帧的信息存储在记忆库中，并由简单的先进先出规则管理，从而在复杂视频中实现时间一致性。近期若干方法通过手工设计的记忆更新规则改进 SAM 2，每种规则针对特定的失败模式，如干扰物、遮挡或目标运动。然而，它们的增益只能部分迁移到更强的 SAM 3 骨干上。我们转而提出一种更通用、数据驱动的方法，将记忆控制建模为序贯决策任务。SAM3RL 是 SAM 3 跟踪器的扩展，带有一个轻量级记忆控制器，通过强化学习训练，决定哪些帧进入记忆库以最大化跟踪性能。SAM3RL 在 12 个跟踪和视频目标分割基准中的 10 个上创造了新的当前最优性能，在没有任何运行时开销的情况下优于所有手工设计的规则。将同一方法应用于 SAM 2 得到 SAM2RL，其在 12 个基准中的 9 个上优于手工设计的规则，表明我们的方法在不同模型代际间具有通用性。",
