@@ -35,7 +35,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-14T11:24:31.534525+00:00"
+    "last_complete_end": "2026-10-15T11:01:09.864882+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -2482,6 +2482,7 @@
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.14651v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "The recent Segment Anything Model 3 (SAM3) extends powerful promptable segmentation from spatial cues to concepts, raising the prospect of a single foundation model for universal image segmentation. However, this promise often fails to translate into reliable performance on downstream segmentation tasks. In this work, we empirically identify concept recognition, rather than mask quality, as the primary bottleneck: SAM3 accurately delineates the objects it recognizes yet struggles to robustly determine which concepts are present. Driven by this, we present \\textit{\\underline{T}ext \\underline{A}nchor re-\\underline{G}rounding (\\TAG{})}, a simple yet effective framework that rectifies the concept recognition of SAM3 on the target domain without dense annotations. Specifically, \\TAG{} introduces an \\textit{Anchor Residual Pathway} comprising image-conditioned, low-rank adapters to re-ground text anchors in the target distribution and modulate subsequent text-conditioned interactions. Guided solely by image-level category labels, \\TAG{} jointly optimizes binary cross-entropy with \\textit{Soft Boundary Ranking} objectives to calibrate presence confidence and distinguish present concepts from confusable negatives. Building upon this, we devise \\textit{Confidence-Weighted Distillation} to couple rich semantic context of a multimodal large language model with fine-grained spatial priors of SAM3, thereby achieving effective calibration in the absence of manual annotations. Extensive experiments demonstrate that \\TAG{} unlocks SAM3's segmentation potential with only 3.1M trainable parameters, achieving impressive performance across diverse scenarios, and notably, even surpassing leading mask-supervised methods on several metrics. \\href{https://github.com/MiSsU-HH/TAG_SAM3}{Our code will be publicly available at GitHub \\faGithub}.",
@@ -2573,6 +2574,7 @@
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.14944v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Specifying segmentation targets with natural language provides flexible semantic conditioning for medical image segmentation. However, existing methods still struggle to reliably ground high-level textual semantics into accurate pixel-level spatial prompts, especially under low-contrast lesions, ambiguous boundaries, and visually similar anatomical contexts. In this paper, we propose RADAR (Residual Aggregation and Dense Alignment Representations), a parameter-efficient framework for text-guided medical image segmentation. RADAR explicitly decouples and synergizes the medical semantic anchoring capability of BiomedCLIP with the prompt-driven mask decoding ability of MedSAM2, while enabling low-cost task adaptation via LoRA. Specifically, Guided Residual Depth Aggregation adaptively aggregates cross-layer features under semantic guidance to alleviate delayed textual injection and deep semantic dilution. Structured Dense Representation Alignment leverages a frozen BiomedCLIP to construct crop-level target, boundary, and context anchors, improving the local discriminability of dense features and the reliability of automatic prompts. Multi-modal Prompt Generation further converts cross-modal semantic responses into composite text, point, and mask prompts for MedSAM2 decoding. Experiments on three public medical image segmentation datasets show that RADAR achieves competitive performance with only 0.74M trainable parameters, demonstrating its effectiveness in parameter-efficient adaptation, semantic grounding, and dense representation enhancement. The source code is available at https://github.com/JGuiidev/RADAR.",
@@ -2650,6 +2652,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "latest_version": "2610.15280v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Depth estimation and Gaussian reconstruction share a need for multi-scale feature processing, yet use different prediction interfaces and training objectives. Whether a decoder's internal computation can be optimized once and reused across these systems remains a structural design question. Search over primitive configurations alone leaves the organization of transformations fixed. To address this gap, we propose GeoBridge, an evolutionary framework for transferable decoder topologies. First, GeoBridge makes stage-internal topology searchable through residual, sequential, and parallel composition of configurable primitives. Shape-preserving composition retains the stage interfaces of a fixed multi-scale scaffold. Second, a functional-tree encoding supports stage-aware crossover and hierarchical mutation, while a gradient sensitivity-alignment proxy evaluates candidates without training. Multi-objective evolution balances this proxy with computation and parameter cost. Third, selected topologies are instantiated and trained in target systems with task-specific prediction interfaces. A single source search takes approximately 12 GPU hours. GeoBridgeNet-A3 achieves the best depth accuracy among four adapted decoder baselines under a common encoder and training protocol on NYU Depth V2 and KITTI. The same topology reaches 27.11 dB PSNR in Gaussian novel-view synthesis on RealEstate10K, and its refined representations support open-vocabulary segmentation on LERF. These results support decoder topology as a reusable design object across the evaluated geometric vision systems. Code and pretrained weights are available at https://github.com/EMI-Group/GeoBridge-NAS.",
@@ -2787,6 +2790,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
+      "latest_version": "2610.15929v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Recent trackers built on foundation models such as the Segment Anything Model (SAM) achieve strong performance by propagating object masks through memory. However, this strength is also a key source of failure: under occlusion, reappearance, or distractors, an incorrect prediction can enter the tracking loop and be propagated over time, resulting in persistent identity drift. Existing approaches seek to prevent such failures through improved memory and temporal modeling, but once a failure occurs, the tracker has no explicit mechanism to recognize or correct it. We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery. We address this gap with Dual-Agent, a failure-aware tracking framework that complements propagation with explicit verification and recovery. A vision-language verification agent first reasons over spatio-temporal context to determine whether the tracker is still following the target. When a failure is detected, a correction agent uses temporal context to recover the target before tracking continues. The correction agent is trained on real SAM3 failures, augmented with targeted identity-switch and distractor perturbations that expose it to challenging ambiguities during recovery. On LVOS-v2 and SecVOS, Dual-Agent improves SAM3 by 1.2 and 2.7 $J\\&F$, respectively. Importantly, the proposed framework transfers without retraining to SAM2.1, SeC, and Cutie, as well as to long-term video object tracking benchmarks including LaSOT-ext, TNL2K, and VOT-LT2022. Our results show that explicitly reasoning about when tracking fails and how to recover provides a complementary path to robust tracking beyond improving propagation alone. Project page: valaybundele.github.io/Dual-Agent.",
@@ -2871,6 +2875,7 @@
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.16292v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "3D Gaussian Splatting (3DGS) has been becoming a promising 3D reconstruction technique because of its advantage of high-fidelity rendering effect with high efficiency. However, it still suffers from coarse density control and semantically blind loss functions when reconstructing the fine-grained structures in complex urban scenes. Thus, this study proposes SG-GS, a semantic-guided 3DGS method for fine-grained structure reconstruction. It takes the semantic segmentation deduced by the Segment Anything Model (SAM) as a constraint and systematically integrates it into both Gaussian density control and loss function design. On the one hand, a semantic-constrained adaptive density control mechanism is constructed, which dynamically allocates gradient thresholds to different semantic regions of the scene and introduces an additional boundary-enhanced densification strategy, so that new Gaussians are directed to structurally critical regions. On the other hand, a multi-feature guided loss function is designed, and fine-grained supervision signals are gradually introduced through a phased progressive training strategy, alleviating the artifacts caused by the lack of semantic constraints in the basic loss. Experiments on three datasets show that the proposed method consistently improves reconstruction accuracy. Compared with the original 3DGS, the PSNR increases by approximately 2.7% to 5.2%, while artifacts on linear structures and boundary blurring are effectively mitigated. The method can serve the fine-grained 3D reconstruction of urban scenes.",
@@ -2914,6 +2919,35 @@
       "translation_provider": "llm",
       "versions": [
         "2610.16292v1"
+      ]
+    },
+    "2610.16933": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-15T11:01:09.864882+00:00",
+      "paper": {
+        "abstract": "Recent work has investigated Omni-modal Large Language Models (OLLMs), models which can take multiple modalities and their combinations as input, as a way forward to have systems really capable of interacting with their environment. Uncertainty quantification (UQ) for OLLMs, however, remains an open problem: existing methods largely target at most two modalities at a time, require access to model internals, or re-invocation of the evaluated model. We propose a model-agnostic UQ framework that scores a Chain-of-Thought response entirely through external omni-modal embeddings, measuring the grounding of the reasoning in the multimodal input and its internal coherence. Our contribution is the family of signals and an empirical characterisation of when it is reliable, rather than any single estimator: we find the geometric scores to be largely redundant with one another (mean within-split rank correlation 0.91-0.94) but strongly complementary to answer-dispersion baselines, and their reliability to depend on the generator and the modality. The resulting confidence estimates require no access to logits, hidden states or gradients of the evaluated model and no additional inference from it; they do require segmenting the reasoning trace with an auxiliary model and, for the aggregated score, a labelled calibration set that we show can be as small as 25 examples (although we also show that such a set buys little over fixing one signal a priori). On UNO-Bench, with both a closed and an open model, our scores yield small gains over self-consistency (systematic with the closed generator, mixed with the open one) and are competitive with self-verbalisation and internal-state baselines, especially in open-ended, omni-modal questions where previous state-of-the-art baselines struggle.",
+        "authors": [
+          "Iacopo Ghinassi",
+          "Hy Nguyen Gia La",
+          "Luke Ong"
+        ],
+        "categories": [
+          "cs.CL"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.16933v1",
+        "published": "2026-10-12T15:13:28+00:00",
+        "title": "Estimating Uncertainty of Omnimodal Large Language Models via External Omnimodal Embeddings",
+        "updated": "2026-10-12T15:13:28+00:00",
+        "version_id": "2610.16933v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.16933v1"
       ]
     },
     "2610.18543": {
@@ -2961,6 +2995,7 @@
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.18543v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Foundation models are increasingly used as feature extractors for downstream tasks with limited data, typically through representations obtained from their encoders. However, foundation models trained for structured tasks such as segmentation also form object-specific representations during task execution, whose transferability remains largely unexplored. We investigate Segment Anything Model 2 (SAM2) object pointers, compact object-level representations produced through the segmentation pathway, as transferable representations for downstream tumour prediction. Through experiments on two PET/CT tumour prediction tasks, we find that object pointers learned using segmentation supervision alone already encode tumour-discriminative information, despite never being optimised for the downstream labels. We further introduce task-guided object pointers, where an auxiliary objective jointly shapes the object pointer space for the downstream prediction together with segmentation. Task-guided pointers improve cancer-type classification, outperforming conventional encoder-based transfer and radiomics, while segmentation-only pointers perform best on the more challenging recurrence prediction task. Representation analyses reveal associations between object pointers and interpretable radiomics features, class-dependent organisation of the learned representation space, and explicit spatial grounding around the segmented tumour. Together, these findings suggest that useful transferable representations can emerge through the execution of a foundation model's primary task, providing an alternative to conventional encoder-based transfer.",
@@ -3003,6 +3038,111 @@
       "translation_provider": "llm",
       "versions": [
         "2610.18543v1"
+      ]
+    },
+    "2610.19330": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-15T11:01:09.864882+00:00",
+      "paper": {
+        "abstract": "Reliable recognition of accessibility-critical objects (e.g., audible pedestrian signals, door-activation buttons, and handrails) is essential for assistive navigation technologies that support safe, independent mobility for blind and low-vision (BLV) users. Yet these categories are underrepresented in existing large-scale vision datasets, and the few datasets that include them suffer from limited class coverage, inconsistent annotations, and poor diversity. We introduce NavAble, a large-scale dataset spanning 11 accessibility-critical object classes, combining 41K curated open-source images with 8K newly collected, densely annotated real-world images. To extend scale and diversity, we develop a synthetic data generation pipeline that renders high-fidelity 3D assets across 37 environments under diverse styles and viewpoints, yielding 452K frames with rich ground-truth annotations from 565 assets. The pipeline minimizes manual effort by combining automated web image crawling, VLM-based filtering, SAM 3D-based asset generation, and convenient camera trajectory configuration, enabling large-scale data generation at a diversity unattainable through manual collection. Experiments show that fine-tuning existing segmentation models on the NavAble Dataset achieves reliable accessibility-object segmentation (>80% mIoU on our held-out test set). We also demonstrate the effectiveness of synthetic data augmentation, which yields up to +3.5 mIoU over real-world-only fine-tuning. Beyond benchmark evaluation, validation on egocentric data from two mobility-assistive robots demonstrates improved perception reliability in real-world navigation scenarios. Together, NavAble establishes a scalable foundation for BLV navigation perception, directly addressing the data scarcity and embodiment gaps. The dataset and pipeline are publicly available at https://huggingface.co/datasets/NavAble/NeurIPS_2026_BLV.",
+        "authors": [
+          "Hochul Hwang",
+          "Jahir Sadik Monon",
+          "Soowan Yang",
+          "Shiven Umeshbhai Patel",
+          "Anh Nhat Hong Nguyen",
+          "Kien Nguyen",
+          "Keshav Garg",
+          "Dylan Gage",
+          "Duretti Hordofaa",
+          "Anshu Anjna",
+          "Eshed Ohn-Bar",
+          "Donghyun Kim"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.RO"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.19330v1",
+        "published": "2026-10-14T00:14:14+00:00",
+        "title": "NavAble: A Large-Scale Dataset and Synthetic Data Generation Pipeline for Blind Navigation",
+        "updated": "2026-10-14T00:14:14+00:00",
+        "version_id": "2610.19330v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.19330v1"
+      ]
+    },
+    "2610.19931": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-15T11:01:09.864882+00:00",
+      "paper": {
+        "abstract": "Segment Anything Model 3 (SAM 3) is a foundation model for image and video segmentation that sets the state of the art in visual object tracking. Its tracker, inherited from SAM 2, stores information from past frames in a memory bank, managed by a simple First-In-First-Out rule, allowing temporal consistency in complex videos. Several recent methods improve SAM 2 with hand-crafted memory update rules, each targeting a specific failure mode, such as distractors, occlusions, or object motion. However, their gains transfer only partially to the stronger SAM 3 backbone. We instead present a more general, data-driven approach that frames memory control as a sequential decision-making task. SAM3RL is an extension of the SAM 3 tracker with a lightweight memory controller, trained by reinforcement learning, that decides which frames enter the memory bank in order to maximize tracking performance. SAM3RL sets a new state of the art on 10 of 12 tracking and video object segmentation benchmarks, outperforming all hand-crafted rules without any runtime overhead. The same approach applied to SAM 2 gives SAM2RL, which outperforms hand-crafted rules on 9 of the 12 benchmarks, showing the generality of our method across model generations.",
+        "authors": [
+          "Tomáš Čížek",
+          "Matej Straka",
+          "Illia Volkov",
+          "Matěj Kripner",
+          "Ervin Macić",
+          "Jiri Matas",
+          "Klara Janouskova",
+          "Martin Schmid"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.19931v1",
+        "published": "2026-10-14T10:17:47+00:00",
+        "title": "SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking",
+        "updated": "2026-10-14T10:17:47+00:00",
+        "version_id": "2610.19931v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.19931v1"
+      ]
+    },
+    "2610.20073": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-15T11:01:09.864882+00:00",
+      "paper": {
+        "abstract": "Accurate nuclei segmentation underpins quantitative computational pathology, yet remains challenging due to morphological variability, weak boundaries, nuclear crowding, and pronounced domain shifts arising from differences in tissue preparation, staining, and acquisition. While deep learning and recent foundation models have improved segmentation performance under matched distributions with the original training data, their generalization across heterogeneous histopathology domains remains limited. We introduce GDBA-Net, a parameter-efficient nuclei segmentation framework built around the proposed Gated Dual-Branch Adapter (GDBA). GDBA-Net adapts a frozen SAM2 encoder by integrating pretrained semantic representations with explicit frequency-derived structural priors. The complementary representations are independently transformed through Grid MLP branches and dynamically integrated using sample-adaptive channel-wise gating, selectively emphasizing structural cues relevant to nuclear delineation. Despite using only 4.3 million trainable parameters, GDBA-Net achieves state-of-the-art in-dataset performance and consistently superior cross-dataset generalization across six diverse nuclei segmentation benchmarks under fully supervised, cross-dataset, and five-shot adaptation protocols, outperforming competing CNN-, transformer-, and foundation model based methods. Comprehensive ablations confirm that these gains arise from the coordinated design of semantic-frequency complementarity and adaptive gating rather than increased model capacity. By uniting transferable semantic representations with explicit structural priors, GDBA-Net provides a robust, annotation-efficient solution to domain variability in nuclei segmentation. https://github.com/biplabpoudel25/GDBA_Net",
+        "authors": [
+          "Biplab Poudel",
+          "Betserai Albert Magarire",
+          "Anish Kumar Shah",
+          "Jiacheng Xie",
+          "Dong Xu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.20073v1",
+        "published": "2026-10-14T12:12:10+00:00",
+        "title": "GDBA-Net: A Gated Dual-Branch Adaptation of SAM2 for Robust Cross-Domain Nuclei Segmentation",
+        "updated": "2026-10-14T12:12:10+00:00",
+        "version_id": "2610.20073v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.20073v1"
       ]
     }
   },
@@ -3344,10 +3484,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-15",
+      "discovered_candidates": 20,
+      "discovered_papers": 20,
       "run_id": "20261015T110109Z-1f69111f",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-15T11:01:00+00:00",
+          "seen": 7255,
+          "start": "2026-10-01T11:01:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-15T11:01:09.864882+00:00",
       "window": {
         "end": "2026-10-15T11:01:09.864882+00:00",
