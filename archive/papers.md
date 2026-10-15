@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-10-15 | GDBA-Net: A Gated Dual-Branch Adaptation of SAM2 for Robust Cross-Domain Nuclei Segmentation | 待翻译 | [arXiv 2610.20073v1](https://arxiv.org/abs/2610.20073v1) |
+| 2026-10-15 | GDBA-Net: A Gated Dual-Branch Adaptation of SAM2 for Robust Cross-Domain Nuclei Segmentation | GDBA-Net：一种用于鲁棒跨域细胞核分割的SAM2门控双分支适配方法 | [arXiv 2610.20073v1](https://arxiv.org/abs/2610.20073v1) |
 | 2026-10-15 | SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking | SAM3RL：基于强化学习的视觉目标跟踪记忆控制 | [arXiv 2610.19931v1](https://arxiv.org/abs/2610.19931v1) |
 | 2026-10-15 | NavAble: A Large-Scale Dataset and Synthetic Data Generation Pipeline for Blind Navigation | 待翻译 | [arXiv 2610.19330v1](https://arxiv.org/abs/2610.19330v1) |
 | 2026-10-15 | Estimating Uncertainty of Omnimodal Large Language Models via External Omnimodal Embeddings | 待翻译 | [arXiv 2610.16933v1](https://arxiv.org/abs/2610.16933v1) |
