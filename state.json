@@ -3414,7 +3414,9 @@
       ]
     },
     "2610.20990": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-16T10:57:02.818671+00:00",
@@ -3446,6 +3448,11 @@
         "general_reasoning"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-16T10:57:02.818671+00:00",
+        "run_id": "20261016T105702Z-8110bc31",
+        "stage": "selection"
+      },
       "versions": [
         "2610.20990v1"
       ]
