@@ -999,8 +999,15 @@
       "content_hash": "9a35be2885d8edaf4343fc5f509b72b302c9d203c6f38604a504322d8ac7d3f2",
       "created_at": "2026-10-16T10:57:02.818671+00:00",
       "day": "2026-10-16",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "62037294",
+        "status": "confirmed"
+      },
       "digest_id": "20261016T105702Z-8110bc31-9a35be2885d8",
       "empty": false,
+      "finished_at": "2026-10-16T11:02:14.232590+00:00",
       "items": [
         {
           "modules": [
@@ -1055,7 +1062,7 @@
       },
       "run_id": "20261016T105702Z-8110bc31",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -3498,7 +3505,6 @@
       ]
     },
     "2610.20990": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -3535,7 +3541,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -3567,7 +3573,6 @@
         "updated": "2026-10-14T22:05:23+00:00",
         "version_id": "2610.20990v1"
       },
-      "pending_digest": "20261016T105702Z-8110bc31-9a35be2885d8",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -3583,7 +3588,7 @@
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "DeSpatial：具身空间推理的魔鬼藏在3D本身之中",
       "translation": {
         "abstract_zh": "空间智能体可以使用重建与分割工具，但不一致的预测和碎片化的对象身份会阻碍其输出成为可靠的3D场景信息。一个简单的oracle实验揭示了这一感知瓶颈：在五个以对象为中心的VSI-Bench任务上，将工具预测的感知替换为真值3D边界框后，智能体在保留相同推理工具的情况下得分接近满分。受此发现启发，我们认为空间推理的魔鬼藏在3D本身之中，并提出了DeSpatial（Devil of Spatial），它将空间理解显式分解为感知与推理。DeSpatial有一个共享的3D感知工具，将独立的感知输出协调为一个统一的、度量的、重力对齐的3D场景。该感知工具包含两个核心组件：a）一个联合分割--深度协同细化模块，用于合并同一对象的面具，并消除单帧内因分割与深度不一致导致的投影伪影；b）一个跨视角实例融合模块，用于合并体素重叠的实例，但不允许合并同一帧内的实例。该融合模块还通过检查空间上不相交碎片（由多视角观测不足导致）的3D结构和源面具外观来进一步融合它们。在接收到完整且统一的3D场景信息后，智能体选择推理或计算工具来解决空间问题。DeSpatial在VSI-Bench、MindCube-Tiny和ViewSpatial上取得了领先性能，并在VSI-SUPER上给出了额外的长视频结果，揭示空间理解的瓶颈在于精确的3D感知本身。",
