@@ -37,7 +37,7 @@
       "created_at": "2026-10-15T11:01:09.864882+00:00"
     },
     "20261016T105702Z-8110bc31-9a35be2885d8": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-16T10:57:02.818671+00:00"
     }
   },
@@ -133,10 +133,12 @@
     "2026-10-16": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261016T105702Z-8110bc31-9a35be2885d8"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -988,6 +990,8 @@
     "20261016T105702Z-8110bc31-9a35be2885d8": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/16/20261016T105702Z-8110bc31-9a35be2885d8.md",
+      "attempt_run": "20261016T105702Z-8110bc31",
+      "attempt_started": "2026-10-16T11:02:07.798968+00:00",
       "chain_root": "20261016T105702Z-8110bc31-9a35be2885d8",
       "chain_roots": [
         "20261016T105702Z-8110bc31-9a35be2885d8"
@@ -1044,13 +1048,14 @@
         }
       ],
       "notification_hash": "b0a09f4eae25d138fd43a8fa6f2450f2b7556ee9bfa6ce0aa68217a949a39984",
+      "quota_day": "2026-10-16",
       "recovery_of": [],
       "rendered": {
         "2610.20990": "rendered_inline_translation"
       },
       "run_id": "20261016T105702Z-8110bc31",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -3493,6 +3498,7 @@
       ]
     },
     "2610.20990": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -3521,7 +3527,18 @@
           "未確認性能提升幅度、消融細節與是否直接輸出 pixel masks"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261016T105702Z-8110bc31-9a35be2885d8",
+      "events": [
+        {
+          "at": "2026-10-16T11:02:07.798968+00:00",
+          "digest_id": "20261016T105702Z-8110bc31-9a35be2885d8",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-16T10:57:02.818671+00:00",
       "intended_tier": "translation",
@@ -3550,6 +3567,7 @@
         "updated": "2026-10-14T22:05:23+00:00",
         "version_id": "2610.20990v1"
       },
+      "pending_digest": "20261016T105702Z-8110bc31-9a35be2885d8",
       "presentation_modules": [
         "title",
         "title_translation",
