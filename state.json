@@ -47,7 +47,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-17T10:18:33.086307+00:00"
+    "last_complete_end": "2026-10-18T10:34:12.160494+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -4108,10 +4108,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-18",
+      "discovered_candidates": 13,
+      "discovered_papers": 13,
       "run_id": "20261018T103412Z-ffb467a5",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-18T10:34:00+00:00",
+          "seen": 6429,
+          "start": "2026-10-04T10:34:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-18T10:34:12.160494+00:00",
       "window": {
         "end": "2026-10-18T10:34:12.160494+00:00",
