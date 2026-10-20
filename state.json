@@ -3794,7 +3794,9 @@
       ]
     },
     "2610.24783": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
@@ -3820,6 +3822,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-20T11:05:46.350703+00:00",
+        "run_id": "20261020T110546Z-e6646c53",
+        "stage": "selection"
+      },
       "versions": [
         "2610.24783v1"
       ]
