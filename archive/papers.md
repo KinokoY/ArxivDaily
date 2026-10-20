@@ -7,7 +7,7 @@
 | 2026-10-20 | ATLAS: Learning to Adapt LVLM Attention for Reasoning Video Segmentation | ATLAS：学习适配 LVLM 注意力以实现推理视频分割 | [arXiv 2610.24783v1](https://arxiv.org/abs/2610.24783v1) |
 | 2026-10-20 | GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation | GeoReason：弥合遥感分割中的逻辑推理与空间保真度 | [arXiv 2610.23416v1](https://arxiv.org/abs/2610.23416v1) |
 | 2026-10-20 | Xiaomi-Lens-0 Technical Report | 小米-Lens-0 技术报告 | [arXiv 2610.23279v2](https://arxiv.org/abs/2610.23279v2) |
-| 2026-10-20 | UniField++: A Unified Agentic Framework with Loop Reasoning for MRI Field-Strength Enhancement | 待翻译 | [arXiv 2610.22982v1](https://arxiv.org/abs/2610.22982v1) |
+| 2026-10-20 | UniField++: A Unified Agentic Framework with Loop Reasoning for MRI Field-Strength Enhancement | UniField++：一种用于MRI场强增强的具有循环推理的统一智能体框架 | [arXiv 2610.22982v1](https://arxiv.org/abs/2610.22982v1) |
 | 2026-10-16 | DeSpatial: The devil of Agentic Spatial Reasoning Lies in 3D Itself | DeSpatial：具身空间推理的魔鬼藏在3D本身之中 | [arXiv 2610.20990v1](https://arxiv.org/abs/2610.20990v1) |
 | 2026-10-15 | GDBA-Net: A Gated Dual-Branch Adaptation of SAM2 for Robust Cross-Domain Nuclei Segmentation | GDBA-Net：一种用于鲁棒跨域细胞核分割的SAM2门控双分支适配方法 | [arXiv 2610.20073v1](https://arxiv.org/abs/2610.20073v1) |
 | 2026-10-15 | SAM3RL: Memory Control via Reinforcement Learning for Visual Object Tracking | SAM3RL：基于强化学习的视觉目标跟踪记忆控制 | [arXiv 2610.19931v1](https://arxiv.org/abs/2610.19931v1) |

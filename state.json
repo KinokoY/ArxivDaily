@@ -3758,11 +3758,8 @@
         "medical_reasoning"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-10-20T11:05:46.350703+00:00",
-        "run_id": "20261020T110546Z-e6646c53",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "UniField++：一种用于MRI场强增强的具有循环推理的统一智能体框架",
       "versions": [
         "2610.22982v1"
       ]
