@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-10-20 | ATLAS: Learning to Adapt LVLM Attention for Reasoning Video Segmentation | ATLAS：学习适配 LVLM 注意力以实现推理视频分割 | [arXiv 2610.24783v1](https://arxiv.org/abs/2610.24783v1) |
-| 2026-10-20 | GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation | 待翻译 | [arXiv 2610.23416v1](https://arxiv.org/abs/2610.23416v1) |
+| 2026-10-20 | GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation | GeoReason：弥合遥感分割中的逻辑推理与空间保真度 | [arXiv 2610.23416v1](https://arxiv.org/abs/2610.23416v1) |
 | 2026-10-20 | Xiaomi-Lens-0 Technical Report | 待翻译 | [arXiv 2610.23279v2](https://arxiv.org/abs/2610.23279v2) |
 | 2026-10-20 | UniField++: A Unified Agentic Framework with Loop Reasoning for MRI Field-Strength Enhancement | 待翻译 | [arXiv 2610.22982v1](https://arxiv.org/abs/2610.22982v1) |
 | 2026-10-16 | DeSpatial: The devil of Agentic Spatial Reasoning Lies in 3D Itself | DeSpatial：具身空间推理的魔鬼藏在3D本身之中 | [arXiv 2610.20990v1](https://arxiv.org/abs/2610.20990v1) |
