@@ -3981,11 +3981,13 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-20T11:05:46.350703+00:00",
-        "run_id": "20261020T110546Z-e6646c53",
-        "stage": "translation"
+      "title_zh": "ATLAS：学习适配 LVLM 注意力以实现推理视频分割",
+      "translation": {
+        "abstract_zh": "推理视频目标分割（RVOS）旨在定位并分割视频中由自然语言表达所指代的对象。尽管大型视觉语言模型（LVLM）在其注意力图中隐式编码了定位线索，但这些注意力往往噪声大、分散，并散落在不同层、头和模态之间，限制了它们直接用于分割。现有方法通常依赖手工设计的注意力选择启发式规则或计算昂贵的注意力细化。我们提出 ATLAS，一个注意力适配框架，学习将原始 LVLM 注意力转换为以对象为中心的定位线索。ATLAS 将所有层、头和模态的注意力视为结构化特征，将捕获空间信息的高分辨率帧级注意力与编码时间上下文的低分辨率视频级注意力相结合。一个配备时间注意力和基于 FiLM 的调制的轻量级 U-Net 融合这些互补表示以生成粗分割热图，并通过 SAM2 在视频中传播。在具有挑战性的指代和推理视频分割基准上的大量实验表明，ATLAS 优于现有的冻结骨干方法。代码和模型可在 \\url{https://hamidreza-136.github.io/atlas/} 获取。",
+        "title_zh": "ATLAS：学习适配 LVLM 注意力以实现推理视频分割"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.24783v1"
       ]
