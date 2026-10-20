@@ -3797,9 +3797,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Reasoning Video Object Segmentation (RVOS) aims to localize and segment objects referred to by natural-language expressions throughout a video.",
+          "We propose ATLAS, an attention adaptation framework that learns to transform raw LVLM attentions into object-centric localization cues.",
+          "A lightweight U-Net equipped with temporal attention and FiLM-based modulation fuses these complementary representations to generate coarse segmentation heatmaps, which are propagated across the video using SAM2."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文研究通用视频指代/推理分割，提出 ATLAS，通过学习适配 LVLM 注意力并结合轻量 U-Net、时序注意力和 SAM2 传播生成掩码。方法贡献属于推理分割中的注意力适配与分割流程，不含 RL 或 DPO，也不是医学影像任务；按规则保留为通用推理分割轻量清单。rule_hits 中的 transferable_objective 未获摘要支持，因为未见理论分析或向医学推理分割迁移的实质证据。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 58,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未显示 RL 或 DPO 被用作方法贡献。",
+          "摘要未提供理论依据或向医学影像推理分割迁移的证据。",
+          "摘要仅称优于现有 frozen-backbone 方法，未给出具体指标或消融细节。",
+          "无法确认其注意力适配是否包含具有理论支撑的新优化目标。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Reasoning Video Object Segmentation (RVOS) aims to localize and segment objects referred to by natural-language expressions throughout a video. Although large vision-language models (LVLMs) implicitly encode localization cues in their attention maps, these attentions are often noisy, diffuse, and scattered across layers, heads, and modalities, limiting their direct use for segmentation. Existing methods typically rely on handcrafted attention-selection heuristics or computationally expensive attention refinement. We propose ATLAS, an attention adaptation framework that learns to transform raw LVLM attentions into object-centric localization cues. ATLAS treats attentions from all layers, heads, and modalities as structured features, combining high-resolution frame-level attentions that capture spatial information with low-resolution video-level attentions that encode temporal context. A lightweight U-Net equipped with temporal attention and FiLM-based modulation fuses these complementary representations to generate coarse segmentation heatmaps, which are propagated across the video using SAM2. Extensive experiments on challenging referring and reasoning video segmentation benchmarks show that ATLAS outperforms existing frozen-backbone methods. Code and models are available at \\url{https://hamidreza-136.github.io/atlas/}.",
         "authors": [
@@ -3818,15 +3843,11 @@
         "updated": "2026-10-17T17:03:33+00:00",
         "version_id": "2610.24783v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-20T11:05:46.350703+00:00",
-        "run_id": "20261020T110546Z-e6646c53",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.24783v1"
       ]
