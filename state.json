@@ -3723,9 +3723,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding.",
+          "we present Xiaomi-Lens-0, a 4B MLLM built on Qwen3.5 that predicts masks from its own visual representations.",
+          "the model can interleave reasoning with region-specific latents and thus think with visual latents, while grounded reasoning traces supervise the intermediate regions referenced during chain-of-thought."
+        ],
+        "dpo_is_method": false,
+        "reason": "General image reasoning segmentation paper: it predicts masks from visual latents and interleaves region-specific latents with chain-of-thought, which is relevant to reasoning-to-pixel mechanisms. However, no RL or DPO method contribution is described, so it is retained only as a light general_reasoning item; it is not medical and provides no transferable objective evidence.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 55,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "The abstract does not specify whether grounded reasoning traces are trained via SFT, RL, or DPO; no RL/DPO method is described.",
+          "No medical-domain evaluation or transfer evidence is provided.",
+          "The abstract does not establish a formal theoretical basis for the visual-latent mask supervision objective."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer. To close this gap, we present Xiaomi-Lens-0, a 4B MLLM built on Qwen3.5 that predicts masks from its own visual representations. Specifically, a lightweight decoder combines vision-encoder patch features with the language model's mask-token states, termed visual latents, so that mask supervision reaches the shared backbone without an additional segmentation encoder. Because each latent decodes to a mask, the model can interleave reasoning with region-specific latents and thus think with visual latents, while grounded reasoning traces supervise the intermediate regions referenced during chain-of-thought. As a result, across all eight RefCOCO, RefCOCO+, and RefCOCOg splits, Xiaomi-Lens-0 gains 5.6 points on average over Qwen3.5 in referring comprehension and achieves the highest segmentation cIoU among compared models. Moreover, it surpasses Qwen3.5 across all perception benchmarks.\n  Homepage: https://seerray-lab.github.io/Xiaomi-Lens-0",
         "authors": [
@@ -3755,15 +3779,11 @@
         "updated": "2026-10-19T11:43:25+00:00",
         "version_id": "2610.23279v2"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-20T11:05:46.350703+00:00",
-        "run_id": "20261020T110546Z-e6646c53",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.23279v2"
       ]
