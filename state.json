@@ -3839,11 +3839,13 @@
         "general_reasoning"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-20T11:05:46.350703+00:00",
-        "run_id": "20261020T110546Z-e6646c53",
-        "stage": "translation"
+      "title_zh": "小米-Lens-0 技术报告",
+      "translation": {
+        "abstract_zh": "多模态大语言模型（MLLMs）能很好地回答关于整张图像的问题，但在细粒度区域理解上仍存在困难。一个关键原因是，纯文本监督从未指明哪些区域支持某个答案。为弥补这一差距，我们提出 Xiaomi-Lens-0，一个基于 Qwen3.5 构建的 4B MLLM，它从自身的视觉表示中预测掩码。具体而言，一个轻量级解码器将视觉编码器的 patch 特征与语言模型的掩码 token 状态（称为视觉潜变量）相结合，使得掩码监督能够到达共享主干，而无需额外的分割编码器。由于每个潜变量都可解码为一个掩码，模型可以将推理与区域特定的潜变量交错进行，从而以视觉潜变量进行思考，同时基于区域的推理轨迹监督思维链过程中引用的中间区域。结果，在全部八个 RefCOCO、RefCOCO+ 和 RefCOCOg 划分上，Xiaomi-Lens-0 在指代理解上比 Qwen3.5 平均提升 5.6 分，并在所比较的模型中取得了最高的分割 cIoU。此外，它在所有感知基准上都超过了 Qwen3.5。\n  主页：https://seerray-lab.github.io/Xiaomi-Lens-0",
+        "title_zh": "小米-Lens-0 技术报告"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.23279v2"
       ]
