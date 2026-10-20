@@ -1174,8 +1174,15 @@
       "content_hash": "a705b4e6bb63f6b4a245b3ad8318926afd1f82404c8d1c9e631aaf48d2663196",
       "created_at": "2026-10-20T11:05:46.350703+00:00",
       "day": "2026-10-20",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "62800331",
+        "status": "confirmed"
+      },
       "digest_id": "20261020T110546Z-e6646c53-a705b4e6bb63",
       "empty": false,
+      "finished_at": "2026-10-20T11:17:32.917115+00:00",
       "items": [
         {
           "modules": [
@@ -1314,7 +1321,7 @@
       },
       "run_id": "20261020T110546Z-e6646c53",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -3925,7 +3932,6 @@
       ]
     },
     "2610.23279": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -3961,7 +3967,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -3998,7 +4004,6 @@
         "updated": "2026-10-19T11:43:25+00:00",
         "version_id": "2610.23279v2"
       },
-      "pending_digest": "20261020T110546Z-e6646c53-a705b4e6bb63",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -4014,7 +4019,7 @@
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "小米-Lens-0 技术报告",
       "translation": {
         "abstract_zh": "多模态大语言模型（MLLMs）能很好地回答关于整张图像的问题，但在细粒度区域理解上仍存在困难。一个关键原因是，纯文本监督从未指明哪些区域支持某个答案。为弥补这一差距，我们提出 Xiaomi-Lens-0，一个基于 Qwen3.5 构建的 4B MLLM，它从自身的视觉表示中预测掩码。具体而言，一个轻量级解码器将视觉编码器的 patch 特征与语言模型的掩码 token 状态（称为视觉潜变量）相结合，使得掩码监督能够到达共享主干，而无需额外的分割编码器。由于每个潜变量都可解码为一个掩码，模型可以将推理与区域特定的潜变量交错进行，从而以视觉潜变量进行思考，同时基于区域的推理轨迹监督思维链过程中引用的中间区域。结果，在全部八个 RefCOCO、RefCOCO+ 和 RefCOCOg 划分上，Xiaomi-Lens-0 在指代理解上比 Qwen3.5 平均提升 5.6 分，并在所比较的模型中取得了最高的分割 cIoU。此外，它在所有感知基准上都超过了 Qwen3.5。\n  主页：https://seerray-lab.github.io/Xiaomi-Lens-0",
@@ -4027,7 +4032,6 @@
       ]
     },
     "2610.23416": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -4063,7 +4067,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -4090,7 +4094,6 @@
         "updated": "2026-10-16T13:07:22+00:00",
         "version_id": "2610.23416v1"
       },
-      "pending_digest": "20261020T110546Z-e6646c53-a705b4e6bb63",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -4106,7 +4109,7 @@
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "GeoReason：弥合遥感分割中的逻辑推理与空间保真度",
       "translation": {
         "abstract_zh": "多模态大语言模型（MLLMs）通过“嵌入即掩码”范式显著推进了指令驱动的感知能力。然而，在杂乱的地理语境和极端尺度变化下，将该能力扩展到遥感（RS）推理分割仍然异常困难，往往导致空间保真度退化与目标误识别。我们识别出一个关键但尚未被充分探索的瓶颈：在自回归生成范式中，分割标记[SEG]与其初始视觉 grounding 的顺序性疏离。由于[SEG]仅在长推理链末尾产生，它依赖的视觉证据已被语言抽象和自回归噪声逐步稀释。这种信息衰减对于像素足迹极小的遥感目标尤为灾难性，即使微小的保真度损失也会导致定位失败。为解决这些瓶颈，我们提出GeoReason，一种旨在强化逻辑推演并保持空间完整性的新框架。首先，我们引入预判先验机制，将[SEG]标记直接注入初始用户查询中，使其从终端输出转变为首要条件。这一范式转变将该标记转化为持续的空间锚点，防止长形式语言推理过程中的信息衰减。其次，我们通过位置感知思维链（CoT）增强视觉推理，该思维链利用边界框强制实现由粗到细的定位，并结合潜在块到标记对齐（PTA）损失，显式地将潜在分割标记与物理遥感纹理对齐。大量实验表明，GeoReason在Earthreason和RRSIS-D基准上始终优于最先进的方法。代码可在https://github.com/Fanc0126/GeoReason获取。",
@@ -4119,7 +4122,6 @@
       ]
     },
     "2610.24783": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -4156,7 +4158,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -4182,7 +4184,6 @@
         "updated": "2026-10-17T17:03:33+00:00",
         "version_id": "2610.24783v1"
       },
-      "pending_digest": "20261020T110546Z-e6646c53-a705b4e6bb63",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -4198,7 +4199,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "ATLAS：学习适配 LVLM 注意力以实现推理视频分割",
       "translation": {
         "abstract_zh": "推理视频目标分割（RVOS）旨在定位并分割视频中由自然语言表达所指代的对象。尽管大型视觉语言模型（LVLM）在其注意力图中隐式编码了定位线索，但这些注意力往往噪声大、分散，并散落在不同层、头和模态之间，限制了它们直接用于分割。现有方法通常依赖手工设计的注意力选择启发式规则或计算昂贵的注意力细化。我们提出 ATLAS，一个注意力适配框架，学习将原始 LVLM 注意力转换为以对象为中心的定位线索。ATLAS 将所有层、头和模态的注意力视为结构化特征，将捕获空间信息的高分辨率帧级注意力与编码时间上下文的低分辨率视频级注意力相结合。一个配备时间注意力和基于 FiLM 的调制的轻量级 U-Net 融合这些互补表示以生成粗分割热图，并通过 SAM2 在视频中传播。在具有挑战性的指代和推理视频分割基准上的大量实验表明，ATLAS 优于现有的冻结骨干方法。代码和模型可在 \\url{https://hamidreza-136.github.io/atlas/} 获取。",
