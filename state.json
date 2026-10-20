@@ -2916,7 +2916,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-14T11:24:31.534525+00:00",
-      "latest_version": "2610.15280v1",
+      "latest_version": "2610.15280v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Depth estimation and Gaussian reconstruction share a need for multi-scale feature processing, yet use different prediction interfaces and training objectives. Whether a decoder's internal computation can be optimized once and reused across these systems remains a structural design question. Search over primitive configurations alone leaves the organization of transformations fixed. To address this gap, we propose GeoBridge, an evolutionary framework for transferable decoder topologies. First, GeoBridge makes stage-internal topology searchable through residual, sequential, and parallel composition of configurable primitives. Shape-preserving composition retains the stage interfaces of a fixed multi-scale scaffold. Second, a functional-tree encoding supports stage-aware crossover and hierarchical mutation, while a gradient sensitivity-alignment proxy evaluates candidates without training. Multi-objective evolution balances this proxy with computation and parameter cost. Third, selected topologies are instantiated and trained in target systems with task-specific prediction interfaces. A single source search takes approximately 12 GPU hours. GeoBridgeNet-A3 achieves the best depth accuracy among four adapted decoder baselines under a common encoder and training protocol on NYU Depth V2 and KITTI. The same topology reaches 27.11 dB PSNR in Gaussian novel-view synthesis on RealEstate10K, and its refined representations support open-vocabulary segmentation on LERF. These results support decoder topology as a reusable design object across the evaluated geometric vision systems. Code and pretrained weights are available at https://github.com/EMI-Group/GeoBridge-NAS.",
@@ -2954,7 +2954,8 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "GeoBridge：面向几何视觉的演化可迁移解码器拓扑",
       "versions": [
-        "2610.15280v1"
+        "2610.15280v1",
+        "2610.15280v2"
       ]
     },
     "2610.15330": {
@@ -3684,6 +3685,144 @@
       "versions": [
         "2610.20990v1"
       ]
+    },
+    "2610.22982": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "paper": {
+        "abstract": "MRI field-strength enhancement seeks to combine the accessibility of low-field scanners with the image quality of high-field scanners. Yet, existing methods remain prone to anatomical hallucinations, as uniform processing leaves difficult brain regions insufficiently examined and scarce paired data limit their learning of how tissue contrast and anatomical visibility change across field strengths. To address these challenges, we propose UniField++, a two-agent framework that unifies enhancement tasks across multiple field-strength transitions, including 64mT-to-3T and 3T-to-7T. Unified learning allows both the VLM-based planner and the flow-matching-based enhancer to draw on field-dependent image characteristics observed across tasks, rather than relying on a single transition. Trained with radiologists' annotations of hallucination-prone regions and corresponding correction plans, the planner predicts regional risk and formulates targeted restoration strategies. Guided by these plans, the enhancer performs loop reasoning along the flow-matching trajectory, repeatedly processing high-risk regions for additional refinement. Together, cross-transition learning and risk-guided refinement support anatomically faithful enhancement across field strengths. Across the evaluated tasks, UniField++ improves PSNR by an average of 2.74 dB and SSIM by 14.05 percentage points over comparison methods, with corresponding gains of 3.97 dB and 13.92 percentage points over the ablation baseline. It also maintains enhancement quality on an external cohort with an unseen field strength and improves downstream whole-brain segmentation Macro Dice by an average of 0.1457 over the original low-field images. Code is available at https://github.com/CUHK-AIM-Group/UniField_plusplus.",
+        "authors": [
+          "Yiyang Lin",
+          "Chenhui Wang",
+          "Tianliang Yao",
+          "Shuaibo Li",
+          "Zijun Sun",
+          "Yiming Deng",
+          "Yixuan Yuan"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.22982v1",
+        "published": "2026-10-16T06:08:26+00:00",
+        "title": "UniField++: A Unified Agentic Framework with Loop Reasoning for MRI Field-Strength Enhancement",
+        "updated": "2026-10-16T06:08:26+00:00",
+        "version_id": "2610.22982v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.22982v1"
+      ]
+    },
+    "2610.23279": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "paper": {
+        "abstract": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer. To close this gap, we present Xiaomi-Lens-0, a 4B MLLM built on Qwen3.5 that predicts masks from its own visual representations. Specifically, a lightweight decoder combines vision-encoder patch features with the language model's mask-token states, termed visual latents, so that mask supervision reaches the shared backbone without an additional segmentation encoder. Because each latent decodes to a mask, the model can interleave reasoning with region-specific latents and thus think with visual latents, while grounded reasoning traces supervise the intermediate regions referenced during chain-of-thought. As a result, across all eight RefCOCO, RefCOCO+, and RefCOCOg splits, Xiaomi-Lens-0 gains 5.6 points on average over Qwen3.5 in referring comprehension and achieves the highest segmentation cIoU among compared models. Moreover, it surpasses Qwen3.5 across all perception benchmarks.\n  Homepage: https://seerray-lab.github.io/Xiaomi-Lens-0",
+        "authors": [
+          "Pei Fu",
+          "Yike Liu",
+          "Yue Sun",
+          "Hanmo Wang",
+          "Xiuwen Xi",
+          "Ruoceng Zhang",
+          "Shaojie Zhang",
+          "Tingwei Huang",
+          "Chao Jiang",
+          "Hang Li",
+          "Bingrui Liu",
+          "Zhenbo Luo",
+          "Heng Qu",
+          "Changjian Xu",
+          "Ming Xu",
+          "Jian Luan"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.23279v2",
+        "published": "2026-10-16T10:50:41+00:00",
+        "title": "Xiaomi-Lens-0 Technical Report",
+        "updated": "2026-10-19T11:43:25+00:00",
+        "version_id": "2610.23279v2"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.23279v2"
+      ]
+    },
+    "2610.23416": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "paper": {
+        "abstract": "Multimodal Large Language Models (MLLMs) have significantly advanced instruction-driven perception through the \"Embedding-as-Mask\" paradigm. However, extending this capability to Remote Sensing (RS) reasoning segmentation remains exceptionally challenging under cluttered geographical contexts and extreme scale variations, often leading to Spatial Fidelity Degradation and Target Misidentification. We identify a critical yet underexplored bottleneck: the sequential alienation of the segmentation token [SEG] from its initial visual grounding within the autoregressive generation paradigm. Produced only at the end of long reasoning chains, [SEG] relies on visual evidence that has been progressively diluted by linguistic abstraction and autoregressive noise. This information decay is particularly catastrophic for RS targets with minuscule pixel footprints, where even marginal fidelity loss leads to localization failure. To address these bottlenecks, we propose GeoReason, a novel framework designed to fortify logical deduction and preserve spatial integrity. First, we introduce an Anticipatory Prior mechanism that injects the [SEG] token directly into the initial user query, shifting it from a terminal output to a primary condition. This paradigm shift transforms the token into a persistent spatial anchor, preventing information decay during long-form linguistic inference. Second, we enhance visual reasoning via a Location-aware Chain-of-Thought (CoT) that enforces coarse-to-fine localization using bounding boxes, coupled with a Latent Patch-to-Token Alignment (PTA) Loss that explicitly aligns the latent segmentation token with physical RS textures. Extensive experiments demonstrate that GeoReason consistently outperforms state-of-the-art methods on the Earthreason and RRSIS-D benchmarks. Code is available at https://github.com/Fanc0126/GeoReason.",
+        "authors": [
+          "Cheng Fan",
+          "Han Wu",
+          "Tingzhang Luo",
+          "Minjing Dong",
+          "Yehui Tang",
+          "Jianyuan Guo"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.23416v1",
+        "published": "2026-10-16T13:07:22+00:00",
+        "title": "GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation",
+        "updated": "2026-10-16T13:07:22+00:00",
+        "version_id": "2610.23416v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.23416v1"
+      ]
+    },
+    "2610.24783": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "paper": {
+        "abstract": "Reasoning Video Object Segmentation (RVOS) aims to localize and segment objects referred to by natural-language expressions throughout a video. Although large vision-language models (LVLMs) implicitly encode localization cues in their attention maps, these attentions are often noisy, diffuse, and scattered across layers, heads, and modalities, limiting their direct use for segmentation. Existing methods typically rely on handcrafted attention-selection heuristics or computationally expensive attention refinement. We propose ATLAS, an attention adaptation framework that learns to transform raw LVLM attentions into object-centric localization cues. ATLAS treats attentions from all layers, heads, and modalities as structured features, combining high-resolution frame-level attentions that capture spatial information with low-resolution video-level attentions that encode temporal context. A lightweight U-Net equipped with temporal attention and FiLM-based modulation fuses these complementary representations to generate coarse segmentation heatmaps, which are propagated across the video using SAM2. Extensive experiments on challenging referring and reasoning video segmentation benchmarks show that ATLAS outperforms existing frozen-backbone methods. Code and models are available at \\url{https://hamidreza-136.github.io/atlas/}.",
+        "authors": [
+          "Hamidreza Dastmalchi",
+          "Ali Cheraghian",
+          "Aijun An",
+          "Abdelwahed Khamis",
+          "Lars Petersson"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.24783v1",
+        "published": "2026-10-17T17:03:33+00:00",
+        "title": "ATLAS: Learning to Adapt LVLM Attention for Reasoning Video Segmentation",
+        "updated": "2026-10-17T17:03:33+00:00",
+        "version_id": "2610.24783v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.24783v1"
+      ]
     }
   },
   "runs": [
@@ -4192,10 +4331,55 @@
       }
     },
     {
+      "collection_errors": [
+        "incomplete collection shard 202610061105..202610131105 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError"
+      ],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "coverage_complete": false,
       "day": "2026-10-20",
+      "discovered_candidates": 9,
+      "discovered_papers": 9,
       "run_id": "20261020T110546Z-e6646c53",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-20T11:05:00+00:00",
+          "error": "HTTPError",
+          "seen": 1700,
+          "start": "2026-10-06T11:05:00+00:00",
+          "status": "split"
+        },
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-13T11:05:00+00:00",
+          "error": "HTTPError",
+          "seen": 0,
+          "start": "2026-10-06T11:05:00+00:00",
+          "status": "failed"
+        },
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-20T11:05:00+00:00",
+          "seen": 3221,
+          "start": "2026-10-13T11:05:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-20T11:05:46.350703+00:00",
       "window": {
         "end": "2026-10-20T11:05:46.350703+00:00",
