@@ -53,7 +53,7 @@
       "created_at": "2026-10-20T11:05:46.350703+00:00"
     },
     "20261021T112148Z-f6c450f6-0af623e977c2": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-21T11:21:48.405399+00:00"
     }
   },
@@ -185,10 +185,12 @@
     "2026-10-21": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261021T112148Z-f6c450f6-0af623e977c2"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -1338,6 +1340,8 @@
     "20261021T112148Z-f6c450f6-0af623e977c2": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/21/20261021T112148Z-f6c450f6-0af623e977c2.md",
+      "attempt_run": "20261021T112148Z-f6c450f6",
+      "attempt_started": "2026-10-21T11:27:45.089112+00:00",
       "chain_root": "20261021T112148Z-f6c450f6-0af623e977c2",
       "chain_roots": [
         "20261021T112148Z-f6c450f6-0af623e977c2"
@@ -1428,6 +1432,7 @@
         }
       ],
       "notification_hash": "51072328a976b51eb5cbb33e46a61bc80e2251932afad38ad1fec7d185a66218",
+      "quota_day": "2026-10-21",
       "recovery_of": [],
       "rendered": {
         "2610.25090": "rendered_inline_translation",
@@ -1435,7 +1440,7 @@
       },
       "run_id": "20261021T112148Z-f6c450f6",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -4330,6 +4335,7 @@
       ]
     },
     "2610.25090": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -4358,7 +4364,18 @@
           "未确认其空间/时间推理机制是否可迁移到医学影像推理分割任务。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261021T112148Z-f6c450f6-0af623e977c2",
+      "events": [
+        {
+          "at": "2026-10-21T11:27:45.089112+00:00",
+          "digest_id": "20261021T112148Z-f6c450f6-0af623e977c2",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
       "intended_tier": "translation",
@@ -4382,6 +4399,7 @@
         "updated": "2026-10-18T07:54:07+00:00",
         "version_id": "2610.25090v1"
       },
+      "pending_digest": "20261021T112148Z-f6c450f6-0af623e977c2",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -4485,6 +4503,7 @@
       ]
     },
     "2610.27960": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -4513,7 +4532,18 @@
           "Whether RL or DPO is used anywhere in training is not confirmed."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261021T112148Z-f6c450f6-0af623e977c2",
+      "events": [
+        {
+          "at": "2026-10-21T11:27:45.089112+00:00",
+          "digest_id": "20261021T112148Z-f6c450f6-0af623e977c2",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
       "intended_tier": "translation",
@@ -4536,6 +4566,7 @@
         "updated": "2026-10-20T10:06:19+00:00",
         "version_id": "2610.27960v1"
       },
+      "pending_digest": "20261021T112148Z-f6c450f6-0af623e977c2",
       "presentation_modules": [
         "title",
         "title_translation",
