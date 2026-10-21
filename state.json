@@ -4314,9 +4314,31 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Automated machine learning (AutoML) automates parts of model training, yet helps little in medical imaging: general-purpose approaches lack medical architectures and preprocessing, and medical-focused ones demand engineering expertise and remain confined to narrow tasks such as 3D segmentation.",
+          "We introduce MedicalMLOmni, a multi-agent AutoML framework that automates model training for diverse single- and multi-modal medical tasks through a natural language interface.",
+          "Specifically, MedicalMLOmni performs evidence-based planning by retrieving published results to guide model selection and configuration, and employs parallel HPO where multiple agents explore adjustment strategies concurrently."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文提出面向医学图像分析的 AutoML 多智能体框架，核心贡献是证据检索驱动的规划与并行超参数优化；摘要未涉及推理分割、隐含请求或空间/位置推理到像素掩码的机制，也未以 RL 或 DPO 作为方法贡献。3D 分割仅作为现有医学 AutoML 任务范围的背景提及。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 8,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未显示该框架直接输出分割掩码或处理推理分割任务；仅凭摘要无法确认全文是否包含相关分割损失或 RL/DPO 组件。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Deep learning has become the default tool for medical image analysis, driven by the open-source movement. However, achieving the best performance on a given task remains difficult, with architecture selection and hyperparameter optimization (HPO) still considered \"more of an art than a science\". Automated machine learning (AutoML) automates parts of model training, yet helps little in medical imaging: general-purpose approaches lack medical architectures and preprocessing, and medical-focused ones demand engineering expertise and remain confined to narrow tasks such as 3D segmentation. We introduce MedicalMLOmni, a multi-agent AutoML framework that automates model training for diverse single- and multi-modal medical tasks through a natural language interface. Specifically, MedicalMLOmni performs evidence-based planning by retrieving published results to guide model selection and configuration, and employs parallel HPO where multiple agents explore adjustment strategies concurrently. MedicalMLOmni achieves the best score on 19 of 20 benchmarks; PMC-VQA is the exception, where a vision-language model with broader pre-training leads. Backbone-matched controls attribute the gains to the framework, not the backbone. By removing coding requirements, MedicalMLOmni lowers the barrier for domain experts with rich datasets but limited engineering expertise.",
         "authors": [
@@ -4332,15 +4354,11 @@
         "updated": "2026-10-20T15:49:38+00:00",
         "version_id": "2610.28410v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-21T11:21:48.405399+00:00",
-        "run_id": "20261021T112148Z-f6c450f6",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.28410v1"
       ]
