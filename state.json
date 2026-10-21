@@ -1349,8 +1349,15 @@
       "content_hash": "0af623e977c29e959efec6503b0f72cf2f027b55e2fedeb99e08805c54dd0095",
       "created_at": "2026-10-21T11:21:48.405399+00:00",
       "day": "2026-10-21",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "63025421",
+        "status": "confirmed"
+      },
       "digest_id": "20261021T112148Z-f6c450f6-0af623e977c2",
       "empty": false,
+      "finished_at": "2026-10-21T11:27:49.387668+00:00",
       "items": [
         {
           "modules": [
@@ -1440,7 +1447,7 @@
       },
       "run_id": "20261021T112148Z-f6c450f6",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -4335,7 +4342,6 @@
       ]
     },
     "2610.25090": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -4372,7 +4378,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -4399,7 +4405,6 @@
         "updated": "2026-10-18T07:54:07+00:00",
         "version_id": "2610.25090v1"
       },
-      "pending_digest": "20261021T112148Z-f6c450f6-0af623e977c2",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -4417,7 +4422,7 @@
         "general_rl",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "跨越空间与时间的视觉思考：面向视频分割的接地推理",
       "translation": {
         "abstract_zh": "视频推理分割（VRS）要求模型识别隐式描述的目标并预测其像素级掩码轨迹，同时解决决定答案的空间关系与时间事件。纯文本思维链（CoT）可以解释目标选择，却未使底层视觉引用显式化，从而在语言推理与分布于各帧的证据之间留下了\\emph{视频引用鸿沟}。我们提出\\textbf{时序视频基元链（TCoVP）}，一种时空接地的视频CoT形式，将查询相关观察组织为按时间顺序的推理链。每个基元将实体引用与时间支撑及带时间戳的空间证据相关联，链将这些引用与语言交织，以引导关于哪个实体相关、查询事件何时成立及其证据出现在何处的推理。选定的目标基元随后为视频掩码预测提供框提示与时间支撑。我们构建了TCoVP-SFT-15k和TCoVP-RL-13k，通过监督微调与链对齐强化学习来学习这一表示。在五个VRS基准和三个模型骨干上的大量实验证明了TCoVP的强劲性能，凸显了在推理过程中组织空间与时间证据的有效性。所有模型与代码将公开发布。项目页面：\\url{https://victor-wjw.github.io/TCoVP/}",
@@ -4503,7 +4508,6 @@
       ]
     },
     "2610.27960": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -4540,7 +4544,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -4566,7 +4570,6 @@
         "updated": "2026-10-20T10:06:19+00:00",
         "version_id": "2610.27960v1"
       },
-      "pending_digest": "20261021T112148Z-f6c450f6-0af623e977c2",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -4582,7 +4585,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "通过密集竞争表示实现高效SAM3多类语义分割适配",
       "translation": {
         "abstract_zh": "Segment Anything Model 3 (SAM3) 在处理简短名词短语以生成带唯一实例标识的分割掩码方面，于可提示概念分割（PCS）任务中取得了显著进展。尽管SAM3在单概念分割上表现优异，但在需要同时分割多个概念的复杂真实环境中仍存在不足。特别是，SAM3通常无法同时处理具有语义重叠的概念，导致语义误分类和冗余掩码预测。此外，随着概念数量的增加，独立推理范式会引入难以承受的推理延迟。为解决这些局限，我们提出了密集竞争表示SAM（DCR-SAM）框架。所提方法通过解耦跨模态交互，缓解了推理延迟。为解决语义误分类问题，DCR-SAM将文本概念与视觉表示动态对齐，并引入密集竞争头以强制实施显式的类间竞争。此外，应用可学习的背景令牌来动态吸收非目标对象。这些机制有效抑制了重叠预测并生成高保真掩码。在多个基准上的大量实验评估表明，所提框架：(1) 相较最先进方法实现了2.3% $\\sim$ 10.7%的性能提升，(2) 相较原生SAM3实现了33$\\times$的推理加速，(3) 在多样场景中展现出强鲁棒性。",
