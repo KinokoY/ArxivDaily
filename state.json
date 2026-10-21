@@ -51,6 +51,10 @@
     "20261020T110546Z-e6646c53-a705b4e6bb63": {
       "attempts": 1,
       "created_at": "2026-10-20T11:05:46.350703+00:00"
+    },
+    "20261021T112148Z-f6c450f6-0af623e977c2": {
+      "attempts": 0,
+      "created_at": "2026-10-21T11:21:48.405399+00:00"
     }
   },
   "collection": {
@@ -1330,6 +1334,108 @@
       "run_id": "20261020T110546Z-e6646c53",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261021T112148Z-f6c450f6-0af623e977c2": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/21/20261021T112148Z-f6c450f6-0af623e977c2.md",
+      "chain_root": "20261021T112148Z-f6c450f6-0af623e977c2",
+      "chain_roots": [
+        "20261021T112148Z-f6c450f6-0af623e977c2"
+      ],
+      "content_hash": "0af623e977c29e959efec6503b0f72cf2f027b55e2fedeb99e08805c54dd0095",
+      "created_at": "2026-10-21T11:21:48.405399+00:00",
+      "day": "2026-10-21",
+      "digest_id": "20261021T112148Z-f6c450f6-0af623e977c2",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "The Segment Anything Model 3 (SAM3) has achieved significant progress in Promptable Concept Segmentation (PCS) by processing short noun phrases to generate segmentation masks with unique instance identifiers. While SAM3 excels at single-concept segmentation, it falls short in complex, real-world environments where multiple concepts must be segmented simultaneously. In particular, SAM3 typically fails to simultaneously process concepts with semantic overlap, leading to semantic misclassifications and redundant mask predictions. Moreover, as the number of concepts increases, the independent inference paradigm introduces prohibitive inference latency. To address these limitations, we propose the Dense Competitive Representations SAM (DCR-SAM) framework. By decoupling cross-modal interactions, the proposed method alleviates the inference latency. To resolve semantic misclassifications, DCR-SAM dynamically aligns textual concepts with visual representations and incorporates a dense competition head to enforce explicit inter-class competition. Furthermore, a learnable background token is applied to absorb non-target objects dynamically. These mechanisms effectively suppress overlapping predictions and generate high-fidelity masks. Extensive experimental evaluations across multiple benchmarks demonstrate that the proposed framework: (1) achieves a 2.3% $\\sim$ 10.7% performance improvement over state-of-the-art methods, (2) delivers a 33$\\times$ inference speedup compared to the native SAM3, and (3) exhibits strong robustness across diverse scenarios.",
+            "authors": [
+              "Wenbin Liao",
+              "Hao Zhu",
+              "Yike Ma",
+              "Hao Jiang",
+              "Feng Dai"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.27960v1",
+            "published": "2026-10-20T10:06:19+00:00",
+            "title": "Efficient SAM3 Adaptation for Multi-Class Semantic Segmentation via Dense Competitive Representations",
+            "updated": "2026-10-20T10:06:19+00:00",
+            "version_id": "2610.27960v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "Segment Anything Model 3 (SAM3) 在处理简短名词短语以生成带唯一实例标识的分割掩码方面，于可提示概念分割（PCS）任务中取得了显著进展。尽管SAM3在单概念分割上表现优异，但在需要同时分割多个概念的复杂真实环境中仍存在不足。特别是，SAM3通常无法同时处理具有语义重叠的概念，导致语义误分类和冗余掩码预测。此外，随着概念数量的增加，独立推理范式会引入难以承受的推理延迟。为解决这些局限，我们提出了密集竞争表示SAM（DCR-SAM）框架。所提方法通过解耦跨模态交互，缓解了推理延迟。为解决语义误分类问题，DCR-SAM将文本概念与视觉表示动态对齐，并引入密集竞争头以强制实施显式的类间竞争。此外，应用可学习的背景令牌来动态吸收非目标对象。这些机制有效抑制了重叠预测并生成高保真掩码。在多个基准上的大量实验评估表明，所提框架：(1) 相较最先进方法实现了2.3% $\\sim$ 10.7%的性能提升，(2) 相较原生SAM3实现了33$\\times$的推理加速，(3) 在多样场景中展现出强鲁棒性。",
+            "title_zh": "通过密集竞争表示实现高效SAM3多类语义分割适配"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Video Reasoning Segmentation (VRS) requires a model to identify an implicitly described target and predict its pixel-level mask trajectory, while resolving the spatial relations and temporal events that determine the answer. Text-only Chain-of-Thought (CoT) can explain a target choice without making the underlying visual references explicit, leaving a \\emph{video reference gap} between linguistic inference and the evidence distributed across frames. We introduce \\textbf{Temporal Chain of Video Primitives (TCoVP)}, a spatiotemporally grounded form of Video CoT that organizes query-relevant observations into a chronological reasoning chain. Each primitive associates an entity reference with temporal support and timestamped spatial evidence, and the chain interleaves these references with language to guide reasoning about which entity is relevant, when the queried event holds, and where its evidence appears. The selected target primitives then provide box prompts and temporal support for video mask prediction. We construct TCoVP-SFT-15k and TCoVP-RL-13k to learn this representation through supervised fine-tuning and chain-aligned reinforcement learning. Extensive experiments across five VRS benchmarks and three model backbones demonstrate the strong performance of TCoVP, highlighting the effectiveness of organizing spatial and temporal evidence within the reasoning process. All models and code will be publicly released. Project page: \\url{https://victor-wjw.github.io/TCoVP/}",
+            "authors": [
+              "Junwei Wen",
+              "Deshui Miao",
+              "Guangming Lu",
+              "Ming-Hsuan Yang",
+              "Xin Li",
+              "Wenjie Pei"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.25090v1",
+            "published": "2026-10-18T07:54:07+00:00",
+            "title": "Think Visually Across Space and Time: Grounded Reasoning for Video Segmentation",
+            "updated": "2026-10-18T07:54:07+00:00",
+            "version_id": "2610.25090v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "general_rl",
+            "general_reasoning"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "视频推理分割（VRS）要求模型识别隐式描述的目标并预测其像素级掩码轨迹，同时解决决定答案的空间关系与时间事件。纯文本思维链（CoT）可以解释目标选择，却未使底层视觉引用显式化，从而在语言推理与分布于各帧的证据之间留下了\\emph{视频引用鸿沟}。我们提出\\textbf{时序视频基元链（TCoVP）}，一种时空接地的视频CoT形式，将查询相关观察组织为按时间顺序的推理链。每个基元将实体引用与时间支撑及带时间戳的空间证据相关联，链将这些引用与语言交织，以引导关于哪个实体相关、查询事件何时成立及其证据出现在何处的推理。选定的目标基元随后为视频掩码预测提供框提示与时间支撑。我们构建了TCoVP-SFT-15k和TCoVP-RL-13k，通过监督微调与链对齐强化学习来学习这一表示。在五个VRS基准和三个模型骨干上的大量实验证明了TCoVP的强劲性能，凸显了在推理过程中组织空间与时间证据的有效性。所有模型与代码将公开发布。项目页面：\\url{https://victor-wjw.github.io/TCoVP/}",
+            "title_zh": "跨越空间与时间的视觉思考：面向视频分割的接地推理"
+          }
+        }
+      ],
+      "notification_hash": "51072328a976b51eb5cbb33e46a61bc80e2251932afad38ad1fec7d185a66218",
+      "recovery_of": [],
+      "rendered": {
+        "2610.25090": "rendered_inline_translation",
+        "2610.27960": "rendered_inline_translation"
+      },
+      "run_id": "20261021T112148Z-f6c450f6",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
