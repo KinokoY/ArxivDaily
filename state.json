@@ -4515,11 +4515,8 @@
         "medical_reasoning"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-10-21T11:21:48.405399+00:00",
-        "run_id": "20261021T112148Z-f6c450f6",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "面向医学图像分析、具备基于证据规划能力的自动化机器学习多智能体框架",
       "versions": [
         "2610.28410v1"
       ]
