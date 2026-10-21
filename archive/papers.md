@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-10-21 | A Multi-Agent Framework for Automated Machine Learning with Evidence-based Planning for Medical Image Analysis | 面向医学图像分析、具备基于证据规划能力的自动化机器学习多智能体框架 | [arXiv 2610.28410v1](https://arxiv.org/abs/2610.28410v1) |
 | 2026-10-21 | Efficient SAM3 Adaptation for Multi-Class Semantic Segmentation via Dense Competitive Representations | 通过密集竞争表示实现高效SAM3多类语义分割适配 | [arXiv 2610.27960v1](https://arxiv.org/abs/2610.27960v1) |
-| 2026-10-21 | Visual Memory and Textual Alignment for Cross-Modal Few-Shot Segmentation | 待翻译 | [arXiv 2610.25641v1](https://arxiv.org/abs/2610.25641v1) |
+| 2026-10-21 | Visual Memory and Textual Alignment for Cross-Modal Few-Shot Segmentation | 视觉记忆与文本对齐用于跨模态小样本分割 | [arXiv 2610.25641v1](https://arxiv.org/abs/2610.25641v1) |
 | 2026-10-21 | Think Visually Across Space and Time: Grounded Reasoning for Video Segmentation | 跨越空间与时间的视觉思考：面向视频分割的接地推理 | [arXiv 2610.25090v1](https://arxiv.org/abs/2610.25090v1) |
 | 2026-10-20 | ATLAS: Learning to Adapt LVLM Attention for Reasoning Video Segmentation | ATLAS：学习适配 LVLM 注意力以实现推理视频分割 | [arXiv 2610.24783v1](https://arxiv.org/abs/2610.24783v1) |
 | 2026-10-20 | GeoReason: Bridging Logical Reasoning and Spatial Fidelity in Remote Sensing Segmentation | GeoReason：弥合遥感分割中的逻辑推理与空间保真度 | [arXiv 2610.23416v1](https://arxiv.org/abs/2610.23416v1) |
