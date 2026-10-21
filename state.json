@@ -4252,9 +4252,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Few-shot segmentation (FSS) aims to segment target objects with limited annotated examples.",
+          "we propose ViTA-SAM, a framework built upon SAM 3 that integrates visual memory and textual features through cross-modal alignment.",
+          "we introduce a cross-modal alignment module that conditions textual features on memory-enhanced visual representations",
+          "we propose a pseudo-label refinement strategy that updates the memory with predicted query masks"
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper is a few-shot segmentation framework built on SAM 3 with visual memory, textual alignment, and pseudo-label refinement. It does not address medical imaging, reasoning segmentation, or RL/DPO as a methodological contribution. The rule hit 'transferable_objective' is not substantiated: the abstract presents architectural and refinement strategies, not a theoretical optimization objective with evidence for transfer.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 18,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether the method includes any reasoning-segmentation formulation is not indicated in the abstract.",
+          "No evidence of RL or DPO training is present in the abstract.",
+          "No theoretical optimization-objective contribution or transfer evidence is described."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Few-shot segmentation (FSS) aims to segment target objects with limited annotated examples. Recent studies have begun to explore large foundation models to improve generalization for this task. In particular, SAM 3 provides strong visual representations and supports text-guided segmentation. However, its performance remains limited in specialized domains, where semantic prompts and visual representations are often poorly aligned. To address this challenge, we propose ViTA-SAM, a framework built upon SAM 3 that integrates visual memory and textual features through cross-modal alignment. Specifically, we construct a visual memory module that encodes support features together with their corresponding masks, providing support-aware visual guidance for query prediction. In parallel, we leverage the text encoder of SAM 3 to extract semantic features as complementary priors. To bridge the gap between semantic and visual representations, we introduce a cross-modal alignment module that conditions textual features on memory-enhanced visual representations, yielding more consistent and visually grounded predictions. In addition, we propose a pseudo-label refinement strategy that updates the memory with predicted query masks, enabling query-adaptive representation learning. Extensive experiments on multiple benchmarks show that ViTA-SAM achieves the best overall performance among the compared methods, outperforming the strongest competing method by over 5% in average mIoU.",
         "authors": [
@@ -4273,15 +4298,11 @@
         "updated": "2026-10-19T01:35:43+00:00",
         "version_id": "2610.25641v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-21T11:21:48.405399+00:00",
-        "run_id": "20261021T112148Z-f6c450f6",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.25641v1"
       ]
