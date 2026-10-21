@@ -55,7 +55,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-18T10:34:12.160494+00:00"
+    "last_complete_end": "2026-10-21T11:21:48.405399+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -3888,6 +3888,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
+      "latest_version": "2610.22982v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "MRI field-strength enhancement seeks to combine the accessibility of low-field scanners with the image quality of high-field scanners. Yet, existing methods remain prone to anatomical hallucinations, as uniform processing leaves difficult brain regions insufficiently examined and scarce paired data limit their learning of how tissue contrast and anatomical visibility change across field strengths. To address these challenges, we propose UniField++, a two-agent framework that unifies enhancement tasks across multiple field-strength transitions, including 64mT-to-3T and 3T-to-7T. Unified learning allows both the VLM-based planner and the flow-matching-based enhancer to draw on field-dependent image characteristics observed across tasks, rather than relying on a single transition. Trained with radiologists' annotations of hallucination-prone regions and corresponding correction plans, the planner predicts regional risk and formulates targeted restoration strategies. Guided by these plans, the enhancer performs loop reasoning along the flow-matching trajectory, repeatedly processing high-risk regions for additional refinement. Together, cross-transition learning and risk-guided refinement support anatomically faithful enhancement across field strengths. Across the evaluated tasks, UniField++ improves PSNR by an average of 2.74 dB and SSIM by 14.05 percentage points over comparison methods, with corresponding gains of 3.97 dB and 13.92 percentage points over the ablation baseline. It also maintains enhancement quality on an external cohort with an unseen field strength and improves downstream whole-brain segmentation Macro Dice by an average of 0.1457 over the original low-field images. Code is available at https://github.com/CUHK-AIM-Group/UniField_plusplus.",
@@ -3974,6 +3975,7 @@
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.23279v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer. To close this gap, we present Xiaomi-Lens-0, a 4B MLLM built on Qwen3.5 that predicts masks from its own visual representations. Specifically, a lightweight decoder combines vision-encoder patch features with the language model's mask-token states, termed visual latents, so that mask supervision reaches the shared backbone without an additional segmentation encoder. Because each latent decodes to a mask, the model can interleave reasoning with region-specific latents and thus think with visual latents, while grounded reasoning traces supervise the intermediate regions referenced during chain-of-thought. As a result, across all eight RefCOCO, RefCOCO+, and RefCOCOg splits, Xiaomi-Lens-0 gains 5.6 points on average over Qwen3.5 in referring comprehension and achieves the highest segmentation cIoU among compared models. Moreover, it surpasses Qwen3.5 across all perception benchmarks.\n  Homepage: https://seerray-lab.github.io/Xiaomi-Lens-0",
@@ -4074,6 +4076,7 @@
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.23416v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Multimodal Large Language Models (MLLMs) have significantly advanced instruction-driven perception through the \"Embedding-as-Mask\" paradigm. However, extending this capability to Remote Sensing (RS) reasoning segmentation remains exceptionally challenging under cluttered geographical contexts and extreme scale variations, often leading to Spatial Fidelity Degradation and Target Misidentification. We identify a critical yet underexplored bottleneck: the sequential alienation of the segmentation token [SEG] from its initial visual grounding within the autoregressive generation paradigm. Produced only at the end of long reasoning chains, [SEG] relies on visual evidence that has been progressively diluted by linguistic abstraction and autoregressive noise. This information decay is particularly catastrophic for RS targets with minuscule pixel footprints, where even marginal fidelity loss leads to localization failure. To address these bottlenecks, we propose GeoReason, a novel framework designed to fortify logical deduction and preserve spatial integrity. First, we introduce an Anticipatory Prior mechanism that injects the [SEG] token directly into the initial user query, shifting it from a terminal output to a primary condition. This paradigm shift transforms the token into a persistent spatial anchor, preventing information decay during long-form linguistic inference. Second, we enhance visual reasoning via a Location-aware Chain-of-Thought (CoT) that enforces coarse-to-fine localization using bounding boxes, coupled with a Latent Patch-to-Token Alignment (PTA) Loss that explicitly aligns the latent segmentation token with physical RS textures. Extensive experiments demonstrate that GeoReason consistently outperforms state-of-the-art methods on the Earthreason and RRSIS-D benchmarks. Code is available at https://github.com/Fanc0126/GeoReason.",
@@ -4165,6 +4168,7 @@
       "failures": {},
       "first_discovered": "2026-10-20T11:05:46.350703+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.24783v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Reasoning Video Object Segmentation (RVOS) aims to localize and segment objects referred to by natural-language expressions throughout a video. Although large vision-language models (LVLMs) implicitly encode localization cues in their attention maps, these attentions are often noisy, diffuse, and scattered across layers, heads, and modalities, limiting their direct use for segmentation. Existing methods typically rely on handcrafted attention-selection heuristics or computationally expensive attention refinement. We propose ATLAS, an attention adaptation framework that learns to transform raw LVLM attentions into object-centric localization cues. ATLAS treats attentions from all layers, heads, and modalities as structured features, combining high-resolution frame-level attentions that capture spatial information with low-resolution video-level attentions that encode temporal context. A lightweight U-Net equipped with temporal attention and FiLM-based modulation fuses these complementary representations to generate coarse segmentation heatmaps, which are propagated across the video using SAM2. Extensive experiments on challenging referring and reasoning video segmentation benchmarks show that ATLAS outperforms existing frozen-backbone methods. Code and models are available at \\url{https://hamidreza-136.github.io/atlas/}.",
@@ -4209,6 +4213,129 @@
       "translation_provider": "llm",
       "versions": [
         "2610.24783v1"
+      ]
+    },
+    "2610.25090": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "paper": {
+        "abstract": "Video Reasoning Segmentation (VRS) requires a model to identify an implicitly described target and predict its pixel-level mask trajectory, while resolving the spatial relations and temporal events that determine the answer. Text-only Chain-of-Thought (CoT) can explain a target choice without making the underlying visual references explicit, leaving a \\emph{video reference gap} between linguistic inference and the evidence distributed across frames. We introduce \\textbf{Temporal Chain of Video Primitives (TCoVP)}, a spatiotemporally grounded form of Video CoT that organizes query-relevant observations into a chronological reasoning chain. Each primitive associates an entity reference with temporal support and timestamped spatial evidence, and the chain interleaves these references with language to guide reasoning about which entity is relevant, when the queried event holds, and where its evidence appears. The selected target primitives then provide box prompts and temporal support for video mask prediction. We construct TCoVP-SFT-15k and TCoVP-RL-13k to learn this representation through supervised fine-tuning and chain-aligned reinforcement learning. Extensive experiments across five VRS benchmarks and three model backbones demonstrate the strong performance of TCoVP, highlighting the effectiveness of organizing spatial and temporal evidence within the reasoning process. All models and code will be publicly released. Project page: \\url{https://victor-wjw.github.io/TCoVP/}",
+        "authors": [
+          "Junwei Wen",
+          "Deshui Miao",
+          "Guangming Lu",
+          "Ming-Hsuan Yang",
+          "Xin Li",
+          "Wenjie Pei"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.25090v1",
+        "published": "2026-10-18T07:54:07+00:00",
+        "title": "Think Visually Across Space and Time: Grounded Reasoning for Video Segmentation",
+        "updated": "2026-10-18T07:54:07+00:00",
+        "version_id": "2610.25090v1"
+      },
+      "rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.25090v1"
+      ]
+    },
+    "2610.25641": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "paper": {
+        "abstract": "Few-shot segmentation (FSS) aims to segment target objects with limited annotated examples. Recent studies have begun to explore large foundation models to improve generalization for this task. In particular, SAM 3 provides strong visual representations and supports text-guided segmentation. However, its performance remains limited in specialized domains, where semantic prompts and visual representations are often poorly aligned. To address this challenge, we propose ViTA-SAM, a framework built upon SAM 3 that integrates visual memory and textual features through cross-modal alignment. Specifically, we construct a visual memory module that encodes support features together with their corresponding masks, providing support-aware visual guidance for query prediction. In parallel, we leverage the text encoder of SAM 3 to extract semantic features as complementary priors. To bridge the gap between semantic and visual representations, we introduce a cross-modal alignment module that conditions textual features on memory-enhanced visual representations, yielding more consistent and visually grounded predictions. In addition, we propose a pseudo-label refinement strategy that updates the memory with predicted query masks, enabling query-adaptive representation learning. Extensive experiments on multiple benchmarks show that ViTA-SAM achieves the best overall performance among the compared methods, outperforming the strongest competing method by over 5% in average mIoU.",
+        "authors": [
+          "Tianqi Wei",
+          "Zhi Chen",
+          "Xin Yu",
+          "Scott Chapman",
+          "Zi Huang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.25641v1",
+        "published": "2026-10-19T01:35:43+00:00",
+        "title": "Visual Memory and Textual Alignment for Cross-Modal Few-Shot Segmentation",
+        "updated": "2026-10-19T01:35:43+00:00",
+        "version_id": "2610.25641v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.25641v1"
+      ]
+    },
+    "2610.27960": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "paper": {
+        "abstract": "The Segment Anything Model 3 (SAM3) has achieved significant progress in Promptable Concept Segmentation (PCS) by processing short noun phrases to generate segmentation masks with unique instance identifiers. While SAM3 excels at single-concept segmentation, it falls short in complex, real-world environments where multiple concepts must be segmented simultaneously. In particular, SAM3 typically fails to simultaneously process concepts with semantic overlap, leading to semantic misclassifications and redundant mask predictions. Moreover, as the number of concepts increases, the independent inference paradigm introduces prohibitive inference latency. To address these limitations, we propose the Dense Competitive Representations SAM (DCR-SAM) framework. By decoupling cross-modal interactions, the proposed method alleviates the inference latency. To resolve semantic misclassifications, DCR-SAM dynamically aligns textual concepts with visual representations and incorporates a dense competition head to enforce explicit inter-class competition. Furthermore, a learnable background token is applied to absorb non-target objects dynamically. These mechanisms effectively suppress overlapping predictions and generate high-fidelity masks. Extensive experimental evaluations across multiple benchmarks demonstrate that the proposed framework: (1) achieves a 2.3% $\\sim$ 10.7% performance improvement over state-of-the-art methods, (2) delivers a 33$\\times$ inference speedup compared to the native SAM3, and (3) exhibits strong robustness across diverse scenarios.",
+        "authors": [
+          "Wenbin Liao",
+          "Hao Zhu",
+          "Yike Ma",
+          "Hao Jiang",
+          "Feng Dai"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.27960v1",
+        "published": "2026-10-20T10:06:19+00:00",
+        "title": "Efficient SAM3 Adaptation for Multi-Class Semantic Segmentation via Dense Competitive Representations",
+        "updated": "2026-10-20T10:06:19+00:00",
+        "version_id": "2610.27960v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.27960v1"
+      ]
+    },
+    "2610.28410": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "paper": {
+        "abstract": "Deep learning has become the default tool for medical image analysis, driven by the open-source movement. However, achieving the best performance on a given task remains difficult, with architecture selection and hyperparameter optimization (HPO) still considered \"more of an art than a science\". Automated machine learning (AutoML) automates parts of model training, yet helps little in medical imaging: general-purpose approaches lack medical architectures and preprocessing, and medical-focused ones demand engineering expertise and remain confined to narrow tasks such as 3D segmentation. We introduce MedicalMLOmni, a multi-agent AutoML framework that automates model training for diverse single- and multi-modal medical tasks through a natural language interface. Specifically, MedicalMLOmni performs evidence-based planning by retrieving published results to guide model selection and configuration, and employs parallel HPO where multiple agents explore adjustment strategies concurrently. MedicalMLOmni achieves the best score on 19 of 20 benchmarks; PMC-VQA is the exception, where a vision-language model with broader pre-training leads. Backbone-matched controls attribute the gains to the framework, not the backbone. By removing coding requirements, MedicalMLOmni lowers the barrier for domain experts with rich datasets but limited engineering expertise.",
+        "authors": [
+          "Yiqing Shen",
+          "Mathias Unberath"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.28410v1",
+        "published": "2026-10-20T15:49:38+00:00",
+        "title": "A Multi-Agent Framework for Automated Machine Learning with Evidence-based Planning for Medical Image Analysis",
+        "updated": "2026-10-20T15:49:38+00:00",
+        "version_id": "2610.28410v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.28410v1"
       ]
     }
   },
@@ -4791,10 +4918,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-21",
+      "discovered_candidates": 24,
+      "discovered_papers": 24,
       "run_id": "20261021T112148Z-f6c450f6",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-21T11:21:00+00:00",
+          "seen": 6980,
+          "start": "2026-10-07T11:21:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-21T11:21:48.405399+00:00",
       "window": {
         "end": "2026-10-21T11:21:48.405399+00:00",
