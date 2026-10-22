@@ -10,7 +10,7 @@
 | 2026-10-22 | AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting | 待翻译 | [arXiv 2610.29374v1](https://arxiv.org/abs/2610.29374v1) |
 | 2026-10-22 | Reading the Mask: Descriptor-Grounded BI-RADS Rationale Generation for Breast MRI Segmentation | 待翻译 | [arXiv 2610.29358v1](https://arxiv.org/abs/2610.29358v1) |
 | 2026-10-22 | TEMPL: A Resource-Efficient and Transparent Model-Free Framework for Pseudo-Label Generation in Material CT Scans | 待翻译 | [arXiv 2610.28974v1](https://arxiv.org/abs/2610.28974v1) |
-| 2026-10-22 | Complexity-Aware Surgical Video Reasoning Segmentation with Digital Twin and Context Memory | 待翻译 | [arXiv 2610.28776v1](https://arxiv.org/abs/2610.28776v1) |
+| 2026-10-22 | Complexity-Aware Surgical Video Reasoning Segmentation with Digital Twin and Context Memory | 复杂度感知的手术视频推理分割：结合数字孪生与上下文记忆 | [arXiv 2610.28776v1](https://arxiv.org/abs/2610.28776v1) |
 | 2026-10-21 | A Multi-Agent Framework for Automated Machine Learning with Evidence-based Planning for Medical Image Analysis | 面向医学图像分析、具备基于证据规划能力的自动化机器学习多智能体框架 | [arXiv 2610.28410v1](https://arxiv.org/abs/2610.28410v1) |
 | 2026-10-21 | Efficient SAM3 Adaptation for Multi-Class Semantic Segmentation via Dense Competitive Representations | 通过密集竞争表示实现高效SAM3多类语义分割适配 | [arXiv 2610.27960v1](https://arxiv.org/abs/2610.27960v1) |
 | 2026-10-21 | Visual Memory and Textual Alignment for Cross-Modal Few-Shot Segmentation | 视觉记忆与文本对齐用于跨模态小样本分割 | [arXiv 2610.25641v1](https://arxiv.org/abs/2610.25641v1) |
