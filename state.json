@@ -4699,7 +4699,9 @@
       ]
     },
     "2610.28974": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-22T11:21:23.598515+00:00",
@@ -4725,6 +4727,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-22T11:21:23.598515+00:00",
+        "run_id": "20261022T112123Z-a628e67d",
+        "stage": "selection"
+      },
       "versions": [
         "2610.28974v1"
       ]
