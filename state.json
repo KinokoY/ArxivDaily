@@ -191,6 +191,14 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-10-22": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [],
+      "send_attempts": 0
     }
   },
   "digests": {
@@ -5011,7 +5019,8 @@
     },
     "2610.29768": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "translation": 1
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -5078,6 +5087,11 @@
         "general_reasoning"
       ],
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-10-22T11:21:23.598515+00:00",
+        "run_id": "20261022T112123Z-a628e67d",
+        "stage": "translation"
+      },
       "versions": [
         "2610.29768v1"
       ]
