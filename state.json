@@ -5115,7 +5115,8 @@
     },
     "2610.29825": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "title_translation": 1
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -5178,6 +5179,11 @@
         "transferable_objective"
       ],
       "stage": "rejected",
+      "stage_started": {
+        "at": "2026-10-22T11:21:23.598515+00:00",
+        "run_id": "20261022T112123Z-a628e67d",
+        "stage": "title_translation"
+      },
       "versions": [
         "2610.29825v1"
       ]
