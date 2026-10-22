@@ -5963,11 +5963,25 @@
         "incomplete collection shard 202610081121..202610151121 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError",
         "incomplete collection shard 202610151121..202610221121 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError"
       ],
+      "completed_at": "2026-10-22T11:29:09.756509+00:00",
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "coverage_complete": false,
       "day": "2026-10-22",
+      "delivery_day": "2026-10-22",
+      "delivery_kind": "digest",
+      "delivery_status": "confirmed",
+      "digest_id": "20261022T112123Z-a628e67d-33e4ff23c9ec",
       "discovered_candidates": 26,
       "discovered_papers": 26,
+      "errors": [
+        "2610.29409v1:translation:translation_schema_invalid",
+        "collection:incomplete collection shard 202610081121..202610151121 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError",
+        "collection:incomplete collection shard 202610151121..202610221121 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError",
+        "collection_incomplete"
+      ],
+      "full": 0,
+      "light": 0,
+      "recovery": 0,
       "run_id": "20261022T112123Z-a628e67d",
       "shards": [
         {
@@ -6010,7 +6024,9 @@
           "status": "failed"
         }
       ],
+      "silent": false,
       "started_at": "2026-10-22T11:21:23.598515+00:00",
+      "translation": 2,
       "window": {
         "end": "2026-10-22T11:21:23.598515+00:00",
         "initial_floor": "2026-09-30T09:52:55.126385+00:00",
