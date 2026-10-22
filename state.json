@@ -5019,7 +5019,7 @@
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "presentation_pending",
       "versions": [
         "2610.29409v1"
       ]
