@@ -4977,7 +4977,13 @@
         ]
       },
       "events": [],
-      "failures": {},
+      "failures": {
+        "translation": {
+          "attempts": 1,
+          "error": "translation_schema_invalid",
+          "last_at": "2026-10-22T11:21:23.598515+00:00"
+        }
+      },
       "first_discovered": "2026-10-22T11:21:23.598515+00:00",
       "intended_tier": "translation",
       "model": "deepseek-flash",
@@ -5014,11 +5020,6 @@
         "general_reasoning"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-22T11:21:23.598515+00:00",
-        "run_id": "20261022T112123Z-a628e67d",
-        "stage": "translation"
-      },
       "versions": [
         "2610.29409v1"
       ]
