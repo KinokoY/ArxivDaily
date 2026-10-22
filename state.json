@@ -4794,9 +4794,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We ask a different question: can a general-purpose multimodal large language model (MLLM) segment images directly, without an added segmentation head, mask decoder, or training?",
+          "We present LLMSeg, a training-free pipeline that turns a vision-capable LLM into a text-prompted image segmenter.",
+          "Next, segment traces each instance using closed periodic B-splines confined to its detected box.",
+          "We evaluate LLMSeg across ten referring and reasoning segmentation splits (ReasonSeg and RefCOCO/+/g)."
+        ],
+        "dpo_is_method": false,
+        "reason": "论文提出无需训练的通用MLLM文本提示分割流程，将分割分解为检测、B样条边界追踪与迭代精化，并在ReasonSeg/RefCOCO等指代与推理分割 split 上评估。方法贡献属于通用图像推理分割管线，但未使用RL或DPO，也没有提出可验证的医学迁移目标，因此按规则仅作轻量保留。B-splines更像是中间几何表示与推理输出机制，而非具有理论证据的传统优化目标。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 62,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "未确认B-spline几何表示是否具有理论依据，或能否实质迁移到医学影像推理分割。",
+          "未确认该免训练MLLM管线在医学影像数据上的泛化与鲁棒性。",
+          "未确认论文是否把B-splines作为优化目标，而非仅作为边界参数化与中间几何表示。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Promptable segmentation models such as SAM 3 achieve remarkable open-vocabulary performance but require dedicated architectures, large-scale annotation engines, and task-specific training. We ask a different question: can a general-purpose multimodal large language model (MLLM) segment images directly, without an added segmentation head, mask decoder, or training? We present LLMSeg, a training-free pipeline that turns a vision-capable LLM into a text-prompted image segmenter. LLMSeg decomposes segmentation into three LLM-driven stages. First, detect localizes all instances matching a free-form text query and describes their coarse morphology. Next, segment traces each instance using closed periodic B-splines confined to its detected box. These splines define an outer boundary and optional hole loops. Finally, refine iteratively proposes focus boxes around residual errors and retraces confined splines. The process ends when the mask stabilizes or the pass budget is exhausted. The output is a binary mask with inspectable intermediate geometry. We evaluate LLMSeg across ten referring and reasoning segmentation splits (ReasonSeg and RefCOCO/+/g). We also evaluate open-vocabulary instance segmentation (LVIS, COCO, and SA-Co), semantic segmentation, and zero-shot detection (ODinW13 and RF-100VL). With an off-the-shelf Gemini-3.7-Flash backend, LLMSeg is competitive with and often surpasses the specialist SAM 3 model on identical items. It reaches 71.5 cIoU on ReasonSeg val without additional segmentation-specific training. Backend model updates can improve accuracy without retraining the pipeline. The code is available at https://abdullahamdi.com/llmseg .",
         "authors": [
@@ -4812,16 +4837,12 @@
         "updated": "2026-10-21T08:35:16+00:00",
         "version_id": "2610.29409v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-22T11:21:23.598515+00:00",
-        "run_id": "20261022T112123Z-a628e67d",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.29409v1"
       ]
