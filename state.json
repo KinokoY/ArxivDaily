@@ -5029,11 +5029,8 @@
         "general_reasoning"
       ],
       "stage": "presentation_pending",
-      "stage_started": {
-        "at": "2026-10-22T11:21:23.598515+00:00",
-        "run_id": "20261022T112123Z-a628e67d",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "LLMSeg：基于B样条的无训练文本提示图像分割",
       "versions": [
         "2610.29409v1"
       ]

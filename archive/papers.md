@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-10-22 | GuidedSAM-Plume: An Expert-Guided Segmentation Framework for Volcanic Plumes | GuidedSAM-Plume：一种专家引导的火山羽流分割框架 | [arXiv 2610.29825v1](https://arxiv.org/abs/2610.29825v1) |
 | 2026-10-22 | UniRAP: Towards Unified Part-level Physical Affordance Reasoning and Actionable Perception | UniRAP：迈向统一的部件级物理可供性推理与可操作感知 | [arXiv 2610.29768v1](https://arxiv.org/abs/2610.29768v1) |
-| 2026-10-22 | LLMSeg: Training-Free Text-Prompted Image Segmentation with B-Splines | 待翻译 | [arXiv 2610.29409v1](https://arxiv.org/abs/2610.29409v1) |
+| 2026-10-22 | LLMSeg: Training-Free Text-Prompted Image Segmentation with B-Splines | LLMSeg：基于B样条的无训练文本提示图像分割 | [arXiv 2610.29409v1](https://arxiv.org/abs/2610.29409v1) |
 | 2026-10-22 | AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting | 待翻译 | [arXiv 2610.29374v1](https://arxiv.org/abs/2610.29374v1) |
 | 2026-10-22 | Reading the Mask: Descriptor-Grounded BI-RADS Rationale Generation for Breast MRI Segmentation | 待翻译 | [arXiv 2610.29358v1](https://arxiv.org/abs/2610.29358v1) |
 | 2026-10-22 | TEMPL: A Resource-Efficient and Transparent Model-Free Framework for Pseudo-Label Generation in Material CT Scans | 待翻译 | [arXiv 2610.28974v1](https://arxiv.org/abs/2610.28974v1) |
