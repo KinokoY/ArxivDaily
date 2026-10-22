@@ -4385,6 +4385,7 @@
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.25090v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Video Reasoning Segmentation (VRS) requires a model to identify an implicitly described target and predict its pixel-level mask trajectory, while resolving the spatial relations and temporal events that determine the answer. Text-only Chain-of-Thought (CoT) can explain a target choice without making the underlying visual references explicit, leaving a \\emph{video reference gap} between linguistic inference and the evidence distributed across frames. We introduce \\textbf{Temporal Chain of Video Primitives (TCoVP)}, a spatiotemporally grounded form of Video CoT that organizes query-relevant observations into a chronological reasoning chain. Each primitive associates an entity reference with temporal support and timestamped spatial evidence, and the chain interleaves these references with language to guide reasoning about which entity is relevant, when the queried event holds, and where its evidence appears. The selected target primitives then provide box prompts and temporal support for video mask prediction. We construct TCoVP-SFT-15k and TCoVP-RL-13k to learn this representation through supervised fine-tuning and chain-aligned reinforcement learning. Extensive experiments across five VRS benchmarks and three model backbones demonstrate the strong performance of TCoVP, highlighting the effectiveness of organizing spatial and temporal evidence within the reasoning process. All models and code will be publicly released. Project page: \\url{https://victor-wjw.github.io/TCoVP/}",
@@ -4419,8 +4420,8 @@
       ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
-        "general_rl",
-        "general_reasoning"
+        "general_reasoning",
+        "general_rl"
       ],
       "stage": "delivered",
       "title_zh": "跨越空间与时间的视觉思考：面向视频分割的接地推理",
@@ -4466,6 +4467,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "latest_version": "2610.25641v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Few-shot segmentation (FSS) aims to segment target objects with limited annotated examples. Recent studies have begun to explore large foundation models to improve generalization for this task. In particular, SAM 3 provides strong visual representations and supports text-guided segmentation. However, its performance remains limited in specialized domains, where semantic prompts and visual representations are often poorly aligned. To address this challenge, we propose ViTA-SAM, a framework built upon SAM 3 that integrates visual memory and textual features through cross-modal alignment. Specifically, we construct a visual memory module that encodes support features together with their corresponding masks, providing support-aware visual guidance for query prediction. In parallel, we leverage the text encoder of SAM 3 to extract semantic features as complementary priors. To bridge the gap between semantic and visual representations, we introduce a cross-modal alignment module that conditions textual features on memory-enhanced visual representations, yielding more consistent and visually grounded predictions. In addition, we propose a pseudo-label refinement strategy that updates the memory with predicted query masks, enabling query-adaptive representation learning. Extensive experiments on multiple benchmarks show that ViTA-SAM achieves the best overall performance among the compared methods, outperforming the strongest competing method by over 5% in average mIoU.",
@@ -4551,6 +4553,7 @@
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.27960v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "The Segment Anything Model 3 (SAM3) has achieved significant progress in Promptable Concept Segmentation (PCS) by processing short noun phrases to generate segmentation masks with unique instance identifiers. While SAM3 excels at single-concept segmentation, it falls short in complex, real-world environments where multiple concepts must be segmented simultaneously. In particular, SAM3 typically fails to simultaneously process concepts with semantic overlap, leading to semantic misclassifications and redundant mask predictions. Moreover, as the number of concepts increases, the independent inference paradigm introduces prohibitive inference latency. To address these limitations, we propose the Dense Competitive Representations SAM (DCR-SAM) framework. By decoupling cross-modal interactions, the proposed method alleviates the inference latency. To resolve semantic misclassifications, DCR-SAM dynamically aligns textual concepts with visual representations and incorporates a dense competition head to enforce explicit inter-class competition. Furthermore, a learnable background token is applied to absorb non-target objects dynamically. These mechanisms effectively suppress overlapping predictions and generate high-fidelity masks. Extensive experimental evaluations across multiple benchmarks demonstrate that the proposed framework: (1) achieves a 2.3% $\\sim$ 10.7% performance improvement over state-of-the-art methods, (2) delivers a 33$\\times$ inference speedup compared to the native SAM3, and (3) exhibits strong robustness across diverse scenarios.",
@@ -4626,6 +4629,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-21T11:21:48.405399+00:00",
+      "latest_version": "2610.28410v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Deep learning has become the default tool for medical image analysis, driven by the open-source movement. However, achieving the best performance on a given task remains difficult, with architecture selection and hyperparameter optimization (HPO) still considered \"more of an art than a science\". Automated machine learning (AutoML) automates parts of model training, yet helps little in medical imaging: general-purpose approaches lack medical architectures and preprocessing, and medical-focused ones demand engineering expertise and remain confined to narrow tasks such as 3D segmentation. We introduce MedicalMLOmni, a multi-agent AutoML framework that automates model training for diverse single- and multi-modal medical tasks through a natural language interface. Specifically, MedicalMLOmni performs evidence-based planning by retrieving published results to guide model selection and configuration, and employs parallel HPO where multiple agents explore adjustment strategies concurrently. MedicalMLOmni achieves the best score on 19 of 20 benchmarks; PMC-VQA is the exception, where a vision-language model with broader pre-training leads. Backbone-matched controls attribute the gains to the framework, not the backbone. By removing coding requirements, MedicalMLOmni lowers the barrier for domain experts with rich datasets but limited engineering expertise.",
@@ -4662,6 +4666,226 @@
       "title_zh": "面向医学图像分析、具备基于证据规划能力的自动化机器学习多智能体框架",
       "versions": [
         "2610.28410v1"
+      ]
+    },
+    "2610.28776": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "Conventional surgical segmentation relies on closed-set categories or explicit text queries, which cannot resolve implicit queries that require reasoning about workflows, instrument functions, and temporal relationships. To address these limitations, we propose SurgReasonSeg, a complexity-aware method that brings reasoning segmentation over digital twin (DT) representations to surgical video. Specifically, SurgReasonSeg constructs DT representations from surgical foundation models and trains two low-rank adapters (LoRA) of one large language model with reinforcement learning (RL), each specialized for a different query complexity. A lightweight router, also trained with RL, selects between the two adapters to balance latency against accuracy. SurgReasonSeg also sets the temporal context with an adaptive sliding window conditioned on query complexity and workflow phase, and retrieves relevant historical cases from a surgical context memory by workflow similarity and procedural relevance. We further introduce EndoVis-ReasonSeg, a surgical reasoning segmentation benchmark with 1,460 training and 961 test samples across semantic, spatial, and temporal categories. On EndoVis-ReasonSeg, SurgReasonSeg improves J&F over the strongest baseline, ReSurgSAM2, by 0.178, 0.237, and 0.297 on semantic, spatial, and temporal queries, and it also achieves the best results on the Ref-EndoVis17 and Ref-EndoVis18 referring segmentation benchmarks. A backbone-matched attribution protocol separates the contribution of the upstream segmenter from that of the reasoning modules. Our method runs at 18.8 FPS averaged over the query distribution, enabling real-time reasoning segmentation in surgical videos.",
+        "authors": [
+          "Yiqing Shen",
+          "Mathias Unberath"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.28776v1",
+        "published": "2026-10-20T18:10:55+00:00",
+        "title": "Complexity-Aware Surgical Video Reasoning Segmentation with Digital Twin and Context Memory",
+        "updated": "2026-10-20T18:10:55+00:00",
+        "version_id": "2610.28776v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "general_rl",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.28776v1"
+      ]
+    },
+    "2610.28974": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "The scarcity of large annotated datasets limits deep learning (DL) segmentation in material CT analysis. DL-based pseudo-labeling can help, but it is often computationally expensive and hard to interpret. We introduce a multi-stage, model-free framework that generates pseudo-labels directly from grayscale CT scans. It combines thresholding, morphological dilation, and a custom breadth-first search region-growing algorithm to produce polygonal annotations without pre-trained weights, labeled data, or a GPU. We compare it against the zero-shot Segment Anything Model (SAM), a fully supervised 3D U-Net, and classical baselines. On a dendrite dataset with ground truth, our method reaches 63.19% IoU versus 10.74% for zero-shot SAM, with four times the instance recall at 0.5 IoU (33.3% versus 8.3%). The supervised 3D U-Net serves as a reference ceiling that requires expert labels. On a silica sand specimen, YOLO models trained on our labels performed comparably to models trained on SAM labels in a qualitative comparison. Across 1,053 extracted grains, the median equivalent diameter was 163.8 micrometers, near the specimen's known 106 to 150 micrometers sieve range, compared with 219.5 micrometers for SAM, whose labels merge adjacent particles and add spurious detections. A sensitivity analysis shows a stable operating range for the key threshold and a sharp, predictable failure point linked to phase contrast. Our method needs 15s per image on a standard CPU versus 28s for SAM on a GPU. These results support our transparent approach as a tool for annotation bootstrapping and microstructural quantification in resource-limited settings.",
+        "authors": [
+          "Ashiqur Rahman",
+          "Venkata Devesh Reddy Seethi",
+          "Austin Yunker",
+          "Rajkumar Kettimuthu",
+          "Hamed Alhoori"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.28974v1",
+        "published": "2026-10-20T22:48:06+00:00",
+        "title": "TEMPL: A Resource-Efficient and Transparent Model-Free Framework for Pseudo-Label Generation in Material CT Scans",
+        "updated": "2026-10-20T22:48:06+00:00",
+        "version_id": "2610.28974v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.28974v1"
+      ]
+    },
+    "2610.29358": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "Deep learning based models accurately delineate tumours on dynamic contrast-enhanced MRI (DCE-MRI), but segmentation masks alone do not provide the rationales or reasoning used by radiologists to assess the lesion suspicion. This limits the explainability as well the clinical integration. We investigate whether clinically relevant descriptors can instead be derived from the segmentation masks and their dynamic contrast-enhancement series. We have used Breast Imaging Reporting and Data System (BI-RADS) guidelines as a structured framework. Using these guidelines we designed a BI-RADS decision tree with eight quantitative measurements using radiomics, together with the lesion size and component count, that determine the descriptors at eight nodes. Using these descriptors we generate natural-language rationale using a large language model. The model was constrained to express only the derived records from the decision tree. After applying this framework to the expert and automatic masks of each of the 1,506 cases in the MAMA-MIA dataset, we generated a reproducible corpus of 3,012 BI-RADS grounded rationales. We obtained a faithfulness score of 99.98% and a counterfactual accuracy of 99.3%, indicating that the generated rationales faithfully verbalises the measured descriptors and correctly reflects changes in the underlying record. Agreement between the descriptors from expert and automatic masks falls from 0.832 to 0.549 as mask quality falls from Good to Missed. The generated rationales are intended as draft representations for radiologist review and final sign-off rather than autonomous clinical reports.",
+        "authors": [
+          "Hrishikesh Singh",
+          "Aarti Sharma",
+          "Divyanshu Kumar",
+          "Millie Pant"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.29358v1",
+        "published": "2026-10-21T07:50:20+00:00",
+        "title": "Reading the Mask: Descriptor-Grounded BI-RADS Rationale Generation for Breast MRI Segmentation",
+        "updated": "2026-10-21T07:50:20+00:00",
+        "version_id": "2610.29358v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.29358v1"
+      ]
+    },
+    "2610.29374": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "Robots deployed in human-centered environments need maps that support both geometric navigation and open-vocabulary semantic queries beyond a fixed label set. A key challenge is enriching such maps with semantic information without relying on manually annotated segmentation masks or closed-set semantic categories. Existing geometry-driven active mapping maximizes coverage but treats semantics as a passive by-product of the collected trajectory, whereas active semantic mapping typically depends on supervised semantic segmentation. We present AOV-GS, an active 3D Gaussian mapping system that guides exploration using frozen foundation models. During coarse exploration, AOV-GS re-ranks geometrically promising candidate views according to CLIP mask-embedding novelty computed from SAM instance segmentation, biasing exploration toward semantically informative regions. Frozen SAM and CLIP provide instance masks and language-aligned embeddings throughout mapping, while a lightweight scene-specific language field is fitted offline directly to the collected CLIP embeddings rather than manually annotated masks, enabling open-vocabulary text-query segmentation on novel views. In a controlled comparison using the same SAM-CLIP perception stack, AOV-GS improves average language-field mIoU over geometry-only active planning by 1.3 percentage points on Replica (34.6% on eight scenes) and by 1.8 points on Matterport3D (23.1% on five scenes). With CorrCLIP, AOV-GS reaches 35.6% on Replica, 2.0 points above the matched Geometry-based + CorrCLIP baseline. Novel-view PSNR remains comparable to the geometry-only baseline on both datasets while depth L1 improves on Replica. Code is available at https://github.com/OptimusFaber/AOV-GS.",
+        "authors": [
+          "Rodion Shkokov",
+          "Tatiana Zemskova",
+          "Dmitry Yudin"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.RO"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.29374v1",
+        "published": "2026-10-21T08:02:14+00:00",
+        "title": "AOV-GS: Active Open-Vocabulary Semantic Mapping with 3D Gaussian Splatting",
+        "updated": "2026-10-21T08:02:14+00:00",
+        "version_id": "2610.29374v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.29374v1"
+      ]
+    },
+    "2610.29409": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "Promptable segmentation models such as SAM 3 achieve remarkable open-vocabulary performance but require dedicated architectures, large-scale annotation engines, and task-specific training. We ask a different question: can a general-purpose multimodal large language model (MLLM) segment images directly, without an added segmentation head, mask decoder, or training? We present LLMSeg, a training-free pipeline that turns a vision-capable LLM into a text-prompted image segmenter. LLMSeg decomposes segmentation into three LLM-driven stages. First, detect localizes all instances matching a free-form text query and describes their coarse morphology. Next, segment traces each instance using closed periodic B-splines confined to its detected box. These splines define an outer boundary and optional hole loops. Finally, refine iteratively proposes focus boxes around residual errors and retraces confined splines. The process ends when the mask stabilizes or the pass budget is exhausted. The output is a binary mask with inspectable intermediate geometry. We evaluate LLMSeg across ten referring and reasoning segmentation splits (ReasonSeg and RefCOCO/+/g). We also evaluate open-vocabulary instance segmentation (LVIS, COCO, and SA-Co), semantic segmentation, and zero-shot detection (ODinW13 and RF-100VL). With an off-the-shelf Gemini-3.7-Flash backend, LLMSeg is competitive with and often surpasses the specialist SAM 3 model on identical items. It reaches 71.5 cIoU on ReasonSeg val without additional segmentation-specific training. Backend model updates can improve accuracy without retraining the pipeline. The code is available at https://abdullahamdi.com/llmseg .",
+        "authors": [
+          "Abdullah Hamdi"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.29409v1",
+        "published": "2026-10-21T08:35:16+00:00",
+        "title": "LLMSeg: Training-Free Text-Prompted Image Segmentation with B-Splines",
+        "updated": "2026-10-21T08:35:16+00:00",
+        "version_id": "2610.29409v1"
+      },
+      "rule_hits": [
+        "transferable_objective",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.29409v1"
+      ]
+    },
+    "2610.29768": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "Vision-language perception has achieved impressive progress in aligning natural language with visual observations, yet grounding high-level semantics into part-level physical interaction remains challenging. To address this gap, we propose UniRAP, a unified model for inferring part-level physical affordances and mapping language instructions to actionable geometric representations. UniRAP formulates this problem as a conditional multimodal generation task, integrating visual inputs, textual instructions, and optional prompts into a shared spatiotemporal representation space through a unified interface token mechanism. To predict executable contact geometry, we introduce a Unified Affordance Decoder (UAD), which jointly performs object detection, part-level affordance segmentation, and 4-DoF interaction pose estimation by leveraging intermediate segmentation features. In addition, we propose a curriculum-based transfer training strategy that progressively adapts the model from general visual parsing to interaction-aware perception, improving data efficiency under limited textual annotations. Experiments show that UniRAP achieves state-of-the-art performance on referring expression segmentation, affordance grounding, and interaction pose estimation, while maintaining strong spatiotemporal consistency in dynamic video scenarios. These results demonstrate the effectiveness of UniRAP as a unified perception framework for language-guided physical manipulation.",
+        "authors": [
+          "Linfei Li",
+          "Ruining Hu",
+          "Lin Zhang",
+          "Zhong Wang",
+          "Fengyi Zhang",
+          "Ying Shen",
+          "Binqiang Wang",
+          "Xin Zhang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.29768v1",
+        "published": "2026-10-21T14:02:25+00:00",
+        "title": "UniRAP: Towards Unified Part-level Physical Affordance Reasoning and Actionable Perception",
+        "updated": "2026-10-21T14:02:25+00:00",
+        "version_id": "2610.29768v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.29768v1"
+      ]
+    },
+    "2610.29825": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-22T11:21:23.598515+00:00",
+      "paper": {
+        "abstract": "Quantitative analysis of environmental phenomena increasingly relies on image-based measurements. In volcanology, the geometric characterization of volcanic plumes and clouds from RGB images remains hindered by the scarcity of dedicated segmentation solutions and partially handcrafted annotations remain widely prevalent. We present GuidedSAM-Plume, an open-source expert-guided framework tailored for the interactive segmentation of volcanic plumes and clouds. It leverages the zero-shot, spatial prompt-based capabilities of SAM2. The framework was thoroughly validated on a challenging dataset through dedicated segmentation metrics and field-relevant volcanological descriptors. From minimal user inputs, it is able to significantly increase performance compared to fully automatic dedicated solutions while preserving the reliability of derived volcanological parameters. The absence of retraining requirements lowers adoption barriers within the volcanological community, and the framework's demonstrated suitability for complex, diffuse plume-shaped phenomena extends its applicability to broader environmental science domains. The re-annotated dataset, produced under the guidance of expert volcanologists within the proposed framework, ultimately yields a more standardized release. The framework and accompanying dataset are made available at https://github.com/tad-damo/GuidedSAM-Plume.",
+        "authors": [
+          "Taddeo D'Adamo",
+          "Simon Thivet",
+          "Catherine Pothier",
+          "Riccardo Simionato",
+          "Allan Fries",
+          "Jonathan Lemus",
+          "Costanza Bonadonna",
+          "Laure Tougne Rodet",
+          "Bertrand Kerautret"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.29825v1",
+        "published": "2026-10-21T14:48:18+00:00",
+        "title": "GuidedSAM-Plume: An Expert-Guided Segmentation Framework for Volcanic Plumes",
+        "updated": "2026-10-21T14:48:18+00:00",
+        "version_id": "2610.29825v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.29825v1"
       ]
     }
   },
@@ -5286,10 +5510,57 @@
       }
     },
     {
+      "collection_errors": [
+        "incomplete collection shard 202610081121..202610151121 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError",
+        "incomplete collection shard 202610151121..202610221121 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError"
+      ],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "coverage_complete": false,
       "day": "2026-10-22",
+      "discovered_candidates": 26,
+      "discovered_papers": 26,
       "run_id": "20261022T112123Z-a628e67d",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-22T11:21:00+00:00",
+          "error": "HTTPError",
+          "seen": 6100,
+          "start": "2026-10-08T11:21:00+00:00",
+          "status": "split"
+        },
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-15T11:21:00+00:00",
+          "error": "HTTPError",
+          "seen": 0,
+          "start": "2026-10-08T11:21:00+00:00",
+          "status": "failed"
+        },
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-22T11:21:00+00:00",
+          "error": "HTTPError",
+          "seen": 0,
+          "start": "2026-10-15T11:21:00+00:00",
+          "status": "failed"
+        }
+      ],
       "started_at": "2026-10-22T11:21:23.598515+00:00",
       "window": {
         "end": "2026-10-22T11:21:23.598515+00:00",
