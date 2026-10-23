@@ -205,6 +205,14 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-10-23": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [],
+      "send_attempts": 0
     }
   },
   "digests": {
@@ -5168,7 +5176,7 @@
       "attempts": {
         "selection": 1,
         "title_translation": 1,
-        "translation": 1
+        "translation": 2
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -5239,6 +5247,11 @@
         "transferable_objective"
       ],
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-10-23T11:11:48.233627+00:00",
+        "run_id": "20261023T111148Z-43065206",
+        "stage": "translation"
+      },
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "LLMSeg：基于B样条的无训练文本提示图像分割",
       "versions": [
