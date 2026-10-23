@@ -5203,13 +5203,7 @@
         ]
       },
       "events": [],
-      "failures": {
-        "translation": {
-          "attempts": 1,
-          "error": "translation_schema_invalid",
-          "last_at": "2026-10-22T11:21:23.598515+00:00"
-        }
-      },
+      "failures": {},
       "first_discovered": "2026-10-22T11:21:23.598515+00:00",
       "intended_tier": "translation",
       "latest_version": "2610.29409v1",
@@ -5247,13 +5241,14 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-23T11:11:48.233627+00:00",
-        "run_id": "20261023T111148Z-43065206",
-        "stage": "translation"
-      },
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "LLMSeg：基于B样条的无训练文本提示图像分割",
+      "translation": {
+        "abstract_zh": "SAM 3 等可提示分割模型实现了出色的开放词汇性能，但需要专用架构、大规模标注引擎以及任务特定训练。我们提出一个不同的问题：通用多模态大语言模型（MLLM）能否在没有额外分割头、掩码解码器或训练的情况下直接分割图像？我们提出 LLMSeg，一个无需训练的流程，将具备视觉能力的 LLM 转变为文本提示图像分割器。LLMSeg 将分割分解为三个由 LLM 驱动的阶段。首先，detect 定位与自由形式文本查询匹配的所有实例，并描述其粗略形态。接着，segment 使用限制在检测框内的闭合周期 B 样条追踪每个实例。这些样条定义外部边界和可选的孔洞环。最后，refine 迭代地在残差误差周围提出聚焦框，并重新追踪受限样条。当掩码稳定或遍历预算耗尽时，该过程结束。输出是带有可检查中间几何的二进制掩码。我们在十个指代与推理分割划分（ReasonSeg 和 RefCOCO/+/g）上评估 LLMSeg。我们还评估开放词汇实例分割（LVIS、COCO 和 SA-Co）、语义分割和零样本检测（ODinW13 和 RF-100VL）。使用现成的 Gemini-3.7-Flash 后端，LLMSeg 在相同项目上与专用 SAM 3 模型具有竞争力，且常常超越后者。它在 ReasonSeg val 上达到 71.5 cIoU，无需额外的分割特定训练。后端模型更新可以在不重新训练流程的情况下提高准确率。代码可在 https://abdullahamdi.com/llmseg 获取。",
+        "title_zh": "LLMSeg：基于B样条的无训练文本提示图像分割"
+      },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.29409v1"
       ]
