@@ -5226,7 +5226,7 @@
         "general_reasoning",
         "transferable_objective"
       ],
-      "stage": "presentation_pending",
+      "stage": "ready",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "LLMSeg：基于B样条的无训练文本提示图像分割",
       "versions": [
