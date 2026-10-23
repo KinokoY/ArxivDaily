@@ -7772,6 +7772,22 @@
       "role": "translation",
       "run_id": "20261023T111148Z-43065206",
       "usage_available": true
+    },
+    {
+      "cached_tokens": 0,
+      "completion_tokens": 285,
+      "cost_estimate_available": true,
+      "currency": "CNY",
+      "estimated_cost": 0.003142,
+      "fingerprint": "e72d3c7f663d3e1383b00b3884cb4501",
+      "model": "deepseek-flash",
+      "pricing_policy": "peak_upper_bound",
+      "prompt_tokens": 431,
+      "reasoning_tokens": null,
+      "reasoning_tokens_available": false,
+      "role": "translation",
+      "run_id": "20261023T111148Z-43065206",
+      "usage_available": true
     }
   ]
 }
