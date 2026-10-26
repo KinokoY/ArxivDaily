@@ -5653,9 +5653,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods.",
+          "Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance.",
+          "We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文研究通用图像中的视觉 grounding 与 referring-expression segmentation，提出 Angular Relevance 诊断度量和 Angular Object-Aware Loss 辅助损失；没有 RL 或 DPO 方法贡献，也不是医学影像推理分割。AOL 属于视觉 token 对齐的辅助优化目标，但摘要未给出理论依据，也未证明可迁移到医学推理分割，因此仅作为通用推理/grounding 的轻量清单保留。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 55,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未说明 AOL 是否有理论依据或能否迁移到医学影像推理分割。",
+          "摘要中的 RES 是否包含复杂推理式指代，还是主要是常规 referring-expression grounding，尚不明确。",
+          "摘要只展示同类通用图像任务中未见过类别的迁移，未证明对医学任务或隐含空间/位置推理的迁移价值。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-26T12:27:23.835250+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Autoregressive vision-language models (VLMs) struggle to ground generated text in the correct image regions, and existing explainability methods, such as attention maps and Logit Lens, often produce poor spatial explanations due to weak text-to-vision attention and sink tokens. We propose \\textbf{Angular Relevance} ($R_L$), a simple visualization measure based on cosine similarity between visual token embeddings and unembedding-matrix rows. Because $R_L$ is invariant to token norm, it produces substantially sharper and more faithful heatmaps than attention maps or Logit Lens on out-of-the-box models. Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods. To preserve localized object information during cross-modal mixing, we introduce \\textbf{Angular Object-Aware Loss (AOL)}, an auxiliary loss that directly supervises visual token embeddings to align angularly with the vocabulary directions of their corresponding object concepts. Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance. We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training.",
         "authors": [
@@ -5671,15 +5695,11 @@
         "updated": "2026-10-23T06:16:32+00:00",
         "version_id": "2610.32220v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-26T12:27:23.835250+00:00",
-        "run_id": "20261026T122723Z-f5d6d61c",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.32220v1"
       ]
