@@ -1,0 +1,55 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/26/20261026T122723Z-f5d6d61c-ccd24a832eb1.md",
+  "chain_roots": [
+    "20261026T122723Z-f5d6d61c-ccd24a832eb1"
+  ],
+  "content_hash": "ccd24a832eb1f28a2142d7b0ad36f9b83f1a07012f973d3f4fea8a5a753f04fb",
+  "day": "2026-10-26",
+  "digest_id": "20261026T122723Z-f5d6d61c-ccd24a832eb1",
+  "empty": false,
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Autoregressive vision-language models (VLMs) struggle to ground generated text in the correct image regions, and existing explainability methods, such as attention maps and Logit Lens, often produce poor spatial explanations due to weak text-to-vision attention and sink tokens. We propose \\textbf{Angular Relevance} ($R_L$), a simple visualization measure based on cosine similarity between visual token embeddings and unembedding-matrix rows. Because $R_L$ is invariant to token norm, it produces substantially sharper and more faithful heatmaps than attention maps or Logit Lens on out-of-the-box models. Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods. To preserve localized object information during cross-modal mixing, we introduce \\textbf{Angular Object-Aware Loss (AOL)}, an auxiliary loss that directly supervises visual token embeddings to align angularly with the vocabulary directions of their corresponding object concepts. Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance. We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training.",
+        "authors": [
+          "Parsa Esmaeilkhani",
+          "Longin Jan Latecki"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.32220v1",
+        "published": "2026-10-23T06:16:32+00:00",
+        "title": "Angular Supervision for Visual Object Grounding in Autoregressive Vision-Language Models",
+        "updated": "2026-10-23T06:16:32+00:00",
+        "version_id": "2610.32220v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "自回归视觉语言模型（VLM）难以将生成的文本定位到正确的图像区域，而现有的可解释性方法（如注意力图和 Logit Lens）由于文本到视觉注意力较弱以及汇点 token 的存在，往往产生较差的空间解释。我们提出 \\textbf{角度相关性}（$R_L$），一种基于视觉 token 嵌入与 unembedding 矩阵行之间余弦相似度的简单可视化度量。由于 $R_L$ 对 token 范数不变，在开箱即用的模型上，它生成的熱力图比注意力图或 Logit Lens 显著更锐利且更忠实。在无需任何训练的情况下，$R_L$ 在指代表达式分割（RES）上取得有竞争力的结果，优于先前的诊断图和基于 CLIP 的无训练方法。为了在跨模态混合过程中保留局部对象信息，我们引入 \\textbf{角度对象感知损失（AOL）}，这是一种辅助损失，直接监督视觉 token 嵌入，使其在角度上与其对应对象概念的词汇方向对齐。将 AOL 与标准下一 token 预测目标一起进行微调，显著锐化了热力图中的对象定位，表明 VLM 自身的视觉 token 可直接用于定位并改善 RES，而无需训练任何分割头，也不会降低通用 VQA 性能。我们进一步证明，学习到的定位能力还能迁移到训练中未见过的对象类别的类别级分割。",
+        "title_zh": "自回归视觉语言模型中用于视觉对象定位的角度监督"
+      }
+    }
+  ],
+  "notification_hash": "d2b716001a834cf25e430acad22472306d0788fcea05e164b129046d6b9b5f73",
+  "recovery_of": [],
+  "rendered": {
+    "2610.32220": "rendered_inline_translation"
+  },
+  "run_id": "20261026T122723Z-f5d6d61c",
+  "schema_version": 1
+}
