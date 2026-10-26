@@ -75,7 +75,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-25T10:56:16.284576+00:00"
+    "last_complete_end": "2026-10-26T12:27:23.835250+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -5648,6 +5648,63 @@
       "versions": [
         "2610.29825v1"
       ]
+    },
+    "2610.32220": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-26T12:27:23.835250+00:00",
+      "paper": {
+        "abstract": "Autoregressive vision-language models (VLMs) struggle to ground generated text in the correct image regions, and existing explainability methods, such as attention maps and Logit Lens, often produce poor spatial explanations due to weak text-to-vision attention and sink tokens. We propose \\textbf{Angular Relevance} ($R_L$), a simple visualization measure based on cosine similarity between visual token embeddings and unembedding-matrix rows. Because $R_L$ is invariant to token norm, it produces substantially sharper and more faithful heatmaps than attention maps or Logit Lens on out-of-the-box models. Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods. To preserve localized object information during cross-modal mixing, we introduce \\textbf{Angular Object-Aware Loss (AOL)}, an auxiliary loss that directly supervises visual token embeddings to align angularly with the vocabulary directions of their corresponding object concepts. Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance. We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training.",
+        "authors": [
+          "Parsa Esmaeilkhani",
+          "Longin Jan Latecki"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.32220v1",
+        "published": "2026-10-23T06:16:32+00:00",
+        "title": "Angular Supervision for Visual Object Grounding in Autoregressive Vision-Language Models",
+        "updated": "2026-10-23T06:16:32+00:00",
+        "version_id": "2610.32220v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.32220v1"
+      ]
+    },
+    "2610.32377": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-26T12:27:23.835250+00:00",
+      "paper": {
+        "abstract": "The quality of the teacher label has a dramatic impact on the outcome of the machine learning process. Medical image segmentation often suffers from a noisy ground truth (GT) mask due to difficulties in consistent annotation. Although a recent study has proposed a promising method to curate the noisy GT mask, this requires additional well-curated GT masks that are not always accessible without the aid of multiple medical experts. As an alternative, we propose SAM-Correction, which utilizes a foundation model to correct the noisy GT mask in a fully adaptive manner instead of manually preparing well-curated masks. In our approach, we progressively mitigate label noise via the segment anything model (SAM), where prompts are given from another segmentation network that we train concurrently. Experiments with various types of label noise derived from actual human annotations demonstrate that SAM-C achieves precise noise reduction and high-performing segmentation models trained thereby. Our method paves the way for robust model training even when clean labels are entirely unavailable.",
+        "authors": [
+          "Takuro Shimaya",
+          "Masahiro Saiko"
+        ],
+        "categories": [
+          "cs.CV",
+          "physics.med-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.32377v1",
+        "published": "2026-10-23T09:06:32+00:00",
+        "title": "Sam-Correction: Fully Adaptive Label Noise Reduction for Medical Image Segmentation",
+        "updated": "2026-10-23T09:06:32+00:00",
+        "version_id": "2610.32377v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.32377v1"
+      ]
     }
   },
   "runs": [
@@ -6474,10 +6531,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-26",
+      "discovered_candidates": 18,
+      "discovered_papers": 18,
       "run_id": "20261026T122723Z-f5d6d61c",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-26T12:27:00+00:00",
+          "seen": 5944,
+          "start": "2026-10-12T12:27:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-26T12:27:23.835250+00:00",
       "window": {
         "end": "2026-10-26T12:27:23.835250+00:00",

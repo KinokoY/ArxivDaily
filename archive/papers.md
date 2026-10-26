@@ -4,6 +4,8 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-10-26 | Sam-Correction: Fully Adaptive Label Noise Reduction for Medical Image Segmentation | 待翻译 | [arXiv 2610.32377v1](https://arxiv.org/abs/2610.32377v1) |
+| 2026-10-26 | Angular Supervision for Visual Object Grounding in Autoregressive Vision-Language Models | 待翻译 | [arXiv 2610.32220v1](https://arxiv.org/abs/2610.32220v1) |
 | 2026-10-23 | OccJEPA: Occlusion as Masking for Amodal Video Segmentation | OccJEPA：将遮挡视为掩码的完整视频分割 | [arXiv 2610.29061v1](https://arxiv.org/abs/2610.29061v1) |
 | 2026-10-22 | GuidedSAM-Plume: An Expert-Guided Segmentation Framework for Volcanic Plumes | GuidedSAM-Plume：一种专家引导的火山羽流分割框架 | [arXiv 2610.29825v1](https://arxiv.org/abs/2610.29825v1) |
 | 2026-10-22 | UniRAP: Towards Unified Part-level Physical Affordance Reasoning and Actionable Perception | UniRAP：迈向统一的部件级物理可供性推理与可操作感知 | [arXiv 2610.29768v1](https://arxiv.org/abs/2610.29768v1) |
