@@ -5679,6 +5679,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-26T12:27:23.835250+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Autoregressive vision-language models (VLMs) struggle to ground generated text in the correct image regions, and existing explainability methods, such as attention maps and Logit Lens, often produce poor spatial explanations due to weak text-to-vision attention and sink tokens. We propose \\textbf{Angular Relevance} ($R_L$), a simple visualization measure based on cosine similarity between visual token embeddings and unembedding-matrix rows. Because $R_L$ is invariant to token norm, it produces substantially sharper and more faithful heatmaps than attention maps or Logit Lens on out-of-the-box models. Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods. To preserve localized object information during cross-modal mixing, we introduce \\textbf{Angular Object-Aware Loss (AOL)}, an auxiliary loss that directly supervises visual token embeddings to align angularly with the vocabulary directions of their corresponding object concepts. Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance. We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training.",
@@ -5695,11 +5696,22 @@
         "updated": "2026-10-23T06:16:32+00:00",
         "version_id": "2610.32220v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_reasoning"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2610.32220v1"
       ]
@@ -5746,6 +5758,17 @@
         "updated": "2026-10-23T09:06:32+00:00",
         "version_id": "2610.32377v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
