@@ -8,7 +8,7 @@
 | 2026-10-27 | MIS-VQA: An Annotation-Driven Surgical Vision-Language Dataset for Complex Surgical Understanding | MIS-VQA：面向复杂外科理解的标注驱动外科视觉-语言数据集 | [arXiv 2610.34210v1](https://arxiv.org/abs/2610.34210v1) |
 | 2026-10-27 | SWIFT-Cell: Segmentation Without Iterative Flow Tracking | 待翻译 | [arXiv 2610.33081v1](https://arxiv.org/abs/2610.33081v1) |
 | 2026-10-27 | Evaluating Visual Language Models on Visual Grounding for Visually Impaired People | 评估视觉语言模型在视障人士视觉定位任务上的表现 | [arXiv 2610.33078v1](https://arxiv.org/abs/2610.33078v1) |
-| 2026-10-27 | DRA-SAM: Disagreement-Driven Referential Active SAM for Low-Altitude Drone Referring Segmentation | 待翻译 | [arXiv 2610.33057v1](https://arxiv.org/abs/2610.33057v1) |
+| 2026-10-27 | DRA-SAM: Disagreement-Driven Referential Active SAM for Low-Altitude Drone Referring Segmentation | DRA-SAM：面向低空无人机指代分割的分歧驱动指代主动SAM | [arXiv 2610.33057v1](https://arxiv.org/abs/2610.33057v1) |
 | 2026-10-26 | Sam-Correction: Fully Adaptive Label Noise Reduction for Medical Image Segmentation | Sam-Correction：面向医学图像分割的全自适应标签噪声减少方法 | [arXiv 2610.32377v1](https://arxiv.org/abs/2610.32377v1) |
 | 2026-10-26 | Angular Supervision for Visual Object Grounding in Autoregressive Vision-Language Models | 自回归视觉语言模型中用于视觉对象定位的角度监督 | [arXiv 2610.32220v1](https://arxiv.org/abs/2610.32220v1) |
 | 2026-10-23 | OccJEPA: Occlusion as Masking for Amodal Video Segmentation | OccJEPA：将遮挡视为掩码的完整视频分割 | [arXiv 2610.29061v1](https://arxiv.org/abs/2610.29061v1) |
