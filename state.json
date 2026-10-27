@@ -5914,6 +5914,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Referring segmentation in low-altitude drone imagery requires distinguishing small, visually similar instances under complex linguistic and spatial constraints. Global inference may yield multiple plausible masks or leave the intended referent insufficiently represented, motivating selective local re-inference. We propose DRA-SAM, a disagreement-driven framework that allocates an additional inference pass according to competing referential hypotheses and an unresolved state. A lightweight EvidenceScorer estimates beliefs over existing candidates and the unresolved state. A training-free Referential Disagreement LOOK policy balances belief-weighted candidate competition and unresolved-region coverage to select a crop for local re-inference. The same benchmark-adapted SAM3-I backbone processes the selected region, and the resulting evidence updates existing hypotheses and introduces new candidates. Among the compared methods, DRA-SAM achieves state-of-the-art performance on six of seven test metrics on both RIS-LAD and UAVid-RIS, including mIoU and P@0.5-P@0.9, and on all seven RIS-LAD validation metrics. On RIS-LAD, DRA-SAM improves the matched global SAM3-I baseline from 49.55 to 52.34 mIoU and from 46.80 to 58.05 P@0.5. On UAVid-RIS, the independently adapted DRA-SAM achieves 73.26 mIoU and 86.86 P@0.5. Controlled crop-policy comparisons demonstrate the effectiveness of disagreement-guided crop selection, while target-size analysis reveals particularly pronounced gains for aerial targets occupying less than 1% of an image. These results establish referential disagreement as an effective criterion for allocating local inference. Code is available at https://github.com/phy709/DRA-SAM.",
@@ -5939,11 +5940,22 @@
         "updated": "2026-10-19T08:56:35+00:00",
         "version_id": "2610.33057v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2610.33057v1"
       ]
