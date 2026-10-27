@@ -1886,8 +1886,15 @@
       "content_hash": "6742284002b14f7ac9970a38b6691f451f3c95a8ca71c666754628e62a41a7a4",
       "created_at": "2026-10-27T11:45:53.102060+00:00",
       "day": "2026-10-27",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "64304679",
+        "status": "confirmed"
+      },
       "digest_id": "20261027T114553Z-b8c0524f-6742284002b1",
       "empty": false,
+      "finished_at": "2026-10-27T11:52:14.760894+00:00",
       "items": [
         {
           "modules": [
@@ -2026,7 +2033,7 @@
       },
       "run_id": "20261027T114553Z-b8c0524f",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -6052,7 +6059,6 @@
       ]
     },
     "2610.33057": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -6089,7 +6095,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -6121,7 +6127,6 @@
         "updated": "2026-10-19T08:56:35+00:00",
         "version_id": "2610.33057v1"
       },
-      "pending_digest": "20261027T114553Z-b8c0524f-6742284002b1",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -6137,7 +6142,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "DRA-SAM：面向低空无人机指代分割的分歧驱动指代主动SAM",
       "translation": {
         "abstract_zh": "低空无人机影像中的指代分割需要在复杂语言和空间约束下区分视觉相似的小目标。全局推理可能产生多个合理掩码，或使目标指代对象表示不足，从而促使进行选择性局部重推理。我们提出DRA-SAM，一个分歧驱动框架，根据相互竞争的指代假设和未解决状态分配额外的一次推理。轻量级EvidenceScorer估计对现有候选和未解决状态的信念。一个无需训练的指代分歧LOOK策略平衡信念加权候选竞争和未解决区域覆盖，以选择用于局部重推理的裁剪区域。同一个经基准适配的SAM3-I骨干网络处理所选区域，所得证据更新现有假设并引入新候选。在比较方法中，DRA-SAM在RIS-LAD和UAVid-RIS上均在七项测试指标中的六项上取得最先进性能，包括mIoU和P@0.5-P@0.9，并在RIS-LAD所有七项验证指标上取得最先进性能。在RIS-LAD上，DRA-SAM将匹配的全局SAM3-I基线从49.55 mIoU提升至52.34 mIoU，并将P@0.5从46.80提升至58.05。在UAVid-RIS上，独立适配的DRA-SAM达到73.26 mIoU和86.86 P@0.5。受控裁剪策略比较证明了分歧引导裁剪选择的有效性，而目标尺寸分析显示，对占据图像不到1%的空中目标收益尤为显著。这些结果确立了指代分歧作为分配局部推理的有效准则。代码见https://github.com/phy709/DRA-SAM。",
@@ -6150,7 +6155,6 @@
       ]
     },
     "2610.33078": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -6182,7 +6186,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -6208,7 +6212,6 @@
         "updated": "2026-10-21T08:56:07+00:00",
         "version_id": "2610.33078v1"
       },
-      "pending_digest": "20261027T114553Z-b8c0524f-6742284002b1",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -6224,7 +6227,7 @@
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "评估视觉语言模型在视障人士视觉定位任务上的表现",
       "translation": {
         "abstract_zh": "视觉问答（VQA）中的视觉定位（VG）是视觉语言模型（VLM）的一项基本能力，能够检测图像中与回答问题最相关的区域。这反映了模型的多模态理解能力，在与视障人士（VIP）交互时至关重要。事实上，当视觉定位应用于辅助场景时，它不仅仅是一项技术特性，更是一项信任与安全要求。在本工作中，我们研究面向视障人士的VLM中的视觉定位。为此，我们使用VizWiz-VQA-Grounding数据集与挑战赛来评估开源VLM在视觉定位上的表现，该数据集包含视障人士拍摄的真实生活图像。我们提出VG-SHAP，它扩展了现有的可解释性框架以提供视觉定位解释，从而能够评估黑盒VLM。我们在VizWiz-VQA-Grounding挑战赛上的结果表明，尽管VLM能够生成正确答案，但它们在图像中定位到正确区域方面仍存在困难。然而，这些结果受到我们可解释性框架中分割模型质量的限制，仍需进一步研究。",
@@ -6304,7 +6307,6 @@
       ]
     },
     "2610.34210": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -6341,7 +6343,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -6372,7 +6374,6 @@
         "updated": "2026-10-25T10:56:26+00:00",
         "version_id": "2610.34210v1"
       },
-      "pending_digest": "20261027T114553Z-b8c0524f-6742284002b1",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -6390,7 +6391,7 @@
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "MIS-VQA：面向复杂外科理解的标注驱动外科视觉-语言数据集",
       "translation": {
         "abstract_zh": "现代外科AI日益需要多模态理解而非孤立感知，但现有数据集仍主要局限于识别或模板化问答等单一任务监督。当前医学VQA资源常依赖合成模板、缺乏自然描述性监督，或提供稀疏标注而阻碍对空间关系和程序性上下文的推理。我们提出MIS-VQA，一个通过标注驱动流程生成的外科视觉-语言数据集，该流程将异构外科标注转换为结构化文本场景表示。利用EndoVis18和CholecT50，我们将阶段、器械、交互、三元组和分割标签转换为统一上下文，引导大语言模型生成临床连贯的问答对。MIS-VQA支持四种响应类型——简洁描述、详细描述、感知级 grounding 和多步推理——支持从原子视觉 grounding 到组合推理的分层评估。为解决标注稀疏性，我们引入置信度过滤分割和跨标注一致性检查，实现大规模空间 grounding 监督。MIS-VQA建立了具有空间监督和多层推理评估的外科视觉-语言理解统一基准。为展示其效用，我们引入LLaVA-SurgXpert，一个具有视觉编码器的外科视觉-语言模型系列，用于分析视觉表示如何影响多模态推理。实验表明，相较于现有外科VQA基线取得一致改进，同时揭示了先前基准中隐藏的感知 grounding 与高层推理之间的能力差距。",
