@@ -5887,9 +5887,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Referring segmentation in low-altitude drone imagery requires distinguishing small, visually similar instances under complex linguistic and spatial constraints.",
+          "We propose DRA-SAM, a disagreement-driven framework that allocates an additional inference pass according to competing referential hypotheses and an unresolved state.",
+          "A training-free Referential Disagreement LOOK policy balances belief-weighted candidate competition and unresolved-region coverage to select a crop for local re-inference.",
+          "The same benchmark-adapted SAM3-I backbone processes the selected region, and the resulting evidence updates existing hypotheses and introduces new candidates.",
+          "These results establish referential disagreement as an effective criterion for allocating local inference."
+        ],
+        "dpo_is_method": false,
+        "reason": "The work addresses general low-altitude drone referring segmentation, not medical imaging. Its main contribution is a disagreement-driven active local re-inference framework with an EvidenceScorer and a training-free LOOK crop policy. It is relevant to general reasoning segmentation, but the abstract does not show RL or DPO as the method contribution, nor does it provide theoretical or transfer evidence for a traditional segmentation objective. Therefore it should be kept only as a light general_reasoning item.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 58,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "The abstract does not confirm whether any RL or DPO training is used beyond the described training-free policy.",
+          "The abstract does not provide theoretical or transfer evidence for a traditional segmentation objective."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Referring segmentation in low-altitude drone imagery requires distinguishing small, visually similar instances under complex linguistic and spatial constraints. Global inference may yield multiple plausible masks or leave the intended referent insufficiently represented, motivating selective local re-inference. We propose DRA-SAM, a disagreement-driven framework that allocates an additional inference pass according to competing referential hypotheses and an unresolved state. A lightweight EvidenceScorer estimates beliefs over existing candidates and the unresolved state. A training-free Referential Disagreement LOOK policy balances belief-weighted candidate competition and unresolved-region coverage to select a crop for local re-inference. The same benchmark-adapted SAM3-I backbone processes the selected region, and the resulting evidence updates existing hypotheses and introduces new candidates. Among the compared methods, DRA-SAM achieves state-of-the-art performance on six of seven test metrics on both RIS-LAD and UAVid-RIS, including mIoU and P@0.5-P@0.9, and on all seven RIS-LAD validation metrics. On RIS-LAD, DRA-SAM improves the matched global SAM3-I baseline from 49.55 to 52.34 mIoU and from 46.80 to 58.05 P@0.5. On UAVid-RIS, the independently adapted DRA-SAM achieves 73.26 mIoU and 86.86 P@0.5. Controlled crop-policy comparisons demonstrate the effectiveness of disagreement-guided crop selection, while target-size analysis reveals particularly pronounced gains for aerial targets occupying less than 1% of an image. These results establish referential disagreement as an effective criterion for allocating local inference. Code is available at https://github.com/phy709/DRA-SAM.",
         "authors": [
@@ -5914,15 +5939,11 @@
         "updated": "2026-10-19T08:56:35+00:00",
         "version_id": "2610.33057v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-27T11:45:53.102060+00:00",
-        "run_id": "20261027T114553Z-b8c0524f",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.33057v1"
       ]
