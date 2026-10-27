@@ -5924,9 +5924,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "In this work, we study visual grounding in VLMs for visually impaired people.",
+          "We propose VG-SHAP, which extends an existing explainability framework to provide visual grounding explanations, allowing the evaluation of black-box VLMs.",
+          "Our results on the VizWiz-VQA-Grounding challenge show that despite generating correct answers, VLMs struggle to ground in the proper region in the image."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文研究视觉语言模型在面向视障人士的视觉问答中的视觉定位，并提出VG-SHAP可解释性框架用于评估黑盒模型的定位解释；属于通用视觉推理/定位的评估与可解释性工作，未提出RL或DPO方法，也没有分割目标理论或迁移贡献，因此仅作为轻量通用推理清单保留。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 55,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Visual grounding (VG) in visual question answering (VQA) is a fundamental capability of Vision-Language Models (VLMs), enabling the detection of the most relevant region in an image to answer the question. This reflects the model's capability of multimodal comprehension, which is crucial when interacting with visually impaired people (VIP). Indeed, visual grounding, when applied to assistive scenarios, is not merely a technical feature, but rather a trust and safety requirement. In this work, we study visual grounding in VLMs for visually impaired people. To this end, we assess open-source VLMs on visual grounding using the VizWiz-VQA-Grounding dataset and challenge, which contains real-life images taken by VIP. We propose VG-SHAP, which extends an existing explainability framework to provide visual grounding explanations, allowing the evaluation of black-box VLMs. Our results on the VizWiz-VQA-Grounding challenge show that despite generating correct answers, VLMs struggle to ground in the proper region in the image. However, these results are constrained by the quality of the segmentation model of our explainability framework and further research is necessary.",
         "authors": [
@@ -5945,15 +5965,11 @@
         "updated": "2026-10-21T08:56:07+00:00",
         "version_id": "2610.33078v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-27T11:45:53.102060+00:00",
-        "run_id": "20261027T114553Z-b8c0524f",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.33078v1"
       ]
