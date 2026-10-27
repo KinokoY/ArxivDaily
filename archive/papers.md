@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-10-27 | An Agentic AI Workflow for Liver Lesion Segmentation and Structured Radiology Reporting | 待翻译 | [arXiv 2610.34599v1](https://arxiv.org/abs/2610.34599v1) |
+| 2026-10-27 | An Agentic AI Workflow for Liver Lesion Segmentation and Structured Radiology Reporting | 用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程 | [arXiv 2610.34599v1](https://arxiv.org/abs/2610.34599v1) |
 | 2026-10-27 | MIS-VQA: An Annotation-Driven Surgical Vision-Language Dataset for Complex Surgical Understanding | MIS-VQA：面向复杂外科理解的标注驱动外科视觉-语言数据集 | [arXiv 2610.34210v1](https://arxiv.org/abs/2610.34210v1) |
 | 2026-10-27 | SWIFT-Cell: Segmentation Without Iterative Flow Tracking | 待翻译 | [arXiv 2610.33081v1](https://arxiv.org/abs/2610.33081v1) |
 | 2026-10-27 | Evaluating Visual Language Models on Visual Grounding for Visually Impaired People | 评估视觉语言模型在视障人士视觉定位任务上的表现 | [arXiv 2610.33078v1](https://arxiv.org/abs/2610.33078v1) |
