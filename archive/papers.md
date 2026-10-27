@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-10-27 | An Agentic AI Workflow for Liver Lesion Segmentation and Structured Radiology Reporting | 用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程 | [arXiv 2610.34599v1](https://arxiv.org/abs/2610.34599v1) |
 | 2026-10-27 | MIS-VQA: An Annotation-Driven Surgical Vision-Language Dataset for Complex Surgical Understanding | MIS-VQA：面向复杂外科理解的标注驱动外科视觉-语言数据集 | [arXiv 2610.34210v1](https://arxiv.org/abs/2610.34210v1) |
-| 2026-10-27 | SWIFT-Cell: Segmentation Without Iterative Flow Tracking | 待翻译 | [arXiv 2610.33081v1](https://arxiv.org/abs/2610.33081v1) |
+| 2026-10-27 | SWIFT-Cell: Segmentation Without Iterative Flow Tracking | SWIFT-Cell：无需迭代光流跟踪的分割 | [arXiv 2610.33081v1](https://arxiv.org/abs/2610.33081v1) |
 | 2026-10-27 | Evaluating Visual Language Models on Visual Grounding for Visually Impaired People | 评估视觉语言模型在视障人士视觉定位任务上的表现 | [arXiv 2610.33078v1](https://arxiv.org/abs/2610.33078v1) |
 | 2026-10-27 | DRA-SAM: Disagreement-Driven Referential Active SAM for Low-Altitude Drone Referring Segmentation | DRA-SAM：面向低空无人机指代分割的分歧驱动指代主动SAM | [arXiv 2610.33057v1](https://arxiv.org/abs/2610.33057v1) |
 | 2026-10-26 | Sam-Correction: Fully Adaptive Label Noise Reduction for Medical Image Segmentation | Sam-Correction：面向医学图像分割的全自适应标签噪声减少方法 | [arXiv 2610.32377v1](https://arxiv.org/abs/2610.32377v1) |
