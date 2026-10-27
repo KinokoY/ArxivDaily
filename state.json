@@ -5955,9 +5955,28 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We distil CPSAM into SWIFT-Cell (SWIFT), a 0.63M-parameter U-Net trained only on CPSAM masks of 1,202 H&E and IHC tiles.",
+          "SWIFT is close to CPSAM in accuracy and faster than watershed detection."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper distils Cellpose-SAM into a small U-Net for fast medical cell segmentation. Its contribution is accuracy/speed distillation and benchmark comparison, not reasoning segmentation, implied/spatial reasoning to pixel masks, RL/DPO, or a theoretically grounded/topology-aware optimization objective. The transferable_objective rule hit is unsupported because the abstract provides no objective theory or transfer validation.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 8,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Generalist segmenters such as Cellpose-SAM (CPSAM) outline cells accurately across stains but slowly; watershed detectors such as QuPath's are fast but less accurate. In time-critical use, such as interactive retrieval of cells from a user-drawn region, CPSAM at the reference settings takes 58-303 s per measured 8192 x 8192 region on an RTX 4500 Ada GPU, beyond a seconds-scale interactive target. We distil CPSAM into SWIFT-Cell (SWIFT), a 0.63M-parameter U-Net trained only on CPSAM masks of 1,202 H&E and IHC tiles. On three 8192 x 8192 development regions SWIFT takes 2.0-5.2 s on 4 CPU cores in int8, 2.5-5.1x faster than QuPath's detector on the same cores, and 0.36-0.49 s on a GPU. Against human annotations on eight H&E, IHC and ISH sets it keeps 95% of CPSAM's panoptic quality (PQ) on PanNuke (0.593 vs. 0.627) and is level on NuCLS (0.546 vs. 0.540). On Ki-67 IHC masks scored to the outline centre it is 0.205 PQ above QuPath's better mode, 0.079 below CPSAM and 0.027 below InstanSeg (CI includes 0; at the outer edge 0.008 below CPSAM); on 212 pathologist-outlined nuclei in Ki-67 fields of 12 untouched patients its recall is 0.925 (CPSAM 0.920, InstanSeg 0.901; paired difference CIs include 0); one method-blinded pathologist accepted its outlines in 96% of 100 fields (60 from two development tissue patients, 40 hematology; CPSAM 83%, QuPath 53%; tissue 100% for SWIFT and CPSAM); on ER/PR points from 12 patients its detection F1 is 0.882 (CPSAM 0.896, InstanSeg 0.857), and on 4-reader PD-L1 points 0.83 (CPSAM 0.85, readers 0.87). SWIFT is close to CPSAM in accuracy and faster than watershed detection.",
         "authors": [
@@ -5976,15 +5995,11 @@
         "updated": "2026-10-21T10:42:46+00:00",
         "version_id": "2610.33081v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-27T11:45:53.102060+00:00",
-        "run_id": "20261027T114553Z-b8c0524f",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2610.33081v1"
       ]
