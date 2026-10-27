@@ -5983,7 +5983,9 @@
       ]
     },
     "2610.34210": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
@@ -6015,6 +6017,11 @@
         "general_reasoning"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-27T11:45:53.102060+00:00",
+        "run_id": "20261027T114553Z-b8c0524f",
+        "stage": "selection"
+      },
       "versions": [
         "2610.34210v1"
       ]
