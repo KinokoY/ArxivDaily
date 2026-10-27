@@ -79,7 +79,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-26T12:27:23.835250+00:00"
+    "last_complete_end": "2026-10-27T11:45:53.102060+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -5843,6 +5843,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-26T12:27:23.835250+00:00",
+      "latest_version": "2610.32377v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "The quality of the teacher label has a dramatic impact on the outcome of the machine learning process. Medical image segmentation often suffers from a noisy ground truth (GT) mask due to difficulties in consistent annotation. Although a recent study has proposed a promising method to curate the noisy GT mask, this requires additional well-curated GT masks that are not always accessible without the aid of multiple medical experts. As an alternative, we propose SAM-Correction, which utilizes a foundation model to correct the noisy GT mask in a fully adaptive manner instead of manually preparing well-curated masks. In our approach, we progressively mitigate label noise via the segment anything model (SAM), where prompts are given from another segmentation network that we train concurrently. Experiments with various types of label noise derived from actual human annotations demonstrate that SAM-C achieves precise noise reduction and high-performing segmentation models trained thereby. Our method paves the way for robust model training even when clean labels are entirely unavailable.",
@@ -5880,6 +5881,172 @@
       "title_zh": "Sam-Correction：面向医学图像分割的全自适应标签噪声减少方法",
       "versions": [
         "2610.32377v1"
+      ]
+    },
+    "2610.33057": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "paper": {
+        "abstract": "Referring segmentation in low-altitude drone imagery requires distinguishing small, visually similar instances under complex linguistic and spatial constraints. Global inference may yield multiple plausible masks or leave the intended referent insufficiently represented, motivating selective local re-inference. We propose DRA-SAM, a disagreement-driven framework that allocates an additional inference pass according to competing referential hypotheses and an unresolved state. A lightweight EvidenceScorer estimates beliefs over existing candidates and the unresolved state. A training-free Referential Disagreement LOOK policy balances belief-weighted candidate competition and unresolved-region coverage to select a crop for local re-inference. The same benchmark-adapted SAM3-I backbone processes the selected region, and the resulting evidence updates existing hypotheses and introduces new candidates. Among the compared methods, DRA-SAM achieves state-of-the-art performance on six of seven test metrics on both RIS-LAD and UAVid-RIS, including mIoU and P@0.5-P@0.9, and on all seven RIS-LAD validation metrics. On RIS-LAD, DRA-SAM improves the matched global SAM3-I baseline from 49.55 to 52.34 mIoU and from 46.80 to 58.05 P@0.5. On UAVid-RIS, the independently adapted DRA-SAM achieves 73.26 mIoU and 86.86 P@0.5. Controlled crop-policy comparisons demonstrate the effectiveness of disagreement-guided crop selection, while target-size analysis reveals particularly pronounced gains for aerial targets occupying less than 1% of an image. These results establish referential disagreement as an effective criterion for allocating local inference. Code is available at https://github.com/phy709/DRA-SAM.",
+        "authors": [
+          "Jisheng Dang",
+          "Huaiyuan Peng",
+          "Wencan Zhang",
+          "Bimei Wang",
+          "Jingwen Zhao",
+          "Wenjun Ma",
+          "Hong Peng",
+          "Bin Hu",
+          "Qi Tian",
+          "Tat-Seng Chua"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.33057v1",
+        "published": "2026-10-19T08:56:35+00:00",
+        "title": "DRA-SAM: Disagreement-Driven Referential Active SAM for Low-Altitude Drone Referring Segmentation",
+        "updated": "2026-10-19T08:56:35+00:00",
+        "version_id": "2610.33057v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.33057v1"
+      ]
+    },
+    "2610.33078": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "paper": {
+        "abstract": "Visual grounding (VG) in visual question answering (VQA) is a fundamental capability of Vision-Language Models (VLMs), enabling the detection of the most relevant region in an image to answer the question. This reflects the model's capability of multimodal comprehension, which is crucial when interacting with visually impaired people (VIP). Indeed, visual grounding, when applied to assistive scenarios, is not merely a technical feature, but rather a trust and safety requirement. In this work, we study visual grounding in VLMs for visually impaired people. To this end, we assess open-source VLMs on visual grounding using the VizWiz-VQA-Grounding dataset and challenge, which contains real-life images taken by VIP. We propose VG-SHAP, which extends an existing explainability framework to provide visual grounding explanations, allowing the evaluation of black-box VLMs. Our results on the VizWiz-VQA-Grounding challenge show that despite generating correct answers, VLMs struggle to ground in the proper region in the image. However, these results are constrained by the quality of the segmentation model of our explainability framework and further research is necessary.",
+        "authors": [
+          "Fairooz Azim",
+          "Lydia Achour",
+          "Claudia Borg",
+          "Lina Rojas-Barahona"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.33078v1",
+        "published": "2026-10-21T08:56:07+00:00",
+        "title": "Evaluating Visual Language Models on Visual Grounding for Visually Impaired People",
+        "updated": "2026-10-21T08:56:07+00:00",
+        "version_id": "2610.33078v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.33078v1"
+      ]
+    },
+    "2610.33081": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "paper": {
+        "abstract": "Generalist segmenters such as Cellpose-SAM (CPSAM) outline cells accurately across stains but slowly; watershed detectors such as QuPath's are fast but less accurate. In time-critical use, such as interactive retrieval of cells from a user-drawn region, CPSAM at the reference settings takes 58-303 s per measured 8192 x 8192 region on an RTX 4500 Ada GPU, beyond a seconds-scale interactive target. We distil CPSAM into SWIFT-Cell (SWIFT), a 0.63M-parameter U-Net trained only on CPSAM masks of 1,202 H&E and IHC tiles. On three 8192 x 8192 development regions SWIFT takes 2.0-5.2 s on 4 CPU cores in int8, 2.5-5.1x faster than QuPath's detector on the same cores, and 0.36-0.49 s on a GPU. Against human annotations on eight H&E, IHC and ISH sets it keeps 95% of CPSAM's panoptic quality (PQ) on PanNuke (0.593 vs. 0.627) and is level on NuCLS (0.546 vs. 0.540). On Ki-67 IHC masks scored to the outline centre it is 0.205 PQ above QuPath's better mode, 0.079 below CPSAM and 0.027 below InstanSeg (CI includes 0; at the outer edge 0.008 below CPSAM); on 212 pathologist-outlined nuclei in Ki-67 fields of 12 untouched patients its recall is 0.925 (CPSAM 0.920, InstanSeg 0.901; paired difference CIs include 0); one method-blinded pathologist accepted its outlines in 96% of 100 fields (60 from two development tissue patients, 40 hematology; CPSAM 83%, QuPath 53%; tissue 100% for SWIFT and CPSAM); on ER/PR points from 12 patients its detection F1 is 0.882 (CPSAM 0.896, InstanSeg 0.857), and on 4-reader PD-L1 points 0.83 (CPSAM 0.85, readers 0.87). SWIFT is close to CPSAM in accuracy and faster than watershed detection.",
+        "authors": [
+          "Devansh Lalwani",
+          "Swapnil Bhat",
+          "Muralikrishna H H",
+          "Anand Reddy",
+          "Maulik Shah"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.33081v1",
+        "published": "2026-10-21T10:42:46+00:00",
+        "title": "SWIFT-Cell: Segmentation Without Iterative Flow Tracking",
+        "updated": "2026-10-21T10:42:46+00:00",
+        "version_id": "2610.33081v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.33081v1"
+      ]
+    },
+    "2610.34210": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "paper": {
+        "abstract": "Modern surgical AI increasingly requires multimodal understanding rather than isolated perception, yet existing datasets remain largely limited to single-task supervision such as recognition or templated question answering. Current medical VQA resources often rely on synthetic templates, lack natural descriptive supervision, or provide sparse annotations that hinder reasoning about spatial relations and procedural context. We introduce MIS-VQA, a surgical vision-language dataset generated through an annotation-driven pipeline that converts heterogeneous surgical annotations into structured textual scene representations. Using EndoVis18 and CholecT50, we transform phase, instrument, interaction, triplet, and segmentation labels into unified contexts that guide large language models to generate clinically coherent question-answer pairs. MIS-VQA supports four response types-concise and detailed descriptions, perception-level grounding, and multi-step reasoning-enabling hierarchical evaluation from atomic visual grounding to compositional reasoning. To address annotation sparsity, we incorporate confidence-filtered segmentation and cross-annotation consistency checks, enabling spatially grounded supervision at scale. MIS-VQA establishes a unified benchmark for surgical vision-language understanding with spatial supervision and multi-tier reasoning evaluation. To demonstrate its utility, we introduce LLaVA-SurgXpert, a family of surgical vision-language models with visual encoders to analyze how visual representations influence multimodal reasoning. Experiments show consistent improvements over existing surgical VQA baselines while revealing capability gaps between perceptual grounding and higher-level reasoning hidden in prior benchmarks.",
+        "authors": [
+          "Mohamed Hamdy",
+          "Iheb Zouari",
+          "Fatmaelzahraa Ahmed",
+          "Muraam Abdel-Ghani",
+          "Muhammed Arsalan",
+          "Ponnuthurai Suganthan",
+          "Khalid Al-Jalham",
+          "Abdulaziz Al-Ali",
+          "Shidin Balakrishnan"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.CL"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.34210v1",
+        "published": "2026-10-25T10:56:26+00:00",
+        "title": "MIS-VQA: An Annotation-Driven Surgical Vision-Language Dataset for Complex Surgical Understanding",
+        "updated": "2026-10-25T10:56:26+00:00",
+        "version_id": "2610.34210v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.34210v1"
+      ]
+    },
+    "2610.34599": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "paper": {
+        "abstract": "Despite advances in automated liver lesion segmentation, a gap remains between image-derived predictions and clinically interpretable radiology reports. Bridging this gap requires quantitative measurements that are both reproducible and traceable. We present an evidence-grounded agentic AI framework that connects liver and lesion segmentation with deterministic quantification and structured reporting. TotalSegmentator-based nnU-Net models delineate the liver, Couinaud segments, and lesions, while computational tools extract volumes, dimensions, counts, and anatomical locations. A large language model (LLM) organizes these measurements into a predefined reporting schema, with numerical consistency checks against source measurements. On 51 LiTS cases, the segmentation stage achieved a liver Dice score of 0.947, lesion sensitivity of 75.6%, and positive predictive value of 68.9%. Exploratory screening of 25,494 MERLIN reports identified 10,208 (40.0%) with liver-related abnormalities. By connecting quantitative imaging evidence with agentic report generation, this work takes a step toward human-centered medical AI that prioritizes traceability and clinical relevance.",
+        "authors": [
+          "Fatma Ahmed Mansour",
+          "Rahatara Ferdousi",
+          "Manar Fathy Elshenawy"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.34599v1",
+        "published": "2026-10-25T21:55:31+00:00",
+        "title": "An Agentic AI Workflow for Liver Lesion Segmentation and Structured Radiology Reporting",
+        "updated": "2026-10-25T21:55:31+00:00",
+        "version_id": "2610.34599v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.34599v1"
       ]
     }
   },
@@ -6749,10 +6916,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-27",
+      "discovered_candidates": 26,
+      "discovered_papers": 26,
       "run_id": "20261027T114553Z-b8c0524f",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-27T11:45:00+00:00",
+          "seen": 6334,
+          "start": "2026-10-13T11:45:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-27T11:45:53.102060+00:00",
       "window": {
         "end": "2026-10-27T11:45:53.102060+00:00",
