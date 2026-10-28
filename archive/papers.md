@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-10-28 | Progressively Refining SAM for Accurate Phytoplankton Segmentation | 待翻译 | [arXiv 2610.36722v1](https://arxiv.org/abs/2610.36722v1) |
 | 2026-10-28 | SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition | SAGE：用于通用视觉识别的显著性退火门控编码器 | [arXiv 2610.36719v1](https://arxiv.org/abs/2610.36719v1) |
-| 2026-10-28 | ClusterSplat: Semantic Cluster Selection for 3D Visual Grounding in Gaussian Splatting | 待翻译 | [arXiv 2610.36462v1](https://arxiv.org/abs/2610.36462v1) |
+| 2026-10-28 | ClusterSplat: Semantic Cluster Selection for 3D Visual Grounding in Gaussian Splatting | ClusterSplat：面向高斯泼溅中三维视觉定位的语义聚类选择 | [arXiv 2610.36462v1](https://arxiv.org/abs/2610.36462v1) |
 | 2026-10-28 | Aerial-R1: Reinforcing Aerial Reasoning and Segmentation in MLLMs | 待翻译 | [arXiv 2610.33056v1](https://arxiv.org/abs/2610.33056v1) |
 | 2026-10-27 | An Agentic AI Workflow for Liver Lesion Segmentation and Structured Radiology Reporting | 用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程 | [arXiv 2610.34599v1](https://arxiv.org/abs/2610.34599v1) |
 | 2026-10-27 | MIS-VQA: An Annotation-Driven Surgical Vision-Language Dataset for Complex Surgical Understanding | MIS-VQA：面向复杂外科理解的标注驱动外科视觉-语言数据集 | [arXiv 2610.34210v1](https://arxiv.org/abs/2610.34210v1) |

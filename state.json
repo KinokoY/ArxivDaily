@@ -6622,11 +6622,13 @@
         "general_reasoning"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-28T12:19:47.849457+00:00",
-        "run_id": "20261028T121947Z-f883976a",
-        "stage": "translation"
+      "title_zh": "ClusterSplat：面向高斯泼溅中三维视觉定位的语义聚类选择",
+      "translation": {
+        "abstract_zh": "本文研究三维高斯泼溅（3DGS）中的三维视觉定位问题，其中指代表达式需要同时以渲染的二维掩码和一组显式三维高斯来标识目标物体。现有方法通常通过对稠密的图元级相关性分数施加启发式阈值处理或top-ratio过滤来提取三维目标。然而，这些分数在不同场景和提示之间往往差异显著，使得此类启发式方法敏感并导致定位不稳定。ClusterSplat通过将三维目标选择重新表述为对场景自适应候选的聚类级选择来解决这一问题。该方法首先学习实例感知的高斯特征，形成特征感知的种子体素，并在描述长度准则下降时合并相邻种子体素，从而产生场景特定的聚类候选集。给定指代表达式，查询条件化的聚类评分器利用轻量级MLP对聚类候选进行排序，所选聚类直接定义显式三维目标，同时其聚类分数被渲染用于二维掩码。在ScanRefer上，ClusterSplat在所比较的3DGS基线中取得了最佳的渲染二维分割和显式三维目标指标。它还获得了最佳的平均Ref-LERF分数，支持在细粒度指代描述下的相同趋势。在ScanNet v2类别名称查询上，ClusterSplat取得了最强的渲染二维结果和最高的三维匹配准确率，同时保持有竞争力的三维IoU。项目页面见 https://jaesung8.github.io/clustersplat/ 。",
+        "title_zh": "ClusterSplat：面向高斯泼溅中三维视觉定位的语义聚类选择"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.36462v1"
       ]
