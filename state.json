@@ -6089,6 +6089,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "While Multimodal Large Language Models (MLLMs) have revolutionized general visual perception, existing methods suffer from severe hallucination in the aerial domain, where extreme scale variations and visual ambiguity abound. Existing Supervised Fine-Tuning (SFT) paradigms force models to mimic ground truth without modeling uncertainty, often resulting in blind guessing on tiny or unrecognizable objects in aerial scenes. In this paper, we present Aerial-R1, the first aerial MLLM framework to reinforce visual reasoning capabilities for aerial reasoning and segmentation. Drawing inspiration from the reasoning-incentivizing mechanisms of DeepSeek-R1, we find that trustworthy perception stems from consistency across views, establishing a visual parallel to the Chain-of-Thought in logic. To effectively adapt policy optimization for non-autoregressive mask generation, we introduce Hybrid-View Group Advantage-Weighted Regression (H-GAWR). This strategy constructs dynamic groups of high-resolution and low-resolution views, seamlessly bridging group-relative advantage estimation with advantage-weighted policy extraction. By enforcing consensus on clear inputs and strictly penalizing hallucinations on ambiguous ones, Aerial-R1 develops an explicitly incentivized refusal mechanism. Extensive experiments on VSAI-Ref, the first aerial MLLM benchmark dedicated to jointly evaluating dense reasoning and hallucination robustness, demonstrate that Aerial-R1 significantly outperforms SFT baselines in segmentation precision while substantially mitigating fatal hallucinations in low-information scenarios, paving the way for more reliable and trustworthy aerial agents. Codes are available on https://github.com/phy709/Aerial-R1.",
@@ -6110,12 +6111,24 @@
         "updated": "2026-10-19T08:44:04+00:00",
         "version_id": "2610.33056v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_rl",
         "general_reasoning"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2610.33056v1"
       ]
