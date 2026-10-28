@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-10-28 | Progressively Refining SAM for Accurate Phytoplankton Segmentation | 待翻译 | [arXiv 2610.36722v1](https://arxiv.org/abs/2610.36722v1) |
-| 2026-10-28 | SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition | 待翻译 | [arXiv 2610.36719v1](https://arxiv.org/abs/2610.36719v1) |
+| 2026-10-28 | SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition | SAGE：用于通用视觉识别的显著性退火门控编码器 | [arXiv 2610.36719v1](https://arxiv.org/abs/2610.36719v1) |
 | 2026-10-28 | ClusterSplat: Semantic Cluster Selection for 3D Visual Grounding in Gaussian Splatting | 待翻译 | [arXiv 2610.36462v1](https://arxiv.org/abs/2610.36462v1) |
 | 2026-10-28 | Aerial-R1: Reinforcing Aerial Reasoning and Segmentation in MLLMs | 待翻译 | [arXiv 2610.33056v1](https://arxiv.org/abs/2610.33056v1) |
 | 2026-10-27 | An Agentic AI Workflow for Liver Lesion Segmentation and Structured Radiology Reporting | 用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程 | [arXiv 2610.34599v1](https://arxiv.org/abs/2610.34599v1) |

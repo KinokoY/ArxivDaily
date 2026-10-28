@@ -6694,11 +6694,13 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-28T12:19:47.849457+00:00",
-        "run_id": "20261028T121947Z-f883976a",
-        "stage": "translation"
+      "title_zh": "SAGE：用于通用视觉识别的显著性退火门控编码器",
+      "translation": {
+        "abstract_zh": "在将自监督视觉Transformer（ViT）适配于稠密预测时，现有方法通常将ViT视为被动的特征提取器，可能未充分利用其表征中编码的丰富先验，包括显著性、全局上下文和高频细节。我们提出SAGE（显著性退火门控编码器），一种增强的ViT-Adapter骨干网络，通过三项互补创新显式利用这些先验：（1）显著性引导架构，提取DINO风格的类令牌（CLS）显著性以引导特征门控和高频增强，并结合动态多层聚合和局部分支；（2）基于退火的训练范式，旨在改善早期训练期间的收敛性和特征质量，同时减少训练后期的特征漂移；（3）两阶段、质量感知的训练机制，在单次训练运行中从focal loss平滑过渡到Varifocal Loss（VFL）。在所评估的任务中（图~\\ref{fig:fig_com}），SAGE在COCO（62.8 box AP和55.3 mask AP）、COCO关键点估计（78.5 AP）、ADE20K（语义分割60.3 mIoU和实例分割44.9 mask AP）、TinyImageNet分类（94.76\\% Top-1准确率）和DIOR-R旋转目标检测（78.8 AP$_{50}$）上取得最先进（SOTA）或具有竞争力的结果。各任务使用相同的骨干网络，并配备任务特定的解码器。据我们所知，SAGE是首个在华为昇腾NPU上实现多任务最先进结果的框架。代码和预训练模型将在内部审查后发布。",
+        "title_zh": "SAGE：用于通用视觉识别的显著性退火门控编码器"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.36719v1"
       ]
