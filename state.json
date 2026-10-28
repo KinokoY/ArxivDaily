@@ -6516,9 +6516,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We study 3D visual grounding in 3D Gaussian Splatting (3DGS), where a referring expression should identify a target object as both a rendered 2D mask and a set of explicit 3D Gaussians.",
+          "ClusterSplat addresses this by reframing 3D target selection as cluster-level selection over scene-adaptive candidates.",
+          "Given a referring expression, a query-conditioned cluster scorer ranks the cluster candidates with a lightweight MLP, and the selected cluster directly defines the explicit 3D target while its cluster score is rendered for the 2D mask."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper addresses 3D visual grounding from referring expressions to rendered 2D masks and explicit 3D Gaussians, which is spatially grounded reasoning segmentation. Its contribution is cluster-level target selection with learned instance-aware features and a query-conditioned MLP scorer, not RL or DPO. It is relevant as a lightweight general reasoning-segmentation reference, but it does not match the prioritized RL/DPO methodological interest or medical focus.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 60,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "We study 3D visual grounding in 3D Gaussian Splatting (3DGS), where a referring expression should identify a target object as both a rendered 2D mask and a set of explicit 3D Gaussians. Prior methods typically extract 3D targets by applying heuristic thresholding or top-ratio filtering to dense primitive-level relevance scores. However, these scores often vary substantially across scenes and prompts, making such heuristics sensitive and leading to unstable targeting. ClusterSplat addresses this by reframing 3D target selection as cluster-level selection over scene-adaptive candidates. The method first learns instance-aware Gaussian features, forms feature-aware seed voxels, and merges neighboring seed voxels when a description-length criterion decreases, producing a scene-specific set of cluster candidates. Given a referring expression, a query-conditioned cluster scorer ranks the cluster candidates with a lightweight MLP, and the selected cluster directly defines the explicit 3D target while its cluster score is rendered for the 2D mask. On ScanRefer, ClusterSplat achieves the best rendered 2D segmentation and explicit 3D target metrics among the compared 3DGS baselines. It also obtains the best average Ref-LERF scores, supporting the same trend under fine-grained referring descriptions. On ScanNet v2 class name queries, ClusterSplat achieves the strongest rendered 2D results and the highest 3D matching accuracy, while maintaining competitive 3D IoU. Our project page is available at https://jaesung8.github.io/clustersplat/ .",
         "authors": [
@@ -6536,15 +6556,11 @@
         "updated": "2026-10-27T01:12:53+00:00",
         "version_id": "2610.36462v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-28T12:19:47.849457+00:00",
-        "run_id": "20261028T121947Z-f883976a",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.36462v1"
       ]
