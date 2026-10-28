@@ -83,7 +83,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-27T11:45:53.102060+00:00"
+    "last_complete_end": "2026-10-28T12:19:47.849457+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -5949,6 +5949,7 @@
       "failures": {},
       "first_discovered": "2026-10-26T12:27:23.835250+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.32220v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Autoregressive vision-language models (VLMs) struggle to ground generated text in the correct image regions, and existing explainability methods, such as attention maps and Logit Lens, often produce poor spatial explanations due to weak text-to-vision attention and sink tokens. We propose \\textbf{Angular Relevance} ($R_L$), a simple visualization measure based on cosine similarity between visual token embeddings and unembedding-matrix rows. Because $R_L$ is invariant to token norm, it produces substantially sharper and more faithful heatmaps than attention maps or Logit Lens on out-of-the-box models. Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods. To preserve localized object information during cross-modal mixing, we introduce \\textbf{Angular Object-Aware Loss (AOL)}, an auxiliary loss that directly supervises visual token embeddings to align angularly with the vocabulary directions of their corresponding object concepts. Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance. We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training.",
@@ -6056,6 +6057,40 @@
       "title_zh": "Sam-Correction：面向医学图像分割的全自适应标签噪声减少方法",
       "versions": [
         "2610.32377v1"
+      ]
+    },
+    "2610.33056": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "paper": {
+        "abstract": "While Multimodal Large Language Models (MLLMs) have revolutionized general visual perception, existing methods suffer from severe hallucination in the aerial domain, where extreme scale variations and visual ambiguity abound. Existing Supervised Fine-Tuning (SFT) paradigms force models to mimic ground truth without modeling uncertainty, often resulting in blind guessing on tiny or unrecognizable objects in aerial scenes. In this paper, we present Aerial-R1, the first aerial MLLM framework to reinforce visual reasoning capabilities for aerial reasoning and segmentation. Drawing inspiration from the reasoning-incentivizing mechanisms of DeepSeek-R1, we find that trustworthy perception stems from consistency across views, establishing a visual parallel to the Chain-of-Thought in logic. To effectively adapt policy optimization for non-autoregressive mask generation, we introduce Hybrid-View Group Advantage-Weighted Regression (H-GAWR). This strategy constructs dynamic groups of high-resolution and low-resolution views, seamlessly bridging group-relative advantage estimation with advantage-weighted policy extraction. By enforcing consensus on clear inputs and strictly penalizing hallucinations on ambiguous ones, Aerial-R1 develops an explicitly incentivized refusal mechanism. Extensive experiments on VSAI-Ref, the first aerial MLLM benchmark dedicated to jointly evaluating dense reasoning and hallucination robustness, demonstrate that Aerial-R1 significantly outperforms SFT baselines in segmentation precision while substantially mitigating fatal hallucinations in low-information scenarios, paving the way for more reliable and trustworthy aerial agents. Codes are available on https://github.com/phy709/Aerial-R1.",
+        "authors": [
+          "Jisheng Dang",
+          "Huaiyuan Peng",
+          "Yixuan Wang",
+          "Kun Wang",
+          "Zhang Li",
+          "Tat-Seng Chua"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.33056v1",
+        "published": "2026-10-19T08:44:04+00:00",
+        "title": "Aerial-R1: Reinforcing Aerial Reasoning and Segmentation in MLLMs",
+        "updated": "2026-10-19T08:44:04+00:00",
+        "version_id": "2610.33056v1"
+      },
+      "rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.33056v1"
       ]
     },
     "2610.33057": {
@@ -6193,6 +6228,7 @@
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.33078v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Visual grounding (VG) in visual question answering (VQA) is a fundamental capability of Vision-Language Models (VLMs), enabling the detection of the most relevant region in an image to answer the question. This reflects the model's capability of multimodal comprehension, which is crucial when interacting with visually impaired people (VIP). Indeed, visual grounding, when applied to assistive scenarios, is not merely a technical feature, but rather a trust and safety requirement. In this work, we study visual grounding in VLMs for visually impaired people. To this end, we assess open-source VLMs on visual grounding using the VizWiz-VQA-Grounding dataset and challenge, which contains real-life images taken by VIP. We propose VG-SHAP, which extends an existing explainability framework to provide visual grounding explanations, allowing the evaluation of black-box VLMs. Our results on the VizWiz-VQA-Grounding challenge show that despite generating correct answers, VLMs struggle to ground in the proper region in the image. However, these results are constrained by the quality of the segmentation model of our explainability framework and further research is necessary.",
@@ -6236,7 +6272,8 @@
       "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
       "translation_provider": "llm",
       "versions": [
-        "2610.33078v1"
+        "2610.33078v1",
+        "2610.33078v2"
       ]
     },
     "2610.33081": {
@@ -6265,6 +6302,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "latest_version": "2610.33081v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Generalist segmenters such as Cellpose-SAM (CPSAM) outline cells accurately across stains but slowly; watershed detectors such as QuPath's are fast but less accurate. In time-critical use, such as interactive retrieval of cells from a user-drawn region, CPSAM at the reference settings takes 58-303 s per measured 8192 x 8192 region on an RTX 4500 Ada GPU, beyond a seconds-scale interactive target. We distil CPSAM into SWIFT-Cell (SWIFT), a 0.63M-parameter U-Net trained only on CPSAM masks of 1,202 H&E and IHC tiles. On three 8192 x 8192 development regions SWIFT takes 2.0-5.2 s on 4 CPU cores in int8, 2.5-5.1x faster than QuPath's detector on the same cores, and 0.36-0.49 s on a GPU. Against human annotations on eight H&E, IHC and ISH sets it keeps 95% of CPSAM's panoptic quality (PQ) on PanNuke (0.593 vs. 0.627) and is level on NuCLS (0.546 vs. 0.540). On Ki-67 IHC masks scored to the outline centre it is 0.205 PQ above QuPath's better mode, 0.079 below CPSAM and 0.027 below InstanSeg (CI includes 0; at the outer edge 0.008 below CPSAM); on 212 pathologist-outlined nuclei in Ki-67 fields of 12 untouched patients its recall is 0.925 (CPSAM 0.920, InstanSeg 0.901; paired difference CIs include 0); one method-blinded pathologist accepted its outlines in 96% of 100 fields (60 from two development tissue patients, 40 hematology; CPSAM 83%, QuPath 53%; tissue 100% for SWIFT and CPSAM); on ER/PR points from 12 patients its detection F1 is 0.882 (CPSAM 0.896, InstanSeg 0.857), and on 4-reader PD-L1 points 0.83 (CPSAM 0.85, readers 0.87). SWIFT is close to CPSAM in accuracy and faster than watershed detection.",
@@ -6350,6 +6388,7 @@
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.34210v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Modern surgical AI increasingly requires multimodal understanding rather than isolated perception, yet existing datasets remain largely limited to single-task supervision such as recognition or templated question answering. Current medical VQA resources often rely on synthetic templates, lack natural descriptive supervision, or provide sparse annotations that hinder reasoning about spatial relations and procedural context. We introduce MIS-VQA, a surgical vision-language dataset generated through an annotation-driven pipeline that converts heterogeneous surgical annotations into structured textual scene representations. Using EndoVis18 and CholecT50, we transform phase, instrument, interaction, triplet, and segmentation labels into unified contexts that guide large language models to generate clinically coherent question-answer pairs. MIS-VQA supports four response types-concise and detailed descriptions, perception-level grounding, and multi-step reasoning-enabling hierarchical evaluation from atomic visual grounding to compositional reasoning. To address annotation sparsity, we incorporate confidence-filtered segmentation and cross-annotation consistency checks, enabling spatially grounded supervision at scale. MIS-VQA establishes a unified benchmark for surgical vision-language understanding with spatial supervision and multi-tier reasoning evaluation. To demonstrate its utility, we introduce LLaVA-SurgXpert, a family of surgical vision-language models with visual encoders to analyze how visual representations influence multimodal reasoning. Experiments show consistent improvements over existing surgical VQA baselines while revealing capability gaps between perceptual grounding and higher-level reasoning hidden in prior benchmarks.",
@@ -6388,8 +6427,8 @@
       ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
-        "medical_reasoning",
-        "general_reasoning"
+        "general_reasoning",
+        "medical_reasoning"
       ],
       "stage": "delivered",
       "title_zh": "MIS-VQA：面向复杂外科理解的标注驱动外科视觉-语言数据集",
@@ -6432,6 +6471,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
+      "latest_version": "2610.34599v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Despite advances in automated liver lesion segmentation, a gap remains between image-derived predictions and clinically interpretable radiology reports. Bridging this gap requires quantitative measurements that are both reproducible and traceable. We present an evidence-grounded agentic AI framework that connects liver and lesion segmentation with deterministic quantification and structured reporting. TotalSegmentator-based nnU-Net models delineate the liver, Couinaud segments, and lesions, while computational tools extract volumes, dimensions, counts, and anatomical locations. A large language model (LLM) organizes these measurements into a predefined reporting schema, with numerical consistency checks against source measurements. On 51 LiTS cases, the segmentation stage achieved a liver Dice score of 0.947, lesion sensitivity of 75.6%, and positive predictive value of 68.9%. Exploratory screening of 25,494 MERLIN reports identified 10,208 (40.0%) with liver-related abnormalities. By connecting quantitative imaging evidence with agentic report generation, this work takes a step toward human-centered medical AI that prioritizes traceability and clinical relevance.",
@@ -6470,6 +6510,99 @@
       "title_zh": "用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程",
       "versions": [
         "2610.34599v1"
+      ]
+    },
+    "2610.36462": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "paper": {
+        "abstract": "We study 3D visual grounding in 3D Gaussian Splatting (3DGS), where a referring expression should identify a target object as both a rendered 2D mask and a set of explicit 3D Gaussians. Prior methods typically extract 3D targets by applying heuristic thresholding or top-ratio filtering to dense primitive-level relevance scores. However, these scores often vary substantially across scenes and prompts, making such heuristics sensitive and leading to unstable targeting. ClusterSplat addresses this by reframing 3D target selection as cluster-level selection over scene-adaptive candidates. The method first learns instance-aware Gaussian features, forms feature-aware seed voxels, and merges neighboring seed voxels when a description-length criterion decreases, producing a scene-specific set of cluster candidates. Given a referring expression, a query-conditioned cluster scorer ranks the cluster candidates with a lightweight MLP, and the selected cluster directly defines the explicit 3D target while its cluster score is rendered for the 2D mask. On ScanRefer, ClusterSplat achieves the best rendered 2D segmentation and explicit 3D target metrics among the compared 3DGS baselines. It also obtains the best average Ref-LERF scores, supporting the same trend under fine-grained referring descriptions. On ScanNet v2 class name queries, ClusterSplat achieves the strongest rendered 2D results and the highest 3D matching accuracy, while maintaining competitive 3D IoU. Our project page is available at https://jaesung8.github.io/clustersplat/ .",
+        "authors": [
+          "Jaesung Lee",
+          "Hyeontaek Hwang",
+          "Gabriel Manalu",
+          "Daeyoung Kim"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.36462v1",
+        "published": "2026-10-27T01:12:53+00:00",
+        "title": "ClusterSplat: Semantic Cluster Selection for 3D Visual Grounding in Gaussian Splatting",
+        "updated": "2026-10-27T01:12:53+00:00",
+        "version_id": "2610.36462v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.36462v1"
+      ]
+    },
+    "2610.36719": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "paper": {
+        "abstract": "When adapting self-supervised Vision Transformers (ViTs) to dense prediction, existing methods often treat the ViT as a passive feature extractor and may underuse the rich priors encoded in its representations, including saliency, global context, and high-frequency details. We propose SAGE (Saliency-Annealed Gated Encoder), an enhanced ViT-Adapter backbone that explicitly exploits these priors through three complementary innovations: (1) a saliency-guided architecture that extracts DINO-style class-token (CLS) saliency to guide feature gating and high-frequency enhancement, together with dynamic multi-layer aggregation and a local-detail branch; (2) an annealing-based training paradigm designed to improve convergence and feature quality during early training while reducing feature drift later in training; and (3) a two-stage, quality-aware training mechanism that smoothly transitions from focal loss to Varifocal Loss (VFL) within a single training run. Across the evaluated tasks (Fig.~\\ref{fig:fig_com}), SAGE achieves state-of-the-art (SOTA) or competitive results on COCO (62.8 box AP and 55.3 mask AP), COCO keypoint estimation (78.5 AP), ADE20K (60.3 mIoU for semantic segmentation and 44.9 mask AP for instance segmentation), TinyImageNet classification (94.76\\% Top-1 accuracy), and DIOR-R oriented object detection (78.8 AP$_{50}$). The same backbone is used across tasks, with task-specific decoders. To the best of our knowledge, SAGE is the first framework to achieve multi-task state-of-the-art results on Huawei Ascend NPUs. Code and pretrained models will be released after internal review.",
+        "authors": [
+          "Le Yang",
+          "Yucheng Huang",
+          "Junyu Chen",
+          "Qi Dang",
+          "Xin Kong",
+          "Haifeng Huo",
+          "Qiang Zhao"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.36719v1",
+        "published": "2026-10-27T06:34:00+00:00",
+        "title": "SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition",
+        "updated": "2026-10-27T06:34:00+00:00",
+        "version_id": "2610.36719v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.36719v1"
+      ]
+    },
+    "2610.36722": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "paper": {
+        "abstract": "Accurate phytoplankton segmentation is essential for ecological monitoring, yet it remains largely underexplored due to the subtle visual characteristics of phytoplankton and the scarcity of pixel-level annotations. To address these challenges, we propose PhySeg, a SAM-based segmentation framework equipped with a lightweight refinement module that progressively restores fine-grained details through multi-scale feature fusion. In addition, we construct a phytoplankton segmentation dataset by manually annotating instance-level masks for an existing dataset, providing a valuable resource for future research. Experimental results demonstrate that PhySeg improves segmentation accuracy, validating the effectiveness of the proposed module. Code is available at https://github.com/lijialin404/PhySeg.",
+        "authors": [
+          "Jialin Li",
+          "Jinkun Jiang",
+          "Yuezun Li",
+          "Junyu Dong"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.36722v1",
+        "published": "2026-10-27T06:39:45+00:00",
+        "title": "Progressively Refining SAM for Accurate Phytoplankton Segmentation",
+        "updated": "2026-10-27T06:39:45+00:00",
+        "version_id": "2610.36722v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.36722v1"
       ]
     }
   },
@@ -7381,10 +7514,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-28",
+      "discovered_candidates": 23,
+      "discovered_papers": 23,
       "run_id": "20261028T121947Z-f883976a",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-28T12:19:00+00:00",
+          "seen": 6143,
+          "start": "2026-10-14T12:19:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-28T12:19:47.849457+00:00",
       "window": {
         "end": "2026-10-28T12:19:47.849457+00:00",
