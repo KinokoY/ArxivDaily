@@ -79,6 +79,10 @@
     "20261027T114553Z-b8c0524f-6742284002b1": {
       "attempts": 1,
       "created_at": "2026-10-27T11:45:53.102060+00:00"
+    },
+    "20261028T121947Z-f883976a-34be9e3996e7": {
+      "attempts": 0,
+      "created_at": "2026-10-28T12:19:47.849457+00:00"
     }
   },
   "collection": {
@@ -2042,6 +2046,149 @@
       "run_id": "20261027T114553Z-b8c0524f",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261028T121947Z-f883976a-34be9e3996e7": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/28/20261028T121947Z-f883976a-34be9e3996e7.md",
+      "chain_root": "20261028T121947Z-f883976a-34be9e3996e7",
+      "chain_roots": [
+        "20261028T121947Z-f883976a-34be9e3996e7"
+      ],
+      "content_hash": "34be9e3996e75a097361de28844e04e337430166092343f30e6b34a57c5839c7",
+      "created_at": "2026-10-28T12:19:47.849457+00:00",
+      "day": "2026-10-28",
+      "digest_id": "20261028T121947Z-f883976a-34be9e3996e7",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "When adapting self-supervised Vision Transformers (ViTs) to dense prediction, existing methods often treat the ViT as a passive feature extractor and may underuse the rich priors encoded in its representations, including saliency, global context, and high-frequency details. We propose SAGE (Saliency-Annealed Gated Encoder), an enhanced ViT-Adapter backbone that explicitly exploits these priors through three complementary innovations: (1) a saliency-guided architecture that extracts DINO-style class-token (CLS) saliency to guide feature gating and high-frequency enhancement, together with dynamic multi-layer aggregation and a local-detail branch; (2) an annealing-based training paradigm designed to improve convergence and feature quality during early training while reducing feature drift later in training; and (3) a two-stage, quality-aware training mechanism that smoothly transitions from focal loss to Varifocal Loss (VFL) within a single training run. Across the evaluated tasks (Fig.~\\ref{fig:fig_com}), SAGE achieves state-of-the-art (SOTA) or competitive results on COCO (62.8 box AP and 55.3 mask AP), COCO keypoint estimation (78.5 AP), ADE20K (60.3 mIoU for semantic segmentation and 44.9 mask AP for instance segmentation), TinyImageNet classification (94.76\\% Top-1 accuracy), and DIOR-R oriented object detection (78.8 AP$_{50}$). The same backbone is used across tasks, with task-specific decoders. To the best of our knowledge, SAGE is the first framework to achieve multi-task state-of-the-art results on Huawei Ascend NPUs. Code and pretrained models will be released after internal review.",
+            "authors": [
+              "Le Yang",
+              "Yucheng Huang",
+              "Junyu Chen",
+              "Qi Dang",
+              "Xin Kong",
+              "Haifeng Huo",
+              "Qiang Zhao"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.36719v1",
+            "published": "2026-10-27T06:34:00+00:00",
+            "title": "SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition",
+            "updated": "2026-10-27T06:34:00+00:00",
+            "version_id": "2610.36719v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "在将自监督视觉Transformer（ViT）适配于稠密预测时，现有方法通常将ViT视为被动的特征提取器，可能未充分利用其表征中编码的丰富先验，包括显著性、全局上下文和高频细节。我们提出SAGE（显著性退火门控编码器），一种增强的ViT-Adapter骨干网络，通过三项互补创新显式利用这些先验：（1）显著性引导架构，提取DINO风格的类令牌（CLS）显著性以引导特征门控和高频增强，并结合动态多层聚合和局部分支；（2）基于退火的训练范式，旨在改善早期训练期间的收敛性和特征质量，同时减少训练后期的特征漂移；（3）两阶段、质量感知的训练机制，在单次训练运行中从focal loss平滑过渡到Varifocal Loss（VFL）。在所评估的任务中（图~\\ref{fig:fig_com}），SAGE在COCO（62.8 box AP和55.3 mask AP）、COCO关键点估计（78.5 AP）、ADE20K（语义分割60.3 mIoU和实例分割44.9 mask AP）、TinyImageNet分类（94.76\\% Top-1准确率）和DIOR-R旋转目标检测（78.8 AP$_{50}$）上取得最先进（SOTA）或具有竞争力的结果。各任务使用相同的骨干网络，并配备任务特定的解码器。据我们所知，SAGE是首个在华为昇腾NPU上实现多任务最先进结果的框架。代码和预训练模型将在内部审查后发布。",
+            "title_zh": "SAGE：用于通用视觉识别的显著性退火门控编码器"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "We study 3D visual grounding in 3D Gaussian Splatting (3DGS), where a referring expression should identify a target object as both a rendered 2D mask and a set of explicit 3D Gaussians. Prior methods typically extract 3D targets by applying heuristic thresholding or top-ratio filtering to dense primitive-level relevance scores. However, these scores often vary substantially across scenes and prompts, making such heuristics sensitive and leading to unstable targeting. ClusterSplat addresses this by reframing 3D target selection as cluster-level selection over scene-adaptive candidates. The method first learns instance-aware Gaussian features, forms feature-aware seed voxels, and merges neighboring seed voxels when a description-length criterion decreases, producing a scene-specific set of cluster candidates. Given a referring expression, a query-conditioned cluster scorer ranks the cluster candidates with a lightweight MLP, and the selected cluster directly defines the explicit 3D target while its cluster score is rendered for the 2D mask. On ScanRefer, ClusterSplat achieves the best rendered 2D segmentation and explicit 3D target metrics among the compared 3DGS baselines. It also obtains the best average Ref-LERF scores, supporting the same trend under fine-grained referring descriptions. On ScanNet v2 class name queries, ClusterSplat achieves the strongest rendered 2D results and the highest 3D matching accuracy, while maintaining competitive 3D IoU. Our project page is available at https://jaesung8.github.io/clustersplat/ .",
+            "authors": [
+              "Jaesung Lee",
+              "Hyeontaek Hwang",
+              "Gabriel Manalu",
+              "Daeyoung Kim"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.36462v1",
+            "published": "2026-10-27T01:12:53+00:00",
+            "title": "ClusterSplat: Semantic Cluster Selection for 3D Visual Grounding in Gaussian Splatting",
+            "updated": "2026-10-27T01:12:53+00:00",
+            "version_id": "2610.36462v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "general_reasoning"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "本文研究三维高斯泼溅（3DGS）中的三维视觉定位问题，其中指代表达式需要同时以渲染的二维掩码和一组显式三维高斯来标识目标物体。现有方法通常通过对稠密的图元级相关性分数施加启发式阈值处理或top-ratio过滤来提取三维目标。然而，这些分数在不同场景和提示之间往往差异显著，使得此类启发式方法敏感并导致定位不稳定。ClusterSplat通过将三维目标选择重新表述为对场景自适应候选的聚类级选择来解决这一问题。该方法首先学习实例感知的高斯特征，形成特征感知的种子体素，并在描述长度准则下降时合并相邻种子体素，从而产生场景特定的聚类候选集。给定指代表达式，查询条件化的聚类评分器利用轻量级MLP对聚类候选进行排序，所选聚类直接定义显式三维目标，同时其聚类分数被渲染用于二维掩码。在ScanRefer上，ClusterSplat在所比较的3DGS基线中取得了最佳的渲染二维分割和显式三维目标指标。它还获得了最佳的平均Ref-LERF分数，支持在细粒度指代描述下的相同趋势。在ScanNet v2类别名称查询上，ClusterSplat取得了最强的渲染二维结果和最高的三维匹配准确率，同时保持有竞争力的三维IoU。项目页面见 https://jaesung8.github.io/clustersplat/ 。",
+            "title_zh": "ClusterSplat：面向高斯泼溅中三维视觉定位的语义聚类选择"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "While Multimodal Large Language Models (MLLMs) have revolutionized general visual perception, existing methods suffer from severe hallucination in the aerial domain, where extreme scale variations and visual ambiguity abound. Existing Supervised Fine-Tuning (SFT) paradigms force models to mimic ground truth without modeling uncertainty, often resulting in blind guessing on tiny or unrecognizable objects in aerial scenes. In this paper, we present Aerial-R1, the first aerial MLLM framework to reinforce visual reasoning capabilities for aerial reasoning and segmentation. Drawing inspiration from the reasoning-incentivizing mechanisms of DeepSeek-R1, we find that trustworthy perception stems from consistency across views, establishing a visual parallel to the Chain-of-Thought in logic. To effectively adapt policy optimization for non-autoregressive mask generation, we introduce Hybrid-View Group Advantage-Weighted Regression (H-GAWR). This strategy constructs dynamic groups of high-resolution and low-resolution views, seamlessly bridging group-relative advantage estimation with advantage-weighted policy extraction. By enforcing consensus on clear inputs and strictly penalizing hallucinations on ambiguous ones, Aerial-R1 develops an explicitly incentivized refusal mechanism. Extensive experiments on VSAI-Ref, the first aerial MLLM benchmark dedicated to jointly evaluating dense reasoning and hallucination robustness, demonstrate that Aerial-R1 significantly outperforms SFT baselines in segmentation precision while substantially mitigating fatal hallucinations in low-information scenarios, paving the way for more reliable and trustworthy aerial agents. Codes are available on https://github.com/phy709/Aerial-R1.",
+            "authors": [
+              "Jisheng Dang",
+              "Huaiyuan Peng",
+              "Yixuan Wang",
+              "Kun Wang",
+              "Zhang Li",
+              "Tat-Seng Chua"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.AI"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.33056v1",
+            "published": "2026-10-19T08:44:04+00:00",
+            "title": "Aerial-R1: Reinforcing Aerial Reasoning and Segmentation in MLLMs",
+            "updated": "2026-10-19T08:44:04+00:00",
+            "version_id": "2610.33056v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "general_rl",
+            "general_reasoning"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "尽管多模态大语言模型（MLLMs）已经彻底改变了通用视觉感知，但现有方法在航空领域面临严重的幻觉问题，该领域存在极端的尺度变化和大量视觉歧义。现有的监督微调（SFT）范式迫使模型模仿真实标注而不对不确定性建模，往往导致在航空场景中对微小或不可识别物体进行盲目猜测。本文提出 Aerial-R1，这是首个用于强化航空推理与分割视觉推理能力的航空 MLLM 框架。受 DeepSeek-R1 推理激励机制的启发，我们发现可信的感知源于跨视角的一致性，从而建立了逻辑中思维链的视觉平行。为了有效将策略优化适配到非自回归掩码生成，我们引入了混合视角组优势加权回归（H-GAWR）。该策略构建高分辨率和低分辨率视角的动态组，将组相对优势估计与优势加权策略提取无缝衔接。通过对清晰输入强制一致性并严格惩罚歧义输入上的幻觉，Aerial-R1 发展出显式激励的拒绝机制。在 VSAI-Ref（首个专门联合评估密集推理和幻觉鲁棒性的航空 MLLM 基准）上的大量实验表明，Aerial-R1 在分割精度上显著优于 SFT 基线，同时大幅缓解低信息场景中的致命幻觉，为更可靠、更值得信赖的航空智能体铺平了道路。代码可在 https://github.com/phy709/Aerial-R1 获取。",
+            "title_zh": "Aerial-R1：强化多模态大语言模型中的航空推理与分割"
+          }
+        }
+      ],
+      "notification_hash": "da9972465458780769208ad4b6bdee038f3fbd9f0e972a6ad761327d100d07f5",
+      "recovery_of": [],
+      "rendered": {
+        "2610.33056": "rendered_inline_translation",
+        "2610.36462": "rendered_inline_translation",
+        "2610.36719": "rendered_inline_translation"
+      },
+      "run_id": "20261028T121947Z-f883976a",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
