@@ -6546,9 +6546,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We propose SAGE (Saliency-Annealed Gated Encoder), an enhanced ViT-Adapter backbone that explicitly exploits these priors through three complementary innovations",
+          "a two-stage, quality-aware training mechanism that smoothly transitions from focal loss to Varifocal Loss (VFL) within a single training run"
+        ],
+        "dpo_is_method": false,
+        "reason": "General CV dense-prediction backbone paper. It proposes saliency-guided ViT-Adapter features and an annealing plus focal-to-VFL training schedule, but the abstract provides no theoretical analysis or empirical evidence that this optimization objective transfers to medical reasoning segmentation or language/spatial reasoning to pixel masks. It is not a medical, reasoning-segmentation, RL, or DPO method.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 30,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "No theoretical justification for the annealing or focal-to-VFL transition is provided in the abstract.",
+          "No evidence is provided that the training objective transfers to medical reasoning segmentation or implicit/spatial reasoning to pixel masks.",
+          "The abstract does not establish whether the loss schedule improves spatial, structural, or topological mask quality.",
+          "No RL or DPO method is described."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-28T12:19:47.849457+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "When adapting self-supervised Vision Transformers (ViTs) to dense prediction, existing methods often treat the ViT as a passive feature extractor and may underuse the rich priors encoded in its representations, including saliency, global context, and high-frequency details. We propose SAGE (Saliency-Annealed Gated Encoder), an enhanced ViT-Adapter backbone that explicitly exploits these priors through three complementary innovations: (1) a saliency-guided architecture that extracts DINO-style class-token (CLS) saliency to guide feature gating and high-frequency enhancement, together with dynamic multi-layer aggregation and a local-detail branch; (2) an annealing-based training paradigm designed to improve convergence and feature quality during early training while reducing feature drift later in training; and (3) a two-stage, quality-aware training mechanism that smoothly transitions from focal loss to Varifocal Loss (VFL) within a single training run. Across the evaluated tasks (Fig.~\\ref{fig:fig_com}), SAGE achieves state-of-the-art (SOTA) or competitive results on COCO (62.8 box AP and 55.3 mask AP), COCO keypoint estimation (78.5 AP), ADE20K (60.3 mIoU for semantic segmentation and 44.9 mask AP for instance segmentation), TinyImageNet classification (94.76\\% Top-1 accuracy), and DIOR-R oriented object detection (78.8 AP$_{50}$). The same backbone is used across tasks, with task-specific decoders. To the best of our knowledge, SAGE is the first framework to achieve multi-task state-of-the-art results on Huawei Ascend NPUs. Code and pretrained models will be released after internal review.",
         "authors": [
@@ -6569,15 +6593,11 @@
         "updated": "2026-10-27T06:34:00+00:00",
         "version_id": "2610.36719v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-28T12:19:47.849457+00:00",
-        "run_id": "20261028T121947Z-f883976a",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.36719v1"
       ]
