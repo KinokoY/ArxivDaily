@@ -6784,11 +6784,8 @@
         "transferable_objective"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-10-28T12:19:47.849457+00:00",
-        "run_id": "20261028T121947Z-f883976a",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "逐步优化 SAM 以实现准确的浮游植物分割",
       "versions": [
         "2610.36722v1"
       ]
