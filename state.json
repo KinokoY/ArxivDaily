@@ -7931,6 +7931,13 @@
         "start": "2026-10-14T12:19:47.849457+00:00",
         "uncovered": []
       }
+    },
+    {
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "coverage_complete": false,
+      "day": "2026-10-29",
+      "run_id": "20261029T122852Z-53f683d4",
+      "started_at": "2026-10-29T12:28:52.774119+00:00"
     }
   ],
   "schema_version": 1,
