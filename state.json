@@ -7180,7 +7180,8 @@
     },
     "2610.39676": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "translation": 1
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -7245,6 +7246,11 @@
         "transferable_objective"
       ],
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-10-30T12:20:35.096844+00:00",
+        "run_id": "20261030T122035Z-c073ce5f",
+        "stage": "translation"
+      },
       "versions": [
         "2610.39676v1"
       ]
