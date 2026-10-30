@@ -89,7 +89,7 @@
       "created_at": "2026-10-29T12:28:52.774119+00:00"
     },
     "20261030T122035Z-c073ce5f-65699c3193bf": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-10-30T12:20:35.096844+00:00"
     }
   },
@@ -305,10 +305,12 @@
     "2026-10-30": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261030T122035Z-c073ce5f-65699c3193bf"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -2259,6 +2261,8 @@
     "20261030T122035Z-c073ce5f-65699c3193bf": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/30/20261030T122035Z-c073ce5f-65699c3193bf.md",
+      "attempt_run": "20261030T122035Z-c073ce5f",
+      "attempt_started": "2026-10-30T12:26:07.493505+00:00",
       "chain_root": "20261030T122035Z-c073ce5f-65699c3193bf",
       "chain_roots": [
         "20261030T122035Z-c073ce5f-65699c3193bf"
@@ -2389,6 +2393,7 @@
         }
       ],
       "notification_hash": "d7e454b1c68aca1f635d0313f75b779057ed5462db3f38436182352cf9754e57",
+      "quota_day": "2026-10-30",
       "recovery_of": [],
       "rendered": {
         "2610.39396": "rendered_inline_translation",
@@ -2397,7 +2402,7 @@
       },
       "run_id": "20261030T122035Z-c073ce5f",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "papers": {
@@ -7262,6 +7267,7 @@
       ]
     },
     "2610.39396": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7288,7 +7294,18 @@
           "未确认该任务是否包含语言思维链或更广泛的推理机制，摘要仅显示视觉提示定义概念"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261030T122035Z-c073ce5f-65699c3193bf",
+      "events": [
+        {
+          "at": "2026-10-30T12:26:07.493505+00:00",
+          "digest_id": "20261030T122035Z-c073ce5f-65699c3193bf",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
       "intended_tier": "translation",
@@ -7309,6 +7326,7 @@
         "updated": "2026-10-29T05:31:08+00:00",
         "version_id": "2610.39396v1"
       },
+      "pending_digest": "20261030T122035Z-c073ce5f-65699c3193bf",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -7337,6 +7355,7 @@
       ]
     },
     "2610.39676": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7362,7 +7381,18 @@
           "摘要未体现传统分割/SAM 损失或优化目标的理论分析与迁移证据。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261030T122035Z-c073ce5f-65699c3193bf",
+      "events": [
+        {
+          "at": "2026-10-30T12:26:07.493505+00:00",
+          "digest_id": "20261030T122035Z-c073ce5f-65699c3193bf",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
       "intended_tier": "translation",
@@ -7388,6 +7418,7 @@
         "updated": "2026-10-29T09:22:49+00:00",
         "version_id": "2610.39676v1"
       },
+      "pending_digest": "20261030T122035Z-c073ce5f-65699c3193bf",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -7480,6 +7511,7 @@
       ]
     },
     "2610.40094": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7507,7 +7539,18 @@
           "需要正文确认 RES/GSEG 中语言到掩码的具体推理路径与错误分析。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261030T122035Z-c073ce5f-65699c3193bf",
+      "events": [
+        {
+          "at": "2026-10-30T12:26:07.493505+00:00",
+          "digest_id": "20261030T122035Z-c073ce5f-65699c3193bf",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
       "intended_tier": "translation",
@@ -7532,6 +7575,7 @@
         "updated": "2026-10-29T13:59:44+00:00",
         "version_id": "2610.40094v1"
       },
+      "pending_digest": "20261030T122035Z-c073ce5f-65699c3193bf",
       "presentation_modules": [
         "title",
         "title_translation",
