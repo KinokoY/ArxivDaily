@@ -2270,8 +2270,15 @@
       "content_hash": "65699c3193bffc4d8a7cb809bb2323aeb1b16be0ff90d1ff8db3fad9ec17b08d",
       "created_at": "2026-10-30T12:20:35.096844+00:00",
       "day": "2026-10-30",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "65010772",
+        "status": "confirmed"
+      },
       "digest_id": "20261030T122035Z-c073ce5f-65699c3193bf",
       "empty": false,
+      "finished_at": "2026-10-30T12:26:12.459287+00:00",
       "items": [
         {
           "modules": [
@@ -2402,7 +2409,7 @@
       },
       "run_id": "20261030T122035Z-c073ce5f",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -7267,7 +7274,6 @@
       ]
     },
     "2610.39396": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7302,7 +7308,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -7326,7 +7332,6 @@
         "updated": "2026-10-29T05:31:08+00:00",
         "version_id": "2610.39396v1"
       },
-      "pending_digest": "20261030T122035Z-c073ce5f-65699c3193bf",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -7342,7 +7347,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "CASE：基于正负视觉示例的概念感知分割",
       "translation": {
         "abstract_zh": "少样本语义分割通常基于单一语义类别的正支持示例来识别目标对象。然而在实践中，仅靠正线索往往不够明确：例如，“红色汽车”可能会与各种颜色的汽车混淆，“车辆”可能会包含本应排除的汽车，而“由材质定义的对象”可能跨越多个类别。满足精确请求需要正示例提供包含证据，负示例作为意图定义约束以用于排除和消歧。我们将这一设定表述为指定视觉提示分割（Specified Visual Prompt Segmentation, SVPS），其中目标概念由正负视觉提示共同指定。在本工作中，视觉示例指由边界框提示指定的支持图像区域。为研究 SVPS，我们引入了 CASE（Concept-Aware Segmentation from Positive and Negative Visual Exemplars），一个基于 COCO 和 PACO 构建的基准。CASE 涵盖六个类别级和属性级任务族：排除、隔离、并集、属性排除、属性隔离和属性并集。我们在该设定下评估 SAM 3，发现尽管其具有强大的仅正示例少样本分割能力，冻结的 SAM 3 并不能始终将负视觉提示视为排除证据。为解决这一问题，我们提出了概念提示适配（Concept Prompt Adaptation, CPA），一种保守的基于 LoRA 的适配基线，它在 CASE 上改进了正负提示解释，同时在仅正示例少样本分割下保持竞争力。代码见 https://github.com/WongKinYiu/FSS-CASE。",
@@ -7355,7 +7360,6 @@
       ]
     },
     "2610.39676": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7389,7 +7393,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -7418,7 +7422,6 @@
         "updated": "2026-10-29T09:22:49+00:00",
         "version_id": "2610.39676v1"
       },
-      "pending_digest": "20261030T122035Z-c073ce5f-65699c3193bf",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -7434,7 +7437,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "Event-SAMA：基于神经形态事件流的语言接地视频目标分割",
       "translation": {
         "abstract_zh": "事件相机具有微秒级时间分辨率、高动态范围和无运动模糊的特性，但指代视频目标分割（RVOS）缺乏事件流数据集和模型。我们提出了 Event-SAMA-239K，这是对 SAMA-239K 接地视频对话语料库及所有额外 SAMA 训练数据的合成事件转换：包含 30,650 个视频片段和 392,162 张图像。通过光流、FILM 或眼跳上采样后接线性事件生成器，保留了所有掩码、指代表达和对话标注。我们还提出了 Event-SAMA，通过从预训练 RGB 权重初始化的双通道极性块嵌入和零初始化事件适配器对 SAMA-4B 进行适配。端到端训练在 MeViS valid_u 上得到 24.37 $\\mathcal{J}\\&\\mathcal{F}$，在转换后的 ReVOS 验证子集上得到 22.33 $\\mathcal{J}\\&\\mathcal{F}$，建立了首个事件原生 RVOS 基线（RGB SAMA-4B 在 MeViS 上为 55.4）。冻结的 RGB SAMA-4B 使用相同事件的伪 RGB 渲染或 E2VID 重建，分别得到 13.23 和 15.94 $\\mathcal{J}\\&\\mathcal{F}$。无需重新训练，当累积窗口与真实事件相机记录的事件密度匹配时，Event-SAMA 可在真实事件相机记录上工作。一项种子控制的消融实验（测得噪声底为 0.47 $\\mathcal{J}\\&\\mathcal{F}$）发现：相比仅使用 MeViS，多样化训练来源带来增益（+4.99），RGB 均值事件干初始化带来增益（+4.33），可训练的 SAM2 掩码解码器带来增益（+2.76）；在此预算下，事件适配器、部分 ViT 解冻和事件极性处于噪声范围内。一个较早的、部分转换的语料库快照使用相同配方训练，在 MeViS 上得分高 1.38 $\\mathcal{J}\\&\\mathcal{F}$，在 ReVOS 上高 1.12。两者均为单次运行且调度长度不同，因此我们不对语料库规模得出结论。",
@@ -7511,7 +7514,6 @@
       ]
     },
     "2610.40094": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7547,7 +7549,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -7575,7 +7577,6 @@
         "updated": "2026-10-29T13:59:44+00:00",
         "version_id": "2610.40094v1"
       },
-      "pending_digest": "20261030T122035Z-c073ce5f-65699c3193bf",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -7593,7 +7594,7 @@
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "RepConTUR：一种用于腹部肿瘤分割的报告条件体积多模态模型",
       "translation": {
         "abstract_zh": "肿瘤勾画是放疗计划所必需的，但自动分割受限于误差，主要是假阳性，这些误差会扭曲剂量并增加编辑时间。影像报告随扫描一同提供，并在亚器官层面定位疾病，但现有的文本提示模型以简短的指代短语为条件，且大多在2D中运行。我们提出RepConTUR，一种单一的原生3D早期融合多模态模型，以叙述性报告为条件进行体积腹部肿瘤分割。我们将AbdomenAtlas 3.0扩展为亚器官级可提示分割数据集，并生成基于报告的VQA对，在同一标注上产生四个源自报告的任务：指代分割（RES）、报告接地分割（GSEG）、报告生成（RRG）和视觉问答（VQA）。我们训练RepConTUR，其由3D CT编码器、早期融合语言模型和原生3D分割模块组成，在四个任务上联合训练。在肝脏、肾脏和胰腺上，RepConTUR在文本提示基线中取得了最高的Dice相似系数（DSC）、实例级精确率和检测F1，并且添加报告提高了平均精确率，同时召回率保持相当。与两个仅视觉的专家模型nnU-Net和报告监督的R-Super相比，RepConTUR在肝脏和胰腺的每个域内指标上取得最高值，并在四个分布外公共队列上取得最高的平均DSC、召回率、精确率和检测F1。消融实验表明，以叙述性报告为条件在同一模型内将检测F1从0.499提高到0.528，联合GSEG训练将RES F1从0.450提高到0.482，并且原生3D分割模块相比其2D对应物将GSEG F1从0.139提高到0.528。代码可在https://github.com/Oncosoft-Research/RepConTUR获取。",
