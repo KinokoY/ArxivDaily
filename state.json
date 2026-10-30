@@ -7175,11 +7175,13 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-30T12:20:35.096844+00:00",
-        "run_id": "20261030T122035Z-c073ce5f",
-        "stage": "translation"
+      "title_zh": "CASE：基于正负视觉示例的概念感知分割",
+      "translation": {
+        "abstract_zh": "少样本语义分割通常基于单一语义类别的正支持示例来识别目标对象。然而在实践中，仅靠正线索往往不够明确：例如，“红色汽车”可能会与各种颜色的汽车混淆，“车辆”可能会包含本应排除的汽车，而“由材质定义的对象”可能跨越多个类别。满足精确请求需要正示例提供包含证据，负示例作为意图定义约束以用于排除和消歧。我们将这一设定表述为指定视觉提示分割（Specified Visual Prompt Segmentation, SVPS），其中目标概念由正负视觉提示共同指定。在本工作中，视觉示例指由边界框提示指定的支持图像区域。为研究 SVPS，我们引入了 CASE（Concept-Aware Segmentation from Positive and Negative Visual Exemplars），一个基于 COCO 和 PACO 构建的基准。CASE 涵盖六个类别级和属性级任务族：排除、隔离、并集、属性排除、属性隔离和属性并集。我们在该设定下评估 SAM 3，发现尽管其具有强大的仅正示例少样本分割能力，冻结的 SAM 3 并不能始终将负视觉提示视为排除证据。为解决这一问题，我们提出了概念提示适配（Concept Prompt Adaptation, CPA），一种保守的基于 LoRA 的适配基线，它在 CASE 上改进了正负提示解释，同时在仅正示例少样本分割下保持竞争力。代码见 https://github.com/WongKinYiu/FSS-CASE。",
+        "title_zh": "CASE：基于正负视觉示例的概念感知分割"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.39396v1"
       ]
