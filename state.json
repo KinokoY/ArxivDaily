@@ -91,7 +91,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-10-29T12:28:52.774119+00:00"
+    "last_complete_end": "2026-10-30T12:20:35.096844+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -6158,7 +6158,7 @@
       "failures": {},
       "first_discovered": "2026-10-26T12:27:23.835250+00:00",
       "intended_tier": "translation",
-      "latest_version": "2610.32220v1",
+      "latest_version": "2610.32220v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Autoregressive vision-language models (VLMs) struggle to ground generated text in the correct image regions, and existing explainability methods, such as attention maps and Logit Lens, often produce poor spatial explanations due to weak text-to-vision attention and sink tokens. We propose \\textbf{Angular Relevance} ($R_L$), a simple visualization measure based on cosine similarity between visual token embeddings and unembedding-matrix rows. Because $R_L$ is invariant to token norm, it produces substantially sharper and more faithful heatmaps than attention maps or Logit Lens on out-of-the-box models. Without any training, $R_L$ yields competitive referring-expression segmentation (RES), outperforming prior diagnostic maps and CLIP-based training-free methods. To preserve localized object information during cross-modal mixing, we introduce \\textbf{Angular Object-Aware Loss (AOL)}, an auxiliary loss that directly supervises visual token embeddings to align angularly with the vocabulary directions of their corresponding object concepts. Finetuning with AOL alongside the standard next-token prediction objective significantly sharpens object localization in heatmaps, showing that the VLM's own visual tokens can be used directly for grounding and improving RES, without training any segmentation heads and without degrading general VQA performance. We further demonstrate that the learned grounding also transfers to category-level segmentation of object categories not seen during training.",
@@ -6199,7 +6199,8 @@
       "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
       "translation_provider": "llm",
       "versions": [
-        "2610.32220v1"
+        "2610.32220v1",
+        "2610.32220v2"
       ]
     },
     "2610.32377": {
@@ -6311,6 +6312,7 @@
       "failures": {},
       "first_discovered": "2026-10-28T12:19:47.849457+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.33056v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "While Multimodal Large Language Models (MLLMs) have revolutionized general visual perception, existing methods suffer from severe hallucination in the aerial domain, where extreme scale variations and visual ambiguity abound. Existing Supervised Fine-Tuning (SFT) paradigms force models to mimic ground truth without modeling uncertainty, often resulting in blind guessing on tiny or unrecognizable objects in aerial scenes. In this paper, we present Aerial-R1, the first aerial MLLM framework to reinforce visual reasoning capabilities for aerial reasoning and segmentation. Drawing inspiration from the reasoning-incentivizing mechanisms of DeepSeek-R1, we find that trustworthy perception stems from consistency across views, establishing a visual parallel to the Chain-of-Thought in logic. To effectively adapt policy optimization for non-autoregressive mask generation, we introduce Hybrid-View Group Advantage-Weighted Regression (H-GAWR). This strategy constructs dynamic groups of high-resolution and low-resolution views, seamlessly bridging group-relative advantage estimation with advantage-weighted policy extraction. By enforcing consensus on clear inputs and strictly penalizing hallucinations on ambiguous ones, Aerial-R1 develops an explicitly incentivized refusal mechanism. Extensive experiments on VSAI-Ref, the first aerial MLLM benchmark dedicated to jointly evaluating dense reasoning and hallucination robustness, demonstrate that Aerial-R1 significantly outperforms SFT baselines in segmentation precision while substantially mitigating fatal hallucinations in low-information scenarios, paving the way for more reliable and trustworthy aerial agents. Codes are available on https://github.com/phy709/Aerial-R1.",
@@ -6346,8 +6348,8 @@
       ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
-        "general_rl",
-        "general_reasoning"
+        "general_reasoning",
+        "general_rl"
       ],
       "stage": "delivered",
       "title_zh": "Aerial-R1：强化多模态大语言模型中的航空推理与分割",
@@ -6986,7 +6988,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-28T12:19:47.849457+00:00",
-      "latest_version": "2610.36722v1",
+      "latest_version": "2610.36722v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Accurate phytoplankton segmentation is essential for ecological monitoring, yet it remains largely underexplored due to the subtle visual characteristics of phytoplankton and the scarcity of pixel-level annotations. To address these challenges, we propose PhySeg, a SAM-based segmentation framework equipped with a lightweight refinement module that progressively restores fine-grained details through multi-scale feature fusion. In addition, we construct a phytoplankton segmentation dataset by manually annotating instance-level masks for an existing dataset, providing a valuable resource for future research. Experimental results demonstrate that PhySeg improves segmentation accuracy, validating the effectiveness of the proposed module. Code is available at https://github.com/lijialin404/PhySeg.",
@@ -7024,7 +7026,196 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "逐步优化 SAM 以实现准确的浮游植物分割",
       "versions": [
-        "2610.36722v1"
+        "2610.36722v1",
+        "2610.36722v2"
+      ]
+    },
+    "2610.39195": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "paper": {
+        "abstract": "Dropwise condensation is key to power and water systems. State-of-the-art condensation surfaces are often inhomogeneous, either patterned by design or random defects. Inhomogeneous surface features dictate the rates of each stage of dropwise condensation-nucleation, growth, coalescence, and shedding. Characterizing these rates requires the precise detection of thousands of droplets. Yet, existing segmentation methods are unable to detect droplets on inhomogeneous surfaces. We developed TileSAM3, a universal droplet segmentation tool built on the Segment Anything Model 3 (SAM3). Hierarchical tiling with per-tile inference followed by post-processing extended SAM3's detection cap and raised the effective resolution of small droplets. We created two datasets: High Quality Droplet Dataset (N=365,826; HQDD) with homogeneous surfaces and Low Quality Droplet Dataset (N=63,577; LQDD) with patterned, defect-laden surfaces under adverse lighting. TileSAM3 closely reproduced thresholding annotations on HQDD, surpassed it over sixfold on LQDD (Average Precision 0.57 versus 0.088), and outperformed other deep learning models on all metrics evaluated. Combined with KD-tree tracking, TileSAM3 identified localized nucleation and coalescence in narrow active bands on a stiffness-patterned surface. TileSAM3 enables analysis of understudied inhomogeneous substrates with poor lighting and videography which facilitates faster, lower cost research of condensation materials.",
+        "authors": [
+          "Tae E. Cooper",
+          "Michael Gee",
+          "Sheila Whitman",
+          "Jemma Dengel",
+          "Anthony Katselas",
+          "Duygu Dengiz",
+          "Frank Keutsch",
+          "Joanna Aizenberg"
+        ],
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.39195v1",
+        "published": "2026-10-29T02:16:16+00:00",
+        "title": "Analyzing Condensation on Patterned Surfaces via Deep Learning",
+        "updated": "2026-10-29T02:16:16+00:00",
+        "version_id": "2610.39195v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.39195v1"
+      ]
+    },
+    "2610.39396": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "paper": {
+        "abstract": "Few-shot semantic segmentation typically identifies target objects based on positive support examples of a single semantic class. In practice, however, positive cues alone are often underspecified: for instance, \"red cars\" may be confused with cars of all colors, \"vehicles\" may include cars that should be excluded, and \"material-defined objects\" may span multiple categories. Fulfilling precise requests requires positive exemplars to provide inclusion evidence and negative exemplars to act as intent-defining constraints for exclusion and disambiguation. We formulate this setting as Specified Visual Prompt Segmentation (SVPS), where the target concept is specified by both positive and negative visual prompts. In this work, visual exemplars refer to support-image regions specified by bounding-box prompts. To study SVPS, we introduce CASE (Concept-Aware Segmentation from Positive and Negative Visual Exemplars), a benchmark built on COCO and PACO. CASE encompasses six category- and attribute-level task families: exclusion, isolation, union, attribute exclusion, attribute isolation, and attribute union. We evaluate SAM 3 under this setting and find that, despite its powerful positive-only few-shot segmentation capability, frozen SAM 3 does not consistently treat negative visual prompts as exclusion evidence. To address this, we present Concept Prompt Adaptation (CPA), a conservative LoRA-based adaptation baseline that improves positive-negative prompt interpretation on CASE while remaining competitive under positive-only few-shot segmentation. Code is available at https://github.com/WongKinYiu/FSS-CASE.",
+        "authors": [
+          "Yi-Jen Tsai",
+          "Yen-Yu Lin",
+          "Chien-Yao Wang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.39396v1",
+        "published": "2026-10-29T05:31:08+00:00",
+        "title": "CASE: Concept-Aware Segmentation from Positive and Negative Visual Exemplars",
+        "updated": "2026-10-29T05:31:08+00:00",
+        "version_id": "2610.39396v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.39396v1"
+      ]
+    },
+    "2610.39676": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "paper": {
+        "abstract": "Event cameras offer microsecond temporal resolution, high dynamic range and no motion blur, but referring video object segmentation (RVOS) lacks event-stream datasets and models. We introduce Event-SAMA-239K, a synthetic-event conversion of the SAMA-239K grounded video-chat corpus and all additional SAMA training data: 30,650 video clips and 392,162 images. Optical-flow, FILM or saccade upsampling followed by a linear event generator preserves all mask, referring-expression and dialogue annotations. We also introduce Event-SAMA, adapting SAMA-4B with a two-channel polarity patch embedding initialised from pretrained RGB weights and a zero-initialised event adapter. End-to-end training yields 24.37 $\\mathcal{J}\\&\\mathcal{F}$ on MeViS valid_u and 22.33 $\\mathcal{J}\\&\\mathcal{F}$ on the converted ReVOS valid subset, establishing the first event-native RVOS baseline (RGB SAMA-4B: 55.4 on MeViS). Frozen RGB SAMA-4B with pseudo-RGB renderings or E2VID reconstructions of the same events scores 13.23 and 15.94 $\\mathcal{J}\\&\\mathcal{F}$. Without retraining, Event-SAMA works on real event-camera recordings when the accumulation window matches their event density. A seed-controlled ablation with a measured noise floor of 0.47 $\\mathcal{J}\\&\\mathcal{F}$ finds gains from diverse training sources over MeViS alone (+4.99), RGB-mean event-stem initialisation (+4.33), and a trainable SAM2 mask decoder (+2.76); the event adapter, partial ViT unfreezing and event polarity are within noise at this budget. An earlier, partially converted corpus snapshot trained with the identical recipe scores 1.38 $\\mathcal{J}\\&\\mathcal{F}$ higher on MeViS and 1.12 higher on ReVOS. Both are single runs that also differ in schedule length, so we draw no conclusion about corpus scale.",
+        "authors": [
+          "Sergei Fedorchenko",
+          "Max Zehnder",
+          "Nikola Zubić",
+          "Rong Zou",
+          "Davide Scaramuzza"
+        ],
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CL",
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.39676v1",
+        "published": "2026-10-29T09:22:49+00:00",
+        "title": "Event-SAMA: Language-Grounded Video Object Segmentation on Neuromorphic Event Streams",
+        "updated": "2026-10-29T09:22:49+00:00",
+        "version_id": "2610.39676v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.39676v1"
+      ]
+    },
+    "2610.40029": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "paper": {
+        "abstract": "Medical image segmentation is crucial for clinical diagnosis and treatment planning, requiring both global contextual understanding and fine-grained structural precision. While the Segment Anything Model (SAM) demonstrates strong generalization capabilities, its direct application to medical images often lacks domain-specific adaptability. Meanwhile, State Space Models (SSMs)-based methods, such as Mamba, efficiently capture long-range dependencies but may struggle with preserving fine anatomical details. To address these challenges, we propose a segment anything model based context guided mamba unet, SAMBA-UNet, a novel framework that integrates SAM's context knowledge with Mamba's hierarchical feature learning to enhance both global representation and local detail refinement. Specifically, we introduce the Hierarchical Context Enhancement Module (HCEM), an attention-based fusion module that deeply incorporates the multi-level features of SAM and Mamba to improve detail perception and segmentation precision. Additionally, we employ LoRA and Adapter-based fine-tuning to adapt SAM to medical imaging tasks, further enhancing its domain-specific segmentation capability and robustness. We conducted a comprehensive study on several medical segmentation datasets, including Synapse, ISIC17, and ISIC18, evaluating our method across multiple metrics. Experimental results demonstrate that SAMBA-UNet achieves state-of-the-art performance, effectively balancing generalization, segmentation accuracy, and computational efficiency. Our code will be released upon acceptance.",
+        "authors": [
+          "Chenchen Wang",
+          "You Zhou"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.40029v1",
+        "published": "2026-10-29T13:36:01+00:00",
+        "title": "Segment Anything Model Based Context Guided Mamba Unet for Medical Image Segmentation",
+        "updated": "2026-10-29T13:36:01+00:00",
+        "version_id": "2610.40029v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.40029v1"
+      ]
+    },
+    "2610.40094": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "paper": {
+        "abstract": "Tumor delineation is required for radiotherapy planning, yet automatic segmentation is limited by errors, predominantly false positives, that distort dose and increase editing time. The radiology report accompanies the scan and localizes disease at the suborgan level, but existing text-promptable models condition on short referring phrases, and most operate in 2D. We present RepConTUR, a single native-3D early-fusion multimodal model that conditions volumetric abdominal tumor segmentation on the narrative report. We extend AbdomenAtlas 3.0 to a suborgan-level promptable segmentation dataset and generate report-based VQA pairs, yielding four report-derived tasks on the same annotations: referring segmentation (RES), report-grounded segmentation (GSEG), report generation (RRG), and visual question answering (VQA). We train RepConTUR, comprising a 3D CT encoder, an early-fusion language model, and a native-3D segmentation module, jointly on the four tasks. Across liver, kidney and pancreas, RepConTUR attains the highest Dice similarity coefficient (DSC), instance-wise precision, and detection F1 among the text-promptable baselines, and adding the report raises mean precision while leaving recall comparable. Against two vision-only specialists, nnU-Net and the report-supervised R-Super, RepConTUR attains the highest value on every in-domain metric for liver and pancreas and the highest mean DSC, recall, precision, and detection F1 over the four out-of-distribution public cohorts. Ablations indicate that conditioning on the narrative report raises detection F1 from 0.499 to 0.528 within the same model, that joint GSEG training raises RES F1 from 0.450 to 0.482, and that the native-3D segmentation module raises GSEG F1 from 0.139 to 0.528 over its 2D counterpart. Code is available at https://github.com/Oncosoft-Research/RepConTUR.",
+        "authors": [
+          "Seunghwan Lee",
+          "Sangjoon Park",
+          "Jongmin Lee",
+          "Yoon Jo Kim",
+          "Wonyoung Cho",
+          "Jin Sung Kim",
+          "Han Joo Chae"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.40094v1",
+        "published": "2026-10-29T13:59:44+00:00",
+        "title": "RepConTUR: A Report-Conditioned Volumetric Multimodal Model for Abdominal Tumor Segmentation",
+        "updated": "2026-10-29T13:59:44+00:00",
+        "version_id": "2610.40094v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.40094v1"
+      ]
+    },
+    "2610.40580": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "paper": {
+        "abstract": "Current zero-shot anomaly detection methods often rely on complex prompt-learning techniques or computationally expensive sliding-window strategies to achieve fine-grained visual alignment to detect small-scale anomalies. This reliance stems from the fundamental limitation of standard CLIP architectures, where [CLS] token attention and spatial patch pooling struggle to capture subtle, localized anomaly features. While prompt-learning approaches aim to bridge this gap, they typically require a large number of ground-truth segmentation masks from auxiliary datasets, which are often unavailable in specialized domains. In this work, we show an emerging property of multi-head attention pooling in vision-language models: remarkable zero-shot anomaly localization and detection right out of the box. We translate this property into a single-pass anomaly detection technique, RADIOlogy, that does not require dense, windowed execution and significantly outperforms other training-free baselines. Instead, the method relies on a simple contrastive scoring approach that compares the average similarity between vision features and a suite of normal and abnormal prompts. Furthermore, we leverage the agglomerative features of RADIO models to enhance pixel-level anomaly segmentation using a dense anomaly refinement pipeline. Finally, we show how the vision-language family of training-free zero-shot anomaly detection techniques can be applied successfully to the medical domain with minimal modifications. Code is available at https://github.com/jacomof/RADIOlogy.",
+        "authors": [
+          "Joaquín Figueira",
+          "Giacomo D'Amicantonio",
+          "Egor Bondarau"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.40580v1",
+        "published": "2026-10-29T17:45:35+00:00",
+        "title": "RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection",
+        "updated": "2026-10-29T17:45:35+00:00",
+        "version_id": "2610.40580v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.40580v1"
       ]
     }
   },
@@ -8020,10 +8211,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-10-30",
+      "discovered_candidates": 27,
+      "discovered_papers": 27,
       "run_id": "20261030T122035Z-c073ce5f",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-10-30T12:20:00+00:00",
+          "seen": 5793,
+          "start": "2026-10-16T12:20:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-10-30T12:20:35.096844+00:00",
       "window": {
         "end": "2026-10-30T12:20:35.096844+00:00",

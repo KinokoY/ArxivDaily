@@ -4,6 +4,12 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-10-30 | RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection | 待翻译 | [arXiv 2610.40580v1](https://arxiv.org/abs/2610.40580v1) |
+| 2026-10-30 | RepConTUR: A Report-Conditioned Volumetric Multimodal Model for Abdominal Tumor Segmentation | 待翻译 | [arXiv 2610.40094v1](https://arxiv.org/abs/2610.40094v1) |
+| 2026-10-30 | Segment Anything Model Based Context Guided Mamba Unet for Medical Image Segmentation | 待翻译 | [arXiv 2610.40029v1](https://arxiv.org/abs/2610.40029v1) |
+| 2026-10-30 | Event-SAMA: Language-Grounded Video Object Segmentation on Neuromorphic Event Streams | 待翻译 | [arXiv 2610.39676v1](https://arxiv.org/abs/2610.39676v1) |
+| 2026-10-30 | CASE: Concept-Aware Segmentation from Positive and Negative Visual Exemplars | 待翻译 | [arXiv 2610.39396v1](https://arxiv.org/abs/2610.39396v1) |
+| 2026-10-30 | Analyzing Condensation on Patterned Surfaces via Deep Learning | 待翻译 | [arXiv 2610.39195v1](https://arxiv.org/abs/2610.39195v1) |
 | 2026-10-28 | Progressively Refining SAM for Accurate Phytoplankton Segmentation | 逐步优化 SAM 以实现准确的浮游植物分割 | [arXiv 2610.36722v1](https://arxiv.org/abs/2610.36722v1) |
 | 2026-10-28 | SAGE: Saliency-Annealed Gated Encoder for Universal Vision Recognition | SAGE：用于通用视觉识别的显著性退火门控编码器 | [arXiv 2610.36719v1](https://arxiv.org/abs/2610.36719v1) |
 | 2026-10-28 | ClusterSplat: Semantic Cluster Selection for 3D Visual Grounding in Gaussian Splatting | ClusterSplat：面向高斯泼溅中三维视觉定位的语义聚类选择 | [arXiv 2610.36462v1](https://arxiv.org/abs/2610.36462v1) |
