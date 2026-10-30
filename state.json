@@ -7156,7 +7156,9 @@
       ]
     },
     "2610.40094": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
@@ -7185,6 +7187,11 @@
         "general_reasoning"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-30T12:20:35.096844+00:00",
+        "run_id": "20261030T122035Z-c073ce5f",
+        "stage": "selection"
+      },
       "versions": [
         "2610.40094v1"
       ]
