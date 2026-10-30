@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-10-30 | RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection | 待翻译 | [arXiv 2610.40580v1](https://arxiv.org/abs/2610.40580v1) |
-| 2026-10-30 | RepConTUR: A Report-Conditioned Volumetric Multimodal Model for Abdominal Tumor Segmentation | 待翻译 | [arXiv 2610.40094v1](https://arxiv.org/abs/2610.40094v1) |
+| 2026-10-30 | RepConTUR: A Report-Conditioned Volumetric Multimodal Model for Abdominal Tumor Segmentation | RepConTUR：一种用于腹部肿瘤分割的报告条件体积多模态模型 | [arXiv 2610.40094v1](https://arxiv.org/abs/2610.40094v1) |
 | 2026-10-30 | Segment Anything Model Based Context Guided Mamba Unet for Medical Image Segmentation | 待翻译 | [arXiv 2610.40029v1](https://arxiv.org/abs/2610.40029v1) |
 | 2026-10-30 | Event-SAMA: Language-Grounded Video Object Segmentation on Neuromorphic Event Streams | 待翻译 | [arXiv 2610.39676v1](https://arxiv.org/abs/2610.39676v1) |
 | 2026-10-30 | CASE: Concept-Aware Segmentation from Positive and Negative Visual Exemplars | 待翻译 | [arXiv 2610.39396v1](https://arxiv.org/abs/2610.39396v1) |

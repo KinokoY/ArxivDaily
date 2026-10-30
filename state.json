@@ -7381,11 +7381,13 @@
         "general_reasoning"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-10-30T12:20:35.096844+00:00",
-        "run_id": "20261030T122035Z-c073ce5f",
-        "stage": "translation"
+      "title_zh": "RepConTUR：一种用于腹部肿瘤分割的报告条件体积多模态模型",
+      "translation": {
+        "abstract_zh": "肿瘤勾画是放疗计划所必需的，但自动分割受限于误差，主要是假阳性，这些误差会扭曲剂量并增加编辑时间。影像报告随扫描一同提供，并在亚器官层面定位疾病，但现有的文本提示模型以简短的指代短语为条件，且大多在2D中运行。我们提出RepConTUR，一种单一的原生3D早期融合多模态模型，以叙述性报告为条件进行体积腹部肿瘤分割。我们将AbdomenAtlas 3.0扩展为亚器官级可提示分割数据集，并生成基于报告的VQA对，在同一标注上产生四个源自报告的任务：指代分割（RES）、报告接地分割（GSEG）、报告生成（RRG）和视觉问答（VQA）。我们训练RepConTUR，其由3D CT编码器、早期融合语言模型和原生3D分割模块组成，在四个任务上联合训练。在肝脏、肾脏和胰腺上，RepConTUR在文本提示基线中取得了最高的Dice相似系数（DSC）、实例级精确率和检测F1，并且添加报告提高了平均精确率，同时召回率保持相当。与两个仅视觉的专家模型nnU-Net和报告监督的R-Super相比，RepConTUR在肝脏和胰腺的每个域内指标上取得最高值，并在四个分布外公共队列上取得最高的平均DSC、召回率、精确率和检测F1。消融实验表明，以叙述性报告为条件在同一模型内将检测F1从0.499提高到0.528，联合GSEG训练将RES F1从0.450提高到0.482，并且原生3D分割模块相比其2D对应物将GSEG F1从0.139提高到0.528。代码可在https://github.com/Oncosoft-Research/RepConTUR获取。",
+        "title_zh": "RepConTUR：一种用于腹部肿瘤分割的报告条件体积多模态模型"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.40094v1"
       ]
