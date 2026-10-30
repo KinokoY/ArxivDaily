@@ -7108,11 +7108,8 @@
         "transferable_objective"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-10-30T12:20:35.096844+00:00",
-        "run_id": "20261030T122035Z-c073ce5f",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "通过深度学习分析图案化表面上的凝结",
       "versions": [
         "2610.39195v1"
       ]
