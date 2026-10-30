@@ -7068,9 +7068,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We formulate this setting as Specified Visual Prompt Segmentation (SVPS), where the target concept is specified by both positive and negative visual prompts.",
+          "To study SVPS, we introduce CASE (Concept-Aware Segmentation from Positive and Negative Visual Exemplars), a benchmark built on COCO and PACO.",
+          "we present Concept Prompt Adaptation (CPA), a conservative LoRA-based adaptation baseline that improves positive-negative prompt interpretation on CASE while remaining competitive under positive-only few-shot segmentation."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文提出正负视觉示例指定的分割设定SVPS，并构建CASE基准及CPA LoRA适配基线，涉及通过排除/消歧约束实现概念感知分割，属于通用图像推理分割的轻量相关清单；未涉及医学影像、RL或DPO方法贡献，也无理论或迁移证据。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 62,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "未读正文，无法确认CPA的具体实现、消融和性能提升幅度",
+          "未确认该任务是否包含语言思维链或更广泛的推理机制，摘要仅显示视觉提示定义概念"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Few-shot semantic segmentation typically identifies target objects based on positive support examples of a single semantic class. In practice, however, positive cues alone are often underspecified: for instance, \"red cars\" may be confused with cars of all colors, \"vehicles\" may include cars that should be excluded, and \"material-defined objects\" may span multiple categories. Fulfilling precise requests requires positive exemplars to provide inclusion evidence and negative exemplars to act as intent-defining constraints for exclusion and disambiguation. We formulate this setting as Specified Visual Prompt Segmentation (SVPS), where the target concept is specified by both positive and negative visual prompts. In this work, visual exemplars refer to support-image regions specified by bounding-box prompts. To study SVPS, we introduce CASE (Concept-Aware Segmentation from Positive and Negative Visual Exemplars), a benchmark built on COCO and PACO. CASE encompasses six category- and attribute-level task families: exclusion, isolation, union, attribute exclusion, attribute isolation, and attribute union. We evaluate SAM 3 under this setting and find that, despite its powerful positive-only few-shot segmentation capability, frozen SAM 3 does not consistently treat negative visual prompts as exclusion evidence. To address this, we present Concept Prompt Adaptation (CPA), a conservative LoRA-based adaptation baseline that improves positive-negative prompt interpretation on CASE while remaining competitive under positive-only few-shot segmentation. Code is available at https://github.com/WongKinYiu/FSS-CASE.",
         "authors": [
@@ -7087,15 +7110,11 @@
         "updated": "2026-10-29T05:31:08+00:00",
         "version_id": "2610.39396v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-30T12:20:35.096844+00:00",
-        "run_id": "20261030T122035Z-c073ce5f",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2610.39396v1"
       ]
