@@ -7121,6 +7121,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Few-shot semantic segmentation typically identifies target objects based on positive support examples of a single semantic class. In practice, however, positive cues alone are often underspecified: for instance, \"red cars\" may be confused with cars of all colors, \"vehicles\" may include cars that should be excluded, and \"material-defined objects\" may span multiple categories. Fulfilling precise requests requires positive exemplars to provide inclusion evidence and negative exemplars to act as intent-defining constraints for exclusion and disambiguation. We formulate this setting as Specified Visual Prompt Segmentation (SVPS), where the target concept is specified by both positive and negative visual prompts. In this work, visual exemplars refer to support-image regions specified by bounding-box prompts. To study SVPS, we introduce CASE (Concept-Aware Segmentation from Positive and Negative Visual Exemplars), a benchmark built on COCO and PACO. CASE encompasses six category- and attribute-level task families: exclusion, isolation, union, attribute exclusion, attribute isolation, and attribute union. We evaluate SAM 3 under this setting and find that, despite its powerful positive-only few-shot segmentation capability, frozen SAM 3 does not consistently treat negative visual prompts as exclusion evidence. To address this, we present Concept Prompt Adaptation (CPA), a conservative LoRA-based adaptation baseline that improves positive-negative prompt interpretation on CASE while remaining competitive under positive-only few-shot segmentation. Code is available at https://github.com/WongKinYiu/FSS-CASE.",
@@ -7138,11 +7139,22 @@
         "updated": "2026-10-29T05:31:08+00:00",
         "version_id": "2610.39396v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2610.39396v1"
       ]
