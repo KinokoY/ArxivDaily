@@ -91,6 +91,10 @@
     "20261030T122035Z-c073ce5f-65699c3193bf": {
       "attempts": 1,
       "created_at": "2026-10-30T12:20:35.096844+00:00"
+    },
+    "20261031T115121Z-0d757a43-7dd5a22bba13": {
+      "attempts": 0,
+      "created_at": "2026-10-31T11:51:21.995138+00:00"
     }
   },
   "collection": {
@@ -2418,6 +2422,66 @@
       "run_id": "20261030T122035Z-c073ce5f",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261031T115121Z-0d757a43-7dd5a22bba13": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/10/31/20261031T115121Z-0d757a43-7dd5a22bba13.md",
+      "chain_root": "20261031T115121Z-0d757a43-7dd5a22bba13",
+      "chain_roots": [
+        "20261031T115121Z-0d757a43-7dd5a22bba13"
+      ],
+      "content_hash": "7dd5a22bba13efb38a0a3a014d3d0245a61612b56ada9cf1dee1445a0d246728",
+      "created_at": "2026-10-31T11:51:21.995138+00:00",
+      "day": "2026-10-31",
+      "digest_id": "20261031T115121Z-0d757a43-7dd5a22bba13",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "The scale of modern foundation models enables broad task generalization. In medical imaging, where segmentation demands vary widely across clinical contexts, such flexibility is invaluable. But current models, such as SAM trade adaptability for scale, locking their utility behind high-end infrastructure and leaving behind the low-resource environments most in need of diagnostic support. To bridge this gap, we introduce Foundational-NCA, a lightweight foundation model capable of adapting to a wide range of medical segmentation tasks without retraining. Built on Neural Cellular Automata (NCA), Foundational-NCA incorporates gradient-based learning with genetic optimization over a latent task space, using a compact task vector to guide predictions. This enables dynamic adaptation via a genetic prompt mechanism, allowing the model to generalize across tasks while keeping the parameter count magnitudes lower at just 211 thousand, compared to SAM-based models with 38.9 to 636 million parameters. We evaluate Foundational-NCA on 15 trained and 6 entirely unseen segmentation tasks from the TotalSegmentator dataset, achieving an average Dice score of 84.5% on known tasks and 60.4% on unseen ones. These results demonstrate that task generalization is possible in ultra-compact models, laying the groundwork for resource-efficient, deployable foundation models in clinical environments where infrastructure is limited. By reducing model size by over 180 times, Foundational-NCA takes a step toward a more equitable future for medical AI, one where powerful tools are within reach of every healthcare setting.",
+            "authors": [
+              "John Kalkhof",
+              "Niklas Ihm",
+              "Daniel Kirste",
+              "Anirban Mukhopadhyay"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2610.38776v1",
+            "published": "2026-10-28T19:50:59+00:00",
+            "title": "A 211K Parameter Foundation Model: Genetic Prompting in Neural Cellular Automata",
+            "updated": "2026-10-28T19:50:59+00:00",
+            "version_id": "2610.38776v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "transferable_objective"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "现代基础模型的规模使得广泛的任务泛化成为可能。在医学影像领域，分割需求因临床场景而异，这种灵活性尤为宝贵。但当前模型（如SAM）以可适应性换取规模，将其效用锁定在高端基础设施之后，遗忘了最需要诊断支持的低资源环境。为弥合这一差距，我们提出Foundational-NCA，一种轻量级基础模型，无需重新训练即可适应广泛的医学分割任务。Foundational-NCA构建于神经细胞自动机（NCA）之上，将基于梯度的学习与潜在任务空间上的遗传优化相结合，使用紧凑的任务向量来指导预测。这通过遗传提示机制实现动态适应，使模型能够跨任务泛化，同时将参数量保持在仅21.1万的量级，远低于基于SAM的模型（3890万至6.36亿参数）。我们在TotalSegmentator数据集的15个已训练和6个完全未见的分割任务上评估Foundational-NCA，在已知任务上达到84.5%的平均Dice分数，在未见任务上达到60.4%。这些结果表明，超紧凑模型中的任务泛化是可能的，为基础设施有限的临床环境中资源高效、可部署的基础模型奠定了基础。通过将模型规模缩小180倍以上，Foundational-NCA朝着医学AI更公平的未来迈出了一步，让强大的工具触手可及每一个医疗场景。",
+            "title_zh": "一个211K参数的基础模型：神经细胞自动机中的遗传提示"
+          }
+        }
+      ],
+      "notification_hash": "b17be257a911f32354bfe955d4325b226bf327d2ac58be2c0820941bae0d74cd",
+      "recovery_of": [],
+      "rendered": {
+        "2610.38776": "rendered_inline_translation"
+      },
+      "run_id": "20261031T115121Z-0d757a43",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
