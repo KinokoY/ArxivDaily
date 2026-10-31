@@ -7202,9 +7202,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "In medical imaging, where segmentation demands vary widely across clinical contexts, such flexibility is invaluable.",
+          "Built on Neural Cellular Automata (NCA), Foundational-NCA incorporates gradient-based learning with genetic optimization over a latent task space, using a compact task vector to guide predictions.",
+          "This enables dynamic adaptation via a genetic prompt mechanism, allowing the model to generalize across tasks while keeping the parameter count magnitudes lower at just 211 thousand, compared to SAM-based models with 38.9 to 636 million parameters."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文是医学分割的超轻量 NCA foundation model，核心是遗传提示/遗传优化实现免重训练任务适配。摘要未显示其提出有理论依据、可迁移到推理分割的损失/优化目标，也未涉及 RL/DPO 或空间/隐含请求到像素掩码的推理；规则命中 transferable_objective 但理论与迁移证据不足，故标 uncertain/light。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "遗传优化是否构成本文的核心损失/优化目标贡献，还是仅作为任务提示搜索机制？",
+          "摘要未提供该优化目标的理论依据或向推理分割/其他任务迁移的证据。",
+          "是否与 RL 或 DPO 有关？摘要未提及，不能确认。",
+          "是否处理隐含请求或空间/位置推理到像素掩码？摘要仅描述医学分割任务适配。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-31T11:51:21.995138+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "The scale of modern foundation models enables broad task generalization. In medical imaging, where segmentation demands vary widely across clinical contexts, such flexibility is invaluable. But current models, such as SAM trade adaptability for scale, locking their utility behind high-end infrastructure and leaving behind the low-resource environments most in need of diagnostic support. To bridge this gap, we introduce Foundational-NCA, a lightweight foundation model capable of adapting to a wide range of medical segmentation tasks without retraining. Built on Neural Cellular Automata (NCA), Foundational-NCA incorporates gradient-based learning with genetic optimization over a latent task space, using a compact task vector to guide predictions. This enables dynamic adaptation via a genetic prompt mechanism, allowing the model to generalize across tasks while keeping the parameter count magnitudes lower at just 211 thousand, compared to SAM-based models with 38.9 to 636 million parameters. We evaluate Foundational-NCA on 15 trained and 6 entirely unseen segmentation tasks from the TotalSegmentator dataset, achieving an average Dice score of 84.5% on known tasks and 60.4% on unseen ones. These results demonstrate that task generalization is possible in ultra-compact models, laying the groundwork for resource-efficient, deployable foundation models in clinical environments where infrastructure is limited. By reducing model size by over 180 times, Foundational-NCA takes a step toward a more equitable future for medical AI, one where powerful tools are within reach of every healthcare setting.",
         "authors": [
@@ -7222,15 +7247,11 @@
         "updated": "2026-10-28T19:50:59+00:00",
         "version_id": "2610.38776v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-10-31T11:51:21.995138+00:00",
-        "run_id": "20261031T115121Z-0d757a43",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2610.38776v1"
       ]
