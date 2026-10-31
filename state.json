@@ -2437,8 +2437,15 @@
       "content_hash": "7dd5a22bba13efb38a0a3a014d3d0245a61612b56ada9cf1dee1445a0d246728",
       "created_at": "2026-10-31T11:51:21.995138+00:00",
       "day": "2026-10-31",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "65186750",
+        "status": "confirmed"
+      },
       "digest_id": "20261031T115121Z-0d757a43-7dd5a22bba13",
       "empty": false,
+      "finished_at": "2026-10-31T11:55:30.636156+00:00",
       "items": [
         {
           "modules": [
@@ -2486,7 +2493,7 @@
       },
       "run_id": "20261031T115121Z-0d757a43",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -7276,7 +7283,6 @@
       ]
     },
     "2610.38776": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -7313,7 +7319,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -7338,7 +7344,6 @@
         "updated": "2026-10-28T19:50:59+00:00",
         "version_id": "2610.38776v1"
       },
-      "pending_digest": "20261031T115121Z-0d757a43-7dd5a22bba13",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -7354,7 +7359,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "一个211K参数的基础模型：神经细胞自动机中的遗传提示",
       "translation": {
         "abstract_zh": "现代基础模型的规模使得广泛的任务泛化成为可能。在医学影像领域，分割需求因临床场景而异，这种灵活性尤为宝贵。但当前模型（如SAM）以可适应性换取规模，将其效用锁定在高端基础设施之后，遗忘了最需要诊断支持的低资源环境。为弥合这一差距，我们提出Foundational-NCA，一种轻量级基础模型，无需重新训练即可适应广泛的医学分割任务。Foundational-NCA构建于神经细胞自动机（NCA）之上，将基于梯度的学习与潜在任务空间上的遗传优化相结合，使用紧凑的任务向量来指导预测。这通过遗传提示机制实现动态适应，使模型能够跨任务泛化，同时将参数量保持在仅21.1万的量级，远低于基于SAM的模型（3890万至6.36亿参数）。我们在TotalSegmentator数据集的15个已训练和6个完全未见的分割任务上评估Foundational-NCA，在已知任务上达到84.5%的平均Dice分数，在未见任务上达到60.4%。这些结果表明，超紧凑模型中的任务泛化是可能的，为基础设施有限的临床环境中资源高效、可部署的基础模型奠定了基础。通过将模型规模缩小180倍以上，Foundational-NCA朝着医学AI更公平的未来迈出了一步，让强大的工具触手可及每一个医疗场景。",
