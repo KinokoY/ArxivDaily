@@ -7199,7 +7199,9 @@
       ]
     },
     "2610.38776": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-31T11:51:21.995138+00:00",
@@ -7224,6 +7226,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-10-31T11:51:21.995138+00:00",
+        "run_id": "20261031T115121Z-0d757a43",
+        "stage": "selection"
+      },
       "versions": [
         "2610.38776v1"
       ]
