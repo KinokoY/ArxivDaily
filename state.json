@@ -8113,11 +8113,13 @@
         "general_reasoning"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-11-02T15:00:19.497385+00:00",
-        "run_id": "20261102T150019Z-9fb76c28",
-        "stage": "translation"
+      "title_zh": "注意力图知道何时思考：用于推理分割的免训练难度感知思维链",
+      "translation": {
+        "abstract_zh": "思维链（Chain-of-Thought, CoT）提示已成为多模态大语言模型（Multi-modal Large Language Models, MLLMs）中的标准推理策略，在推理分割等复杂视觉-语言任务中展现出强劲性能。然而，我们的分析表明，不加区分地使用 CoT 会因引入不必要的推理而导致性能下降，我们将这一现象称为过度思考（overthinking）。在推理分割中，过度思考往往导致查询意图与视觉定位之间的错位。为解决这一问题，我们提出了难度感知思维链（Difficulty-Aware Chain-of-Thought, DA-CoT），这是一个免训练的自适应框架，根据输入的内在难度选择性触发 CoT。我们发现，模型注意力图的熵能够可靠地反映任务难度：低熵表示模型有信心且定位集中，而高熵则表明存在不确定性、并可能从 CoT 中获益。DA-CoT 利用这一熵信号来决定是否应用 CoT 提示。此外，我们引入了一种双向反思（Bidirectional Rethinking）机制，使模型在初始输出失败时能够自动翻转其推理决策，通过从过度思考和思考不足所导致的失败中恢复来增强鲁棒性。DA-CoT 在推理分割基准上取得了最先进的性能，同时显著提升了推理效率，从而证明了其有效性。",
+        "title_zh": "注意力图知道何时思考：用于推理分割的免训练难度感知思维链"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.41618v1"
       ]
