@@ -8046,11 +8046,13 @@
         "general_reasoning"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-11-02T15:00:19.497385+00:00",
-        "run_id": "20261102T150019Z-9fb76c28",
-        "stage": "translation"
+      "title_zh": "ReVEAL：从多模态大语言模型中引出角色感知的潜在视觉证据以进行推理视频目标分割",
+      "translation": {
+        "abstract_zh": "推理视频目标分割（ReVOS）需要在整段视频中分割由隐式查询指定的目标。现有的基于多模态大语言模型（MLLM）的方法通常需要昂贵的跨模型对齐，并将 MLLM 的训练与下游分割模型绑定。我们提出 ReVEAL，一种用于 ReVOS 的解耦式“视频思维”框架，它从 MLLM 推理中引出角色感知的潜在视觉证据，以直接指导分割。ReVEAL 将视觉证据 token（VET）引入视频推理，将必要的视觉区域或实体与目标、背景或干扰物角色相关联，同时动态注意力层路由器跨层自适应地聚合 VET 对视频的注意力，形成角色特定的 grounding 证据。我们在构建的 ReVEAL-47K 数据集上训练 MLLM 执行 VET 增强推理，并以对比注意力 grounding 损失作为辅助监督，对 VET 注意力施加角色特定约束，并优化层路由以实现可靠的潜在 grounding。在推理时，ReVEAL 通过这一视频思维过程识别目标，并融合所得的角色特定证据，以指导冻结的 SAM2 预测目标掩码。在五个基准上的实验表明，ReVEAL 优于无需对齐的基线，并与基于对齐的方法保持竞争力。",
+        "title_zh": "ReVEAL：从多模态大语言模型中引出角色感知的潜在视觉证据以进行推理视频目标分割"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.41257v1"
       ]
