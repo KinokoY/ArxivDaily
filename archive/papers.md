@@ -4,6 +4,9 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-11-02 | Attention Maps Know When to Think: Training-Free Difficulty-Aware Chain-of-Thought for Reasoning Segmentation | 待翻译 | [arXiv 2610.41618v1](https://arxiv.org/abs/2610.41618v1) |
+| 2026-11-02 | ReVEAL: Eliciting Role-Aware Latent Visual Evidence from MLLMs for Reasoning Video Object Segmentation | 待翻译 | [arXiv 2610.41257v1](https://arxiv.org/abs/2610.41257v1) |
+| 2026-11-02 | Segment Anything Pancreas: A Unified MRI Segmentation Model for Pancreatic Cancer Radiotherapy | 待翻译 | [arXiv 2610.41063v1](https://arxiv.org/abs/2610.41063v1) |
 | 2026-10-31 | A 211K Parameter Foundation Model: Genetic Prompting in Neural Cellular Automata | 一个211K参数的基础模型：神经细胞自动机中的遗传提示 | [arXiv 2610.38776v1](https://arxiv.org/abs/2610.38776v1) |
 | 2026-10-30 | RADIOlogy: A Single-Pass Approach to Training-Free Zero-Shot Anomaly Detection | RADIOlogy：一种单次通过的无训练零样本异常检测方法 | [arXiv 2610.40580v1](https://arxiv.org/abs/2610.40580v1) |
 | 2026-10-30 | RepConTUR: A Report-Conditioned Volumetric Multimodal Model for Abdominal Tumor Segmentation | RepConTUR：一种用于腹部肿瘤分割的报告条件体积多模态模型 | [arXiv 2610.40094v1](https://arxiv.org/abs/2610.40094v1) |

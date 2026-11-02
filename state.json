@@ -103,7 +103,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-01T12:50:41.431040+00:00"
+    "last_complete_end": "2026-11-02T15:00:19.497385+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -7035,7 +7035,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
-      "latest_version": "2610.34599v1",
+      "latest_version": "2610.34599v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Despite advances in automated liver lesion segmentation, a gap remains between image-derived predictions and clinically interpretable radiology reports. Bridging this gap requires quantitative measurements that are both reproducible and traceable. We present an evidence-grounded agentic AI framework that connects liver and lesion segmentation with deterministic quantification and structured reporting. TotalSegmentator-based nnU-Net models delineate the liver, Couinaud segments, and lesions, while computational tools extract volumes, dimensions, counts, and anatomical locations. A large language model (LLM) organizes these measurements into a predefined reporting schema, with numerical consistency checks against source measurements. On 51 LiTS cases, the segmentation stage achieved a liver Dice score of 0.947, lesion sensitivity of 75.6%, and positive predictive value of 68.9%. Exploratory screening of 25,494 MERLIN reports identified 10,208 (40.0%) with liver-related abnormalities. By connecting quantitative imaging evidence with agentic report generation, this work takes a step toward human-centered medical AI that prioritizes traceability and clinical relevance.",
@@ -7073,7 +7073,8 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程",
       "versions": [
-        "2610.34599v1"
+        "2610.34599v1",
+        "2610.34599v2"
       ]
     },
     "2610.36462": {
@@ -7894,6 +7895,101 @@
       "title_zh": "RADIOlogy：一种单次通过的无训练零样本异常检测方法",
       "versions": [
         "2610.40580v1"
+      ]
+    },
+    "2610.41063": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-02T15:00:19.497385+00:00",
+      "paper": {
+        "abstract": "Background: Limited tumor annotations and incomplete labels across MRI datasets hinder unified segmentation of pancreatic tumors and organs at risk (OARs) for MRI-guided radiotherapy. Purpose: We propose Pancreas-MedNeXt, a unified model that segments the whole pancreas, its subregions, tumors, and surrounding OARs from one MRI volume. Methods: The model uses a shared MedNeXt encoder-decoder with supervised whole-pancreas and subregion pretraining, followed by multitask fine-tuning. Three output heads predict the pancreatic subregions, tumor, and OARs (stomach, duodenum, kidneys). An annotation-aware loss allows training on partially labeled data without treating unannotated structures as background. Pancreas and tumor were evaluated by three-fold cross-validation on 142 PANTHER patients (92 diagnostic, 50 MR-Linac), subregions and OARs on Cyst-X and AMOS test sets, and pancreas and OARs on 33 external T1-weighted TotalSegmentator scans. Comparisons with nnU-Net, MedNeXt, VISTA3D, and Swin UNETR used the Dice similarity coefficient (DSC) with paired bootstrap 95% CIs. Results: Pancreas-MedNeXt achieved the highest mean pancreas and tumor DSC on diagnostic and MR-Linac MRI. Tumor DSC was 58.41% and 42.55%, exceeding task-specific MedNeXt by 4.94 (95% CI: 0.28-9.45) and 5.89 (95% CI: 2.37-9.72) percentage points, respectively. Whole-pancreas DSC was 85.73% and 70.66%. Pretraining improved head, body, and tail DSC by 2.01, 3.00, and 3.78 percentage points over training from scratch. It also achieved the highest DSC for the pancreas, duodenum, and right kidney on AMOS, and for all five organs on external MRI, exceeding the next-best method by 4.92-8.85 percentage points.Conclusion: A single Pancreas-MedNeXt model segments tumors, pancreatic subregions, and OARs on diagnostic and MR-Linac MRI, which could streamline contouring for pancreatic cancer radiotherapy.",
+        "authors": [
+          "Zach Eidex",
+          "Mojtaba Safari",
+          "Kundan Thind",
+          "Parag J. Parikh",
+          "Zhen Tian",
+          "Xiaofeng Yang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.41063v1",
+        "published": "2026-10-29T23:18:16+00:00",
+        "title": "Segment Anything Pancreas: A Unified MRI Segmentation Model for Pancreatic Cancer Radiotherapy",
+        "updated": "2026-10-29T23:18:16+00:00",
+        "version_id": "2610.41063v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.41063v1"
+      ]
+    },
+    "2610.41257": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-02T15:00:19.497385+00:00",
+      "paper": {
+        "abstract": "Reasoning video object segmentation (ReVOS) requires segmenting the target specified by an implicit query throughout a video. Existing MLLM-based methods typically require costly cross-model alignment, tying MLLM training to a downstream segmentation model. We present ReVEAL, a decoupled thinking-with-video framework for ReVOS that elicits role-aware latent visual evidence from MLLM reasoning to directly guide segmentation. ReVEAL introduces Visual Evidence Tokens (VETs) into video reasoning to associate necessary visual regions or entities with target, background, or distractor roles, while a Dynamic Attention Layer Router adaptively aggregates VET-to-video attention across layers into role-specific grounding evidence. We train the MLLM to perform VET-augmented reasoning on our constructed ReVEAL-47K dataset, with a Contrastive Attention Grounding Loss as auxiliary supervision to apply role-specific constraints to VET attention and optimize layer routing for reliable latent grounding. At inference, ReVEAL identifies the target through this thinking-with-video process and fuses the resulting role-specific evidence to guide a frozen SAM2 in predicting target masks. Experiments on five benchmarks show that ReVEAL outperforms alignment-free baselines and remains competitive with alignment-based methods.",
+        "authors": [
+          "Zhongyuan Bao",
+          "Cunjie He",
+          "Lejun Zhang",
+          "Zenglin Xu",
+          "Yanwei Fu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.41257v1",
+        "published": "2026-10-30T05:00:03+00:00",
+        "title": "ReVEAL: Eliciting Role-Aware Latent Visual Evidence from MLLMs for Reasoning Video Object Segmentation",
+        "updated": "2026-10-30T05:00:03+00:00",
+        "version_id": "2610.41257v1"
+      },
+      "rule_hits": [
+        "transferable_objective",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.41257v1"
+      ]
+    },
+    "2610.41618": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-02T15:00:19.497385+00:00",
+      "paper": {
+        "abstract": "Chain-of-Thought (CoT) prompting has become a standard reasoning strategy in Multi-modal Large Language Models (MLLMs), showing strong performance in complex vision-language tasks such as reasoning segmentation. However, our analysis reveals that indiscriminate CoT usage can lead to degraded performance by inducing unnecessary reasoning, a phenomenon we term overthinking. In reasoning segmentation, overthinking often leads to misalignment between the query's intent and visual grounding. To address this, we propose Difficulty-Aware Chain-of-Thought (DA-CoT), a training-free adaptive framework that selectively triggers CoT based on the input's intrinsic difficulty. We find that the entropy of the model's attention maps reliably reflects task difficulty: low entropy indicates confident, localized grounding, while high entropy suggests uncertainty and potential benefit from CoT. DA-CoT uses this entropy signal to determine whether to apply CoT prompting. Additionally, we introduce a Bidirectional Rethinking mechanism that enables the model to automatically flip its reasoning decision when the initial output fails, enhancing robustness by recovering from failures induced by overthinking and underthinking. DA-CoT demonstrates its effectiveness by achieving state-of-the-art performance on the Reasoning Segmentation benchmarks while significantly improving inference efficiency.",
+        "authors": [
+          "Chanseul Cho",
+          "Jaesung Jun",
+          "Dongheon Lee",
+          "Youngmin Ro"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2610.41618v1",
+        "published": "2026-10-30T11:56:54+00:00",
+        "title": "Attention Maps Know When to Think: Training-Free Difficulty-Aware Chain-of-Thought for Reasoning Segmentation",
+        "updated": "2026-10-30T11:56:54+00:00",
+        "version_id": "2610.41618v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2610.41618v1"
       ]
     }
   },
@@ -9015,10 +9111,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-02",
+      "discovered_candidates": 26,
+      "discovered_papers": 26,
       "run_id": "20261102T150019Z-9fb76c28",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-02T15:00:00+00:00",
+          "seen": 5025,
+          "start": "2026-10-19T15:00:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-02T15:00:19.497385+00:00",
       "window": {
         "end": "2026-11-02T15:00:19.497385+00:00",
