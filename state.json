@@ -2563,8 +2563,15 @@
       "content_hash": "c48bb69bbff5cb872b57a0a05b9f7c726f772834d930d1e787c55d81b3197165",
       "created_at": "2026-11-02T15:00:19.497385+00:00",
       "day": "2026-11-02",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "65625592",
+        "status": "confirmed"
+      },
       "digest_id": "20261102T150019Z-9fb76c28-c48bb69bbff5",
       "empty": false,
+      "finished_at": "2026-11-02T15:04:55.739395+00:00",
       "items": [
         {
           "modules": [
@@ -2693,7 +2700,7 @@
       },
       "run_id": "20261102T150019Z-9fb76c28",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -8056,7 +8063,6 @@
       ]
     },
     "2610.41063": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -8093,7 +8099,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -8120,7 +8126,6 @@
         "updated": "2026-10-29T23:18:16+00:00",
         "version_id": "2610.41063v1"
       },
-      "pending_digest": "20261102T150019Z-9fb76c28-c48bb69bbff5",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -8136,7 +8141,7 @@
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "Segment Anything Pancreas：用于胰腺癌放疗的统一MRI分割模型",
       "translation": {
         "abstract_zh": "背景：MRI数据集中有限的肿瘤标注和不完整标签阻碍了MRI引导放疗中胰腺肿瘤和危及器官（OARs）的统一分割。目的：我们提出Pancreas-MedNeXt，一个从单个MRI体积中分割全胰腺、其亚区、肿瘤和周围OARs的统一模型。方法：该模型使用共享的MedNeXt编码器-解码器，先进行全胰腺和亚区监督预训练，随后进行多任务微调。三个输出头分别预测胰腺亚区、肿瘤和OARs（胃、十二指肠、肾脏）。标注感知损失允许在部分标注数据上训练，而不将未标注结构视为背景。胰腺和肿瘤在142例PANTHER患者（92例诊断MRI、50例MR-Linac）上通过三折交叉验证评估，亚区和OARs在Cyst-X和AMOS测试集上评估，胰腺和OARs在33例外部T1加权TotalSegmentator扫描上评估。与nnU-Net、MedNeXt、VISTA3D和Swin UNETR的比较使用Dice相似系数（DSC）及配对bootstrap 95% CI。结果：Pancreas-MedNeXt在诊断MRI和MR-Linac MRI上取得了最高的平均胰腺和肿瘤DSC。肿瘤DSC分别为58.41%和42.55%，分别超过任务特定MedNeXt 4.94（95% CI：0.28-9.45）和5.89（95% CI：2.37-9.72）个百分点。全胰腺DSC分别为85.73%和70.66%。与从头训练相比，预训练使头、体和尾DSC分别提高2.01、3.00和3.78个百分点。该模型在AMOS上对胰腺、十二指肠和右肾也取得了最高DSC，在外部MRI上对全部五个器官取得最高DSC，超过次优方法4.92-8.85个百分点。结论：单一Pancreas-MedNeXt模型可在诊断MRI和MR-Linac MRI上分割肿瘤、胰腺亚区和OARs，有望简化胰腺癌放疗的勾画流程。",
@@ -8149,7 +8154,6 @@
       ]
     },
     "2610.41257": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -8185,7 +8189,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -8211,7 +8215,6 @@
         "updated": "2026-10-30T05:00:03+00:00",
         "version_id": "2610.41257v1"
       },
-      "pending_digest": "20261102T150019Z-9fb76c28-c48bb69bbff5",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -8229,7 +8232,7 @@
         "transferable_objective",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "ReVEAL：从多模态大语言模型中引出角色感知的潜在视觉证据以进行推理视频目标分割",
       "translation": {
         "abstract_zh": "推理视频目标分割（ReVOS）需要在整段视频中分割由隐式查询指定的目标。现有的基于多模态大语言模型（MLLM）的方法通常需要昂贵的跨模型对齐，并将 MLLM 的训练与下游分割模型绑定。我们提出 ReVEAL，一种用于 ReVOS 的解耦式“视频思维”框架，它从 MLLM 推理中引出角色感知的潜在视觉证据，以直接指导分割。ReVEAL 将视觉证据 token（VET）引入视频推理，将必要的视觉区域或实体与目标、背景或干扰物角色相关联，同时动态注意力层路由器跨层自适应地聚合 VET 对视频的注意力，形成角色特定的 grounding 证据。我们在构建的 ReVEAL-47K 数据集上训练 MLLM 执行 VET 增强推理，并以对比注意力 grounding 损失作为辅助监督，对 VET 注意力施加角色特定约束，并优化层路由以实现可靠的潜在 grounding。在推理时，ReVEAL 通过这一视频思维过程识别目标，并融合所得的角色特定证据，以指导冻结的 SAM2 预测目标掩码。在五个基准上的实验表明，ReVEAL 优于无需对齐的基线，并与基于对齐的方法保持竞争力。",
@@ -8242,7 +8245,6 @@
       ]
     },
     "2610.41618": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -8275,7 +8277,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -8301,7 +8303,6 @@
         "updated": "2026-10-30T11:56:54+00:00",
         "version_id": "2610.41618v1"
       },
-      "pending_digest": "20261102T150019Z-9fb76c28-c48bb69bbff5",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -8317,7 +8318,7 @@
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "注意力图知道何时思考：用于推理分割的免训练难度感知思维链",
       "translation": {
         "abstract_zh": "思维链（Chain-of-Thought, CoT）提示已成为多模态大语言模型（Multi-modal Large Language Models, MLLMs）中的标准推理策略，在推理分割等复杂视觉-语言任务中展现出强劲性能。然而，我们的分析表明，不加区分地使用 CoT 会因引入不必要的推理而导致性能下降，我们将这一现象称为过度思考（overthinking）。在推理分割中，过度思考往往导致查询意图与视觉定位之间的错位。为解决这一问题，我们提出了难度感知思维链（Difficulty-Aware Chain-of-Thought, DA-CoT），这是一个免训练的自适应框架，根据输入的内在难度选择性触发 CoT。我们发现，模型注意力图的熵能够可靠地反映任务难度：低熵表示模型有信心且定位集中，而高熵则表明存在不确定性、并可能从 CoT 中获益。DA-CoT 利用这一熵信号来决定是否应用 CoT 提示。此外，我们引入了一种双向反思（Bidirectional Rethinking）机制，使模型在初始输出失败时能够自动翻转其推理决策，通过从过度思考和思考不足所导致的失败中恢复来增强鲁棒性。DA-CoT 在推理分割基准上取得了最先进的性能，同时显著提升了推理效率，从而证明了其有效性。",
