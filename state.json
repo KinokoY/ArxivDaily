@@ -7928,6 +7928,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-02T15:00:19.497385+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Background: Limited tumor annotations and incomplete labels across MRI datasets hinder unified segmentation of pancreatic tumors and organs at risk (OARs) for MRI-guided radiotherapy. Purpose: We propose Pancreas-MedNeXt, a unified model that segments the whole pancreas, its subregions, tumors, and surrounding OARs from one MRI volume. Methods: The model uses a shared MedNeXt encoder-decoder with supervised whole-pancreas and subregion pretraining, followed by multitask fine-tuning. Three output heads predict the pancreatic subregions, tumor, and OARs (stomach, duodenum, kidneys). An annotation-aware loss allows training on partially labeled data without treating unannotated structures as background. Pancreas and tumor were evaluated by three-fold cross-validation on 142 PANTHER patients (92 diagnostic, 50 MR-Linac), subregions and OARs on Cyst-X and AMOS test sets, and pancreas and OARs on 33 external T1-weighted TotalSegmentator scans. Comparisons with nnU-Net, MedNeXt, VISTA3D, and Swin UNETR used the Dice similarity coefficient (DSC) with paired bootstrap 95% CIs. Results: Pancreas-MedNeXt achieved the highest mean pancreas and tumor DSC on diagnostic and MR-Linac MRI. Tumor DSC was 58.41% and 42.55%, exceeding task-specific MedNeXt by 4.94 (95% CI: 0.28-9.45) and 5.89 (95% CI: 2.37-9.72) percentage points, respectively. Whole-pancreas DSC was 85.73% and 70.66%. Pretraining improved head, body, and tail DSC by 2.01, 3.00, and 3.78 percentage points over training from scratch. It also achieved the highest DSC for the pancreas, duodenum, and right kidney on AMOS, and for all five organs on external MRI, exceeding the next-best method by 4.92-8.85 percentage points.Conclusion: A single Pancreas-MedNeXt model segments tumors, pancreatic subregions, and OARs on diagnostic and MR-Linac MRI, which could streamline contouring for pancreatic cancer radiotherapy.",
@@ -7948,11 +7949,22 @@
         "updated": "2026-10-29T23:18:16+00:00",
         "version_id": "2610.41063v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2610.41063v1"
       ]
