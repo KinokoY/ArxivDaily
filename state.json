@@ -7974,11 +7974,13 @@
         "transferable_objective"
       ],
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-11-02T15:00:19.497385+00:00",
-        "run_id": "20261102T150019Z-9fb76c28",
-        "stage": "translation"
+      "title_zh": "Segment Anything Pancreas：用于胰腺癌放疗的统一MRI分割模型",
+      "translation": {
+        "abstract_zh": "背景：MRI数据集中有限的肿瘤标注和不完整标签阻碍了MRI引导放疗中胰腺肿瘤和危及器官（OARs）的统一分割。目的：我们提出Pancreas-MedNeXt，一个从单个MRI体积中分割全胰腺、其亚区、肿瘤和周围OARs的统一模型。方法：该模型使用共享的MedNeXt编码器-解码器，先进行全胰腺和亚区监督预训练，随后进行多任务微调。三个输出头分别预测胰腺亚区、肿瘤和OARs（胃、十二指肠、肾脏）。标注感知损失允许在部分标注数据上训练，而不将未标注结构视为背景。胰腺和肿瘤在142例PANTHER患者（92例诊断MRI、50例MR-Linac）上通过三折交叉验证评估，亚区和OARs在Cyst-X和AMOS测试集上评估，胰腺和OARs在33例外部T1加权TotalSegmentator扫描上评估。与nnU-Net、MedNeXt、VISTA3D和Swin UNETR的比较使用Dice相似系数（DSC）及配对bootstrap 95% CI。结果：Pancreas-MedNeXt在诊断MRI和MR-Linac MRI上取得了最高的平均胰腺和肿瘤DSC。肿瘤DSC分别为58.41%和42.55%，分别超过任务特定MedNeXt 4.94（95% CI：0.28-9.45）和5.89（95% CI：2.37-9.72）个百分点。全胰腺DSC分别为85.73%和70.66%。与从头训练相比，预训练使头、体和尾DSC分别提高2.01、3.00和3.78个百分点。该模型在AMOS上对胰腺、十二指肠和右肾也取得了最高DSC，在外部MRI上对全部五个器官取得最高DSC，超过次优方法4.92-8.85个百分点。结论：单一Pancreas-MedNeXt模型可在诊断MRI和MR-Linac MRI上分割肿瘤、胰腺亚区和OARs，有望简化胰腺癌放疗的勾画流程。",
+        "title_zh": "Segment Anything Pancreas：用于胰腺癌放疗的统一MRI分割模型"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2610.41063v1"
       ]
