@@ -107,7 +107,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-02T15:00:19.497385+00:00"
+    "last_complete_end": "2026-11-03T13:48:31.724483+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -7200,7 +7200,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-27T11:45:53.102060+00:00",
-      "latest_version": "2610.34599v2",
+      "latest_version": "2610.34599v3",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Despite advances in automated liver lesion segmentation, a gap remains between image-derived predictions and clinically interpretable radiology reports. Bridging this gap requires quantitative measurements that are both reproducible and traceable. We present an evidence-grounded agentic AI framework that connects liver and lesion segmentation with deterministic quantification and structured reporting. TotalSegmentator-based nnU-Net models delineate the liver, Couinaud segments, and lesions, while computational tools extract volumes, dimensions, counts, and anatomical locations. A large language model (LLM) organizes these measurements into a predefined reporting schema, with numerical consistency checks against source measurements. On 51 LiTS cases, the segmentation stage achieved a liver Dice score of 0.947, lesion sensitivity of 75.6%, and positive predictive value of 68.9%. Exploratory screening of 25,494 MERLIN reports identified 10,208 (40.0%) with liver-related abnormalities. By connecting quantitative imaging evidence with agentic report generation, this work takes a step toward human-centered medical AI that prioritizes traceability and clinical relevance.",
@@ -7239,7 +7239,8 @@
       "title_zh": "用于肝脏病灶分割和结构化放射学报告的代理式AI工作流程",
       "versions": [
         "2610.34599v1",
-        "2610.34599v2"
+        "2610.34599v2",
+        "2610.34599v3"
       ]
     },
     "2610.36462": {
@@ -7861,7 +7862,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-10-30T12:20:35.096844+00:00",
-      "latest_version": "2610.40029v1",
+      "latest_version": "2610.40029v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Medical image segmentation is crucial for clinical diagnosis and treatment planning, requiring both global contextual understanding and fine-grained structural precision. While the Segment Anything Model (SAM) demonstrates strong generalization capabilities, its direct application to medical images often lacks domain-specific adaptability. Meanwhile, State Space Models (SSMs)-based methods, such as Mamba, efficiently capture long-range dependencies but may struggle with preserving fine anatomical details. To address these challenges, we propose a segment anything model based context guided mamba unet, SAMBA-UNet, a novel framework that integrates SAM's context knowledge with Mamba's hierarchical feature learning to enhance both global representation and local detail refinement. Specifically, we introduce the Hierarchical Context Enhancement Module (HCEM), an attention-based fusion module that deeply incorporates the multi-level features of SAM and Mamba to improve detail perception and segmentation precision. Additionally, we employ LoRA and Adapter-based fine-tuning to adapt SAM to medical imaging tasks, further enhancing its domain-specific segmentation capability and robustness. We conducted a comprehensive study on several medical segmentation datasets, including Synapse, ISIC17, and ISIC18, evaluating our method across multiple metrics. Experimental results demonstrate that SAMBA-UNet achieves state-of-the-art performance, effectively balancing generalization, segmentation accuracy, and computational efficiency. Our code will be released upon acceptance.",
@@ -7897,7 +7898,8 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "基于Segment Anything Model的上下文引导Mamba Unet用于医学图像分割",
       "versions": [
-        "2610.40029v1"
+        "2610.40029v1",
+        "2610.40029v2"
       ]
     },
     "2610.40094": {
@@ -8106,6 +8108,7 @@
       "failures": {},
       "first_discovered": "2026-11-02T15:00:19.497385+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.41063v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Background: Limited tumor annotations and incomplete labels across MRI datasets hinder unified segmentation of pancreatic tumors and organs at risk (OARs) for MRI-guided radiotherapy. Purpose: We propose Pancreas-MedNeXt, a unified model that segments the whole pancreas, its subregions, tumors, and surrounding OARs from one MRI volume. Methods: The model uses a shared MedNeXt encoder-decoder with supervised whole-pancreas and subregion pretraining, followed by multitask fine-tuning. Three output heads predict the pancreatic subregions, tumor, and OARs (stomach, duodenum, kidneys). An annotation-aware loss allows training on partially labeled data without treating unannotated structures as background. Pancreas and tumor were evaluated by three-fold cross-validation on 142 PANTHER patients (92 diagnostic, 50 MR-Linac), subregions and OARs on Cyst-X and AMOS test sets, and pancreas and OARs on 33 external T1-weighted TotalSegmentator scans. Comparisons with nnU-Net, MedNeXt, VISTA3D, and Swin UNETR used the Dice similarity coefficient (DSC) with paired bootstrap 95% CIs. Results: Pancreas-MedNeXt achieved the highest mean pancreas and tumor DSC on diagnostic and MR-Linac MRI. Tumor DSC was 58.41% and 42.55%, exceeding task-specific MedNeXt by 4.94 (95% CI: 0.28-9.45) and 5.89 (95% CI: 2.37-9.72) percentage points, respectively. Whole-pancreas DSC was 85.73% and 70.66%. Pretraining improved head, body, and tail DSC by 2.01, 3.00, and 3.78 percentage points over training from scratch. It also achieved the highest DSC for the pancreas, duodenum, and right kidney on AMOS, and for all five organs on external MRI, exceeding the next-best method by 4.92-8.85 percentage points.Conclusion: A single Pancreas-MedNeXt model segments tumors, pancreatic subregions, and OARs on diagnostic and MR-Linac MRI, which could streamline contouring for pancreatic cancer radiotherapy.",
@@ -8284,6 +8287,7 @@
       "failures": {},
       "first_discovered": "2026-11-02T15:00:19.497385+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.41618v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Chain-of-Thought (CoT) prompting has become a standard reasoning strategy in Multi-modal Large Language Models (MLLMs), showing strong performance in complex vision-language tasks such as reasoning segmentation. However, our analysis reveals that indiscriminate CoT usage can lead to degraded performance by inducing unnecessary reasoning, a phenomenon we term overthinking. In reasoning segmentation, overthinking often leads to misalignment between the query's intent and visual grounding. To address this, we propose Difficulty-Aware Chain-of-Thought (DA-CoT), a training-free adaptive framework that selectively triggers CoT based on the input's intrinsic difficulty. We find that the entropy of the model's attention maps reliably reflects task difficulty: low entropy indicates confident, localized grounding, while high entropy suggests uncertainty and potential benefit from CoT. DA-CoT uses this entropy signal to determine whether to apply CoT prompting. Additionally, we introduce a Bidirectional Rethinking mechanism that enables the model to automatically flip its reasoning decision when the initial output fails, enhancing robustness by recovering from failures induced by overthinking and underthinking. DA-CoT demonstrates its effectiveness by achieving state-of-the-art performance on the Reasoning Segmentation benchmarks while significantly improving inference efficiency.",
@@ -8328,6 +8332,64 @@
       "translation_provider": "llm",
       "versions": [
         "2610.41618v1"
+      ]
+    },
+    "2611.00247": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-03T13:48:31.724483+00:00",
+      "paper": {
+        "abstract": "Dense labels of the aorta in CT are slow to draw, and the public aortic CT datasets that could stand in for them each label different structures under their own conventions. Large language model (LLM) agents can now write code and read images. We asked whether such a model labels these scans better as a free-form agent that writes its own segmentation code, or inside a harness, where an automated pass labels the scan and the model reviews the result. We built a harness, Taurus, and compared it with free-form agents by blind label recovery: we withheld the human labels of six public datasets (939 volumes) and scored every approach against each dataset's own classes. In the first version of Taurus, the model's review raised the primary metric on only two of six datasets, by less than the noise between two reviews of the same case. A free-form agent running Claude Opus 5.5 scored higher on most datasets. Moving what the free-form agents did well into the automated pass then carried most of the gain on 38 held-out cases. The final version smooths the label surfaces with a fixed rule and checks for the large errors the automated pass tends to make, such as an aneurysm drawn to half its size. Each check that fires puts a multiple-choice question to the model, with candidate corrections drawn on the scan. It matched the surface smoothness of the human references, and in the primary metric we found no difference from the free-form Opus agent, at under half its cost, $1.22 against $2.71 per case. Most of what made Taurus competitive came from the harness and its automation rather than from the language model itself. Taurus shows that this kind of annotation can be automated, so that expert time can move from drawing labels to checking them.",
+        "authors": [
+          "Bing Hu",
+          "Rishabh Sharma",
+          "Jatin Mehta"
+        ],
+        "categories": [
+          "cs.AI",
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.00247v1",
+        "published": "2026-10-30T18:27:53+00:00",
+        "title": "Taurus: LLM-in-the-Loop CT Annotation Matches Coding Agents at Half the Cost",
+        "updated": "2026-10-30T18:27:53+00:00",
+        "version_id": "2611.00247v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.00247v1"
+      ]
+    },
+    "2611.00396": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-03T13:48:31.724483+00:00",
+      "paper": {
+        "abstract": "In retinal vessel segmentation, plain Vision Transformers (ViTs) are commonly expected to perform worse than convolutional neural networks (CNNs) on thin vessels, for reasons such as their coarse patch tokenization, their weak locality bias and their need for large training sets. Although this expectation is widely shared in the literature, how plain ViTs actually compare with CNNs on thin vessels has not been systematically quantified. We address this question by comparing a model with a plain ViT encoder (MedSAM), a hybrid Transformer (LiteMedSAM) and three CNNs of different sizes on three retinal datasets (DRIVE, HRF, FIVES) and, as a second-domain check, a microscopy dataset (VessMap). We measured the centerline recall and precision of thin vessels and compared the models while also considering their computational cost and how many epochs they needed to train. We found that the pre-trained MedSAM had a centerline recall of thin vessels that was not significantly different from that of the best CNN on all four datasets (-0.6 to +2.5 percentage points). A compact plain ViT obtained through architecture search but trained from scratch did not retain this performance. For pre-trained plain ViTs, our results do not support the expectation that they miss thin vessels, although similar thin-vessel performance can be obtained with much smaller models.",
+        "authors": [
+          "Carlos Eduardo Fontaneli",
+          "Cesar Henrique Comin"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.00396v1",
+        "published": "2026-10-30T21:24:02+00:00",
+        "title": "Evaluating SAM-based and Convolutional Architectures in Thin Retinal Vessel Segmentation: Model Capacity, Computational Cost and Foundation Pre-training",
+        "updated": "2026-10-30T21:24:02+00:00",
+        "version_id": "2611.00396v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.00396v1"
       ]
     }
   },
@@ -9491,10 +9553,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-03",
+      "discovered_candidates": 23,
+      "discovered_papers": 23,
       "run_id": "20261103T134831Z-024889b9",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-03T13:48:00+00:00",
+          "seen": 5705,
+          "start": "2026-10-20T13:48:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-03T13:48:31.724483+00:00",
       "window": {
         "end": "2026-11-03T13:48:31.724483+00:00",
