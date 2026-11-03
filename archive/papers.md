@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-03 | Evaluating SAM-based and Convolutional Architectures in Thin Retinal Vessel Segmentation: Model Capacity, Computational Cost and Foundation Pre-training | 待翻译 | [arXiv 2611.00396v1](https://arxiv.org/abs/2611.00396v1) |
+| 2026-11-03 | Evaluating SAM-based and Convolutional Architectures in Thin Retinal Vessel Segmentation: Model Capacity, Computational Cost and Foundation Pre-training | 评估基于SAM和卷积架构在薄视网膜血管分割中的表现：模型容量、计算成本与基础预训练 | [arXiv 2611.00396v1](https://arxiv.org/abs/2611.00396v1) |
 | 2026-11-03 | Taurus: LLM-in-the-Loop CT Annotation Matches Coding Agents at Half the Cost | 待翻译 | [arXiv 2611.00247v1](https://arxiv.org/abs/2611.00247v1) |
 | 2026-11-02 | Attention Maps Know When to Think: Training-Free Difficulty-Aware Chain-of-Thought for Reasoning Segmentation | 注意力图知道何时思考：用于推理分割的免训练难度感知思维链 | [arXiv 2610.41618v1](https://arxiv.org/abs/2610.41618v1) |
 | 2026-11-02 | ReVEAL: Eliciting Role-Aware Latent Visual Evidence from MLLMs for Reasoning Video Object Segmentation | ReVEAL：从多模态大语言模型中引出角色感知的潜在视觉证据以进行推理视频目标分割 | [arXiv 2610.41257v1](https://arxiv.org/abs/2610.41257v1) |

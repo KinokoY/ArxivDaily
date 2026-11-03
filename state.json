@@ -8472,11 +8472,8 @@
         "transferable_objective"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-03T13:48:31.724483+00:00",
-        "run_id": "20261103T134831Z-024889b9",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "评估基于SAM和卷积架构在薄视网膜血管分割中的表现：模型容量、计算成本与基础预训练",
       "versions": [
         "2611.00396v1"
       ]
