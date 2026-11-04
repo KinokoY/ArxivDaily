@@ -8546,6 +8546,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-04T13:55:50.922071+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Video Reasoning Segmentation (VRS) aims to infer and segment target objects specified by reasoning queries in videos. Existing methods typically first infer the target and generate a few segmentation tokens for it, which are then fed into a mask decoder for mask prediction. However, such segmentation tokens tend to be both semantically monotonous and spatially ambiguous, making them largely insufficient to represent the target to guide mask prediction. In this paper, we propose an explicit visual object grounding framework for VRS. Specifically, we first propose a spatial-aware prompt generation and refinement scheme, in which we query a multimodal large language model to generate explicit spatial prompts (i.e., bounding box and point set) for the target and then refine them through multi-step dialogue. Furthermore, we introduce a query diversification and alignment module to generate auxiliary queries that describe the same target from different perspectives. We then enforce cross-query consistency between their predicted spatial prompts to alleviate the training bias caused by query limitations. Finally, we select several reliable frames using a prompt-based keyframe selection strategy to support mask decoding and propagation. Extensive experiments on eight datasets demonstrate that our method significantly outperforms state-of-the-art methods. The code is available at https://github.com/viscom-tongji/EVOG.",
@@ -8566,11 +8567,22 @@
         "updated": "2026-11-03T07:59:55+00:00",
         "version_id": "2611.04472v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_reasoning"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2611.04472v1"
       ]
@@ -8621,6 +8633,17 @@
         "updated": "2026-11-03T16:14:16+00:00",
         "version_id": "2611.05131v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
