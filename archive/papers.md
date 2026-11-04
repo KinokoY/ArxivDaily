@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-04 | High-fidelity training-free photovoltaic module mapping from multi-view UAV imagery | 待翻译 | [arXiv 2611.05131v1](https://arxiv.org/abs/2611.05131v1) |
+| 2026-11-04 | High-fidelity training-free photovoltaic module mapping from multi-view UAV imagery | 基于多视角无人机影像的高保真无训练光伏组件制图 | [arXiv 2611.05131v1](https://arxiv.org/abs/2611.05131v1) |
 | 2026-11-04 | Beyond Token Representations: Explicit Visual Object Grounding for Video Reasoning Segmentation | 超越标记表示：用于视频推理分割的显式视觉对象定位 | [arXiv 2611.04472v1](https://arxiv.org/abs/2611.04472v1) |
 | 2026-11-03 | Evaluating SAM-based and Convolutional Architectures in Thin Retinal Vessel Segmentation: Model Capacity, Computational Cost and Foundation Pre-training | 评估基于SAM和卷积架构在薄视网膜血管分割中的表现：模型容量、计算成本与基础预训练 | [arXiv 2611.00396v1](https://arxiv.org/abs/2611.00396v1) |
 | 2026-11-03 | Taurus: LLM-in-the-Loop CT Annotation Matches Coding Agents at Half the Cost | Taurus：LLM在环CT标注以一半成本匹敌编码代理 | [arXiv 2611.00247v1](https://arxiv.org/abs/2611.00247v1) |
