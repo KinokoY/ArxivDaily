@@ -107,6 +107,10 @@
     "20261103T134831Z-024889b9-608cac2edfec": {
       "attempts": 1,
       "created_at": "2026-11-03T13:48:31.724483+00:00"
+    },
+    "20261104T135550Z-5f15d0c4-8961c36eedde": {
+      "attempts": 0,
+      "created_at": "2026-11-04T13:55:50.922071+00:00"
     }
   },
   "collection": {
@@ -2751,6 +2755,68 @@
       "run_id": "20261103T134831Z-024889b9",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261104T135550Z-5f15d0c4-8961c36eedde": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/04/20261104T135550Z-5f15d0c4-8961c36eedde.md",
+      "chain_root": "20261104T135550Z-5f15d0c4-8961c36eedde",
+      "chain_roots": [
+        "20261104T135550Z-5f15d0c4-8961c36eedde"
+      ],
+      "content_hash": "8961c36eedde7d09e8655ee6e84600d451d3f043f93028c8b12d33480c9f28d4",
+      "created_at": "2026-11-04T13:55:50.922071+00:00",
+      "day": "2026-11-04",
+      "digest_id": "20261104T135550Z-5f15d0c4-8961c36eedde",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Video Reasoning Segmentation (VRS) aims to infer and segment target objects specified by reasoning queries in videos. Existing methods typically first infer the target and generate a few segmentation tokens for it, which are then fed into a mask decoder for mask prediction. However, such segmentation tokens tend to be both semantically monotonous and spatially ambiguous, making them largely insufficient to represent the target to guide mask prediction. In this paper, we propose an explicit visual object grounding framework for VRS. Specifically, we first propose a spatial-aware prompt generation and refinement scheme, in which we query a multimodal large language model to generate explicit spatial prompts (i.e., bounding box and point set) for the target and then refine them through multi-step dialogue. Furthermore, we introduce a query diversification and alignment module to generate auxiliary queries that describe the same target from different perspectives. We then enforce cross-query consistency between their predicted spatial prompts to alleviate the training bias caused by query limitations. Finally, we select several reliable frames using a prompt-based keyframe selection strategy to support mask decoding and propagation. Extensive experiments on eight datasets demonstrate that our method significantly outperforms state-of-the-art methods. The code is available at https://github.com/viscom-tongji/EVOG.",
+            "authors": [
+              "Jun Huang",
+              "Junyang Zhang",
+              "Zijie Yue",
+              "Bingkun Wang",
+              "Yong Luo",
+              "Miaojing Shi"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2611.04472v1",
+            "published": "2026-11-03T07:59:55+00:00",
+            "title": "Beyond Token Representations: Explicit Visual Object Grounding for Video Reasoning Segmentation",
+            "updated": "2026-11-03T07:59:55+00:00",
+            "version_id": "2611.04472v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "general_reasoning"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "视频推理分割（VRS）旨在推断并分割视频中由推理查询指定的目标对象。现有方法通常首先推断目标并为其生成少量分割标记，然后将这些标记输入掩码解码器进行掩码预测。然而，此类分割标记往往在语义上单调且在空间上模糊，使其在很大程度上不足以表示目标以指导掩码预测。在本文中，我们提出了一种用于VRS的显式视觉对象定位框架。具体而言，我们首先提出了一种空间感知的提示生成与细化方案，其中我们查询多模态大语言模型以为目标生成显式空间提示（即边界框和点集），然后通过多步对话对其进行细化。此外，我们引入了一个查询多样化与对齐模块，以生成从不同视角描述同一目标的辅助查询。然后，我们在其预测的空间提示之间强制跨查询一致性，以缓解由查询局限性引起的训练偏差。最后，我们使用基于提示的关键帧选择策略选择若干可靠帧，以支持掩码解码与传播。在八个数据集上的大量实验表明，我们的方法显著优于最先进的方法。代码可在 https://github.com/viscom-tongji/EVOG 获取。",
+            "title_zh": "超越标记表示：用于视频推理分割的显式视觉对象定位"
+          }
+        }
+      ],
+      "notification_hash": "3de585ee13c08981b259b898894e30d435437b1e75f680f6fa043e9f5d42c1b7",
+      "recovery_of": [],
+      "rendered": {
+        "2611.04472": "rendered_inline_translation"
+      },
+      "run_id": "20261104T135550Z-5f15d0c4",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
