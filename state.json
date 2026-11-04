@@ -8517,7 +8517,9 @@
       ]
     },
     "2611.04472": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-04T13:55:50.922071+00:00",
@@ -8544,6 +8546,11 @@
         "general_reasoning"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-04T13:55:50.922071+00:00",
+        "run_id": "20261104T135550Z-5f15d0c4",
+        "stage": "selection"
+      },
       "versions": [
         "2611.04472v1"
       ]
