@@ -111,7 +111,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-03T13:48:31.724483+00:00"
+    "last_complete_end": "2026-11-04T13:55:50.922071+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -8408,6 +8408,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-03T13:48:31.724483+00:00",
+      "latest_version": "2611.00247v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Dense labels of the aorta in CT are slow to draw, and the public aortic CT datasets that could stand in for them each label different structures under their own conventions. Large language model (LLM) agents can now write code and read images. We asked whether such a model labels these scans better as a free-form agent that writes its own segmentation code, or inside a harness, where an automated pass labels the scan and the model reviews the result. We built a harness, Taurus, and compared it with free-form agents by blind label recovery: we withheld the human labels of six public datasets (939 volumes) and scored every approach against each dataset's own classes. In the first version of Taurus, the model's review raised the primary metric on only two of six datasets, by less than the noise between two reviews of the same case. A free-form agent running Claude Opus 5.5 scored higher on most datasets. Moving what the free-form agents did well into the automated pass then carried most of the gain on 38 held-out cases. The final version smooths the label surfaces with a fixed rule and checks for the large errors the automated pass tends to make, such as an aneurysm drawn to half its size. Each check that fires puts a multiple-choice question to the model, with candidate corrections drawn on the scan. It matched the surface smoothness of the human references, and in the primary metric we found no difference from the free-form Opus agent, at under half its cost, $1.22 against $2.71 per case. Most of what made Taurus competitive came from the harness and its automation rather than from the language model itself. Taurus shows that this kind of annotation can be automated, so that expert time can move from drawing labels to checking them.",
@@ -8513,6 +8514,71 @@
       "title_zh": "评估基于SAM和卷积架构在薄视网膜血管分割中的表现：模型容量、计算成本与基础预训练",
       "versions": [
         "2611.00396v1"
+      ]
+    },
+    "2611.04472": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-04T13:55:50.922071+00:00",
+      "paper": {
+        "abstract": "Video Reasoning Segmentation (VRS) aims to infer and segment target objects specified by reasoning queries in videos. Existing methods typically first infer the target and generate a few segmentation tokens for it, which are then fed into a mask decoder for mask prediction. However, such segmentation tokens tend to be both semantically monotonous and spatially ambiguous, making them largely insufficient to represent the target to guide mask prediction. In this paper, we propose an explicit visual object grounding framework for VRS. Specifically, we first propose a spatial-aware prompt generation and refinement scheme, in which we query a multimodal large language model to generate explicit spatial prompts (i.e., bounding box and point set) for the target and then refine them through multi-step dialogue. Furthermore, we introduce a query diversification and alignment module to generate auxiliary queries that describe the same target from different perspectives. We then enforce cross-query consistency between their predicted spatial prompts to alleviate the training bias caused by query limitations. Finally, we select several reliable frames using a prompt-based keyframe selection strategy to support mask decoding and propagation. Extensive experiments on eight datasets demonstrate that our method significantly outperforms state-of-the-art methods. The code is available at https://github.com/viscom-tongji/EVOG.",
+        "authors": [
+          "Jun Huang",
+          "Junyang Zhang",
+          "Zijie Yue",
+          "Bingkun Wang",
+          "Yong Luo",
+          "Miaojing Shi"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.04472v1",
+        "published": "2026-11-03T07:59:55+00:00",
+        "title": "Beyond Token Representations: Explicit Visual Object Grounding for Video Reasoning Segmentation",
+        "updated": "2026-11-03T07:59:55+00:00",
+        "version_id": "2611.04472v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.04472v1"
+      ]
+    },
+    "2611.05131": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-04T13:55:50.922071+00:00",
+      "paper": {
+        "abstract": "High-fidelity photovoltaic (PV) module mapping requires complete instance recovery and accurate delineation. Vision foundation models offer zero-shot segmentation, but converting incomplete and inconsistent predictions across views into a complete, geometrically accurate map of individual modules remains challenging. We propose the Multi-View PV Module Mapper (MV-PVMapper), a training-free framework coupling vision foundation models with unmanned aerial vehicle (UAV) photogrammetry. First, Segment Anything Model 3 (SAM 3) generates candidates from original images using text prompts. Their contours are then transferred into object space through per-module slope correction to limit distortion from surface-model noise, and verified against representative module dimensions to guide cross-view instance selection. Finally, accepted instances return to all covering images as box prompts for SAM~3, supplementing text prompts with spatial cues for iterative segmentation, verification and fusion. On five-direction surveys of three operational rooftop PV plants at approximately 1 cm nadir ground sampling distance, two feedback iterations recover 7,710 of 7,711 reference modules with no false positives at an intersection-over-union (IoU) matching threshold of 0.5. Macro-averaged area precision and recall reach 99.00 % and 98.52 %, respectively. Averaged across sites, the aggregated Jaccard index reaches 97.55 %, compared with 60.73 % and 41.24 % for orthomosaic segmentation and multi-view pixel-voting baselines, respectively; average precision at the stricter IoU threshold of 0.95 reaches 95.67 %. Ablation studies show that module-size constraints are critical for instance separation, while slope correction and feedback to all covering views improve boundary accuracy. These results are achieved without task-specific image annotation or segmentation-model weight updates.",
+        "authors": [
+          "WenHao Duana",
+          "Qi Chena",
+          "Penglei Zhang",
+          "Ruizhe Deng",
+          "Zhiling Guo",
+          "Haoran Zhang",
+          "Yuntian Chen"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.05131v1",
+        "published": "2026-11-03T16:14:16+00:00",
+        "title": "High-fidelity training-free photovoltaic module mapping from multi-view UAV imagery",
+        "updated": "2026-11-03T16:14:16+00:00",
+        "version_id": "2611.05131v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.05131v1"
       ]
     }
   },
@@ -9718,10 +9784,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-04",
+      "discovered_candidates": 17,
+      "discovered_papers": 17,
       "run_id": "20261104T135550Z-5f15d0c4",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-04T13:55:00+00:00",
+          "seen": 5689,
+          "start": "2026-10-21T13:55:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-04T13:55:50.922071+00:00",
       "window": {
         "end": "2026-11-04T13:55:50.922071+00:00",
