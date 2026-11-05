@@ -8798,7 +8798,9 @@
       ]
     },
     "2611.06160": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
@@ -8827,6 +8829,11 @@
         "general_reasoning"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-05T14:13:19.794908+00:00",
+        "run_id": "20261105T141319Z-98771492",
+        "stage": "selection"
+      },
       "versions": [
         "2611.06160v1"
       ]
