@@ -8835,9 +8835,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Here we present HoloCT, a generalist 3D foundation model unifying CT interpretation and voxel-level segmentation by jointly modelling whole-volume context and fine-grained anatomical detail, providing 3D masks as evidence.",
+          "language-guided segmentation delineated unseen anatomical structures and lesions as well as diffuse free-text findings",
+          "HoloCT shows that clinical understanding and spatial perception can be learned together within a single foundation model and offers a path towards more accurate and reliable CT analysis."
+        ],
+        "dpo_is_method": false,
+        "reason": "摘要明确提出 HoloCT 将 CT 解读与体素级分割统一建模，并以 3D mask 作为文本发现的证据；其语言引导分割覆盖未见解剖结构、病灶及弥漫性自由文本发现，属于医学影像中由文本/临床理解到像素掩码的推理分割方向。方法贡献是统一 3D 基础模型与语义-空间双向协同，而非 RL/DPO。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 88,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "未读正文，无法确认语言引导分割是否包含显式空间/隐含请求推理，而非仅短语定位或文本条件分割。",
+          "未确认评测是否专门隔离推理分割能力，还是主要覆盖通用分割、VQA 与报告生成。",
+          "未确认全文是否存在 RL 或 DPO 方法；摘要未提及。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Radiologists interpret computed tomography (CT) scans by jointly determining what a finding represents and where it lies in three-dimensional (3D) anatomy. However, CT models have treated CT interpretation and 3D segmentation as separate tasks, leaving textual findings spatially unverifiable and overlooking potential synergy between clinical understanding and spatial perception. Here we present HoloCT, a generalist 3D foundation model unifying CT interpretation and voxel-level segmentation by jointly modelling whole-volume context and fine-grained anatomical detail, providing 3D masks as evidence. We curated HoloDATA, comprising 195,921 CT scans from 73 public datasets and six clinical cohorts, with 6.2 million instruction dialogues and 2.8 million CT-mask pairs. Across 346 tasks spanning segmentation, lesion screening, visual question answering, and report generation on 61 internal and 12 external datasets, HoloCT outperformed specialist and foundation models. In multicentre validation across 11,455 clinical CT scans from five hospitals, HoloCT outperformed competing models in lesion segmentation and report generation by 18.2 and 15.3 points. It also achieved 85.1% mean accuracy in screening thyroid tumours and colon lesions, exceeding all four participating radiologists in a retrospective reader study. Further analyses revealed bidirectional semantic-spatial synergy: language-guided segmentation delineated unseen anatomical structures and lesions as well as diffuse free-text findings, outperforming the leading approach by 22.1 points, whereas prompting the model to generate corresponding 3D masks alongside its textual outputs significantly improved interpretation performance. HoloCT shows that clinical understanding and spatial perception can be learned together within a single foundation model and offers a path towards more accurate and reliable CT analysis.",
         "authors": [
@@ -8868,16 +8892,12 @@
         "updated": "2026-11-04T13:07:27+00:00",
         "version_id": "2611.06471v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning",
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-05T14:13:19.794908+00:00",
-        "run_id": "20261105T141319Z-98771492",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.06471v1"
       ]
