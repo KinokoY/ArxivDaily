@@ -1,0 +1,154 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/05/20261105T141319Z-98771492-cb7a29e5d0ac.md",
+  "chain_roots": [
+    "20261105T141319Z-98771492-cb7a29e5d0ac"
+  ],
+  "content_hash": "cb7a29e5d0ac3fc06ac3c756ca0d975120ef4bc77c65fa4399c8a3c0e7fa25e6",
+  "day": "2026-11-05",
+  "digest_id": "20261105T141319Z-98771492-cb7a29e5d0ac",
+  "empty": false,
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Radiologists interpret computed tomography (CT) scans by jointly determining what a finding represents and where it lies in three-dimensional (3D) anatomy. However, CT models have treated CT interpretation and 3D segmentation as separate tasks, leaving textual findings spatially unverifiable and overlooking potential synergy between clinical understanding and spatial perception. Here we present HoloCT, a generalist 3D foundation model unifying CT interpretation and voxel-level segmentation by jointly modelling whole-volume context and fine-grained anatomical detail, providing 3D masks as evidence. We curated HoloDATA, comprising 195,921 CT scans from 73 public datasets and six clinical cohorts, with 6.2 million instruction dialogues and 2.8 million CT-mask pairs. Across 346 tasks spanning segmentation, lesion screening, visual question answering, and report generation on 61 internal and 12 external datasets, HoloCT outperformed specialist and foundation models. In multicentre validation across 11,455 clinical CT scans from five hospitals, HoloCT outperformed competing models in lesion segmentation and report generation by 18.2 and 15.3 points. It also achieved 85.1% mean accuracy in screening thyroid tumours and colon lesions, exceeding all four participating radiologists in a retrospective reader study. Further analyses revealed bidirectional semantic-spatial synergy: language-guided segmentation delineated unseen anatomical structures and lesions as well as diffuse free-text findings, outperforming the leading approach by 22.1 points, whereas prompting the model to generate corresponding 3D masks alongside its textual outputs significantly improved interpretation performance. HoloCT shows that clinical understanding and spatial perception can be learned together within a single foundation model and offers a path towards more accurate and reliable CT analysis.",
+        "authors": [
+          "Yulu Xie",
+          "Zilong Li",
+          "Shen Xu",
+          "Yifan Bai",
+          "Liuhong Shi",
+          "Jiao Chen",
+          "Xianglei Kong",
+          "Wenchao Zhu",
+          "Na Shen",
+          "Xianghua Ye",
+          "Yang Yan",
+          "Jiaju Zheng",
+          "Yunsong Peng",
+          "Yanzhou Su",
+          "Chaohui Yu",
+          "Hao Luo",
+          "Fan Wang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.06471v1",
+        "published": "2026-11-04T13:07:27+00:00",
+        "title": "A 3D foundation model unifying CT interpretation and segmentation",
+        "updated": "2026-11-04T13:07:27+00:00",
+        "version_id": "2611.06471v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "medical_reasoning",
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "放射科医生通过同时判断发现所代表的含义及其在三维（3D）解剖中的位置来解读计算机断层扫描（CT）图像。然而，CT模型一直将CT解读和3D分割视为独立任务，导致文本发现无法在空间上验证，并忽视了临床理解与空间感知之间的潜在协同作用。在此，我们提出HoloCT，一种通用的3D基础模型，通过联合建模全容积上下文和细粒度解剖细节，统一CT解读与体素级分割，并提供3D掩码作为证据。我们构建了HoloDATA，包含来自73个公开数据集和六个临床队列的195,921例CT扫描，以及620万条指令对话和280万对CT-掩码配对。在涵盖分割、病灶筛查、视觉问答和报告生成的346项任务中（涉及61个内部和12个外部数据集），HoloCT优于专科模型和基础模型。在来自五家医院的11,455例临床CT扫描的多中心验证中，HoloCT在病灶分割和报告生成方面分别以18.2分和15.3分优于竞争模型。在筛查甲状腺肿瘤和结肠病变方面，它还实现了85.1%的平均准确率，在回顾性阅片研究中超过了所有四位参与的放射科医生。进一步分析揭示了双向语义-空间协同作用：语言引导的分割能够描绘未见过的解剖结构和病灶以及弥散的自由文本发现，比领先方法高出22.1分，而提示模型在生成文本输出的同时生成相应的3D掩码则显著提高了解读性能。HoloCT表明，临床理解和空间感知可以在单一基础模型内共同学习，并为更准确和可靠的CT分析提供了一条路径。",
+        "title_zh": "统一CT解读与分割的3D基础模型"
+      }
+    },
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Existing reasoning segmentation frameworks typically employ multimodal large language models (MLLMs) with broad world knowledge to extract semantics in a human-like manner and generate corresponding segmentation masks. Nevertheless, these frameworks lack the necessary scene-specific awareness. This paper introduces driving scene reasoning segmentation (DSRS), a scene-specific task that requires models to interpret implicit instructions, infer spatial relations, detect potential risks, handle challenging conditions, and comprehend underlying traffic rules, ultimately generating accurate segmentation masks. Meanwhile, we establish a benchmark dataset to facilitate future research on the DSRS task. To pioneer this task, we propose DSRS-Net, a novel architecture with advanced reasoning segmentation capability for automated driving. Specifically, DSRS-Net seamlessly infuses geometric features for deeper reasoning segmentation, without compromising the original multimodal fusion mechanism. This strategy effectively mitigates the modality representation mismatch in MLLMs caused by RGB-only pretraining, while enhancing the integration of geometric, contextual, and linguistic features. Extensive experiments demonstrate the superior performance of DSRS-Net in both driving scene reasoning segmentation and other language-driven segmentation tasks across various public datasets. The source code and dataset will be released upon publication.",
+        "authors": [
+          "Sicen Guo",
+          "Zhengfei Song",
+          "Kuanhsun Chen",
+          "Xu Huang",
+          "Ping Zhong",
+          "Wei Ye",
+          "Shaoyi Du",
+          "Rui Fan"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.06160v1",
+        "published": "2026-11-04T08:39:51+00:00",
+        "title": "DSRS: Teaching MLLMs to Perceive, Reason, and Segment in Complex Driving Scenes",
+        "updated": "2026-11-04T08:39:51+00:00",
+        "version_id": "2611.06160v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "现有的推理分割框架通常采用具备广泛世界知识的多模态大语言模型（MLLMs），以类人的方式提取语义并生成相应的分割掩码。然而，这些框架缺乏必要的场景特定感知能力。本文提出驾驶场景推理分割（DSRS），这是一项场景特定任务，要求模型解读隐含指令、推断空间关系、检测潜在风险、处理挑战性条件并理解底层交通规则，最终生成准确的分割掩码。同时，我们建立了一个基准数据集，以促进未来对DSRS任务的研究。为开创这一任务，我们提出DSRS-Net，一种具有面向自动驾驶的高级推理分割能力的新颖架构。具体而言，DSRS-Net在不损害原始多模态融合机制的前提下，无缝注入几何特征以实现更深入的推理分割。该策略有效缓解了MLLMs中由仅RGB预训练导致的模态表示不匹配问题，同时增强了几何、上下文和语言特征的整合。大量实验表明，DSRS-Net在驾驶场景推理分割以及跨多个公开数据集的其他语言驱动分割任务中均具有优越性能。源代码和数据集将在论文发表后发布。",
+        "title_zh": "DSRS：教导多模态大语言模型在复杂驾驶场景中感知、推理与分割"
+      }
+    },
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Cross-Domain Few-Shot Segmentation (CD-FSS) aims to segment objects from unseen domains using only a few annotated references. Recent Segment Anything Model (SAM)-based methods have advanced CD-FSS, yet their reference-target visual matching is highly sensitive to target appearance variations. SAM3 introduces text-conditioned segmentation, enabling natural-language descriptions to guide segmentation across target images, but directly using the category name as the condition still yields unstable performance under severe domain shifts. We propose Reference Inversion for SAM3 (RI-SAM3) that leverages SAM3's large-scale vision-language pre-training to learn suitable textual tokens for each target category. RI-SAM3 comprises three core designs: (i) Bi-level Reference Inversion that learns complementary tokens before and after the frozen text encoder: the former remain anchored in SAM3's text space while the latter represent the category more flexibly; (ii) Layer-adaptive Textual Conditioning combines these tokens differently as object queries evolve across decoder layers; and (iii) Presence-aware Confidence Supervision that jointly supervises query confidence and target presence for reliable predictions. With SAM3 frozen, RI-SAM3 optimizes around 12K parameters only per category and it efficiently segments each target in a single forward pass with reusable textual conditioning without per-sample reference-target visual matching. Extensive experiments over multiple widely adopted benchmarks show that RI-SAM3 achieves superior performance consistently in CD-FSS tasks, together with strong robustness, efficiency, and generalization.",
+        "authors": [
+          "Jiahao Nie",
+          "Yun Xing",
+          "Wenbin An",
+          "Qixin Zhang",
+          "Yap-Peng Tan",
+          "Alex C. Kot",
+          "Shijian Lu"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.04084v1",
+        "published": "2026-11-02T23:49:24+00:00",
+        "title": "From Visual Matching to Textual Conditioning: Cross-Domain Few-Shot Segmentation via Reference Inversion",
+        "updated": "2026-11-02T23:49:24+00:00",
+        "version_id": "2611.04084v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "跨域少样本分割（CD-FSS）旨在仅使用少量带标注的参考来分割来自未见域的物体。近期基于Segment Anything Model（SAM）的方法推动了CD-FSS的发展，但其参考-目标视觉匹配对目标外观变化高度敏感。SAM3引入了文本条件分割，使自然语言描述能够引导跨目标图像的分割，但在严重域偏移下直接使用类别名称作为条件仍会产生不稳定的性能。我们提出用于SAM3的参考反演（RI-SAM3），利用SAM3的大规模视觉-语言预训练为每个目标类别学习合适的文本词元。RI-SAM3包含三个核心设计：（i）双层参考反演，在冻结的文本编码器前后学习互补词元：前者保持锚定在SAM3的文本空间中，而后者更灵活地表示类别；（ii）层自适应文本条件，随着目标查询在不同解码器层中演化，以不同方式组合这些词元；（iii）存在感知置信度监督，联合监督查询置信度和目标存在性以获得可靠预测。在SAM3冻结的情况下，RI-SAM3每个类别仅优化约12K参数，并且通过可复用的文本条件在单次前向传播中高效分割每个目标，无需逐样本的参考-目标视觉匹配。在多个广泛采用的基准上的大量实验表明，RI-SAM3在CD-FSS任务中始终取得优越性能，并具有强大的鲁棒性、效率和泛化能力。",
+        "title_zh": "从视觉匹配到文本条件：基于参考反演的跨域少样本分割"
+      }
+    }
+  ],
+  "notification_hash": "c19723263e236d4db6950eb1743be7a69fd68bd74016e9765ce2b1b4eebe6ac7",
+  "recovery_of": [],
+  "rendered": {
+    "2611.04084": "rendered_inline_translation",
+    "2611.06160": "rendered_inline_translation",
+    "2611.06471": "rendered_inline_translation"
+  },
+  "run_id": "20261105T141319Z-98771492",
+  "schema_version": 1
+}
