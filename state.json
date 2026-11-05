@@ -8633,6 +8633,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Cross-Domain Few-Shot Segmentation (CD-FSS) aims to segment objects from unseen domains using only a few annotated references. Recent Segment Anything Model (SAM)-based methods have advanced CD-FSS, yet their reference-target visual matching is highly sensitive to target appearance variations. SAM3 introduces text-conditioned segmentation, enabling natural-language descriptions to guide segmentation across target images, but directly using the category name as the condition still yields unstable performance under severe domain shifts. We propose Reference Inversion for SAM3 (RI-SAM3) that leverages SAM3's large-scale vision-language pre-training to learn suitable textual tokens for each target category. RI-SAM3 comprises three core designs: (i) Bi-level Reference Inversion that learns complementary tokens before and after the frozen text encoder: the former remain anchored in SAM3's text space while the latter represent the category more flexibly; (ii) Layer-adaptive Textual Conditioning combines these tokens differently as object queries evolve across decoder layers; and (iii) Presence-aware Confidence Supervision that jointly supervises query confidence and target presence for reliable predictions. With SAM3 frozen, RI-SAM3 optimizes around 12K parameters only per category and it efficiently segments each target in a single forward pass with reusable textual conditioning without per-sample reference-target visual matching. Extensive experiments over multiple widely adopted benchmarks show that RI-SAM3 achieves superior performance consistently in CD-FSS tasks, together with strong robustness, efficiency, and generalization.",
@@ -8654,11 +8655,22 @@
         "updated": "2026-11-02T23:49:24+00:00",
         "version_id": "2611.04084v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2611.04084v1"
       ]
