@@ -8606,9 +8606,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Cross-Domain Few-Shot Segmentation (CD-FSS) aims to segment objects from unseen domains using only a few annotated references.",
+          "We propose Reference Inversion for SAM3 (RI-SAM3) that leverages SAM3's large-scale vision-language pre-training to learn suitable textual tokens for each target category.",
+          "(iii) Presence-aware Confidence Supervision that jointly supervises query confidence and target presence for reliable predictions.",
+          "With SAM3 frozen, RI-SAM3 optimizes around 12K parameters only per category and it efficiently segments each target in a single forward pass with reusable textual conditioning without per-sample reference-target visual matching."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper is a CD-FSS method using frozen SAM3 and learned textual tokens, with a confidence supervision component. It is not medical, not reasoning segmentation, and the abstract shows no RL or DPO contribution. The only plausible relevance is as a SAM-based optimization/conditioning target that might transfer to the user's interests, but the abstract provides no theoretical justification for the supervision design and no evidence of transfer to medical reasoning segmentation or spatial/position-to-mask tasks.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 38,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether Presence-aware Confidence Supervision has a formal theoretical basis or merely empirical motivation is not stated in the abstract.",
+          "Whether the learned textual token optimization provides substantive transfer value to medical reasoning segmentation or spatial/position reasoning to pixel masks is not evidenced in the abstract.",
+          "The abstract does not confirm whether any experiments involve medical images, reasoning segmentation, RL, or DPO."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Cross-Domain Few-Shot Segmentation (CD-FSS) aims to segment objects from unseen domains using only a few annotated references. Recent Segment Anything Model (SAM)-based methods have advanced CD-FSS, yet their reference-target visual matching is highly sensitive to target appearance variations. SAM3 introduces text-conditioned segmentation, enabling natural-language descriptions to guide segmentation across target images, but directly using the category name as the condition still yields unstable performance under severe domain shifts. We propose Reference Inversion for SAM3 (RI-SAM3) that leverages SAM3's large-scale vision-language pre-training to learn suitable textual tokens for each target category. RI-SAM3 comprises three core designs: (i) Bi-level Reference Inversion that learns complementary tokens before and after the frozen text encoder: the former remain anchored in SAM3's text space while the latter represent the category more flexibly; (ii) Layer-adaptive Textual Conditioning combines these tokens differently as object queries evolve across decoder layers; and (iii) Presence-aware Confidence Supervision that jointly supervises query confidence and target presence for reliable predictions. With SAM3 frozen, RI-SAM3 optimizes around 12K parameters only per category and it efficiently segments each target in a single forward pass with reusable textual conditioning without per-sample reference-target visual matching. Extensive experiments over multiple widely adopted benchmarks show that RI-SAM3 achieves superior performance consistently in CD-FSS tasks, together with strong robustness, efficiency, and generalization.",
         "authors": [
@@ -8629,15 +8654,11 @@
         "updated": "2026-11-02T23:49:24+00:00",
         "version_id": "2611.04084v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-05T14:13:19.794908+00:00",
-        "run_id": "20261105T141319Z-98771492",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2611.04084v1"
       ]
