@@ -8801,9 +8801,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Existing reasoning segmentation frameworks typically employ multimodal large language models (MLLMs) with broad world knowledge to extract semantics in a human-like manner and generate corresponding segmentation masks.",
+          "This paper introduces driving scene reasoning segmentation (DSRS), a scene-specific task that requires models to interpret implicit instructions, infer spatial relations, detect potential risks, handle challenging conditions, and comprehend underlying traffic rules, ultimately generating accurate segmentation masks.",
+          "we propose DSRS-Net, a novel architecture with advanced reasoning segmentation capability for automated driving.",
+          "DSRS-Net seamlessly infuses geometric features for deeper reasoning segmentation, without compromising the original multimodal fusion mechanism."
+        ],
+        "dpo_is_method": false,
+        "reason": "摘要明确提出驾驶场景推理分割任务：模型需理解隐含指令、推断空间关系、识别潜在风险并生成分割掩码；同时提出 DSRS-Net，通过融合几何特征增强推理分割。该方法贡献是架构与多模态特征融合，摘要未显示 RL 或 DPO 作为方法贡献，因此按通用推理分割保留为轻量清单，而非强化学习主路线。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 58,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "全文是否包含未在摘要中提及的 RL 或 DPO 方法贡献尚未确认。",
+          "几何特征融合是否有明确理论依据及可迁移到医学推理分割的实质价值，摘要不足以确认。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Existing reasoning segmentation frameworks typically employ multimodal large language models (MLLMs) with broad world knowledge to extract semantics in a human-like manner and generate corresponding segmentation masks. Nevertheless, these frameworks lack the necessary scene-specific awareness. This paper introduces driving scene reasoning segmentation (DSRS), a scene-specific task that requires models to interpret implicit instructions, infer spatial relations, detect potential risks, handle challenging conditions, and comprehend underlying traffic rules, ultimately generating accurate segmentation masks. Meanwhile, we establish a benchmark dataset to facilitate future research on the DSRS task. To pioneer this task, we propose DSRS-Net, a novel architecture with advanced reasoning segmentation capability for automated driving. Specifically, DSRS-Net seamlessly infuses geometric features for deeper reasoning segmentation, without compromising the original multimodal fusion mechanism. This strategy effectively mitigates the modality representation mismatch in MLLMs caused by RGB-only pretraining, while enhancing the integration of geometric, contextual, and linguistic features. Extensive experiments demonstrate the superior performance of DSRS-Net in both driving scene reasoning segmentation and other language-driven segmentation tasks across various public datasets. The source code and dataset will be released upon publication.",
         "authors": [
@@ -8825,15 +8849,11 @@
         "updated": "2026-11-04T08:39:51+00:00",
         "version_id": "2611.06160v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-05T14:13:19.794908+00:00",
-        "run_id": "20261105T141319Z-98771492",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.06160v1"
       ]
