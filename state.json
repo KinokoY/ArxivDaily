@@ -9304,7 +9304,9 @@
       ]
     },
     "2611.08185": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
@@ -9333,6 +9335,11 @@
         "medical_reasoning"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-06T13:53:46.528705+00:00",
+        "run_id": "20261106T135346Z-91d228de",
+        "stage": "selection"
+      },
       "versions": [
         "2611.08185v1"
       ]
