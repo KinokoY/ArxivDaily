@@ -9391,11 +9391,8 @@
         "transferable_objective"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-06T13:53:46.528705+00:00",
-        "run_id": "20261106T135346Z-91d228de",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "TerraMesh-Masks: 面向地球观测的开放词汇分割",
       "versions": [
         "2611.08081v1"
       ]

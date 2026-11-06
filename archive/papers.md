@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-11-06 | Multimodal Hierarchical Mixture-of-Experts for 3D Medical Vision-Language Modeling | 用于3D医学视觉-语言建模的多模态分层专家混合模型 | [arXiv 2611.08185v1](https://arxiv.org/abs/2611.08185v1) |
-| 2026-11-06 | TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | 待翻译 | [arXiv 2611.08081v1](https://arxiv.org/abs/2611.08081v1) |
+| 2026-11-06 | TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | TerraMesh-Masks: 面向地球观测的开放词汇分割 | [arXiv 2611.08081v1](https://arxiv.org/abs/2611.08081v1) |
 | 2026-11-06 | PSGAgent: Enhancing MLLMs' Dynamic Visual Perception for Panoptic Scene Graph Generation via Agentic Reasoning | PSGAgent：通过智能体推理增强多模态大语言模型的动态视觉感知以生成全景场景图 | [arXiv 2611.07408v1](https://arxiv.org/abs/2611.07408v1) |
 | 2026-11-05 | A 3D foundation model unifying CT interpretation and segmentation | 统一CT解读与分割的3D基础模型 | [arXiv 2611.06471v1](https://arxiv.org/abs/2611.06471v1) |
 | 2026-11-05 | DSRS: Teaching MLLMs to Perceive, Reason, and Segment in Complex Driving Scenes | DSRS：教导多模态大语言模型在复杂驾驶场景中感知、推理与分割 | [arXiv 2611.06160v1](https://arxiv.org/abs/2611.06160v1) |
