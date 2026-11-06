@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-11-06 | Multimodal Hierarchical Mixture-of-Experts for 3D Medical Vision-Language Modeling | 待翻译 | [arXiv 2611.08185v1](https://arxiv.org/abs/2611.08185v1) |
 | 2026-11-06 | TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | 待翻译 | [arXiv 2611.08081v1](https://arxiv.org/abs/2611.08081v1) |
-| 2026-11-06 | PSGAgent: Enhancing MLLMs' Dynamic Visual Perception for Panoptic Scene Graph Generation via Agentic Reasoning | 待翻译 | [arXiv 2611.07408v1](https://arxiv.org/abs/2611.07408v1) |
+| 2026-11-06 | PSGAgent: Enhancing MLLMs' Dynamic Visual Perception for Panoptic Scene Graph Generation via Agentic Reasoning | PSGAgent：通过智能体推理增强多模态大语言模型的动态视觉感知以生成全景场景图 | [arXiv 2611.07408v1](https://arxiv.org/abs/2611.07408v1) |
 | 2026-11-05 | A 3D foundation model unifying CT interpretation and segmentation | 统一CT解读与分割的3D基础模型 | [arXiv 2611.06471v1](https://arxiv.org/abs/2611.06471v1) |
 | 2026-11-05 | DSRS: Teaching MLLMs to Perceive, Reason, and Segment in Complex Driving Scenes | DSRS：教导多模态大语言模型在复杂驾驶场景中感知、推理与分割 | [arXiv 2611.06160v1](https://arxiv.org/abs/2611.06160v1) |
 | 2026-11-05 | From Visual Matching to Textual Conditioning: Cross-Domain Few-Shot Segmentation via Reference Inversion | 从视觉匹配到文本条件：基于参考反演的跨域少样本分割 | [arXiv 2611.04084v1](https://arxiv.org/abs/2611.04084v1) |
