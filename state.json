@@ -9277,9 +9277,31 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Open-vocabulary segmentation (OVS) enables models to segment a variety of concepts specified in natural language, removing the need for fixed label sets and fine-tuning.",
+          "We, therefore, introduce TerraMesh-Masks, a large-scale open-vocabulary segmentation dataset for EO",
+          "Our results demonstrate significantly improved performance over general-purpose state-of-the-art models reaching 35.18% IoU versus 16.29% for DINOv3.txt and 11.33% for SAM-3."
+        ],
+        "dpo_is_method": false,
+        "reason": "This paper introduces an Earth-observation open-vocabulary segmentation dataset and benchmark and an open-vocabulary TerraMind variant. It does not address medical reasoning segmentation, implicit/spatial reasoning to masks, RL/DPO methods, or a theoretically grounded transferable segmentation objective. The rule hit on transferable_objective is not substantiated by the abstract.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 8,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether the TerraMind open-vocabulary adaptation involves any relevant optimization-objective contribution is not stated in the abstract."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Open-vocabulary segmentation (OVS) enables models to segment a variety of concepts specified in natural language, removing the need for fixed label sets and fine-tuning. While recent OVS approaches have shown strong performance on natural images, they transfer poorly to Earth observation (EO) data due to differing semantics, scales, sensing modality, and geographic context. To date, large-scale EO-specific datasets and benchmarks for OVS remain scarce. We, therefore, introduce TerraMesh-Masks, a large-scale open-vocabulary segmentation dataset for EO, comprising 16 million binary masks aligned with nine million multimodal TerraMesh samples and annotated using OpenStreetMap and Overture-derived semantics. In addition, we provide an expert-reviewed evaluation set of 523 samples covering over 200 classes to enable robust evaluation. To demonstrate the impact of TerraMesh-Masks, we build an open-vocabulary version of TerraMind. Our results demonstrate significantly improved performance over general-purpose state-of-the-art models reaching 35.18% IoU versus 16.29% for DINOv3.txt and 11.33% for SAM-3. We release the dataset publicly under a permissive license at https://huggingface.co/datasets/ibm-esa-geospatial/TerraMesh-Masks.",
         "authors": [
@@ -9297,15 +9319,11 @@
         "updated": "2026-11-05T14:31:02+00:00",
         "version_id": "2611.08081v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-06T13:53:46.528705+00:00",
-        "run_id": "20261106T135346Z-91d228de",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.08081v1"
       ]
