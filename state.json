@@ -115,6 +115,10 @@
     "20261105T141319Z-98771492-cb7a29e5d0ac": {
       "attempts": 1,
       "created_at": "2026-11-05T14:13:19.794908+00:00"
+    },
+    "20261106T135346Z-91d228de-d20a1752eea2": {
+      "attempts": 0,
+      "created_at": "2026-11-06T13:53:46.528705+00:00"
     }
   },
   "collection": {
@@ -3018,6 +3022,73 @@
       "run_id": "20261105T141319Z-98771492",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261106T135346Z-91d228de-d20a1752eea2": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/06/20261106T135346Z-91d228de-d20a1752eea2.md",
+      "chain_root": "20261106T135346Z-91d228de-d20a1752eea2",
+      "chain_roots": [
+        "20261106T135346Z-91d228de-d20a1752eea2"
+      ],
+      "content_hash": "d20a1752eea27e3beb556f94e1154a29b4eefcc5d6e78d52c0cce8baf6465989",
+      "created_at": "2026-11-06T13:53:46.528705+00:00",
+      "day": "2026-11-06",
+      "digest_id": "20261106T135346Z-91d228de-d20a1752eea2",
+      "empty": false,
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Panoptic Scene Graph generation (PSG) requires holistic yet fine-grained reasoning over complex relations among objects. However, current Multimodal Large Language Models (MLLMs) applied to PSG suffer from a perception bottleneck: they function as static observers limited by fixed-resolution views. As a result, models often overlook critical relations involving small or peripheral objects and struggle to differentiate ambiguous predicates in complex scenes. To address these limitations, we propose PSGAgent, an agentic framework that enhances visual perception for PSG through a think-act-observe loop. PSGAgent allows MLLMs to dynamically refine their visual perception using two tools: a Region Zoom-In Tool for local exploration of small or boundary relations and a Visual Highlight Tool for relation-focused segmentation that filters out irrelevant contextual noise. To optimize decision-making, we construct a two-stage training pipeline. First, we create a high-quality, error-aware Multimodal Chain-of-Thought (M-CoT) dataset that provides robust supervision for cold-start learning. Then, we design a novel hierarchical reward mechanism integrated with Group Sequence Policy Optimization (GSPO) to enable strategic and adaptive tool usage. Extensive experiments on the PSG benchmark show that PSGAgent achieves SOTA performance, demonstrating strong capability in both holistic and fine-grained scene understanding.",
+            "authors": [
+              "Qingyun Liu",
+              "Yuankun Liu",
+              "Jiaye Feng",
+              "Jie Huang",
+              "Zonghong Dai",
+              "Haochen Li",
+              "Jingkun Wang",
+              "Weiping Li",
+              "Tong Mo"
+            ],
+            "categories": [
+              "cs.CV",
+              "cs.AI"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2611.07408v1",
+            "published": "2026-11-05T04:02:16+00:00",
+            "title": "PSGAgent: Enhancing MLLMs' Dynamic Visual Perception for Panoptic Scene Graph Generation via Agentic Reasoning",
+            "updated": "2026-11-05T04:02:16+00:00",
+            "version_id": "2611.07408v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "general_rl",
+            "general_reasoning"
+          ],
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "全景场景图生成（PSG）需要对物体间复杂关系进行整体而又细粒度的推理。然而，当前应用于PSG的多模态大语言模型（MLLMs）面临感知瓶颈：它们受限于固定分辨率视图，仅作为静态观察者运行。因此，模型常常忽略涉及小物体或边缘物体的关键关系，并且难以在复杂场景中区分模糊谓词。为解决这些局限，我们提出PSGAgent，一个通过“思考-行动-观察”循环增强PSG视觉感知的智能体框架。PSGAgent允许MLLMs使用两种工具动态细化其视觉感知：区域放大工具用于对小或边界关系进行局部探索，视觉高亮工具用于以关系为中心的分割，以过滤无关的上下文噪声。为优化决策，我们构建了两阶段训练流程。首先，我们创建了一个高质量、错误感知的多模态思维链（M-CoT）数据集，为冷启动学习提供稳健监督。然后，我们设计了一种新颖的分层奖励机制，并与组序列策略优化（GSPO）集成，以实现策略性和自适应性的工具使用。在PSG基准上的大量实验表明，PSGAgent达到了SOTA性能，在整体和细粒度场景理解方面均展现出强大能力。",
+            "title_zh": "PSGAgent：通过智能体推理增强多模态大语言模型的动态视觉感知以生成全景场景图"
+          }
+        }
+      ],
+      "notification_hash": "9b81fdadcccd98e2cc0713bab704b8bb9287e0279e90dab04f662a3d15d50f57",
+      "recovery_of": [],
+      "rendered": {
+        "2611.07408": "rendered_inline_translation"
+      },
+      "run_id": "20261106T135346Z-91d228de",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "papers": {
