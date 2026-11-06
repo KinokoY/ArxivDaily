@@ -119,7 +119,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-05T14:13:19.794908+00:00"
+    "last_complete_end": "2026-11-06T13:53:46.528705+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -8675,7 +8675,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-03T13:48:31.724483+00:00",
-      "latest_version": "2611.00247v1",
+      "latest_version": "2611.00247v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Dense labels of the aorta in CT are slow to draw, and the public aortic CT datasets that could stand in for them each label different structures under their own conventions. Large language model (LLM) agents can now write code and read images. We asked whether such a model labels these scans better as a free-form agent that writes its own segmentation code, or inside a harness, where an automated pass labels the scan and the model reviews the result. We built a harness, Taurus, and compared it with free-form agents by blind label recovery: we withheld the human labels of six public datasets (939 volumes) and scored every approach against each dataset's own classes. In the first version of Taurus, the model's review raised the primary metric on only two of six datasets, by less than the noise between two reviews of the same case. A free-form agent running Claude Opus 5.5 scored higher on most datasets. Moving what the free-form agents did well into the automated pass then carried most of the gain on 38 held-out cases. The final version smooths the label surfaces with a fixed rule and checks for the large errors the automated pass tends to make, such as an aneurysm drawn to half its size. Each check that fires puts a multiple-choice question to the model, with candidate corrections drawn on the scan. It matched the surface smoothness of the human references, and in the primary metric we found no difference from the free-form Opus agent, at under half its cost, $1.22 against $2.71 per case. Most of what made Taurus competitive came from the harness and its automation rather than from the language model itself. Taurus shows that this kind of annotation can be automated, so that expert time can move from drawing labels to checking them.",
@@ -8713,7 +8713,8 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "Taurus：LLM在环CT标注以一半成本匹敌编码代理",
       "versions": [
-        "2611.00247v1"
+        "2611.00247v1",
+        "2611.00247v2"
       ]
     },
     "2611.00396": {
@@ -8745,6 +8746,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-03T13:48:31.724483+00:00",
+      "latest_version": "2611.00396v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "In retinal vessel segmentation, plain Vision Transformers (ViTs) are commonly expected to perform worse than convolutional neural networks (CNNs) on thin vessels, for reasons such as their coarse patch tokenization, their weak locality bias and their need for large training sets. Although this expectation is widely shared in the literature, how plain ViTs actually compare with CNNs on thin vessels has not been systematically quantified. We address this question by comparing a model with a plain ViT encoder (MedSAM), a hybrid Transformer (LiteMedSAM) and three CNNs of different sizes on three retinal datasets (DRIVE, HRF, FIVES) and, as a second-domain check, a microscopy dataset (VessMap). We measured the centerline recall and precision of thin vessels and compared the models while also considering their computational cost and how many epochs they needed to train. We found that the pre-trained MedSAM had a centerline recall of thin vessels that was not significantly different from that of the best CNN on all four datasets (-0.6 to +2.5 percentage points). A compact plain ViT obtained through architecture search but trained from scratch did not retain this performance. For pre-trained plain ViTs, our results do not support the expectation that they miss thin vessels, although similar thin-vessel performance can be obtained with much smaller models.",
@@ -9080,6 +9082,7 @@
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.06160v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Existing reasoning segmentation frameworks typically employ multimodal large language models (MLLMs) with broad world knowledge to extract semantics in a human-like manner and generate corresponding segmentation masks. Nevertheless, these frameworks lack the necessary scene-specific awareness. This paper introduces driving scene reasoning segmentation (DSRS), a scene-specific task that requires models to interpret implicit instructions, infer spatial relations, detect potential risks, handle challenging conditions, and comprehend underlying traffic rules, ultimately generating accurate segmentation masks. Meanwhile, we establish a benchmark dataset to facilitate future research on the DSRS task. To pioneer this task, we propose DSRS-Net, a novel architecture with advanced reasoning segmentation capability for automated driving. Specifically, DSRS-Net seamlessly infuses geometric features for deeper reasoning segmentation, without compromising the original multimodal fusion mechanism. This strategy effectively mitigates the modality representation mismatch in MLLMs caused by RGB-only pretraining, while enhancing the integration of geometric, contextual, and linguistic features. Extensive experiments demonstrate the superior performance of DSRS-Net in both driving scene reasoning segmentation and other language-driven segmentation tasks across various public datasets. The source code and dataset will be released upon publication.",
@@ -9172,6 +9175,7 @@
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.06471v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Radiologists interpret computed tomography (CT) scans by jointly determining what a finding represents and where it lies in three-dimensional (3D) anatomy. However, CT models have treated CT interpretation and 3D segmentation as separate tasks, leaving textual findings spatially unverifiable and overlooking potential synergy between clinical understanding and spatial perception. Here we present HoloCT, a generalist 3D foundation model unifying CT interpretation and voxel-level segmentation by jointly modelling whole-volume context and fine-grained anatomical detail, providing 3D masks as evidence. We curated HoloDATA, comprising 195,921 CT scans from 73 public datasets and six clinical cohorts, with 6.2 million instruction dialogues and 2.8 million CT-mask pairs. Across 346 tasks spanning segmentation, lesion screening, visual question answering, and report generation on 61 internal and 12 external datasets, HoloCT outperformed specialist and foundation models. In multicentre validation across 11,455 clinical CT scans from five hospitals, HoloCT outperformed competing models in lesion segmentation and report generation by 18.2 and 15.3 points. It also achieved 85.1% mean accuracy in screening thyroid tumours and colon lesions, exceeding all four participating radiologists in a retrospective reader study. Further analyses revealed bidirectional semantic-spatial synergy: language-guided segmentation delineated unseen anatomical structures and lesions as well as diffuse free-text findings, outperforming the leading approach by 22.1 points, whereas prompting the model to generate corresponding 3D masks alongside its textual outputs significantly improved interpretation performance. HoloCT shows that clinical understanding and spatial perception can be learned together within a single foundation model and offers a path towards more accurate and reliable CT analysis.",
@@ -9217,8 +9221,8 @@
       ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
-        "medical_reasoning",
-        "general_reasoning"
+        "general_reasoning",
+        "medical_reasoning"
       ],
       "stage": "delivered",
       "title_zh": "统一CT解读与分割的3D基础模型",
@@ -9230,6 +9234,107 @@
       "translation_provider": "llm",
       "versions": [
         "2611.06471v1"
+      ]
+    },
+    "2611.07408": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "paper": {
+        "abstract": "Panoptic Scene Graph generation (PSG) requires holistic yet fine-grained reasoning over complex relations among objects. However, current Multimodal Large Language Models (MLLMs) applied to PSG suffer from a perception bottleneck: they function as static observers limited by fixed-resolution views. As a result, models often overlook critical relations involving small or peripheral objects and struggle to differentiate ambiguous predicates in complex scenes. To address these limitations, we propose PSGAgent, an agentic framework that enhances visual perception for PSG through a think-act-observe loop. PSGAgent allows MLLMs to dynamically refine their visual perception using two tools: a Region Zoom-In Tool for local exploration of small or boundary relations and a Visual Highlight Tool for relation-focused segmentation that filters out irrelevant contextual noise. To optimize decision-making, we construct a two-stage training pipeline. First, we create a high-quality, error-aware Multimodal Chain-of-Thought (M-CoT) dataset that provides robust supervision for cold-start learning. Then, we design a novel hierarchical reward mechanism integrated with Group Sequence Policy Optimization (GSPO) to enable strategic and adaptive tool usage. Extensive experiments on the PSG benchmark show that PSGAgent achieves SOTA performance, demonstrating strong capability in both holistic and fine-grained scene understanding.",
+        "authors": [
+          "Qingyun Liu",
+          "Yuankun Liu",
+          "Jiaye Feng",
+          "Jie Huang",
+          "Zonghong Dai",
+          "Haochen Li",
+          "Jingkun Wang",
+          "Weiping Li",
+          "Tong Mo"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.07408v1",
+        "published": "2026-11-05T04:02:16+00:00",
+        "title": "PSGAgent: Enhancing MLLMs' Dynamic Visual Perception for Panoptic Scene Graph Generation via Agentic Reasoning",
+        "updated": "2026-11-05T04:02:16+00:00",
+        "version_id": "2611.07408v1"
+      },
+      "rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.07408v1"
+      ]
+    },
+    "2611.08081": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "paper": {
+        "abstract": "Open-vocabulary segmentation (OVS) enables models to segment a variety of concepts specified in natural language, removing the need for fixed label sets and fine-tuning. While recent OVS approaches have shown strong performance on natural images, they transfer poorly to Earth observation (EO) data due to differing semantics, scales, sensing modality, and geographic context. To date, large-scale EO-specific datasets and benchmarks for OVS remain scarce. We, therefore, introduce TerraMesh-Masks, a large-scale open-vocabulary segmentation dataset for EO, comprising 16 million binary masks aligned with nine million multimodal TerraMesh samples and annotated using OpenStreetMap and Overture-derived semantics. In addition, we provide an expert-reviewed evaluation set of 523 samples covering over 200 classes to enable robust evaluation. To demonstrate the impact of TerraMesh-Masks, we build an open-vocabulary version of TerraMind. Our results demonstrate significantly improved performance over general-purpose state-of-the-art models reaching 35.18% IoU versus 16.29% for DINOv3.txt and 11.33% for SAM-3. We release the dataset publicly under a permissive license at https://huggingface.co/datasets/ibm-esa-geospatial/TerraMesh-Masks.",
+        "authors": [
+          "Benedikt Blumenstiel",
+          "Hugues Devimeux",
+          "Johannes Jakubik",
+          "Konrad Schindler"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.08081v1",
+        "published": "2026-11-05T14:31:02+00:00",
+        "title": "TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation",
+        "updated": "2026-11-05T14:31:02+00:00",
+        "version_id": "2611.08081v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.08081v1"
+      ]
+    },
+    "2611.08185": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "paper": {
+        "abstract": "Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization. Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy. We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context. To our knowledge, MedHiVE is the first framework to route both vision and text tokens through a two-level SMoE hierarchy organized by anatomical scale, coupling this with report-derived anatomy-level contrastive alignment for 3D medical imaging. This replaces the direct region-text alignment of statically pooled features and vision-only hierarchical routing of prior work with dynamic, slot-based cross-modal information flow across anatomical scales. MedHiVE operates via a two-level, learnable token-routing mechanism, where local image and text features are first routed through a local SMoE and then fused by a global SMoE into unified multimodal representations. Contrastive learning aligns both anatomy-level and global vision-language representations in a unified space. Pre-trained on 25,000+ CT scans with anatomical supervision, MedHiVE consistently surpasses 11 state-of-the-art methods across 6 datasets on 3 tasks: segmentation, classification, and detection, demonstrating the importance of hierarchical modeling. The code for MedHiVE is at github.com/szczurek-lab/MedHiVE.",
+        "authors": [
+          "Gizem Mert",
+          "Szymon Płotka",
+          "Pedro R. A. S. Bassi",
+          "Wenxuan Li",
+          "Zongwei Zhou",
+          "Jarosław B. Ćwikła",
+          "Arkadiusz Sitek",
+          "Ewa Szczurek"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.08185v1",
+        "published": "2026-11-05T15:40:31+00:00",
+        "title": "Multimodal Hierarchical Mixture-of-Experts for 3D Medical Vision-Language Modeling",
+        "updated": "2026-11-05T15:40:31+00:00",
+        "version_id": "2611.08185v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.08185v1"
       ]
     }
   },
@@ -10519,10 +10624,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-06",
+      "discovered_candidates": 23,
+      "discovered_papers": 23,
       "run_id": "20261106T135346Z-91d228de",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-06T13:53:00+00:00",
+          "seen": 5683,
+          "start": "2026-10-23T13:53:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-06T13:53:46.528705+00:00",
       "window": {
         "end": "2026-11-06T13:53:46.528705+00:00",
