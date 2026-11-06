@@ -9307,9 +9307,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context.",
+          "Contrastive learning aligns both anatomy-level and global vision-language representations in a unified space.",
+          "MedHiVE consistently surpasses 11 state-of-the-art methods across 6 datasets on 3 tasks: segmentation, classification, and detection, demonstrating the importance of hierarchical modeling."
+        ],
+        "dpo_is_method": false,
+        "reason": "MedHiVE 的核心贡献是面向 3D 医学视觉-语言预训练的分层跨模态 Soft Mixture-of-Experts 路由，以及由报告派生的解剖层级对比对齐；其目标是学习统一的图文表示，并非将隐含请求或空间/位置推理映射到像素掩码的推理分割机制。摘要中的 segmentation 只是三个下游评测任务之一（另有分类与检测），没有描述文本指令驱动的掩码生成、推理式指代或空间推理到像素的解码流程。方法层面不含 RL 或 DPO，也不涉及拓扑/结构目标或传统损失的理论分析，因此与本研究的 RL/DPO 方法贡献、医学推理分割主线不匹配，仅可作轻量背景参考。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 30,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未说明 segmentation 下游任务的具体形式（解剖结构分割还是指令/推理驱动分割），无法确认是否存在推理分割设定。",
+          "未读取正文，无法确认其解剖层级对比对齐是否可迁移为掩码级推理监督信号。",
+          "未确认预训练中的 anatomical supervision 是否包含可用的空间/位置推理标注。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization. Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy. We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context. To our knowledge, MedHiVE is the first framework to route both vision and text tokens through a two-level SMoE hierarchy organized by anatomical scale, coupling this with report-derived anatomy-level contrastive alignment for 3D medical imaging. This replaces the direct region-text alignment of statically pooled features and vision-only hierarchical routing of prior work with dynamic, slot-based cross-modal information flow across anatomical scales. MedHiVE operates via a two-level, learnable token-routing mechanism, where local image and text features are first routed through a local SMoE and then fused by a global SMoE into unified multimodal representations. Contrastive learning aligns both anatomy-level and global vision-language representations in a unified space. Pre-trained on 25,000+ CT scans with anatomical supervision, MedHiVE consistently surpasses 11 state-of-the-art methods across 6 datasets on 3 tasks: segmentation, classification, and detection, demonstrating the importance of hierarchical modeling. The code for MedHiVE is at github.com/szczurek-lab/MedHiVE.",
         "authors": [
@@ -9331,15 +9355,11 @@
         "updated": "2026-11-05T15:40:31+00:00",
         "version_id": "2611.08185v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-06T13:53:46.528705+00:00",
-        "run_id": "20261106T135346Z-91d228de",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.08185v1"
       ]
