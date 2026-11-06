@@ -3037,8 +3037,15 @@
       "content_hash": "d20a1752eea27e3beb556f94e1154a29b4eefcc5d6e78d52c0cce8baf6465989",
       "created_at": "2026-11-06T13:53:46.528705+00:00",
       "day": "2026-11-06",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "66601987",
+        "status": "confirmed"
+      },
       "digest_id": "20261106T135346Z-91d228de-d20a1752eea2",
       "empty": false,
+      "finished_at": "2026-11-06T13:58:22.039864+00:00",
       "items": [
         {
           "modules": [
@@ -3093,7 +3100,7 @@
       },
       "run_id": "20261106T135346Z-91d228de",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
@@ -9321,7 +9328,6 @@
       ]
     },
     "2611.07408": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -9356,7 +9362,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -9387,7 +9393,6 @@
         "updated": "2026-11-05T04:02:16+00:00",
         "version_id": "2611.07408v1"
       },
-      "pending_digest": "20261106T135346Z-91d228de-d20a1752eea2",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -9405,7 +9410,7 @@
         "general_rl",
         "general_reasoning"
       ],
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "PSGAgent：通过智能体推理增强多模态大语言模型的动态视觉感知以生成全景场景图",
       "translation": {
         "abstract_zh": "全景场景图生成（PSG）需要对物体间复杂关系进行整体而又细粒度的推理。然而，当前应用于PSG的多模态大语言模型（MLLMs）面临感知瓶颈：它们受限于固定分辨率视图，仅作为静态观察者运行。因此，模型常常忽略涉及小物体或边缘物体的关键关系，并且难以在复杂场景中区分模糊谓词。为解决这些局限，我们提出PSGAgent，一个通过“思考-行动-观察”循环增强PSG视觉感知的智能体框架。PSGAgent允许MLLMs使用两种工具动态细化其视觉感知：区域放大工具用于对小或边界关系进行局部探索，视觉高亮工具用于以关系为中心的分割，以过滤无关的上下文噪声。为优化决策，我们构建了两阶段训练流程。首先，我们创建了一个高质量、错误感知的多模态思维链（M-CoT）数据集，为冷启动学习提供稳健监督。然后，我们设计了一种新颖的分层奖励机制，并与组序列策略优化（GSPO）集成，以实现策略性和自适应性的工具使用。在PSG基准上的大量实验表明，PSGAgent达到了SOTA性能，在整体和细粒度场景理解方面均展现出强大能力。",
