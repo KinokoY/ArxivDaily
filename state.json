@@ -9240,9 +9240,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "To address these limitations, we propose PSGAgent, an agentic framework that enhances visual perception for PSG through a think-act-observe loop.",
+          "Then, we design a novel hierarchical reward mechanism integrated with Group Sequence Policy Optimization (GSPO) to enable strategic and adaptive tool usage."
+        ],
+        "dpo_is_method": false,
+        "reason": "任务为通用全景场景图生成，非医学影像；核心方法贡献是 agentic think-act-observe 框架结合分层奖励与 Group Sequence Policy Optimization (GSPO) 来优化工具使用决策，RL 是本研究方法而非基线或背景。它不涉及推理分割，也不使用 DPO；虽与医学推理分割不直接对应，但作为通用视觉推理中的 RL/agentic 方法贡献，按规则可保留。摘要未提供理论分析或向医学任务的迁移验证。",
+        "review_evidence": [],
+        "rl_is_method": true,
+        "route": "general_rl",
+        "score": 82,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "无法从摘要确认 GSPO/RL 相对监督微调或提示方法的独立增益。",
+          "未确认该 agentic 工具使用框架是否可直接迁移到医学影像推理分割。",
+          "工作为全景场景图生成而非像素级推理分割，和核心兴趣存在任务差异。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Panoptic Scene Graph generation (PSG) requires holistic yet fine-grained reasoning over complex relations among objects. However, current Multimodal Large Language Models (MLLMs) applied to PSG suffer from a perception bottleneck: they function as static observers limited by fixed-resolution views. As a result, models often overlook critical relations involving small or peripheral objects and struggle to differentiate ambiguous predicates in complex scenes. To address these limitations, we propose PSGAgent, an agentic framework that enhances visual perception for PSG through a think-act-observe loop. PSGAgent allows MLLMs to dynamically refine their visual perception using two tools: a Region Zoom-In Tool for local exploration of small or boundary relations and a Visual Highlight Tool for relation-focused segmentation that filters out irrelevant contextual noise. To optimize decision-making, we construct a two-stage training pipeline. First, we create a high-quality, error-aware Multimodal Chain-of-Thought (M-CoT) dataset that provides robust supervision for cold-start learning. Then, we design a novel hierarchical reward mechanism integrated with Group Sequence Policy Optimization (GSPO) to enable strategic and adaptive tool usage. Extensive experiments on the PSG benchmark show that PSGAgent achieves SOTA performance, demonstrating strong capability in both holistic and fine-grained scene understanding.",
         "authors": [
@@ -9266,16 +9289,12 @@
         "updated": "2026-11-05T04:02:16+00:00",
         "version_id": "2611.07408v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_rl",
         "general_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-06T13:53:46.528705+00:00",
-        "run_id": "20261106T135346Z-91d228de",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.07408v1"
       ]
