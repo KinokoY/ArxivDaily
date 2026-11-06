@@ -9396,7 +9396,8 @@
     },
     "2611.08185": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "title_translation": 1
       },
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "decision": {
@@ -9462,6 +9463,11 @@
         "medical_reasoning"
       ],
       "stage": "rejected",
+      "stage_started": {
+        "at": "2026-11-06T13:53:46.528705+00:00",
+        "run_id": "20261106T135346Z-91d228de",
+        "stage": "title_translation"
+      },
       "versions": [
         "2611.08185v1"
       ]
