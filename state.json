@@ -123,7 +123,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-06T13:53:46.528705+00:00"
+    "last_complete_end": "2026-11-07T12:38:10.960364+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -8599,6 +8599,7 @@
       "failures": {},
       "first_discovered": "2026-11-02T15:00:19.497385+00:00",
       "intended_tier": "translation",
+      "latest_version": "2610.41257v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Reasoning video object segmentation (ReVOS) requires segmenting the target specified by an implicit query throughout a video. Existing MLLM-based methods typically require costly cross-model alignment, tying MLLM training to a downstream segmentation model. We present ReVEAL, a decoupled thinking-with-video framework for ReVOS that elicits role-aware latent visual evidence from MLLM reasoning to directly guide segmentation. ReVEAL introduces Visual Evidence Tokens (VETs) into video reasoning to associate necessary visual regions or entities with target, background, or distractor roles, while a Dynamic Attention Layer Router adaptively aggregates VET-to-video attention across layers into role-specific grounding evidence. We train the MLLM to perform VET-augmented reasoning on our constructed ReVEAL-47K dataset, with a Contrastive Attention Grounding Loss as auxiliary supervision to apply role-specific constraints to VET attention and optimize layer routing for reliable latent grounding. At inference, ReVEAL identifies the target through this thinking-with-video process and fuses the resulting role-specific evidence to guide a frozen SAM2 in predicting target masks. Experiments on five benchmarks show that ReVEAL outperforms alignment-free baselines and remains competitive with alignment-based methods.",
@@ -8632,8 +8633,8 @@
       ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
-        "transferable_objective",
-        "general_reasoning"
+        "general_reasoning",
+        "transferable_objective"
       ],
       "stage": "delivered",
       "title_zh": "ReVEAL：从多模态大语言模型中引出角色感知的潜在视觉证据以进行推理视频目标分割",
@@ -8920,6 +8921,7 @@
       "failures": {},
       "first_discovered": "2026-11-05T14:13:19.794908+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.04084v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Cross-Domain Few-Shot Segmentation (CD-FSS) aims to segment objects from unseen domains using only a few annotated references. Recent Segment Anything Model (SAM)-based methods have advanced CD-FSS, yet their reference-target visual matching is highly sensitive to target appearance variations. SAM3 introduces text-conditioned segmentation, enabling natural-language descriptions to guide segmentation across target images, but directly using the category name as the condition still yields unstable performance under severe domain shifts. We propose Reference Inversion for SAM3 (RI-SAM3) that leverages SAM3's large-scale vision-language pre-training to learn suitable textual tokens for each target category. RI-SAM3 comprises three core designs: (i) Bi-level Reference Inversion that learns complementary tokens before and after the frozen text encoder: the former remain anchored in SAM3's text space while the latter represent the category more flexibly; (ii) Layer-adaptive Textual Conditioning combines these tokens differently as object queries evolve across decoder layers; and (iii) Presence-aware Confidence Supervision that jointly supervises query confidence and target presence for reliable predictions. With SAM3 frozen, RI-SAM3 optimizes around 12K parameters only per category and it efficiently segments each target in a single forward pass with reusable textual conditioning without per-sample reference-target visual matching. Extensive experiments over multiple widely adopted benchmarks show that RI-SAM3 achieves superior performance consistently in CD-FSS tasks, together with strong robustness, efficiency, and generalization.",
@@ -9369,6 +9371,7 @@
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.07408v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Panoptic Scene Graph generation (PSG) requires holistic yet fine-grained reasoning over complex relations among objects. However, current Multimodal Large Language Models (MLLMs) applied to PSG suffer from a perception bottleneck: they function as static observers limited by fixed-resolution views. As a result, models often overlook critical relations involving small or peripheral objects and struggle to differentiate ambiguous predicates in complex scenes. To address these limitations, we propose PSGAgent, an agentic framework that enhances visual perception for PSG through a think-act-observe loop. PSGAgent allows MLLMs to dynamically refine their visual perception using two tools: a Region Zoom-In Tool for local exploration of small or boundary relations and a Visual Highlight Tool for relation-focused segmentation that filters out irrelevant contextual noise. To optimize decision-making, we construct a two-stage training pipeline. First, we create a high-quality, error-aware Multimodal Chain-of-Thought (M-CoT) dataset that provides robust supervision for cold-start learning. Then, we design a novel hierarchical reward mechanism integrated with Group Sequence Policy Optimization (GSPO) to enable strategic and adaptive tool usage. Extensive experiments on the PSG benchmark show that PSGAgent achieves SOTA performance, demonstrating strong capability in both holistic and fine-grained scene understanding.",
@@ -9407,8 +9410,8 @@
       ],
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
-        "general_rl",
-        "general_reasoning"
+        "general_reasoning",
+        "general_rl"
       ],
       "stage": "delivered",
       "title_zh": "PSGAgent：通过智能体推理增强多模态大语言模型的动态视觉感知以生成全景场景图",
@@ -9451,6 +9454,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "latest_version": "2611.08081v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Open-vocabulary segmentation (OVS) enables models to segment a variety of concepts specified in natural language, removing the need for fixed label sets and fine-tuning. While recent OVS approaches have shown strong performance on natural images, they transfer poorly to Earth observation (EO) data due to differing semantics, scales, sensing modality, and geographic context. To date, large-scale EO-specific datasets and benchmarks for OVS remain scarce. We, therefore, introduce TerraMesh-Masks, a large-scale open-vocabulary segmentation dataset for EO, comprising 16 million binary masks aligned with nine million multimodal TerraMesh samples and annotated using OpenStreetMap and Overture-derived semantics. In addition, we provide an expert-reviewed evaluation set of 523 samples covering over 200 classes to enable robust evaluation. To demonstrate the impact of TerraMesh-Masks, we build an open-vocabulary version of TerraMind. Our results demonstrate significantly improved performance over general-purpose state-of-the-art models reaching 35.18% IoU versus 16.29% for DINOv3.txt and 11.33% for SAM-3. We release the dataset publicly under a permissive license at https://huggingface.co/datasets/ibm-esa-geospatial/TerraMesh-Masks.",
@@ -9522,6 +9526,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-06T13:53:46.528705+00:00",
+      "latest_version": "2611.08185v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Medical 3D scans and reports are inherently hierarchical, with diagnostic cues concentrated in specific anatomical regions across multiple levels of organization. Yet, most medical vision-language models ignore this structure and fail to focus on clinically relevant anatomy. We introduce MedHiVE, which combines hierarchical vision-language Soft Mixture-of-Experts (SMoE) with contrastive learning to jointly model fine-grained anatomy and global scan context. To our knowledge, MedHiVE is the first framework to route both vision and text tokens through a two-level SMoE hierarchy organized by anatomical scale, coupling this with report-derived anatomy-level contrastive alignment for 3D medical imaging. This replaces the direct region-text alignment of statically pooled features and vision-only hierarchical routing of prior work with dynamic, slot-based cross-modal information flow across anatomical scales. MedHiVE operates via a two-level, learnable token-routing mechanism, where local image and text features are first routed through a local SMoE and then fused by a global SMoE into unified multimodal representations. Contrastive learning aligns both anatomy-level and global vision-language representations in a unified space. Pre-trained on 25,000+ CT scans with anatomical supervision, MedHiVE consistently surpasses 11 state-of-the-art methods across 6 datasets on 3 tasks: segmentation, classification, and detection, demonstrating the importance of hierarchical modeling. The code for MedHiVE is at github.com/szczurek-lab/MedHiVE.",
@@ -10895,10 +10900,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-07",
+      "discovered_candidates": 25,
+      "discovered_papers": 25,
       "run_id": "20261107T123810Z-0e583d65",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-07T12:38:00+00:00",
+          "seen": 5384,
+          "start": "2026-10-24T12:38:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-07T12:38:10.960364+00:00",
       "window": {
         "end": "2026-11-07T12:38:10.960364+00:00",
