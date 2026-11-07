@@ -1,0 +1,17 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/07/20261107T123810Z-0e583d65-10b36b0745e5.md",
+  "chain_roots": [
+    "20261107T123810Z-0e583d65-10b36b0745e5"
+  ],
+  "content_hash": "10b36b0745e5b4caa0e818bb9c627a8e4511c9801aff52b8474e4fe505664c2a",
+  "day": "2026-11-07",
+  "digest_id": "20261107T123810Z-0e583d65-10b36b0745e5",
+  "empty": true,
+  "items": [],
+  "notification_hash": "a1c14186c1c49804420abdcd1704d087f7218a86df089bd6b0e56a05462b56a5",
+  "recovery_of": [],
+  "rendered": {},
+  "run_id": "20261107T123810Z-0e583d65",
+  "schema_version": 1
+}
