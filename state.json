@@ -11027,11 +11027,20 @@
     },
     {
       "collection_errors": [],
+      "completed_at": "2026-11-08T12:58:49.420462+00:00",
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
       "coverage_complete": true,
       "day": "2026-11-08",
+      "delivery_day": "2026-11-08",
+      "delivery_kind": "empty",
+      "delivery_status": "confirmed",
+      "digest_id": "20261108T125539Z-4280b992-58994978e30c",
       "discovered_candidates": 19,
       "discovered_papers": 19,
+      "errors": [],
+      "full": 0,
+      "light": 0,
+      "recovery": 0,
       "run_id": "20261108T125539Z-4280b992",
       "shards": [
         {
@@ -11047,7 +11056,9 @@
           "status": "complete"
         }
       ],
+      "silent": false,
       "started_at": "2026-11-08T12:55:39.028397+00:00",
+      "translation": 0,
       "window": {
         "end": "2026-11-08T12:55:39.028397+00:00",
         "initial_floor": "2026-09-30T09:52:55.126385+00:00",
