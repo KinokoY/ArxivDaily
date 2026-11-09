@@ -131,7 +131,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-08T12:55:39.028397+00:00"
+    "last_complete_end": "2026-11-09T15:30:15.497195+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -9654,6 +9654,37 @@
       "versions": [
         "2611.08185v1"
       ]
+    },
+    "2611.08943": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-09T15:30:15.497195+00:00",
+      "paper": {
+        "abstract": "This paper investigates how to leverage the powerful capabilities of the Segment Anything Model 2 (SAM2) to tackle few-shot segmentation (FSS) tasks. One major challenge lies in the substantial appearance differences between the support and query images, which may diminish the effectiveness of the memory-matching process in SAM2. Through systematic analysis, we find that the memory generated based on the categorical semantic information is robust to this appearance divergence and is more compatible with SAM2. Based on these observations, we propose a new Memory-Enhanced SAM2 (MESAM) method, which first introduces a Semantic-Visual Memory Generation (SVMG) module to separately construct a query semantic memory, a query foreground visual memory, and a support adaptive visual memory. Then, in our designed Interactive Semantic Memory Refinement (ISMR) module, we further enrich the obtained semantic memory with fine-grained visual details, and suppress its misatcivated background responses. Extensive experiments on the PASCAL-$5^i$, COCO-$20^i$, and LVIS-$92^i$ datasets demonstrate that MESAM consistently outperforms existing FSS methods, achieving new state-of-the-art segmentation performance. Our source code is available at: \\href{https://github.com/tianyu-zou/MESAM}{https://github.com/tianyu-zou/MESAM}.",
+        "authors": [
+          "Tianyu Zou",
+          "Shengwu Xiong",
+          "Rui Wu",
+          "Ruilin Yao",
+          "Yi Rong"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.08943v1",
+        "published": "2026-11-06T03:41:46+00:00",
+        "title": "MESAM: Enhancing SAM2 for Few-Shot Segmentation through Semantic-Visual Memory Generation and Refinement",
+        "updated": "2026-11-06T03:41:46+00:00",
+        "version_id": "2611.08943v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.08943v1"
+      ]
     }
   },
   "runs": [
@@ -11068,10 +11099,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-09",
+      "discovered_candidates": 22,
+      "discovered_papers": 22,
       "run_id": "20261109T153015Z-ed3d3a3d",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-09T15:30:00+00:00",
+          "seen": 5122,
+          "start": "2026-10-26T15:30:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-09T15:30:15.497195+00:00",
       "window": {
         "end": "2026-11-09T15:30:15.497195+00:00",
