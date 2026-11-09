@@ -9656,7 +9656,9 @@
       ]
     },
     "2611.08943": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-09T15:30:15.497195+00:00",
@@ -9682,6 +9684,11 @@
         "transferable_objective"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-09T15:30:15.497195+00:00",
+        "run_id": "20261109T153015Z-ed3d3a3d",
+        "stage": "selection"
+      },
       "versions": [
         "2611.08943v1"
       ]
