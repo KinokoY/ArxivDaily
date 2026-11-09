@@ -3210,8 +3210,15 @@
       "content_hash": "f3e46058507ece49851ab767e637c0ac1b1a4916debe76675ef05f69961a0a35",
       "created_at": "2026-11-09T15:30:15.497195+00:00",
       "day": "2026-11-09",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "67225121",
+        "status": "confirmed"
+      },
       "digest_id": "20261109T153015Z-ed3d3a3d-f3e46058507e",
       "empty": true,
+      "finished_at": "2026-11-09T15:34:08.716565+00:00",
       "items": [],
       "notification_hash": "f81e5014345464b09afdd91ac2190897360c7c529267a9541db83ea71d6b2dad",
       "quota_day": "2026-11-09",
@@ -3219,7 +3226,7 @@
       "rendered": {},
       "run_id": "20261109T153015Z-ed3d3a3d",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "papers": {
