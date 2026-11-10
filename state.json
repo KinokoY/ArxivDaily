@@ -9771,9 +9771,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "we developed PathXAI, which combines segmentation-derived tissue information with H&E images and optional domain knowledge to guide diagnostic reasoning, targeted reinspection and structured report writing.",
+          "Its segmentation component exceeded baselines in mean Dice on internal and external tests.",
+          "PathXAI generates evidence-linked reports with a self-hosted pretrained vision-language model, without updating its weights."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文将组织分割结果作为证据输入，结合H&E图像与可选领域知识来驱动病理结构化报告生成；其分割是辅助组织成分测量，未体现由隐含请求或空间/位置推理生成像素掩码的推理分割任务。摘要显示方法使用冻结的自托管预训练视觉语言模型，未显示RL/DPO或新的分割优化目标，因此与关注的方法贡献不匹配。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 18,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未说明分割是否由语言/空间请求驱动并输出推理掩码。",
+          "摘要未提供RL/DPO或分割优化目标的理论与迁移证据。",
+          "报告生成中的诊断推理机制是否包含可迁移的分割推理尚不明确。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-10T14:30:19.530657+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Pathology reporting requires translating tissue observations across regions and slides into specific diagnoses and supporting morphological descriptions. However, the use of explicit tissue-composition measurements to guide H&E-based report generation remains underexplored. Thus, we developed PathXAI, which combines segmentation-derived tissue information with H&E images and optional domain knowledge to guide diagnostic reasoning, targeted reinspection and structured report writing. Its segmentation component exceeded baselines in mean Dice on internal and external tests. In automated report evaluation on 1,200 public and 151 private cases, PathXAI achieved higher agreement with reference diagnoses and documented morphology than the H&E-based comparators. On the public evaluation cohort, PathXAI-Report exceeded Qwen + H&E in cancer family match rate by 4.4 percentage points and in finding F1 by 5.7 percentage points. PathXAI generates evidence-linked reports with a self-hosted pretrained vision-language model, without updating its weights.",
         "authors": [
@@ -9797,15 +9821,11 @@
         "updated": "2026-11-09T04:34:49+00:00",
         "version_id": "2611.09117v2"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-10T14:30:19.530657+00:00",
-        "run_id": "20261110T143019Z-ecac2e20",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.09117v2"
       ]
