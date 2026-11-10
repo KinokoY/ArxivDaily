@@ -135,7 +135,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-09T15:30:15.497195+00:00"
+    "last_complete_end": "2026-11-10T14:30:19.530657+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -9766,6 +9766,106 @@
       "versions": [
         "2611.08943v1"
       ]
+    },
+    "2611.09117": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-10T14:30:19.530657+00:00",
+      "paper": {
+        "abstract": "Pathology reporting requires translating tissue observations across regions and slides into specific diagnoses and supporting morphological descriptions. However, the use of explicit tissue-composition measurements to guide H&E-based report generation remains underexplored. Thus, we developed PathXAI, which combines segmentation-derived tissue information with H&E images and optional domain knowledge to guide diagnostic reasoning, targeted reinspection and structured report writing. Its segmentation component exceeded baselines in mean Dice on internal and external tests. In automated report evaluation on 1,200 public and 151 private cases, PathXAI achieved higher agreement with reference diagnoses and documented morphology than the H&E-based comparators. On the public evaluation cohort, PathXAI-Report exceeded Qwen + H&E in cancer family match rate by 4.4 percentage points and in finding F1 by 5.7 percentage points. PathXAI generates evidence-linked reports with a self-hosted pretrained vision-language model, without updating its weights.",
+        "authors": [
+          "Zhaorui Tan",
+          "Jun Aun Tan",
+          "Weixiang Zhong",
+          "Xiaoxi Wang",
+          "Tan Pan",
+          "Xingdong Xue",
+          "Li Liu",
+          "Jing Zhang",
+          "Weimiao Yu"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.CL"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.09117v2",
+        "published": "2026-11-06T07:54:59+00:00",
+        "title": "PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation",
+        "updated": "2026-11-09T04:34:49+00:00",
+        "version_id": "2611.09117v2"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.09117v2"
+      ]
+    },
+    "2611.10199": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-10T14:30:19.530657+00:00",
+      "paper": {
+        "abstract": "Interactive VR/MR applications demand photorealistic 3D representations that support real-time rendering and object-level manipulation. While 3D Gaussian Splatting (3DGS) achieves high rendering quality, it represents scenes as unstructured, monolithic primitives. Existing object-aware 3DGS methods jointly optimize geometry and semantic states but suffer from two key failure modes: noisy foundation-model masks on complex geometry, and label-geometry coupling, in which co-optimized identity gradients mislabel boundary Gaussians. We introduce RigidGS, an end-to-end pipeline that decouples geometric learning from object identity. We propose a depth- and temporally-aware mask refinement module that addresses two complementary SAM2 failures: over-inclusion on thin structures and under-inclusion on multimodal-depth objects. We then determine object identities entirely upstream via COLMAP projection voting and freeze them during training, directing mask supervision solely toward geometric optimization. Refined masks alone substantially improve competing methods, yet a residual gap in label-geometry coupling persists that our fixed-identity design eliminates. RigidGS outperforms prior object-aware 3DGS methods on LLFF/NVOS, Mip-NeRF~360, and iNeRF360, improving segmentation and boundary IoU by 7.7 and 14.5 points on LLFF/NVOS. Finally, RigidGS enables real-time rigid-body manipulation on Meta Quest~2 without mesh extraction. Our code and project page are available at https://gyreyirisansah.github.io/rigidgs.",
+        "authors": [
+          "Paul Sansah Gyreyiri",
+          "Diksha Shukla"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.10199v1",
+        "published": "2026-11-06T20:32:53+00:00",
+        "title": "RigidGS: Geometry-Aware Object Decoupling for Rigid-Body Interaction in 3D Gaussian Splatting",
+        "updated": "2026-11-06T20:32:53+00:00",
+        "version_id": "2611.10199v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.10199v1"
+      ]
+    },
+    "2611.12791": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-10T14:30:19.530657+00:00",
+      "paper": {
+        "abstract": "Developing effective machine learning models requires complex manual tuning, while current Automated Machine Learning (AutoML) frameworks remain domain-specific and isolate model architecture, training hyperparameter, and data ratio optimization. Here, we bridge this gap by proposing a universal, large language model (LLM)-based AutoML framework that jointly optimizes these configurations for the first time without the need for task-specific fine-tuning. We propose NCode, a unified numerical encoding scheme that translates diverse AutoML design choices into universal discrete sequences and effectively reframes the optimization process as a unified ranking task. Trained solely on optimization trajectories derived from a limited, single-domain vision task, the proposed LLM-based searcher demonstrates impressive cross-task, cross-modality and joint search-space optimization generalizability, achieving state-of-the-art performance across image classification, image segmentation, speaker verification and text-to-image benchmarks. Crucially, it exhibits superior scalability in the large-scale training and joint optimization of a billion-parameter Diffusion Transformer, requiring 896 GPU-days and attaining a state-of-the-art GenEval score of 0.91. By leveraging reinforcement learning to instill Chain-of-Thought reasoning, we provide a systematic way to interpret the LLM-based searcher's internal decision-making mechanisms, revealing its optimization strategy shifted from the early-stage diversity-driven exploration to the late-stage anchor exploitation. Our proposed framework provides a scalable, generalizable, and interpretable pathway toward general-purpose open-world machine learning optimization.",
+        "authors": [
+          "Yuxuan Hu",
+          "Jihao Liu",
+          "Weikang Shi",
+          "Xijie Huang",
+          "Linda Wei",
+          "Mingjie Zhan",
+          "Aojun Zhou",
+          "Rui Liu",
+          "Hongsheng Li"
+        ],
+        "categories": [
+          "cs.CL"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.12791v1",
+        "published": "2026-11-09T17:58:38+00:00",
+        "title": "Large Language Models as a Universal Searcher for Open-World Automated Machine Learning",
+        "updated": "2026-11-09T17:58:38+00:00",
+        "version_id": "2611.12791v1"
+      },
+      "rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
+      "stage": "candidate",
+      "versions": [
+        "2611.12791v1"
+      ]
     }
   },
   "runs": [
@@ -11222,10 +11322,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-10",
+      "discovered_candidates": 20,
+      "discovered_papers": 20,
       "run_id": "20261110T143019Z-ecac2e20",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-10T14:30:00+00:00",
+          "seen": 5684,
+          "start": "2026-10-27T14:30:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-10T14:30:19.530657+00:00",
       "window": {
         "end": "2026-11-10T14:30:19.530657+00:00",
