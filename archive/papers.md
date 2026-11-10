@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-11-10 | Large Language Models as a Universal Searcher for Open-World Automated Machine Learning | 大语言模型作为开放世界自动化机器学习的通用搜索器 | [arXiv 2611.12791v1](https://arxiv.org/abs/2611.12791v1) |
 | 2026-11-10 | RigidGS: Geometry-Aware Object Decoupling for Rigid-Body Interaction in 3D Gaussian Splatting | RigidGS：面向3D高斯泼溅中刚体交互的几何感知对象解耦 | [arXiv 2611.10199v1](https://arxiv.org/abs/2611.10199v1) |
-| 2026-11-10 | PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation | 待翻译 | [arXiv 2611.09117v2](https://arxiv.org/abs/2611.09117v2) |
+| 2026-11-10 | PathXAI: Evidence-guided structured pathology reporting by transferable tissue segmentation | PathXAI：基于可迁移组织分割的证据引导结构化病理报告 | [arXiv 2611.09117v2](https://arxiv.org/abs/2611.09117v2) |
 | 2026-11-09 | MESAM: Enhancing SAM2 for Few-Shot Segmentation through Semantic-Visual Memory Generation and Refinement | MESAM：通过语义-视觉记忆生成与细化增强SAM2以用于少样本分割 | [arXiv 2611.08943v1](https://arxiv.org/abs/2611.08943v1) |
 | 2026-11-06 | Multimodal Hierarchical Mixture-of-Experts for 3D Medical Vision-Language Modeling | 用于3D医学视觉-语言建模的多模态分层专家混合模型 | [arXiv 2611.08185v1](https://arxiv.org/abs/2611.08185v1) |
 | 2026-11-06 | TerraMesh-Masks: Open-Vocabulary Segmentation for Earth Observation | TerraMesh-Masks: 面向地球观测的开放词汇分割 | [arXiv 2611.08081v1](https://arxiv.org/abs/2611.08081v1) |
