@@ -9807,9 +9807,31 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Existing object-aware 3DGS methods jointly optimize geometry and semantic states but suffer from two key failure modes: noisy foundation-model masks on complex geometry, and label-geometry coupling, in which co-optimized identity gradients mislabel boundary Gaussians.",
+          "We introduce RigidGS, an end-to-end pipeline that decouples geometric learning from object identity.",
+          "Finally, RigidGS enables real-time rigid-body manipulation on Meta Quest~2 without mesh extraction."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文研究3D Gaussian Splatting中的物体感知几何解耦与掩码精化，用于VR/MR刚体交互；不涉及医学影像推理分割、隐含请求或空间/位置推理到像素掩码，也没有RL或DPO方法贡献。规则命中的transferable_objective在摘要中缺乏理论依据及迁移到目标任务的实质证据，因此不匹配研究兴趣。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 12,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未提供可迁移的分割优化目标理论分析或向医学/推理分割迁移的实验证据。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-10T14:30:19.530657+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Interactive VR/MR applications demand photorealistic 3D representations that support real-time rendering and object-level manipulation. While 3D Gaussian Splatting (3DGS) achieves high rendering quality, it represents scenes as unstructured, monolithic primitives. Existing object-aware 3DGS methods jointly optimize geometry and semantic states but suffer from two key failure modes: noisy foundation-model masks on complex geometry, and label-geometry coupling, in which co-optimized identity gradients mislabel boundary Gaussians. We introduce RigidGS, an end-to-end pipeline that decouples geometric learning from object identity. We propose a depth- and temporally-aware mask refinement module that addresses two complementary SAM2 failures: over-inclusion on thin structures and under-inclusion on multimodal-depth objects. We then determine object identities entirely upstream via COLMAP projection voting and freeze them during training, directing mask supervision solely toward geometric optimization. Refined masks alone substantially improve competing methods, yet a residual gap in label-geometry coupling persists that our fixed-identity design eliminates. RigidGS outperforms prior object-aware 3DGS methods on LLFF/NVOS, Mip-NeRF~360, and iNeRF360, improving segmentation and boundary IoU by 7.7 and 14.5 points on LLFF/NVOS. Finally, RigidGS enables real-time rigid-body manipulation on Meta Quest~2 without mesh extraction. Our code and project page are available at https://gyreyirisansah.github.io/rigidgs.",
         "authors": [
@@ -9825,15 +9847,11 @@
         "updated": "2026-11-06T20:32:53+00:00",
         "version_id": "2611.10199v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-10T14:30:19.530657+00:00",
-        "run_id": "20261110T143019Z-ecac2e20",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.10199v1"
       ]
