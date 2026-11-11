@@ -1,0 +1,104 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/11/20261111T134435Z-7776ffed-f7f5cdf2e375.md",
+  "chain_roots": [
+    "20261111T134435Z-7776ffed-f7f5cdf2e375"
+  ],
+  "content_hash": "f7f5cdf2e3756fb538a7c850865a9abb894c2a9413e5cf61f5fe3563d087c9b7",
+  "day": "2026-11-11",
+  "digest_id": "20261111T134435Z-7776ffed-f7f5cdf2e375",
+  "empty": false,
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Text-guided segmentation models receive an image and a short caption about the lesion, and on public benchmarks the caption improves accuracy considerably. On colonoscopy and breast ultrasound, however, the size, count and location words of each caption were computed from the mask that later scores the prediction, and the chest X-ray captions were written by benchmark annotators. We tested what two published models take from them. On colonoscopy and chest X-ray, it is mostly the lesion's extent. Keeping only the size word or the lung-zone phrase recovers 84 to 98 percent of the improvement over an empty caption, and removing it loses 52 to 77 percent. The rest matters little, and a polyp called a rock is segmented just as well. We call this extent leakage. On breast ultrasound, nearly half the captions also name the diagnosis, which carries part of the benefit. Retraining on three datasets shows that models pick up this habit from their training captions, though only partly on breast ultrasound, and that it weakens their segmentation from the image alone. The leak can be measured without training a model, since caption words alone predict lesion area (coefficient of determination 0.54 to 0.77 on six of seven test sets). Without the test mask, the best method we tested, which estimates extent from the image, reaches 74.59 Dice on colonoscopy against the published 77.23. We propose an evaluation protocol that keeps what a caption says about the image apart from what it copies from the label.",
+        "authors": [
+          "Niran Nataraj",
+          "Ankita Das",
+          "C. Krishna Mohan",
+          "Kenji Kawashima"
+        ],
+        "categories": [
+          "eess.IV",
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.13970v1",
+        "published": "2026-11-10T12:07:24+00:00",
+        "title": "Counterfactual Analysis of Extent Leakage from Annotation-Derived Prompts in Vision-Language Medical Image Segmentation",
+        "updated": "2026-11-10T12:07:24+00:00",
+        "version_id": "2611.13970v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "文本引导的分割模型接收一张图像和一段关于病变的简短说明，在公开基准上该说明能显著提升准确率。然而，在结肠镜和乳腺超声中，每段说明的大小、数量和位置词是由后来用于评分的掩码计算得到的，而胸部X光说明由基准标注者撰写。我们测试了两个已发表模型从中获取了什么。在结肠镜和胸部X光上，主要获取的是病变的范围。仅保留大小词或肺区短语即可恢复相对于空说明所获提升的84%至98%，而移除它则损失52%至77%。其余内容影响甚微，将息肉称为石头也能同样分割。我们称之为范围泄漏。在乳腺超声上，近一半的说明还命名了诊断，这承载了部分收益。在三个数据集上重新训练表明，模型从训练说明中习得这一习惯，尽管在乳腺超声上仅部分如此，且这会削弱其仅从图像进行分割的能力。该泄漏无需训练模型即可测量，因为仅说明词即可预测病变面积（在七个测试集中的六个上决定系数为0.54至0.77）。在没有测试掩码的情况下，我们测试的最佳方法——从图像估计范围——在结肠镜上达到74.59 Dice，而发表值为77.23。我们提出一种评估协议，将说明中关于图像所述的内容与其从标签复制的内容区分开来。",
+        "title_zh": "视觉-语言医学图像分割中注释派生提示的范围泄漏的反事实分析"
+      }
+    },
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "In this paper, we introduce Predicate-State Video Reasoning Segmentation (PS-VRS), where a query defines a dynamic predicate $P(o,t)$ over objects and time rather than a fixed object identity. Existing methods typically treat the target as permanently active once identified, leading to over-emission of masks during vacant intervals and failure to handle target switching. To address this, we construct PS-Bench, a large-scale benchmark with 2,077 videos and 16,250 queries annotated with explicit active/vacant predicate states, temporal intervals, and pixel masks. We further propose Predicate-State Grounding (PSG), a State-Bind-Emit pipeline that: (1) predicts [ACTIVE]/[VACANT] state tokens; (2) aligns them to video frames via dense cross-modal similarity; and (3) emits masks via SAM2 only for active states. Experiments show that PSG outperforms existing baselines by +9.32 J&F on PS-Bench and significantly reduces false-positive mask emissions. Our results demonstrate the effectiveness of explicit predicate-state modeling for video reasoning segmentation with dynamic visual witnesses.",
+        "authors": [
+          "Yuhuan Hong",
+          "Yiming Ren",
+          "Zhiqiang Lin",
+          "Feize Wu",
+          "Xingyun Liu",
+          "Yitong Xie",
+          "Lei Zhou",
+          "Lisheng Wu",
+          "Junjie Wang",
+          "Yujiu Yang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.13785v1",
+        "published": "2026-11-10T09:21:56+00:00",
+        "title": "The Target Is a Predicate: Predicate-State Grounding for Semantic-Level Video Reasoning Segmentation",
+        "updated": "2026-11-10T09:21:56+00:00",
+        "version_id": "2611.13785v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "transferable_objective",
+        "general_reasoning"
+      ],
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "在本文中，我们提出谓词状态视频推理分割（PS-VRS），其中查询定义了关于对象和时间的动态谓词 $P(o,t)$，而非固定的对象身份。现有方法通常将目标一旦被识别就视为永久活跃，导致在空洞区间过度输出掩码，且无法处理目标切换。为解决此问题，我们构建了 PS-Bench，一个大规模基准，包含 2,077 个视频和 16,250 个查询，并标注了显式的活跃/空洞谓词状态、时间区间和像素掩码。我们进一步提出谓词状态定位（PSG），一种状态-绑定-输出流水线，其：(1) 预测 [ACTIVE]/[VACANT] 状态标记；(2) 通过密集跨模态相似度将其与视频帧对齐；(3) 仅对活跃状态通过 SAM2 输出掩码。实验表明，PSG 在 PS-Bench 上以 +9.32 J&F 优于现有基线，并显著减少了假阳性掩码输出。我们的结果证明了显式谓词状态建模对于具有动态视觉见证的视频推理分割的有效性。",
+        "title_zh": "目标是谓词：面向语义级视频推理分割的谓词状态定位"
+      }
+    }
+  ],
+  "notification_hash": "8b7d15a29597597e5c6a83520d0531bad4dbf7d3a55c45afc9c394b22246535d",
+  "recovery_of": [],
+  "rendered": {
+    "2611.13785": "rendered_inline_translation",
+    "2611.13970": "rendered_inline_translation"
+  },
+  "run_id": "20261111T134435Z-7776ffed",
+  "schema_version": 1
+}
