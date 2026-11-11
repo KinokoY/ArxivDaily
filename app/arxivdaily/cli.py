@@ -17,7 +17,8 @@ from .llm import AnalysisClient
 from .models import ProcessingError, normalize_id, parse_time
 from .pipeline import Pipeline
 from .prompts import load_prompts, prompt_fingerprint
-from .rules import match_rules
+from .rules import match_rules, trace_rules
+from .feedback import Feedback, GitHubFeedbackClient
 from .simulation import FixtureAnalysis, FixtureReader, load_fixture
 from .state import SecretScrubber, StateStore, command_publisher
 
@@ -71,6 +72,7 @@ def check_configuration(args) -> int:
                           args.categories if args.categories is not None else config["rules"]["categories"],
                           "2025-01-01T00:00:00+00:00", "2025-01-01T00:00:00+00:00")
             output["rule_hits"] = match_rules(paper, config)
+            output["rule_trace"] = trace_rules(paper, config)
         print(json.dumps(output, ensure_ascii=False, indent=2))
         return 0
     except (ValueError, OSError) as exc:
@@ -93,6 +95,7 @@ def main(argv=None) -> int:
         if args.translation_provider:
             config["translation"]["provider"] = args.translation_provider
         names = [config["llm"][r]["api_key_env"] for r in ("filter", "summary")] + [config["delivery"]["sendkey_env"], config["translation"]["api_key_env"]]
+        names += [config["feedback"]["token_env"], config["feedback"]["delete_token_env"]]
         secrets = [os.environ.get(n, "") for n in names]
         scrubber = SecretScrubber(secrets)
         live = args.live or args.send
@@ -124,7 +127,7 @@ def main(argv=None) -> int:
             raise ValueError("--send requires public_base_url and --checkpoint-command")
         if args.send:
             mt_names = [config["translation"]["api_key_env"]] if config["translation"]["provider"] == "deepl" else [config["llm"]["filter"]["api_key_env"]] if config["translation"]["provider"] == "llm" else []
-            needs_translation = config["presentation"]["title_translation"] or config["presentation"]["abstract_translation"]
+            needs_translation = config["presentation"]["title_translation"] or config["presentation"]["abstract_translation"] or config["feedback"]["enabled"]
             required_names = [config["llm"]["filter"]["api_key_env"], config["delivery"]["sendkey_env"], *(mt_names if needs_translation else [])]
             if needs_fulltext:
                 required_names.append(config["llm"]["summary"]["api_key_env"])
@@ -180,7 +183,8 @@ def main(argv=None) -> int:
         now = parse_time(args.now) if args.now else None
         if args.retry_stage or resend_ids or promotion_ids:
             papers = []
-        report = Pipeline(config, store, collector, analysis, reader, delivery, now=now, real_send=args.send).run(papers, manual_start=args.start, manual_end=args.end, promotion_ids=promotion_ids, resend_ids=resend_ids, retry_stage=args.retry_stage, retry_ids=retry_ids)
+        feedback = Feedback(config["feedback"], GitHubFeedbackClient(config["feedback"])) if args.send and config["feedback"]["enabled"] else None
+        report = Pipeline(config, store, collector, analysis, reader, delivery, now=now, real_send=args.send, feedback=feedback).run(papers, manual_start=args.start, manual_end=args.end, promotion_ids=promotion_ids, resend_ids=resend_ids, retry_stage=args.retry_stage, retry_ids=retry_ids)
         report.update({"mode": "live" if live else "scripted_offline", "real_delivery": args.send, "state_dir": str(state_dir), "dry_run_isolated": isolated, "model_calls": getattr(analysis, "calls", None), "validation_scope": "scripted fixture behavior; not actual LLM or WeChat quality" if not live else "actual provider requests; consult stage status"})
         code = 1 if report.get("errors") else 0
     except Exception as exc:

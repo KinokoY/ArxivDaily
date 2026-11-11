@@ -24,9 +24,11 @@ screening_routes = true
 
 例如只显示双语标题和总结：将 `title`、`title_translation`、`llm_summary` 设为 true，其余全部 false。总结与摘要翻译也可以同时启用；证据链可单独启用而不显示五段总结。
 
-`screening_routes` 使用 arXiv 关键词初筛保存的全部命中路径，包括自定义路径，放在每篇最后；不使用 LLM 终筛选出的单一路线。没有历史命中记录时明确显示“无初筛命中记录”。
+`screening_routes` 使用 arXiv 关键词初筛保存的全部命中路径，包括自定义路径，放在每篇最后；不使用 LLM 终筛选出的单一路线。现在同时展示每个命中的 AND 组合、组内所有实际命中的词/短语，以及来自标题还是摘要。同组内 `/` 为 OR，不同组间 `＋` 为 AND。没有历史命中记录时明确显示“无初筛命中记录”。
 
-未启用总结和证据链时不下载正文、不复审、不占用完整档名额，select 与 uncertain 候选按所选模块呈现，uncertain 标注待确认，reject 不推送。不勾选译文模块就不为该模块调用翻译；关闭标题翻译也停止自动补译索引，尚无译文时索引显示“待翻译”。摘要翻译调用同时返回标题译文，仍只展示勾选的字段。
+`rule_trace` 随论文及发送快照保存，包含规则指纹、论文版本、组合与词级命中证据；修改配置不会重写既有反馈的命中依据。尚未处理的旧记录若缺少词级证据，会明确标注“按当前规则补算”，与原始历史证据分开统计；不改写旧简报。
+
+未启用总结和证据链时不下载正文、不复审、不占用完整档名额，select 与 uncertain 候选按所选模块呈现，uncertain 标注待确认，reject 不推送。不勾选译文模块就不为该模块调用翻译；关闭标题翻译也停止自动补译索引，尚无译文时索引显示“待翻译”。摘要翻译调用同时返回标题译文，仍只展示勾选的字段。例外是正式运行启用反馈时：为保证反馈 Issue 的中英文标题，会为实际待推送论文补译缺失中文标题，不额外翻译摘要。
 
 启用总结或证据链时使用正文，uncertain 有限复审；完整档名额默认 5、最多 10，由 `limits.full_daily_limit` 控制。general_reasoning 和名额溢出仍进入轻量档，呈现其余勾选模块，并明确标注未生成总结/证据。`review_daily_limit` 控制 uncertain 正文复审名额。
 
@@ -51,7 +53,7 @@ custom_route = [["SEG", "CUSTOM"]]
 general_reasoning = [] # 明确禁用此初筛路线
 ```
 
-medical_reasoning 对应 `MED AND SEG AND (REASON OR VLM)`。忽略大小写，统一连字符/空格，缩写使用完整词边界，避免 CT/RL 匹配到其他单词内部。
+medical_reasoning 对应 `MED AND SEG AND (REASON OR VLM)`。忽略大小写，统一连字符/空格，缩写使用完整词边界，避免 CT/RL 匹配到其他单词内部。一个短语必须在标题或摘要内部完整出现，不跨字段拼接匹配。
 
 组与初筛路线名可自定义。配置按名称覆盖默认组/路线；缺失名称仍使用默认值，所以禁用默认路线要设 `[]`，不要只删那一行。THEORY_HINT 不作为初筛必要条件，理论和迁移交给模型判断。
 
@@ -59,7 +61,7 @@ medical_reasoning 对应 `MED AND SEG AND (REASON OR VLM)`。忽略大小写，�
 & ./app/scripts/run-local.ps1 config --abstract 'Medical spatial reasoning segmentation with DPO.' --categories cs.CV
 ```
 
-预览只显示初筛命中，不代表模型入选。增加关键词扩大候选范围；语义兴趣和拒绝标准同步调整 `app/prompts/selection.md`。
+预览显示路线及 `rule_trace` 具体关键词证据，不代表模型入选。增加关键词扩大候选范围；语义兴趣和拒绝标准同步调整 `app/prompts/selection.md`。
 
 检查实际日期范围会召回哪些文章，使用 [初筛 notebook](../app/notebooks/arxiv_rules_debug.ipynb)。它缓存分类元数据，让关键词/组合调整在本地反复比较；详见 [主动调试说明](DEBUGGING.md)。
 
@@ -80,6 +82,20 @@ medical_reasoning 对应 `MED AND SEG AND (REASON OR VLM)`。忽略大小写，�
 现有程序约束：general_reasoning 入选为 light；general_rl 需 RL/DPO 方法标记；transferable_objective 需理论与迁移证据。改变这些判定结构属于代码迭代。
 
 ## 翻译与高级设置
+
+`[feedback]` 控制每日反馈。根配置启用此功能；不含该表的旧配置默认关闭，保持兼容。
+
+```toml
+[feedback]
+enabled = true
+repository = "" # Actions 自动取当前仓库；本地正式运行需填 owner/repo 或设置 GITHUB_REPOSITORY。
+max_wait_days = 14
+cleanup_action = "close" # close 关闭并保留历史链接；delete 永久删除。
+token_env = "GITHUB_TOKEN"
+delete_token_env = "FEEDBACK_DELETE_TOKEN"
+```
+
+等待时间从该期反馈创建意图记录的时间开始计算，范围 1–365 天。只有 `--send` 会访问反馈接口；离线和 `--live` 试跑均不创建、读取或清理 Issue。每次正式运行都会同步已评价的部分，不受清理条件影响。当日 Issue 保留到次日，便于当日补发追加论文；次日起全部已评价或超过等待时间才清理。`cleanup_action` 默认 `close`，也可设为 `delete`；旧配置缺少此项时默认关闭。权限与统计口径见 [论文反馈](OPERATIONS.md#论文反馈)。
 
 `translation.provider` 可选 llm、deepl、libretranslate。
 

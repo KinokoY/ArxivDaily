@@ -110,6 +110,9 @@ class StateStore:
         content = self.scrubber.text(render_paper_index(state["papers"]))
         if not index.exists() or index.read_text(encoding="utf-8") != content:
             self._write(index, content)
+        if state.get("feedback", {}).get("counts") is not None:
+            from .feedback import render_feedback_summary
+            self._write(self.directory / "archive/feedback.md", self.scrubber.text(render_feedback_summary(state["feedback"])))
         if self.publisher:
             try:
                 self.publisher()

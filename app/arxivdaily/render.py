@@ -8,6 +8,29 @@ from .models import DigestItem, Paper, parse_time
 from zoneinfo import ZoneInfo
 
 
+def markdown_text(value: str) -> str:
+    """Plain inline text, including titles supplied by papers and translations."""
+    value = " ".join(value.split()).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    for char in ("\\", "`", "*", "_", "[", "]", "|", "#"):
+        value = value.replace(char, "\\" + char)
+    return value
+
+
+def render_rule_trace(trace: dict) -> str:
+    lines = []
+    for clause in trace.get("clauses", []):
+        groups = []
+        for group in clause["groups"]:
+            words = [markdown_text(hit["keyword"]) + "（" + "、".join(
+                {"title": "标题", "abstract": "摘要"}[f] for f in hit["fields"]) + "）"
+                for hit in clause["keywords"][group]]
+            groups.append(markdown_text(group) + "：" + " / ".join(words))
+        lines.append("- " + markdown_text(clause["route"]) + " → " + " ＋ ".join(groups))
+    if trace.get("source") == "reconstructed":
+        lines.append("旧记录按当前规则补算，非历史命中证据。")
+    return "\n".join(lines)
+
+
 def _day(value: date | str) -> str:
     result = value.isoformat() if isinstance(value, date) else str(value)
     date.fromisoformat(result)
@@ -65,6 +88,9 @@ def render_item(item: DigestItem) -> str:
     if "screening_routes" in modules:
         routes = "、".join(dict.fromkeys(item.rule_hits)) or "无初筛命中记录"
         lines.append(f"**初筛路径：** {routes}")
+        details = render_rule_trace(item.rule_trace)
+        if details:
+            lines.append("**命中关键词：**\n" + details)
     return "\n\n".join(lines)
 
 
@@ -113,12 +139,14 @@ def server_title(date: date | str) -> str:
 
 def render_notification(
     date: date | str, items: list[DigestItem], archive_url: str, max_bytes: int = 30000,
-    *, index_url: str | None = None,
+    *, index_url: str | None = None, feedback_url: str | None = None,
 ) -> tuple[str, dict[str, str]]:
     """Fit whole paper blocks; move overflow to the immutable public archive."""
     day, archive_url = _day(date), _url(archive_url)
     if index_url:
         index_url = _url(index_url)
+    if feedback_url:
+        feedback_url = _url(feedback_url)
     if not 0 < max_bytes <= 32768:
         raise ValueError("message byte cap must be within ServerChan's 32 KiB limit")
     ids = [i.paper.base_id for i in items]
@@ -132,6 +160,8 @@ def render_notification(
     def compose():
         modes = {}
         lines = [f"# arXiv 每日简报 · {day}"]
+        if feedback_url:
+            lines.append(f"[反馈今日论文（逐篇勾选有用 / 无用）]({feedback_url})")
         if not items:
             lines.append("今天未发现新增工作（本次检查未发现新增符合关注条件的论文）。")
         if any(i.recovery_of for i in items):

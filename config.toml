@@ -357,3 +357,13 @@ query_counts_quota = false
 [archive]
 public_base_url = ""
 state_branch = "arxivdaily-state"
+
+# 每日一个 GitHub Issue，在正文勾选全部论文的有用/无用；仅正式 --send 运行访问 GitHub。
+# repository 留空时使用 Actions 的当前仓库。默认关闭；改为永久删除才需仓库所有者凭证 Secret。
+[feedback]
+enabled = true
+repository = ""
+max_wait_days = 14
+cleanup_action = "close" # close 保留历史链接；delete 永久删除。
+token_env = "GITHUB_TOKEN"
+delete_token_env = "FEEDBACK_DELETE_TOKEN"

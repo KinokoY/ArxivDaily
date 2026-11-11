@@ -22,11 +22,30 @@ main 维护代码，状态分支维护机器状态和历史。存档放 main 技
 
 ## Actions 日常操作
 
-工作流当前配置北京时间每天 14:00（Asia/Shanghai），定时执行自动发送 Server酱通知，实际启动可能延迟。Secrets 配置 DEEPSEEK_API_KEY、SERVERCHAN_SENDKEY，DeepL 另需 TRANSLATION_API_KEY；允许 Actions contents 写权限。真实发送前检查代码库和归档公开可读。
+工作流当前配置北京时间每天 14:00（Asia/Shanghai），定时执行自动发送 Server酱通知，实际启动可能延迟。Secrets 配置 DEEPSEEK_API_KEY、SERVERCHAN_SENDKEY，DeepL 另需 TRANSLATION_API_KEY；允许 Actions contents 和 issues 写权限。真实发送前检查代码库和归档公开可读。
 
 手工 mode 可选 daily、replay（指定 IDs）、backfill（UTC 起止日期）、retry（已有 ID 与失败阶段）；内容统一读取根配置 `[presentation]` 的模块开关。
 
 send 默认关闭，此时仍使用真实服务和收费模型做隔离试跑。打开 send 后才修改正式状态并发送；定时运行自动发送。失败查看 job 日志和 arxivdaily-run-report artifact，报告为 app/tmp/reports/run.json，保留 3 天。
+
+## 论文反馈
+
+1. 启用仓库的 Issues。正式运行使用自带的 `GITHUB_TOKEN` 和 `issues: write` 创建当天一个 `[论文反馈] YYYY-MM-DD` Issue，简报提供一个入口。无论文或仅告警不创建空 Issue。
+2. Issue 中逐篇显示中文标题、英文标题和 arXiv 原文链接。使用仓库所有者账号登录，直接勾选正文的“有用 / 无用”，自动保存，不用提交评论。两项都空为未评价，两项都选为冲突；二者都不计赞踩。这里使用可编辑清单，不读取表情反应，仓库有正文编辑权限的人也能修改清单。
+3. 每次正式运行先读取已有反馈，保存到状态分支 `state.json` 的 `feedback.issues`，并重建 `feedback.counts` 与 `archive/feedback.md`。每篇保存投票、双语标题、原文链接和当时的词级命中证据。部分评价也立即在本次运行保存：例如 3 篇只评价 2 篇，下次 Actions 就记录这 2 篇，不会等到第 3 篇或 14 天到期。发布失败时停止清理。
+4. 当天清单可追加同日补发内容并保留已有勾选。次日起，全部论文有有效评价或超过 `max_wait_days` 后清理整个 Issue；未评价到期不算无用。`feedback.cleanup_action = "close"` 默认关闭并保留历史链接，使用现有 `GITHUB_TOKEN` 和 `issues: write`，不需要额外 Secret；设为 `"delete"` 才永久删除，旧链接失效。清理后已保存数据仍保留，程序不再同步该 Issue 的后续修改。
+
+仅在选择 `cleanup_action = "delete"` 时，需要配置删除凭证：永久删除使用 GitHub GraphQL `deleteIssue`，个人仓库需要所有者身份。在仓库 Actions Secrets 配置 `FEEDBACK_DELETE_TOKEN` 为仓库所有者的、可操作此仓库并具备 Issue 删除权限的令牌。创建、读取和关闭继续使用 `GITHUB_TOKEN`；删除专用令牌仅用于删除请求，不写入配置、Issue、日志或公开状态。删除模式下缺少令牌或权限不足时，保留 Issue 与已保存反馈，运行报告说明原因，下一次重试；不会自动改成关闭。
+
+第一阶段只有计数，不评分、不推荐、不修改关键词或模型提示。计数口径：
+
+- 最小关键词单位是 `rules.groups` 中配置的完整词/短语，不把 `spatial reasoning` 拆成两个单词。
+- 同一论文对每个实际命中的 AND 组合计一次，对该组合内每个命中关键词计一次；词在标题、摘要多次出现仍只计一次。
+- 词级计数保留路线、AND 组合、组名、原始配置词及规则指纹，避免同词在不同上下文中被混为一谈；匹配位置保留在明细中。
+- 重跑不重复计票；清理前改选会重新计算。论文跨日期重复推送时，最新一次非空评价生效；新一期未评价不会抹去旧评价，冲突/格式损坏的最新评价不计数。
+- 历史旧记录没有词级证据时不伪造证据；当前规则补算记录标为 reconstructed，与 matched 分开汇总。不同规则版本的计数也分开。
+
+创建成功但尚未保存 Issue 编号就中断时，通过当天机器标记恢复关联；仅恢复 Actions 机器人或仓库所有者创建的匹配 Issue。清理前先同步发布反馈，再复读正文；若期间勾选变化，留到下次处理。GitHub 的读取和清理不是原子操作，最后复读与关闭/删除间的极短修改窗口无法完全消除。
 
 ## 本机运行
 

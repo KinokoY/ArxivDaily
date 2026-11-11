@@ -32,7 +32,8 @@ def test_default_modules_and_pipeline_have_no_fulltext_or_evidence_calls(tmp_pat
         item = Pipeline._item(state["papers"][entry["paper"]["version_id"].split("v")[0]])
         rendered = render_item(item)
         assert rendered.index("中文标题") < rendered.index("**摘要：") < rendered.index("摘要翻译") < rendered.index("来源") < rendered.index("初筛路径")
-        assert rendered.endswith("、".join(entry["rule_hits"]))
+        assert "**初筛路径：** " + "、".join(entry["rule_hits"]) in rendered
+        assert entry["rule_trace"]["clauses"] and "**命中关键词：**" in rendered
 
 
 @pytest.mark.parametrize("modules", [
@@ -122,6 +123,7 @@ def test_failed_translation_and_unknown_delivery_keep_original_modules(tmp_path)
     third = Pipeline(cfg, store, None, analysis, reader, MockDelivery(), now=NOW + timedelta(days=2)).run([])
     recovered = store.load()["digests"][third["digest_id"]]["items"][0]
     assert recovered["modules"] == entry["modules"] and recovered["rule_hits"] == entry["rule_hits"]
+    assert recovered["rule_trace"] == entry["rule_trace"]
     assert recovered["translation"] == entry["translation"] and reader.calls == 0
 
 

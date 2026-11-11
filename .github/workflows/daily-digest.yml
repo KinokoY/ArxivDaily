@@ -38,6 +38,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: arxivdaily-state
@@ -170,6 +171,8 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           SERVERCHAN_SENDKEY: ${{ secrets.SERVERCHAN_SENDKEY }}
           TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FEEDBACK_DELETE_TOKEN: ${{ secrets.FEEDBACK_DELETE_TOKEN }}
           INPUT_MODE: ${{ github.event.inputs.mode }}
           INPUT_IDS: ${{ github.event.inputs.ids }}
           INPUT_RETRY_STAGE: ${{ github.event.inputs.retry_stage }}

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timedelta
+from copy import deepcopy
 from pathlib import Path
 import time
 import uuid
@@ -11,18 +12,20 @@ from .collection import plan_window
 from .llm import validate_summary
 from .models import Decision, DeliveryResult, DigestItem, Paper, ProcessingError, Summary, Translation, fingerprint, iso, parse_time, utcnow
 from .render import render_archive, render_notification, server_title
-from .rules import match_rules
+from .rules import match_rules, trace_rules
+from .feedback import FeedbackError
 from .state import PersistenceError, StateStore, body_metadata, confirmed, upsert_paper
 from .translation import TranslationClient
 
 
 class Pipeline:
-    def __init__(self, config: dict, store: StateStore, collector, analysis, reader, delivery=None, *, now: datetime | None = None, real_send=False, clock=None, translator=None):
+    def __init__(self, config: dict, store: StateStore, collector, analysis, reader, delivery=None, *, now: datetime | None = None, real_send=False, clock=None, translator=None, feedback=None):
         self.config, self.store = config, store
         self.collector, self.analysis, self.reader, self.delivery = collector, analysis, reader, delivery
         self.now = now or utcnow()
         self.clock = clock or ((lambda: self.now) if now is not None else utcnow)
         self.real_send = real_send
+        self.feedback = feedback if real_send else None
         self.translator = translator or TranslationClient(config, analysis)
         self.day = self.now.astimezone(ZoneInfo("Asia/Shanghai")).date().isoformat()
         self.quota_day = self.now.astimezone(ZoneInfo(config["delivery"]["quota_timezone"])).date().isoformat()
@@ -173,6 +176,12 @@ class Pipeline:
     def _process(self) -> None:
         records = [r for r in self.state["papers"].values() if self._eligible(r) and not r.get("resend_pending")]
         for record in records:
+            if "rule_trace" not in record:
+                record["rule_trace"] = trace_rules(Paper.from_dict(record["paper"]), self.config, source="reconstructed")
+            if not record.get("decision"):
+                record["presentation_rule_trace"] = deepcopy(record["rule_trace"])
+            else:
+                record.setdefault("presentation_rule_trace", deepcopy(record["rule_trace"]))
             if record.get("decision"):
                 continue
             paper = Paper.from_dict(record["paper"])
@@ -298,7 +307,7 @@ class Pipeline:
                 continue
             modules = record.setdefault("presentation_modules", self._modules())
             abstract_needed = "abstract_translation" in modules
-            title_needed = "title_translation" in modules
+            title_needed = "title_translation" in modules or self.feedback is not None
             translated = record.get("translation", {})
             if (abstract_needed and not translated.get("abstract_zh")) or (
                 title_needed and not (translated.get("title_zh") or record.get("title_zh"))
@@ -333,7 +342,8 @@ class Pipeline:
                           record.get("presentation_modules",
                               ["title", "source", "llm_summary"] if tier == "full" else
                               ["title", "title_translation", "abstract", "abstract_translation", "source"] if tier == "translation" else
-                              ["title", "source"]), record.get("presentation_rule_hits", record.get("rule_hits", [])).copy())
+                              ["title", "source"]), record.get("presentation_rule_hits", record.get("rule_hits", [])).copy(),
+                          deepcopy(record.get("presentation_rule_trace", record.get("rule_trace", {}))))
 
     def _recover_items(self) -> list[DigestItem]:
         result = []
@@ -379,7 +389,15 @@ class Pipeline:
         if self.real_send and (not base or self.store.publisher is None):
             raise ProcessingError("real_delivery_requires_public_archive_and_checkpoint_publisher")
         base = base or "https://example.invalid/arxivdaily-state"
+        feedback_url = None
+        if self.feedback and items and not alert:
+            try:
+                feedback_url = self.feedback.ensure_daily(self.state, self.day, items, attempt_time, self.checkpoint)
+            except FeedbackError as exc:
+                self.errors.append(str(exc))
         notes = self.notes + ([f"本次存在 {len(set(self.errors))} 项处理或覆盖问题，状态中保留待恢复阶段。"] if self.errors else [])
+        if feedback_url:
+            notes.append(f"[反馈今日论文（逐篇勾选有用 / 无用）]({feedback_url})")
         notes.append(f"[所有候选论文的长期索引]({base}/archive/papers.md)")
         offline = hasattr(self.analysis, "fixture")
         if offline:
@@ -393,7 +411,7 @@ class Pipeline:
         digest_id = f"{self.run_id}-{'alert-' if alert else ''}{fingerprint(markdown)[:12]}"
         relative = f"archive/{self.day.replace('-', '/')}/{digest_id}.md"
         url = base + "/" + relative
-        notification, modes = render_notification(self.day, items, url, self.config["delivery"]["body_bytes"], index_url=base + "/archive/papers.md") if not alert else (f"ArxivDaily 本次运行有失败，请查看[状态与告警]({url})。", {})
+        notification, modes = render_notification(self.day, items, url, self.config["delivery"]["body_bytes"], index_url=base + "/archive/papers.md", feedback_url=feedback_url) if not alert else (f"ArxivDaily 本次运行有失败，请查看[状态与告警]({url})。", {})
         notification = self.store.scrubber.text(notification)
         previous = sorted({i.recovery_of for i in items if i.recovery_of})
         recovery_roots = {self.state["papers"][i.paper.base_id].get("delivery_chain", self.state["digests"][i.recovery_of]["chain_root"]) for i in items if i.recovery_of}
@@ -404,7 +422,7 @@ class Pipeline:
             self.state["chains"][digest_id] = {"attempts": 0, "created_at": iso(self.now)}
             recovery_roots.add(digest_id)
         chain_root = digest_id if new_items or alert or empty else sorted(recovery_roots)[0]
-        manifest = {"schema_version": 1, "digest_id": digest_id, "day": self.day, "run_id": self.run_id, "items": [{"paper": i.paper.to_dict(), "tier": i.tier, "summary": i.summary.to_dict() if i.summary else None, "translation": i.translation.to_dict() if i.translation else None, "modules": i.modules, "rule_hits": i.rule_hits, "recovery_of": i.recovery_of} for i in items], "rendered": modes, "archive_url": url, "content_hash": fingerprint(markdown), "notification_hash": fingerprint(notification), "recovery_of": previous, "chain_roots": sorted(recovery_roots), "alert": alert, "empty": empty}
+        manifest = {"schema_version": 1, "digest_id": digest_id, "day": self.day, "run_id": self.run_id, "items": [{"paper": i.paper.to_dict(), "tier": i.tier, "summary": i.summary.to_dict() if i.summary else None, "translation": i.translation.to_dict() if i.translation else None, "modules": i.modules, "rule_hits": i.rule_hits, "rule_trace": i.rule_trace, "recovery_of": i.recovery_of} for i in items], "rendered": modes, "archive_url": url, "feedback_url": feedback_url, "content_hash": fingerprint(markdown), "notification_hash": fingerprint(notification), "recovery_of": previous, "chain_roots": sorted(recovery_roots), "alert": alert, "empty": empty}
         self.store.snapshot(self.day, digest_id, markdown, notification, manifest)
         self.state["digests"][digest_id] = {**manifest, "chain_root": chain_root, "created_at": iso(self.now), "status": "prepared"}
         self.checkpoint()  # Publisher must commit and verify the archive first.
@@ -508,6 +526,11 @@ class Pipeline:
         self.retry_stage = retry_stage
         with self.store.locked():
             self.state = self.store.load()
+            if self.feedback:
+                try:
+                    self.errors.extend(self.feedback.sync(self.state, self.now, self.day, self.checkpoint))
+                except FeedbackError as exc:
+                    self.errors.append(str(exc))
             if retry_stage:
                 if retry_stage not in {"selection","body","review","summary","translation","title_translation","delivery"} or not self.retry_ids:
                     raise ProcessingError("invalid_manual_recovery_request")
@@ -569,7 +592,9 @@ class Pipeline:
             for paper in papers:
                 hits = match_rules(paper, self.config)
                 if hits or paper.base_id in self.promotion_ids:
-                    upsert_paper(self.state, paper, self.now, hits)
+                    record = upsert_paper(self.state, paper, self.now, hits)
+                    if not record.get("decision") and record["paper"] == paper.to_dict():
+                        record["rule_trace"] = trace_rules(paper, self.config)
                     discovered_ids.add(paper.base_id)
             run["discovered_papers"] = len({p.base_id for p in papers})
             run["discovered_candidates"] = len(discovered_ids)

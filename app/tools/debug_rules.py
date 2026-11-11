@@ -82,12 +82,12 @@ def explain_paper(paper: Paper, config: dict) -> dict:
     """Expose the actual matching phrases and gates, using the production matcher."""
     rules = config["rules"]
     categories = set(rules["categories"])
-    text = _normal(paper.abstract)
+    texts = [_normal(paper.abstract)]
     if rules["title_enabled"]:
-        text += " " + _normal(paper.title)
+        texts.append(_normal(paper.title))
     return {"category_pass": not categories or bool(categories.intersection(paper.categories)),
-            "excluded_by": [phrase for phrase in rules["exclude"] if _contains(text, phrase)],
-            "matched_groups": {group: [phrase for phrase in phrases if _contains(text, phrase)] for group, phrases in rules["groups"].items() if any(_contains(text, phrase) for phrase in phrases)},
+            "excluded_by": [phrase for phrase in rules["exclude"] if any(_contains(text, phrase) for text in texts)],
+            "matched_groups": {group: [phrase for phrase in phrases if any(_contains(text, phrase) for text in texts)] for group, phrases in rules["groups"].items() if any(_contains(text, phrase) for phrase in phrases for text in texts)},
             "routes": match_rules(paper, config)}
 
 

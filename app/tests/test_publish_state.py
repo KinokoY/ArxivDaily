@@ -106,6 +106,24 @@ def test_secret_canary_in_staged_json_blocks_commit(tmp_path, monkeypatch):
     assert not any(args[0] == "-c" for args in fake.calls)
 
 
+def test_feedback_summary_is_published_and_deletion_secret_is_checked(tmp_path, monkeypatch):
+    directory = prepare(tmp_path)
+    name = "archive/feedback.md"
+    (directory / "archive").mkdir()
+    (directory / name).write_text("feedback counts", encoding="utf-8")
+    fake = FakeGit(directory, candidates=[name], status={name: "M"})
+    monkeypatch.setattr(publisher, "git", fake)
+    publisher.publish(directory, BRANCH, REPOSITORY, "feedback")
+    assert name in fake.staged and fake.pushed
+    (directory / name).write_text("DELETE-TOKEN-CANARY", encoding="utf-8")
+    monkeypatch.setenv("FEEDBACK_DELETE_TOKEN", "DELETE-TOKEN-CANARY")
+    fake = FakeGit(directory, candidates=[name], status={name: "M"})
+    monkeypatch.setattr(publisher, "git", fake)
+    with pytest.raises(RuntimeError, match="secret appears"):
+        publisher.publish(directory, BRANCH, REPOSITORY, "feedback")
+    assert not fake.pushed
+
+
 def test_credential_shape_blocks_commit_without_matching_environment(tmp_path, monkeypatch):
     directory = prepare(tmp_path)
     (directory / "state.json").write_text('{"debug":"sk-' + 'A' * 32 + '"}', encoding="utf-8")

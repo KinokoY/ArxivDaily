@@ -16,6 +16,9 @@
 - [总论文索引](../../blob/arxivdaily-state/archive/papers.md)：英文/中文标题、链接与首次收集日期。包含规则命中的候选，也包含未通过模型终筛的论文。
 - [每日简报归档](../../tree/arxivdaily-state/archive)：打开 `YYYY-MM-DD.md` 阅读当天内容；`YYYY/MM/DD/` 下是每次发送的独立快照。
 - [Actions 运行记录](../../actions/workflows/daily-digest.yml)：查看运行结果、错误及脱敏报告。
+- [反馈计数](../../blob/arxivdaily-state/archive/feedback.md)：各命中组合与具体关键词的有用/无用次数，不改变筛选规则。
+
+简报中的“反馈今日论文”打开当天一个 GitHub Issue，列出所有论文的中英文标题、原文链接和有用/无用勾选框。登录仓库所有者账号后直接勾选，下一次正式 Actions 即保存已评价部分，不必等全部完成；全部评价或等待超时后默认关闭 Issue。`feedback.cleanup_action` 可选 `close`（默认）或 `delete`；只有永久删除才需额外配置 `FEEDBACK_DELETE_TOKEN`，见 [反馈设置](docs/OPERATIONS.md#论文反馈)。
 
 索引、简报和机器状态由程序自动更新到 `arxivdaily-state`，无需手工编辑。自动更新步骤见 [运行与恢复](docs/OPERATIONS.md)。
 

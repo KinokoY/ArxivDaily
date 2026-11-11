@@ -61,6 +61,8 @@ DEFAULTS = {
     "fulltext": {"timeout": 30, "attempts": 3, "min_chars": 2500, "chunk_chars": 20000, "max_download_bytes": 25000000, "max_visual_pages": 8},
     "delivery": {"sendkey_env": "SERVERCHAN_SENDKEY", "daily_limit": 5, "chain_attempts": 3, "poll_limit": 3, "body_bytes": 30000, "quota_timezone": "Asia/Shanghai", "query_counts_quota": False},
     "archive": {"public_base_url": "", "state_branch": "arxivdaily-state"},
+    "feedback": {"enabled": False, "repository": "", "max_wait_days": 14, "cleanup_action": "close",
+                 "token_env": "GITHUB_TOKEN", "delete_token_env": "FEEDBACK_DELETE_TOKEN"},
 }
 
 
@@ -134,6 +136,17 @@ def load_config(path: str | Path | None = None) -> dict:
         with Path(path).open("rb") as handle:
             supplied = tomllib.load(handle)
     config = _merge(DEFAULTS, supplied)
+    feedback = config["feedback"]
+    if type(feedback["enabled"]) is not bool:
+        raise ValueError("feedback.enabled must be boolean")
+    if not isinstance(feedback["repository"], str) or (feedback["repository"] and not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", feedback["repository"])):
+        raise ValueError("feedback.repository must be empty or owner/name")
+    _integer(feedback["max_wait_days"], "feedback.max_wait_days", 1, 365)
+    if feedback["cleanup_action"] not in ("close", "delete"):
+        raise ValueError("feedback.cleanup_action must be close or delete")
+    for key in ("token_env", "delete_token_env"):
+        if not isinstance(feedback[key], str) or not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", feedback[key]):
+            raise ValueError(f"feedback.{key} must be an environment variable name")
     branch = config["archive"]["state_branch"]
     if not isinstance(branch, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._/-]*", branch) or ".." in branch or branch.endswith("/"):
         raise ValueError("archive.state_branch must be a valid branch name")
