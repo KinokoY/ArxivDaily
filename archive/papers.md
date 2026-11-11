@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-11 | Counterfactual Analysis of Extent Leakage from Annotation-Derived Prompts in Vision-Language Medical Image Segmentation | 待翻译 | [arXiv 2611.13970v1](https://arxiv.org/abs/2611.13970v1) |
+| 2026-11-11 | Counterfactual Analysis of Extent Leakage from Annotation-Derived Prompts in Vision-Language Medical Image Segmentation | 视觉-语言医学图像分割中注释派生提示的范围泄漏的反事实分析 | [arXiv 2611.13970v1](https://arxiv.org/abs/2611.13970v1) |
 | 2026-11-11 | The Target Is a Predicate: Predicate-State Grounding for Semantic-Level Video Reasoning Segmentation | 待翻译 | [arXiv 2611.13785v1](https://arxiv.org/abs/2611.13785v1) |
 | 2026-11-11 | Seeing Is Not Believing: Counterfactual Lesion Erasure Teaches a Small Medical Vision-Language Agent to Report Only What the Image Shows | 待翻译 | [arXiv 2611.13006v1](https://arxiv.org/abs/2611.13006v1) |
 | 2026-11-10 | Large Language Models as a Universal Searcher for Open-World Automated Machine Learning | 大语言模型作为开放世界自动化机器学习的通用搜索器 | [arXiv 2611.12791v1](https://arxiv.org/abs/2611.12791v1) |
