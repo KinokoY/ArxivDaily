@@ -10035,9 +10035,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Medical vision-language models (VLMs) often report a finding because the question names it; standard benchmarks miss this.",
+          "From public segmentation datasets we build counterfactual views without manual annotation: the lesion erased by inpainting, a same-shape control edit elsewhere, and unedited lesion-free images.",
+          "MedScope-4B (Qwen3.5-4B, LoRA, image tools) was trained on label-derived trajectories, selected by a pre-registered rule and tested once against nine frontier and six open VLMs; four pre-registered checks then probed the mechanism.",
+          "no fresh-external ESG advantage over removal-based DPO was established",
+          "Training on erased and edited images gives a small model an evidence-gated disposition that prompting does not give frontier models; it does not improve perception, and rare critical findings need coverage."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文核心是医学视觉语言模型在反事实病灶擦除视图上的证据敏感性训练与评测，任务为文本报告“只报告图像中存在的发现”，不是推理分割或从问题/空间推理到像素掩码。方法为在标签衍生轨迹上训练 MedScope-4B，摘要中 DPO 仅作为比较基线且未显示优势，不能视为 DPO 或 RL 方法贡献。虽属医学视觉推理且有一定迁移复现，但不进入核心兴趣清单。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 35,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "摘要未显示模型输出分割掩码或采用推理分割目标；未读正文不能确认是否存在分割输出实验。",
+          "训练损失与轨迹生成细节未在摘要中充分说明，但摘要足以判断 DPO 不是本文方法贡献。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-11T13:44:35.059947+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Medical vision-language models (VLMs) often report a finding because the question names it; standard benchmarks miss this. From public segmentation datasets we build counterfactual views without manual annotation: the lesion erased by inpainting, a same-shape control edit elsewhere, and unedited lesion-free images. The evidence sensitivity gap (ESG) is the rate of absent-or-refer answers after erasure minus the rate after the control edit; it is zero for a model that ignores the image or reacts to both edits alike. MedScope-4B (Qwen3.5-4B, LoRA, image tools) was trained on label-derived trajectories, selected by a pre-registered rule and tested once against nine frontier and six open VLMs; four pre-registered checks then probed the mechanism. On 507 internal cases across five imaging types, MedScope-4B reached ESG 0.758 and claimed an erased lesion in 9.6% of cases, against 0.27-0.47 and 41-62% for the frontier models (all p<0.001), without significant loss of accuracy on real lesions. Without counterfactual views ESG fell to 0.279+-0.107 (three seeds); the effect replicated on MedGemma 1.5 4B and two unseen inpainting tools. At four external centres the advantage held but frontier models detected more real lesions; on a fresh external test MedScope-4B detected 0 of 48 pneumothorax films, with net utility below gemini-4-argon's (-0.36 [-0.50, -0.23]). Matching the control edit was not shown to matter; over three seeds no fresh-external ESG advantage over removal-based DPO was established; a paired-view consistency objective did not beat a matched-compute control, while that continuation alone cut erased-lesion claims on unseen tools at every seed, at a cost in sensitivity at one. Training on erased and edited images gives a small model an evidence-gated disposition that prompting does not give frontier models; it does not improve perception, and rare critical findings need coverage.",
         "authors": [
@@ -10054,16 +10079,12 @@
         "updated": "2026-11-08T23:09:18+00:00",
         "version_id": "2611.13006v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning",
         "general_rl"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-11T13:44:35.059947+00:00",
-        "run_id": "20261111T134435Z-7776ffed",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.13006v1"
       ]
