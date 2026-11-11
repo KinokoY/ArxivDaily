@@ -10106,11 +10106,8 @@
         "general_rl"
       ],
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-11T13:44:35.059947+00:00",
-        "run_id": "20261111T134435Z-7776ffed",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "眼见不为实：反事实病灶擦除教会小型医学视觉语言智能体只报告图像所示内容",
       "versions": [
         "2611.13006v1"
       ]
