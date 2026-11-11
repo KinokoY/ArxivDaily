@@ -10102,9 +10102,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "58f2d8cb03209bbe0f0bff24d2cdadeb103170c5cfce0235d0d14db2ab3c85e3",
+      "decision": {
+        "abstract_evidence": [
+          "Text-guided segmentation models receive an image and a short caption about the lesion, and on public benchmarks the caption improves accuracy considerably.",
+          "On colonoscopy and chest X-ray, it is mostly the lesion's extent.",
+          "We call this extent leakage.",
+          "We propose an evaluation protocol that keeps what a caption says about the image apart from what it copies from the label."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文分析文本引导医学图像分割中由标注掩码派生的提示词造成的 extent leakage，并提出将图像相关描述与标签复制信息分离的评估协议；这与医学文本/位置提示到像素掩码的评估相关，可作为推理分割基准设计警示。但摘要未显示新的推理分割机制、训练目标或 RL/DPO 方法贡献，故仅轻量纳入。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 62,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未确认该协议是否适用于隐含请求或需要空间/位置推理的医学分割任务。",
+          "摘要未显示新的分割模型或训练目标，仅有分析、重训练与评估协议。",
+          "未确认是否包含 RL/DPO 或可迁移的优化目标理论证据。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-11T13:44:35.059947+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Text-guided segmentation models receive an image and a short caption about the lesion, and on public benchmarks the caption improves accuracy considerably. On colonoscopy and breast ultrasound, however, the size, count and location words of each caption were computed from the mask that later scores the prediction, and the chest X-ray captions were written by benchmark annotators. We tested what two published models take from them. On colonoscopy and chest X-ray, it is mostly the lesion's extent. Keeping only the size word or the lung-zone phrase recovers 84 to 98 percent of the improvement over an empty caption, and removing it loses 52 to 77 percent. The rest matters little, and a polyp called a rock is segmented just as well. We call this extent leakage. On breast ultrasound, nearly half the captions also name the diagnosis, which carries part of the benefit. Retraining on three datasets shows that models pick up this habit from their training captions, though only partly on breast ultrasound, and that it weakens their segmentation from the image alone. The leak can be measured without training a model, since caption words alone predict lesion area (coefficient of determination 0.54 to 0.77 on six of seven test sets). Without the test mask, the best method we tested, which estimates extent from the image, reaches 74.59 Dice on colonoscopy against the published 77.23. We propose an evaluation protocol that keeps what a caption says about the image apart from what it copies from the label.",
         "authors": [
@@ -10124,15 +10149,11 @@
         "updated": "2026-11-10T12:07:24+00:00",
         "version_id": "2611.13970v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-11T13:44:35.059947+00:00",
-        "run_id": "20261111T134435Z-7776ffed",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.13970v1"
       ]
