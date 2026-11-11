@@ -10032,7 +10032,9 @@
       ]
     },
     "2611.13006": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-11T13:44:35.059947+00:00",
@@ -10057,6 +10059,11 @@
         "general_rl"
       ],
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-11T13:44:35.059947+00:00",
+        "run_id": "20261111T134435Z-7776ffed",
+        "stage": "selection"
+      },
       "versions": [
         "2611.13006v1"
       ]
