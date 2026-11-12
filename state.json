@@ -3402,6 +3402,15 @@
       "status": "confirmed"
     }
   },
+  "feedback": {
+    "counts": {
+      "combinations": [],
+      "keywords": [],
+      "rated_papers": 0
+    },
+    "issues": {},
+    "repository": "KinokoY/ArxivDaily"
+  },
   "papers": {
     "2609.39785": {
       "attempts": {
