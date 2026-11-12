@@ -139,6 +139,10 @@
     "20261111T134435Z-7776ffed-f7f5cdf2e375": {
       "attempts": 1,
       "created_at": "2026-11-11T13:44:35.059947+00:00"
+    },
+    "20261112T144816Z-8d2cedc5-88b23086f288": {
+      "attempts": 0,
+      "created_at": "2026-11-12T14:48:16.275708+00:00"
     }
   },
   "collection": {
@@ -467,6 +471,14 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-11-12": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [],
+      "send_attempts": 0
     }
   },
   "digests": {
@@ -3400,6 +3412,27 @@
       "run_id": "20261111T134435Z-7776ffed",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261112T144816Z-8d2cedc5-88b23086f288": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/12/20261112T144816Z-8d2cedc5-88b23086f288.md",
+      "chain_root": "20261112T144816Z-8d2cedc5-88b23086f288",
+      "chain_roots": [
+        "20261112T144816Z-8d2cedc5-88b23086f288"
+      ],
+      "content_hash": "88b23086f2880eaf0a669633dd69bc140491865214d64645d2e4d68cbeb3179a",
+      "created_at": "2026-11-12T14:48:16.275708+00:00",
+      "day": "2026-11-12",
+      "digest_id": "20261112T144816Z-8d2cedc5-88b23086f288",
+      "empty": true,
+      "feedback_url": null,
+      "items": [],
+      "notification_hash": "ddec591cfd196cdedbad4320b59b0bdc47dafa3c11f3954934c2b6eedd2ab2b4",
+      "recovery_of": [],
+      "rendered": {},
+      "run_id": "20261112T144816Z-8d2cedc5",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "feedback": {
@@ -8355,10 +8388,86 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2610.39195v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2610.39195v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "通过深度学习分析图案化表面上的凝结",
@@ -8598,10 +8707,104 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2610.40029v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2610.40029v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "基于Segment Anything Model的上下文引导Mamba Unet用于医学图像分割",
@@ -8761,10 +8964,106 @@
       "presentation_rule_hits": [
         "medical_reasoning"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "radiology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2610.40580v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "radiology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2610.40580v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "RADIOlogy：一种单次通过的无训练零样本异常检测方法",
@@ -9105,10 +9404,94 @@
       "presentation_rule_hits": [
         "medical_reasoning"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "CT"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "large language model"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.00247v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "CT"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "large language model"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.00247v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "Taurus：LLM在环CT标注以一半成本匹敌编码代理",
@@ -9174,10 +9557,102 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "MedSAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "vessel segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.00396v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "MedSAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "vessel segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.00396v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "评估基于SAM和卷积架构在薄视网膜血管分割中的表现：模型容量、计算成本与基础预训练",
@@ -9428,10 +9903,98 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.05131v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.05131v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "基于多视角无人机影像的高保真无训练光伏组件制图",
@@ -9792,10 +10355,76 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.08081v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.08081v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "TerraMesh-Masks: 面向地球观测的开放词汇分割",
@@ -9868,10 +10497,144 @@
       "presentation_rule_hits": [
         "medical_reasoning"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "anatomical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "anatomy"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "CT"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "3D medical"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.08185v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "anatomical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "anatomy"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "CT"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "3D medical"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.08185v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "用于3D医学视觉-语言建模的多模态分层专家混合模型",
@@ -9939,10 +10702,102 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.08943v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.08943v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "MESAM：通过语义-视觉记忆生成与细化增强SAM2以用于少样本分割",
@@ -10017,10 +10872,108 @@
       "presentation_rule_hits": [
         "medical_reasoning"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "pathology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision language model"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.09117v2"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "pathology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision language model"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.09117v2"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "PathXAI：基于可迁移组织分割的证据引导结构化病理报告",
@@ -10086,10 +11039,74 @@
       "presentation_rule_hits": [
         "transferable_objective"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.10199v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.10199v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "RigidGS：面向3D高斯泼溅中刚体交互的几何感知对象解耦",
@@ -10159,11 +11176,235 @@
         "general_rl",
         "general_reasoning"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain-of-thought"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain of thought"
+                }
+              ],
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "VLM",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "large language model"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain-of-thought"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain of thought"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.12791v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning",
         "general_rl"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain-of-thought"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain of thought"
+                }
+              ],
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "VLM",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "large language model"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain-of-thought"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "chain of thought"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.12791v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "大语言模型作为开放世界自动化机器学习的通用搜索器",
@@ -10233,11 +11474,177 @@
         "medical_reasoning",
         "general_rl"
       ],
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "lesion"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          },
+          {
+            "groups": [
+              "SEG",
+              "VLM",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "DPO"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "general_rl"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.13006v1"
+      },
       "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_rl",
         "medical_reasoning"
       ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "lesion"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          },
+          {
+            "groups": [
+              "SEG",
+              "VLM",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "DPO"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "general_rl"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "reconstructed",
+        "version_id": "2611.13006v1"
+      },
       "stage": "rejected",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "眼见不为实：反事实病灶擦除教会小型医学视觉语言智能体只报告图像所示内容",
