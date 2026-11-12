@@ -3425,9 +3425,16 @@
       "content_hash": "88b23086f2880eaf0a669633dd69bc140491865214d64645d2e4d68cbeb3179a",
       "created_at": "2026-11-12T14:48:16.275708+00:00",
       "day": "2026-11-12",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "67942720",
+        "status": "confirmed"
+      },
       "digest_id": "20261112T144816Z-8d2cedc5-88b23086f288",
       "empty": true,
       "feedback_url": null,
+      "finished_at": "2026-11-12T14:52:30.786653+00:00",
       "items": [],
       "notification_hash": "ddec591cfd196cdedbad4320b59b0bdc47dafa3c11f3954934c2b6eedd2ab2b4",
       "quota_day": "2026-11-12",
@@ -3435,7 +3442,7 @@
       "rendered": {},
       "run_id": "20261112T144816Z-8d2cedc5",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "feedback": {
