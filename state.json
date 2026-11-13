@@ -13480,11 +13480,23 @@
       "collection_errors": [
         "incomplete collection shard 202610301407..202611131407 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError"
       ],
+      "completed_at": "2026-11-13T14:09:09.775977+00:00",
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
       "coverage_complete": false,
       "day": "2026-11-13",
+      "delivery_day": "2026-11-13",
+      "delivery_kind": "alert",
+      "delivery_status": "confirmed",
+      "digest_id": "20261113T140738Z-c5678824-alert-2707877dba67",
       "discovered_candidates": 0,
       "discovered_papers": 0,
+      "errors": [
+        "collection:incomplete collection shard 202610301407..202611131407 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError",
+        "collection_incomplete"
+      ],
+      "full": 0,
+      "light": 0,
+      "recovery": 0,
       "run_id": "20261113T140738Z-c5678824",
       "shards": [
         {
@@ -13501,7 +13513,9 @@
           "status": "failed"
         }
       ],
+      "silent": false,
       "started_at": "2026-11-13T14:07:38.030628+00:00",
+      "translation": 0,
       "window": {
         "end": "2026-11-13T14:07:38.030628+00:00",
         "initial_floor": "2026-09-30T09:52:55.126385+00:00",
