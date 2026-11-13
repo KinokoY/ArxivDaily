@@ -13432,10 +13432,30 @@
       }
     },
     {
+      "collection_errors": [
+        "incomplete collection shard 202610301407..202611131407 (cs.CV,cs.LG,cs.AI,cs.CL): HTTPError"
+      ],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
       "coverage_complete": false,
       "day": "2026-11-13",
+      "discovered_candidates": 0,
+      "discovered_papers": 0,
       "run_id": "20261113T140738Z-c5678824",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-13T14:07:00+00:00",
+          "error": "HTTPError",
+          "seen": 0,
+          "start": "2026-10-30T14:07:00+00:00",
+          "status": "failed"
+        }
+      ],
       "started_at": "2026-11-13T14:07:38.030628+00:00",
       "window": {
         "end": "2026-11-13T14:07:38.030628+00:00",
