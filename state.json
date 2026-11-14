@@ -3504,7 +3504,132 @@
       "keywords": [],
       "rated_papers": 0
     },
-    "issues": {},
+    "issues": {
+      "2026-11-14": {
+        "created_at": "2026-11-14T13:14:54.963048+00:00",
+        "papers": {
+          "2611.14931": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "REASON"
+                  ],
+                  "keywords": {
+                    "REASON": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "reasoning segmentation"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "general_reasoning"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.14931v1"
+            },
+            "title": "Hint-Informed Self-Distillation for Reasoning Segmentation",
+            "title_zh": "提示引导的自蒸馏用于推理分割",
+            "url": "https://arxiv.org/abs/2611.14931v1",
+            "vote": "pending"
+          },
+          "2611.15216": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.15216v1"
+            },
+            "title": "Where is My Mug? Training-Free Framework for Personalized Image Segmentation",
+            "title_zh": "我的马克杯在哪里？面向个性化图像分割的无训练框架",
+            "url": "https://arxiv.org/abs/2611.15216v1",
+            "vote": "pending"
+          },
+          "2611.15680": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "REASON"
+                  ],
+                  "keywords": {
+                    "REASON": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "spatial reasoning"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "general_reasoning"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.15680v1"
+            },
+            "title": "SpaceMCP: Vision Language Model Spatial Reasoning via Model Context Protocol",
+            "title_zh": "SpaceMCP：通过模型上下文协议实现视觉语言模型的空间推理",
+            "url": "https://arxiv.org/abs/2611.15680v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
+      }
+    },
     "repository": "KinokoY/ArxivDaily"
   },
   "papers": {
