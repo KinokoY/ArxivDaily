@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-11-14 | Lang-SVG: Hierarchical Image Vectorization with Language Priors | 待翻译 | [arXiv 2611.15941v1](https://arxiv.org/abs/2611.15941v1) |
 | 2026-11-14 | Open Vision Banana: A Fully Open Recipe for Generative Visual Perception | 待翻译 | [arXiv 2611.15844v1](https://arxiv.org/abs/2611.15844v1) |
-| 2026-11-14 | SpaceMCP: Vision Language Model Spatial Reasoning via Model Context Protocol | 待翻译 | [arXiv 2611.15680v1](https://arxiv.org/abs/2611.15680v1) |
+| 2026-11-14 | SpaceMCP: Vision Language Model Spatial Reasoning via Model Context Protocol | SpaceMCP：通过模型上下文协议实现视觉语言模型的空间推理 | [arXiv 2611.15680v1](https://arxiv.org/abs/2611.15680v1) |
 | 2026-11-14 | Where is My Mug? Training-Free Framework for Personalized Image Segmentation | 待翻译 | [arXiv 2611.15216v1](https://arxiv.org/abs/2611.15216v1) |
 | 2026-11-14 | Hint-Informed Self-Distillation for Reasoning Segmentation | 待翻译 | [arXiv 2611.14931v1](https://arxiv.org/abs/2611.14931v1) |
 | 2026-11-11 | Counterfactual Analysis of Extent Leakage from Annotation-Derived Prompts in Vision-Language Medical Image Segmentation | 视觉-语言医学图像分割中注释派生提示的范围泄漏的反事实分析 | [arXiv 2611.13970v1](https://arxiv.org/abs/2611.13970v1) |
