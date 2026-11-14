@@ -151,7 +151,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-12T14:48:16.275708+00:00"
+    "last_complete_end": "2026-11-14T13:08:27.771062+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -11895,6 +11895,333 @@
       "versions": [
         "2611.13970v1"
       ]
+    },
+    "2611.14931": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "paper": {
+        "abstract": "Reasoning segmentation requires identifying the target referred to by a query among visually similar objects, yet trajectory-level rewards cannot directly indicate which tokens provide relevant visual evidence. We propose Hint-Informed Self-Distillation (HISD), which uses target-disambiguation evidence for token-level credit assignment. An external model generates Segment Hints offline from training images, queries, and ground-truth target annotations, organizing target identity, discriminative attributes, confusable objects, and anchoring paths. A hint-conditioned exponential moving average teacher scores the student's own trajectories, and HISD computes the teacher-to-student evidence ratio over a token support set to adjust only the magnitudes of positive group-relative advantages, leaving nonpositive advantages unchanged. This design encourages concise reasoning while retaining the information needed for target disambiguation, and the student requires neither hints nor a teacher at inference. Under a unified training protocol, HISD improves ReasonSeg test gIoU and cIoU over our reproduction of DPAD by 3.00 and 3.55 percentage points, respectively. Across the five evaluated splits of ReasonSeg and the RefCOCO family, HISD achieves higher segmentation metrics than this baseline and reduces the average token count of valid reasoning spans by 80.17 to 91.83 percent.",
+        "authors": [
+          "Kunze Jiang",
+          "Yuchen Wang",
+          "Kang Li",
+          "Qixing Zhang"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.14931v1",
+        "published": "2026-11-11T02:34:13+00:00",
+        "title": "Hint-Informed Self-Distillation for Reasoning Segmentation",
+        "updated": "2026-11-11T02:34:13+00:00",
+        "version_id": "2611.14931v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "reasoning segmentation"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.14931v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.14931v1"
+      ]
+    },
+    "2611.15216": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "paper": {
+        "abstract": "\\textbf{Personalized Image Segmentation (PIS)} aims to segment the specific object in a target image that matches a user-provided reference. Unlike category-based segmentation or few-shot segmentation, PIS must discriminate between multiple visually similar instances, a requirement central to deployed applications such as augmented reality, personalized content editing, robotics manipulation, inventory tracking, and fine-grained visual retrieval. We show that the strong numbers reported by existing PIS methods are largely an artifact of single-instance benchmarks: when evaluated on realistic scenes with several same-category look-alikes, prior point-prompt methods collapse, because the correct instance is frequently never surfaced as a prompt. We trace this to a recall bottleneck rather than a mask-quality one, and address it with a training-free, modular system. The pipeline first generates high-recall object proposals using an off-the-shelf class-agnostic detector, then matches each proposal to the reference using foundation-model features (e.g., BLIP-2), and finally refines the selected box with SAM. For robust matching we propose \\textbf{top-$K$ Sinkhorn}, a patch-level distance that scores each candidate only on its most confidently matched patches; trimming the Sinkhorn dual potentials recovers the robustness of partial optimal transport at more than $100\\times$ lower cost, keeping it inside the per-proposal candidate loop. To evaluate this regime, we introduce \\textbf{\\datasetname}, a realistic multi-instance benchmark. Across \\datasetname, PerSeg, PerMIS, and DAVIS, our system surpasses PerSAM, $\\mathrm{P}^2\\mathrm{SAM}$, and PDM by up to $\\sim\\!48$ mIoU while matching their runtime and using fewer parameters, establishing a strong, deployable training-free baseline for real-world personalized segmentation.",
+        "authors": [
+          "Quang Qui-Vinh Nguyen",
+          "Hung Nguyen",
+          "Rang Nguyen",
+          "Khoi Nguyen"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.15216v1",
+        "published": "2026-11-11T09:09:54+00:00",
+        "title": "Where is My Mug? Training-Free Framework for Personalized Image Segmentation",
+        "updated": "2026-11-11T09:09:54+00:00",
+        "version_id": "2611.15216v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.15216v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.15216v1"
+      ]
+    },
+    "2611.15680": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "paper": {
+        "abstract": "Despite impressive advances in large language models (LLM), vision-language models (VLM) still exhibit limited spatial reasoning capabilities. Recent progress in feed-forward 3D reconstruction has enabled precise, real-time geometric understanding from visual inputs. In this work, we propose SpaceMCP, a framework that leverages these advances to introduce an MCP-style paradigm for spatial reasoning. Our approach augments a VLM with structured function calls, allowing it to query a scene graph for spatial information such as distances, object positioning, and camera properties. The scene graph is constructed in real time using feed-forward 3D reconstruction to recover metric geometry, combined with open-vocabulary segmentation to identify and localize relevant objects within the scene. Paired with the VLM's strong reasoning capabilities, the VLM is able to combine this primitive information to solve more complex spatial tasks. Without any training, SpaceMCP achieves state-of-the-art results on VSI-Bench, MMSI-Bench and VSTI-Bench, outperforming recent spatially post-trained VLMs and improving its base VLM by 15-22 points per benchmark. We argue that, given the contrast between the relatively slow progress in native VLM spatial reasoning and the rapid advances in feed-forward 3D computer vision, this paradigm offers a promising path forward for enabling robust spatial reasoning.",
+        "authors": [
+          "Ameen Izhac",
+          "Nobuko Yoshida",
+          "Ronald Clark"
+        ],
+        "categories": [
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.15680v1",
+        "published": "2026-11-11T16:21:39+00:00",
+        "title": "SpaceMCP: Vision Language Model Spatial Reasoning via Model Context Protocol",
+        "updated": "2026-11-11T16:21:39+00:00",
+        "version_id": "2611.15680v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "spatial reasoning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.15680v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.15680v1"
+      ]
+    },
+    "2611.15844": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "paper": {
+        "abstract": "Recent work suggests that pretrained image generators encode real-world understanding beyond image synthesis. Vision Banana exploits this by framing vision tasks as conditional image editing. However, its data, weights, code, and implementation details are not public. We present Open Vision Banana (OVB), a fully open and reproducible recipe for converting pretrained generators into unified multi-task perception systems. Our analyses identify the design choices that matter most for generalization, including color encoding, prompt design, parameter adaptation, and task balancing. These choices interact, so individually helpful choices can hurt when combined with others. Starting from 4B and 9B parameter open-weight base models and using 2.1M-3.8M training pairs from public datasets, OVB surpasses Vision Banana's reported Cityscapes zero-shot performance (73.9 vs. 69.9 mIoU) and rivals state-of-the-art affine-invariant depth estimators. Its non-zero-shot variants come within five points of Vision Banana on referring and reasoning segmentation but remain further behind on instance segmentation. All models largely retain the base model's image-editing abilities. With legend ensembling, we introduce a test-time scaling method for generator-based perception. It segments an image under several class-color legends and fuses the results by majority vote, correcting unstable color-class bindings and improving mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object without retraining. We release the dataset construction and processing pipeline, the training and evaluation code, as well as the final, intermediate, and ablation checkpoints. Project website: https://openvisionbanana.github.io",
+        "authors": [
+          "Arpit Jadon",
+          "Valentinos Pariza",
+          "Jona Ruthardt",
+          "Ryousuke Yamada",
+          "A. Sophia Koepke",
+          "Andrei Bursuc",
+          "Yuki M. Asano"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.15844v1",
+        "published": "2026-11-11T18:57:34+00:00",
+        "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+        "updated": "2026-11-11T18:57:34+00:00",
+        "version_id": "2611.15844v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reasoning segmentation"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "instance segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.15844v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.15844v1"
+      ]
+    },
+    "2611.15941": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "paper": {
+        "abstract": "Image vectorization reconstructs raster images as compact scalable vector graph- ics (SVG), providing a structured and editable code representation of images. However, most existing vectorization methods optimize for pixel-level render- ing fidelity, often producing SVGs that lack alignment with human-perceived object-part hierarchies, making them difficult to manipulate. To address this, we propose Lang-SVG, which introduces an explicit tree structure to organize SVG primitives with semantic labels and parent-child relationships. Lang-SVG incorporates granularity-controllable and open-vocabulary segmentation priors to initialize object-part hierarchies and leverages multimodal large language models (MLLMs) with SVG tree context to assign semantic labels to unlabeled nodes. To reduce redundancy, we introduce depth-adaptive simplification to reduce shape complexity and Tree-Guided Pruning and Merging to eliminate redundant SVG nodes. L1-SAM-Prompting further recovers missing regions to improve recon- struction fidelity and structural completeness. Beyond reconstruction fidelity, we introduce a new evaluation protocol that measures structural quality and semantic part alignment. Experiments demonstrate that Lang-SVG achieves state-of-the-art performance in both rendering fidelity and structural quality. Project website: https://xiliu8006.github.io/Lang-SVG/.",
+        "authors": [
+          "Xi Liu",
+          "Chaoyi Zhou",
+          "Run Wang",
+          "Jiaang Li",
+          "Feng Luo",
+          "Junxiang Huang",
+          "Siyu Huang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.15941v1",
+        "published": "2026-11-11T19:37:42+00:00",
+        "title": "Lang-SVG: Hierarchical Image Vectorization with Language Priors",
+        "updated": "2026-11-11T19:37:42+00:00",
+        "version_id": "2611.15941v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.15941v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.15941v1"
+      ]
     }
   },
   "runs": [
@@ -13525,10 +13852,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-14",
+      "discovered_candidates": 18,
+      "discovered_papers": 18,
       "run_id": "20261114T130827Z-e461aa93",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-14T13:08:00+00:00",
+          "seen": 5242,
+          "start": "2026-10-31T13:08:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-14T13:08:27.771062+00:00",
       "window": {
         "end": "2026-11-14T13:08:27.771062+00:00",
