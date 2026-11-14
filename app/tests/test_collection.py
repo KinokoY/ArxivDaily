@@ -214,6 +214,25 @@ class CollectionTests(unittest.TestCase):
 class ArxivClientPaginationTests(unittest.TestCase):
     """Use arxiv.py's own Client.results pagination with fake Atom pages."""
 
+    def test_exhausted_http_retries_preserve_status_and_attempts_without_response_text(self):
+        import arxiv
+
+        config = load_config()
+        client = arxiv.Client(page_size=100, delay_seconds=3.0, num_retries=3)
+        failed = types.SimpleNamespace(status_code=503, content=b"private-response-canary")
+        window = {"start": "2026-10-30T14:07:00+00:00", "end": "2026-11-13T14:07:00+00:00"}
+        with patch.object(client._session, "get", return_value=failed) as get, patch("arxiv.time.sleep"):
+            result = Collector(config, client).collect(window)
+        self.assertEqual(get.call_count, 4)
+        self.assertFalse(result.complete)
+        self.assertEqual(result.papers, [])
+        self.assertEqual(len(result.shards), 1)
+        self.assertEqual(result.shards[0]["http_status"], 503)
+        self.assertEqual(result.shards[0]["request_attempts"], 4)
+        self.assertIn("HTTPError (HTTP 503) after 4 attempts", result.errors[0])
+        self.assertNotIn("private-response-canary", str(result))
+        self.assertNotIn("https://", result.errors[0])
+
     def _run(self, *, interrupt_third_page=False):
         try:
             import arxiv

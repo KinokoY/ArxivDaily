@@ -202,6 +202,16 @@ class Collector:
                 # candidates remain useful, but the shard cannot checkpoint.
                 shard["status"] = "failed"
                 shard["error"] = type(exc).__name__
+                # arxiv.HTTPError exposes status/retry separately. Keep these
+                # diagnostics without publishing exception text or URLs.
+                status = getattr(exc, "status", None)
+                retry = getattr(exc, "retry", None)
+                if type(status) is int and 100 <= status <= 599:
+                    shard["http_status"] = status
+                    shard["error"] += f" (HTTP {status})"
+                if type(retry) is int and retry >= 0:
+                    shard["request_attempts"] = retry + 1
+                    shard["error"] += f" after {retry + 1} attempts"
             if shard["status"] == "candidate_limit":
                 for unvisited in pending:
                     result.shards.append({"start": iso(unvisited[0]), "end": iso(unvisited[1]), "categories": list(unvisited[2]), "status": "unvisited", "seen": 0})

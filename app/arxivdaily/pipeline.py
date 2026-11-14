@@ -412,6 +412,12 @@ class Pipeline:
         relative = f"archive/{self.day.replace('-', '/')}/{digest_id}.md"
         url = base + "/" + relative
         notification, modes = render_notification(self.day, items, url, self.config["delivery"]["body_bytes"], index_url=base + "/archive/papers.md", feedback_url=feedback_url) if not alert else (f"ArxivDaily 本次运行有失败，请查看[状态与告警]({url})。", {})
+        if alert and "collection_incomplete" in self.errors:
+            codes = sorted({s["http_status"] for s in self.state["runs"][-1].get("shards", [])
+                            if s.get("status") == "failed" and type(s.get("http_status")) is int})
+            detail = "（HTTP " + "、".join(str(code) for code in codes) + "）" if codes else ""
+            notification = (f"arXiv 论文抓取未完成{detail}，本次不能判断是否有新增论文。"
+                            f"后续运行会继续补查。详情见[状态与告警]({url})。")
         notification = self.store.scrubber.text(notification)
         previous = sorted({i.recovery_of for i in items if i.recovery_of})
         recovery_roots = {self.state["papers"][i.paper.base_id].get("delivery_chain", self.state["digests"][i.recovery_of]["chain_root"]) for i in items if i.recovery_of}

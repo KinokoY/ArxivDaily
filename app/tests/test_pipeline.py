@@ -234,6 +234,34 @@ def test_incomplete_collection_does_not_advance_complete_cursor(tmp_path):
     assert report["full"] == 1 and "collection_incomplete" in report["errors"]
 
 
+@pytest.mark.parametrize("http_status", [503, None])
+def test_collection_alert_explains_failure_and_next_run_recovers(tmp_path, http_status):
+    from arxivdaily.collection import CollectionResult
+    config, f, papers, analysis, reader, store, delivery = system(tmp_path)
+    shard = {"status": "failed", "seen": 0, "error": "HTTPError"}
+    if http_status:
+        shard.update(http_status=http_status, request_attempts=4)
+    class Source:
+        def collect(self, window):
+            return CollectionResult(complete=False, shards=[shard], errors=["first_page_failed"])
+    report = Pipeline(config, store, Source(), analysis, reader, delivery, now=NOW).run()
+    assert report["delivery_kind"] == "alert" and report["coverage_complete"] is False
+    assert "last_complete_end" not in store.load()["collection"]
+    message = delivery.sent[-1][1]
+    assert "arXiv 论文抓取未完成" in message and "不能判断是否有新增论文" in message
+    assert ("HTTP 503" in message) == bool(http_status)
+    assert "今天未发现新增工作" not in message
+    assert analysis.calls["selection"] == 0
+    class RecoveredSource:
+        def collect(self, window):
+            assert window["start"] <= papers[0].published <= window["end"]
+            return CollectionResult(papers=papers[:1])
+    recovered = Pipeline(config, store, RecoveredSource(), analysis, reader, delivery,
+                         now=NOW + timedelta(days=1)).run()
+    assert recovered["errors"] == [] and recovered["delivery_kind"] == "digest"
+    assert store.load()["collection"]["last_complete_end"] == (NOW + timedelta(days=1)).isoformat()
+
+
 def test_post_confirmation_checkpoint_loss_retains_unknown_and_attempt(tmp_path):
     config,f,papers,analysis,reader,store,delivery = system(tmp_path)
     remote = {}
