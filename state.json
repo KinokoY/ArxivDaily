@@ -12162,9 +12162,30 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "Image vectorization reconstructs raster images as compact scalable vector graph- ics (SVG), providing a structured and editable code representation of images.",
+          "L1-SAM-Prompting further recovers missing regions to improve recon- struction fidelity and structural completeness."
+        ],
+        "dpo_is_method": false,
+        "reason": "摘要任务为通用图像矢量化，核心是SVG树结构、语义标签、剪枝合并与SAM提示补全，并非医学影像推理分割或通用推理分割；未提出RL/DPO方法，也未给出可迁移的分割优化目标及理论依据。SAM仅作为提示/区域恢复组件，不能构成所述研究兴趣中的实质方法贡献。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 3,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未说明L1-SAM-Prompting是否包含新的分割损失或优化目标；但即便存在，摘要也未提供理论或迁移证据。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Image vectorization reconstructs raster images as compact scalable vector graph- ics (SVG), providing a structured and editable code representation of images. However, most existing vectorization methods optimize for pixel-level render- ing fidelity, often producing SVGs that lack alignment with human-perceived object-part hierarchies, making them difficult to manipulate. To address this, we propose Lang-SVG, which introduces an explicit tree structure to organize SVG primitives with semantic labels and parent-child relationships. Lang-SVG incorporates granularity-controllable and open-vocabulary segmentation priors to initialize object-part hierarchies and leverages multimodal large language models (MLLMs) with SVG tree context to assign semantic labels to unlabeled nodes. To reduce redundancy, we introduce depth-adaptive simplification to reduce shape complexity and Tree-Guided Pruning and Merging to eliminate redundant SVG nodes. L1-SAM-Prompting further recovers missing regions to improve recon- struction fidelity and structural completeness. Beyond reconstruction fidelity, we introduce a new evaluation protocol that measures structural quality and semantic part alignment. Experiments demonstrate that Lang-SVG achieves state-of-the-art performance in both rendering fidelity and structural quality. Project website: https://xiliu8006.github.io/Lang-SVG/.",
         "authors": [
@@ -12217,6 +12238,7 @@
         "source": "matched",
         "version_id": "2611.15941v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -12252,12 +12274,7 @@
         "source": "matched",
         "version_id": "2611.15941v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-14T13:08:27.771062+00:00",
-        "run_id": "20261114T130827Z-e461aa93",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.15941v1"
       ]
