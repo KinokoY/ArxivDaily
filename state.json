@@ -149,7 +149,7 @@
       "created_at": "2026-11-13T14:07:38.030628+00:00"
     },
     "20261114T130827Z-e461aa93-f387e886eb8c": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-11-14T13:08:27.771062+00:00"
     }
   },
@@ -501,10 +501,12 @@
     "2026-11-14": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261114T130827Z-e461aa93-f387e886eb8c"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -3504,6 +3506,8 @@
     "20261114T130827Z-e461aa93-f387e886eb8c": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/14/20261114T130827Z-e461aa93-f387e886eb8c.md",
+      "attempt_run": "20261114T130827Z-e461aa93",
+      "attempt_started": "2026-11-14T13:15:03.248426+00:00",
       "chain_root": "20261114T130827Z-e461aa93-f387e886eb8c",
       "chain_roots": [
         "20261114T130827Z-e461aa93-f387e886eb8c"
@@ -3729,6 +3733,7 @@
         }
       ],
       "notification_hash": "83250d607e162c760972978c7c9eae9a80c353a132121dd62d3fcac20a151fcc",
+      "quota_day": "2026-11-14",
       "recovery_of": [],
       "rendered": {
         "2611.14931": "rendered_inline_translation",
@@ -3737,7 +3742,7 @@
       },
       "run_id": "20261114T130827Z-e461aa93",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "feedback": {
@@ -12275,6 +12280,7 @@
       ]
     },
     "2611.14931": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -12303,7 +12309,18 @@
           "该工作为通用图像推理分割，未直接验证医学影像推理分割迁移效果。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261114T130827Z-e461aa93-f387e886eb8c",
+      "events": [
+        {
+          "at": "2026-11-14T13:15:03.248426+00:00",
+          "digest_id": "20261114T130827Z-e461aa93-f387e886eb8c",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
       "intended_tier": "translation",
@@ -12326,6 +12343,7 @@
         "updated": "2026-11-11T02:34:13+00:00",
         "version_id": "2611.14931v1"
       },
+      "pending_digest": "20261114T130827Z-e461aa93-f387e886eb8c",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -12422,6 +12440,7 @@
       ]
     },
     "2611.15216": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -12450,7 +12469,18 @@
           "未读取正文，无法确认是否存在医学分割、推理分割或 RL/DPO 相关实验。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261114T130827Z-e461aa93-f387e886eb8c",
+      "events": [
+        {
+          "at": "2026-11-14T13:15:03.248426+00:00",
+          "digest_id": "20261114T130827Z-e461aa93-f387e886eb8c",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
       "intended_tier": "translation",
@@ -12473,6 +12503,7 @@
         "updated": "2026-11-11T09:09:54+00:00",
         "version_id": "2611.15216v1"
       },
+      "pending_digest": "20261114T130827Z-e461aa93-f387e886eb8c",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -12567,6 +12598,7 @@
       ]
     },
     "2611.15680": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -12591,7 +12623,18 @@
           "摘要未说明开放词表分割是否在像素掩码层面被评估或作为推理分割任务使用。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261114T130827Z-e461aa93-f387e886eb8c",
+      "events": [
+        {
+          "at": "2026-11-14T13:15:03.248426+00:00",
+          "digest_id": "20261114T130827Z-e461aa93-f387e886eb8c",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
       "intended_tier": "translation",
@@ -12612,6 +12655,7 @@
         "updated": "2026-11-11T16:21:39+00:00",
         "version_id": "2611.15680v1"
       },
+      "pending_digest": "20261114T130827Z-e461aa93-f387e886eb8c",
       "presentation_modules": [
         "title",
         "title_translation",
