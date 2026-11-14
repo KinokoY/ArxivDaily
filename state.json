@@ -11900,9 +11900,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We propose Hint-Informed Self-Distillation (HISD), which uses target-disambiguation evidence for token-level credit assignment.",
+          "A hint-conditioned exponential moving average teacher scores the student's own trajectories, and HISD computes the teacher-to-student evidence ratio over a token support set to adjust only the magnitudes of positive group-relative advantages, leaving nonpositive advantages unchanged.",
+          "HISD improves ReasonSeg test gIoU and cIoU over our reproduction of DPAD by 3.00 and 3.55 percentage points, respectively.",
+          "Across the five evaluated splits of ReasonSeg and the RefCOCO family, HISD achieves higher segmentation metrics than this baseline and reduces the average token count of valid reasoning spans by 80.17 to 91.83 percent."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文针对通用图像推理分割，提出 Hint-Informed Self-Distillation，用目标消歧证据做 token 级 credit assignment，并通过 hint-conditioned EMA teacher 与 group-relative advantages 调整正优势幅度。摘要中的 trajectory-level rewards、advantages 和分组相对优势表明其方法贡献属于 RL/策略优化式训练机制，而非仅传统分割损失；因此优先保留。DPO 未出现，不作为方法。",
+        "review_evidence": [],
+        "rl_is_method": true,
+        "route": "general_rl",
+        "score": 88,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未明确写出 RL/GRPO 或策略优化目标名称，仅通过 trajectory-level rewards 与 group-relative advantages 推断为 RL 方法；需正文确认其优化目标是否正式属于 RL。",
+          "摘要未提供理论证明，HISD 的设计依据主要是经验性动机与实验结果。",
+          "该工作为通用图像推理分割，未直接验证医学影像推理分割迁移效果。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Reasoning segmentation requires identifying the target referred to by a query among visually similar objects, yet trajectory-level rewards cannot directly indicate which tokens provide relevant visual evidence. We propose Hint-Informed Self-Distillation (HISD), which uses target-disambiguation evidence for token-level credit assignment. An external model generates Segment Hints offline from training images, queries, and ground-truth target annotations, organizing target identity, discriminative attributes, confusable objects, and anchoring paths. A hint-conditioned exponential moving average teacher scores the student's own trajectories, and HISD computes the teacher-to-student evidence ratio over a token support set to adjust only the magnitudes of positive group-relative advantages, leaving nonpositive advantages unchanged. This design encourages concise reasoning while retaining the information needed for target disambiguation, and the student requires neither hints nor a teacher at inference. Under a unified training protocol, HISD improves ReasonSeg test gIoU and cIoU over our reproduction of DPAD by 3.00 and 3.55 percentage points, respectively. Across the five evaluated splits of ReasonSeg and the RefCOCO family, HISD achieves higher segmentation metrics than this baseline and reduces the average token count of valid reasoning spans by 80.17 to 91.83 percent.",
         "authors": [
@@ -11955,6 +11980,7 @@
         "source": "matched",
         "version_id": "2611.14931v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
@@ -11992,12 +12018,7 @@
         "source": "matched",
         "version_id": "2611.14931v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-14T13:08:27.771062+00:00",
-        "run_id": "20261114T130827Z-e461aa93",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.14931v1"
       ]
