@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-14 | Lang-SVG: Hierarchical Image Vectorization with Language Priors | 待翻译 | [arXiv 2611.15941v1](https://arxiv.org/abs/2611.15941v1) |
+| 2026-11-14 | Lang-SVG: Hierarchical Image Vectorization with Language Priors | Lang-SVG：基于语言先验的分层图像矢量化 | [arXiv 2611.15941v1](https://arxiv.org/abs/2611.15941v1) |
 | 2026-11-14 | Open Vision Banana: A Fully Open Recipe for Generative Visual Perception | 待翻译 | [arXiv 2611.15844v1](https://arxiv.org/abs/2611.15844v1) |
 | 2026-11-14 | SpaceMCP: Vision Language Model Spatial Reasoning via Model Context Protocol | SpaceMCP：通过模型上下文协议实现视觉语言模型的空间推理 | [arXiv 2611.15680v1](https://arxiv.org/abs/2611.15680v1) |
 | 2026-11-14 | Where is My Mug? Training-Free Framework for Personalized Image Segmentation | 我的马克杯在哪里？面向个性化图像分割的无训练框架 | [arXiv 2611.15216v1](https://arxiv.org/abs/2611.15216v1) |
