@@ -12175,6 +12175,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Despite impressive advances in large language models (LLM), vision-language models (VLM) still exhibit limited spatial reasoning capabilities. Recent progress in feed-forward 3D reconstruction has enabled precise, real-time geometric understanding from visual inputs. In this work, we propose SpaceMCP, a framework that leverages these advances to introduce an MCP-style paradigm for spatial reasoning. Our approach augments a VLM with structured function calls, allowing it to query a scene graph for spatial information such as distances, object positioning, and camera properties. The scene graph is constructed in real time using feed-forward 3D reconstruction to recover metric geometry, combined with open-vocabulary segmentation to identify and localize relevant objects within the scene. Paired with the VLM's strong reasoning capabilities, the VLM is able to combine this primitive information to solve more complex spatial tasks. Without any training, SpaceMCP achieves state-of-the-art results on VSI-Bench, MMSI-Bench and VSTI-Bench, outperforming recent spatially post-trained VLMs and improving its base VLM by 15-22 points per benchmark. We argue that, given the contrast between the relatively slow progress in native VLM spatial reasoning and the rapid advances in feed-forward 3D computer vision, this paradigm offers a promising path forward for enabling robust spatial reasoning.",
@@ -12192,6 +12193,17 @@
         "updated": "2026-11-11T16:21:39+00:00",
         "version_id": "2611.15680v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_reasoning"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -12262,7 +12274,7 @@
         "source": "matched",
         "version_id": "2611.15680v1"
       },
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2611.15680v1"
       ]
