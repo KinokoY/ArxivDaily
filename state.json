@@ -12159,7 +12159,9 @@
       ]
     },
     "2611.15941": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
@@ -12181,6 +12183,38 @@
         "published": "2026-11-11T19:37:42+00:00",
         "title": "Lang-SVG: Hierarchical Image Vectorization with Language Priors",
         "updated": "2026-11-11T19:37:42+00:00",
+        "version_id": "2611.15941v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.15941v1"
       },
       "rule_hits": [
@@ -12219,6 +12253,11 @@
         "version_id": "2611.15941v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-14T13:08:27.771062+00:00",
+        "run_id": "20261114T130827Z-e461aa93",
+        "stage": "selection"
+      },
       "versions": [
         "2611.15941v1"
       ]
