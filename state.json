@@ -11965,9 +11965,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "aims to segment the specific object in a target image that matches a user-provided reference.",
+          "address it with a training-free, modular system.",
+          "For robust matching we propose \\textbf{top-$K$ Sinkhorn}, a patch-level distance that scores each candidate only on its most confidently matched patches; trimming the Sinkhorn dual potentials recovers the robustness of partial optimal transport at more than $100\\times$ lower cost, keeping it inside the per-proposal candidate loop."
+        ],
+        "dpo_is_method": false,
+        "reason": "该文是通用个性化图像分割，不是医学影像推理分割；方法为免训练模块化流程（检测器提议、BLIP-2 匹配、SAM 精修），并提出 top-K Sinkhorn 匹配距离。摘要未提 RL/DPO；top-K Sinkhorn 有潜在优化/匹配目标价值，但缺少形式化理论保证与向医学推理分割或隐含空间/位置推理迁移的证据，故不确定而非 select。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 30,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未给出 top-K Sinkhorn 的形式化理论证明、收敛性或最优性保证。",
+          "摘要未说明该匹配目标能否迁移到医学推理分割或隐含空间/位置推理到像素掩码的任务。",
+          "摘要未确认 top-K Sinkhorn 是作为训练/优化目标还是仅作为候选匹配距离使用。",
+          "未读取正文，无法确认是否存在医学分割、推理分割或 RL/DPO 相关实验。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "\\textbf{Personalized Image Segmentation (PIS)} aims to segment the specific object in a target image that matches a user-provided reference. Unlike category-based segmentation or few-shot segmentation, PIS must discriminate between multiple visually similar instances, a requirement central to deployed applications such as augmented reality, personalized content editing, robotics manipulation, inventory tracking, and fine-grained visual retrieval. We show that the strong numbers reported by existing PIS methods are largely an artifact of single-instance benchmarks: when evaluated on realistic scenes with several same-category look-alikes, prior point-prompt methods collapse, because the correct instance is frequently never surfaced as a prompt. We trace this to a recall bottleneck rather than a mask-quality one, and address it with a training-free, modular system. The pipeline first generates high-recall object proposals using an off-the-shelf class-agnostic detector, then matches each proposal to the reference using foundation-model features (e.g., BLIP-2), and finally refines the selected box with SAM. For robust matching we propose \\textbf{top-$K$ Sinkhorn}, a patch-level distance that scores each candidate only on its most confidently matched patches; trimming the Sinkhorn dual potentials recovers the robustness of partial optimal transport at more than $100\\times$ lower cost, keeping it inside the per-proposal candidate loop. To evaluate this regime, we introduce \\textbf{\\datasetname}, a realistic multi-instance benchmark. Across \\datasetname, PerSeg, PerMIS, and DAVIS, our system surpasses PerSAM, $\\mathrm{P}^2\\mathrm{SAM}$, and PDM by up to $\\sim\\!48$ mIoU while matching their runtime and using fewer parameters, establishing a strong, deployable training-free baseline for real-world personalized segmentation.",
         "authors": [
@@ -12019,6 +12044,7 @@
         "source": "matched",
         "version_id": "2611.15216v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -12055,12 +12081,7 @@
         "source": "matched",
         "version_id": "2611.15216v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-14T13:08:27.771062+00:00",
-        "run_id": "20261114T130827Z-e461aa93",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2611.15216v1"
       ]
