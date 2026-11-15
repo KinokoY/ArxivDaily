@@ -13053,9 +13053,29 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We present a five-stage modular framework for the offline assessment of already-detected potholes that combines geometric measurements with VLM reasoning: perspective transformation, zero-shot SAM segmentation, geometric feature extraction, Gemini 2.5 Pro severity classification with composite risk scoring, and natural-language warning generation.",
+          "The severity classes are therefore perceived visual categories, not depth measurements.",
+          "A six-arm prompt ablation attributes the hybrid prompt's rule adherence to the per-pothole measurements rather than to the rubric or worked examples."
+        ],
+        "dpo_is_method": false,
+        "reason": "论文聚焦已检测坑洞的风险分级与自然语言警告生成；SAM 仅作为零样本分割预处理，VLM 用于严重度分类/警告，不是推理分割或隐含请求到像素掩码的机制。摘要未显示 RL/DPO 方法贡献，也未提供传统/SAM 损失或优化目标的理论依据与迁移证据；rule_hits 中的 transferable_objective 不被摘要支持。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 15,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-15T13:37:43.886638+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Potholes impose billions of dollars in annual vehicle damage, yet detectors report only where potholes are, not how severe they are or what to do. Judging severity from a single RGB image is ill-posed, and ungrounded vision-language model (VLM) assessments tend to be over-conservative. We present a five-stage modular framework for the offline assessment of already-detected potholes that combines geometric measurements with VLM reasoning: perspective transformation, zero-shot SAM segmentation, geometric feature extraction, Gemini 2.5 Pro severity classification with composite risk scoring, and natural-language warning generation. We evaluate it on 3,092 potholes in 1,119 dashcam scenes against independent references. Severity agreement with a prediction-free three-annotator panel is weak (Cohen's $κ= 0.139$, 95% CI [0.00, 0.28]; $n = 101$) and far below the annotators' agreement with one another ($κ= 0.605$); against physically measured depth on an independent RGB-D dataset, it is also weak ($κ= 0.098$), although the predicted classes preserve the order of measured depths. The severity classes are therefore perceived visual categories, not depth measurements. Geometric grounding does change the warnings: relative to an image-only baseline, it moves 26.7% of scenes out of the high-urgency tier and raises critical-tier assignments by 109% (Stuart-Maxwell $p < 10^{-15}$), and in a blind study, three raters preferred the grounded warnings 3.5:1. A six-arm prompt ablation attributes the hybrid prompt's rule adherence to the per-pothole measurements rather than to the rubric or worked examples. At USD 0.105 per scene, it suits large-scale offline infrastructure assessment; its maneuver suggestions are advisory research outputs, not validated vehicle guidance.",
         "authors": [
@@ -13105,6 +13125,7 @@
         "source": "matched",
         "version_id": "2611.16061v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -13140,12 +13161,7 @@
         "source": "matched",
         "version_id": "2611.16061v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-15T13:37:43.886638+00:00",
-        "run_id": "20261115T133743Z-d88f9a48",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.16061v1"
       ]
