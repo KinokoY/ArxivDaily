@@ -12914,7 +12914,7 @@
         "source": "matched",
         "version_id": "2611.15844v1"
       },
-      "stage": "ready",
+      "stage": "presentation_pending",
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "Open Vision Banana：面向生成式视觉感知的完全开放方案",
       "versions": [
