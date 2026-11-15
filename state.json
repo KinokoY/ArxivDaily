@@ -507,6 +507,14 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-11-15": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [],
+      "send_attempts": 0
     }
   },
   "digests": {
@@ -12758,7 +12766,7 @@
       "attempts": {
         "selection": 1,
         "title_translation": 1,
-        "translation": 1
+        "translation": 2
       },
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
       "decision": {
@@ -12907,6 +12915,11 @@
         "version_id": "2611.15844v1"
       },
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-11-15T13:37:43.886638+00:00",
+        "run_id": "20261115T133743Z-d88f9a48",
+        "stage": "translation"
+      },
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "Open Vision Banana：面向生成式视觉感知的完全开放方案",
       "versions": [
@@ -13093,6 +13106,17 @@
         "updated": "2026-11-11T22:19:41+00:00",
         "version_id": "2611.16061v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
