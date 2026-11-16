@@ -1,0 +1,99 @@
+{
+  "alert": false,
+  "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/16/20261116T150757Z-5385c1b6-b6ea2c747faa.md",
+  "chain_roots": [
+    "20261116T150757Z-5385c1b6-b6ea2c747faa"
+  ],
+  "content_hash": "b6ea2c747faa535201f2649118b4623e1b3a9e9dd8de7e92c0df13659220ec1e",
+  "day": "2026-11-16",
+  "digest_id": "20261116T150757Z-5385c1b6-b6ea2c747faa",
+  "empty": false,
+  "feedback_url": "https://github.com/KinokoY/ArxivDaily/issues/2",
+  "items": [
+    {
+      "modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "paper": {
+        "abstract": "Recent work suggests that pretrained image generators encode real-world understanding beyond image synthesis. Vision Banana exploits this by framing vision tasks as conditional image editing. However, its data, weights, code, and implementation details are not public. We present Open Vision Banana (OVB), a fully open and reproducible recipe for converting pretrained generators into unified multi-task perception systems. Our analyses identify the design choices that matter most for generalization, including color encoding, prompt design, parameter adaptation, and task balancing. These choices interact, so individually helpful choices can hurt when combined with others. Starting from 4B and 9B parameter open-weight base models and using 2.1M-3.8M training pairs from public datasets, OVB surpasses Vision Banana's reported Cityscapes zero-shot performance (73.9 vs. 69.9 mIoU) and rivals state-of-the-art affine-invariant depth estimators. Its non-zero-shot variants come within five points of Vision Banana on referring and reasoning segmentation but remain further behind on instance segmentation. All models largely retain the base model's image-editing abilities. With legend ensembling, we introduce a test-time scaling method for generator-based perception. It segments an image under several class-color legends and fuses the results by majority vote, correcting unstable color-class bindings and improving mIoU by up to 8.7 points on Cityscapes and 15.0 points on COCO-Object without retraining. We release the dataset construction and processing pipeline, the training and evaluation code, as well as the final, intermediate, and ablation checkpoints. Project website: https://openvisionbanana.github.io",
+        "authors": [
+          "Arpit Jadon",
+          "Valentinos Pariza",
+          "Jona Ruthardt",
+          "Ryousuke Yamada",
+          "A. Sophia Koepke",
+          "Andrei Bursuc",
+          "Yuki M. Asano"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.15844v1",
+        "published": "2026-11-11T18:57:34+00:00",
+        "title": "Open Vision Banana: A Fully Open Recipe for Generative Visual Perception",
+        "updated": "2026-11-11T18:57:34+00:00",
+        "version_id": "2611.15844v1"
+      },
+      "recovery_of": "",
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reasoning segmentation"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "instance segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.15844v1"
+      },
+      "summary": null,
+      "tier": "translation",
+      "translation": {
+        "abstract_zh": "近期研究表明，预训练图像生成器编码了超越图像合成的真实世界理解能力。Vision Banana 通过将视觉任务框定为条件图像编辑来利用这一点。然而，其数据、权重、代码和实现细节并未公开。我们提出 Open Vision Banana（OVB），一个完全开放且可复现的配方，用于将预训练生成器转换为统一的多任务感知系统。我们的分析确定了对泛化最关键的设计选择，包括颜色编码、提示设计、参数适配和任务平衡。这些选择相互影响，因此单独有益的选择在与其他选择结合时可能产生危害。从 4B 和 9B 参数的开源权重基础模型出发，并使用来自公开数据集的 2.1M-3.8M 训练对，OVB 超越了 Vision Banana 在 Cityscapes 上报告的零样本性能（73.9 对 69.9 mIoU），并与最先进的仿射不变深度估计器相当。其非零样本变体在指代和推理分割上接近 Vision Banana 五个点以内，但在实例分割上仍落后较多。所有模型基本保留了基础模型的图像编辑能力。通过图例集成，我们引入了一种用于基于生成器感知的测试时缩放方法。它在多个类别-颜色图例下分割图像，并通过多数投票融合结果，纠正不稳定的颜色-类别绑定，在无需重新训练的情况下，在 Cityscapes 上将 mIoU 提升最多 8.7 个点，在 COCO-Object 上提升最多 15.0 个点。我们发布了数据集构建与处理流程、训练和评估代码，以及最终、中间和消融检查点。项目网站：https://openvisionbanana.github.io",
+        "title_zh": "开放视觉香蕉：生成式视觉感知的完全开放配方"
+      }
+    }
+  ],
+  "notification_hash": "ba1f942befa6dd5b1795664bd12492c296b9c407d1fb36f2d650bee387e0ab66",
+  "recovery_of": [],
+  "rendered": {
+    "2611.15844": "rendered_inline_translation"
+  },
+  "run_id": "20261116T150757Z-5385c1b6",
+  "schema_version": 1
+}
