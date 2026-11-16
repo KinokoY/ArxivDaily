@@ -253,3 +253,11 @@ jobs:
           path: app/tmp/reports/run.json
           if-no-files-found: ignore
           retention-days: 3
+      - name: Upload translation error logs
+        if: always() && hashFiles('app/log/translation-*.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: arxivdaily-error-logs
+          path: app/log/translation-*.json
+          if-no-files-found: ignore
+          retention-days: 14

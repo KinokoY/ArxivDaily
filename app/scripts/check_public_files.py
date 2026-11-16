@@ -25,7 +25,7 @@ def check(root: Path, *, tracked_only: bool = False) -> tuple[int, list[str]]:
     findings = []
     for name in names:
         relative = Path(name)
-        if PRIVATE_PARTS.intersection(relative.parts) or relative.name == ".env" or relative.name.startswith(".env.") and relative.name != ".env.example":
+        if PRIVATE_PARTS.intersection(relative.parts) or relative.parts[:2] == ("app", "log") or relative.name == ".env" or relative.name.startswith(".env.") and relative.name != ".env.example":
             findings.append(f"{name}: private runtime file")
             continue
         path = (root / relative).resolve()

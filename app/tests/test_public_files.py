@@ -40,3 +40,14 @@ def test_deleted_tracked_document_is_not_a_public_candidate(tmp_path):
     git(tmp_path, "add", "old.md")
     path.unlink()
     assert public_check.check(tmp_path) == (0, [])
+
+
+def test_error_logs_are_private_even_if_force_staged(tmp_path):
+    git(tmp_path, "init", "-b", "main")
+    (tmp_path / ".gitignore").write_text("app/log/\n", encoding="utf-8")
+    directory = tmp_path / "app/log"
+    directory.mkdir(parents=True)
+    (directory / "translation-failed.json").write_text('{"response": "invalid translation"}', encoding="utf-8")
+    assert public_check.check(tmp_path)[1] == []
+    git(tmp_path, "add", "-f", "app/log/translation-failed.json")
+    assert public_check.check(tmp_path)[1] == ["app/log/translation-failed.json: private runtime file"]

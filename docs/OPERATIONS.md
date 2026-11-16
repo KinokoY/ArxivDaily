@@ -28,6 +28,10 @@ main 维护代码，状态分支维护机器状态和历史。存档放 main 技
 
 send 默认关闭，此时仍使用真实服务和收费模型做隔离试跑。打开 send 后才修改正式状态并发送；定时运行自动发送。失败查看 job 日志和 arxivdaily-run-report artifact，报告为 app/tmp/reports/run.json，保留 3 天。
 
+翻译响应未通过结构校验、输出被截断或模型正文不是合法 JSON 时，每个失败请求独立写入 `app/log/translation-*.json`。记录论文 ID、标题、任务、提供方/模型、时间、请求尝试序号、错误码和提供方返回的 JSON；`response.choices[0].message.content` 保留模型原始输出，包括错误字段、换行和无效 JSON 文本，便于定位失败原因。已配置凭证会脱敏，隐藏推理字段不落盘；不记录请求头或密钥。DeepL/LibreTranslate 的已解析但不合格响应也写入同一目录。
+
+只在响应校验失败时创建目录和文件，成功请求不记录；某次失败后重试成功，仍保留那次错误日志。文件不进入代码仓库、状态分支或简报。Actions 即使运行失败，也会将存在的错误日志上传为 `arxivdaily-error-logs` artifact，保留 14 天；没有错误日志就不上传。查看对应运行页面的 Artifacts 下载即可。历史失败未保存的原始返回无法补回，此改动从下一次请求开始生效。
+
 ## 论文反馈
 
 1. 启用仓库的 Issues。正式运行使用自带的 `GITHUB_TOKEN` 和 `issues: write` 创建当天一个 `[论文反馈] YYYY-MM-DD` Issue，简报提供一个入口。无论文或仅告警不创建空 Issue。

@@ -33,6 +33,8 @@ class TranslationClient:
             timeout = self.analysis._remaining_seconds(cfg["timeout"])
             if timeout <= 0.1:
                 raise ProcessingError("translation_run_time_guard")
+            decoded_response = False
+            data = None
             try:
                 client = self.client or self.analysis.client
                 if cfg["provider"] == "deepl":
@@ -40,18 +42,26 @@ class TranslationClient:
                                            json={"text": texts, "source_lang": "EN", "target_lang": "ZH"},
                                            headers={"Authorization": "DeepL-Auth-Key " + key}, timeout=timeout)
                     response.raise_for_status()
-                    values = [item["text"] for item in response.json()["translations"]]
+                    data = response.json()
+                    decoded_response = True
+                    values = [item["text"] for item in data["translations"]]
                 else:
                     payload = {"q": texts, "source": "en", "target": "zh", "format": "text"}
                     if key:
                         payload["api_key"] = key
                     response = client.post(cfg["base_url"].rstrip("/") + "/translate", json=payload, timeout=timeout)
                     response.raise_for_status()
-                    values = response.json()["translatedText"]
+                    data = response.json()
+                    decoded_response = True
+                    values = data["translatedText"]
                 if not isinstance(values, list) or len(values) != len(texts) or any(not isinstance(v, str) or not v.strip() for v in values):
                     raise ProcessingError("translation_response_invalid")
                 return Translation(values[0], "" if title_only else values[1])
             except (httpx.HTTPError, ValueError, KeyError, TypeError, ProcessingError) as exc:
+                if decoded_response and not isinstance(exc, httpx.HTTPError):
+                    self.analysis.log_translation_error({"paper_id": paper.version_id, "title": paper.title,
+                        "task": "title_translation" if title_only else "translation", "provider": cfg["provider"]},
+                        attempt + 1, exc, data)
                 if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code not in {408, 429, 500, 502, 503, 504}:
                     raise ProcessingError("translation_http_nonretryable") from None
                 if attempt == cfg["attempts"] - 1:

@@ -1,4 +1,4 @@
-"""Grounded DeepSeek Chat analysis. Provider text and reasoning stay in memory."""
+"""Grounded analysis with error-only translation diagnostics outside public state."""
 from __future__ import annotations
 
 import base64
@@ -10,11 +10,12 @@ import re
 import time
 from typing import Callable
 import unicodedata
+import uuid
 
 import httpx
 
-from .models import Body, Decision, Evidence, Paper, ProcessingError, Summary, Translation, fingerprint
-from .state import PersistenceError
+from .models import Body, Decision, Evidence, Paper, ProcessingError, Summary, Translation, fingerprint, iso, utcnow
+from .state import PersistenceError, SecretScrubber
 from .prompts import load_prompts, prompt_fingerprint
 
 
@@ -97,7 +98,7 @@ def validate_summary(summary: Summary, body: Body, *, require_evidence: bool = T
 
 
 class AnalysisClient:
-    def __init__(self, config: dict, client: httpx.Client | None = None):
+    def __init__(self, config: dict, client: httpx.Client | None = None, *, error_log_dir: str | Path | None = None):
         self.prompts = load_prompts(config)
         self.config = config.get("llm", config)
         self.fulltext_config = config.get("fulltext", {})
@@ -111,7 +112,32 @@ class AnalysisClient:
         self.chunk_cache: dict[str, list[dict]] = {}
         self.on_usage: Callable[[], None] | None = None
         self.on_chunk: Callable[[str, list[dict]], None] | None = None
+        self.error_log_dir = Path(error_log_dir) if error_log_dir is not None else Path(__file__).resolve().parents[1] / "log"
+        secret_names = [self._role(role)["api_key_env"] for role in ("filter", "summary")]
+        secret_names += [config.get("translation", {}).get("api_key_env", "TRANSLATION_API_KEY"),
+                         config.get("delivery", {}).get("sendkey_env", "SERVERCHAN_SENDKEY"),
+                         config.get("feedback", {}).get("token_env", "GITHUB_TOKEN"),
+                         config.get("feedback", {}).get("delete_token_env", "FEEDBACK_DELETE_TOKEN")]
+        self.error_log_scrubber = SecretScrubber(os.environ.get(name, "") for name in secret_names)
         _quiet_http_debug()
+
+    def log_translation_error(self, context: dict, attempt: int, error: Exception, response) -> None:
+        """Keep failed response content intact except credentials/hidden reasoning."""
+        now = utcnow()
+        code = str(error) if isinstance(error, ProcessingError) and re.fullmatch(r"[a-z0-9_]+", str(error)) else type(error).__name__
+        record = {"at": iso(now), **context, "attempt": attempt, "error": code,
+                  "github_run_id": os.environ.get("GITHUB_RUN_ID", ""),
+                  "github_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT", ""),
+                  "response": response}
+        # Make the directory only on an error; successful translations create no files.
+        try:
+            self.error_log_dir.mkdir(parents=True, exist_ok=True)
+            path = self.error_log_dir / f"translation-{now.strftime('%Y%m%dT%H%M%S')}-{uuid.uuid4().hex}.json"
+            with path.open("x", encoding="utf-8", newline="\n") as handle:
+                json.dump(self.error_log_scrubber.clean(record), handle, ensure_ascii=False, indent=2)
+                handle.write("\n")
+        except OSError as exc:
+            logging.getLogger(__name__).error("translation_error_log_write_failed:%s", type(exc).__name__)
 
     def prompt_fingerprint(self, task: str) -> str:
         return prompt_fingerprint(self.prompts, task)
@@ -200,7 +226,7 @@ class AnalysisClient:
             except Exception:
                 raise PersistenceError("usage_checkpoint_failed") from None
 
-    def _request(self, role: str, instruction: str, user_content: str | list[dict], validator: Callable[[dict], None] | None = None) -> dict:
+    def _request(self, role: str, instruction: str, user_content: str | list[dict], validator: Callable[[dict], None] | None = None, *, error_context: dict | None = None) -> dict:
         cfg = self._role(role)
         if cfg.get("protocol", "chat_completions") != "chat_completions":
             raise ProcessingError("llm_protocol_unsupported")
@@ -241,6 +267,8 @@ class AnalysisClient:
             timeout = self._remaining_seconds(float(cfg["timeout"]))
             if timeout <= 0.1:
                 raise ProcessingError("llm_stage_time_guard")
+            decoded_response = False
+            data = None
             try:
                 response = self.client.post(
                     base + "/chat/completions",
@@ -250,6 +278,7 @@ class AnalysisClient:
                 )
                 response.raise_for_status()
                 data = response.json()
+                decoded_response = True
                 if not isinstance(data, dict):
                     raise ProcessingError("llm_response_schema")
                 self._record_usage(role, payload, data, cfg)
@@ -274,6 +303,9 @@ class AnalysisClient:
             except PersistenceError:
                 raise
             except (httpx.TimeoutException, httpx.TransportError, httpx.HTTPStatusError, ValueError, ProcessingError) as exc:
+                if role == "translation" and error_context is not None and decoded_response and isinstance(exc, (ValueError, ProcessingError)):
+                    self.log_translation_error({**error_context, "provider": cfg.get("provider", "deepseek"),
+                                                "model": cfg["model"]}, attempt + 1, exc, data)
                 if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code not in {408, 429, 500, 502, 503, 504}:
                     raise ProcessingError("llm_http_nonretryable") from None
                 if isinstance(exc,(httpx.TimeoutException,httpx.TransportError)) or (isinstance(exc,httpx.HTTPStatusError) and exc.response.status_code >= 500):
@@ -300,7 +332,9 @@ class AnalysisClient:
             result = Translation.from_dict(data)
             if not title_only and not result.abstract_zh.strip():
                 raise ProcessingError("translation_abstract_missing")
-        return Translation.from_dict(self._request("translation", instruction, json.dumps(content, ensure_ascii=False), validate))
+        return Translation.from_dict(self._request("translation", instruction, json.dumps(content, ensure_ascii=False), validate,
+            error_context={"paper_id": paper.version_id, "title": paper.title,
+                           "task": "title_translation" if title_only else "translation"}))
 
     def _decision(self, data: dict, paper: Paper) -> Decision:
         result = Decision.from_dict(data)
