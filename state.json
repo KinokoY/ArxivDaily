@@ -3942,6 +3942,8 @@
       },
       "2026-11-16": {
         "created_at": "2026-11-16T15:11:15.139647+00:00",
+        "node_id": "I_kwDOU5T3Lc8AAAABfupRmw",
+        "number": 2,
         "papers": {
           "2611.15844": {
             "rule_trace": {
@@ -3988,7 +3990,8 @@
             "vote": "pending"
           }
         },
-        "status": "open"
+        "status": "open",
+        "url": "https://github.com/KinokoY/ArxivDaily/issues/2"
       }
     },
     "repository": "KinokoY/ArxivDaily"
