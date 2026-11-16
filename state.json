@@ -12837,13 +12837,7 @@
         ]
       },
       "events": [],
-      "failures": {
-        "translation": {
-          "attempts": 2,
-          "error": "translation_schema_invalid",
-          "last_at": "2026-11-15T13:37:43.886638+00:00"
-        }
-      },
+      "failures": {},
       "first_discovered": "2026-11-14T13:08:27.771062+00:00",
       "intended_tier": "translation",
       "latest_version": "2611.15844v1",
@@ -12960,13 +12954,14 @@
         "version_id": "2611.15844v1"
       },
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-11-16T15:07:57.363501+00:00",
-        "run_id": "20261116T150757Z-5385c1b6",
-        "stage": "translation"
-      },
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
-      "title_zh": "Open Vision Banana：面向生成式视觉感知的完全开放方案",
+      "title_zh": "开放视觉香蕉：生成式视觉感知的完全开放配方",
+      "translation": {
+        "abstract_zh": "近期研究表明，预训练图像生成器编码了超越图像合成的真实世界理解能力。Vision Banana 通过将视觉任务框定为条件图像编辑来利用这一点。然而，其数据、权重、代码和实现细节并未公开。我们提出 Open Vision Banana（OVB），一个完全开放且可复现的配方，用于将预训练生成器转换为统一的多任务感知系统。我们的分析确定了对泛化最关键的设计选择，包括颜色编码、提示设计、参数适配和任务平衡。这些选择相互影响，因此单独有益的选择在与其他选择结合时可能产生危害。从 4B 和 9B 参数的开源权重基础模型出发，并使用来自公开数据集的 2.1M-3.8M 训练对，OVB 超越了 Vision Banana 在 Cityscapes 上报告的零样本性能（73.9 对 69.9 mIoU），并与最先进的仿射不变深度估计器相当。其非零样本变体在指代和推理分割上接近 Vision Banana 五个点以内，但在实例分割上仍落后较多。所有模型基本保留了基础模型的图像编辑能力。通过图例集成，我们引入了一种用于基于生成器感知的测试时缩放方法。它在多个类别-颜色图例下分割图像，并通过多数投票融合结果，纠正不稳定的颜色-类别绑定，在无需重新训练的情况下，在 Cityscapes 上将 mIoU 提升最多 8.7 个点，在 COCO-Object 上提升最多 15.0 个点。我们发布了数据集构建与处理流程、训练和评估代码，以及最终、中间和消融检查点。项目网站：https://openvisionbanana.github.io",
+        "title_zh": "开放视觉香蕉：生成式视觉感知的完全开放配方"
+      },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2611.15844v1"
       ]
