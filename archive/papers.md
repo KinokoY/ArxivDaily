@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-17 | ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises | 待翻译 | [arXiv 2611.21579v1](https://arxiv.org/abs/2611.21579v1) |
+| 2026-11-17 | ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises | ScenarioForge：基于资源落地的网络演练生成与执行验证 | [arXiv 2611.21579v1](https://arxiv.org/abs/2611.21579v1) |
 | 2026-11-17 | Training-Free Anonymization of Driving Data with Promptable Segmentation and 3D Human Mesh Recovery | 待翻译 | [arXiv 2611.20412v1](https://arxiv.org/abs/2611.20412v1) |
 | 2026-11-17 | From Cloud to Edge: A Fully Local Pipeline for Pothole Risk Assessment and Driver Warning Generation | 待翻译 | [arXiv 2611.19737v1](https://arxiv.org/abs/2611.19737v1) |
 | 2026-11-17 | Whole-Slice Misses Escape Round-Trip Filtering and Volumetric Dice in a Source-Free Flow-Matching Segmenter | 整层漏检逃逸往返过滤与体积Dice：无源流匹配分割器中的问题 | [arXiv 2611.18710v1](https://arxiv.org/abs/2611.18710v1) |

@@ -13974,11 +13974,8 @@
         "version_id": "2611.21579v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-17T15:39:17.816671+00:00",
-        "run_id": "20261117T153917Z-421d0fc5",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "ScenarioForge：基于资源落地的网络演练生成与执行验证",
       "versions": [
         "2611.21579v1"
       ]
