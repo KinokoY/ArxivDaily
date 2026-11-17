@@ -13448,6 +13448,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "SymmAdapt, a source-free flow-matching segmentation pipeline, relies on two quality gates: a round-trip filter on pseudo-labels and volumetric Dice in evaluation. We audit both on 120 AMOS CT patients unseen in training and adaptation. The model often misses the spleen on whole slices, severely so in 30.0% of patients. The round-trip filter passes 83.31% of these lost slices, because its round trip reproduces the miss and the filter scores only organs present in the pseudo-label. Volumetric Dice depends on how much volume is missed, not where, and self-training leaves 96.5% of lost slices lost (96.6% on a second noise stream). A model-free repair, Chain-and-Fill, met all pre-registered endpoints on 119 further patients and could not be distinguished from SAM 2 propagation in severe-group gain, with 1/357 rather than 63/357 harmed patient-seed pairs. Reporting lost slices next to volumetric Dice makes the error visible at no cost.",
@@ -13463,6 +13464,17 @@
         "updated": "2026-11-07T03:45:19+00:00",
         "version_id": "2611.18710v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -13543,7 +13555,7 @@
         "source": "matched",
         "version_id": "2611.18710v1"
       },
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2611.18710v1"
       ]
@@ -13590,6 +13602,17 @@
         "updated": "2026-11-15T02:48:04+00:00",
         "version_id": "2611.19737v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -13705,6 +13728,17 @@
         "updated": "2026-11-16T02:19:03+00:00",
         "version_id": "2611.20412v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -13825,6 +13859,17 @@
         "updated": "2026-11-16T18:49:56+00:00",
         "version_id": "2611.21579v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
