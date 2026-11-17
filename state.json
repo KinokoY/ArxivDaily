@@ -4119,6 +4119,56 @@
         },
         "status": "open",
         "url": "https://github.com/KinokoY/ArxivDaily/issues/2"
+      },
+      "2026-11-17": {
+        "created_at": "2026-11-17T15:43:53.820150+00:00",
+        "papers": {
+          "2611.18710": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM 2"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.18710v1"
+            },
+            "title": "Whole-Slice Misses Escape Round-Trip Filtering and Volumetric Dice in a Source-Free Flow-Matching Segmenter",
+            "title_zh": "整层漏检逃逸往返过滤与体积Dice：无源流匹配分割器中的问题",
+            "url": "https://arxiv.org/abs/2611.18710v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
       }
     },
     "repository": "KinokoY/ArxivDaily"
