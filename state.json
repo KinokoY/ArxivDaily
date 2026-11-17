@@ -13699,11 +13699,8 @@
         "version_id": "2611.19737v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-17T15:39:17.816671+00:00",
-        "run_id": "20261117T153917Z-421d0fc5",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "从云端到边缘：用于坑洞风险评估和驾驶员警告生成的全本地流水线",
       "versions": [
         "2611.19737v1"
       ]
