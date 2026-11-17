@@ -13421,9 +13421,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "SymmAdapt, a source-free flow-matching segmentation pipeline, relies on two quality gates: a round-trip filter on pseudo-labels and volumetric Dice in evaluation.",
+          "A model-free repair, Chain-and-Fill, met all pre-registered endpoints on 119 further patients and could not be distinguished from SAM 2 propagation in severe-group gain, with 1/357 rather than 63/357 harmed patient-seed pairs.",
+          "Reporting lost slices next to volumetric Dice makes the error visible at no cost."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper audits two quality gates in a source-free medical CT segmentation pipeline, showing that a round-trip pseudo-label filter and volumetric Dice can miss whole-slice organ losses, and proposes a model-free repair, Chain-and-Fill. This is relevant to medical segmentation evaluation/objectives, but it does not present a reasoning-segmentation method, an RL/DPO contribution, or a theoretically grounded optimization objective with demonstrated transfer to reasoning segmentation. The abstract supports the audit and repair claims but not the broader objective/theory or transfer value, so the appropriate judgment is uncertain rather than select.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_objective",
+        "score": 40,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "The abstract does not establish a theoretical optimization objective or a demonstrated transfer path to reasoning segmentation.",
+          "No RL or DPO method contribution is described.",
+          "Whether the critique of round-trip filtering and volumetric Dice generalizes beyond SymmAdapt and AMOS is unconfirmed.",
+          "Full text was not read, so implementation details and any broader methodological claims remain unverified."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "SymmAdapt, a source-free flow-matching segmentation pipeline, relies on two quality gates: a round-trip filter on pseudo-labels and volumetric Dice in evaluation. We audit both on 120 AMOS CT patients unseen in training and adaptation. The model often misses the spleen on whole slices, severely so in 30.0% of patients. The round-trip filter passes 83.31% of these lost slices, because its round trip reproduces the miss and the filter scores only organs present in the pseudo-label. Volumetric Dice depends on how much volume is missed, not where, and self-training leaves 96.5% of lost slices lost (96.6% on a second noise stream). A model-free repair, Chain-and-Fill, met all pre-registered endpoints on 119 further patients and could not be distinguished from SAM 2 propagation in severe-group gain, with 1/357 rather than 63/357 harmed patient-seed pairs. Reporting lost slices next to volumetric Dice makes the error visible at no cost.",
         "authors": [
@@ -13476,6 +13501,7 @@
         "source": "matched",
         "version_id": "2611.18710v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -13517,12 +13543,7 @@
         "source": "matched",
         "version_id": "2611.18710v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-17T15:39:17.816671+00:00",
-        "run_id": "20261117T153917Z-421d0fc5",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2611.18710v1"
       ]
