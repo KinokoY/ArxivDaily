@@ -3948,9 +3948,16 @@
       "content_hash": "d6845472fdb1b4b1990d1e3abb5915b777c04732729e9e01023f158f724841ed",
       "created_at": "2026-11-17T15:39:17.816671+00:00",
       "day": "2026-11-17",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "69031464",
+        "status": "confirmed"
+      },
       "digest_id": "20261117T153917Z-421d0fc5-d6845472fdb1",
       "empty": false,
       "feedback_url": "https://github.com/KinokoY/ArxivDaily/issues/3",
+      "finished_at": "2026-11-17T15:44:08.854120+00:00",
       "items": [
         {
           "modules": [
@@ -4033,7 +4040,7 @@
       },
       "run_id": "20261117T153917Z-421d0fc5",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "feedback": {
@@ -13584,7 +13591,6 @@
       ]
     },
     "2611.18710": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -13621,7 +13627,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -13643,7 +13649,6 @@
         "updated": "2026-11-07T03:45:19+00:00",
         "version_id": "2611.18710v1"
       },
-      "pending_digest": "20261117T153917Z-421d0fc5-d6845472fdb1",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -13735,7 +13740,7 @@
         "source": "matched",
         "version_id": "2611.18710v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "整层漏检逃逸往返过滤与体积Dice：无源流匹配分割器中的问题",
       "translation": {
         "abstract_zh": "SymmAdapt是一个无源流匹配分割流程，依赖两个质量门控：对伪标签的往返过滤和评估中的体积Dice。我们在训练和自适应阶段均未见过的120名AMOS CT患者上审计了这两个门控。模型经常在整层上漏检脾脏，在30.0%的患者中尤为严重。往返过滤通过了这些漏检层中的83.31%，因为其往返过程重现了漏检，且过滤器仅对伪标签中存在的器官评分。体积Dice取决于漏检的体积量而非位置，自训练使96.5%的漏检层仍被漏检（在第二噪声流上为96.6%）。一种无模型修复方法Chain-and-Fill在另外119名患者上达到了所有预注册终点，在严重组增益上无法与SAM 2传播区分，受害患者-种子对为1/357而非63/357。在体积Dice旁报告漏检层可使该错误以零成本可见。",
