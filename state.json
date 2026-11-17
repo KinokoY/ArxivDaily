@@ -163,7 +163,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-16T15:07:57.363501+00:00"
+    "last_complete_end": "2026-11-17T15:39:17.816671+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -13416,6 +13416,264 @@
       "versions": [
         "2611.16061v1"
       ]
+    },
+    "2611.18710": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "paper": {
+        "abstract": "SymmAdapt, a source-free flow-matching segmentation pipeline, relies on two quality gates: a round-trip filter on pseudo-labels and volumetric Dice in evaluation. We audit both on 120 AMOS CT patients unseen in training and adaptation. The model often misses the spleen on whole slices, severely so in 30.0% of patients. The round-trip filter passes 83.31% of these lost slices, because its round trip reproduces the miss and the filter scores only organs present in the pseudo-label. Volumetric Dice depends on how much volume is missed, not where, and self-training leaves 96.5% of lost slices lost (96.6% on a second noise stream). A model-free repair, Chain-and-Fill, met all pre-registered endpoints on 119 further patients and could not be distinguished from SAM 2 propagation in severe-group gain, with 1/357 rather than 63/357 harmed patient-seed pairs. Reporting lost slices next to volumetric Dice makes the error visible at no cost.",
+        "authors": [
+          "Guobiao Wang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.18710v1",
+        "published": "2026-11-07T03:45:19+00:00",
+        "title": "Whole-Slice Misses Escape Round-Trip Filtering and Volumetric Dice in a Source-Free Flow-Matching Segmenter",
+        "updated": "2026-11-07T03:45:19+00:00",
+        "version_id": "2611.18710v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM 2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.18710v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.18710v1"
+      ]
+    },
+    "2611.19737": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "paper": {
+        "abstract": "Vision-language models can turn road images into clear, geometry-aware pothole warnings, but current systems depend on commercial cloud services. Our earlier five-stage pipeline needed two cloud calls per scene, taking about 20 s and USD 0.105, and could not run offline. We rebuild every stage to run on a single local GPU and evaluate it with the same data, prompts, and protocol. Segmentation keeps the original Segment Anything weights but runs them in half precision with graph compilation, which makes it 2.7x faster without changing any downstream risk class; five lightweight variants could not match its masks on small road defects. Severity is graded by six ConvNeXt students distilled from 3092 cloud labels. They reach Cohen's kappa = 0.268 against human consensus at 28 ms per pothole, close to the cloud model's 0.321, within the camera setup they were trained for. A local 8-billion-parameter vision-language model writes the warnings under a grammar that admits only in-lane maneuvers. Three blind, independent raters scored these warnings safer than the cloud warnings (4.18 vs. 3.65 of 5; p = 0.001; 50 scenes) and equally clear, whereas an automated LLM judge ranked them the other way. The complete pipeline runs at 1.27 s per scene, 16x faster than the cloud system, offline and at no per-scene cost.",
+        "authors": [
+          "Abdalmalek Aburaddaha",
+          "Samir A. Rawashdeh"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.19737v1",
+        "published": "2026-11-15T02:48:04+00:00",
+        "title": "From Cloud to Edge: A Fully Local Pipeline for Pothole Risk Assessment and Driver Warning Generation",
+        "updated": "2026-11-15T02:48:04+00:00",
+        "version_id": "2611.19737v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.19737v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.19737v1"
+      ]
+    },
+    "2611.20412": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "paper": {
+        "abstract": "Camera recordings for autonomous driving contain faces and license plates that should be anonymized before labeling, sharing, or training. Dedicated detectors can miss small plates and faces behind vehicle glass. We present FM-Anonymize, a training-free anonymization pipeline that combines promptable segmentation, 3D human mesh recovery, and generative replacement. SAM 3 locates people, faces, and vehicles and searches zoomed vehicle crops for plates, occupants, and windows. SAM 3D Body assesses face visibility from head orientation and projects head regions for blurring. Optional diffusion inpainting replaces eligible blurred heads with synthetic faces, guided by estimated pose and keypoints. On PP4AV, the blur pipeline protects 97.8% of faces and 95.5% of plates, the highest privacy recall of all compared methods at their default settings. On our recordings, where the localization thresholds were set, it protects 97.1% of faces and 93.4% of plates, compared with 93.7%/73.0% for UrbanAnonymizer, 42.7%/40.7% for EgoBlur, and 96.6% of faces for deface. Synthetic replacement raises full-body keypoint average precision over blurring from 54.1% to 79.6% on our recordings and from 39.9% to 68.3% on PP4AV. Code and configurations are available on https://github.com/max-a-ai/FM-Anonymize",
+        "authors": [
+          "Max A. Buettner",
+          "Mark Azer",
+          "Fabian B. Flohr"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.20412v1",
+        "published": "2026-11-16T02:19:03+00:00",
+        "title": "Training-Free Anonymization of Driving Data with Promptable Segmentation and 3D Human Mesh Recovery",
+        "updated": "2026-11-16T02:19:03+00:00",
+        "version_id": "2611.20412v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.20412v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.20412v1"
+      ]
+    },
+    "2611.21579": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "paper": {
+        "abstract": "Cyber-range and capture-the-flag scenario construction remains labor-intensive because authors must coordinate infrastructure, vulnerable services, attack paths, artifacts, and success conditions. LLMs can propose detailed exercises, but plausible descriptions do not guarantee deployable software or verifiable objectives. We present ScenarioForge, which turns high-level requirements into resource-grounded topologies, services, traffic, segmentation, and challenge chains, then instantiates and validates them in the Common Open Research Emulator (CORE). The ScenarioForge Execution Dataset contains 226 materialized scenarios covering 294 Vulhub images and all 85 custom-built challenge-resource generators developed with our AI-assisted scaffolding. All 226 passed construction, preview, sequencing, deployment, strict runtime validation, and live artifact checks; their 867 steps, each an individually verifiable challenge objective, comprise 457 vulnerability-backed and 410 generated-resource-backed instances. In a separate 50-prompt matched benchmark, ScenarioForge+Qwen3.8 and ScenarioForge+GPT5.6 each achieved 50/50 (100%) topology/build success and 160/160 intent fields; direct frontier generation reached 41/50 builds and 147/160 fields only with the full cumulative scaffold: structure, vocabulary, policy, and container-image guidance. The test still omitted ScenarioForge's downstream challenge-resource generation, dependency/flag sequencing, deployment, and live validation. The artifacts support operationally rich, reproducible exercises for training and evaluation.",
+        "authors": [
+          "Jaime C. Acosta",
+          "Anantaa Kotal",
+          "Aritran Piplai"
+        ],
+        "categories": [
+          "cs.CR",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.21579v1",
+        "published": "2026-11-16T18:49:56+00:00",
+        "title": "ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises",
+        "updated": "2026-11-16T18:49:56+00:00",
+        "version_id": "2611.21579v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "OBJECTIVE",
+              "THEORY_HINT"
+            ],
+            "keywords": {
+              "OBJECTIVE": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "topology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "THEORY_HINT": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "guarantee"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.21579v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.21579v1"
+      ]
     }
   },
   "runs": [
@@ -15176,10 +15434,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-17",
+      "discovered_candidates": 23,
+      "discovered_papers": 23,
       "run_id": "20261117T153917Z-421d0fc5",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-17T15:39:00+00:00",
+          "seen": 5170,
+          "start": "2026-11-03T15:39:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-17T15:39:17.816671+00:00",
       "window": {
         "end": "2026-11-17T15:39:17.816671+00:00",
