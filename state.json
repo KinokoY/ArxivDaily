@@ -13608,9 +13608,30 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We present ScenarioForge, which turns high-level requirements into resource-grounded topologies, services, traffic, segmentation, and challenge chains, then instantiates and validates them in the Common Open Research Emulator (CORE).",
+          "The artifacts support operationally rich, reproducible exercises for training and evaluation."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文研究的是网络安全演练场景的自动生成、资源落地与执行验证，属于 cyber-range/CTF 场景构建，不涉及医学影像推理分割、通用图像推理分割、DPO/RL 分割方法或可迁移的分割优化目标。摘要中的“segmentation”指网络分段，而非像素级分割；rule_hits 虽含 transferable_objective，但无理论依据或向分割任务迁移的实质证据。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 3,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "未确认正文是否包含任何与图像分割或分割优化目标相关的内容；仅凭摘要判断为不相关。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Cyber-range and capture-the-flag scenario construction remains labor-intensive because authors must coordinate infrastructure, vulnerable services, attack paths, artifacts, and success conditions. LLMs can propose detailed exercises, but plausible descriptions do not guarantee deployable software or verifiable objectives. We present ScenarioForge, which turns high-level requirements into resource-grounded topologies, services, traffic, segmentation, and challenge chains, then instantiates and validates them in the Common Open Research Emulator (CORE). The ScenarioForge Execution Dataset contains 226 materialized scenarios covering 294 Vulhub images and all 85 custom-built challenge-resource generators developed with our AI-assisted scaffolding. All 226 passed construction, preview, sequencing, deployment, strict runtime validation, and live artifact checks; their 867 steps, each an individually verifiable challenge objective, comprise 457 vulnerability-backed and 410 generated-resource-backed instances. In a separate 50-prompt matched benchmark, ScenarioForge+Qwen3.8 and ScenarioForge+GPT5.6 each achieved 50/50 (100%) topology/build success and 160/160 intent fields; direct frontier generation reached 41/50 builds and 147/160 fields only with the full cumulative scaffold: structure, vocabulary, policy, and container-image guidance. The test still omitted ScenarioForge's downstream challenge-resource generation, dependency/flag sequencing, deployment, and live validation. The artifacts support operationally rich, reproducible exercises for training and evaluation.",
         "authors": [
@@ -13669,6 +13690,7 @@
         "source": "matched",
         "version_id": "2611.21579v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -13713,12 +13735,7 @@
         "source": "matched",
         "version_id": "2611.21579v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-17T15:39:17.816671+00:00",
-        "run_id": "20261117T153917Z-421d0fc5",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.21579v1"
       ]
