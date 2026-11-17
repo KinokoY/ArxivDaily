@@ -13483,7 +13483,9 @@
       ]
     },
     "2611.19737": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-17T15:39:17.816671+00:00",
@@ -13500,6 +13502,38 @@
         "published": "2026-11-15T02:48:04+00:00",
         "title": "From Cloud to Edge: A Fully Local Pipeline for Pothole Risk Assessment and Driver Warning Generation",
         "updated": "2026-11-15T02:48:04+00:00",
+        "version_id": "2611.19737v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.19737v1"
       },
       "rule_hits": [
@@ -13538,6 +13572,11 @@
         "version_id": "2611.19737v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-17T15:39:17.816671+00:00",
+        "run_id": "20261117T153917Z-421d0fc5",
+        "stage": "selection"
+      },
       "versions": [
         "2611.19737v1"
       ]
