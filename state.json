@@ -4293,6 +4293,64 @@
         },
         "status": "open",
         "url": "https://github.com/KinokoY/ArxivDaily/issues/3"
+      },
+      "2026-11-18": {
+        "created_at": "2026-11-18T15:23:36.396926+00:00",
+        "papers": {
+          "2611.22953": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM2"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      },
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "instance segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.22953v1"
+            },
+            "title": "Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network",
+            "title_zh": "Fiberpose：基于距离变换神经网络的最先进纤维形态计量与实例分割",
+            "url": "https://arxiv.org/abs/2611.22953v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
       }
     },
     "repository": "KinokoY/ArxivDaily"
