@@ -4,6 +4,11 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-11-18 | Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network | 待翻译 | [arXiv 2611.22953v1](https://arxiv.org/abs/2611.22953v1) |
+| 2026-11-18 | BRepA: Graph-Based B-Rep Pretraining for Unified CAD Understanding and Generation | 待翻译 | [arXiv 2611.22903v1](https://arxiv.org/abs/2611.22903v1) |
+| 2026-11-18 | RoadAnnoter: An AI-Assisted Desktop Tool for Semantic Segmentation Annotation of Road-Scene Images | 待翻译 | [arXiv 2611.22884v1](https://arxiv.org/abs/2611.22884v1) |
+| 2026-11-18 | RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation | 待翻译 | [arXiv 2611.22382v1](https://arxiv.org/abs/2611.22382v1) |
+| 2026-11-18 | Power Line Detection in Point Clouds with Point-SAM and RANSAC | 待翻译 | [arXiv 2611.21438v1](https://arxiv.org/abs/2611.21438v1) |
 | 2026-11-17 | ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises | ScenarioForge：基于资源落地的网络演练生成与执行验证 | [arXiv 2611.21579v1](https://arxiv.org/abs/2611.21579v1) |
 | 2026-11-17 | Training-Free Anonymization of Driving Data with Promptable Segmentation and 3D Human Mesh Recovery | 基于可提示分割与3D人体网格恢复的驾驶数据免训练匿名化 | [arXiv 2611.20412v1](https://arxiv.org/abs/2611.20412v1) |
 | 2026-11-17 | From Cloud to Edge: A Fully Local Pipeline for Pothole Risk Assessment and Driver Warning Generation | 从云端到边缘：用于坑洞风险评估和驾驶员警告生成的全本地流水线 | [arXiv 2611.19737v1](https://arxiv.org/abs/2611.19737v1) |
