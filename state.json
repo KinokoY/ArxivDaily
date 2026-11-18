@@ -14237,7 +14237,9 @@
       ]
     },
     "2611.22382": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
@@ -14258,6 +14260,47 @@
         "published": "2026-11-17T08:33:25+00:00",
         "title": "RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation",
         "updated": "2026-11-17T08:33:25+00:00",
+        "version_id": "2611.22382v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "chain-of-thought"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "chain of thought"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.22382v1"
       },
       "rule_hits": [
@@ -14305,6 +14348,11 @@
         "version_id": "2611.22382v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-18T15:17:26.123816+00:00",
+        "run_id": "20261118T151726Z-a41845b3",
+        "stage": "selection"
+      },
       "versions": [
         "2611.22382v1"
       ]
