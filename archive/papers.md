@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-18 | Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network | 待翻译 | [arXiv 2611.22953v1](https://arxiv.org/abs/2611.22953v1) |
+| 2026-11-18 | Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network | Fiberpose：基于距离变换神经网络的最先进纤维形态计量与实例分割 | [arXiv 2611.22953v1](https://arxiv.org/abs/2611.22953v1) |
 | 2026-11-18 | BRepA: Graph-Based B-Rep Pretraining for Unified CAD Understanding and Generation | 待翻译 | [arXiv 2611.22903v1](https://arxiv.org/abs/2611.22903v1) |
 | 2026-11-18 | RoadAnnoter: An AI-Assisted Desktop Tool for Semantic Segmentation Annotation of Road-Scene Images | 待翻译 | [arXiv 2611.22884v1](https://arxiv.org/abs/2611.22884v1) |
 | 2026-11-18 | RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation | 待翻译 | [arXiv 2611.22382v1](https://arxiv.org/abs/2611.22382v1) |
