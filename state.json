@@ -4068,9 +4068,16 @@
       "content_hash": "831dbba823182d03c7d8e9b046819ce476a5a4f011968c4c70fedd97a9545381",
       "created_at": "2026-11-18T15:17:26.123816+00:00",
       "day": "2026-11-18",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "69274279",
+        "status": "confirmed"
+      },
       "digest_id": "20261118T151726Z-a41845b3-831dbba82318",
       "empty": false,
       "feedback_url": "https://github.com/KinokoY/ArxivDaily/issues/4",
+      "finished_at": "2026-11-18T15:23:53.452259+00:00",
       "items": [
         {
           "modules": [
@@ -4163,7 +4170,7 @@
       },
       "run_id": "20261118T151726Z-a41845b3",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "feedback": {
@@ -14959,7 +14966,6 @@
       ]
     },
     "2611.22953": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -14997,7 +15003,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -15021,7 +15027,6 @@
         "updated": "2026-11-17T15:41:46+00:00",
         "version_id": "2611.22953v1"
       },
-      "pending_digest": "20261118T151726Z-a41845b3-831dbba82318",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -15129,7 +15134,7 @@
         "source": "matched",
         "version_id": "2611.22953v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "Fiberpose：基于距离变换神经网络的最先进纤维形态计量与实例分割",
       "translation": {
         "abstract_zh": "SEM图像中纤维结构的分析是生物医学工程和材料科学的常规任务。然而，大多数可用的纤维量化方法仍依赖于经典图像二值化及简单后处理。这些方法在边界微弱、对比度不均和纤维密集的图像中往往产生不可靠的结果。在此，我们提出Fiberpose，一个将纤维分析重新表述为平滑距离变换（DT）场直接回归的框架，并配套一套专门适配该表示的新型基于几何的算法。预测场直接编码纤维几何，配套算法可在统一工作流中实现实例重建以及直径和方向测量。该框架实现为独立的Python桌面应用程序和网络工具https://fiberpose.org。在独立的纤维SEM图像数据集上，Fiberpose相比SAM2和Cellpose-SAM实现了最先进的实例分割精度，并且相比DiameterJ、Fibar和GIFT实现了更准确的直径测量。该方法在密集和弱对比区域仍然有效，并在训练数据未包含的显微模态上表现出定性泛化能力。因此，Fiberpose为纤维材料的可重复定量表征提供了可解释的几何表示和自动化流程。",
