@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-11-18 | Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network | Fiberpose：基于距离变换神经网络的最先进纤维形态计量与实例分割 | [arXiv 2611.22953v1](https://arxiv.org/abs/2611.22953v1) |
 | 2026-11-18 | BRepA: Graph-Based B-Rep Pretraining for Unified CAD Understanding and Generation | BRepA：面向统一CAD理解与生成的基于图的B-Rep预训练 | [arXiv 2611.22903v1](https://arxiv.org/abs/2611.22903v1) |
-| 2026-11-18 | RoadAnnoter: An AI-Assisted Desktop Tool for Semantic Segmentation Annotation of Road-Scene Images | 待翻译 | [arXiv 2611.22884v1](https://arxiv.org/abs/2611.22884v1) |
+| 2026-11-18 | RoadAnnoter: An AI-Assisted Desktop Tool for Semantic Segmentation Annotation of Road-Scene Images | RoadAnnoter：一款用于道路场景图像语义分割标注的AI辅助桌面工具 | [arXiv 2611.22884v1](https://arxiv.org/abs/2611.22884v1) |
 | 2026-11-18 | RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation | 待翻译 | [arXiv 2611.22382v1](https://arxiv.org/abs/2611.22382v1) |
 | 2026-11-18 | Power Line Detection in Point Clouds with Point-SAM and RANSAC | 待翻译 | [arXiv 2611.21438v1](https://arxiv.org/abs/2611.21438v1) |
 | 2026-11-17 | ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises | ScenarioForge：基于资源落地的网络演练生成与执行验证 | [arXiv 2611.21579v1](https://arxiv.org/abs/2611.21579v1) |

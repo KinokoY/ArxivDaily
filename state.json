@@ -14609,11 +14609,8 @@
         "version_id": "2611.22884v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-18T15:17:26.123816+00:00",
-        "run_id": "20261118T151726Z-a41845b3",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "RoadAnnoter：一款用于道路场景图像语义分割标注的AI辅助桌面工具",
       "versions": [
         "2611.22884v1"
       ]
