@@ -8,7 +8,7 @@
 | 2026-11-18 | BRepA: Graph-Based B-Rep Pretraining for Unified CAD Understanding and Generation | BRepA：面向统一CAD理解与生成的基于图的B-Rep预训练 | [arXiv 2611.22903v1](https://arxiv.org/abs/2611.22903v1) |
 | 2026-11-18 | RoadAnnoter: An AI-Assisted Desktop Tool for Semantic Segmentation Annotation of Road-Scene Images | RoadAnnoter：一款用于道路场景图像语义分割标注的AI辅助桌面工具 | [arXiv 2611.22884v1](https://arxiv.org/abs/2611.22884v1) |
 | 2026-11-18 | RICoT: Recurrent Interleaved Chain-of-Thought for Page Stream Segmentation | RICoT：用于页面流分割的循环交错思维链 | [arXiv 2611.22382v1](https://arxiv.org/abs/2611.22382v1) |
-| 2026-11-18 | Power Line Detection in Point Clouds with Point-SAM and RANSAC | 待翻译 | [arXiv 2611.21438v1](https://arxiv.org/abs/2611.21438v1) |
+| 2026-11-18 | Power Line Detection in Point Clouds with Point-SAM and RANSAC | 基于Point-SAM和RANSAC的点云电力线检测 | [arXiv 2611.21438v1](https://arxiv.org/abs/2611.21438v1) |
 | 2026-11-17 | ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises | ScenarioForge：基于资源落地的网络演练生成与执行验证 | [arXiv 2611.21579v1](https://arxiv.org/abs/2611.21579v1) |
 | 2026-11-17 | Training-Free Anonymization of Driving Data with Promptable Segmentation and 3D Human Mesh Recovery | 基于可提示分割与3D人体网格恢复的驾驶数据免训练匿名化 | [arXiv 2611.20412v1](https://arxiv.org/abs/2611.20412v1) |
 | 2026-11-17 | From Cloud to Edge: A Fully Local Pipeline for Pothole Risk Assessment and Driver Warning Generation | 从云端到边缘：用于坑洞风险评估和驾驶员警告生成的全本地流水线 | [arXiv 2611.19737v1](https://arxiv.org/abs/2611.19737v1) |
