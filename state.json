@@ -14240,9 +14240,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "Large language models (LLMs) have renewed interest in Page Stream Segmentation (PSS), splitting a multi-page file into its constituent documents.",
+          "We reimagine PSS for LLMs as a sequential process over the whole stream and propose RICoT (Recurrent Interleaved Chain-of-Thought), a prompting framework that works through the pages as a reader would",
+          "within a sliding window it reasons about each page and commits its boundary decision before moving on",
+          "A 2B-parameter student, trained on a larger teacher's decisions with and without the page-level reasoning, performs comparably in both modes"
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文研究的是文档页流分割（Page Stream Segmentation），用 LLM 的链式思维提示和教师-学生训练来判定文档边界，而不是医学影像、通用图像或像素掩码层面的推理分割。摘要未显示 RL 或 DPO 是方法贡献，也没有理论或迁移证据支持传统分割目标迁移到目标任务。general_reasoning 规则命中来自 CoT/推理措辞，但任务与关注方向不匹配。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 18,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要只说明教师-学生训练，未提供全文训练目标细节；但没有任何迹象表明 RL 或 DPO 是方法贡献。",
+          "该页流分割推理是否能迁移到图像/像素掩码推理分割，摘要未提供证据。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Large language models (LLMs) have renewed interest in Page Stream Segmentation (PSS), splitting a multi-page file into its constituent documents. Yet published LLM methods still frame the task as boundary classification over one or a few neighboring pages, and commercial document-splitting APIs do not disclose their methods. We reimagine PSS for LLMs as a sequential process over the whole stream and propose RICoT (Recurrent Interleaved Chain-of-Thought), a prompting framework that works through the pages as a reader would: within a sliding window it reasons about each page and commits its boundary decision before moving on, and across windows it carries forward a compact record of what it has read, keeping per-call cost bounded. We also introduce FinancePSS-205, a benchmark of 205 real-world, de-identified financial page streams, to be released publicly. On FinancePSS-205, RICoT matches or outperforms pairwise and windowed prompting with the same backbone for each of three open-weight LLMs; on a TABME test subset, RICoT with GLM-5 reaches document F1 0.847 and boundary F1 0.915, above published zero-shot results. A 2B-parameter student, trained on a larger teacher's decisions with and without the page-level reasoning, performs comparably in both modes and comes within 0.05 document F1 of the strongest prompted model on FinancePSS-205.",
         "authors": [
@@ -14303,6 +14327,7 @@
         "source": "matched",
         "version_id": "2611.22382v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
@@ -14347,12 +14372,7 @@
         "source": "matched",
         "version_id": "2611.22382v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-18T15:17:26.123816+00:00",
-        "run_id": "20261118T151726Z-a41845b3",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.22382v1"
       ]
