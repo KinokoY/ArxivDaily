@@ -15178,6 +15178,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-19T15:24:42.661819+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Text prompted 3D computed tomography (CT) segmentation requires both full slice context and fine boundary precision across volumes where over $80\\%$ of organ prompted slices lack the queried target. Existing medical vision language models (VLMs) are largely non native segmenters: they delegate pixel delineation outside the VLM by compressing reasoning into a 1D [SEG] vector for an external Segment Anything Model (SAM) decoder, quantizing masks into lossy discrete codebooks, or issuing box prompts to stateless external SAM tools without empty slice screening or spatial state memory. We introduce NativeSeg, a native vision language segmentation framework on Low Rank Adaptation (LoRA) adapted Qwen3.8-27B that performs dense mask decoding, volumetric triage, spatial error self diagnosis, and multiround local zoom directly over the VLM's 2D spatial visual tokens without external SAM decoders. NativeSeg decodes confidence maps from upper layer 2D spatial tokens fused with a five slice U-Net pathway, halts at zero zooms on $>91\\%$ of standalone evaluations via a native presence gate (<pres>), localizes uncertain boundaries via a 20 cell multiscale error gate (<err>), and accepts zoomed updates only when predicted error decreases. Trained solely on adult CT, NativeSeg improves Round $0$ DSC by $+19.81$ and $+7.04$ points over discrete codebook and 1D [SEG] readouts on the identical backbone, reaches $86.81\\%$ adult and $87.04\\%$ zero shot pediatric DSC, and safely refines 2D nnU-Net ($89.52\\%$ adult; $86.86\\%$ pediatric), 3D SegVol ($86.81\\%$), and 3D VoxTell ($89.85\\%$).",
@@ -15200,6 +15201,18 @@
         "updated": "2026-11-18T13:56:12+00:00",
         "version_id": "2611.24443v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "medical_reasoning",
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -15427,7 +15440,7 @@
         "source": "matched",
         "version_id": "2611.24443v1"
       },
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2611.24443v1"
       ]
@@ -15475,6 +15488,17 @@
         "updated": "2026-11-18T16:43:26+00:00",
         "version_id": "2611.24726v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
