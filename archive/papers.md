@@ -4,7 +4,7 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
-| 2026-11-19 | Generalization of Text Line Segmentation for HTR in Historical Documents | 待翻译 | [arXiv 2611.24726v1](https://arxiv.org/abs/2611.24726v1) |
+| 2026-11-19 | Generalization of Text Line Segmentation for HTR in Historical Documents | 历史文档中面向HTR的文本行分割泛化 | [arXiv 2611.24726v1](https://arxiv.org/abs/2611.24726v1) |
 | 2026-11-19 | NativeSeg: Native Vision Language Segmentation of 3D Computed Tomography via Spatial Visual Tokens and Verified Local Zoom | NativeSeg：通过空间视觉令牌与验证式局部缩放对三维计算机断层扫描进行原生视觉语言分割 | [arXiv 2611.24443v1](https://arxiv.org/abs/2611.24443v1) |
 | 2026-11-18 | Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network | Fiberpose：基于距离变换神经网络的最先进纤维形态计量与实例分割 | [arXiv 2611.22953v1](https://arxiv.org/abs/2611.22953v1) |
 | 2026-11-18 | BRepA: Graph-Based B-Rep Pretraining for Unified CAD Understanding and Generation | BRepA：面向统一CAD理解与生成的基于图的B-Rep预训练 | [arXiv 2611.22903v1](https://arxiv.org/abs/2611.22903v1) |
