@@ -4485,6 +4485,129 @@
         },
         "status": "open",
         "url": "https://github.com/KinokoY/ArxivDaily/issues/4"
+      },
+      "2026-11-19": {
+        "created_at": "2026-11-19T15:28:52.761531+00:00",
+        "papers": {
+          "2611.24443": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "MED",
+                    "SEG",
+                    "VLM"
+                  ],
+                  "keywords": {
+                    "MED": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "medical"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "CT"
+                      },
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "computed tomography"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "organ"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "volumetric"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ],
+                    "VLM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "vision-language models"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "VLM"
+                      }
+                    ]
+                  },
+                  "route": "medical_reasoning"
+                },
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segment anything"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segment anything model"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.24443v1"
+            },
+            "title": "NativeSeg: Native Vision Language Segmentation of 3D Computed Tomography via Spatial Visual Tokens and Verified Local Zoom",
+            "title_zh": "NativeSeg：通过空间视觉令牌与验证式局部缩放对三维计算机断层扫描进行原生视觉语言分割",
+            "url": "https://arxiv.org/abs/2611.24443v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
       }
     },
     "repository": "KinokoY/ArxivDaily"
