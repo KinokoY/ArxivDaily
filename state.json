@@ -171,7 +171,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-18T15:17:26.123816+00:00"
+    "last_complete_end": "2026-11-19T15:24:42.661819+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -14235,6 +14235,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
+      "latest_version": "2611.21438v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "This article deals with the problem of detecting the position of power lines in airborne laser scanning point clouds. We address both the problem of segmenting power lines from background like ground and vegetation and of identifying individual lines. For segmentation we compare a rule-based approach with one based on transfer learning (Point-SAM). For individual line detection, we derive the mathematical formulas for RANSAC applied to 3D catenaries and compare it with a non-parametric method (TriplClust). All methods are evaluated on a newly created dataset \"PowLiDFR\", which we make publicly available. The samples have been taken from the French project LiDAR HD and cover a variety of terrain layouts and point cloud resolutions. On this dataset, an unsupervised transfer learning outperformed a mere rule-based segmentation, and for individual power line detection, RANSAC was better in following the shape of catenaries than the non-parametric algorithm.",
@@ -14535,6 +14536,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
+      "latest_version": "2611.22382v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Large language models (LLMs) have renewed interest in Page Stream Segmentation (PSS), splitting a multi-page file into its constituent documents. Yet published LLM methods still frame the task as boundary classification over one or a few neighboring pages, and commercial document-splitting APIs do not disclose their methods. We reimagine PSS for LLMs as a sequential process over the whole stream and propose RICoT (Recurrent Interleaved Chain-of-Thought), a prompting framework that works through the pages as a reader would: within a sliding window it reasons about each page and commits its boundary decision before moving on, and across windows it carries forward a compact record of what it has read, keeping per-call cost bounded. We also introduce FinancePSS-205, a benchmark of 205 real-world, de-identified financial page streams, to be released publicly. On FinancePSS-205, RICoT matches or outperforms pairwise and windowed prompting with the same backbone for each of three open-weight LLMs; on a TABME test subset, RICoT with GLM-5 reaches document F1 0.847 and boundary F1 0.915, above published zero-shot results. A 2B-parameter student, trained on a larger teacher's decisions with and without the page-level reasoning, performs comparably in both modes and comes within 0.05 document F1 of the strongest prompted model on FinancePSS-205.",
@@ -14687,6 +14689,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
+      "latest_version": "2611.22884v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Accurate semantic segmentation of road-scene images is essential for road safety research; however, polygon-level annotation remains labor-intensive and limits labelled dataset development. This study presents RoadAnnoter v1.0, an open-source desktop application integrating six human-in-the-loop annotation modes: manual polygon delineation, SAM Prompt, Smart Select, Edge Fill, pretrained semantic segmentation using Cityscapes-trained SegFormer models, and task-specific segmentation using TinySegNet, a lightweight MobileNetV3-Small-based network trained with accumulated annotator-generated labels. SAM-based modes use promptable segmentation with SAM and MobileSAM, while Edge Fill combines Canny edge detection with colour-similarity-based flood filling in CIELAB colour space. SegFormer generates suggestions for common road-scene categories, whereas TinySegNet supports adaptation to project-specific features through iterative training. All six modes use a shared mask-to-polygon pipeline comprising morphological processing, Gaussian smoothing, contour extraction, and Douglas-Peucker simplification; annotations are exported in YOLO segmentation format. RoadAnnoter was used to annotate Google Street View images from recorded road accident locations in Bangladesh for a vision-language model-based investigation of free-flow speed estimation. Qualitative assessment across representative scenes demonstrated the complementary applicability of the annotation modes to diverse feature geometries. Visual comparison with Roboflow indicated similar qualitative boundary characteristics for principal road-scene regions, although no quantitative accuracy assessment was conducted. RoadAnnoter provides a locally operated framework for developing road-scene segmentation datasets for transportation engineering and road safety research.",
@@ -14831,6 +14834,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
+      "latest_version": "2611.22903v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Boundary representation (B-Rep) of CAD models encodes geometric primitives and their relations as a graph structure, enabling efficient shape modeling within CAD software. Learning on B-Reps for downstream tasks, such as segmentation and novel shape generation, requires specialized neural network designs. Moreover, performance improvements and accelerated training can be achieved with effective pretraining strategies, which is particularly important for tasks with limited labeled B-Rep data. In this paper, we introduce BRepA, a unified self-supervised pretraining framework that explicitly reconstructs both the geometry and topology of B-Rep objects via graph-based modeling. By learning from large-scale unlabeled CAD data only once, BRepA produces representations that generalize across tasks and significantly enhance both discriminative and generative learning. On segmentation tasks, BRepA demonstrates remarkable data efficiency. For instance, with only 1% labeled samples, BRepA pretraining improves mIoU by 32.52% compared to models trained from scratch. On generative tasks, aligning diffusion model representations with pretrained BRepA features substantially accelerates convergence, achieving nearly 2 times faster training while improving generation quality under the same computational budget, despite the diffusion model being roughly 20 times larger than BRepA. Overall, our results show that geometry- and topology-aware B-Rep pretraining provides a powerful foundation for both understanding and generating CAD structures, serving as a versatile representation backbone for diverse downstream applications. We will release the code to facilitate future research.",
@@ -15011,6 +15015,7 @@
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.22953v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Analysis of fibrous structures in SEM images is a routine task in biomedical engineering and materials science. However, most available methods for fiber quantification still rely on classical image binarization followed by simple post-processing. These approaches often produce unreliable results in images with weak boundaries, heterogeneous contrast, and densely packed fibers. Here, we introduce Fiberpose, a framework that reformulates fiber analysis as direct regression of a smooth distance-transform (DT) field, together with a novel set of geometry-based algorithms specifically adapted to this representation. The predicted field directly encodes fiber geometry, while the accompanying algorithms enable instance reconstruction and measurement of diameter and orientation within a unified workflow. The framework is implemented as a standalone Python desktop application and a web tool https://fiberpose.org. On an independent dataset of fibrous SEM images, Fiberpose achieved state-of-the-art instance-segmentation accuracy in comparison with SAM2 and Cellpose-SAM, and more accurate diameter measurements than DiameterJ, Fibar and GIFT. The method remains effective in dense and weakly contrasted regions and shows qualitative generalization across microscopy modalities not represented in the training data. Fiberpose therefore provides an interpretable geometric representation and an automated pipeline for reproducible quantitative characterization of fibrous materials.",
@@ -15145,6 +15150,215 @@
       "translation_provider": "llm",
       "versions": [
         "2611.22953v1"
+      ]
+    },
+    "2611.24443": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-19T15:24:42.661819+00:00",
+      "paper": {
+        "abstract": "Text prompted 3D computed tomography (CT) segmentation requires both full slice context and fine boundary precision across volumes where over $80\\%$ of organ prompted slices lack the queried target. Existing medical vision language models (VLMs) are largely non native segmenters: they delegate pixel delineation outside the VLM by compressing reasoning into a 1D [SEG] vector for an external Segment Anything Model (SAM) decoder, quantizing masks into lossy discrete codebooks, or issuing box prompts to stateless external SAM tools without empty slice screening or spatial state memory. We introduce NativeSeg, a native vision language segmentation framework on Low Rank Adaptation (LoRA) adapted Qwen3.8-27B that performs dense mask decoding, volumetric triage, spatial error self diagnosis, and multiround local zoom directly over the VLM's 2D spatial visual tokens without external SAM decoders. NativeSeg decodes confidence maps from upper layer 2D spatial tokens fused with a five slice U-Net pathway, halts at zero zooms on $>91\\%$ of standalone evaluations via a native presence gate (<pres>), localizes uncertain boundaries via a 20 cell multiscale error gate (<err>), and accepts zoomed updates only when predicted error decreases. Trained solely on adult CT, NativeSeg improves Round $0$ DSC by $+19.81$ and $+7.04$ points over discrete codebook and 1D [SEG] readouts on the identical backbone, reaches $86.81\\%$ adult and $87.04\\%$ zero shot pediatric DSC, and safely refines 2D nnU-Net ($89.52\\%$ adult; $86.86\\%$ pediatric), 3D SegVol ($86.81\\%$), and 3D VoxTell ($89.85\\%$).",
+        "authors": [
+          "Chengqian Ma",
+          "Gaole Dai",
+          "Zijie Meng",
+          "Weixuan Jin",
+          "Yijie Du",
+          "Yuexiao Ma",
+          "Xiawu Zheng",
+          "Fei Chao"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.24443v1",
+        "published": "2026-11-18T13:56:12+00:00",
+        "title": "NativeSeg: Native Vision Language Segmentation of 3D Computed Tomography via Spatial Visual Tokens and Verified Local Zoom",
+        "updated": "2026-11-18T13:56:12+00:00",
+        "version_id": "2611.24443v1"
+      },
+      "rule_hits": [
+        "medical_reasoning",
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "CT"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "computed tomography"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "organ"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "volumetric"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "VLM"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          },
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.24443v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.24443v1"
+      ]
+    },
+    "2611.24726": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-19T15:24:42.661819+00:00",
+      "paper": {
+        "abstract": "In this paper we investigate the generalization capability of state-of-the-art object detection models (Hi-SAM, YOLO, and RT-DETR) for the automatic segmentation of text lines in historical documents. Generalization is needed because it is not practical for museums and archives to produce large amounts of labeled samples for each new collection. We also evaluate the few-shot setting by fine-tuning the networks with only a small number of training samples per target dataset. To this end, we use nine different datasets that differ significantly in visual layout and language. Additionally, we discuss why mean average precision (mAP), a classic evaluation metric for object detection, is insufficient for assessing the quality of a text line segmentation model. Depending on the dataset, our CRNN models achieve character error rates (CER) ranging from 2.48% to 7.07% per page for the segmented text lines. This is sufficient for reading comprehension and simple text searches. Finally, we quantify the resource and time requirements of training and inference in different use case settings. This forms the basis for more informed decisions about model and hardware choices based on available resources.",
+        "authors": [
+          "Gayan H. Pathirage",
+          "Stephan M. Unter",
+          "Simon Corbillé",
+          "Elisa H. Barney Smith"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.24726v1",
+        "published": "2026-11-18T16:43:26+00:00",
+        "title": "Generalization of Text Line Segmentation for HTR in Historical Documents",
+        "updated": "2026-11-18T16:43:26+00:00",
+        "version_id": "2611.24726v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.24726v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.24726v1"
       ]
     }
   },
@@ -16990,10 +17204,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-19",
+      "discovered_candidates": 20,
+      "discovered_papers": 20,
       "run_id": "20261119T152442Z-743bf244",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-19T15:24:00+00:00",
+          "seen": 5263,
+          "start": "2026-11-05T15:24:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-19T15:24:42.661819+00:00",
       "window": {
         "end": "2026-11-19T15:24:42.661819+00:00",
