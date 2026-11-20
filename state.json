@@ -4813,6 +4813,62 @@
         },
         "status": "open",
         "url": "https://github.com/KinokoY/ArxivDaily/issues/5"
+      },
+      "2026-11-20": {
+        "created_at": "2026-11-20T15:07:26.911405+00:00",
+        "papers": {
+          "2611.25371": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segment anything"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segment anything model"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.25371v1"
+            },
+            "title": "A Unified Framework for Image Manipulation Localization Under Multi-Type Weak Supervision",
+            "title_zh": "多类型弱监督下图像篡改定位的统一框架",
+            "url": "https://arxiv.org/abs/2611.25371v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
       }
     },
     "repository": "KinokoY/ArxivDaily"
