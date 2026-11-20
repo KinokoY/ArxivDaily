@@ -15929,7 +15929,9 @@
       ]
     },
     "2611.25215": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-20T15:00:59.078874+00:00",
@@ -15955,6 +15957,118 @@
         "published": "2026-11-18T21:40:00+00:00",
         "title": "Bridging vision-language reasoning and learned control for legged navigation in the wild",
         "updated": "2026-11-18T21:40:00+00:00",
+        "version_id": "2611.25215v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "spatial reasoning"
+                }
+              ],
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "VLM",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "VLM"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "spatial reasoning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.25215v1"
       },
       "rule_hits": [
@@ -16074,6 +16188,11 @@
         "version_id": "2611.25215v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-20T15:00:59.078874+00:00",
+        "run_id": "20261120T150059Z-84f84f11",
+        "stage": "selection"
+      },
       "versions": [
         "2611.25215v1"
       ]
