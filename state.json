@@ -175,7 +175,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-19T15:24:42.661819+00:00"
+    "last_complete_end": "2026-11-20T15:00:59.078874+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -14563,7 +14563,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-18T15:17:26.123816+00:00",
-      "latest_version": "2611.21438v1",
+      "latest_version": "2611.21438v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "This article deals with the problem of detecting the position of power lines in airborne laser scanning point clouds. We address both the problem of segmenting power lines from background like ground and vegetation and of identifying individual lines. For segmentation we compare a rule-based approach with one based on transfer learning (Point-SAM). For individual line detection, we derive the mathematical formulas for RANSAC applied to 3D catenaries and compare it with a non-parametric method (TriplClust). All methods are evaluated on a newly created dataset \"PowLiDFR\", which we make publicly available. The samples have been taken from the French project LiDAR HD and cover a variety of terrain layouts and point cloud resolutions. On this dataset, an unsupervised transfer learning outperformed a mere rule-based segmentation, and for individual power line detection, RANSAC was better in following the shape of catenaries than the non-parametric algorithm.",
@@ -14680,7 +14680,8 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "基于Point-SAM和RANSAC的点云电力线检测",
       "versions": [
-        "2611.21438v1"
+        "2611.21438v1",
+        "2611.21438v2"
       ]
     },
     "2611.21579": {
@@ -14711,6 +14712,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-17T15:39:17.816671+00:00",
+      "latest_version": "2611.21579v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Cyber-range and capture-the-flag scenario construction remains labor-intensive because authors must coordinate infrastructure, vulnerable services, attack paths, artifacts, and success conditions. LLMs can propose detailed exercises, but plausible descriptions do not guarantee deployable software or verifiable objectives. We present ScenarioForge, which turns high-level requirements into resource-grounded topologies, services, traffic, segmentation, and challenge chains, then instantiates and validates them in the Common Open Research Emulator (CORE). The ScenarioForge Execution Dataset contains 226 materialized scenarios covering 294 Vulhub images and all 85 custom-built challenge-resource generators developed with our AI-assisted scaffolding. All 226 passed construction, preview, sequencing, deployment, strict runtime validation, and live artifact checks; their 867 steps, each an individually verifiable challenge objective, comprise 457 vulnerability-backed and 410 generated-resource-backed instances. In a separate 50-prompt matched benchmark, ScenarioForge+Qwen3.8 and ScenarioForge+GPT5.6 each achieved 50/50 (100%) topology/build success and 160/160 intent fields; direct frontier generation reached 41/50 builds and 147/160 fields only with the full cumulative scaffold: structure, vocabulary, policy, and container-image guidance. The test still omitted ScenarioForge's downstream challenge-resource generation, dependency/flag sequencing, deployment, and live validation. The artifacts support operationally rich, reproducible exercises for training and evaluation.",
@@ -14830,7 +14832,8 @@
       "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
       "title_zh": "ScenarioForge：基于资源落地的网络演练生成与执行验证",
       "versions": [
-        "2611.21579v1"
+        "2611.21579v1",
+        "2611.21579v2"
       ]
     },
     "2611.22382": {
@@ -15519,6 +15522,7 @@
       "failures": {},
       "first_discovered": "2026-11-19T15:24:42.661819+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.24443v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Text prompted 3D computed tomography (CT) segmentation requires both full slice context and fine boundary precision across volumes where over $80\\%$ of organ prompted slices lack the queried target. Existing medical vision language models (VLMs) are largely non native segmenters: they delegate pixel delineation outside the VLM by compressing reasoning into a 1D [SEG] vector for an external Segment Anything Model (SAM) decoder, quantizing masks into lossy discrete codebooks, or issuing box prompts to stateless external SAM tools without empty slice screening or spatial state memory. We introduce NativeSeg, a native vision language segmentation framework on Low Rank Adaptation (LoRA) adapted Qwen3.8-27B that performs dense mask decoding, volumetric triage, spatial error self diagnosis, and multiround local zoom directly over the VLM's 2D spatial visual tokens without external SAM decoders. NativeSeg decodes confidence maps from upper layer 2D spatial tokens fused with a five slice U-Net pathway, halts at zero zooms on $>91\\%$ of standalone evaluations via a native presence gate (<pres>), localizes uncertain boundaries via a 20 cell multiscale error gate (<err>), and accepts zoomed updates only when predicted error decreases. Trained solely on adult CT, NativeSeg improves Round $0$ DSC by $+19.81$ and $+7.04$ points over discrete codebook and 1D [SEG] readouts on the identical backbone, reaches $86.81\\%$ adult and $87.04\\%$ zero shot pediatric DSC, and safely refines 2D nnU-Net ($89.52\\%$ adult; $86.86\\%$ pediatric), 3D SegVol ($86.81\\%$), and 3D VoxTell ($89.85\\%$).",
@@ -15922,6 +15926,365 @@
       "title_zh": "历史文档中面向HTR的文本行分割泛化",
       "versions": [
         "2611.24726v1"
+      ]
+    },
+    "2611.25215": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-20T15:00:59.078874+00:00",
+      "paper": {
+        "abstract": "Autonomous navigation in diverse real-world environments remains one of the greatest challenges in robotics. It demands both robust low-level motion control to handle diverse terrain and high-level reasoning to interpret environmental cues. We present ROAM (Robust Open-world Autonomous Mobility), a system that enables legged robots to perform kilometer-scale navigation in complex alpine and urban settings. ROAM combines the world knowledge of a Vision-Language Model (VLM), pre-trained on internet-scale data, with robust locomotion and local planning policies learned in simulation via reinforcement learning (RL). The VLM provides common-sense reasoning and semantic interpretation of the scene, assessing risks, interpreting signs, and producing semantic labels with associated navigation costs. An open-vocabulary segmentation module converts these labels into a dense, real-time risk map, which conditions two pre-trained RL policies responsible for agile locomotion and local navigation, effectively coupling high-level VLM reasoning with low-level physical control. Real-world experiments showed the system's ability to autonomously navigate a wide range of complex real-world environments. The robot completes kilometer-long hikes with minimal intervention, interprets signs to avoid danger, and evaluates its environment to identify safe areas on which to step. This work represents a step toward the reliable deployment of systems in unstructured environments. However, it also underscores the challenges that remain in VLM reliability and spatial reasoning, indicating that foundational models are a crucial component but not yet a complete solution for navigation in the wild.",
+        "authors": [
+          "Takahiro Miki",
+          "Robin Schmid",
+          "Manthan Patel",
+          "Turcan Tuna",
+          "Julia Richter",
+          "Julian Nubert",
+          "Joonho Lee",
+          "Matthias Müller",
+          "Marco Hutter"
+        ],
+        "categories": [
+          "cs.RO",
+          "cs.AI",
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.25215v1",
+        "published": "2026-11-18T21:40:00+00:00",
+        "title": "Bridging vision-language reasoning and learned control for legged navigation in the wild",
+        "updated": "2026-11-18T21:40:00+00:00",
+        "version_id": "2611.25215v1"
+      },
+      "rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "spatial reasoning"
+                }
+              ],
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "VLM",
+              "RL_PREF"
+            ],
+            "keywords": {
+              "RL_PREF": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "reinforcement learning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "VLM"
+                }
+              ]
+            },
+            "route": "general_rl"
+          },
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "spatial reasoning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.25215v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.25215v1"
+      ]
+    },
+    "2611.25371": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-20T15:00:59.078874+00:00",
+      "paper": {
+        "abstract": "Existing weakly supervised image manipulation localization (IML) methods typically rely on annotation-specific training strategies, hindering the joint use of diverse annotations within a single model. This limits the scale of usable training data and constrains further progress. We propose UniIML, a teacher-student framework that maps diverse weak annotations into a unified representation to guide the Segment Anything Model (SAM) in generating multiple candidate masks. However, SAM is designed for general-purpose segmentation and has limited sensitivity to manipulation traces; its predicted quality scores alone may therefore fail to reliably identify the candidate that best delineates the manipulated region. We introduce Ordinal Safe Consensus (OSC), which first filters candidates using trusted weak-annotation constraints encoded in the unified representation. It then ranks the remaining candidates separately by consistency with weak annotations, SAM-predicted quality scores, and cross-view stability, aggregating these rankings for an initial selection. To assess how changes in the evaluation criteria affect candidate selection, OSC repeats ranking and selection while omitting one criterion at a time. The most frequently selected candidate is adopted as the final mask, and its relative selection frequency quantifies selection stability. We construct soft pseudo-labels from the selected candidate's predicted probabilities and estimate pixel-level supervision weights based on selection stability, pixel-level agreement among candidates, and predictive certainty. The student receives direct supervision in regions defined by weak annotations and learns from soft pseudo-labels elsewhere through reliability-weighted distillation, enabling unified training across weak annotation types. Experiments show that UniIML achieves superior average performance compared with state-of-the-art IML methods.",
+        "authors": [
+          "Songlin Li",
+          "Hui Ma",
+          "Zhiqing Guo",
+          "Dan Ma",
+          "Gaobo Yang",
+          "Xin Liao"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.25371v1",
+        "published": "2026-11-19T02:08:21+00:00",
+        "title": "A Unified Framework for Image Manipulation Localization Under Multi-Type Weak Supervision",
+        "updated": "2026-11-19T02:08:21+00:00",
+        "version_id": "2611.25371v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.25371v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.25371v1"
+      ]
+    },
+    "2611.25475": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-20T15:00:59.078874+00:00",
+      "paper": {
+        "abstract": "Deploying fruit instance segmentation in real agricultural settings requires generalizing across unseen species, orchards, and imaging conditions under strict onboard compute and annotation budgets. We introduce SegAnyFruit (SAF), a data construction and progressive training framework that distills foundation-model priors into lightweight, prompt-free segmenters. SAF combines generic mask pre-training, broad mid-training on automatically annotated web imagery from our curated WebFruits dataset, and human-verified agricultural refinement post-training on PaperFruits, together spanning 733K images and 9.66M whole-fruit masks across 165 fruit types. Across seven benchmarks, zero-shot SAF-RF-DETR-XL reaches 69.06 average mask AP50:95 (+4.76 over SAM 3) while remaining deployable on edge devices. SAF initialization also boosts few-shot to full-shot adaptation across five agricultural domains while mitigating catastrophic forgetting. Finally, we systematically analyze training stages, data scale, model capacity, and generative augmentation, and validate our pipeline's transferability to underwater, cell, and human segmentation. We will release our datasets, code, and SAF models.",
+        "authors": [
+          "Yanan Wang",
+          "Yuzheng wang",
+          "Yibin Ying",
+          "Zhenghao Fei"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.25475v1",
+        "published": "2026-11-19T04:03:32+00:00",
+        "title": "SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale",
+        "updated": "2026-11-19T04:03:32+00:00",
+        "version_id": "2611.25475v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "instance segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.25475v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.25475v1"
+      ]
+    },
+    "2611.25747": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-20T15:00:59.078874+00:00",
+      "paper": {
+        "abstract": "Promptable segmenters answer what a thing is. Dense prediction tasks also ask class-agnostic questions, such as what stands out or hides, how light is blocked, transmitted or reflected, and where structure lies. Robots, surveillance systems and image editors build on their answers. We study promptable concept maps (PCM), which extend SAM 3's promptable concept segmentation from noun instances to maps of concepts named by short noun phrases such as `\"transparent object\", with \"none\" as an answer. PCM-Bench groups the standard test sets of seven such tasks by the question they ask. On it, we find that SAM 3 sees more than it detects. Its semantic path responds to many of these concepts, yet a low image-level presence score can block every detection of its instance path. We present UNVEIL, which trains a copy of SAM 3's semantic path for these maps, with LoRA on copies of its last blocks. A separate presence decoder learns from verified negatives whether a concept occurs. With one text phrase per query, UNVEIL maps region concepts such as salient and camouflaged objects, shadows, transparent objects and mirrors. The same weights map thin structures such as edges and skeletons as well as object categories. Run next to SAM 3, it leaves SAM 3's own outputs unchanged. On each of the seven tasks, UNVEIL reaches the highest score among the compared promptable models, including SAM 3's official fine-tuning and pipelines built on multimodal LLMs. Code is available at https://github.com/yuhuan-wu/UNVEIL.",
+        "authors": [
+          "Yu-Huan Wu",
+          "Yun Liu",
+          "Liangli Zhen"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.25747v1",
+        "published": "2026-11-19T08:52:36+00:00",
+        "title": "SAM 3 Sees More Than It Detects: Promptable Concept Maps Beyond Categories",
+        "updated": "2026-11-19T08:52:36+00:00",
+        "version_id": "2611.25747v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.25747v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.25747v1"
       ]
     }
   },
@@ -17809,10 +18172,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-20",
+      "discovered_candidates": 22,
+      "discovered_papers": 22,
       "run_id": "20261120T150059Z-84f84f11",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-20T15:00:00+00:00",
+          "seen": 5400,
+          "start": "2026-11-06T15:00:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-20T15:00:59.078874+00:00",
       "window": {
         "end": "2026-11-20T15:00:59.078874+00:00",
