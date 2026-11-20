@@ -7,7 +7,7 @@
 | 2026-11-20 | SAM 3 Sees More Than It Detects: Promptable Concept Maps Beyond Categories | SAM 3 所见多于所检：超越类别的可提示概念图 | [arXiv 2611.25747v1](https://arxiv.org/abs/2611.25747v1) |
 | 2026-11-20 | SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale | SegAnyFruit：学习可泛化且可边缘部署的大规模水果实例分割 | [arXiv 2611.25475v1](https://arxiv.org/abs/2611.25475v1) |
 | 2026-11-20 | A Unified Framework for Image Manipulation Localization Under Multi-Type Weak Supervision | 多类型弱监督下图像篡改定位的统一框架 | [arXiv 2611.25371v1](https://arxiv.org/abs/2611.25371v1) |
-| 2026-11-20 | Bridging vision-language reasoning and learned control for legged navigation in the wild | 待翻译 | [arXiv 2611.25215v1](https://arxiv.org/abs/2611.25215v1) |
+| 2026-11-20 | Bridging vision-language reasoning and learned control for legged navigation in the wild | 弥合视觉-语言推理与学习控制：实现野外环境下足式导航 | [arXiv 2611.25215v1](https://arxiv.org/abs/2611.25215v1) |
 | 2026-11-19 | Generalization of Text Line Segmentation for HTR in Historical Documents | 历史文档中面向HTR的文本行分割泛化 | [arXiv 2611.24726v1](https://arxiv.org/abs/2611.24726v1) |
 | 2026-11-19 | NativeSeg: Native Vision Language Segmentation of 3D Computed Tomography via Spatial Visual Tokens and Verified Local Zoom | NativeSeg：通过空间视觉令牌与验证式局部缩放对三维计算机断层扫描进行原生视觉语言分割 | [arXiv 2611.24443v1](https://arxiv.org/abs/2611.24443v1) |
 | 2026-11-18 | Fiberpose: state-of-the-art fiber morphometry and instance segmentation with a distance-transform neural network | Fiberpose：基于距离变换神经网络的最先进纤维形态计量与实例分割 | [arXiv 2611.22953v1](https://arxiv.org/abs/2611.22953v1) |

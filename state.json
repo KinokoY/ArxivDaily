@@ -16232,11 +16232,8 @@
         "version_id": "2611.25215v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-20T15:00:59.078874+00:00",
-        "run_id": "20261120T150059Z-84f84f11",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "弥合视觉-语言推理与学习控制：实现野外环境下足式导航",
       "versions": [
         "2611.25215v1"
       ]
