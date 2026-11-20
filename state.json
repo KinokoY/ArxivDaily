@@ -4399,9 +4399,16 @@
       "content_hash": "cf2517e099519e0d0926afcdda5d0d219e76c3bf25bd9d3e8b603ee0939c5ef6",
       "created_at": "2026-11-20T15:00:59.078874+00:00",
       "day": "2026-11-20",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "69753913",
+        "status": "confirmed"
+      },
       "digest_id": "20261120T150059Z-84f84f11-cf2517e09951",
       "empty": false,
       "feedback_url": "https://github.com/KinokoY/ArxivDaily/issues/6",
+      "finished_at": "2026-11-20T15:07:38.981987+00:00",
       "items": [
         {
           "modules": [
@@ -4495,7 +4502,7 @@
       },
       "run_id": "20261120T150059Z-84f84f11",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "feedback": {
@@ -16414,7 +16421,6 @@
       ]
     },
     "2611.25371": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -16451,7 +16457,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -16478,7 +16484,6 @@
         "updated": "2026-11-19T02:08:21+00:00",
         "version_id": "2611.25371v1"
       },
-      "pending_digest": "20261120T150059Z-84f84f11-cf2517e09951",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -16582,7 +16587,7 @@
         "source": "matched",
         "version_id": "2611.25371v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "多类型弱监督下图像篡改定位的统一框架",
       "translation": {
         "abstract_zh": "现有的弱监督图像篡改定位（IML）方法通常依赖于针对特定标注的训练策略，阻碍了在单一模型中联合使用多种标注。这限制了可用训练数据的规模，并制约了进一步进展。我们提出UniIML，一个教师-学生框架，将多种弱标注映射为统一表示，以引导Segment Anything Model（SAM）生成多个候选掩码。然而，SAM是为通用分割设计的，对篡改痕迹的敏感性有限；因此，仅凭其预测的质量分数可能无法可靠地识别出最能刻画篡改区域的候选。我们引入序数安全共识（OSC），它首先利用统一表示中编码的可信弱标注约束过滤候选。然后，它分别根据与弱标注的一致性、SAM预测的质量分数以及跨视图稳定性对剩余候选进行排序，并聚合这些排序以进行初步选择。为了评估评估标准的变化如何影响候选选择，OSC在每次省略一个标准的情况下重复排序和选择。被最频繁选择的候选被采纳为最终掩码，其相对选择频率量化了选择稳定性。我们从所选候选的预测概率构建软伪标签，并基于选择稳定性、候选间的像素级一致性以及预测确定性估计像素级监督权重。学生在弱标注定义的区域接受直接监督，并通过可靠性加权蒸馏从其他区域的软伪标签中学习，从而实现跨弱标注类型的统一训练。实验表明，与最先进的IML方法相比，UniIML取得了更优的平均性能。",
