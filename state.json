@@ -577,6 +577,14 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-11-20": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [],
+      "send_attempts": 0
     }
   },
   "digests": {
@@ -15981,6 +15989,18 @@
         "updated": "2026-11-18T21:40:00+00:00",
         "version_id": "2611.25215v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_rl",
+        "general_reasoning"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -16217,7 +16237,8 @@
     },
     "2611.25371": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "translation": 1
       },
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
       "decision": {
@@ -16371,6 +16392,11 @@
         "version_id": "2611.25371v1"
       },
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-11-20T15:00:59.078874+00:00",
+        "run_id": "20261120T150059Z-84f84f11",
+        "stage": "translation"
+      },
       "versions": [
         "2611.25371v1"
       ]
