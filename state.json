@@ -183,7 +183,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-21T14:22:58.984703+00:00"
+    "last_complete_end": "2026-11-22T14:14:54.965441+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -16672,6 +16672,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-20T15:00:59.078874+00:00",
+      "latest_version": "2611.25475v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Deploying fruit instance segmentation in real agricultural settings requires generalizing across unseen species, orchards, and imaging conditions under strict onboard compute and annotation budgets. We introduce SegAnyFruit (SAF), a data construction and progressive training framework that distills foundation-model priors into lightweight, prompt-free segmenters. SAF combines generic mask pre-training, broad mid-training on automatically annotated web imagery from our curated WebFruits dataset, and human-verified agricultural refinement post-training on PaperFruits, together spanning 733K images and 9.66M whole-fruit masks across 165 fruit types. Across seven benchmarks, zero-shot SAF-RF-DETR-XL reaches 69.06 average mask AP50:95 (+4.76 over SAM 3) while remaining deployable on edge devices. SAF initialization also boosts few-shot to full-shot adaptation across five agricultural domains while mitigating catastrophic forgetting. Finally, we systematically analyze training stages, data scale, model capacity, and generative augmentation, and validate our pipeline's transferability to underwater, cell, and human segmentation. We will release our datasets, code, and SAF models.",
@@ -18895,10 +18896,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-22",
+      "discovered_candidates": 20,
+      "discovered_papers": 20,
       "run_id": "20261122T141454Z-687e5bc2",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-22T14:14:00+00:00",
+          "seen": 4732,
+          "start": "2026-11-08T14:14:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-22T14:14:54.965441+00:00",
       "window": {
         "end": "2026-11-22T14:14:54.965441+00:00",
