@@ -10,7 +10,7 @@
 | 2026-11-25 | One-shot is Enough: Boosting SAM for Medical Image Segmentation through Structured Information Modeling | 一次示范即足够：通过结构化信息建模提升 SAM 的医学图像分割性能 | [arXiv 2611.29278v1](https://arxiv.org/abs/2611.29278v1) |
 | 2026-11-25 | RVLM: Fewer Tokens, Better Resolution Scaling, Fine-Grained Spatial Grounding | RVLM：更少词元，更好的分辨率扩展，细粒度空间定位 | [arXiv 2611.29146v1](https://arxiv.org/abs/2611.29146v1) |
 | 2026-11-25 | GlaucomaMarker - Biomarker-Grounded Glaucoma Vision-Language Model | GlaucomaMarker：基于生物标志物的青光眼视觉-语言模型 | [arXiv 2611.28332v1](https://arxiv.org/abs/2611.28332v1) |
-| 2026-11-25 | ROSE-SAM3: Response-Oriented Prompt Selection for Open-Vocabulary Remote Sensing Segmentation | 待翻译 | [arXiv 2611.28112v1](https://arxiv.org/abs/2611.28112v1) |
+| 2026-11-25 | ROSE-SAM3: Response-Oriented Prompt Selection for Open-Vocabulary Remote Sensing Segmentation | ROSE-SAM3：面向开放词汇遥感分割的响应导向提示选择 | [arXiv 2611.28112v1](https://arxiv.org/abs/2611.28112v1) |
 | 2026-11-25 | Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique | 循环离散扩散：一种新颖的多类分割细化技术 | [arXiv 2611.28107v1](https://arxiv.org/abs/2611.28107v1) |
 | 2026-11-25 | GEG-SAM: Gaze Exploration-Guided Segment Anything Model for Weakly Supervised Polyp Segmentation | GEG-SAM: 注视探索引导的弱监督息肉分割分割一切模型 | [arXiv 2611.27183v1](https://arxiv.org/abs/2611.27183v1) |
 | 2026-11-25 | Towards Text-Mask Consistency in Medical Image Segmentation | 面向医学图像分割中的文本-掩码一致性 | [arXiv 2611.27050v1](https://arxiv.org/abs/2611.27050v1) |
