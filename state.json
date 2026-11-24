@@ -18663,11 +18663,8 @@
         "version_id": "2611.30016v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-24T17:08:03.065917+00:00",
-        "run_id": "20261124T170803Z-95597b5d",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "ReplaySAM：基于 SAM 2 的零样本 3D 粒子堆分割",
       "versions": [
         "2611.30016v1"
       ]
