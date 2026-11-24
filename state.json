@@ -16971,7 +16971,9 @@
       ]
     },
     "2611.27050": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
@@ -16990,6 +16992,61 @@
         "published": "2026-11-20T03:19:25+00:00",
         "title": "Towards Text-Mask Consistency in Medical Image Segmentation",
         "updated": "2026-11-20T03:19:25+00:00",
+        "version_id": "2611.27050v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "clinical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "lesion"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.27050v1"
       },
       "rule_hits": [
@@ -17051,6 +17108,11 @@
         "version_id": "2611.27050v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-24T17:08:03.065917+00:00",
+        "run_id": "20261124T170803Z-95597b5d",
+        "stage": "selection"
+      },
       "versions": [
         "2611.27050v1"
       ]
