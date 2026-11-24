@@ -4616,9 +4616,16 @@
       "content_hash": "8d6ff85aa088d6ac7ad8e426906bf48ed10230d9ca729d981a597bbc2fd1f815",
       "created_at": "2026-11-24T17:08:03.065917+00:00",
       "day": "2026-11-25",
+      "delivery": {
+        "detail": "wechat_status",
+        "polls": 1,
+        "pushid": "70631662",
+        "status": "confirmed"
+      },
       "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "empty": false,
       "feedback_url": "https://github.com/KinokoY/ArxivDaily/issues/7",
+      "finished_at": "2026-11-24T17:17:57.441964+00:00",
       "items": [
         {
           "modules": [
@@ -5226,7 +5233,7 @@
       },
       "run_id": "20261124T170803Z-95597b5d",
       "schema_version": 1,
-      "status": "sending"
+      "status": "confirmed"
     }
   },
   "feedback": {
@@ -18010,7 +18017,6 @@
       ]
     },
     "2611.27050": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -18047,7 +18053,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -18072,7 +18078,6 @@
         "updated": "2026-11-20T03:19:25+00:00",
         "version_id": "2611.27050v1"
       },
-      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -18198,7 +18203,7 @@
         "source": "matched",
         "version_id": "2611.27050v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "面向医学图像分割中的文本-掩码一致性",
       "translation": {
         "abstract_zh": "用于医学图像分割的视觉-语言模型常常产生与伴随文本相冲突的掩码，尤其是在多部位/多病灶描述下。我们将这一失败归因于两个因素：(i) 高度模板化且重复的临床语言导致一对一的硬对比学习产生大量假阴性，削弱了跨模态对齐；(ii) 以视觉驱动为主、单向的交叉注意力缺乏语言主导且具有空间感知的通路，阻碍了文本语义向空间视觉域的有效注入。为此，我们提出一致性增强的两阶段分割（C2Seg）。在预训练阶段，聚类感知对比学习使用冻结的强基线构建批内文本相似度矩阵作为软标签，从而缓解假阴性冲突并产生更具判别性的视觉表示。在融合阶段，我们引入双向互补注意力模块，其中每个模态沿自身路径主导注意力，促进视觉与文本表示之间的深度交互和结构一致性。为了增强多模态特征的表达能力，我们进一步采用基于KAN的注意力门控。在不更新语言编码器的情况下，我们的方法在四个公开医学影像数据集上显著提高了文本-掩码一致性和分割准确率。源代码可在 https://github.com/JGuiidev/C2Seg 获取。",
@@ -18211,7 +18216,6 @@
       ]
     },
     "2611.27183": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -18248,7 +18252,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -18279,7 +18283,6 @@
         "updated": "2026-11-20T06:15:49+00:00",
         "version_id": "2611.27183v1"
       },
-      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -18537,7 +18540,7 @@
         "source": "matched",
         "version_id": "2611.27183v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "GEG-SAM: 注视探索引导的弱监督息肉分割分割一切模型",
       "translation": {
         "abstract_zh": "内镜医师的注视记录了常规临床检查中以病变为导向的视觉探索过程，是一种无干扰获取的记录，可为相关任务提供监督信息。然而，现有方法将注视点视为与目标直接相关的孤立空间提示，忽视了自然注视记录的是一个连续的视觉搜索过程，其中注视点在时间上相互连接、在空间上有组织，并与视觉内容耦合。仅基于每个注视点的局部视觉内容独立解释每个注视点，会忽略注视轨迹的时间演变和空间组织；而仅建模注视点之间的关系，又无法揭示其所关注区域的视觉语义。为此，我们提出了注视探索引导的分割一切模型（GEG-SAM），这是一个有原则的弱监督框架，旨在显式利用结构化的注视关系及其对应的视觉线索来调节SAM以进行息肉分割。具体而言，GEG-SAM通过建模注视探索的时间动态和空间拓扑来捕捉结构化的注视关系。然后，它将这些关系表示与注视点对齐的视觉上下文相关联，以推导出注视条件令牌，并将其进一步注入冻结的SAM编码器以调节其预训练图像特征。通过这种方式，GEG-SAM有效地利用了注视探索中嵌入的丰富信息，引导SAM面向病变进行分割。在五个公开息肉分割数据集上的大量实验证明了我们方法的有效性，与最强的弱监督基线相比，平均Dice提高了9.30个百分点。",
@@ -18550,7 +18553,6 @@
       ]
     },
     "2611.28107": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -18587,7 +18589,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -18611,7 +18613,6 @@
         "updated": "2026-11-17T20:30:09+00:00",
         "version_id": "2611.28107v1"
       },
-      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -18711,7 +18712,7 @@
         "source": "matched",
         "version_id": "2611.28107v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "循环离散扩散：一种新颖的多类分割细化技术",
       "translation": {
         "abstract_zh": "我们将图像分割细化建模为一个离散扩散过程。为解决该任务，我们引入了循环离散扩散（CDD），一种新颖的前向-反向公式，具有循环标签拓扑，可将离散标签集映射到均匀分布并映射回来。与连续扩散中注入高斯噪声不同，CDD通过标签跳跃演化分割掩码：在每一步，每个像素要么保持在其当前类别，要么以固定速率跳到下一个标签。这种跳跃或保持机制定义了一个具有有界前向和反向步骤的有限状态马尔可夫过程，具有解析一致且易于处理的反向动力学。CDD原生运行于多类标签空间，能够在单次传递中联合细化所有类别，而无需像先前二值细化方法中通常需要的那样进行逐类分解。所提出的公式允许有限且可控的细化步骤数，我们通过谱隙分析分析了其收敛性质。我们在多种分割任务上评估了CDD，包括多类语义、实例级和二值分割细化。我们的方法在多个骨干网络和数据集上一致地提升了区域准确性和边界质量。",
@@ -19068,7 +19069,6 @@
       ]
     },
     "2611.29146": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -19103,7 +19103,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -19130,7 +19130,6 @@
         "updated": "2026-11-22T01:59:22+00:00",
         "version_id": "2611.29146v1"
       },
-      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -19240,7 +19239,7 @@
         "source": "matched",
         "version_id": "2611.29146v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "RVLM：更少词元，更好的分辨率扩展，细粒度空间定位",
       "translation": {
         "abstract_zh": "视觉语言模型（VLM）使用固定空间网格对图像进行词元化，因此视觉词元数量随像素面积而非场景内容增长。我们提出根据相邻图块的视觉外观对其进行分组，使词元能够表示连贯的图像区域而非固定空间窗口。我们引入 RVLM，一种训练使用区域而非图块作为视觉单元的 VLM。分析通用 VLM 的区域构建，我们发现区域必须覆盖完整图像、在端到端训练期间保持空间连通，并保留小文本等精细结构，而语义分组作用甚微。因此，RVLM 使用无需训练的 Felzenszwalb-Huttenlocher 分割对图像进行划分，将每个 ViT 图块分配给一个区域，并将每个区域内的图块池化为可变长度的视觉词元序列。图块到区域的分配被保留，以通过由粗到细的解码支持空间精确预测。在涵盖 VQA、指向、计数、分割和深度估计的任务中，RVLM 在比同等训练的图块基线少用 21.5% 视觉词元的同时，匹配或提升了按示例加权的任务性能。该优势随图像分辨率提高而增长，在最高分辨率设置下达到 5.3 分的提升，同时少用 51.8% 的视觉词元。增益在空间要求高的任务上最大，而先前词元缩减方法在这些任务上退化最严重。RVLM 不增加模型参数，并将推理吞吐量提升多达 35.9%。在未见过的病理和卫星图像上，以及在没有任何视频训练的视频基准上，RVLM 在少用 2-3 倍视觉词元的同时，性能与图块基线相当。这些结果确立了区域作为基于图块的视觉表示的可扩展替代方案，同时保留了接地预测所需的空间精度。",
@@ -19413,7 +19412,6 @@
       ]
     },
     "2611.29896": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -19450,7 +19448,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -19475,7 +19473,6 @@
         "updated": "2026-11-23T01:51:09+00:00",
         "version_id": "2611.29896v1"
       },
-      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -19569,7 +19566,7 @@
         "source": "matched",
         "version_id": "2611.29896v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "通过视觉演示实现上下文中的分割一切",
       "translation": {
         "abstract_zh": "我们提出了通过视觉演示的分割一切模型（SAYD），一个用于上下文分割的基础模型。给定包含提示图像及其分割掩码的视觉演示，SAYD 通过在提示与查询之间建立视觉对应关系，在查询图像中分割出连贯区域（例如对象或其部分）。SAYD 能够泛化到此前未见的场景分割任务，包括那些需要默会视觉知识或涉及难以用语言明确表述的概念的任务。我们使用所提出的技术，在最初为全景分割整理的 12 个公开数据集上训练 SAYD，这些技术包括用于提示无关掩码生成的轻量级掩码解码器，以及用于识别提示中未出现的新查询类别的学习机制。这些创新提升了计算效率和域外泛化能力。因此，在涵盖自然、生物、生态、宇宙学、医学、病理学和卫星影像的 24 个域外基准上，SAYD 显著优于现有的上下文分割和开放词汇分割方法。",
@@ -19775,7 +19772,6 @@
       ]
     },
     "2611.30240": {
-      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -19814,7 +19810,7 @@
           "kind": "normal",
           "recovery_of": "",
           "rendered": "rendered_inline_translation",
-          "status": "sending",
+          "status": "confirmed",
           "tier": "translation"
         }
       ],
@@ -19845,7 +19841,6 @@
         "updated": "2026-11-23T08:06:40+00:00",
         "version_id": "2611.30240v1"
       },
-      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -19967,7 +19962,7 @@
         "source": "matched",
         "version_id": "2611.30240v1"
       },
-      "stage": "ready",
+      "stage": "delivered",
       "title_zh": "TriSegAgent：基于三平面的上下文高效三维标注多模态大语言模型智能体",
       "translation": {
         "abstract_zh": "交互式分割模型能够将少量点击转化为跨域的分割预测，因此标注者只需决定预测在何处仍需修正。于是标注变成“检查预测并再次点击”的循环。该循环的每一步都是视觉判断，适合通用多模态大语言模型（MLLM）智能体。在本工作中，我们聚焦于让这类智能体在三维体数据上运行该循环。然而，此类智能体中的 MLLM 仅接受二维图像作为输入，因此智能体必须以二维方式观察三维体数据。由于该循环会多次调用 MLLM，这种观察必须在 token 上足够紧凑，以使每次调用都保持低成本，同时又包含足够信息以显示三维预测中的错误区域。我们通过三平面（在体数据中相交于一点的三张正交平面）同时满足这两项需求。我们从理论和实证两方面表明，三平面在上下文上高效，同时保留足够细节以显示三维预测中的错误区域。基于三平面，我们提出 TriSegAgent，一个迭代细化三维预测的 MLLM 智能体。在该智能体内，MLLM 仅在三平面上判断预测，而视觉执行框架将每次判断转化为代码中的三维动作。为使循环可靠，该框架将每次点击放置在体数据中的精确体素上，并检查是否接受三维预测。为评估该智能体，我们构建了一个多样化基准，包含来自 35 个公开医学数据集、涵盖三种成像模态的 690 个感兴趣区域（ROI）。使用前沿 MLLM 时，TriSegAgent 的总体 Dice 比最强基线高出约 10 个点，且在小于 3 cm 的目标上领先幅度更大。使用 flash 级 MLLM 时，它优于近期一个基于前沿 MLLM 构建的三维分割智能体。",
