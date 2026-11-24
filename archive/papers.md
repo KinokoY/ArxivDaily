@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 2026-11-25 | TriSegAgent: Context-Efficient 3D Annotation with MLLMs via Tri-Planes | TriSegAgent：基于三平面的上下文高效三维标注多模态大语言模型智能体 | [arXiv 2611.30240v1](https://arxiv.org/abs/2611.30240v1) |
 | 2026-11-25 | ReplaySAM: Zero-Shot 3D Particle-Pack Segmentation with SAM 2 | 待翻译 | [arXiv 2611.30016v1](https://arxiv.org/abs/2611.30016v1) |
-| 2026-11-25 | Segment Anything In-Context via Visual Demonstrations | 待翻译 | [arXiv 2611.29896v1](https://arxiv.org/abs/2611.29896v1) |
+| 2026-11-25 | Segment Anything In-Context via Visual Demonstrations | 通过视觉演示实现上下文中的分割一切 | [arXiv 2611.29896v1](https://arxiv.org/abs/2611.29896v1) |
 | 2026-11-25 | One-shot is Enough: Boosting SAM for Medical Image Segmentation through Structured Information Modeling | 待翻译 | [arXiv 2611.29278v1](https://arxiv.org/abs/2611.29278v1) |
 | 2026-11-25 | RVLM: Fewer Tokens, Better Resolution Scaling, Fine-Grained Spatial Grounding | 待翻译 | [arXiv 2611.29146v1](https://arxiv.org/abs/2611.29146v1) |
 | 2026-11-25 | GlaucomaMarker - Biomarker-Grounded Glaucoma Vision-Language Model | 待翻译 | [arXiv 2611.28332v1](https://arxiv.org/abs/2611.28332v1) |
