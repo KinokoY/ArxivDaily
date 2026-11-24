@@ -12,7 +12,7 @@
 | 2026-11-25 | GlaucomaMarker - Biomarker-Grounded Glaucoma Vision-Language Model | 待翻译 | [arXiv 2611.28332v1](https://arxiv.org/abs/2611.28332v1) |
 | 2026-11-25 | ROSE-SAM3: Response-Oriented Prompt Selection for Open-Vocabulary Remote Sensing Segmentation | 待翻译 | [arXiv 2611.28112v1](https://arxiv.org/abs/2611.28112v1) |
 | 2026-11-25 | Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique | 待翻译 | [arXiv 2611.28107v1](https://arxiv.org/abs/2611.28107v1) |
-| 2026-11-25 | GEG-SAM: Gaze Exploration-Guided Segment Anything Model for Weakly Supervised Polyp Segmentation | 待翻译 | [arXiv 2611.27183v1](https://arxiv.org/abs/2611.27183v1) |
+| 2026-11-25 | GEG-SAM: Gaze Exploration-Guided Segment Anything Model for Weakly Supervised Polyp Segmentation | GEG-SAM: 注视探索引导的弱监督息肉分割分割一切模型 | [arXiv 2611.27183v1](https://arxiv.org/abs/2611.27183v1) |
 | 2026-11-25 | Towards Text-Mask Consistency in Medical Image Segmentation | 待翻译 | [arXiv 2611.27050v1](https://arxiv.org/abs/2611.27050v1) |
 | 2026-11-20 | SAM 3 Sees More Than It Detects: Promptable Concept Maps Beyond Categories | SAM 3 所见多于所检：超越类别的可提示概念图 | [arXiv 2611.25747v1](https://arxiv.org/abs/2611.25747v1) |
 | 2026-11-20 | SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale | SegAnyFruit：学习可泛化且可边缘部署的大规模水果实例分割 | [arXiv 2611.25475v1](https://arxiv.org/abs/2611.25475v1) |
