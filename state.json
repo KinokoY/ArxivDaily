@@ -17674,9 +17674,28 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We present ReplaySAM, which adapts the pretrained Segment Anything Model 2 (SAM2) to three-dimensional particle-pack segmentation without additional training.",
+          "ReplaySAM thus provides a training-free framework for 3D particle-pack instance segmentation, with geometry-based prompting that eliminates manual prompt placement."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文将预训练 SAM2 以无需训练的方式适配到三维颗粒堆积实例分割，核心是几何点提示与正交切片预测融合，并非医学影像推理分割、隐含请求/空间推理到像素掩码机制，也未提出 DPO、RL 或具有理论依据与迁移证据的优化目标。规则命中的 transferable_objective 在摘要中没有对应的方法或理论贡献支撑。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 8,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": []
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "X-ray computed tomography (XCT) provides non-destructive three-dimensional (3D) images of particle packs, making their internal structure accessible for quantitative analysis. Extracting particle-level measurements from these volumes first requires identifying and separating individual particles, a task that remains challenging in dense, irregular packs. Existing workflows often require manual correction or task-specific training, while promptable models need a strategy for automatically locating individual particles and recovering their instance masks. We present ReplaySAM, which adapts the pretrained Segment Anything Model 2 (SAM2) to three-dimensional particle-pack segmentation without additional training. It generates point prompts from foreground geometry and fuses SAM2 predictions across orthogonal slice sequences to recover particle instances. On XCT volumes of real quartz and iron-ore particle packs, ReplaySAM achieves higher mean instance Dice scores than expert-assisted watershed and nnInteractive under the evaluated protocols. ReplaySAM thus provides a training-free framework for 3D particle-pack instance segmentation, with geometry-based prompting that eliminates manual prompt placement.",
         "authors": [
@@ -17758,6 +17777,7 @@
         "source": "matched",
         "version_id": "2611.30016v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -17824,12 +17844,7 @@
         "source": "matched",
         "version_id": "2611.30016v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-24T17:08:03.065917+00:00",
-        "run_id": "20261124T170803Z-95597b5d",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.30016v1"
       ]
