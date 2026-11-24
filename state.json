@@ -17169,6 +17169,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Endoscopist gaze offers an unobtrusively acquired record of lesion-oriented visual exploration during routine clinical inspection, providing relevant supervision for tasks. However, existing methods treat fixations as isolated spatial prompts directly associated with the target, overlooking the fact that natural gaze records a continuous visual search process in which fixations are temporally connected, spatially organized, and coupled with the visual content. Interpreting each fixation independently based only on its local visual content overlooks the temporal evolution and spatial organization of the gaze trajectory, whereas modeling relations among fixations alone cannot reveal the visual semantics of the regions they attend to. To this end, we propose the Gaze Exploration-Guided Segment Anything Model (GEG-SAM), a principled weakly supervised framework designed to explicitly exploit structured gaze relations and their corresponding visual cues to modulate SAM for polyp segmentation. Specifically, GEG-SAM captures structured gaze relations by modeling the temporal dynamics and spatial topology of gaze exploration. It then associates these relational representations with fixation-aligned visual context to derive gaze-conditioned tokens, which are further injected into the frozen SAM encoder to modulate its pretrained image features. In this way, GEG-SAM effectively exploits the rich information embedded in gaze exploration to guide SAM toward lesion-oriented segmentation. Extensive experiments on five public polyp segmentation datasets demonstrate the effectiveness of our approach, improving the mean Dice by 9.30 percentage points over the strongest weakly supervised baseline.",
@@ -17193,6 +17194,18 @@
         "updated": "2026-11-20T06:15:49+00:00",
         "version_id": "2611.27183v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -17438,7 +17451,7 @@
         "source": "matched",
         "version_id": "2611.27183v1"
       },
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2611.27183v1"
       ]
@@ -17773,6 +17786,17 @@
         "updated": "2026-11-20T21:30:30+00:00",
         "version_id": "2611.28332v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "medical_reasoning"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
