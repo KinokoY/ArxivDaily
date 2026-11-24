@@ -4,6 +4,16 @@
 
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
+| 2026-11-25 | TriSegAgent: Context-Efficient 3D Annotation with MLLMs via Tri-Planes | 待翻译 | [arXiv 2611.30240v1](https://arxiv.org/abs/2611.30240v1) |
+| 2026-11-25 | ReplaySAM: Zero-Shot 3D Particle-Pack Segmentation with SAM 2 | 待翻译 | [arXiv 2611.30016v1](https://arxiv.org/abs/2611.30016v1) |
+| 2026-11-25 | Segment Anything In-Context via Visual Demonstrations | 待翻译 | [arXiv 2611.29896v1](https://arxiv.org/abs/2611.29896v1) |
+| 2026-11-25 | One-shot is Enough: Boosting SAM for Medical Image Segmentation through Structured Information Modeling | 待翻译 | [arXiv 2611.29278v1](https://arxiv.org/abs/2611.29278v1) |
+| 2026-11-25 | RVLM: Fewer Tokens, Better Resolution Scaling, Fine-Grained Spatial Grounding | 待翻译 | [arXiv 2611.29146v1](https://arxiv.org/abs/2611.29146v1) |
+| 2026-11-25 | GlaucomaMarker - Biomarker-Grounded Glaucoma Vision-Language Model | 待翻译 | [arXiv 2611.28332v1](https://arxiv.org/abs/2611.28332v1) |
+| 2026-11-25 | ROSE-SAM3: Response-Oriented Prompt Selection for Open-Vocabulary Remote Sensing Segmentation | 待翻译 | [arXiv 2611.28112v1](https://arxiv.org/abs/2611.28112v1) |
+| 2026-11-25 | Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique | 待翻译 | [arXiv 2611.28107v1](https://arxiv.org/abs/2611.28107v1) |
+| 2026-11-25 | GEG-SAM: Gaze Exploration-Guided Segment Anything Model for Weakly Supervised Polyp Segmentation | 待翻译 | [arXiv 2611.27183v1](https://arxiv.org/abs/2611.27183v1) |
+| 2026-11-25 | Towards Text-Mask Consistency in Medical Image Segmentation | 待翻译 | [arXiv 2611.27050v1](https://arxiv.org/abs/2611.27050v1) |
 | 2026-11-20 | SAM 3 Sees More Than It Detects: Promptable Concept Maps Beyond Categories | SAM 3 所见多于所检：超越类别的可提示概念图 | [arXiv 2611.25747v1](https://arxiv.org/abs/2611.25747v1) |
 | 2026-11-20 | SegAnyFruit: Learning Generalizable and Edge Deployable Fruit Instance Segmentation at Scale | SegAnyFruit：学习可泛化且可边缘部署的大规模水果实例分割 | [arXiv 2611.25475v1](https://arxiv.org/abs/2611.25475v1) |
 | 2026-11-20 | A Unified Framework for Image Manipulation Localization Under Multi-Type Weak Supervision | 多类型弱监督下图像篡改定位的统一框架 | [arXiv 2611.25371v1](https://arxiv.org/abs/2611.25371v1) |

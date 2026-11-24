@@ -187,7 +187,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-22T14:14:54.965441+00:00"
+    "last_complete_end": "2026-11-24T17:08:03.065917+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -16969,6 +16969,889 @@
       "versions": [
         "2611.25747v1"
       ]
+    },
+    "2611.27050": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "Vision-language models for medical image segmentation often produce masks that conflict with the accompanying text, especially under multi-site/multi-lesion descriptions. We trace this failure to two factors: (i) highly templated and repetitive clinical language causes one-to-one hard contrastive learning to yield numerous false negatives, weakening cross-modal alignment; and (ii) predominantly vision-driven, one-way cross-attention lacks a language-dominant, spatially aware pathway, hindering effective injection of textual semantics into the spatial visual domain. To this end, we propose Consistency-enhanced Two-stage Segmentation (C2Seg). In the pretraining stage, Cluster-aware Contrastive Learning uses a frozen strong baseline to construct an intra-batch text similarity matrix as soft labels, thereby alleviating false negative conflicts and producing more discriminative visual representations. In the fusion stage, we introduce a Bidirectional Complementary Attention Module, where each modality dominates attention along its own path, fostering deep interaction and structural consistency between visual and textual representations. In order to enhance the expressive power of multimodal features, we further adopt KAN-based Attention Gating. Without updating the language encoder, our approach significantly improves text-mask consistency and segmentation accuracy on four public medical imaging datasets. The source code is available at https://github.com/JGuiidev/C2Seg.",
+        "authors": [
+          "Jie Gui",
+          "Hang Tu",
+          "Wen Sha",
+          "Xiuquan Du"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.27050v1",
+        "published": "2026-11-20T03:19:25+00:00",
+        "title": "Towards Text-Mask Consistency in Medical Image Segmentation",
+        "updated": "2026-11-20T03:19:25+00:00",
+        "version_id": "2611.27050v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "clinical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "lesion"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.27050v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.27050v1"
+      ]
+    },
+    "2611.27183": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "Endoscopist gaze offers an unobtrusively acquired record of lesion-oriented visual exploration during routine clinical inspection, providing relevant supervision for tasks. However, existing methods treat fixations as isolated spatial prompts directly associated with the target, overlooking the fact that natural gaze records a continuous visual search process in which fixations are temporally connected, spatially organized, and coupled with the visual content. Interpreting each fixation independently based only on its local visual content overlooks the temporal evolution and spatial organization of the gaze trajectory, whereas modeling relations among fixations alone cannot reveal the visual semantics of the regions they attend to. To this end, we propose the Gaze Exploration-Guided Segment Anything Model (GEG-SAM), a principled weakly supervised framework designed to explicitly exploit structured gaze relations and their corresponding visual cues to modulate SAM for polyp segmentation. Specifically, GEG-SAM captures structured gaze relations by modeling the temporal dynamics and spatial topology of gaze exploration. It then associates these relational representations with fixation-aligned visual context to derive gaze-conditioned tokens, which are further injected into the frozen SAM encoder to modulate its pretrained image features. In this way, GEG-SAM effectively exploits the rich information embedded in gaze exploration to guide SAM toward lesion-oriented segmentation. Extensive experiments on five public polyp segmentation datasets demonstrate the effectiveness of our approach, improving the mean Dice by 9.30 percentage points over the strongest weakly supervised baseline.",
+        "authors": [
+          "Ao Wang",
+          "Lei Zhang",
+          "Lituan Wang",
+          "Zhenwei Zhang",
+          "Xiangbao Gong",
+          "Zhiyi Zhang",
+          "Shunyao Wang",
+          "Xianglei Yuan",
+          "Zizhou Wang"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.27183v1",
+        "published": "2026-11-20T06:15:49+00:00",
+        "title": "GEG-SAM: Gaze Exploration-Guided Segment Anything Model for Weakly Supervised Polyp Segmentation",
+        "updated": "2026-11-20T06:15:49+00:00",
+        "version_id": "2611.27183v1"
+      },
+      "rule_hits": [
+        "medical_objective",
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "SAM",
+              "OBJECTIVE"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "clinical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "lesion"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "polyp"
+                }
+              ],
+              "OBJECTIVE": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "topology"
+                }
+              ],
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "medical_objective"
+          },
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.27183v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.27183v1"
+      ]
+    },
+    "2611.28107": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "We cast image segmentation refinement as a discrete diffusion process. To solve this task we introduce Cyclic Discrete Diffusion (CDD), a novel forward-reverse formulation with a cyclic label topology that maps a discrete label set to the uniform distribution and back. Instead of injecting Gaussian noise as is done for continuous diffusion, CDD evolves segmentation masks through label jumps: at each step, every pixel either remains in its current class or jumps to the next label with a fixed rate. This jump-or-stay mechanism defines a finite-state Markov process with bounded forward and reverse steps, featuring analytically consistent and tractable reverse dynamics. CDD operates natively in a multi-class label space, enabling joint refinement of all classes in a single pass without requiring class-wise decomposition, as commonly needed in prior binary refinement approaches. The proposed formulation admits a finite and controllable number of refinement steps, for which we analyze the convergence properties through spectral gap analysis. We evaluate CDD across diverse segmentation tasks, including multi-class semantic, instance-level, and binary segmentation refinement. Our method consistently improves both region accuracy and boundary quality across multiple backbones and datasets.",
+        "authors": [
+          "Libo Chen",
+          "Souvik Ghosh",
+          "Vinay P. Namboodiri"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.28107v1",
+        "published": "2026-11-17T20:30:09+00:00",
+        "title": "Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique",
+        "updated": "2026-11-17T20:30:09+00:00",
+        "version_id": "2611.28107v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "OBJECTIVE",
+              "THEORY_HINT"
+            ],
+            "keywords": {
+              "OBJECTIVE": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "topology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "THEORY_HINT": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "convergence"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.28107v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.28107v1"
+      ]
+    },
+    "2611.28112": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "In open-vocabulary semantic segmentation (OVSS) of remote-sensing imagery, class-name prompts can miss objects with varied appearances, while richer descriptions can activate competing classes. We propose Response-Oriented Prompt Selection for SAM 3 (ROSE-SAM3), a training-free framework that selects descriptions using frozen SAM 3 responses on unlabeled target-domain images. We screen candidate descriptions for coverage beyond the native prompts while protecting reliable native class responses, retaining candidates that pass these checks on at least four of five image folds. An offline directed acyclic graph (DAG) search then evaluates candidate combinations and builds a compact PromptBank for each class. Each bank retains the native prompts and adds selected descriptions, which we call residual prompts. At inference, the bank is fixed, and Semantic-Instance Cooperative Head (SICH) uses instance evidence to refine semantic responses before assigning pixel labels. We also introduce RS-OVSS-C to evaluate robustness under six image corruption families across eight remote-sensing datasets, preserving their class vocabularies and reference labels. ROSE-SAM3 achieves 57.3% mean mIoU across eight clean benchmarks and 54.7% on RS-OVSS-C, achieving state-of-the-art performance among training-free methods. The code is publicly available at https://github.com/YanghuiSong/ROSE-SAM3.",
+        "authors": [
+          "Yanghui Song",
+          "Chengfu Yang",
+          "Yongpeng Wen",
+          "Zhanxuan Hu",
+          "Wei Lu",
+          "Qi Ming",
+          "Nanqing Liu",
+          "Heng-Chao Li"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.28112v1",
+        "published": "2026-11-18T03:58:29+00:00",
+        "title": "ROSE-SAM3: Response-Oriented Prompt Selection for Open-Vocabulary Remote Sensing Segmentation",
+        "updated": "2026-11-18T03:58:29+00:00",
+        "version_id": "2611.28112v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "semantic segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.28112v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.28112v1"
+      ]
+    },
+    "2611.28332": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "Glaucoma is a leading cause of irreversible blindness. In the current clinical setting, glaucoma diagnosis is generally conducted by assessing optic disc cupping and asymmetry. Vision-language models (VLMs) have been utilized in recent years for glaucoma, mostly trained on fixed templates or AI-generated captions, as no public text describes the biomarkers. Our proposed framework, GlaucomaMarker, hypothesizes that retinal structural biomarkers can ground glaucoma-based VLMs. It converts public segmentation masks into sentences describing eleven biomarkers, to teach retinal foundation models to read them. We applied this framework to RETFound (GlaucomaMarker-R) and FLAIR (GlaucomaMarker-F), training on 9,778 images that yielded 45,190 image-text pairs. On a real-world clinical cohort, GlaucomaMarker-F detects glaucoma with an AUROC of 0.905, against 0.848 for FLAIR, and both read the biomarkers where baselines stay near random guessing. Since the biomarker text is computed from existing masks, it comes at no extra cost.",
+        "authors": [
+          "Ahammed Sakir Nabil",
+          "Sadia Siraz",
+          "Nikita Chincholkar",
+          "Atalie C. Thompson",
+          "Jason Xiao",
+          "Theodore Leng",
+          "Jennifer I. Lim",
+          "Minhaj Nur Alam"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.28332v1",
+        "published": "2026-11-20T21:30:30+00:00",
+        "title": "GlaucomaMarker - Biomarker-Grounded Glaucoma Vision-Language Model",
+        "updated": "2026-11-20T21:30:30+00:00",
+        "version_id": "2611.28332v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "clinical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "retinal"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "title"
+                  ],
+                  "keyword": "vision-language model"
+                },
+                {
+                  "fields": [
+                    "title"
+                  ],
+                  "keyword": "vision language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.28332v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.28332v1"
+      ]
+    },
+    "2611.29146": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "Vision-Language Models (VLMs) tokenize images using fixed spatial grids, so visual token count grows with pixel area rather than scene content. We propose to group neighboring patches based on their visual appearance, allowing tokens to represent coherent image regions rather than fixed spatial windows. We introduce RVLM, a VLM trained to use regions rather than patches as its visual units. Analyzing region construction for general-purpose VLMs, we find that regions must cover the full image, stay spatially connected during end-to-end training, and preserve fine structure such as small text, while semantic grouping adds little. RVLM therefore partitions images using training-free Felzenszwalb-Huttenlocher segmentation, assigns each ViT patch to a region, and pools patches within each region into a variable-length sequence of visual tokens. The patch-to-region assignment is retained to support spatially precise prediction through coarse-to-fine decoding. Across tasks spanning VQA, pointing, counting, segmentation, and depth estimation, RVLM matches or improves example-weighted task performance while using 21.5% fewer visual tokens than an identically trained patch baseline. The advantage grows with image resolution, reaching a 5.3-point gain while using 51.8% fewer visual tokens at the highest-resolution setting. The gains are largest on spatially demanding tasks, where prior token-reduction methods degrade most sharply. RVLM adds no model parameters and improves inference throughput by up to 35.9%. On unseen pathology and satellite images and on video benchmarks without any video training, RVLM performs on par with the patch baseline while using 2-3$\\times$ fewer visual tokens. These results establish regions as a scalable alternative to patch-based visual representations while preserving the spatial precision required for grounded prediction.",
+        "authors": [
+          "Savya Khosla",
+          "Chris Dongjoo Kim",
+          "Alex Schwing",
+          "Derek Hoiem",
+          "Christopher Clark",
+          "Sangho Lee"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.29146v1",
+        "published": "2026-11-22T01:59:22+00:00",
+        "title": "RVLM: Fewer Tokens, Better Resolution Scaling, Fine-Grained Spatial Grounding",
+        "updated": "2026-11-22T01:59:22+00:00",
+        "version_id": "2611.29146v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "pathology"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "vision-language models"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "VLM"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.29146v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.29146v1"
+      ]
+    },
+    "2611.29278": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "In recent years, Foundation models such as the Segment Anything Model (SAM) have demonstrated strong generalization capabilities, but because they are primarily pre-trained on natural images, they perform poorly when faced with medical images. With sufficient labeled medical data, this challenge is somewhat alleviated. However, the difficulty and high cost of acquiring large amounts of labeled data make one-shot learning a highly attractive research paradigm. But within this paradigm, SAM struggles to fully extract its potential multi-granular information, leading to a sharp decline in performance. To address this, we propose OB-SAM, a one-shot enhancement framework for medical image segmentation. It aims to maximize the utilization of information from a single sample from the perspective of structured modeling. Specifically, we first designed a Multi-Frequency Decoupling (MFD) module, which divides features into different frequency domain components, allowing each branch to focus on information expression at different semantic levels, thereby alleviating overfitting and enhancing feature representation capabilities. Secondly, we introduce a Progressive Feature Integrator (PFI) module to promote complementary fusion among multi-level features, thereby avoiding the dominant effect of a certain level of feature in the fusion process. Furthermore, we propose an Selective Context Filtering (SCF) Module that adaptively selects key contextual information by modeling the contrast relationship between the foreground and background, thereby achieving precise localization of the lesion area. Extensive experiments across seven diverse datasets validate that OB-SAM achieves state-of-the-art performance.",
+        "authors": [
+          "Guilin Guan"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.29278v1",
+        "published": "2026-11-22T06:55:43+00:00",
+        "title": "One-shot is Enough: Boosting SAM for Medical Image Segmentation through Structured Information Modeling",
+        "updated": "2026-11-22T06:55:43+00:00",
+        "version_id": "2611.29278v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.29278v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.29278v1"
+      ]
+    },
+    "2611.29896": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "We present the Segment Anything Model via Visual Demonstrations (SAYD), a foundation model for in-context segmentation. Given visual demos comprising prompt images and their segmentation masks, SAYD segments coherent regions (e.g., objects or their parts) in a query image by establishing visual correspondences between the prompts and the query. SAYD generalizes to previously-unseen segmentation tasks, including those requiring tacit visual knowledge or involving concepts that are difficult to articulate unambiguously in language. We train SAYD on 12 public datasets originally curated for panoptic segmentation using our proposed techniques, including a lightweight mask decoder for prompt-agnostic mask generation and a learning mechanism for recognizing novel query classes absent in the prompts. These innovations enhance both computational efficiency and out-of-domain generalization. Consequently, SAYD significantly outperforms existing methods of in-context segmentation and open-vocabulary segmentation across 24 out-of-domain benchmarks, spanning natural, biological, ecological, cosmological, medical, pathological, and satellite imagery.",
+        "authors": [
+          "Yuzhu Wang",
+          "Manni Duan",
+          "Hongliang Ye",
+          "Shu Kong"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.29896v1",
+        "published": "2026-11-23T01:51:09+00:00",
+        "title": "Segment Anything In-Context via Visual Demonstrations",
+        "updated": "2026-11-23T01:51:09+00:00",
+        "version_id": "2611.29896v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.29896v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.29896v1"
+      ]
+    },
+    "2611.30016": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "X-ray computed tomography (XCT) provides non-destructive three-dimensional (3D) images of particle packs, making their internal structure accessible for quantitative analysis. Extracting particle-level measurements from these volumes first requires identifying and separating individual particles, a task that remains challenging in dense, irregular packs. Existing workflows often require manual correction or task-specific training, while promptable models need a strategy for automatically locating individual particles and recovering their instance masks. We present ReplaySAM, which adapts the pretrained Segment Anything Model 2 (SAM2) to three-dimensional particle-pack segmentation without additional training. It generates point prompts from foreground geometry and fuses SAM2 predictions across orthogonal slice sequences to recover particle instances. On XCT volumes of real quartz and iron-ore particle packs, ReplaySAM achieves higher mean instance Dice scores than expert-assisted watershed and nnInteractive under the evaluated protocols. ReplaySAM thus provides a training-free framework for 3D particle-pack instance segmentation, with geometry-based prompting that eliminates manual prompt placement.",
+        "authors": [
+          "Bogong Wang",
+          "Yulai Zhang",
+          "Philipp D. Lösel",
+          "Andrew Kingston",
+          "Mark Knackstedt"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.30016v1",
+        "published": "2026-11-23T04:18:37+00:00",
+        "title": "ReplaySAM: Zero-Shot 3D Particle-Pack Segmentation with SAM 2",
+        "updated": "2026-11-23T04:18:37+00:00",
+        "version_id": "2611.30016v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM2"
+                },
+                {
+                  "fields": [
+                    "title"
+                  ],
+                  "keyword": "SAM 2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "instance segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.30016v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.30016v1"
+      ]
+    },
+    "2611.30240": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "paper": {
+        "abstract": "Interactive segmentation models turn a few clicks into a segmentation prediction across domains, so annotators only decide where the prediction still needs correction. Annotation thus becomes a loop of inspecting the prediction and clicking again. Each step of this loop is a visual judgment, which suits general-purpose multimodal large language model (MLLM) agents. In this work, we focus on letting these agents run this loop on 3D volumes. However, the MLLM in such an agent takes only 2D images as input, so the agent must observe the 3D volume in 2D. Since the loop calls the MLLM many times, this observation must be token-compact enough to keep every call cheap, yet informative enough to show error regions in the 3D prediction. We meet both needs with tri-planes, the three orthogonal planes that cross at one point in the volume. We show, both theoretically and empirically, that tri-planes are context-efficient yet keep sufficient detail to show error regions in the 3D prediction. Building on tri-planes, we introduce TriSegAgent, an MLLM agent that refines the 3D prediction iteratively. Within the agent, the MLLM only judges the prediction on tri-planes, while a visual harness turns each judgment into a 3D action in code. To make the loop reliable, the harness places each click at an exact voxel in the volume and checks whether to accept the 3D prediction. To evaluate the agent, we build a diverse benchmark of 690 regions of interest (ROIs) from 35 public medical datasets across three imaging modalities. With frontier MLLMs, TriSegAgent reaches an overall Dice about 10 points above the strongest baseline, and its lead is even larger on targets below 3 cm. With flash-level MLLMs, it outperforms a recent 3D segmentation agent built on a frontier MLLM.",
+        "authors": [
+          "Qingqiao Hu",
+          "Jialin Li",
+          "Meilong Xu",
+          "Kehan Qi",
+          "Yipeng Zhang",
+          "Lin Tian",
+          "Hongwei Bran Li",
+          "Klaus Mueller",
+          "Xiaoling Hu"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.30240v1",
+        "published": "2026-11-23T08:06:40+00:00",
+        "title": "TriSegAgent: Context-Efficient 3D Annotation with MLLMs via Tri-Planes",
+        "updated": "2026-11-23T08:06:40+00:00",
+        "version_id": "2611.30240v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "medical"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "multimodal large language model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "MLLM"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "large language model"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.30240v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.30240v1"
+      ]
     }
   },
   "runs": [
@@ -18981,10 +19864,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-25",
+      "discovered_candidates": 28,
+      "discovered_papers": 28,
       "run_id": "20261124T170803Z-95597b5d",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-24T17:08:00+00:00",
+          "seen": 5435,
+          "start": "2026-11-10T17:08:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-24T17:08:03.065917+00:00",
       "window": {
         "end": "2026-11-24T17:08:03.065917+00:00",
