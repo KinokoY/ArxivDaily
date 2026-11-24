@@ -185,7 +185,7 @@
       "created_at": "2026-11-22T14:14:54.965441+00:00"
     },
     "20261124T170803Z-95597b5d-8d6ff85aa088": {
-      "attempts": 0,
+      "attempts": 1,
       "created_at": "2026-11-24T17:08:03.065917+00:00"
     }
   },
@@ -623,10 +623,12 @@
     "2026-11-25": {
       "alerts": [],
       "full_ids": [],
-      "normal_digests": [],
+      "normal_digests": [
+        "20261124T170803Z-95597b5d-8d6ff85aa088"
+      ],
       "query_reservations": 0,
       "review_ids": [],
-      "send_attempts": 0
+      "send_attempts": 1
     }
   },
   "digests": {
@@ -4605,6 +4607,8 @@
     "20261124T170803Z-95597b5d-8d6ff85aa088": {
       "alert": false,
       "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/25/20261124T170803Z-95597b5d-8d6ff85aa088.md",
+      "attempt_run": "20261124T170803Z-95597b5d",
+      "attempt_started": "2026-11-24T17:17:52.175019+00:00",
       "chain_root": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "chain_roots": [
         "20261124T170803Z-95597b5d-8d6ff85aa088"
@@ -5210,6 +5214,7 @@
         }
       ],
       "notification_hash": "1a54d231cd690e7ed55f121990fcbe06abefacd696289b46a2a0770bffa8a747",
+      "quota_day": "2026-11-25",
       "recovery_of": [],
       "rendered": {
         "2611.27050": "rendered_inline_translation",
@@ -5221,7 +5226,7 @@
       },
       "run_id": "20261124T170803Z-95597b5d",
       "schema_version": 1,
-      "status": "prepared"
+      "status": "sending"
     }
   },
   "feedback": {
@@ -18005,6 +18010,7 @@
       ]
     },
     "2611.27050": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -18033,7 +18039,18 @@
           "No RL or DPO method is indicated in the abstract."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261124T170803Z-95597b5d-8d6ff85aa088",
+      "events": [
+        {
+          "at": "2026-11-24T17:17:52.175019+00:00",
+          "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
@@ -18055,6 +18072,7 @@
         "updated": "2026-11-20T03:19:25+00:00",
         "version_id": "2611.27050v1"
       },
+      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -18193,6 +18211,7 @@
       ]
     },
     "2611.27183": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -18221,7 +18240,18 @@
           "未提供跨任务迁移证据。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261124T170803Z-95597b5d-8d6ff85aa088",
+      "events": [
+        {
+          "at": "2026-11-24T17:17:52.175019+00:00",
+          "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
@@ -18249,6 +18279,7 @@
         "updated": "2026-11-20T06:15:49+00:00",
         "version_id": "2611.27183v1"
       },
+      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -18519,6 +18550,7 @@
       ]
     },
     "2611.28107": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -18547,7 +18579,18 @@
           "摘要未提供医学数据集上的迁移实证。"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261124T170803Z-95597b5d-8d6ff85aa088",
+      "events": [
+        {
+          "at": "2026-11-24T17:17:52.175019+00:00",
+          "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
@@ -18568,6 +18611,7 @@
         "updated": "2026-11-17T20:30:09+00:00",
         "version_id": "2611.28107v1"
       },
+      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -19024,6 +19068,7 @@
       ]
     },
     "2611.29146": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -19050,7 +19095,18 @@
           "The medical_reasoning rule hit is not supported by any medical or pathology-specific method in the abstract; pathology images are only mentioned as an unseen evaluation domain."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261124T170803Z-95597b5d-8d6ff85aa088",
+      "events": [
+        {
+          "at": "2026-11-24T17:17:52.175019+00:00",
+          "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
@@ -19074,6 +19130,7 @@
         "updated": "2026-11-22T01:59:22+00:00",
         "version_id": "2611.29146v1"
       },
+      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -19356,6 +19413,7 @@
       ]
     },
     "2611.29896": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -19384,7 +19442,18 @@
           "摘要未提供该优化目标迁移到医学推理分割或隐含请求分割的实质证据"
         ]
       },
-      "events": [],
+      "delivery_chain": "20261124T170803Z-95597b5d-8d6ff85aa088",
+      "events": [
+        {
+          "at": "2026-11-24T17:17:52.175019+00:00",
+          "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
@@ -19406,6 +19475,7 @@
         "updated": "2026-11-23T01:51:09+00:00",
         "version_id": "2611.29896v1"
       },
+      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
@@ -19705,6 +19775,7 @@
       ]
     },
     "2611.30240": {
+      "_pre_attempt_chain": null,
       "attempts": {
         "selection": 1,
         "translation": 1
@@ -19735,7 +19806,18 @@
           "Full-text details of the benchmark and the exact spatial-reasoning behavior of the MLLM are not available in the abstract."
         ]
       },
-      "events": [],
+      "delivery_chain": "20261124T170803Z-95597b5d-8d6ff85aa088",
+      "events": [
+        {
+          "at": "2026-11-24T17:17:52.175019+00:00",
+          "digest_id": "20261124T170803Z-95597b5d-8d6ff85aa088",
+          "kind": "normal",
+          "recovery_of": "",
+          "rendered": "rendered_inline_translation",
+          "status": "sending",
+          "tier": "translation"
+        }
+      ],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
@@ -19763,6 +19845,7 @@
         "updated": "2026-11-23T08:06:40+00:00",
         "version_id": "2611.30240v1"
       },
+      "pending_digest": "20261124T170803Z-95597b5d-8d6ff85aa088",
       "presentation_modules": [
         "title",
         "title_translation",
