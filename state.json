@@ -17447,9 +17447,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We cast image segmentation refinement as a discrete diffusion process.",
+          "The proposed formulation admits a finite and controllable number of refinement steps, for which we analyze the convergence properties through spectral gap analysis.",
+          "We evaluate CDD across diverse segmentation tasks, including multi-class semantic, instance-level, and binary segmentation refinement."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文提出一种新的多类分割细化方法 CDD，将分割细化建模为离散扩散，并包含循环标签拓扑与谱隙收敛分析，具备一定的理论依据。但它不是医学影像推理分割，也不是 RL/DPO 方法；摘要仅在通用多类语义、实例和二元分割上评估，未证明可迁移到医学多类分割或空间/位置推理到像素掩码任务。因此按可迁移优化目标暂记 uncertain，而非直接 select。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 55,
+        "status": "uncertain",
+        "theory_evidence": true,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未说明该方法是否用于医学影像或多类医学分割。",
+          "未确认其是否可迁移至推理分割或将隐含请求/空间位置推理映射到像素掩码的任务。",
+          "未确认 CDD 是否构成可独立迁移的损失/优化目标，而不只是推理阶段的掩码细化流程。",
+          "摘要未提供医学数据集上的迁移实证。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "We cast image segmentation refinement as a discrete diffusion process. To solve this task we introduce Cyclic Discrete Diffusion (CDD), a novel forward-reverse formulation with a cyclic label topology that maps a discrete label set to the uniform distribution and back. Instead of injecting Gaussian noise as is done for continuous diffusion, CDD evolves segmentation masks through label jumps: at each step, every pixel either remains in its current class or jumps to the next label with a fixed rate. This jump-or-stay mechanism defines a finite-state Markov process with bounded forward and reverse steps, featuring analytically consistent and tractable reverse dynamics. CDD operates natively in a multi-class label space, enabling joint refinement of all classes in a single pass without requiring class-wise decomposition, as commonly needed in prior binary refinement approaches. The proposed formulation admits a finite and controllable number of refinement steps, for which we analyze the convergence properties through spectral gap analysis. We evaluate CDD across diverse segmentation tasks, including multi-class semantic, instance-level, and binary segmentation refinement. Our method consistently improves both region accuracy and boundary quality across multiple backbones and datasets.",
         "authors": [
@@ -17508,6 +17533,7 @@
         "source": "matched",
         "version_id": "2611.28107v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -17553,12 +17579,7 @@
         "source": "matched",
         "version_id": "2611.28107v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-24T17:08:03.065917+00:00",
-        "run_id": "20261124T170803Z-95597b5d",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2611.28107v1"
       ]
