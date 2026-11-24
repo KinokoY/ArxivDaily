@@ -11,7 +11,7 @@
 | 2026-11-25 | RVLM: Fewer Tokens, Better Resolution Scaling, Fine-Grained Spatial Grounding | RVLM：更少词元，更好的分辨率扩展，细粒度空间定位 | [arXiv 2611.29146v1](https://arxiv.org/abs/2611.29146v1) |
 | 2026-11-25 | GlaucomaMarker - Biomarker-Grounded Glaucoma Vision-Language Model | 待翻译 | [arXiv 2611.28332v1](https://arxiv.org/abs/2611.28332v1) |
 | 2026-11-25 | ROSE-SAM3: Response-Oriented Prompt Selection for Open-Vocabulary Remote Sensing Segmentation | 待翻译 | [arXiv 2611.28112v1](https://arxiv.org/abs/2611.28112v1) |
-| 2026-11-25 | Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique | 待翻译 | [arXiv 2611.28107v1](https://arxiv.org/abs/2611.28107v1) |
+| 2026-11-25 | Cyclic Discrete Diffusion: A Novel Multi-Class Segmentation Refinement Technique | 循环离散扩散：一种新颖的多类分割细化技术 | [arXiv 2611.28107v1](https://arxiv.org/abs/2611.28107v1) |
 | 2026-11-25 | GEG-SAM: Gaze Exploration-Guided Segment Anything Model for Weakly Supervised Polyp Segmentation | GEG-SAM: 注视探索引导的弱监督息肉分割分割一切模型 | [arXiv 2611.27183v1](https://arxiv.org/abs/2611.27183v1) |
 | 2026-11-25 | Towards Text-Mask Consistency in Medical Image Segmentation | 面向医学图像分割中的文本-掩码一致性 | [arXiv 2611.27050v1](https://arxiv.org/abs/2611.27050v1) |
 | 2026-11-20 | SAM 3 Sees More Than It Detects: Promptable Concept Maps Beyond Categories | SAM 3 所见多于所检：超越类别的可提示概念图 | [arXiv 2611.25747v1](https://arxiv.org/abs/2611.25747v1) |
