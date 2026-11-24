@@ -18478,7 +18478,8 @@
     },
     "2611.30016": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "title_translation": 1
       },
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
       "decision": {
@@ -18662,6 +18663,11 @@
         "version_id": "2611.30016v1"
       },
       "stage": "rejected",
+      "stage_started": {
+        "at": "2026-11-24T17:08:03.065917+00:00",
+        "run_id": "20261124T170803Z-95597b5d",
+        "stage": "title_translation"
+      },
       "versions": [
         "2611.30016v1"
       ]
