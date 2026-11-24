@@ -18229,6 +18229,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "We present the Segment Anything Model via Visual Demonstrations (SAYD), a foundation model for in-context segmentation. Given visual demos comprising prompt images and their segmentation masks, SAYD segments coherent regions (e.g., objects or their parts) in a query image by establishing visual correspondences between the prompts and the query. SAYD generalizes to previously-unseen segmentation tasks, including those requiring tacit visual knowledge or involving concepts that are difficult to articulate unambiguously in language. We train SAYD on 12 public datasets originally curated for panoptic segmentation using our proposed techniques, including a lightweight mask decoder for prompt-agnostic mask generation and a learning mechanism for recognizing novel query classes absent in the prompts. These innovations enhance both computational efficiency and out-of-domain generalization. Consequently, SAYD significantly outperforms existing methods of in-context segmentation and open-vocabulary segmentation across 24 out-of-domain benchmarks, spanning natural, biological, ecological, cosmological, medical, pathological, and satellite imagery.",
@@ -18247,6 +18248,17 @@
         "updated": "2026-11-23T01:51:09+00:00",
         "version_id": "2611.29896v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -18329,7 +18341,7 @@
         "source": "matched",
         "version_id": "2611.29896v1"
       },
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2611.29896v1"
       ]
@@ -18378,6 +18390,17 @@
         "updated": "2026-11-23T04:18:37+00:00",
         "version_id": "2611.30016v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
