@@ -18317,11 +18317,8 @@
         "version_id": "2611.29278v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-24T17:08:03.065917+00:00",
-        "run_id": "20261124T170803Z-95597b5d",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "一次示范即足够：通过结构化信息建模提升 SAM 的医学图像分割性能",
       "versions": [
         "2611.29278v1"
       ]
