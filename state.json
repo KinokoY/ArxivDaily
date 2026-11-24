@@ -17768,9 +17768,36 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "In this work, we focus on letting these agents run this loop on 3D volumes.",
+          "We show, both theoretically and empirically, that tri-planes are context-efficient yet keep sufficient detail to show error regions in the 3D prediction.",
+          "Building on tri-planes, we introduce TriSegAgent, an MLLM agent that refines the 3D prediction iteratively.",
+          "Within the agent, the MLLM only judges the prediction on tri-planes, while a visual harness turns each judgment into a 3D action in code.",
+          "To make the loop reliable, the harness places each click at an exact voxel in the volume and checks whether to accept the 3D prediction.",
+          "To evaluate the agent, we build a diverse benchmark of 690 regions of interest (ROIs) from 35 public medical datasets across three imaging modalities."
+        ],
+        "dpo_is_method": false,
+        "reason": "This is a substantive medical 3D interactive segmentation/annotation method: an MLLM agent iteratively judges 3D predictions on tri-planes, and a harness converts visual judgments into exact voxel clicks/actions for mask refinement. The contribution is the context-efficient tri-plane observation plus reliable 3D action loop, evaluated on a multi-dataset medical ROI benchmark. It aligns with spatial/position reasoning to pixel/voxel actions, but it is not RL/DPO and not clearly text-conditioned reasoning segmentation.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 82,
+        "status": "select",
+        "theory_evidence": true,
+        "tier": "full",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether the task is purely interactive annotation refinement rather than language-conditioned reasoning segmentation.",
+          "Whether the theoretical claim covers transferability beyond tri-plane context efficiency.",
+          "Full-text details of the benchmark and the exact spatial-reasoning behavior of the MLLM are not available in the abstract."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Interactive segmentation models turn a few clicks into a segmentation prediction across domains, so annotators only decide where the prediction still needs correction. Annotation thus becomes a loop of inspecting the prediction and clicking again. Each step of this loop is a visual judgment, which suits general-purpose multimodal large language model (MLLM) agents. In this work, we focus on letting these agents run this loop on 3D volumes. However, the MLLM in such an agent takes only 2D images as input, so the agent must observe the 3D volume in 2D. Since the loop calls the MLLM many times, this observation must be token-compact enough to keep every call cheap, yet informative enough to show error regions in the 3D prediction. We meet both needs with tri-planes, the three orthogonal planes that cross at one point in the volume. We show, both theoretically and empirically, that tri-planes are context-efficient yet keep sufficient detail to show error regions in the 3D prediction. Building on tri-planes, we introduce TriSegAgent, an MLLM agent that refines the 3D prediction iteratively. Within the agent, the MLLM only judges the prediction on tri-planes, while a visual harness turns each judgment into a 3D action in code. To make the loop reliable, the harness places each click at an exact voxel in the volume and checks whether to accept the 3D prediction. To evaluate the agent, we build a diverse benchmark of 690 regions of interest (ROIs) from 35 public medical datasets across three imaging modalities. With frontier MLLMs, TriSegAgent reaches an overall Dice about 10 points above the strongest baseline, and its lead is even larger on targets below 3 cm. With flash-level MLLMs, it outperforms a recent 3D segmentation agent built on a frontier MLLM.",
         "authors": [
@@ -17847,6 +17874,7 @@
         "source": "matched",
         "version_id": "2611.30240v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
@@ -17903,12 +17931,7 @@
         "source": "matched",
         "version_id": "2611.30240v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-24T17:08:03.065917+00:00",
-        "run_id": "20261124T170803Z-95597b5d",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.30240v1"
       ]
