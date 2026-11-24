@@ -17518,9 +17518,32 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We propose Response-Oriented Prompt Selection for SAM 3 (ROSE-SAM3), a training-free framework that selects descriptions using frozen SAM 3 responses on unlabeled target-domain images.",
+          "At inference, the bank is fixed, and Semantic-Instance Cooperative Head (SICH) uses instance evidence to refine semantic responses before assigning pixel labels.",
+          "ROSE-SAM3 achieves 57.3% mean mIoU across eight clean benchmarks and 54.7% on RS-OVSS-C, achieving state-of-the-art performance among training-free methods."
+        ],
+        "dpo_is_method": false,
+        "reason": "This is a training-free open-vocabulary remote-sensing segmentation framework based on prompt selection with frozen SAM 3, DAG search, and a refinement head. It does not address medical imaging, reasoning segmentation, RL/DPO, or a theoretically grounded segmentation optimization objective. The transferable_objective rule hit is not substantiated by theoretical or transfer evidence in the abstract; prompt selection is a pipeline heuristic rather than a transferable optimization target.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 8,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Full text was not read; any theoretical or transferable-objective claims beyond the abstract are unverified.",
+          "The abstract does not provide evidence of RL or DPO as a method contribution."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "In open-vocabulary semantic segmentation (OVSS) of remote-sensing imagery, class-name prompts can miss objects with varied appearances, while richer descriptions can activate competing classes. We propose Response-Oriented Prompt Selection for SAM 3 (ROSE-SAM3), a training-free framework that selects descriptions using frozen SAM 3 responses on unlabeled target-domain images. We screen candidate descriptions for coverage beyond the native prompts while protecting reliable native class responses, retaining candidates that pass these checks on at least four of five image folds. An offline directed acyclic graph (DAG) search then evaluates candidate combinations and builds a compact PromptBank for each class. Each bank retains the native prompts and adds selected descriptions, which we call residual prompts. At inference, the bank is fixed, and Semantic-Instance Cooperative Head (SICH) uses instance evidence to refine semantic responses before assigning pixel labels. We also introduce RS-OVSS-C to evaluate robustness under six image corruption families across eight remote-sensing datasets, preserving their class vocabularies and reference labels. ROSE-SAM3 achieves 57.3% mean mIoU across eight clean benchmarks and 54.7% on RS-OVSS-C, achieving state-of-the-art performance among training-free methods. The code is publicly available at https://github.com/YanghuiSong/ROSE-SAM3.",
         "authors": [
@@ -17581,6 +17604,7 @@
         "source": "matched",
         "version_id": "2611.28112v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -17623,12 +17647,7 @@
         "source": "matched",
         "version_id": "2611.28112v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-24T17:08:03.065917+00:00",
-        "run_id": "20261124T170803Z-95597b5d",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.28112v1"
       ]
