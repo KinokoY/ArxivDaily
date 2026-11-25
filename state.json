@@ -20578,11 +20578,8 @@
         "version_id": "2611.32011v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-25T16:55:38.574440+00:00",
-        "run_id": "20261125T165538Z-e2da32ec",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "干扰物才是真正的敌人：针对基于SAM2的视频跟踪与分割的视觉干扰对抗扰动",
       "versions": [
         "2611.32011v1"
       ]
