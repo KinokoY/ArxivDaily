@@ -6140,6 +6140,8 @@
       },
       "2026-11-26": {
         "created_at": "2026-11-25T17:01:52.953401+00:00",
+        "node_id": "I_kwDOU5T3Lc8AAAABifWSRQ",
+        "number": 8,
         "papers": {
           "2611.27142": {
             "rule_trace": {
@@ -6310,7 +6312,8 @@
             "vote": "pending"
           }
         },
-        "status": "open"
+        "status": "open",
+        "url": "https://github.com/KinokoY/ArxivDaily/issues/8"
       }
     },
     "repository": "KinokoY/ArxivDaily"
