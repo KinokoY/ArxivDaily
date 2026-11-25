@@ -20051,9 +20051,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "Spatial reasoning agents increasingly rely on external tools, such as 3D reconstruction, segmentation, and geometric computation, to answer questions that a multimodal large language model (MLLM) cannot resolve from pixels alone.",
+          "We ask whether a frozen tool-using agent can improve its orchestration from its own interaction history, without parameter updates.",
+          "Experiences, condition-action tactics distilled by contrasting rollouts of the same task, and Skills, multi-step procedures with explicit activation and termination conditions.",
+          "Across five spatial benchmarks and four backbones, SpatialCraft achieves the best accuracy in all 20 settings, showing that a frozen agent can learn to orchestrate spatial tools from its own experience."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文研究冻结的多模态智能体如何通过外部经验与技能编排空间推理工具，属于通用空间推理/工具编排，而非医学影像推理分割。摘要中分割仅作为外部工具示例，没有提出面向像素掩码的推理分割方法；也未使用 RL 或 DPO 作为方法贡献，Contrastive Utility Score 只是经验效用估计。因此按规则保留为通用推理轻量清单。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 48,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "未确认论文是否产生像素级分割掩码或仅做工具调用式空间问答。",
+          "未确认 Contrastive Utility Score 是否具备理论保证或可视为 RL/DPO 方法。",
+          "未确认其经验/技能机制是否能实质迁移到医学影像推理分割。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Spatial reasoning agents increasingly rely on external tools, such as 3D reconstruction, segmentation, and geometric computation, to answer questions that a multimodal large language model (MLLM) cannot resolve from pixels alone. Tool access, however, shifts the bottleneck to orchestration: the agent must decide which tools to call, in what order, and how to interpret their outputs, yet a stateless agent repeats the same mistakes across tasks. We ask whether a frozen tool-using agent can improve its orchestration from its own interaction history, without parameter updates. We present SpatialCraft, a self-evolving framework that maintains two forms of external knowledge: Experiences, condition-action tactics distilled by contrasting rollouts of the same task, and Skills, multi-step procedures with explicit activation and termination conditions. Three designs couple the two streams. Experiences can be anchored to a Skill, appearing only while it is active rather than once per task. A Contrastive Utility Score estimates each Experience's effect by randomly withholding it across rollouts of the same task, separating its contribution from task difficulty, and Experiences with consistently positive utility are consolidated into the Skills they support. Across five spatial benchmarks and four backbones, SpatialCraft achieves the best accuracy in all 20 settings, showing that a frozen agent can learn to orchestrate spatial tools from its own experience.",
         "authors": [
@@ -20109,6 +20134,7 @@
         "source": "matched",
         "version_id": "2611.31475v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
@@ -20145,12 +20171,7 @@
         "source": "matched",
         "version_id": "2611.31475v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-25T16:55:38.574440+00:00",
-        "run_id": "20261125T165538Z-e2da32ec",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.31475v1"
       ]
