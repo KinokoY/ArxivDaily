@@ -20252,7 +20252,9 @@
       ]
     },
     "2611.32536": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
@@ -20275,6 +20277,40 @@
         "published": "2026-11-24T12:58:44+00:00",
         "title": "RSReasoner: Reformulating and Auditing Geospatial Reasoning Segmentation",
         "updated": "2026-11-24T12:58:44+00:00",
+        "version_id": "2611.32536v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "reasoning segmentation"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.32536v1"
       },
       "rule_hits": [
@@ -20315,6 +20351,11 @@
         "version_id": "2611.32536v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-25T16:55:38.574440+00:00",
+        "run_id": "20261125T165538Z-e2da32ec",
+        "stage": "selection"
+      },
       "versions": [
         "2611.32536v1"
       ]
