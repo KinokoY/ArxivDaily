@@ -20191,9 +20191,30 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We observe that SAM2 itself exposes useful distractor cues when tracking becomes uncertain. Based on these observations, we propose DistractAttack, a white-box attack that uses background distractors to disrupt target tracking persistently.",
+          "Extensive experiments under video-level and one-shot perturbations across Visual Object Tracking and Video Object Segmentation demonstrate strong attack effectiveness, raising DRE to $4.4\\times$ and NRE to $7.3\\times$ their nearest baselines under video perturbation, while transferring effectively across model scales and tracker variants in black-box settings."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper studies adversarial robustness of SAM2-based video trackers through white-box distractor perturbations. Its contributions are attack design (DistractAttack/Counterfactual Distractor Search) and empirical attack effectiveness/transferability, not medical reasoning segmentation, RL/DPO, or a theoretically grounded and transferable segmentation optimization objective. The transferable_objective rule hit appears to reflect black-box attack transfer across model scales and tracker variants, not transfer of a training objective.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "irrelevant",
+        "score": 4,
+        "status": "reject",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "Whether the full paper introduces a theoretically grounded objective suitable for transfer to medical or reasoning segmentation is not supported by the abstract."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Promptable video trackers such as SAM2 achieve accurate and robust performance through strong temporal consistency, making them important foundations for downstream video understanding and tracking applications. As their use continues to expand, understanding their robustness to adversarial perturbations becomes increasingly important. Existing attacks on SAM2 largely focus on local mask degradation and short-term temporal feature disruption, leaving its longer-term dynamics and competing object interferences (Distractors) insufficiently explored. We observe that SAM2 itself exposes useful distractor cues when tracking becomes uncertain. Based on these observations, we propose DistractAttack, a white-box attack that uses background distractors to disrupt target tracking persistently. Its core procedure, Counterfactual Distractor Search (CDS), propagates clean and attacked trajectories in parallel to discover plausible competing regions and identify those that become increasingly effective under perturbation. The discovered evidence is accumulated over time to weaken target support and promote recurrent alternatives or disappearance predictions. Extensive experiments under video-level and one-shot perturbations across Visual Object Tracking and Video Object Segmentation demonstrate strong attack effectiveness, raising DRE to $4.4\\times$ and NRE to $7.3\\times$ their nearest baselines under video perturbation, while transferring effectively across model scales and tracker variants in black-box settings. Project page: https://adonaydem.github.io/sam2-da-page/",
         "authors": [
@@ -20245,6 +20266,7 @@
         "source": "matched",
         "version_id": "2611.32011v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -20282,12 +20304,7 @@
         "source": "matched",
         "version_id": "2611.32011v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-25T16:55:38.574440+00:00",
-        "run_id": "20261125T165538Z-e2da32ec",
-        "stage": "selection"
-      },
+      "stage": "rejected",
       "versions": [
         "2611.32011v1"
       ]
