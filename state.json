@@ -191,7 +191,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-24T17:08:03.065917+00:00"
+    "last_complete_end": "2026-11-25T16:55:38.574440+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -18061,6 +18061,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.27050v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Vision-language models for medical image segmentation often produce masks that conflict with the accompanying text, especially under multi-site/multi-lesion descriptions. We trace this failure to two factors: (i) highly templated and repetitive clinical language causes one-to-one hard contrastive learning to yield numerous false negatives, weakening cross-modal alignment; and (ii) predominantly vision-driven, one-way cross-attention lacks a language-dominant, spatially aware pathway, hindering effective injection of textual semantics into the spatial visual domain. To this end, we propose Consistency-enhanced Two-stage Segmentation (C2Seg). In the pretraining stage, Cluster-aware Contrastive Learning uses a frozen strong baseline to construct an intra-batch text similarity matrix as soft labels, thereby alleviating false negative conflicts and producing more discriminative visual representations. In the fusion stage, we introduce a Bidirectional Complementary Attention Module, where each modality dominates attention along its own path, fostering deep interaction and structural consistency between visual and textual representations. In order to enhance the expressive power of multimodal features, we further adopt KAN-based Attention Gating. Without updating the language encoder, our approach significantly improves text-mask consistency and segmentation accuracy on four public medical imaging datasets. The source code is available at https://github.com/JGuiidev/C2Seg.",
@@ -18214,6 +18215,69 @@
       "translation_provider": "llm",
       "versions": [
         "2611.27050v1"
+      ]
+    },
+    "2611.27142": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "paper": {
+        "abstract": "Promptable segmentation foundation models are increasingly used in specialized domains, but it remains unclear how SAM-3 should be fine-tuned when adapting it beyond its original training distribution. We study this question by comparing five adaptation families --LoRA, HiRA, KRAdapter, QuanTA, and Full Fine-Tuning-- across five segmentation datasets spanning medical imaging, remote sensing, and dense material segmentation. Across these datasets, compact parameter-efficient fine-tuning methods often match or approach Full Fine-Tuning in DSC and IoU, suggesting that strong in-domain adaptation does not always require updating the full model. However, this performance cannot be explained by nominal adapter rank or trainable parameter count alone. To investigate why different methods perform similarly, we analyze their update spectra and their behavior under LoveDA Urban/Rural transfer. Our SVD analysis shows that Full Fine-Tuning updates are spectrally compressible. However, successful PEFT methods do not simply recover the same update directions; instead, they often concentrate changes in different components and subspaces. The domain-transfer study further shows that methods with similar in-domain performance can respond differently under distribution shift. Together, these results suggest that SAM-3 adaptation is often capacity-saturated in practice, while competitive fine-tuning arises through method-specific update paths rather than a single low-rank approximation to Full Fine-Tuning.",
+        "authors": [
+          "Allan Kazakov",
+          "Abdurrahman Javat",
+          "Duygu Cakir"
+        ],
+        "categories": [
+          "cs.CV",
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.27142v1",
+        "published": "2026-11-20T05:22:06+00:00",
+        "title": "How Does SAM-3 Adapt? Capacity, Update Geometry, and Domain Transfer",
+        "updated": "2026-11-20T05:22:06+00:00",
+        "version_id": "2611.27142v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.27142v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.27142v1"
       ]
     },
     "2611.27183": {
@@ -18597,6 +18661,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.28107v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "We cast image segmentation refinement as a discrete diffusion process. To solve this task we introduce Cyclic Discrete Diffusion (CDD), a novel forward-reverse formulation with a cyclic label topology that maps a discrete label set to the uniform distribution and back. Instead of injecting Gaussian noise as is done for continuous diffusion, CDD evolves segmentation masks through label jumps: at each step, every pixel either remains in its current class or jumps to the next label with a fixed rate. This jump-or-stay mechanism defines a finite-state Markov process with bounded forward and reverse steps, featuring analytically consistent and tractable reverse dynamics. CDD operates natively in a multi-class label space, enabling joint refinement of all classes in a single pass without requiring class-wise decomposition, as commonly needed in prior binary refinement approaches. The proposed formulation admits a finite and controllable number of refinement steps, for which we analyze the convergence properties through spectral gap analysis. We evaluate CDD across diverse segmentation tasks, including multi-class semantic, instance-level, and binary segmentation refinement. Our method consistently improves both region accuracy and boundary quality across multiple backbones and datasets.",
@@ -18755,6 +18820,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "latest_version": "2611.28112v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "In open-vocabulary semantic segmentation (OVSS) of remote-sensing imagery, class-name prompts can miss objects with varied appearances, while richer descriptions can activate competing classes. We propose Response-Oriented Prompt Selection for SAM 3 (ROSE-SAM3), a training-free framework that selects descriptions using frozen SAM 3 responses on unlabeled target-domain images. We screen candidate descriptions for coverage beyond the native prompts while protecting reliable native class responses, retaining candidates that pass these checks on at least four of five image folds. An offline directed acyclic graph (DAG) search then evaluates candidate combinations and builds a compact PromptBank for each class. Each bank retains the native prompts and adds selected descriptions, which we call residual prompts. At inference, the bank is fixed, and Semantic-Instance Cooperative Head (SICH) uses instance evidence to refine semantic responses before assigning pixel labels. We also introduce RS-OVSS-C to evaluate robustness under six image corruption families across eight remote-sensing datasets, preserving their class vocabularies and reference labels. ROSE-SAM3 achieves 57.3% mean mIoU across eight clean benchmarks and 54.7% on RS-OVSS-C, achieving state-of-the-art performance among training-free methods. The code is publicly available at https://github.com/YanghuiSong/ROSE-SAM3.",
@@ -18907,6 +18973,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "latest_version": "2611.28332v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Glaucoma is a leading cause of irreversible blindness. In the current clinical setting, glaucoma diagnosis is generally conducted by assessing optic disc cupping and asymmetry. Vision-language models (VLMs) have been utilized in recent years for glaucoma, mostly trained on fixed templates or AI-generated captions, as no public text describes the biomarkers. Our proposed framework, GlaucomaMarker, hypothesizes that retinal structural biomarkers can ground glaucoma-based VLMs. It converts public segmentation masks into sentences describing eleven biomarkers, to teach retinal foundation models to read them. We applied this framework to RETFound (GlaucomaMarker-R) and FLAIR (GlaucomaMarker-F), training on 9,778 images that yielded 45,190 image-text pairs. On a real-world clinical cohort, GlaucomaMarker-F detects glaucoma with an AUROC of 0.905, against 0.848 for FLAIR, and both read the biomarkers where baselines stay near random guessing. Since the biomarker text is computed from existing masks, it comes at no extra cost.",
@@ -19111,6 +19178,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.29146v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Vision-Language Models (VLMs) tokenize images using fixed spatial grids, so visual token count grows with pixel area rather than scene content. We propose to group neighboring patches based on their visual appearance, allowing tokens to represent coherent image regions rather than fixed spatial windows. We introduce RVLM, a VLM trained to use regions rather than patches as its visual units. Analyzing region construction for general-purpose VLMs, we find that regions must cover the full image, stay spatially connected during end-to-end training, and preserve fine structure such as small text, while semantic grouping adds little. RVLM therefore partitions images using training-free Felzenszwalb-Huttenlocher segmentation, assigns each ViT patch to a region, and pools patches within each region into a variable-length sequence of visual tokens. The patch-to-region assignment is retained to support spatially precise prediction through coarse-to-fine decoding. Across tasks spanning VQA, pointing, counting, segmentation, and depth estimation, RVLM matches or improves example-weighted task performance while using 21.5% fewer visual tokens than an identically trained patch baseline. The advantage grows with image resolution, reaching a 5.3-point gain while using 51.8% fewer visual tokens at the highest-resolution setting. The gains are largest on spatially demanding tasks, where prior token-reduction methods degrade most sharply. RVLM adds no model parameters and improves inference throughput by up to 35.9%. On unseen pathology and satellite images and on video benchmarks without any video training, RVLM performs on par with the patch baseline while using 2-3$\\times$ fewer visual tokens. These results establish regions as a scalable alternative to patch-based visual representations while preserving the spatial precision required for grounded prediction.",
@@ -19283,6 +19351,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "latest_version": "2611.29278v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "In recent years, Foundation models such as the Segment Anything Model (SAM) have demonstrated strong generalization capabilities, but because they are primarily pre-trained on natural images, they perform poorly when faced with medical images. With sufficient labeled medical data, this challenge is somewhat alleviated. However, the difficulty and high cost of acquiring large amounts of labeled data make one-shot learning a highly attractive research paradigm. But within this paradigm, SAM struggles to fully extract its potential multi-granular information, leading to a sharp decline in performance. To address this, we propose OB-SAM, a one-shot enhancement framework for medical image segmentation. It aims to maximize the utilization of information from a single sample from the perspective of structured modeling. Specifically, we first designed a Multi-Frequency Decoupling (MFD) module, which divides features into different frequency domain components, allowing each branch to focus on information expression at different semantic levels, thereby alleviating overfitting and enhancing feature representation capabilities. Secondly, we introduce a Progressive Feature Integrator (PFI) module to promote complementary fusion among multi-level features, thereby avoiding the dominant effect of a certain level of feature in the fusion process. Furthermore, we propose an Selective Context Filtering (SCF) Module that adaptively selects key contextual information by modeling the contrast relationship between the foreground and background, thereby achieving precise localization of the lesion area. Extensive experiments across seven diverse datasets validate that OB-SAM achieves state-of-the-art performance.",
@@ -19456,6 +19525,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.29896v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "We present the Segment Anything Model via Visual Demonstrations (SAYD), a foundation model for in-context segmentation. Given visual demos comprising prompt images and their segmentation masks, SAYD segments coherent regions (e.g., objects or their parts) in a query image by establishing visual correspondences between the prompts and the query. SAYD generalizes to previously-unseen segmentation tasks, including those requiring tacit visual knowledge or involving concepts that are difficult to articulate unambiguously in language. We train SAYD on 12 public datasets originally curated for panoptic segmentation using our proposed techniques, including a lightweight mask decoder for prompt-agnostic mask generation and a learning mechanism for recognizing novel query classes absent in the prompts. These innovations enhance both computational efficiency and out-of-domain generalization. Consequently, SAYD significantly outperforms existing methods of in-context segmentation and open-vocabulary segmentation across 24 out-of-domain benchmarks, spanning natural, biological, ecological, cosmological, medical, pathological, and satellite imagery.",
@@ -19605,6 +19675,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
+      "latest_version": "2611.30016v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "X-ray computed tomography (XCT) provides non-destructive three-dimensional (3D) images of particle packs, making their internal structure accessible for quantitative analysis. Extracting particle-level measurements from these volumes first requires identifying and separating individual particles, a task that remains challenging in dense, irregular packs. Existing workflows often require manual correction or task-specific training, while promptable models need a strategy for automatically locating individual particles and recovering their instance masks. We present ReplaySAM, which adapts the pretrained Segment Anything Model 2 (SAM2) to three-dimensional particle-pack segmentation without additional training. It generates point prompts from foreground geometry and fuses SAM2 predictions across orthogonal slice sequences to recover particle instances. On XCT volumes of real quartz and iron-ore particle packs, ReplaySAM achieves higher mean instance Dice scores than expert-assisted watershed and nnInteractive under the evaluated protocols. ReplaySAM thus provides a training-free framework for 3D particle-pack instance segmentation, with geometry-based prompting that eliminates manual prompt placement.",
@@ -19818,6 +19889,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.30240v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Interactive segmentation models turn a few clicks into a segmentation prediction across domains, so annotators only decide where the prediction still needs correction. Annotation thus becomes a loop of inspecting the prediction and clicking again. Each step of this loop is a visual judgment, which suits general-purpose multimodal large language model (MLLM) agents. In this work, we focus on letting these agents run this loop on 3D volumes. However, the MLLM in such an agent takes only 2D images as input, so the agent must observe the 3D volume in 2D. Since the loop calls the MLLM many times, this observation must be token-compact enough to keep every call cheap, yet informative enough to show error regions in the 3D prediction. We meet both needs with tri-planes, the three orthogonal planes that cross at one point in the volume. We show, both theoretically and empirically, that tri-planes are context-efficient yet keep sufficient detail to show error regions in the 3D prediction. Building on tri-planes, we introduce TriSegAgent, an MLLM agent that refines the 3D prediction iteratively. Within the agent, the MLLM only judges the prediction on tri-planes, while a visual harness turns each judgment into a 3D action in code. To make the loop reliable, the harness places each click at an exact voxel in the volume and checks whether to accept the 3D prediction. To evaluate the agent, we build a diverse benchmark of 690 regions of interest (ROIs) from 35 public medical datasets across three imaging modalities. With frontier MLLMs, TriSegAgent reaches an overall Dice about 10 points above the strongest baseline, and its lead is even larger on targets below 3 cm. With flash-level MLLMs, it outperforms a recent 3D segmentation agent built on a frontier MLLM.",
@@ -19973,6 +20045,278 @@
       "translation_provider": "llm",
       "versions": [
         "2611.30240v1"
+      ]
+    },
+    "2611.31475": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "paper": {
+        "abstract": "Spatial reasoning agents increasingly rely on external tools, such as 3D reconstruction, segmentation, and geometric computation, to answer questions that a multimodal large language model (MLLM) cannot resolve from pixels alone. Tool access, however, shifts the bottleneck to orchestration: the agent must decide which tools to call, in what order, and how to interpret their outputs, yet a stateless agent repeats the same mistakes across tasks. We ask whether a frozen tool-using agent can improve its orchestration from its own interaction history, without parameter updates. We present SpatialCraft, a self-evolving framework that maintains two forms of external knowledge: Experiences, condition-action tactics distilled by contrasting rollouts of the same task, and Skills, multi-step procedures with explicit activation and termination conditions. Three designs couple the two streams. Experiences can be anchored to a Skill, appearing only while it is active rather than once per task. A Contrastive Utility Score estimates each Experience's effect by randomly withholding it across rollouts of the same task, separating its contribution from task difficulty, and Experiences with consistently positive utility are consolidated into the Skills they support. Across five spatial benchmarks and four backbones, SpatialCraft achieves the best accuracy in all 20 settings, showing that a frozen agent can learn to orchestrate spatial tools from its own experience.",
+        "authors": [
+          "Xiwei Liu",
+          "Yulong Li",
+          "Xuhui Li",
+          "Zhixiang Lu",
+          "Haolin Yang",
+          "Jianxu Chen",
+          "Yifan Lu",
+          "Di Fan",
+          "Yutong Xie"
+        ],
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.31475v1",
+        "published": "2026-11-23T19:47:57+00:00",
+        "title": "SpatialCraft: Evolving Procedural Intelligence from Experience and Skills for Spatial Reasoning Agents",
+        "updated": "2026-11-23T19:47:57+00:00",
+        "version_id": "2611.31475v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "spatial reasoning"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.31475v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.31475v1"
+      ]
+    },
+    "2611.31973": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "paper": {
+        "abstract": "Vision foundation models can precisely segment objects based solely on a text prompt. However, they struggle to recover objects that are small, occluded or whose appearance is poorly captured by the original textual description. Vision language models can examine the image and its context, they can propose richer descriptions of the objects to be detected. But these models struggle with precise segmentation and localization. We introduce Visual Thinking, a training-free framework that combines a vision-language model with Segment Anything Model 3 (SAM 3) through an iterative active perception loop. At each iteration, the VLM proposes short noun phrases using the image, candidate crops and history from past iterations. A controller ranks these phrases using embedding similarity between the original prompt and the proposal, an entropy-based verification priority and the novelty of the prompt. Next, SAM 3 uses prompts to detect objects in the image. We associate detections across iterations and update each object's confidence score using a weighted mean of scores obtained from SAM 3 with a larger weight for detections using narrower prompts. We supply confident detections as positive visual exemplars for SAM 3, and incorporate image tiling to recover small objects in cluttered images. We evaluate counting and localization on CARPK, FSCD-147, PixMo-Count, and OmniCount (Fruits). Compared with SAM 3, Visual Thinking reduces the counting mean absolute error (MAE) by about 18 on FSC-147 and about 8 on CARPK. It improves box average precision (AP) by more than 12 on FSCD-147 and CARPK. Visual Thinking, with fixed or no tiling, performs on par with Claude Opus 5.5 at extra-high reasoning effort, while running on single desktop GPU in about 5.91 seconds per image, compared to about 46.53 seconds per image for Claude through its API.",
+        "authors": [
+          "Emil Kielar",
+          "Pratik Chaudhari"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.31973v1",
+        "published": "2026-11-24T05:24:21+00:00",
+        "title": "Visual Thinking: Training-Free Active Perception for Counting and Localizing Hard-to-Find Objects",
+        "updated": "2026-11-24T05:24:21+00:00",
+        "version_id": "2611.31973v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segment anything model"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "SAM"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.31973v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.31973v1"
+      ]
+    },
+    "2611.32011": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "paper": {
+        "abstract": "Promptable video trackers such as SAM2 achieve accurate and robust performance through strong temporal consistency, making them important foundations for downstream video understanding and tracking applications. As their use continues to expand, understanding their robustness to adversarial perturbations becomes increasingly important. Existing attacks on SAM2 largely focus on local mask degradation and short-term temporal feature disruption, leaving its longer-term dynamics and competing object interferences (Distractors) insufficiently explored. We observe that SAM2 itself exposes useful distractor cues when tracking becomes uncertain. Based on these observations, we propose DistractAttack, a white-box attack that uses background distractors to disrupt target tracking persistently. Its core procedure, Counterfactual Distractor Search (CDS), propagates clean and attacked trajectories in parallel to discover plausible competing regions and identify those that become increasingly effective under perturbation. The discovered evidence is accumulated over time to weaken target support and promote recurrent alternatives or disappearance predictions. Extensive experiments under video-level and one-shot perturbations across Visual Object Tracking and Video Object Segmentation demonstrate strong attack effectiveness, raising DRE to $4.4\\times$ and NRE to $7.3\\times$ their nearest baselines under video perturbation, while transferring effectively across model scales and tracker variants in black-box settings. Project page: https://adonaydem.github.io/sam2-da-page/",
+        "authors": [
+          "Adonay Demewez Gebremedhin",
+          "Mohamad Alansari",
+          "Wessam Shehieb",
+          "Muzammal Naseer"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.32011v1",
+        "published": "2026-11-24T05:57:07+00:00",
+        "title": "Distractors are the Real Enemy: Visual Distraction Adversarial Perturbations on SAM2-Based Video Tracking and Segmentation",
+        "updated": "2026-11-24T05:57:07+00:00",
+        "version_id": "2611.32011v1"
+      },
+      "rule_hits": [
+        "transferable_objective"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "SAM"
+            ],
+            "keywords": {
+              "SAM": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "SAM2"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "transferable_objective"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.32011v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.32011v1"
+      ]
+    },
+    "2611.32536": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "paper": {
+        "abstract": "Geospatial reasoning segmentation aims to localize geographic targets from language requiring semantic inference beyond direct visual perception. However, existing benchmarks often operationalize reasoning as category omission while overlooking attribute mixing, which neglects explicit-category reasoning, introduces perceptual shortcuts, and fails to precisely evaluate reasoning capability. To diagnose and address these limitations, we first reformulate geospatial reasoning segmentation along category expression (explicit vs. implicit) and attribute nature (perceptual vs. inferential), and audit 90,708 queries across existing benchmarks to reveal that pure explicit-inferential queries account for only 0.61% whereas 31.98% mix both attribute types. We then develop a three-stage pipeline that harnesses OpenStreetMap attributes while mitigating geometric and semantic noise to construct RSReasoner, a large-scale dataset of 106,610 images with 213,220 reasoning queries, and RSReasoner-Bench, a diagnostic benchmark of 75,400 queries across four canonical types and controlled variants. Extensive experiments demonstrate that RSReasoner-Bench precisely evaluates model capability across multiple dimensions while exposing shortcut behaviors, and fine-tuning on RSReasoner boosts both reasoning and cross-type generalization. Our findings offer key insights for future geospatial reasoning research and benchmark design. Datasets and code will be released at https://github.com/Ricardo-XZ/RSReasoner.",
+        "authors": [
+          "Xu Zhang",
+          "Xinpeng Zhang",
+          "Yunrui Zou",
+          "Hongliang Chen",
+          "Xiaotian Jiang",
+          "Yang Zheng",
+          "Kaitai Guo",
+          "Jimin Liang"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.32536v1",
+        "published": "2026-11-24T12:58:44+00:00",
+        "title": "RSReasoner: Reformulating and Auditing Geospatial Reasoning Segmentation",
+        "updated": "2026-11-24T12:58:44+00:00",
+        "version_id": "2611.32536v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "reasoning segmentation"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.32536v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.32536v1"
       ]
     }
   },
@@ -22028,10 +22372,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-26",
+      "discovered_candidates": 28,
+      "discovered_papers": 28,
       "run_id": "20261125T165538Z-e2da32ec",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-25T16:55:00+00:00",
+          "seen": 5753,
+          "start": "2026-11-11T16:55:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-25T16:55:38.574440+00:00",
       "window": {
         "end": "2026-11-25T16:55:38.574440+00:00",
