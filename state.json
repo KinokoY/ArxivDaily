@@ -18248,6 +18248,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Promptable segmentation foundation models are increasingly used in specialized domains, but it remains unclear how SAM-3 should be fine-tuned when adapting it beyond its original training distribution. We study this question by comparing five adaptation families --LoRA, HiRA, KRAdapter, QuanTA, and Full Fine-Tuning-- across five segmentation datasets spanning medical imaging, remote sensing, and dense material segmentation. Across these datasets, compact parameter-efficient fine-tuning methods often match or approach Full Fine-Tuning in DSC and IoU, suggesting that strong in-domain adaptation does not always require updating the full model. However, this performance cannot be explained by nominal adapter rank or trainable parameter count alone. To investigate why different methods perform similarly, we analyze their update spectra and their behavior under LoveDA Urban/Rural transfer. Our SVD analysis shows that Full Fine-Tuning updates are spectrally compressible. However, successful PEFT methods do not simply recover the same update directions; instead, they often concentrate changes in different components and subspaces. The domain-transfer study further shows that methods with similar in-domain performance can respond differently under distribution shift. Together, these results suggest that SAM-3 adaptation is often capacity-saturated in practice, while competitive fine-tuning arises through method-specific update paths rather than a single low-rank approximation to Full Fine-Tuning.",
@@ -18266,6 +18267,17 @@
         "updated": "2026-11-20T05:22:06+00:00",
         "version_id": "2611.27142v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "transferable_objective"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -18336,7 +18348,7 @@
         "source": "matched",
         "version_id": "2611.27142v1"
       },
-      "stage": "uncertain",
+      "stage": "ready",
       "versions": [
         "2611.27142v1"
       ]
