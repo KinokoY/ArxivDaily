@@ -6137,6 +6137,180 @@
         },
         "status": "open",
         "url": "https://github.com/KinokoY/ArxivDaily/issues/7"
+      },
+      "2026-11-26": {
+        "created_at": "2026-11-25T17:01:52.953401+00:00",
+        "papers": {
+          "2611.27142": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "SAM"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.27142v1"
+            },
+            "title": "How Does SAM-3 Adapt? Capacity, Update Geometry, and Domain Transfer",
+            "title_zh": "SAM-3 如何适应？容量、更新几何与域迁移",
+            "url": "https://arxiv.org/abs/2611.27142v1",
+            "vote": "pending"
+          },
+          "2611.31475": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "REASON"
+                  ],
+                  "keywords": {
+                    "REASON": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "spatial reasoning"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "general_reasoning"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.31475v1"
+            },
+            "title": "SpatialCraft: Evolving Procedural Intelligence from Experience and Skills for Spatial Reasoning Agents",
+            "title_zh": "SpatialCraft: 从经验与技能演化程序化智能以实现空间推理智能体",
+            "url": "https://arxiv.org/abs/2611.31475v1",
+            "vote": "pending"
+          },
+          "2611.31973": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "SAM"
+                  ],
+                  "keywords": {
+                    "SAM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segment anything"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segment anything model"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "SAM"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "transferable_objective"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.31973v1"
+            },
+            "title": "Visual Thinking: Training-Free Active Perception for Counting and Localizing Hard-to-Find Objects",
+            "title_zh": "视觉思考：面向难以发现目标的计数与定位的无训练主动感知",
+            "url": "https://arxiv.org/abs/2611.31973v1",
+            "vote": "pending"
+          },
+          "2611.32536": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "REASON"
+                  ],
+                  "keywords": {
+                    "REASON": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "reasoning segmentation"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ]
+                  },
+                  "route": "general_reasoning"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.32536v1"
+            },
+            "title": "RSReasoner: Reformulating and Auditing Geospatial Reasoning Segmentation",
+            "title_zh": "RSReasoner：重新表述与审计地理空间推理分割",
+            "url": "https://arxiv.org/abs/2611.32536v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
       }
     },
     "repository": "KinokoY/ArxivDaily"
