@@ -18227,7 +18227,8 @@
     },
     "2611.27142": {
       "attempts": {
-        "selection": 1
+        "selection": 1,
+        "translation": 1
       },
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
       "decision": {
@@ -18357,6 +18358,11 @@
         "version_id": "2611.27142v1"
       },
       "stage": "ready",
+      "stage_started": {
+        "at": "2026-11-25T16:55:38.574440+00:00",
+        "run_id": "20261125T165538Z-e2da32ec",
+        "stage": "translation"
+      },
       "versions": [
         "2611.27142v1"
       ]
