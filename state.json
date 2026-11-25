@@ -18221,9 +18221,34 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We study this question by comparing five adaptation families --LoRA, HiRA, KRAdapter, QuanTA, and Full Fine-Tuning-- across five segmentation datasets spanning medical imaging, remote sensing, and dense material segmentation.",
+          "Our SVD analysis shows that Full Fine-Tuning updates are spectrally compressible. However, successful PEFT methods do not simply recover the same update directions; instead, they often concentrate changes in different components and subspaces.",
+          "The domain-transfer study further shows that methods with similar in-domain performance can respond differently under distribution shift."
+        ],
+        "dpo_is_method": false,
+        "reason": "The paper empirically compares SAM-3 fine-tuning families (LoRA, HiRA, KRAdapter, QuanTA, Full Fine-Tuning) and analyzes update spectra and domain transfer. It is not about medical reasoning segmentation, implicit requests, spatial-to-mask reasoning, RL, or DPO. It may offer transferable insight into SAM adaptation, but it lacks theoretical grounding for a new optimization objective and does not show direct value for the target medical reasoning or structure-aware segmentation tasks.",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "transferable_objective",
+        "score": 35,
+        "status": "uncertain",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": true,
+        "uncertainty": [
+          "No theoretical analysis or guarantee is provided for the capacity-saturation or update-geometry claims.",
+          "The paper does not evaluate medical reasoning segmentation, implicit requests, or spatial/position reasoning to pixel masks.",
+          "Medical imaging is only one of several datasets; it is unclear whether the adaptation findings transfer to medical reasoning or structure/topology objectives.",
+          "No RL or DPO method contribution is present; relevance to RL/DPO-based segmentation is unconfirmed."
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Promptable segmentation foundation models are increasingly used in specialized domains, but it remains unclear how SAM-3 should be fine-tuned when adapting it beyond its original training distribution. We study this question by comparing five adaptation families --LoRA, HiRA, KRAdapter, QuanTA, and Full Fine-Tuning-- across five segmentation datasets spanning medical imaging, remote sensing, and dense material segmentation. Across these datasets, compact parameter-efficient fine-tuning methods often match or approach Full Fine-Tuning in DSC and IoU, suggesting that strong in-domain adaptation does not always require updating the full model. However, this performance cannot be explained by nominal adapter rank or trainable parameter count alone. To investigate why different methods perform similarly, we analyze their update spectra and their behavior under LoveDA Urban/Rural transfer. Our SVD analysis shows that Full Fine-Tuning updates are spectrally compressible. However, successful PEFT methods do not simply recover the same update directions; instead, they often concentrate changes in different components and subspaces. The domain-transfer study further shows that methods with similar in-domain performance can respond differently under distribution shift. Together, these results suggest that SAM-3 adaptation is often capacity-saturated in practice, while competitive fine-tuning arises through method-specific update paths rather than a single low-rank approximation to Full Fine-Tuning.",
         "authors": [
@@ -18274,6 +18299,7 @@
         "source": "matched",
         "version_id": "2611.27142v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "transferable_objective"
       ],
@@ -18310,12 +18336,7 @@
         "source": "matched",
         "version_id": "2611.27142v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-25T16:55:38.574440+00:00",
-        "run_id": "20261125T165538Z-e2da32ec",
-        "stage": "selection"
-      },
+      "stage": "uncertain",
       "versions": [
         "2611.27142v1"
       ]
