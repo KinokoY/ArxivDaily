@@ -5,7 +5,7 @@
 | 日期 | 英文标题 | 中文标题 | 链接 |
 | --- | --- | --- | --- |
 | 2026-11-27 | SPiXSeg: Rethinking MLLM-based Image Segmentation as Superpixel Classification | SPiXSeg：将基于MLLM的图像分割重新思考为超像素分类 | [arXiv 2611.33842v1](https://arxiv.org/abs/2611.33842v1) |
-| 2026-11-27 | CHD-Bench: Diagnosing Congenital Heart Disease through Interactive Examination | 待翻译 | [arXiv 2611.33775v1](https://arxiv.org/abs/2611.33775v1) |
+| 2026-11-27 | CHD-Bench: Diagnosing Congenital Heart Disease through Interactive Examination | CHD-Bench：通过交互式检查诊断先天性心脏病 | [arXiv 2611.33775v1](https://arxiv.org/abs/2611.33775v1) |
 | 2026-11-26 | RSReasoner: Reformulating and Auditing Geospatial Reasoning Segmentation | RSReasoner：重新表述与审计地理空间推理分割 | [arXiv 2611.32536v1](https://arxiv.org/abs/2611.32536v1) |
 | 2026-11-26 | Distractors are the Real Enemy: Visual Distraction Adversarial Perturbations on SAM2-Based Video Tracking and Segmentation | 干扰物才是真正的敌人：针对基于SAM2的视频跟踪与分割的视觉干扰对抗扰动 | [arXiv 2611.32011v1](https://arxiv.org/abs/2611.32011v1) |
 | 2026-11-26 | Visual Thinking: Training-Free Active Perception for Counting and Localizing Hard-to-Find Objects | 视觉思考：面向难以发现目标的计数与定位的无训练主动感知 | [arXiv 2611.31973v1](https://arxiv.org/abs/2611.31973v1) |
