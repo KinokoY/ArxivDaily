@@ -191,6 +191,10 @@
     "20261125T165538Z-e2da32ec-fd6d639cb193": {
       "attempts": 1,
       "created_at": "2026-11-25T16:55:38.574440+00:00"
+    },
+    "20261126T163339Z-64df85a6-edac428f3031": {
+      "attempts": 0,
+      "created_at": "2026-11-26T16:33:39.630343+00:00"
     }
   },
   "collection": {
@@ -5592,6 +5596,219 @@
       "run_id": "20261125T165538Z-e2da32ec",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261126T163339Z-64df85a6-edac428f3031": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/27/20261126T163339Z-64df85a6-edac428f3031.md",
+      "chain_root": "20261126T163339Z-64df85a6-edac428f3031",
+      "chain_roots": [
+        "20261126T163339Z-64df85a6-edac428f3031"
+      ],
+      "content_hash": "edac428f3031422e3dd2830c4763173f9f7386b07814d61dab8ea4ab43b7647c",
+      "created_at": "2026-11-26T16:33:39.630343+00:00",
+      "day": "2026-11-27",
+      "digest_id": "20261126T163339Z-64df85a6-edac428f3031",
+      "empty": false,
+      "feedback_url": "https://github.com/KinokoY/ArxivDaily/issues/9",
+      "items": [
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Multimodal large language models (MLLMs) are widely used for image segmentation. However, existing methods either use a decoder or use patch-based approach which trades boundary precision against the number of decisions as coarse grid cells mix foreground and background pixels, while finer grids require many more predictions, and autoregressive mask generation adds sequential decoding overhead. We propose SPiXSeg, which shifts the output from per-patch to per-superpixel label assignment, using superpixel tokens formed by aggregating patch-level visual features. An off-the-shelf model partitions each image into task-agnostic superpixels, so the partition is computed once and reused across tasks. A Spix-to-Mask (S2M) module scores each superpixel token in a single MLLM forward pass by directly comparing the MLLM's hidden representations, without autoregressive generation or a separate scoring network, and the selected superpixels are mapped directly to pixels without refinement. Without any trainable decoder head or post-hoc refinement, SPiXSeg achieves an average cIoU of 80.5 with LLaVA-1.5-7B and 81.9 with InternVL2.5-8B on RefCOCO, RefCOCO+ and RefCOCOg and, when trained only on COCO-Stuff, extends to open-vocabulary semantic segmentation with mIoU of 29.0, 59.5 and 95.4 on ADE20K, PASCAL Context and PASCAL VOC, outperforming several SoTA MLLM baselines. Our results suggest that a fixed, query-agnostic superpixel partition is enough for accurate language-guided segmentation.",
+            "authors": [
+              "Piyush Tiwary",
+              "Sohini Dutta",
+              "Prathosh A. P"
+            ],
+            "categories": [
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2611.33842v1",
+            "published": "2026-11-25T06:11:59+00:00",
+            "title": "SPiXSeg: Rethinking MLLM-based Image Segmentation as Superpixel Classification",
+            "updated": "2026-11-25T06:11:59+00:00",
+            "version_id": "2611.33842v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "general_reasoning"
+          ],
+          "rule_trace": {
+            "clauses": [
+              {
+                "groups": [
+                  "SEG",
+                  "REASON"
+                ],
+                "keywords": {
+                  "REASON": [
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "language-guided segmentation"
+                    }
+                  ],
+                  "SEG": [
+                    {
+                      "fields": [
+                        "abstract",
+                        "title"
+                      ],
+                      "keyword": "segmentation"
+                    },
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "semantic segmentation"
+                    }
+                  ]
+                },
+                "route": "general_reasoning"
+              }
+            ],
+            "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+            "source": "matched",
+            "version_id": "2611.33842v1"
+          },
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "多模态大语言模型（MLLMs）被广泛用于图像分割。然而，现有方法要么使用解码器，要么使用基于图块的方法，后者在边界精度与决策数量之间进行权衡，因为粗网格单元会混合前景和背景像素，而更细的网格则需要多得多的预测，并且自回归掩码生成会带来顺序解码开销。我们提出SPiXSeg，它将输出从逐图块标签分配转变为逐超像素标签分配，使用由聚合图块级视觉特征形成的超像素令牌。现成模型将每张图像划分为任务无关的超像素，因此该划分只需计算一次并可在不同任务间重用。Spix-to-Mask（S2M）模块在单次MLLM前向传播中通过直接比较MLLM的隐藏表示来对每个超像素令牌进行评分，无需自回归生成或单独的评分网络，并且所选超像素直接映射到像素而无需细化。在没有任何可训练解码器头或事后细化的情况下，SPiXSeg在RefCOCO、RefCOCO+和RefCOCOg上使用LLaVA-1.5-7B达到平均cIoU 80.5，使用InternVL2.5-8B达到81.9，并且当仅在COCO-Stuff上训练时，扩展到开放词汇语义分割，在ADE20K、PASCAL Context和PASCAL VOC上的mIoU分别为29.0、59.5和95.4，优于多个SoTA MLLM基线。我们的结果表明，固定的、查询无关的超像素划分足以实现准确的语言引导分割。",
+            "title_zh": "SPiXSeg：将基于MLLM的图像分割重新思考为超像素分类"
+          }
+        },
+        {
+          "modules": [
+            "title",
+            "title_translation",
+            "abstract",
+            "abstract_translation",
+            "source",
+            "screening_routes"
+          ],
+          "paper": {
+            "abstract": "Diagnosis of congenital heart disease (CHD) requires understanding the spatial relationships between cardiac structures, which clinicians assess by scrolling through CT or cardiac magnetic resonance imaging (MRI) slices and rotating 3D reconstructions. Although automated methods have advanced cardiac segmentation, identifying congenital heart defects from volumetric scans remains an open challenge. The two existing approaches rely on handcrafted diagnostic rules limited to static anatomical abnormalities. We introduce CHD-Bench, the first benchmark for interactive CHD diagnosis, defining a multi-label task and evaluation protocol over 247 CT and MRI scans from three cohorts covering 38 CHD types. We also present CHD-Harness, open-source software that runs a VLM in a 3D Slicer environment through 22 tools, manages each examination, and records the resulting diagnosis and supporting views. We evaluate off-the-shelf medical, open weight, and closed weight VLMs and compare them with a 3D CNN classifier and published rule-based results. Gemini 4 Argon with CHD-Harness achieves the highest macro F1 across all three cohorts (0.63, 0.63, and 0.43). Allowing for interactive examination raises its macro F1 by up to 20 points over static views. These results establish CHD-Bench and CHD-Harness as a foundation for developing and evaluating VLMs for interactive CHD diagnosis.",
+            "authors": [
+              "Gautham Krishnan P",
+              "Shrisharanyan Vasu",
+              "Aniketh Vijesh",
+              "Rajagopalan Rameshbabu",
+              "Harikrishnan Anil Maya",
+              "Sarin Xavier",
+              "Mahesh Kappanayil",
+              "Gilad Gressel"
+            ],
+            "categories": [
+              "cs.AI",
+              "cs.CV"
+            ],
+            "pdf_url": "https://arxiv.org/pdf/2611.33775v1",
+            "published": "2026-11-25T05:00:19+00:00",
+            "title": "CHD-Bench: Diagnosing Congenital Heart Disease through Interactive Examination",
+            "updated": "2026-11-25T05:00:19+00:00",
+            "version_id": "2611.33775v1"
+          },
+          "recovery_of": "",
+          "rule_hits": [
+            "medical_reasoning"
+          ],
+          "rule_trace": {
+            "clauses": [
+              {
+                "groups": [
+                  "MED",
+                  "SEG",
+                  "VLM"
+                ],
+                "keywords": {
+                  "MED": [
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "medical"
+                    },
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "anatomical"
+                    },
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "MRI"
+                    },
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "magnetic resonance imaging"
+                    },
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "CT"
+                    },
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "volumetric"
+                    }
+                  ],
+                  "SEG": [
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "segmentation"
+                    }
+                  ],
+                  "VLM": [
+                    {
+                      "fields": [
+                        "abstract"
+                      ],
+                      "keyword": "VLM"
+                    }
+                  ]
+                },
+                "route": "medical_reasoning"
+              }
+            ],
+            "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+            "source": "matched",
+            "version_id": "2611.33775v1"
+          },
+          "summary": null,
+          "tier": "translation",
+          "translation": {
+            "abstract_zh": "先天性心脏病（CHD）的诊断需要理解心脏结构之间的空间关系，临床医生通过滚动浏览CT或心脏磁共振成像（MRI）切片并旋转三维重建来进行评估。尽管自动化方法在心脏分割方面已取得进展，但从体积扫描中识别先天性心脏缺陷仍是一个未解决的挑战。现有的两种方法依赖于手工制定的诊断规则，且局限于静态解剖异常。我们提出了CHD-Bench，这是首个用于交互式CHD诊断的基准，定义了一个多标签任务和评估协议，覆盖来自三个队列的247例CT和MRI扫描，涉及38种CHD类型。我们还提出了CHD-Harness，这是一个开源软件，通过22种工具在3D Slicer环境中运行VLM，管理每次检查，并记录所得诊断和支持视图。我们评估了现成的医学、开放权重和闭源权重VLM，并将它们与3D CNN分类器和已发表的基于规则的结果进行比较。Gemini 4 Argon配合CHD-Harness在所有三个队列中取得了最高的宏F1（0.63、0.63和0.43）。允许交互式检查使其宏F1比静态视图最高提升了20分。这些结果确立了CHD-Bench和CHD-Harness作为开发和评估用于交互式CHD诊断的VLM的基础。",
+            "title_zh": "CHD-Bench：通过交互式检查诊断先天性心脏病"
+          }
+        }
+      ],
+      "notification_hash": "b9c1553bf66c7be94c73d49bd3baadee2e48803cb1cdcc2981b8ea381e5dab99",
+      "recovery_of": [],
+      "rendered": {
+        "2611.33775": "rendered_inline_translation",
+        "2611.33842": "rendered_inline_translation"
+      },
+      "run_id": "20261126T163339Z-64df85a6",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "feedback": {
