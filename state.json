@@ -6665,6 +6665,134 @@
         },
         "status": "open",
         "url": "https://github.com/KinokoY/ArxivDaily/issues/8"
+      },
+      "2026-11-27": {
+        "created_at": "2026-11-26T16:38:43.772320+00:00",
+        "papers": {
+          "2611.33775": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "MED",
+                    "SEG",
+                    "VLM"
+                  ],
+                  "keywords": {
+                    "MED": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "medical"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "anatomical"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "MRI"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "magnetic resonance imaging"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "CT"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "volumetric"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "segmentation"
+                      }
+                    ],
+                    "VLM": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "VLM"
+                      }
+                    ]
+                  },
+                  "route": "medical_reasoning"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.33775v1"
+            },
+            "title": "CHD-Bench: Diagnosing Congenital Heart Disease through Interactive Examination",
+            "title_zh": "CHD-Bench：通过交互式检查诊断先天性心脏病",
+            "url": "https://arxiv.org/abs/2611.33775v1",
+            "vote": "pending"
+          },
+          "2611.33842": {
+            "rule_trace": {
+              "clauses": [
+                {
+                  "groups": [
+                    "SEG",
+                    "REASON"
+                  ],
+                  "keywords": {
+                    "REASON": [
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "language-guided segmentation"
+                      }
+                    ],
+                    "SEG": [
+                      {
+                        "fields": [
+                          "abstract",
+                          "title"
+                        ],
+                        "keyword": "segmentation"
+                      },
+                      {
+                        "fields": [
+                          "abstract"
+                        ],
+                        "keyword": "semantic segmentation"
+                      }
+                    ]
+                  },
+                  "route": "general_reasoning"
+                }
+              ],
+              "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+              "source": "matched",
+              "version_id": "2611.33842v1"
+            },
+            "title": "SPiXSeg: Rethinking MLLM-based Image Segmentation as Superpixel Classification",
+            "title_zh": "SPiXSeg：将基于MLLM的图像分割重新思考为超像素分类",
+            "url": "https://arxiv.org/abs/2611.33842v1",
+            "vote": "pending"
+          }
+        },
+        "status": "open"
       }
     },
     "repository": "KinokoY/ArxivDaily"
