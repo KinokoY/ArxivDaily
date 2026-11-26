@@ -21331,6 +21331,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Diagnosis of congenital heart disease (CHD) requires understanding the spatial relationships between cardiac structures, which clinicians assess by scrolling through CT or cardiac magnetic resonance imaging (MRI) slices and rotating 3D reconstructions. Although automated methods have advanced cardiac segmentation, identifying congenital heart defects from volumetric scans remains an open challenge. The two existing approaches rely on handcrafted diagnostic rules limited to static anatomical abnormalities. We introduce CHD-Bench, the first benchmark for interactive CHD diagnosis, defining a multi-label task and evaluation protocol over 247 CT and MRI scans from three cohorts covering 38 CHD types. We also present CHD-Harness, open-source software that runs a VLM in a 3D Slicer environment through 22 tools, manages each examination, and records the resulting diagnosis and supporting views. We evaluate off-the-shelf medical, open weight, and closed weight VLMs and compare them with a 3D CNN classifier and published rule-based results. Gemini 4 Argon with CHD-Harness achieves the highest macro F1 across all three cohorts (0.63, 0.63, and 0.43). Allowing for interactive examination raises its macro F1 by up to 20 points over static views. These results establish CHD-Bench and CHD-Harness as a foundation for developing and evaluating VLMs for interactive CHD diagnosis.",
@@ -21354,6 +21355,17 @@
         "updated": "2026-11-25T05:00:19+00:00",
         "version_id": "2611.33775v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "medical_reasoning"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -21500,7 +21512,7 @@
         "source": "matched",
         "version_id": "2611.33775v1"
       },
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2611.33775v1"
       ]
