@@ -21305,9 +21305,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "Diagnosis of congenital heart disease (CHD) requires understanding the spatial relationships between cardiac structures, which clinicians assess by scrolling through CT or cardiac magnetic resonance imaging (MRI) slices and rotating 3D reconstructions.",
+          "We introduce CHD-Bench, the first benchmark for interactive CHD diagnosis, defining a multi-label task and evaluation protocol over 247 CT and MRI scans from three cohorts covering 38 CHD types.",
+          "We also present CHD-Harness, open-source software that runs a VLM in a 3D Slicer environment through 22 tools, manages each examination, and records the resulting diagnosis and supporting views.",
+          "We evaluate off-the-shelf medical, open weight, and closed weight VLMs and compare them with a 3D CNN classifier and published rule-based results."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文提出 CHD-Bench 与 CHD-Harness，是面向先天性心脏病交互诊断的医学影像基准与 VLM 工具环境，涉及心脏结构空间关系、交互检查和工具调用，因而与医学影像推理相关；但其贡献是基准/软件和评估，未提出 RL/DPO 方法，也不是推理分割或像素掩码机制，故仅轻量保留。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "medical_reasoning",
+        "score": 55,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要未确认是否涉及分割掩码或像素级推理输出。",
+          "未确认是否存在 RL/DPO 方法贡献或可迁移的理论/优化目标。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Diagnosis of congenital heart disease (CHD) requires understanding the spatial relationships between cardiac structures, which clinicians assess by scrolling through CT or cardiac magnetic resonance imaging (MRI) slices and rotating 3D reconstructions. Although automated methods have advanced cardiac segmentation, identifying congenital heart defects from volumetric scans remains an open challenge. The two existing approaches rely on handcrafted diagnostic rules limited to static anatomical abnormalities. We introduce CHD-Bench, the first benchmark for interactive CHD diagnosis, defining a multi-label task and evaluation protocol over 247 CT and MRI scans from three cohorts covering 38 CHD types. We also present CHD-Harness, open-source software that runs a VLM in a 3D Slicer environment through 22 tools, manages each examination, and records the resulting diagnosis and supporting views. We evaluate off-the-shelf medical, open weight, and closed weight VLMs and compare them with a 3D CNN classifier and published rule-based results. Gemini 4 Argon with CHD-Harness achieves the highest macro F1 across all three cohorts (0.63, 0.63, and 0.43). Allowing for interactive examination raises its macro F1 by up to 20 points over static views. These results establish CHD-Bench and CHD-Harness as a foundation for developing and evaluating VLMs for interactive CHD diagnosis.",
         "authors": [
@@ -21401,6 +21425,7 @@
         "source": "matched",
         "version_id": "2611.33775v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "medical_reasoning"
       ],
@@ -21475,12 +21500,7 @@
         "source": "matched",
         "version_id": "2611.33775v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-26T16:33:39.630343+00:00",
-        "run_id": "20261126T163339Z-64df85a6",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.33775v1"
       ]
