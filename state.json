@@ -21668,11 +21668,13 @@
         "version_id": "2611.33842v1"
       },
       "stage": "ready",
-      "stage_started": {
-        "at": "2026-11-26T16:33:39.630343+00:00",
-        "run_id": "20261126T163339Z-64df85a6",
-        "stage": "translation"
+      "title_zh": "SPiXSeg：将基于MLLM的图像分割重新思考为超像素分类",
+      "translation": {
+        "abstract_zh": "多模态大语言模型（MLLMs）被广泛用于图像分割。然而，现有方法要么使用解码器，要么使用基于图块的方法，后者在边界精度与决策数量之间进行权衡，因为粗网格单元会混合前景和背景像素，而更细的网格则需要多得多的预测，并且自回归掩码生成会带来顺序解码开销。我们提出SPiXSeg，它将输出从逐图块标签分配转变为逐超像素标签分配，使用由聚合图块级视觉特征形成的超像素令牌。现成模型将每张图像划分为任务无关的超像素，因此该划分只需计算一次并可在不同任务间重用。Spix-to-Mask（S2M）模块在单次MLLM前向传播中通过直接比较MLLM的隐藏表示来对每个超像素令牌进行评分，无需自回归生成或单独的评分网络，并且所选超像素直接映射到像素而无需细化。在没有任何可训练解码器头或事后细化的情况下，SPiXSeg在RefCOCO、RefCOCO+和RefCOCOg上使用LLaVA-1.5-7B达到平均cIoU 80.5，使用InternVL2.5-8B达到81.9，并且当仅在COCO-Stuff上训练时，扩展到开放词汇语义分割，在ADE20K、PASCAL Context和PASCAL VOC上的mIoU分别为29.0、59.5和95.4，优于多个SoTA MLLM基线。我们的结果表明，固定的、查询无关的超像素划分足以实现准确的语言引导分割。",
+        "title_zh": "SPiXSeg：将基于MLLM的图像分割重新思考为超像素分类"
       },
+      "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
+      "translation_provider": "llm",
       "versions": [
         "2611.33842v1"
       ]
