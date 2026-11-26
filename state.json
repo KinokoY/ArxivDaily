@@ -195,7 +195,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-25T16:55:38.574440+00:00"
+    "last_complete_end": "2026-11-26T16:33:39.630343+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -18789,6 +18789,7 @@
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.27142v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Promptable segmentation foundation models are increasingly used in specialized domains, but it remains unclear how SAM-3 should be fine-tuned when adapting it beyond its original training distribution. We study this question by comparing five adaptation families --LoRA, HiRA, KRAdapter, QuanTA, and Full Fine-Tuning-- across five segmentation datasets spanning medical imaging, remote sensing, and dense material segmentation. Across these datasets, compact parameter-efficient fine-tuning methods often match or approach Full Fine-Tuning in DSC and IoU, suggesting that strong in-domain adaptation does not always require updating the full model. However, this performance cannot be explained by nominal adapter rank or trainable parameter count alone. To investigate why different methods perform similarly, we analyze their update spectra and their behavior under LoveDA Urban/Rural transfer. Our SVD analysis shows that Full Fine-Tuning updates are spectrally compressible. However, successful PEFT methods do not simply recover the same update directions; instead, they often concentrate changes in different components and subspaces. The domain-transfer study further shows that methods with similar in-domain performance can respond differently under distribution shift. Together, these results suggest that SAM-3 adaptation is often capacity-saturated in practice, while competitive fine-tuning arises through method-specific update paths rather than a single low-rank approximation to Full Fine-Tuning.",
@@ -18944,6 +18945,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.27183v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Endoscopist gaze offers an unobtrusively acquired record of lesion-oriented visual exploration during routine clinical inspection, providing relevant supervision for tasks. However, existing methods treat fixations as isolated spatial prompts directly associated with the target, overlooking the fact that natural gaze records a continuous visual search process in which fixations are temporally connected, spatially organized, and coupled with the visual content. Interpreting each fixation independently based only on its local visual content overlooks the temporal evolution and spatial organization of the gaze trajectory, whereas modeling relations among fixations alone cannot reveal the visual semantics of the regions they attend to. To this end, we propose the Gaze Exploration-Guided Segment Anything Model (GEG-SAM), a principled weakly supervised framework designed to explicitly exploit structured gaze relations and their corresponding visual cues to modulate SAM for polyp segmentation. Specifically, GEG-SAM captures structured gaze relations by modeling the temporal dynamics and spatial topology of gaze exploration. It then associates these relational representations with fixation-aligned visual context to derive gaze-conditioned tokens, which are further injected into the frozen SAM encoder to modulate its pretrained image features. In this way, GEG-SAM effectively exploits the rich information embedded in gaze exploration to guide SAM toward lesion-oriented segmentation. Extensive experiments on five public polyp segmentation datasets demonstrate the effectiveness of our approach, improving the mean Dice by 9.30 percentage points over the strongest weakly supervised baseline.",
@@ -19798,7 +19800,7 @@
       "failures": {},
       "first_discovered": "2026-11-24T17:08:03.065917+00:00",
       "intended_tier": "translation",
-      "latest_version": "2611.29146v1",
+      "latest_version": "2611.29146v2",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Vision-Language Models (VLMs) tokenize images using fixed spatial grids, so visual token count grows with pixel area rather than scene content. We propose to group neighboring patches based on their visual appearance, allowing tokens to represent coherent image regions rather than fixed spatial windows. We introduce RVLM, a VLM trained to use regions rather than patches as its visual units. Analyzing region construction for general-purpose VLMs, we find that regions must cover the full image, stay spatially connected during end-to-end training, and preserve fine structure such as small text, while semantic grouping adds little. RVLM therefore partitions images using training-free Felzenszwalb-Huttenlocher segmentation, assigns each ViT patch to a region, and pools patches within each region into a variable-length sequence of visual tokens. The patch-to-region assignment is retained to support spatially precise prediction through coarse-to-fine decoding. Across tasks spanning VQA, pointing, counting, segmentation, and depth estimation, RVLM matches or improves example-weighted task performance while using 21.5% fewer visual tokens than an identically trained patch baseline. The advantage grows with image resolution, reaching a 5.3-point gain while using 51.8% fewer visual tokens at the highest-resolution setting. The gains are largest on spatially demanding tasks, where prior token-reduction methods degrade most sharply. RVLM adds no model parameters and improves inference throughput by up to 35.9%. On unseen pathology and satellite images and on video benchmarks without any video training, RVLM performs on par with the patch baseline while using 2-3$\\times$ fewer visual tokens. These results establish regions as a scalable alternative to patch-based visual representations while preserving the spatial precision required for grounded prediction.",
@@ -19937,7 +19939,8 @@
       "translation_prompt_fingerprint": "56cfe9a574867fdf4ddd8444610559b5584fa7f267ed6250f496fddc12536536",
       "translation_provider": "llm",
       "versions": [
-        "2611.29146v1"
+        "2611.29146v1",
+        "2611.29146v2"
       ]
     },
     "2611.29278": {
@@ -20711,6 +20714,7 @@
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.31475v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Spatial reasoning agents increasingly rely on external tools, such as 3D reconstruction, segmentation, and geometric computation, to answer questions that a multimodal large language model (MLLM) cannot resolve from pixels alone. Tool access, however, shifts the bottleneck to orchestration: the agent must decide which tools to call, in what order, and how to interpret their outputs, yet a stateless agent repeats the same mistakes across tasks. We ask whether a frozen tool-using agent can improve its orchestration from its own interaction history, without parameter updates. We present SpatialCraft, a self-evolving framework that maintains two forms of external knowledge: Experiences, condition-action tactics distilled by contrasting rollouts of the same task, and Skills, multi-step procedures with explicit activation and termination conditions. Three designs couple the two streams. Experiences can be anchored to a Skill, appearing only while it is active rather than once per task. A Contrastive Utility Score estimates each Experience's effect by randomly withholding it across rollouts of the same task, separating its contribution from task difficulty, and Experiences with consistently positive utility are consolidated into the Skills they support. Across five spatial benchmarks and four backbones, SpatialCraft achieves the best accuracy in all 20 settings, showing that a frozen agent can learn to orchestrate spatial tools from its own experience.",
@@ -20870,6 +20874,7 @@
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.31973v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Vision foundation models can precisely segment objects based solely on a text prompt. However, they struggle to recover objects that are small, occluded or whose appearance is poorly captured by the original textual description. Vision language models can examine the image and its context, they can propose richer descriptions of the objects to be detected. But these models struggle with precise segmentation and localization. We introduce Visual Thinking, a training-free framework that combines a vision-language model with Segment Anything Model 3 (SAM 3) through an iterative active perception loop. At each iteration, the VLM proposes short noun phrases using the image, candidate crops and history from past iterations. A controller ranks these phrases using embedding similarity between the original prompt and the proposal, an entropy-based verification priority and the novelty of the prompt. Next, SAM 3 uses prompts to detect objects in the image. We associate detections across iterations and update each object's confidence score using a weighted mean of scores obtained from SAM 3 with a larger weight for detections using narrower prompts. We supply confident detections as positive visual exemplars for SAM 3, and incorporate image tiling to recover small objects in cluttered images. We evaluate counting and localization on CARPK, FSCD-147, PixMo-Count, and OmniCount (Fruits). Compared with SAM 3, Visual Thinking reduces the counting mean absolute error (MAE) by about 18 on FSC-147 and about 8 on CARPK. It improves box average precision (AP) by more than 12 on FSCD-147 and CARPK. Visual Thinking, with fixed or no tiling, performs on par with Claude Opus 5.5 at extra-high reasoning effort, while running on single desktop GPU in about 5.91 seconds per image, compared to about 46.53 seconds per image for Claude through its API.",
@@ -21029,6 +21034,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
+      "latest_version": "2611.32011v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Promptable video trackers such as SAM2 achieve accurate and robust performance through strong temporal consistency, making them important foundations for downstream video understanding and tracking applications. As their use continues to expand, understanding their robustness to adversarial perturbations becomes increasingly important. Existing attacks on SAM2 largely focus on local mask degradation and short-term temporal feature disruption, leaving its longer-term dynamics and competing object interferences (Distractors) insufficiently explored. We observe that SAM2 itself exposes useful distractor cues when tracking becomes uncertain. Based on these observations, we propose DistractAttack, a white-box attack that uses background distractors to disrupt target tracking persistently. Its core procedure, Counterfactual Distractor Search (CDS), propagates clean and attacked trajectories in parallel to discover plausible competing regions and identify those that become increasingly effective under perturbation. The discovered evidence is accumulated over time to weaken target support and promote recurrent alternatives or disappearance predictions. Extensive experiments under video-level and one-shot perturbations across Visual Object Tracking and Video Object Segmentation demonstrate strong attack effectiveness, raising DRE to $4.4\\times$ and NRE to $7.3\\times$ their nearest baselines under video perturbation, while transferring effectively across model scales and tracker variants in black-box settings. Project page: https://adonaydem.github.io/sam2-da-page/",
@@ -21293,6 +21299,180 @@
       "translation_provider": "llm",
       "versions": [
         "2611.32536v1"
+      ]
+    },
+    "2611.33775": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-26T16:33:39.630343+00:00",
+      "paper": {
+        "abstract": "Diagnosis of congenital heart disease (CHD) requires understanding the spatial relationships between cardiac structures, which clinicians assess by scrolling through CT or cardiac magnetic resonance imaging (MRI) slices and rotating 3D reconstructions. Although automated methods have advanced cardiac segmentation, identifying congenital heart defects from volumetric scans remains an open challenge. The two existing approaches rely on handcrafted diagnostic rules limited to static anatomical abnormalities. We introduce CHD-Bench, the first benchmark for interactive CHD diagnosis, defining a multi-label task and evaluation protocol over 247 CT and MRI scans from three cohorts covering 38 CHD types. We also present CHD-Harness, open-source software that runs a VLM in a 3D Slicer environment through 22 tools, manages each examination, and records the resulting diagnosis and supporting views. We evaluate off-the-shelf medical, open weight, and closed weight VLMs and compare them with a 3D CNN classifier and published rule-based results. Gemini 4 Argon with CHD-Harness achieves the highest macro F1 across all three cohorts (0.63, 0.63, and 0.43). Allowing for interactive examination raises its macro F1 by up to 20 points over static views. These results establish CHD-Bench and CHD-Harness as a foundation for developing and evaluating VLMs for interactive CHD diagnosis.",
+        "authors": [
+          "Gautham Krishnan P",
+          "Shrisharanyan Vasu",
+          "Aniketh Vijesh",
+          "Rajagopalan Rameshbabu",
+          "Harikrishnan Anil Maya",
+          "Sarin Xavier",
+          "Mahesh Kappanayil",
+          "Gilad Gressel"
+        ],
+        "categories": [
+          "cs.AI",
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.33775v1",
+        "published": "2026-11-25T05:00:19+00:00",
+        "title": "CHD-Bench: Diagnosing Congenital Heart Disease through Interactive Examination",
+        "updated": "2026-11-25T05:00:19+00:00",
+        "version_id": "2611.33775v1"
+      },
+      "rule_hits": [
+        "medical_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "anatomical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "MRI"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "magnetic resonance imaging"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "CT"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "volumetric"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "VLM"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.33775v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.33775v1"
+      ]
+    },
+    "2611.33842": {
+      "attempts": {},
+      "events": [],
+      "failures": {},
+      "first_discovered": "2026-11-26T16:33:39.630343+00:00",
+      "paper": {
+        "abstract": "Multimodal large language models (MLLMs) are widely used for image segmentation. However, existing methods either use a decoder or use patch-based approach which trades boundary precision against the number of decisions as coarse grid cells mix foreground and background pixels, while finer grids require many more predictions, and autoregressive mask generation adds sequential decoding overhead. We propose SPiXSeg, which shifts the output from per-patch to per-superpixel label assignment, using superpixel tokens formed by aggregating patch-level visual features. An off-the-shelf model partitions each image into task-agnostic superpixels, so the partition is computed once and reused across tasks. A Spix-to-Mask (S2M) module scores each superpixel token in a single MLLM forward pass by directly comparing the MLLM's hidden representations, without autoregressive generation or a separate scoring network, and the selected superpixels are mapped directly to pixels without refinement. Without any trainable decoder head or post-hoc refinement, SPiXSeg achieves an average cIoU of 80.5 with LLaVA-1.5-7B and 81.9 with InternVL2.5-8B on RefCOCO, RefCOCO+ and RefCOCOg and, when trained only on COCO-Stuff, extends to open-vocabulary semantic segmentation with mIoU of 29.0, 59.5 and 95.4 on ADE20K, PASCAL Context and PASCAL VOC, outperforming several SoTA MLLM baselines. Our results suggest that a fixed, query-agnostic superpixel partition is enough for accurate language-guided segmentation.",
+        "authors": [
+          "Piyush Tiwary",
+          "Sohini Dutta",
+          "Prathosh A. P"
+        ],
+        "categories": [
+          "cs.CV"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2611.33842v1",
+        "published": "2026-11-25T06:11:59+00:00",
+        "title": "SPiXSeg: Rethinking MLLM-based Image Segmentation as Superpixel Classification",
+        "updated": "2026-11-25T06:11:59+00:00",
+        "version_id": "2611.33842v1"
+      },
+      "rule_hits": [
+        "general_reasoning"
+      ],
+      "rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "SEG",
+              "REASON"
+            ],
+            "keywords": {
+              "REASON": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "language-guided segmentation"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract",
+                    "title"
+                  ],
+                  "keyword": "segmentation"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "semantic segmentation"
+                }
+              ]
+            },
+            "route": "general_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
+        "version_id": "2611.33842v1"
+      },
+      "stage": "candidate",
+      "versions": [
+        "2611.33842v1"
       ]
     }
   },
@@ -23390,10 +23570,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-27",
+      "discovered_candidates": 28,
+      "discovered_papers": 28,
       "run_id": "20261126T163339Z-64df85a6",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-26T16:33:00+00:00",
+          "seen": 6083,
+          "start": "2026-11-12T16:33:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-26T16:33:39.630343+00:00",
       "window": {
         "end": "2026-11-26T16:33:39.630343+00:00",
