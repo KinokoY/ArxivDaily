@@ -21411,9 +21411,33 @@
       "attempts": {
         "selection": 1
       },
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "decision": {
+        "abstract_evidence": [
+          "We propose SPiXSeg, which shifts the output from per-patch to per-superpixel label assignment, using superpixel tokens formed by aggregating patch-level visual features.",
+          "A Spix-to-Mask (S2M) module scores each superpixel token in a single MLLM forward pass by directly comparing the MLLM's hidden representations, without autoregressive generation or a separate scoring network, and the selected superpixels are mapped directly to pixels without refinement.",
+          "Our results suggest that a fixed, query-agnostic superpixel partition is enough for accurate language-guided segmentation."
+        ],
+        "dpo_is_method": false,
+        "reason": "该论文是通用图像的语言引导分割方法，核心贡献是把 MLLM 分割输出改为 superpixel 分类并用隐藏表示打分，属于 MLLM 分割输出机制/效率改进；摘要未显示 RL 或 DPO 作为方法贡献，也未明确涉及隐含请求或空间推理到掩码的复杂推理分割，因此仅作为通用推理分割的轻量相关清单保留。",
+        "review_evidence": [],
+        "rl_is_method": false,
+        "route": "general_reasoning",
+        "score": 58,
+        "status": "select",
+        "theory_evidence": false,
+        "tier": "light",
+        "transfer_evidence": false,
+        "uncertainty": [
+          "摘要主要面向 referring expression segmentation 与 open-vocabulary semantic segmentation，未确认是否真正涉及需要隐含请求或空间/位置推理的 reasoning segmentation。",
+          "摘要未显示 RL 或 DPO 方法贡献。",
+          "未确认该方法对医学影像推理分割的可迁移价值。"
+        ]
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
+      "model": "deepseek-flash",
       "paper": {
         "abstract": "Multimodal large language models (MLLMs) are widely used for image segmentation. However, existing methods either use a decoder or use patch-based approach which trades boundary precision against the number of decisions as coarse grid cells mix foreground and background pixels, while finer grids require many more predictions, and autoregressive mask generation adds sequential decoding overhead. We propose SPiXSeg, which shifts the output from per-patch to per-superpixel label assignment, using superpixel tokens formed by aggregating patch-level visual features. An off-the-shelf model partitions each image into task-agnostic superpixels, so the partition is computed once and reused across tasks. A Spix-to-Mask (S2M) module scores each superpixel token in a single MLLM forward pass by directly comparing the MLLM's hidden representations, without autoregressive generation or a separate scoring network, and the selected superpixels are mapped directly to pixels without refinement. Without any trainable decoder head or post-hoc refinement, SPiXSeg achieves an average cIoU of 80.5 with LLaVA-1.5-7B and 81.9 with InternVL2.5-8B on RefCOCO, RefCOCO+ and RefCOCOg and, when trained only on COCO-Stuff, extends to open-vocabulary semantic segmentation with mIoU of 29.0, 59.5 and 95.4 on ADE20K, PASCAL Context and PASCAL VOC, outperforming several SoTA MLLM baselines. Our results suggest that a fixed, query-agnostic superpixel partition is enough for accurate language-guided segmentation.",
         "authors": [
@@ -21469,6 +21493,7 @@
         "source": "matched",
         "version_id": "2611.33842v1"
       },
+      "prompt_fingerprint": "d27291a6a3787f1ec51a4a843b804940da89b0af04cc0553b91353a500018001",
       "rule_hits": [
         "general_reasoning"
       ],
@@ -21511,12 +21536,7 @@
         "source": "matched",
         "version_id": "2611.33842v1"
       },
-      "stage": "candidate",
-      "stage_started": {
-        "at": "2026-11-26T16:33:39.630343+00:00",
-        "run_id": "20261126T163339Z-64df85a6",
-        "stage": "selection"
-      },
+      "stage": "selected",
       "versions": [
         "2611.33842v1"
       ]
