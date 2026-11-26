@@ -21535,6 +21535,7 @@
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
+      "intended_tier": "translation",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Multimodal large language models (MLLMs) are widely used for image segmentation. However, existing methods either use a decoder or use patch-based approach which trades boundary precision against the number of decisions as coarse grid cells mix foreground and background pixels, while finer grids require many more predictions, and autoregressive mask generation adds sequential decoding overhead. We propose SPiXSeg, which shifts the output from per-patch to per-superpixel label assignment, using superpixel tokens formed by aggregating patch-level visual features. An off-the-shelf model partitions each image into task-agnostic superpixels, so the partition is computed once and reused across tasks. A Spix-to-Mask (S2M) module scores each superpixel token in a single MLLM forward pass by directly comparing the MLLM's hidden representations, without autoregressive generation or a separate scoring network, and the selected superpixels are mapped directly to pixels without refinement. Without any trainable decoder head or post-hoc refinement, SPiXSeg achieves an average cIoU of 80.5 with LLaVA-1.5-7B and 81.9 with InternVL2.5-8B on RefCOCO, RefCOCO+ and RefCOCOg and, when trained only on COCO-Stuff, extends to open-vocabulary semantic segmentation with mIoU of 29.0, 59.5 and 95.4 on ADE20K, PASCAL Context and PASCAL VOC, outperforming several SoTA MLLM baselines. Our results suggest that a fixed, query-agnostic superpixel partition is enough for accurate language-guided segmentation.",
@@ -21552,6 +21553,17 @@
         "updated": "2026-11-25T06:11:59+00:00",
         "version_id": "2611.33842v1"
       },
+      "presentation_modules": [
+        "title",
+        "title_translation",
+        "abstract",
+        "abstract_translation",
+        "source",
+        "screening_routes"
+      ],
+      "presentation_rule_hits": [
+        "general_reasoning"
+      ],
       "presentation_rule_trace": {
         "clauses": [
           {
@@ -21634,7 +21646,7 @@
         "source": "matched",
         "version_id": "2611.33842v1"
       },
-      "stage": "selected",
+      "stage": "ready",
       "versions": [
         "2611.33842v1"
       ]
