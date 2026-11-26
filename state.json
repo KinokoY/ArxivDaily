@@ -21302,7 +21302,9 @@
       ]
     },
     "2611.33775": {
-      "attempts": {},
+      "attempts": {
+        "selection": 1
+      },
       "events": [],
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
@@ -21326,6 +21328,77 @@
         "published": "2026-11-25T05:00:19+00:00",
         "title": "CHD-Bench: Diagnosing Congenital Heart Disease through Interactive Examination",
         "updated": "2026-11-25T05:00:19+00:00",
+        "version_id": "2611.33775v1"
+      },
+      "presentation_rule_trace": {
+        "clauses": [
+          {
+            "groups": [
+              "MED",
+              "SEG",
+              "VLM"
+            ],
+            "keywords": {
+              "MED": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "medical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "anatomical"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "MRI"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "magnetic resonance imaging"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "CT"
+                },
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "volumetric"
+                }
+              ],
+              "SEG": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "segmentation"
+                }
+              ],
+              "VLM": [
+                {
+                  "fields": [
+                    "abstract"
+                  ],
+                  "keyword": "VLM"
+                }
+              ]
+            },
+            "route": "medical_reasoning"
+          }
+        ],
+        "rules_fingerprint": "14199fbb173ebbf9a1765c91b247c8f68ca149209c48a033cf9d6288267a61c9",
+        "source": "matched",
         "version_id": "2611.33775v1"
       },
       "rule_hits": [
@@ -21403,6 +21476,11 @@
         "version_id": "2611.33775v1"
       },
       "stage": "candidate",
+      "stage_started": {
+        "at": "2026-11-26T16:33:39.630343+00:00",
+        "run_id": "20261126T163339Z-64df85a6",
+        "stage": "selection"
+      },
       "versions": [
         "2611.33775v1"
       ]
