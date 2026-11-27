@@ -195,6 +195,10 @@
     "20261126T163339Z-64df85a6-edac428f3031": {
       "attempts": 1,
       "created_at": "2026-11-26T16:33:39.630343+00:00"
+    },
+    "20261127T161928Z-e668366d-ab6afdf28486": {
+      "attempts": 0,
+      "created_at": "2026-11-27T16:19:28.459401+00:00"
     }
   },
   "collection": {
@@ -657,6 +661,14 @@
       "query_reservations": 0,
       "review_ids": [],
       "send_attempts": 1
+    },
+    "2026-11-28": {
+      "alerts": [],
+      "full_ids": [],
+      "normal_digests": [],
+      "query_reservations": 0,
+      "review_ids": [],
+      "send_attempts": 0
     }
   },
   "digests": {
@@ -5821,6 +5833,27 @@
       "run_id": "20261126T163339Z-64df85a6",
       "schema_version": 1,
       "status": "confirmed"
+    },
+    "20261127T161928Z-e668366d-ab6afdf28486": {
+      "alert": false,
+      "archive_url": "https://raw.githubusercontent.com/KinokoY/ArxivDaily/arxivdaily-state/archive/2026/11/28/20261127T161928Z-e668366d-ab6afdf28486.md",
+      "chain_root": "20261127T161928Z-e668366d-ab6afdf28486",
+      "chain_roots": [
+        "20261127T161928Z-e668366d-ab6afdf28486"
+      ],
+      "content_hash": "ab6afdf284868ef111e3330a1f7b0cb61961e31f5f87bed6681d15d36d829570",
+      "created_at": "2026-11-27T16:19:28.459401+00:00",
+      "day": "2026-11-28",
+      "digest_id": "20261127T161928Z-e668366d-ab6afdf28486",
+      "empty": true,
+      "feedback_url": null,
+      "items": [],
+      "notification_hash": "e120799bab634287674fa2e3b3d51be99e216632732137d2bf5ac5fc39fa0d75",
+      "recovery_of": [],
+      "rendered": {},
+      "run_id": "20261127T161928Z-e668366d",
+      "schema_version": 1,
+      "status": "prepared"
     }
   },
   "feedback": {
