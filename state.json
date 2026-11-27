@@ -199,7 +199,7 @@
   },
   "collection": {
     "initial_floor": "2026-09-30T09:52:55.126385+00:00",
-    "last_complete_end": "2026-11-26T16:33:39.630343+00:00"
+    "last_complete_end": "2026-11-27T16:19:28.459401+00:00"
   },
   "daily": {
     "2026-10-07": {
@@ -21553,6 +21553,7 @@
       "failures": {},
       "first_discovered": "2026-11-25T16:55:38.574440+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.32536v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Geospatial reasoning segmentation aims to localize geographic targets from language requiring semantic inference beyond direct visual perception. However, existing benchmarks often operationalize reasoning as category omission while overlooking attribute mixing, which neglects explicit-category reasoning, introduces perceptual shortcuts, and fails to precisely evaluate reasoning capability. To diagnose and address these limitations, we first reformulate geospatial reasoning segmentation along category expression (explicit vs. implicit) and attribute nature (perceptual vs. inferential), and audit 90,708 queries across existing benchmarks to reveal that pure explicit-inferential queries account for only 0.61% whereas 31.98% mix both attribute types. We then develop a three-stage pipeline that harnesses OpenStreetMap attributes while mitigating geometric and semantic noise to construct RSReasoner, a large-scale dataset of 106,610 images with 213,220 reasoning queries, and RSReasoner-Bench, a diagnostic benchmark of 75,400 queries across four canonical types and controlled variants. Extensive experiments demonstrate that RSReasoner-Bench precisely evaluates model capability across multiple dimensions while exposing shortcut behaviors, and fine-tuning on RSReasoner boosts both reasoning and cross-type generalization. Our findings offer key insights for future geospatial reasoning research and benchmark design. Datasets and code will be released at https://github.com/Ricardo-XZ/RSReasoner.",
@@ -21713,6 +21714,7 @@
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.33775v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Diagnosis of congenital heart disease (CHD) requires understanding the spatial relationships between cardiac structures, which clinicians assess by scrolling through CT or cardiac magnetic resonance imaging (MRI) slices and rotating 3D reconstructions. Although automated methods have advanced cardiac segmentation, identifying congenital heart defects from volumetric scans remains an open challenge. The two existing approaches rely on handcrafted diagnostic rules limited to static anatomical abnormalities. We introduce CHD-Bench, the first benchmark for interactive CHD diagnosis, defining a multi-label task and evaluation protocol over 247 CT and MRI scans from three cohorts covering 38 CHD types. We also present CHD-Harness, open-source software that runs a VLM in a 3D Slicer environment through 22 tools, manages each examination, and records the resulting diagnosis and supporting views. We evaluate off-the-shelf medical, open weight, and closed weight VLMs and compare them with a 3D CNN classifier and published rule-based results. Gemini 4 Argon with CHD-Harness achieves the highest macro F1 across all three cohorts (0.63, 0.63, and 0.43). Allowing for interactive examination raises its macro F1 by up to 20 points over static views. These results establish CHD-Bench and CHD-Harness as a foundation for developing and evaluating VLMs for interactive CHD diagnosis.",
@@ -21948,6 +21950,7 @@
       "failures": {},
       "first_discovered": "2026-11-26T16:33:39.630343+00:00",
       "intended_tier": "translation",
+      "latest_version": "2611.33842v1",
       "model": "deepseek-flash",
       "paper": {
         "abstract": "Multimodal large language models (MLLMs) are widely used for image segmentation. However, existing methods either use a decoder or use patch-based approach which trades boundary precision against the number of decisions as coarse grid cells mix foreground and background pixels, while finer grids require many more predictions, and autoregressive mask generation adds sequential decoding overhead. We propose SPiXSeg, which shifts the output from per-patch to per-superpixel label assignment, using superpixel tokens formed by aggregating patch-level visual features. An off-the-shelf model partitions each image into task-agnostic superpixels, so the partition is computed once and reused across tasks. A Spix-to-Mask (S2M) module scores each superpixel token in a single MLLM forward pass by directly comparing the MLLM's hidden representations, without autoregressive generation or a separate scoring network, and the selected superpixels are mapped directly to pixels without refinement. Without any trainable decoder head or post-hoc refinement, SPiXSeg achieves an average cIoU of 80.5 with LLaVA-1.5-7B and 81.9 with InternVL2.5-8B on RefCOCO, RefCOCO+ and RefCOCOg and, when trained only on COCO-Stuff, extends to open-vocabulary semantic segmentation with mIoU of 29.0, 59.5 and 95.4 on ADE20K, PASCAL Context and PASCAL VOC, outperforming several SoTA MLLM baselines. Our results suggest that a fixed, query-agnostic superpixel partition is enough for accurate language-guided segmentation.",
@@ -24207,10 +24210,27 @@
       }
     },
     {
+      "collection_errors": [],
       "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
-      "coverage_complete": false,
+      "coverage_complete": true,
       "day": "2026-11-28",
+      "discovered_candidates": 23,
+      "discovered_papers": 23,
       "run_id": "20261127T161928Z-e668366d",
+      "shards": [
+        {
+          "categories": [
+            "cs.CV",
+            "cs.LG",
+            "cs.AI",
+            "cs.CL"
+          ],
+          "end": "2026-11-27T16:19:00+00:00",
+          "seen": 5690,
+          "start": "2026-11-13T16:19:00+00:00",
+          "status": "complete"
+        }
+      ],
       "started_at": "2026-11-27T16:19:28.459401+00:00",
       "window": {
         "end": "2026-11-27T16:19:28.459401+00:00",
