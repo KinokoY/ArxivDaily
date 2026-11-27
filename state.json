@@ -24205,6 +24205,13 @@
         "start": "2026-11-12T16:33:39.630343+00:00",
         "uncovered": []
       }
+    },
+    {
+      "config_fingerprint": "bf00cada9b0352e65a626812a1408aafd54607c2f2a0dae4525018a5bc5cd4f7",
+      "coverage_complete": false,
+      "day": "2026-11-28",
+      "run_id": "20261127T161928Z-e668366d",
+      "started_at": "2026-11-27T16:19:28.459401+00:00"
     }
   ],
   "schema_version": 1,
