@@ -21327,11 +21327,8 @@
         "version_id": "2611.31451v1"
       },
       "stage": "rejected",
-      "stage_started": {
-        "at": "2026-11-28T15:12:54.363785+00:00",
-        "run_id": "20261128T151254Z-83a2b037",
-        "stage": "title_translation"
-      },
+      "title_translation_prompt_fingerprint": "bca7795c4703e036518b4b57941ae68c3d5e0ec346c9f66935716c437bb16a88",
+      "title_zh": "用于癌症组织蛋白质组学与形态学的多模态基础模型",
       "versions": [
         "2611.31451v1"
       ]
